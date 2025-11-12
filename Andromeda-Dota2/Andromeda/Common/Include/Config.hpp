@@ -12,11 +12,11 @@
 
 #ifdef RELEASE_BUILD
 
-#define ENABLE_CONSOLE_DEBUG		1
-#define ENABLE_MANUAL_MAP			0
+#define ENABLE_CONSOLE_DEBUG		0
+#define ENABLE_MANUAL_MAP			1
 #define ENABLE_CPP_EH_EXCEPTION		0
 
-#define ENABLE_XOR_STR				0
+#define ENABLE_XOR_STR				1
 
 #define LOG_SDK_PATTERN				1
 
