@@ -9,16 +9,31 @@ static CAndromedaClient g_CAndromedaClient{};
 
 auto CAndromedaClient::OnInit() -> void
 {
-	if ( CameraDistancePattern.Search() )
-		DEV_LOG( "[CameraDistance] Found !\n" );
+	if ( dota_camera_distance.Search() )
+		DEV_LOG( "[dota_camera_distance] Found !\n" );
+
+	if ( dota_camera_fog_end.Search() )
+		DEV_LOG( "[dota_camera_fog_end] Found !\n" );
+
+	if ( dota_camera_farplane.Search() )
+		DEV_LOG( "[dota_camera_farplane] Found !\n" );
+
 }
 
 auto CAndromedaClient::SetCameraDistance( float Distance ) -> void
 {
-	static float* g_pCameraDistance = reinterpret_cast<float*>( CameraDistancePattern.GetFunction() );
+	static float* force_dota_camera_distance = reinterpret_cast<float*>( dota_camera_distance.GetFunction() );
+	static float* force_dota_camera_fog_end = reinterpret_cast<float*>( dota_camera_fog_end.GetFunction() );
+	static float* force_dota_camera_farplane = reinterpret_cast<float*>( dota_camera_farplane.GetFunction() );
 
-	if( g_pCameraDistance )
-		*g_pCameraDistance = Distance;
+	if( force_dota_camera_distance )
+		*force_dota_camera_distance = Distance;
+
+	if ( force_dota_camera_fog_end )
+		*force_dota_camera_fog_end = 10000.f;
+
+	if ( force_dota_camera_farplane )
+		*force_dota_camera_farplane = 10000.f;
 }
 
 auto CAndromedaClient::OnRender() -> void
