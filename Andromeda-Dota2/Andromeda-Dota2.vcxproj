@@ -72,6 +72,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <GenerateManifest>false</GenerateManifest>
+    <IncludePath>$(MSBuildProjectDirectory)\Andromeda\;$(MSBuildProjectDirectory)\Andromeda\Common\Include\;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -120,10 +121,13 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;ANDROMEDADOTA2_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;ANDROMEDADOTA2_EXPORTS;_WINDOWS;_USRDLL;RELEASE_BUILD;STB_IMAGE_STATIC;STB_IMAGE_IMPLEMENTATION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -132,6 +136,66 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Andromeda\AndromedaClient\CAndromedaClient.cpp" />
+    <ClCompile Include="Andromeda\AndromedaClient\CAndromedaGUI.cpp" />
+    <ClCompile Include="Andromeda\AndromedaClient\Fonts\CFont.cpp" />
+    <ClCompile Include="Andromeda\AndromedaClient\Fonts\CFontManager.cpp" />
+    <ClCompile Include="Andromeda\AndromedaClient\GUI\CAndromedaMenu.cpp" />
+    <ClCompile Include="Andromeda\Common\CrashLog.cpp" />
+    <ClCompile Include="Andromeda\Common\DevLog.cpp" />
+    <ClCompile Include="Andromeda\Common\Helpers\ModuleLoaderHelper.cpp" />
+    <ClCompile Include="Andromeda\Common\Helpers\StringHelper.cpp" />
+    <ClCompile Include="Andromeda\Common\Include\ImGui\imgui.cpp" />
+    <ClCompile Include="Andromeda\Common\Include\ImGui\imgui_draw.cpp" />
+    <ClCompile Include="Andromeda\Common\Include\ImGui\imgui_impl_dx11.cpp" />
+    <ClCompile Include="Andromeda\Common\Include\ImGui\imgui_impl_win32.cpp" />
+    <ClCompile Include="Andromeda\Common\Include\ImGui\imgui_tables.cpp" />
+    <ClCompile Include="Andromeda\Common\Include\ImGui\imgui_widgets.cpp" />
+    <ClCompile Include="Andromeda\Common\Include\ImGui\Misc\freetype\imgui_freetype.cpp" />
+    <ClCompile Include="Andromeda\Common\MemoryEngine.cpp" />
+    <ClCompile Include="Andromeda\DllLauncher.cpp" />
+    <ClCompile Include="Andromeda\DllMain.cpp" />
+    <ClCompile Include="Andromeda\Dota2\CBasePattern.cpp" />
+    <ClCompile Include="Andromeda\Dota2\CHook_Loader.cpp" />
+    <ClCompile Include="Andromeda\Dota2\Hook\Hook_CreateSwapChain.cpp" />
+    <ClCompile Include="Andromeda\Dota2\Hook\Hook_GetProtoCDOTAGameAccountPlus.cpp" />
+    <ClCompile Include="Andromeda\Dota2\Hook\Hook_Present.cpp" />
+    <ClCompile Include="Andromeda\Dota2\Hook\Hook_ResizeBuffers.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Andromeda\AndromedaClient\CAndromedaClient.hpp" />
+    <ClInclude Include="Andromeda\AndromedaClient\CAndromedaGUI.hpp" />
+    <ClInclude Include="Andromeda\AndromedaClient\Fonts\CFont.hpp" />
+    <ClInclude Include="Andromeda\AndromedaClient\Fonts\CFontManager.hpp" />
+    <ClInclude Include="Andromeda\AndromedaClient\GUI\CAndromedaMenu.hpp" />
+    <ClInclude Include="Andromeda\AndromedaClient\Settings\Settings.hpp" />
+    <ClInclude Include="Andromeda\Common\Common.hpp" />
+    <ClInclude Include="Andromeda\Common\CrashLog.hpp" />
+    <ClInclude Include="Andromeda\Common\DevLog.hpp" />
+    <ClInclude Include="Andromeda\Common\Helpers\ModuleLoaderHelper.hpp" />
+    <ClInclude Include="Andromeda\Common\Helpers\StringHelper.hpp" />
+    <ClInclude Include="Andromeda\Common\Include\Config.hpp" />
+    <ClInclude Include="Andromeda\Common\Include\Fnv1a\Hash_Fnv1a_Constexpr.hpp" />
+    <ClInclude Include="Andromeda\Common\Include\ImGui\imconfig.h" />
+    <ClInclude Include="Andromeda\Common\Include\ImGui\imgui.h" />
+    <ClInclude Include="Andromeda\Common\Include\ImGui\imgui_impl_dx11.h" />
+    <ClInclude Include="Andromeda\Common\Include\ImGui\imgui_impl_win32.h" />
+    <ClInclude Include="Andromeda\Common\Include\ImGui\imgui_internal.h" />
+    <ClInclude Include="Andromeda\Common\Include\ImGui\imstb_rectpack.h" />
+    <ClInclude Include="Andromeda\Common\Include\ImGui\imstb_textedit.h" />
+    <ClInclude Include="Andromeda\Common\Include\ImGui\imstb_truetype.h" />
+    <ClInclude Include="Andromeda\Common\Include\ImGui\Misc\freetype\imgui_freetype.h" />
+    <ClInclude Include="Andromeda\Common\Include\stb\stb_image.h" />
+    <ClInclude Include="Andromeda\Common\Include\XorStr\XorStr.hpp" />
+    <ClInclude Include="Andromeda\Common\MemoryEngine.hpp" />
+    <ClInclude Include="Andromeda\DllLauncher.hpp" />
+    <ClInclude Include="Andromeda\DllMain.hpp" />
+    <ClInclude Include="Andromeda\Dota2\CBasePattern.hpp" />
+    <ClInclude Include="Andromeda\Dota2\CHook_Loader.hpp" />
+    <ClInclude Include="Andromeda\Dota2\Hook\Hook_CreateSwapChain.hpp" />
+    <ClInclude Include="Andromeda\Dota2\Hook\Hook_GetProtoCDOTAGameAccountPlus.hpp" />
+    <ClInclude Include="Andromeda\Dota2\Hook\Hook_Present.hpp" />
+    <ClInclude Include="Andromeda\Dota2\Hook\Hook_ResizeBuffers.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

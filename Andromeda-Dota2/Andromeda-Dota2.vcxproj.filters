@@ -4,5 +4,228 @@
     <Filter Include="Andromeda">
       <UniqueIdentifier>{2d85ad8e-5d60-4766-a695-f175e72c621b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Andromeda\Common">
+      <UniqueIdentifier>{b7c02007-8e7f-4a7b-99e8-5cc1d7b9d084}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Andromeda\Common\Helpers">
+      <UniqueIdentifier>{67aa42ef-a5ae-4aa8-b910-9eb916e5d600}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Andromeda\Common\Include">
+      <UniqueIdentifier>{96b8b47b-da07-4f89-a71d-0a735c96a317}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Andromeda\Common\Include\Fnv1a">
+      <UniqueIdentifier>{5482d23d-6a65-42bb-843e-c00c8aa8b615}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Andromeda\Common\Include\XorStr">
+      <UniqueIdentifier>{7c2d846e-d93d-4f98-a307-57cada23d01a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Andromeda\Common\Include\stb">
+      <UniqueIdentifier>{7d054470-25ca-4752-81c0-91a48a5183e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Andromeda\Common\Include\ImGui">
+      <UniqueIdentifier>{cfbffc42-be8b-4c45-b4aa-13425a48b033}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Andromeda\Common\Include\ImGui\Misc">
+      <UniqueIdentifier>{64bcce34-dce4-49b9-80ef-df88c45d4c87}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Andromeda\Common\Include\ImGui\Misc\freetype">
+      <UniqueIdentifier>{731f5b86-9487-4738-bd58-102ecfb0598e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Andromeda\Dota2">
+      <UniqueIdentifier>{0f0d17ab-2a21-40f9-a483-a6f377fce1c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Andromeda\Dota2\Hook">
+      <UniqueIdentifier>{c6a3e770-4a8d-4163-805c-782e5a43db4b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Andromeda\AndromedaClient">
+      <UniqueIdentifier>{ed042489-ff2e-4bfc-8965-23f71207ae81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Andromeda\AndromedaClient\Fonts">
+      <UniqueIdentifier>{c751d509-6207-4e57-8b2a-58060cde3174}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Andromeda\AndromedaClient\GUI">
+      <UniqueIdentifier>{1f72fb26-9ff0-480d-a780-ac7fde2ec585}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Andromeda\AndromedaClient\Settings">
+      <UniqueIdentifier>{8310cc7a-28f9-4062-81fe-50ef2f6908d8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Andromeda\DllLauncher.cpp">
+      <Filter>Andromeda</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\DllMain.cpp">
+      <Filter>Andromeda</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Common\CrashLog.cpp">
+      <Filter>Andromeda\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Common\DevLog.cpp">
+      <Filter>Andromeda\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Common\MemoryEngine.cpp">
+      <Filter>Andromeda\Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Common\Helpers\ModuleLoaderHelper.cpp">
+      <Filter>Andromeda\Common\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Common\Helpers\StringHelper.cpp">
+      <Filter>Andromeda\Common\Helpers</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Common\Include\ImGui\imgui.cpp">
+      <Filter>Andromeda\Common\Include\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Common\Include\ImGui\imgui_draw.cpp">
+      <Filter>Andromeda\Common\Include\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Common\Include\ImGui\imgui_impl_dx11.cpp">
+      <Filter>Andromeda\Common\Include\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Common\Include\ImGui\imgui_impl_win32.cpp">
+      <Filter>Andromeda\Common\Include\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Common\Include\ImGui\imgui_tables.cpp">
+      <Filter>Andromeda\Common\Include\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Common\Include\ImGui\imgui_widgets.cpp">
+      <Filter>Andromeda\Common\Include\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Common\Include\ImGui\Misc\freetype\imgui_freetype.cpp">
+      <Filter>Andromeda\Common\Include\ImGui\Misc\freetype</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\CBasePattern.cpp">
+      <Filter>Andromeda\Dota2</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\CHook_Loader.cpp">
+      <Filter>Andromeda\Dota2</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Hook\Hook_CreateSwapChain.cpp">
+      <Filter>Andromeda\Dota2\Hook</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Hook\Hook_Present.cpp">
+      <Filter>Andromeda\Dota2\Hook</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Hook\Hook_ResizeBuffers.cpp">
+      <Filter>Andromeda\Dota2\Hook</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\AndromedaClient\CAndromedaClient.cpp">
+      <Filter>Andromeda\AndromedaClient</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\AndromedaClient\CAndromedaGUI.cpp">
+      <Filter>Andromeda\AndromedaClient</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\AndromedaClient\Fonts\CFont.cpp">
+      <Filter>Andromeda\AndromedaClient\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\AndromedaClient\Fonts\CFontManager.cpp">
+      <Filter>Andromeda\AndromedaClient\Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\AndromedaClient\GUI\CAndromedaMenu.cpp">
+      <Filter>Andromeda\AndromedaClient\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Hook\Hook_GetProtoCDOTAGameAccountPlus.cpp">
+      <Filter>Andromeda\Dota2\Hook</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Andromeda\DllLauncher.hpp">
+      <Filter>Andromeda</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\DllMain.hpp">
+      <Filter>Andromeda</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Common\Common.hpp">
+      <Filter>Andromeda\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Common\CrashLog.hpp">
+      <Filter>Andromeda\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Common\DevLog.hpp">
+      <Filter>Andromeda\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Common\MemoryEngine.hpp">
+      <Filter>Andromeda\Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Common\Helpers\ModuleLoaderHelper.hpp">
+      <Filter>Andromeda\Common\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Common\Helpers\StringHelper.hpp">
+      <Filter>Andromeda\Common\Helpers</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Common\Include\Fnv1a\Hash_Fnv1a_Constexpr.hpp">
+      <Filter>Andromeda\Common\Include\Fnv1a</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Common\Include\XorStr\XorStr.hpp">
+      <Filter>Andromeda\Common\Include\XorStr</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Common\Include\stb\stb_image.h">
+      <Filter>Andromeda\Common\Include\stb</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Common\Include\ImGui\imconfig.h">
+      <Filter>Andromeda\Common\Include\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Common\Include\ImGui\imgui.h">
+      <Filter>Andromeda\Common\Include\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Common\Include\ImGui\imgui_impl_dx11.h">
+      <Filter>Andromeda\Common\Include\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Common\Include\ImGui\imgui_impl_win32.h">
+      <Filter>Andromeda\Common\Include\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Common\Include\ImGui\imgui_internal.h">
+      <Filter>Andromeda\Common\Include\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Common\Include\ImGui\imstb_rectpack.h">
+      <Filter>Andromeda\Common\Include\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Common\Include\ImGui\imstb_textedit.h">
+      <Filter>Andromeda\Common\Include\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Common\Include\ImGui\imstb_truetype.h">
+      <Filter>Andromeda\Common\Include\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Common\Include\ImGui\Misc\freetype\imgui_freetype.h">
+      <Filter>Andromeda\Common\Include\ImGui\Misc\freetype</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\CBasePattern.hpp">
+      <Filter>Andromeda\Dota2</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\CHook_Loader.hpp">
+      <Filter>Andromeda\Dota2</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Common\Include\Config.hpp">
+      <Filter>Andromeda\Common\Include</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Hook\Hook_CreateSwapChain.hpp">
+      <Filter>Andromeda\Dota2\Hook</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Hook\Hook_Present.hpp">
+      <Filter>Andromeda\Dota2\Hook</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Hook\Hook_ResizeBuffers.hpp">
+      <Filter>Andromeda\Dota2\Hook</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\AndromedaClient\CAndromedaClient.hpp">
+      <Filter>Andromeda\AndromedaClient</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\AndromedaClient\CAndromedaGUI.hpp">
+      <Filter>Andromeda\AndromedaClient</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\AndromedaClient\Fonts\CFont.hpp">
+      <Filter>Andromeda\AndromedaClient\Fonts</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\AndromedaClient\Fonts\CFontManager.hpp">
+      <Filter>Andromeda\AndromedaClient\Fonts</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\AndromedaClient\GUI\CAndromedaMenu.hpp">
+      <Filter>Andromeda\AndromedaClient\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\AndromedaClient\Settings\Settings.hpp">
+      <Filter>Andromeda\AndromedaClient\Settings</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Hook\Hook_GetProtoCDOTAGameAccountPlus.hpp">
+      <Filter>Andromeda\Dota2\Hook</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
