@@ -1,6 +1,9 @@
 #include "CAndromedaClient.hpp"
 #include "CAndromedaGUI.hpp"
 
+#include <Dota2/SDK/SDK.hpp>
+#include <Dota2/SDK/Interface/CGameEntitySystem.hpp>
+
 #include <AndromedaClient/Fonts/CFontManager.hpp>
 #include <AndromedaClient/GUI/CAndromedaMenu.hpp>
 #include <AndromedaClient/Settings/Settings.hpp>
@@ -43,6 +46,21 @@ auto CAndromedaClient::OnRender() -> void
 
 	GetFontManager()->FirstInitFonts();
 	GetFontManager()->m_VerdanaFont.DrawString( 1 , 1 , ImColor( 255 , 255 , 0 ) , FW1_LEFT , XorStr( CHEAT_NAME ) );
+}
+
+auto CAndromedaClient::OnCreateMove( CDOTAInput* pCDOTAInput , CUserCmd* pCUserCmd ) -> void
+{
+	for ( auto idx = 0; idx < SDK::Interfaces::GameEntitySystem()->GetHighestEntityIndex(); idx++ )
+	{
+		auto* pC_BaseEntity = SDK::Interfaces::GameEntitySystem()->GetBaseEntity( idx );
+
+		if ( pC_BaseEntity )
+		{
+			DEV_LOG( "%i , %s , %s\n" , idx ,
+					 pC_BaseEntity->GetSchemaClassBinding()->m_bindingName() ,
+					 pC_BaseEntity->pEntityIdentity()->DesingerName().String() );
+		}
+	}
 }
 
 auto GetAndromedaClient() -> CAndromedaClient*

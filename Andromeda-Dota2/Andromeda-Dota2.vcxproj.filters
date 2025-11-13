@@ -49,6 +49,27 @@
     <Filter Include="Andromeda\AndromedaClient\Settings">
       <UniqueIdentifier>{8310cc7a-28f9-4062-81fe-50ef2f6908d8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Andromeda\Dota2\SDK">
+      <UniqueIdentifier>{f3a2422b-65ce-4a97-8f6a-f8d7573298ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Andromeda\Dota2\SDK\Interface">
+      <UniqueIdentifier>{4d79c50c-cd41-4561-a930-3591562efd0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Andromeda\Dota2\SDK\Math">
+      <UniqueIdentifier>{b550c2fa-5121-49f4-95c3-535a7e61bc21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Andromeda\Dota2\SDK\Update">
+      <UniqueIdentifier>{2340dc24-bcc2-4058-815a-4415ad20c1c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Andromeda\Dota2\SDK\Types">
+      <UniqueIdentifier>{e3d91033-1cc2-427a-b0b3-e883238d14b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Andromeda\Dota2\Protobuf">
+      <UniqueIdentifier>{1e63c72b-3bd7-4c4b-bbc4-a76a90656ebf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Andromeda\GameClient">
+      <UniqueIdentifier>{53478585-720b-4ff6-83f8-fef1bcadb39c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Andromeda\DllLauncher.cpp">
@@ -125,6 +146,285 @@
     </ClCompile>
     <ClCompile Include="Andromeda\Dota2\Hook\Hook_GetProtoCDOTAGameAccountPlus.cpp">
       <Filter>Andromeda\Dota2\Hook</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\SDK\Interface\Interface.cpp">
+      <Filter>Andromeda\Dota2\SDK\Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\CSDK_Loader.cpp">
+      <Filter>Andromeda\Dota2</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\SDK\CSchemaOffset.cpp">
+      <Filter>Andromeda\Dota2\SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\SDK\SDK.cpp">
+      <Filter>Andromeda\Dota2\SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\SDK\Math\Math.cpp">
+      <Filter>Andromeda\Dota2\SDK\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\SDK\Math\Matrix.cpp">
+      <Filter>Andromeda\Dota2\SDK\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\SDK\Math\QAngle.cpp">
+      <Filter>Andromeda\Dota2\SDK\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\SDK\Math\Vector3.cpp">
+      <Filter>Andromeda\Dota2\SDK\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\SDK\Math\Vector4.cpp">
+      <Filter>Andromeda\Dota2\SDK\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\SDK\Types\CHandle.cpp">
+      <Filter>Andromeda\Dota2\SDK\Types</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Hook\Hook_OnAddEntity.cpp">
+      <Filter>Andromeda\Dota2\Hook</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Hook\Hook_OnRemoveEntity.cpp">
+      <Filter>Andromeda\Dota2\Hook</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\base_gcmessages.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\c_peer2peer_netmessages.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\clientmessages.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\connectionless_netmessages.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\demo.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\dota_broadcastmessages.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\dota_client_enums.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\dota_clientmessages.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\dota_commonmessages.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\dota_fighting_game_p2p_messages.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\dota_gcmessages_client.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\dota_gcmessages_client_bingo.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\dota_gcmessages_client_candy_shop.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\dota_gcmessages_client_chat.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\dota_gcmessages_client_coaching.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\dota_gcmessages_client_craftworks.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\dota_gcmessages_client_fantasy.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\dota_gcmessages_client_guild.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\dota_gcmessages_client_guild_events.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\dota_gcmessages_client_match_management.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\dota_gcmessages_client_showcase.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\dota_gcmessages_client_team.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\dota_gcmessages_client_tournament.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\dota_gcmessages_client_watch.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\dota_gcmessages_common.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\dota_gcmessages_common_battle_report.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\dota_gcmessages_common_bot_script.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\dota_gcmessages_common_craftworks.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\dota_gcmessages_common_fighting_game.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\dota_gcmessages_common_league.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\dota_gcmessages_common_lobby.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\dota_gcmessages_common_match_management.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\dota_gcmessages_common_monster_hunter.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\dota_gcmessages_common_overworld.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\dota_gcmessages_common_survivors.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\dota_gcmessages_msgid.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\dota_gcmessages_server.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\dota_gcmessages_webapi.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\dota_hud_types.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\dota_match_metadata.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\dota_modifiers.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\dota_scenariomessages.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\dota_shared_enums.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\dota_usercmd.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\dota_usermessages.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\econ_gcmessages.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\econ_shared_enums.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\engine_gcmessages.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\enums_clientserver.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\gameevents.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\gcsdk_gcmessages.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\gcsystemmsgs.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\netmessages.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\network_connection.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\networkbasetypes.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\networksystem_protomessages.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\prediction_events.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\steamdatagram_messages_auth.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\steamdatagram_messages_sdr.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\steammessages.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\steammessages_cloud.steamworkssdk.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\steammessages_gamenetworkingui.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\steammessages_helprequest.steamworkssdk.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\steammessages_int.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\steammessages_oauth.steamworkssdk.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\steammessages_player.steamworkssdk.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\steammessages_publishedfile.steamworkssdk.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\steammessages_steamlearn.steamworkssdk.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\steammessages_unified_base.steamworkssdk.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\steamnetworkingsockets_messages.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\steamnetworkingsockets_messages_certs.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\steamnetworkingsockets_messages_udp.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\te.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\uifontfile_format.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\usercmd.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\usermessages.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\valveextensions.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\SDK\CFunctionList.cpp">
+      <Filter>Andromeda\Dota2\SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Hook\Hook_OnCreateMove.cpp">
+      <Filter>Andromeda\Dota2\Hook</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\GameClient\CL_DOTAPlayerController.cpp">
+      <Filter>Andromeda\GameClient</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\SDK\Types\CEntityData.cpp">
+      <Filter>Andromeda\Dota2\SDK\Types</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -226,6 +526,345 @@
     </ClInclude>
     <ClInclude Include="Andromeda\Dota2\Hook\Hook_GetProtoCDOTAGameAccountPlus.hpp">
       <Filter>Andromeda\Dota2\Hook</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\SDK\Interface\CShemaSystemSDK.hpp">
+      <Filter>Andromeda\Dota2\SDK\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\SDK\Interface\Interface.hpp">
+      <Filter>Andromeda\Dota2\SDK\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\CSDK_Loader.hpp">
+      <Filter>Andromeda\Dota2</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\SDK\CSchemaOffset.hpp">
+      <Filter>Andromeda\Dota2\SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\SDK\SDK.hpp">
+      <Filter>Andromeda\Dota2\SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\SDK\Math\Math.hpp">
+      <Filter>Andromeda\Dota2\SDK\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\SDK\Math\Matrix.hpp">
+      <Filter>Andromeda\Dota2\SDK\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\SDK\Math\QAngle.hpp">
+      <Filter>Andromeda\Dota2\SDK\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\SDK\Math\Vector2.hpp">
+      <Filter>Andromeda\Dota2\SDK\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\SDK\Math\Vector3.hpp">
+      <Filter>Andromeda\Dota2\SDK\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\SDK\Math\Vector4.hpp">
+      <Filter>Andromeda\Dota2\SDK\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\SDK\Interface\IVEngineClient2.hpp">
+      <Filter>Andromeda\Dota2\SDK\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\SDK\Update\VMT_Index.hpp">
+      <Filter>Andromeda\Dota2\SDK\Update</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\SDK\Interface\CGameEntitySystem.hpp">
+      <Filter>Andromeda\Dota2\SDK\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\SDK\Update\Offsets.hpp">
+      <Filter>Andromeda\Dota2\SDK\Update</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\SDK\Types\CBaseTypes.hpp">
+      <Filter>Andromeda\Dota2\SDK\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\SDK\Types\CHandle.hpp">
+      <Filter>Andromeda\Dota2\SDK\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\SDK\Types\CStrongHandle.hpp">
+      <Filter>Andromeda\Dota2\SDK\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\SDK\Types\CUtlMap.hpp">
+      <Filter>Andromeda\Dota2\SDK\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\SDK\Types\CUtlMemory.hpp">
+      <Filter>Andromeda\Dota2\SDK\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\SDK\Types\CUtlString.hpp">
+      <Filter>Andromeda\Dota2\SDK\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\SDK\Types\CUtlStringToken.hpp">
+      <Filter>Andromeda\Dota2\SDK\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\SDK\Types\CUtlSymbol.hpp">
+      <Filter>Andromeda\Dota2\SDK\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\SDK\Types\CUtlSymbolLarge.hpp">
+      <Filter>Andromeda\Dota2\SDK\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\SDK\Types\CUtlVector.hpp">
+      <Filter>Andromeda\Dota2\SDK\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\SDK\Types\TIer0Memory.hpp">
+      <Filter>Andromeda\Dota2\SDK\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Hook\Hook_OnAddEntity.hpp">
+      <Filter>Andromeda\Dota2\Hook</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Hook\Hook_OnRemoveEntity.hpp">
+      <Filter>Andromeda\Dota2\Hook</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\base_gcmessages.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\c_peer2peer_netmessages.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\clientmessages.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\connectionless_netmessages.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\demo.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\dota_broadcastmessages.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\dota_client_enums.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\dota_clientmessages.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\dota_commonmessages.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\dota_fighting_game_p2p_messages.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\dota_gcmessages_client.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\dota_gcmessages_client_bingo.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\dota_gcmessages_client_candy_shop.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\dota_gcmessages_client_chat.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\dota_gcmessages_client_coaching.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\dota_gcmessages_client_craftworks.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\dota_gcmessages_client_fantasy.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\dota_gcmessages_client_guild.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\dota_gcmessages_client_guild_events.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\dota_gcmessages_client_match_management.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\dota_gcmessages_client_showcase.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\dota_gcmessages_client_team.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\dota_gcmessages_client_tournament.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\dota_gcmessages_client_watch.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\dota_gcmessages_common.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\dota_gcmessages_common_battle_report.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\dota_gcmessages_common_bot_script.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\dota_gcmessages_common_craftworks.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\dota_gcmessages_common_fighting_game.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\dota_gcmessages_common_league.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\dota_gcmessages_common_lobby.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\dota_gcmessages_common_match_management.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\dota_gcmessages_common_monster_hunter.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\dota_gcmessages_common_overworld.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\dota_gcmessages_common_survivors.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\dota_gcmessages_msgid.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\dota_gcmessages_server.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\dota_gcmessages_webapi.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\dota_hud_types.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\dota_match_metadata.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\dota_modifiers.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\dota_scenariomessages.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\dota_shared_enums.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\dota_usercmd.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\dota_usermessages.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\econ_gcmessages.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\econ_shared_enums.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\engine_gcmessages.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\enums_clientserver.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\gameevents.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\gcsdk_gcmessages.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\gcsystemmsgs.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\netmessages.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\network_connection.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\networkbasetypes.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\networksystem_protomessages.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\prediction_events.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\steamdatagram_messages_auth.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\steamdatagram_messages_sdr.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\steammessages.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\steammessages_cloud.steamworkssdk.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\steammessages_gamenetworkingui.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\steammessages_helprequest.steamworkssdk.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\steammessages_int.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\steammessages_oauth.steamworkssdk.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\steammessages_player.steamworkssdk.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\steammessages_publishedfile.steamworkssdk.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\steammessages_steamlearn.steamworkssdk.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\steammessages_unified_base.steamworkssdk.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\steamnetworkingsockets_messages.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\steamnetworkingsockets_messages_certs.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\steamnetworkingsockets_messages_udp.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\te.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\uifontfile_format.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\usercmd.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\usermessages.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\valveextensions.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\SDK\CFunctionList.hpp">
+      <Filter>Andromeda\Dota2\SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\SDK\FunctionListSDK.hpp">
+      <Filter>Andromeda\Dota2\SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Hook\Hook_OnCreateMove.hpp">
+      <Filter>Andromeda\Dota2\Hook</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\SDK\Update\CDOTAInput.hpp">
+      <Filter>Andromeda\Dota2\SDK\Update</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\SDK\Update\CUserCmd.hpp">
+      <Filter>Andromeda\Dota2\SDK\Update</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\GameClient\CL_DOTAPlayerController.hpp">
+      <Filter>Andromeda\GameClient</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\SDK\Types\Color_t.hpp">
+      <Filter>Andromeda\Dota2\SDK\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\SDK\Types\CEntityData.hpp">
+      <Filter>Andromeda\Dota2\SDK\Types</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

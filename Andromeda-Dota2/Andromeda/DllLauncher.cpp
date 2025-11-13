@@ -7,6 +7,9 @@
 #include <Common/Helpers/StringHelper.hpp>
 
 #include <Dota2/CHook_Loader.hpp>
+#include <Dota2/CSDK_Loader.hpp>
+#include <Dota2/SDK/CFunctionList.hpp>
+
 #include <AndromedaClient/CAndromedaClient.hpp>
 
 static CDllLauncher g_CDllLauncher{};
@@ -88,6 +91,18 @@ auto WINAPI CDllLauncher::StartCheatTheard( LPVOID lpThreadParameter ) -> DWORD
 	if ( !GetHook_Loader()->InstallFirstHook() )
 	{
 		DEV_LOG( "[error] Hook_Loader::InstallFirstHook\n" );
+		return 0;
+	}
+
+	if ( !GetFunctionList()->OnInit() )
+	{
+		DEV_LOG( "[error] FunctionList::OnInit\n" );
+		return 0;
+	}
+
+	if ( !GetSDK_Loader()->LoadSDK() )
+	{
+		DEV_LOG( "[error] CSDK_Loader::LoadSDK\n" );
 		return 0;
 	}
 
