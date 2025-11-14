@@ -50,17 +50,7 @@ auto CAndromedaClient::OnRender() -> void
 
 auto CAndromedaClient::OnCreateMove( CDOTAInput* pCDOTAInput , CUserCmd* pCUserCmd ) -> void
 {
-	for ( auto idx = 0; idx < SDK::Interfaces::GameEntitySystem()->GetHighestEntityIndex(); idx++ )
-	{
-		auto* pC_BaseEntity = SDK::Interfaces::GameEntitySystem()->GetBaseEntity( idx );
 
-		if ( pC_BaseEntity )
-		{
-			DEV_LOG( "%i , %s , %s\n" , idx ,
-					 pC_BaseEntity->GetSchemaClassBinding()->m_bindingName() ,
-					 pC_BaseEntity->pEntityIdentity()->DesingerName().String() );
-		}
-	}
 }
 
 auto GetAndromedaClient() -> CAndromedaClient*

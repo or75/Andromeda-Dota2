@@ -16,19 +16,6 @@ static CDllLauncher g_CDllLauncher{};
 
 auto CDllLauncher::OnDllMain( LPVOID lpReserved , HINSTANCE hInstace ) -> void
 {
-#if ENABLE_MANUAL_MAP == 0
-	char szDllDir[MAX_PATH];
-
-	GetModuleFileNameA( hInstace , szDllDir , MAX_PATH );
-	
-	m_DllDir = szDllDir;
-	m_DllDir = m_DllDir.substr( 0 , m_DllDir.find_last_of( '\\' ) );
-	m_DllDir += '\\';
-#else
-	m_DllDir = "C:\\";
-#endif
-
-#if ENABLE_MANUAL_MAP == 1
 	if ( lpReserved )
 	{
 		ManualMapParam_t* pParam = reinterpret_cast<ManualMapParam_t*>( lpReserved );
@@ -39,10 +26,17 @@ auto CDllLauncher::OnDllMain( LPVOID lpReserved , HINSTANCE hInstace ) -> void
 			m_DllDir += "\\";
 			m_DllDir = m_DllDir.substr( 0 , m_DllDir.find_last_of( '\\' ) + 1 );
 		}
-		else
-			return;
 	}
-#endif
+	else
+	{
+		char szDllDir[MAX_PATH];
+
+		GetModuleFileNameA( hInstace , szDllDir , MAX_PATH );
+
+		m_DllDir = szDllDir;
+		m_DllDir = m_DllDir.substr( 0 , m_DllDir.find_last_of( '\\' ) );
+		m_DllDir += '\\';
+	}
 
 	m_hDllImage = hInstace;
 
