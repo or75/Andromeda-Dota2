@@ -114,7 +114,7 @@ const char descriptor_table_protodef_uifontfile_5fformat_2eproto[] PROTOBUF_SECT
   "\n\027uifontfile_format.proto\"C\n\rCUIFontFile"
   "PB\022\026\n\016font_file_name\030\001 \001(\t\022\032\n\022opentype_f"
   "ont_data\030\002 \001(\014\"\261\001\n\024CUIFontFilePackagePB\022"
-  "\027\n\017package_version\030\001 \002(\r\022J\n\024encrypted_fo"
+  "\027\n\017package_version\030\001 \001(\r\022J\n\024encrypted_fo"
   "nt_files\030\002 \003(\0132,.CUIFontFilePackagePB.CU"
   "IEncryptedFontFilePB\0324\n\026CUIEncryptedFont"
   "FilePB\022\032\n\022encrypted_contents\030\001 \001(\014"
@@ -633,9 +633,6 @@ class CUIFontFilePackagePB::_Internal {
   static void set_has_package_version(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
   }
-  static bool MissingRequiredFields(const HasBits& has_bits) {
-    return ((has_bits[0] & 0x00000001) ^ 0x00000001) != 0;
-  }
 };
 
 CUIFontFilePackagePB::CUIFontFilePackagePB(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -707,7 +704,7 @@ const char* CUIFontFilePackagePB::_InternalParse(const char* ptr, ::_pbi::ParseC
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // required uint32 package_version = 1;
+      // optional uint32 package_version = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           _Internal::set_has_package_version(&has_bits);
@@ -760,7 +757,7 @@ uint8_t* CUIFontFilePackagePB::_InternalSerialize(
   (void) cached_has_bits;
 
   cached_has_bits = _impl_._has_bits_[0];
-  // required uint32 package_version = 1;
+  // optional uint32 package_version = 1;
   if (cached_has_bits & 0x00000001u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_package_version(), target);
@@ -786,10 +783,6 @@ size_t CUIFontFilePackagePB::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:CUIFontFilePackagePB)
   size_t total_size = 0;
 
-  // required uint32 package_version = 1;
-  if (_internal_has_package_version()) {
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_package_version());
-  }
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -799,6 +792,12 @@ size_t CUIFontFilePackagePB::ByteSizeLong() const {
   for (const auto& msg : this->_impl_.encrypted_font_files_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // optional uint32 package_version = 1;
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_package_version());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -834,7 +833,6 @@ void CUIFontFilePackagePB::CopyFrom(const CUIFontFilePackagePB& from) {
 }
 
 bool CUIFontFilePackagePB::IsInitialized() const {
-  if (_Internal::MissingRequiredFields(_impl_._has_bits_)) return false;
   return true;
 }
 

@@ -130,6 +130,27 @@ extern CDOTAMatchMetadata_TipDefaultTypeInternal _CDOTAMatchMetadata_Tip_default
 class CDOTAMatchPrivateMetadata;
 struct CDOTAMatchPrivateMetadataDefaultTypeInternal;
 extern CDOTAMatchPrivateMetadataDefaultTypeInternal _CDOTAMatchPrivateMetadata_default_instance_;
+class CDOTAMatchPrivateMetadata_ContributionsCombatSegment;
+struct CDOTAMatchPrivateMetadata_ContributionsCombatSegmentDefaultTypeInternal;
+extern CDOTAMatchPrivateMetadata_ContributionsCombatSegmentDefaultTypeInternal _CDOTAMatchPrivateMetadata_ContributionsCombatSegment_default_instance_;
+class CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord;
+struct CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecordDefaultTypeInternal;
+extern CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecordDefaultTypeInternal _CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord_default_instance_;
+class CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord;
+struct CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecordDefaultTypeInternal;
+extern CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecordDefaultTypeInternal _CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord_default_instance_;
+class CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel;
+struct CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DispelDefaultTypeInternal;
+extern CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DispelDefaultTypeInternal _CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel_default_instance_;
+class CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord;
+struct CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecordDefaultTypeInternal;
+extern CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecordDefaultTypeInternal _CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord_default_instance_;
+class CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord;
+struct CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecordDefaultTypeInternal;
+extern CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecordDefaultTypeInternal _CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord_default_instance_;
+class CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow;
+struct CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlowDefaultTypeInternal;
+extern CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlowDefaultTypeInternal _CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow_default_instance_;
 class CDOTAMatchPrivateMetadata_StringName;
 struct CDOTAMatchPrivateMetadata_StringNameDefaultTypeInternal;
 extern CDOTAMatchPrivateMetadata_StringNameDefaultTypeInternal _CDOTAMatchPrivateMetadata_StringName_default_instance_;
@@ -195,6 +216,13 @@ template<> ::CDOTAMatchMetadata_Team_SubChallenge* Arena::CreateMaybeMessage<::C
 template<> ::CDOTAMatchMetadata_Team_VictoryPrediction* Arena::CreateMaybeMessage<::CDOTAMatchMetadata_Team_VictoryPrediction>(Arena*);
 template<> ::CDOTAMatchMetadata_Tip* Arena::CreateMaybeMessage<::CDOTAMatchMetadata_Tip>(Arena*);
 template<> ::CDOTAMatchPrivateMetadata* Arena::CreateMaybeMessage<::CDOTAMatchPrivateMetadata>(Arena*);
+template<> ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment* Arena::CreateMaybeMessage<::CDOTAMatchPrivateMetadata_ContributionsCombatSegment>(Arena*);
+template<> ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord* Arena::CreateMaybeMessage<::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord>(Arena*);
+template<> ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord* Arena::CreateMaybeMessage<::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord>(Arena*);
+template<> ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel* Arena::CreateMaybeMessage<::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel>(Arena*);
+template<> ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord* Arena::CreateMaybeMessage<::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord>(Arena*);
+template<> ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord* Arena::CreateMaybeMessage<::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord>(Arena*);
+template<> ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow* Arena::CreateMaybeMessage<::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow>(Arena*);
 template<> ::CDOTAMatchPrivateMetadata_StringName* Arena::CreateMaybeMessage<::CDOTAMatchPrivateMetadata_StringName>(Arena*);
 template<> ::CDOTAMatchPrivateMetadata_Team* Arena::CreateMaybeMessage<::CDOTAMatchPrivateMetadata_Team>(Arena*);
 template<> ::CDOTAMatchPrivateMetadata_Team_Building* Arena::CreateMaybeMessage<::CDOTAMatchPrivateMetadata_Team_Building>(Arena*);
@@ -430,7 +458,7 @@ class CDOTAMatchMetadataFile final :
       ::CDOTAMatchMetadata* metadata);
   ::CDOTAMatchMetadata* unsafe_arena_release_metadata();
 
-  // required uint64 match_id = 2;
+  // optional uint64 match_id = 2;
   bool has_match_id() const;
   private:
   bool _internal_has_match_id() const;
@@ -443,7 +471,7 @@ class CDOTAMatchMetadataFile final :
   void _internal_set_match_id(uint64_t value);
   public:
 
-  // required int32 version = 1;
+  // optional int32 version = 1;
   bool has_version() const;
   private:
   bool _internal_has_version() const;
@@ -459,9 +487,6 @@ class CDOTAMatchMetadataFile final :
   // @@protoc_insertion_point(class_scope:CDOTAMatchMetadataFile)
  private:
   class _Internal;
-
-  // helper for ByteSizeLong()
-  size_t RequiredFieldsByteSizeFallback() const;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
@@ -9828,6 +9853,1703 @@ class CDOTAMatchPrivateMetadata_Team final :
 };
 // -------------------------------------------------------------------
 
+class CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.DamageContributionRecord) */ {
+ public:
+  inline CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord() : CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord(nullptr) {}
+  ~CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord() override;
+  explicit PROTOBUF_CONSTEXPR CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord(const CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord& from);
+  CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord(CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord&& from) noexcept
+    : CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord() {
+    *this = ::std::move(from);
+  }
+
+  inline CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord& operator=(const CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord& operator=(CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord* internal_default_instance() {
+    return reinterpret_cast<const CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord*>(
+               &_CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    37;
+
+  friend void swap(CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord& a, CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord& from) {
+    CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "CDOTAMatchPrivateMetadata.ContributionsCombatSegment.DamageContributionRecord";
+  }
+  protected:
+  explicit CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kAttackerHeroIdFieldNumber = 2,
+    kTargetHeroIdFieldNumber = 3,
+    kContributorHeroIdFieldNumber = 5,
+    kValueFieldNumber = 6,
+    kTypeFieldNumber = 7,
+    kAttackerAbilityIdFieldNumber = 1,
+    kContributorAbilityIdFieldNumber = 4,
+  };
+  // optional int32 attacker_hero_id = 2;
+  bool has_attacker_hero_id() const;
+  private:
+  bool _internal_has_attacker_hero_id() const;
+  public:
+  void clear_attacker_hero_id();
+  int32_t attacker_hero_id() const;
+  void set_attacker_hero_id(int32_t value);
+  private:
+  int32_t _internal_attacker_hero_id() const;
+  void _internal_set_attacker_hero_id(int32_t value);
+  public:
+
+  // optional int32 target_hero_id = 3;
+  bool has_target_hero_id() const;
+  private:
+  bool _internal_has_target_hero_id() const;
+  public:
+  void clear_target_hero_id();
+  int32_t target_hero_id() const;
+  void set_target_hero_id(int32_t value);
+  private:
+  int32_t _internal_target_hero_id() const;
+  void _internal_set_target_hero_id(int32_t value);
+  public:
+
+  // optional int32 contributor_hero_id = 5;
+  bool has_contributor_hero_id() const;
+  private:
+  bool _internal_has_contributor_hero_id() const;
+  public:
+  void clear_contributor_hero_id();
+  int32_t contributor_hero_id() const;
+  void set_contributor_hero_id(int32_t value);
+  private:
+  int32_t _internal_contributor_hero_id() const;
+  void _internal_set_contributor_hero_id(int32_t value);
+  public:
+
+  // optional uint32 value = 6;
+  bool has_value() const;
+  private:
+  bool _internal_has_value() const;
+  public:
+  void clear_value();
+  uint32_t value() const;
+  void set_value(uint32_t value);
+  private:
+  uint32_t _internal_value() const;
+  void _internal_set_value(uint32_t value);
+  public:
+
+  // optional uint32 type = 7;
+  bool has_type() const;
+  private:
+  bool _internal_has_type() const;
+  public:
+  void clear_type();
+  uint32_t type() const;
+  void set_type(uint32_t value);
+  private:
+  uint32_t _internal_type() const;
+  void _internal_set_type(uint32_t value);
+  public:
+
+  // optional int32 attacker_ability_id = 1 [default = -1];
+  bool has_attacker_ability_id() const;
+  private:
+  bool _internal_has_attacker_ability_id() const;
+  public:
+  void clear_attacker_ability_id();
+  int32_t attacker_ability_id() const;
+  void set_attacker_ability_id(int32_t value);
+  private:
+  int32_t _internal_attacker_ability_id() const;
+  void _internal_set_attacker_ability_id(int32_t value);
+  public:
+
+  // optional int32 contributor_ability_id = 4 [default = -1];
+  bool has_contributor_ability_id() const;
+  private:
+  bool _internal_has_contributor_ability_id() const;
+  public:
+  void clear_contributor_ability_id();
+  int32_t contributor_ability_id() const;
+  void set_contributor_ability_id(int32_t value);
+  private:
+  int32_t _internal_contributor_ability_id() const;
+  void _internal_set_contributor_ability_id(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.DamageContributionRecord)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    int32_t attacker_hero_id_;
+    int32_t target_hero_id_;
+    int32_t contributor_hero_id_;
+    uint32_t value_;
+    uint32_t type_;
+    int32_t attacker_ability_id_;
+    int32_t contributor_ability_id_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_dota_5fmatch_5fmetadata_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.DamageMitigationRecord) */ {
+ public:
+  inline CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord() : CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord(nullptr) {}
+  ~CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord() override;
+  explicit PROTOBUF_CONSTEXPR CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord(const CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord& from);
+  CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord(CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord&& from) noexcept
+    : CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord() {
+    *this = ::std::move(from);
+  }
+
+  inline CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord& operator=(const CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord& operator=(CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord* internal_default_instance() {
+    return reinterpret_cast<const CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord*>(
+               &_CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    38;
+
+  friend void swap(CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord& a, CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord& from) {
+    CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "CDOTAMatchPrivateMetadata.ContributionsCombatSegment.DamageMitigationRecord";
+  }
+  protected:
+  explicit CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kAttackerHeroIdFieldNumber = 2,
+    kTargetHeroIdFieldNumber = 3,
+    kContributorHeroIdFieldNumber = 5,
+    kValueFieldNumber = 6,
+    kTypeFieldNumber = 7,
+    kAttackerAbilityIdFieldNumber = 1,
+    kContributorAbilityIdFieldNumber = 4,
+  };
+  // optional int32 attacker_hero_id = 2;
+  bool has_attacker_hero_id() const;
+  private:
+  bool _internal_has_attacker_hero_id() const;
+  public:
+  void clear_attacker_hero_id();
+  int32_t attacker_hero_id() const;
+  void set_attacker_hero_id(int32_t value);
+  private:
+  int32_t _internal_attacker_hero_id() const;
+  void _internal_set_attacker_hero_id(int32_t value);
+  public:
+
+  // optional int32 target_hero_id = 3;
+  bool has_target_hero_id() const;
+  private:
+  bool _internal_has_target_hero_id() const;
+  public:
+  void clear_target_hero_id();
+  int32_t target_hero_id() const;
+  void set_target_hero_id(int32_t value);
+  private:
+  int32_t _internal_target_hero_id() const;
+  void _internal_set_target_hero_id(int32_t value);
+  public:
+
+  // optional int32 contributor_hero_id = 5;
+  bool has_contributor_hero_id() const;
+  private:
+  bool _internal_has_contributor_hero_id() const;
+  public:
+  void clear_contributor_hero_id();
+  int32_t contributor_hero_id() const;
+  void set_contributor_hero_id(int32_t value);
+  private:
+  int32_t _internal_contributor_hero_id() const;
+  void _internal_set_contributor_hero_id(int32_t value);
+  public:
+
+  // optional uint32 value = 6;
+  bool has_value() const;
+  private:
+  bool _internal_has_value() const;
+  public:
+  void clear_value();
+  uint32_t value() const;
+  void set_value(uint32_t value);
+  private:
+  uint32_t _internal_value() const;
+  void _internal_set_value(uint32_t value);
+  public:
+
+  // optional uint32 type = 7;
+  bool has_type() const;
+  private:
+  bool _internal_has_type() const;
+  public:
+  void clear_type();
+  uint32_t type() const;
+  void set_type(uint32_t value);
+  private:
+  uint32_t _internal_type() const;
+  void _internal_set_type(uint32_t value);
+  public:
+
+  // optional int32 attacker_ability_id = 1 [default = -1];
+  bool has_attacker_ability_id() const;
+  private:
+  bool _internal_has_attacker_ability_id() const;
+  public:
+  void clear_attacker_ability_id();
+  int32_t attacker_ability_id() const;
+  void set_attacker_ability_id(int32_t value);
+  private:
+  int32_t _internal_attacker_ability_id() const;
+  void _internal_set_attacker_ability_id(int32_t value);
+  public:
+
+  // optional int32 contributor_ability_id = 4 [default = -1];
+  bool has_contributor_ability_id() const;
+  private:
+  bool _internal_has_contributor_ability_id() const;
+  public:
+  void clear_contributor_ability_id();
+  int32_t contributor_ability_id() const;
+  void set_contributor_ability_id(int32_t value);
+  private:
+  int32_t _internal_contributor_ability_id() const;
+  void _internal_set_contributor_ability_id(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.DamageMitigationRecord)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    int32_t attacker_hero_id_;
+    int32_t target_hero_id_;
+    int32_t contributor_hero_id_;
+    uint32_t value_;
+    uint32_t type_;
+    int32_t attacker_ability_id_;
+    int32_t contributor_ability_id_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_dota_5fmatch_5fmetadata_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.HealingContributionRecord) */ {
+ public:
+  inline CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord() : CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord(nullptr) {}
+  ~CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord() override;
+  explicit PROTOBUF_CONSTEXPR CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord(const CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord& from);
+  CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord(CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord&& from) noexcept
+    : CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord() {
+    *this = ::std::move(from);
+  }
+
+  inline CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord& operator=(const CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord& operator=(CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord* internal_default_instance() {
+    return reinterpret_cast<const CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord*>(
+               &_CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    39;
+
+  friend void swap(CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord& a, CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord& from) {
+    CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "CDOTAMatchPrivateMetadata.ContributionsCombatSegment.HealingContributionRecord";
+  }
+  protected:
+  explicit CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kAttackerHeroIdFieldNumber = 2,
+    kTargetHeroIdFieldNumber = 3,
+    kContributorHeroIdFieldNumber = 5,
+    kValueFieldNumber = 6,
+    kTypeFieldNumber = 7,
+    kAttackerAbilityIdFieldNumber = 1,
+    kContributorAbilityIdFieldNumber = 4,
+  };
+  // optional int32 attacker_hero_id = 2;
+  bool has_attacker_hero_id() const;
+  private:
+  bool _internal_has_attacker_hero_id() const;
+  public:
+  void clear_attacker_hero_id();
+  int32_t attacker_hero_id() const;
+  void set_attacker_hero_id(int32_t value);
+  private:
+  int32_t _internal_attacker_hero_id() const;
+  void _internal_set_attacker_hero_id(int32_t value);
+  public:
+
+  // optional int32 target_hero_id = 3;
+  bool has_target_hero_id() const;
+  private:
+  bool _internal_has_target_hero_id() const;
+  public:
+  void clear_target_hero_id();
+  int32_t target_hero_id() const;
+  void set_target_hero_id(int32_t value);
+  private:
+  int32_t _internal_target_hero_id() const;
+  void _internal_set_target_hero_id(int32_t value);
+  public:
+
+  // optional int32 contributor_hero_id = 5;
+  bool has_contributor_hero_id() const;
+  private:
+  bool _internal_has_contributor_hero_id() const;
+  public:
+  void clear_contributor_hero_id();
+  int32_t contributor_hero_id() const;
+  void set_contributor_hero_id(int32_t value);
+  private:
+  int32_t _internal_contributor_hero_id() const;
+  void _internal_set_contributor_hero_id(int32_t value);
+  public:
+
+  // optional uint32 value = 6;
+  bool has_value() const;
+  private:
+  bool _internal_has_value() const;
+  public:
+  void clear_value();
+  uint32_t value() const;
+  void set_value(uint32_t value);
+  private:
+  uint32_t _internal_value() const;
+  void _internal_set_value(uint32_t value);
+  public:
+
+  // optional uint32 type = 7;
+  bool has_type() const;
+  private:
+  bool _internal_has_type() const;
+  public:
+  void clear_type();
+  uint32_t type() const;
+  void set_type(uint32_t value);
+  private:
+  uint32_t _internal_type() const;
+  void _internal_set_type(uint32_t value);
+  public:
+
+  // optional int32 attacker_ability_id = 1 [default = -1];
+  bool has_attacker_ability_id() const;
+  private:
+  bool _internal_has_attacker_ability_id() const;
+  public:
+  void clear_attacker_ability_id();
+  int32_t attacker_ability_id() const;
+  void set_attacker_ability_id(int32_t value);
+  private:
+  int32_t _internal_attacker_ability_id() const;
+  void _internal_set_attacker_ability_id(int32_t value);
+  public:
+
+  // optional int32 contributor_ability_id = 4 [default = -1];
+  bool has_contributor_ability_id() const;
+  private:
+  bool _internal_has_contributor_ability_id() const;
+  public:
+  void clear_contributor_ability_id();
+  int32_t contributor_ability_id() const;
+  void set_contributor_ability_id(int32_t value);
+  private:
+  int32_t _internal_contributor_ability_id() const;
+  void _internal_set_contributor_ability_id(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.HealingContributionRecord)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    int32_t attacker_hero_id_;
+    int32_t target_hero_id_;
+    int32_t contributor_hero_id_;
+    uint32_t value_;
+    uint32_t type_;
+    int32_t attacker_ability_id_;
+    int32_t contributor_ability_id_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_dota_5fmatch_5fmetadata_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.HealingReductionRecord) */ {
+ public:
+  inline CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord() : CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord(nullptr) {}
+  ~CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord() override;
+  explicit PROTOBUF_CONSTEXPR CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord(const CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord& from);
+  CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord(CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord&& from) noexcept
+    : CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord() {
+    *this = ::std::move(from);
+  }
+
+  inline CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord& operator=(const CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord& operator=(CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord* internal_default_instance() {
+    return reinterpret_cast<const CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord*>(
+               &_CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    40;
+
+  friend void swap(CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord& a, CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord& from) {
+    CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "CDOTAMatchPrivateMetadata.ContributionsCombatSegment.HealingReductionRecord";
+  }
+  protected:
+  explicit CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kAttackerHeroIdFieldNumber = 2,
+    kTargetHeroIdFieldNumber = 3,
+    kContributorHeroIdFieldNumber = 5,
+    kValueFieldNumber = 6,
+    kTypeFieldNumber = 7,
+    kAttackerAbilityIdFieldNumber = 1,
+    kContributorAbilityIdFieldNumber = 4,
+  };
+  // optional int32 attacker_hero_id = 2;
+  bool has_attacker_hero_id() const;
+  private:
+  bool _internal_has_attacker_hero_id() const;
+  public:
+  void clear_attacker_hero_id();
+  int32_t attacker_hero_id() const;
+  void set_attacker_hero_id(int32_t value);
+  private:
+  int32_t _internal_attacker_hero_id() const;
+  void _internal_set_attacker_hero_id(int32_t value);
+  public:
+
+  // optional int32 target_hero_id = 3;
+  bool has_target_hero_id() const;
+  private:
+  bool _internal_has_target_hero_id() const;
+  public:
+  void clear_target_hero_id();
+  int32_t target_hero_id() const;
+  void set_target_hero_id(int32_t value);
+  private:
+  int32_t _internal_target_hero_id() const;
+  void _internal_set_target_hero_id(int32_t value);
+  public:
+
+  // optional int32 contributor_hero_id = 5;
+  bool has_contributor_hero_id() const;
+  private:
+  bool _internal_has_contributor_hero_id() const;
+  public:
+  void clear_contributor_hero_id();
+  int32_t contributor_hero_id() const;
+  void set_contributor_hero_id(int32_t value);
+  private:
+  int32_t _internal_contributor_hero_id() const;
+  void _internal_set_contributor_hero_id(int32_t value);
+  public:
+
+  // optional uint32 value = 6;
+  bool has_value() const;
+  private:
+  bool _internal_has_value() const;
+  public:
+  void clear_value();
+  uint32_t value() const;
+  void set_value(uint32_t value);
+  private:
+  uint32_t _internal_value() const;
+  void _internal_set_value(uint32_t value);
+  public:
+
+  // optional uint32 type = 7;
+  bool has_type() const;
+  private:
+  bool _internal_has_type() const;
+  public:
+  void clear_type();
+  uint32_t type() const;
+  void set_type(uint32_t value);
+  private:
+  uint32_t _internal_type() const;
+  void _internal_set_type(uint32_t value);
+  public:
+
+  // optional int32 attacker_ability_id = 1 [default = -1];
+  bool has_attacker_ability_id() const;
+  private:
+  bool _internal_has_attacker_ability_id() const;
+  public:
+  void clear_attacker_ability_id();
+  int32_t attacker_ability_id() const;
+  void set_attacker_ability_id(int32_t value);
+  private:
+  int32_t _internal_attacker_ability_id() const;
+  void _internal_set_attacker_ability_id(int32_t value);
+  public:
+
+  // optional int32 contributor_ability_id = 4 [default = -1];
+  bool has_contributor_ability_id() const;
+  private:
+  bool _internal_has_contributor_ability_id() const;
+  public:
+  void clear_contributor_ability_id();
+  int32_t contributor_ability_id() const;
+  void set_contributor_ability_id(int32_t value);
+  private:
+  int32_t _internal_contributor_ability_id() const;
+  void _internal_set_contributor_ability_id(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.HealingReductionRecord)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    int32_t attacker_hero_id_;
+    int32_t target_hero_id_;
+    int32_t contributor_hero_id_;
+    uint32_t value_;
+    uint32_t type_;
+    int32_t attacker_ability_id_;
+    int32_t contributor_ability_id_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_dota_5fmatch_5fmetadata_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.KillingBlow) */ {
+ public:
+  inline CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow() : CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow(nullptr) {}
+  ~CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow() override;
+  explicit PROTOBUF_CONSTEXPR CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow(const CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow& from);
+  CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow(CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow&& from) noexcept
+    : CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow() {
+    *this = ::std::move(from);
+  }
+
+  inline CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow& operator=(const CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow& operator=(CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow* internal_default_instance() {
+    return reinterpret_cast<const CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow*>(
+               &_CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    41;
+
+  friend void swap(CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow& a, CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow& from) {
+    CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "CDOTAMatchPrivateMetadata.ContributionsCombatSegment.KillingBlow";
+  }
+  protected:
+  explicit CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kAttackerHeroIdFieldNumber = 1,
+    kTargetHeroIdFieldNumber = 2,
+    kInflictorAbilityIdFieldNumber = 3,
+  };
+  // optional int32 attacker_hero_id = 1;
+  bool has_attacker_hero_id() const;
+  private:
+  bool _internal_has_attacker_hero_id() const;
+  public:
+  void clear_attacker_hero_id();
+  int32_t attacker_hero_id() const;
+  void set_attacker_hero_id(int32_t value);
+  private:
+  int32_t _internal_attacker_hero_id() const;
+  void _internal_set_attacker_hero_id(int32_t value);
+  public:
+
+  // optional int32 target_hero_id = 2;
+  bool has_target_hero_id() const;
+  private:
+  bool _internal_has_target_hero_id() const;
+  public:
+  void clear_target_hero_id();
+  int32_t target_hero_id() const;
+  void set_target_hero_id(int32_t value);
+  private:
+  int32_t _internal_target_hero_id() const;
+  void _internal_set_target_hero_id(int32_t value);
+  public:
+
+  // optional int32 inflictor_ability_id = 3 [default = -1];
+  bool has_inflictor_ability_id() const;
+  private:
+  bool _internal_has_inflictor_ability_id() const;
+  public:
+  void clear_inflictor_ability_id();
+  int32_t inflictor_ability_id() const;
+  void set_inflictor_ability_id(int32_t value);
+  private:
+  int32_t _internal_inflictor_ability_id() const;
+  void _internal_set_inflictor_ability_id(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.KillingBlow)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    int32_t attacker_hero_id_;
+    int32_t target_hero_id_;
+    int32_t inflictor_ability_id_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_dota_5fmatch_5fmetadata_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.Dispel) */ {
+ public:
+  inline CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel() : CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel(nullptr) {}
+  ~CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel() override;
+  explicit PROTOBUF_CONSTEXPR CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel(const CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel& from);
+  CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel(CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel&& from) noexcept
+    : CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel() {
+    *this = ::std::move(from);
+  }
+
+  inline CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel& operator=(const CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel& operator=(CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel* internal_default_instance() {
+    return reinterpret_cast<const CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel*>(
+               &_CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    42;
+
+  friend void swap(CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel& a, CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel& from) {
+    CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "CDOTAMatchPrivateMetadata.ContributionsCombatSegment.Dispel";
+  }
+  protected:
+  explicit CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kAttackerHeroIdFieldNumber = 1,
+    kTargetHeroIdFieldNumber = 2,
+    kDurationReducedFieldNumber = 5,
+    kInflictorAbilityIdFieldNumber = 3,
+    kModifierAbilityIdFieldNumber = 4,
+  };
+  // optional int32 attacker_hero_id = 1;
+  bool has_attacker_hero_id() const;
+  private:
+  bool _internal_has_attacker_hero_id() const;
+  public:
+  void clear_attacker_hero_id();
+  int32_t attacker_hero_id() const;
+  void set_attacker_hero_id(int32_t value);
+  private:
+  int32_t _internal_attacker_hero_id() const;
+  void _internal_set_attacker_hero_id(int32_t value);
+  public:
+
+  // optional int32 target_hero_id = 2;
+  bool has_target_hero_id() const;
+  private:
+  bool _internal_has_target_hero_id() const;
+  public:
+  void clear_target_hero_id();
+  int32_t target_hero_id() const;
+  void set_target_hero_id(int32_t value);
+  private:
+  int32_t _internal_target_hero_id() const;
+  void _internal_set_target_hero_id(int32_t value);
+  public:
+
+  // optional float duration_reduced = 5;
+  bool has_duration_reduced() const;
+  private:
+  bool _internal_has_duration_reduced() const;
+  public:
+  void clear_duration_reduced();
+  float duration_reduced() const;
+  void set_duration_reduced(float value);
+  private:
+  float _internal_duration_reduced() const;
+  void _internal_set_duration_reduced(float value);
+  public:
+
+  // optional int32 inflictor_ability_id = 3 [default = -1];
+  bool has_inflictor_ability_id() const;
+  private:
+  bool _internal_has_inflictor_ability_id() const;
+  public:
+  void clear_inflictor_ability_id();
+  int32_t inflictor_ability_id() const;
+  void set_inflictor_ability_id(int32_t value);
+  private:
+  int32_t _internal_inflictor_ability_id() const;
+  void _internal_set_inflictor_ability_id(int32_t value);
+  public:
+
+  // optional int32 modifier_ability_id = 4 [default = -1];
+  bool has_modifier_ability_id() const;
+  private:
+  bool _internal_has_modifier_ability_id() const;
+  public:
+  void clear_modifier_ability_id();
+  int32_t modifier_ability_id() const;
+  void set_modifier_ability_id(int32_t value);
+  private:
+  int32_t _internal_modifier_ability_id() const;
+  void _internal_set_modifier_ability_id(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.Dispel)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    int32_t attacker_hero_id_;
+    int32_t target_hero_id_;
+    float duration_reduced_;
+    int32_t inflictor_ability_id_;
+    int32_t modifier_ability_id_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_dota_5fmatch_5fmetadata_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CDOTAMatchPrivateMetadata_ContributionsCombatSegment final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:CDOTAMatchPrivateMetadata.ContributionsCombatSegment) */ {
+ public:
+  inline CDOTAMatchPrivateMetadata_ContributionsCombatSegment() : CDOTAMatchPrivateMetadata_ContributionsCombatSegment(nullptr) {}
+  ~CDOTAMatchPrivateMetadata_ContributionsCombatSegment() override;
+  explicit PROTOBUF_CONSTEXPR CDOTAMatchPrivateMetadata_ContributionsCombatSegment(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CDOTAMatchPrivateMetadata_ContributionsCombatSegment(const CDOTAMatchPrivateMetadata_ContributionsCombatSegment& from);
+  CDOTAMatchPrivateMetadata_ContributionsCombatSegment(CDOTAMatchPrivateMetadata_ContributionsCombatSegment&& from) noexcept
+    : CDOTAMatchPrivateMetadata_ContributionsCombatSegment() {
+    *this = ::std::move(from);
+  }
+
+  inline CDOTAMatchPrivateMetadata_ContributionsCombatSegment& operator=(const CDOTAMatchPrivateMetadata_ContributionsCombatSegment& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CDOTAMatchPrivateMetadata_ContributionsCombatSegment& operator=(CDOTAMatchPrivateMetadata_ContributionsCombatSegment&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CDOTAMatchPrivateMetadata_ContributionsCombatSegment& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CDOTAMatchPrivateMetadata_ContributionsCombatSegment* internal_default_instance() {
+    return reinterpret_cast<const CDOTAMatchPrivateMetadata_ContributionsCombatSegment*>(
+               &_CDOTAMatchPrivateMetadata_ContributionsCombatSegment_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    43;
+
+  friend void swap(CDOTAMatchPrivateMetadata_ContributionsCombatSegment& a, CDOTAMatchPrivateMetadata_ContributionsCombatSegment& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CDOTAMatchPrivateMetadata_ContributionsCombatSegment* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CDOTAMatchPrivateMetadata_ContributionsCombatSegment* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  CDOTAMatchPrivateMetadata_ContributionsCombatSegment* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<CDOTAMatchPrivateMetadata_ContributionsCombatSegment>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const CDOTAMatchPrivateMetadata_ContributionsCombatSegment& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const CDOTAMatchPrivateMetadata_ContributionsCombatSegment& from) {
+    CDOTAMatchPrivateMetadata_ContributionsCombatSegment::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CDOTAMatchPrivateMetadata_ContributionsCombatSegment* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "CDOTAMatchPrivateMetadata.ContributionsCombatSegment";
+  }
+  protected:
+  explicit CDOTAMatchPrivateMetadata_ContributionsCombatSegment(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  typedef CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord DamageContributionRecord;
+  typedef CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord DamageMitigationRecord;
+  typedef CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord HealingContributionRecord;
+  typedef CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord HealingReductionRecord;
+  typedef CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow KillingBlow;
+  typedef CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel Dispel;
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kDamageContributionsFieldNumber = 2,
+    kDamageMitigationsFieldNumber = 3,
+    kHealingContributionsFieldNumber = 4,
+    kHealingReductionsFieldNumber = 5,
+    kKillingBlowsFieldNumber = 6,
+    kDispelsFieldNumber = 7,
+    kGameTimeFieldNumber = 1,
+  };
+  // repeated .CDOTAMatchPrivateMetadata.ContributionsCombatSegment.DamageContributionRecord damage_contributions = 2;
+  int damage_contributions_size() const;
+  private:
+  int _internal_damage_contributions_size() const;
+  public:
+  void clear_damage_contributions();
+  ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord* mutable_damage_contributions(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord >*
+      mutable_damage_contributions();
+  private:
+  const ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord& _internal_damage_contributions(int index) const;
+  ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord* _internal_add_damage_contributions();
+  public:
+  const ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord& damage_contributions(int index) const;
+  ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord* add_damage_contributions();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord >&
+      damage_contributions() const;
+
+  // repeated .CDOTAMatchPrivateMetadata.ContributionsCombatSegment.DamageMitigationRecord damage_mitigations = 3;
+  int damage_mitigations_size() const;
+  private:
+  int _internal_damage_mitigations_size() const;
+  public:
+  void clear_damage_mitigations();
+  ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord* mutable_damage_mitigations(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord >*
+      mutable_damage_mitigations();
+  private:
+  const ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord& _internal_damage_mitigations(int index) const;
+  ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord* _internal_add_damage_mitigations();
+  public:
+  const ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord& damage_mitigations(int index) const;
+  ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord* add_damage_mitigations();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord >&
+      damage_mitigations() const;
+
+  // repeated .CDOTAMatchPrivateMetadata.ContributionsCombatSegment.HealingContributionRecord healing_contributions = 4;
+  int healing_contributions_size() const;
+  private:
+  int _internal_healing_contributions_size() const;
+  public:
+  void clear_healing_contributions();
+  ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord* mutable_healing_contributions(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord >*
+      mutable_healing_contributions();
+  private:
+  const ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord& _internal_healing_contributions(int index) const;
+  ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord* _internal_add_healing_contributions();
+  public:
+  const ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord& healing_contributions(int index) const;
+  ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord* add_healing_contributions();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord >&
+      healing_contributions() const;
+
+  // repeated .CDOTAMatchPrivateMetadata.ContributionsCombatSegment.HealingReductionRecord healing_reductions = 5;
+  int healing_reductions_size() const;
+  private:
+  int _internal_healing_reductions_size() const;
+  public:
+  void clear_healing_reductions();
+  ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord* mutable_healing_reductions(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord >*
+      mutable_healing_reductions();
+  private:
+  const ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord& _internal_healing_reductions(int index) const;
+  ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord* _internal_add_healing_reductions();
+  public:
+  const ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord& healing_reductions(int index) const;
+  ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord* add_healing_reductions();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord >&
+      healing_reductions() const;
+
+  // repeated .CDOTAMatchPrivateMetadata.ContributionsCombatSegment.KillingBlow killing_blows = 6;
+  int killing_blows_size() const;
+  private:
+  int _internal_killing_blows_size() const;
+  public:
+  void clear_killing_blows();
+  ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow* mutable_killing_blows(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow >*
+      mutable_killing_blows();
+  private:
+  const ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow& _internal_killing_blows(int index) const;
+  ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow* _internal_add_killing_blows();
+  public:
+  const ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow& killing_blows(int index) const;
+  ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow* add_killing_blows();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow >&
+      killing_blows() const;
+
+  // repeated .CDOTAMatchPrivateMetadata.ContributionsCombatSegment.Dispel dispels = 7;
+  int dispels_size() const;
+  private:
+  int _internal_dispels_size() const;
+  public:
+  void clear_dispels();
+  ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel* mutable_dispels(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel >*
+      mutable_dispels();
+  private:
+  const ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel& _internal_dispels(int index) const;
+  ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel* _internal_add_dispels();
+  public:
+  const ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel& dispels(int index) const;
+  ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel* add_dispels();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel >&
+      dispels() const;
+
+  // optional int32 game_time = 1;
+  bool has_game_time() const;
+  private:
+  bool _internal_has_game_time() const;
+  public:
+  void clear_game_time();
+  int32_t game_time() const;
+  void set_game_time(int32_t value);
+  private:
+  int32_t _internal_game_time() const;
+  void _internal_set_game_time(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:CDOTAMatchPrivateMetadata.ContributionsCombatSegment)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord > damage_contributions_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord > damage_mitigations_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord > healing_contributions_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord > healing_reductions_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow > killing_blows_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel > dispels_;
+    int32_t game_time_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_dota_5fmatch_5fmetadata_2eproto;
+};
+// -------------------------------------------------------------------
+
 class CDOTAMatchPrivateMetadata final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:CDOTAMatchPrivateMetadata) */ {
  public:
@@ -9883,7 +11605,7 @@ class CDOTAMatchPrivateMetadata final :
                &_CDOTAMatchPrivateMetadata_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    37;
+    44;
 
   friend void swap(CDOTAMatchPrivateMetadata& a, CDOTAMatchPrivateMetadata& b) {
     a.Swap(&b);
@@ -9955,6 +11677,7 @@ class CDOTAMatchPrivateMetadata final :
 
   typedef CDOTAMatchPrivateMetadata_StringName StringName;
   typedef CDOTAMatchPrivateMetadata_Team Team;
+  typedef CDOTAMatchPrivateMetadata_ContributionsCombatSegment ContributionsCombatSegment;
 
   // accessors -------------------------------------------------------
 
@@ -9962,6 +11685,7 @@ class CDOTAMatchPrivateMetadata final :
     kTeamsFieldNumber = 1,
     kGraphWinProbabilityFieldNumber = 2,
     kStringNamesFieldNumber = 3,
+    kContributionsFieldNumber = 4,
   };
   // repeated .CDOTAMatchPrivateMetadata.Team teams = 1;
   int teams_size() const;
@@ -10021,6 +11745,24 @@ class CDOTAMatchPrivateMetadata final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CDOTAMatchPrivateMetadata_StringName >&
       string_names() const;
 
+  // repeated .CDOTAMatchPrivateMetadata.ContributionsCombatSegment contributions = 4;
+  int contributions_size() const;
+  private:
+  int _internal_contributions_size() const;
+  public:
+  void clear_contributions();
+  ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment* mutable_contributions(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment >*
+      mutable_contributions();
+  private:
+  const ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment& _internal_contributions(int index) const;
+  ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment* _internal_add_contributions();
+  public:
+  const ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment& contributions(int index) const;
+  ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment* add_contributions();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment >&
+      contributions() const;
+
   // @@protoc_insertion_point(class_scope:CDOTAMatchPrivateMetadata)
  private:
   class _Internal;
@@ -10032,6 +11774,7 @@ class CDOTAMatchPrivateMetadata final :
     ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CDOTAMatchPrivateMetadata_Team > teams_;
     ::PROTOBUF_NAMESPACE_ID::RepeatedField< float > graph_win_probability_;
     ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CDOTAMatchPrivateMetadata_StringName > string_names_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment > contributions_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -10048,7 +11791,7 @@ class CDOTAMatchPrivateMetadata final :
 #endif  // __GNUC__
 // CDOTAMatchMetadataFile
 
-// required int32 version = 1;
+// optional int32 version = 1;
 inline bool CDOTAMatchMetadataFile::_internal_has_version() const {
   bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
   return value;
@@ -10076,7 +11819,7 @@ inline void CDOTAMatchMetadataFile::set_version(int32_t value) {
   // @@protoc_insertion_point(field_set:CDOTAMatchMetadataFile.version)
 }
 
-// required uint64 match_id = 2;
+// optional uint64 match_id = 2;
 inline bool CDOTAMatchMetadataFile::_internal_has_match_id() const {
   bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
   return value;
@@ -18704,6 +20447,1310 @@ CDOTAMatchPrivateMetadata_Team::buildings() const {
 
 // -------------------------------------------------------------------
 
+// CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord
+
+// optional int32 attacker_ability_id = 1 [default = -1];
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord::_internal_has_attacker_ability_id() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000020u) != 0;
+  return value;
+}
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord::has_attacker_ability_id() const {
+  return _internal_has_attacker_ability_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord::clear_attacker_ability_id() {
+  _impl_.attacker_ability_id_ = -1;
+  _impl_._has_bits_[0] &= ~0x00000020u;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord::_internal_attacker_ability_id() const {
+  return _impl_.attacker_ability_id_;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord::attacker_ability_id() const {
+  // @@protoc_insertion_point(field_get:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.DamageContributionRecord.attacker_ability_id)
+  return _internal_attacker_ability_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord::_internal_set_attacker_ability_id(int32_t value) {
+  _impl_._has_bits_[0] |= 0x00000020u;
+  _impl_.attacker_ability_id_ = value;
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord::set_attacker_ability_id(int32_t value) {
+  _internal_set_attacker_ability_id(value);
+  // @@protoc_insertion_point(field_set:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.DamageContributionRecord.attacker_ability_id)
+}
+
+// optional int32 attacker_hero_id = 2;
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord::_internal_has_attacker_hero_id() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord::has_attacker_hero_id() const {
+  return _internal_has_attacker_hero_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord::clear_attacker_hero_id() {
+  _impl_.attacker_hero_id_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord::_internal_attacker_hero_id() const {
+  return _impl_.attacker_hero_id_;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord::attacker_hero_id() const {
+  // @@protoc_insertion_point(field_get:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.DamageContributionRecord.attacker_hero_id)
+  return _internal_attacker_hero_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord::_internal_set_attacker_hero_id(int32_t value) {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.attacker_hero_id_ = value;
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord::set_attacker_hero_id(int32_t value) {
+  _internal_set_attacker_hero_id(value);
+  // @@protoc_insertion_point(field_set:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.DamageContributionRecord.attacker_hero_id)
+}
+
+// optional int32 target_hero_id = 3;
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord::_internal_has_target_hero_id() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord::has_target_hero_id() const {
+  return _internal_has_target_hero_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord::clear_target_hero_id() {
+  _impl_.target_hero_id_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord::_internal_target_hero_id() const {
+  return _impl_.target_hero_id_;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord::target_hero_id() const {
+  // @@protoc_insertion_point(field_get:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.DamageContributionRecord.target_hero_id)
+  return _internal_target_hero_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord::_internal_set_target_hero_id(int32_t value) {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.target_hero_id_ = value;
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord::set_target_hero_id(int32_t value) {
+  _internal_set_target_hero_id(value);
+  // @@protoc_insertion_point(field_set:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.DamageContributionRecord.target_hero_id)
+}
+
+// optional int32 contributor_ability_id = 4 [default = -1];
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord::_internal_has_contributor_ability_id() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000040u) != 0;
+  return value;
+}
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord::has_contributor_ability_id() const {
+  return _internal_has_contributor_ability_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord::clear_contributor_ability_id() {
+  _impl_.contributor_ability_id_ = -1;
+  _impl_._has_bits_[0] &= ~0x00000040u;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord::_internal_contributor_ability_id() const {
+  return _impl_.contributor_ability_id_;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord::contributor_ability_id() const {
+  // @@protoc_insertion_point(field_get:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.DamageContributionRecord.contributor_ability_id)
+  return _internal_contributor_ability_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord::_internal_set_contributor_ability_id(int32_t value) {
+  _impl_._has_bits_[0] |= 0x00000040u;
+  _impl_.contributor_ability_id_ = value;
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord::set_contributor_ability_id(int32_t value) {
+  _internal_set_contributor_ability_id(value);
+  // @@protoc_insertion_point(field_set:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.DamageContributionRecord.contributor_ability_id)
+}
+
+// optional int32 contributor_hero_id = 5;
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord::_internal_has_contributor_hero_id() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
+  return value;
+}
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord::has_contributor_hero_id() const {
+  return _internal_has_contributor_hero_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord::clear_contributor_hero_id() {
+  _impl_.contributor_hero_id_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000004u;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord::_internal_contributor_hero_id() const {
+  return _impl_.contributor_hero_id_;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord::contributor_hero_id() const {
+  // @@protoc_insertion_point(field_get:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.DamageContributionRecord.contributor_hero_id)
+  return _internal_contributor_hero_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord::_internal_set_contributor_hero_id(int32_t value) {
+  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_.contributor_hero_id_ = value;
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord::set_contributor_hero_id(int32_t value) {
+  _internal_set_contributor_hero_id(value);
+  // @@protoc_insertion_point(field_set:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.DamageContributionRecord.contributor_hero_id)
+}
+
+// optional uint32 value = 6;
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord::_internal_has_value() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
+  return value;
+}
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord::has_value() const {
+  return _internal_has_value();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord::clear_value() {
+  _impl_.value_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000008u;
+}
+inline uint32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord::_internal_value() const {
+  return _impl_.value_;
+}
+inline uint32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord::value() const {
+  // @@protoc_insertion_point(field_get:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.DamageContributionRecord.value)
+  return _internal_value();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord::_internal_set_value(uint32_t value) {
+  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_.value_ = value;
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord::set_value(uint32_t value) {
+  _internal_set_value(value);
+  // @@protoc_insertion_point(field_set:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.DamageContributionRecord.value)
+}
+
+// optional uint32 type = 7;
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord::_internal_has_type() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
+  return value;
+}
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord::has_type() const {
+  return _internal_has_type();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord::clear_type() {
+  _impl_.type_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000010u;
+}
+inline uint32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord::_internal_type() const {
+  return _impl_.type_;
+}
+inline uint32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord::type() const {
+  // @@protoc_insertion_point(field_get:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.DamageContributionRecord.type)
+  return _internal_type();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord::_internal_set_type(uint32_t value) {
+  _impl_._has_bits_[0] |= 0x00000010u;
+  _impl_.type_ = value;
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord::set_type(uint32_t value) {
+  _internal_set_type(value);
+  // @@protoc_insertion_point(field_set:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.DamageContributionRecord.type)
+}
+
+// -------------------------------------------------------------------
+
+// CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord
+
+// optional int32 attacker_ability_id = 1 [default = -1];
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord::_internal_has_attacker_ability_id() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000020u) != 0;
+  return value;
+}
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord::has_attacker_ability_id() const {
+  return _internal_has_attacker_ability_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord::clear_attacker_ability_id() {
+  _impl_.attacker_ability_id_ = -1;
+  _impl_._has_bits_[0] &= ~0x00000020u;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord::_internal_attacker_ability_id() const {
+  return _impl_.attacker_ability_id_;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord::attacker_ability_id() const {
+  // @@protoc_insertion_point(field_get:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.DamageMitigationRecord.attacker_ability_id)
+  return _internal_attacker_ability_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord::_internal_set_attacker_ability_id(int32_t value) {
+  _impl_._has_bits_[0] |= 0x00000020u;
+  _impl_.attacker_ability_id_ = value;
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord::set_attacker_ability_id(int32_t value) {
+  _internal_set_attacker_ability_id(value);
+  // @@protoc_insertion_point(field_set:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.DamageMitigationRecord.attacker_ability_id)
+}
+
+// optional int32 attacker_hero_id = 2;
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord::_internal_has_attacker_hero_id() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord::has_attacker_hero_id() const {
+  return _internal_has_attacker_hero_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord::clear_attacker_hero_id() {
+  _impl_.attacker_hero_id_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord::_internal_attacker_hero_id() const {
+  return _impl_.attacker_hero_id_;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord::attacker_hero_id() const {
+  // @@protoc_insertion_point(field_get:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.DamageMitigationRecord.attacker_hero_id)
+  return _internal_attacker_hero_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord::_internal_set_attacker_hero_id(int32_t value) {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.attacker_hero_id_ = value;
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord::set_attacker_hero_id(int32_t value) {
+  _internal_set_attacker_hero_id(value);
+  // @@protoc_insertion_point(field_set:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.DamageMitigationRecord.attacker_hero_id)
+}
+
+// optional int32 target_hero_id = 3;
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord::_internal_has_target_hero_id() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord::has_target_hero_id() const {
+  return _internal_has_target_hero_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord::clear_target_hero_id() {
+  _impl_.target_hero_id_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord::_internal_target_hero_id() const {
+  return _impl_.target_hero_id_;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord::target_hero_id() const {
+  // @@protoc_insertion_point(field_get:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.DamageMitigationRecord.target_hero_id)
+  return _internal_target_hero_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord::_internal_set_target_hero_id(int32_t value) {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.target_hero_id_ = value;
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord::set_target_hero_id(int32_t value) {
+  _internal_set_target_hero_id(value);
+  // @@protoc_insertion_point(field_set:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.DamageMitigationRecord.target_hero_id)
+}
+
+// optional int32 contributor_ability_id = 4 [default = -1];
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord::_internal_has_contributor_ability_id() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000040u) != 0;
+  return value;
+}
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord::has_contributor_ability_id() const {
+  return _internal_has_contributor_ability_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord::clear_contributor_ability_id() {
+  _impl_.contributor_ability_id_ = -1;
+  _impl_._has_bits_[0] &= ~0x00000040u;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord::_internal_contributor_ability_id() const {
+  return _impl_.contributor_ability_id_;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord::contributor_ability_id() const {
+  // @@protoc_insertion_point(field_get:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.DamageMitigationRecord.contributor_ability_id)
+  return _internal_contributor_ability_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord::_internal_set_contributor_ability_id(int32_t value) {
+  _impl_._has_bits_[0] |= 0x00000040u;
+  _impl_.contributor_ability_id_ = value;
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord::set_contributor_ability_id(int32_t value) {
+  _internal_set_contributor_ability_id(value);
+  // @@protoc_insertion_point(field_set:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.DamageMitigationRecord.contributor_ability_id)
+}
+
+// optional int32 contributor_hero_id = 5;
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord::_internal_has_contributor_hero_id() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
+  return value;
+}
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord::has_contributor_hero_id() const {
+  return _internal_has_contributor_hero_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord::clear_contributor_hero_id() {
+  _impl_.contributor_hero_id_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000004u;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord::_internal_contributor_hero_id() const {
+  return _impl_.contributor_hero_id_;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord::contributor_hero_id() const {
+  // @@protoc_insertion_point(field_get:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.DamageMitigationRecord.contributor_hero_id)
+  return _internal_contributor_hero_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord::_internal_set_contributor_hero_id(int32_t value) {
+  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_.contributor_hero_id_ = value;
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord::set_contributor_hero_id(int32_t value) {
+  _internal_set_contributor_hero_id(value);
+  // @@protoc_insertion_point(field_set:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.DamageMitigationRecord.contributor_hero_id)
+}
+
+// optional uint32 value = 6;
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord::_internal_has_value() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
+  return value;
+}
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord::has_value() const {
+  return _internal_has_value();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord::clear_value() {
+  _impl_.value_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000008u;
+}
+inline uint32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord::_internal_value() const {
+  return _impl_.value_;
+}
+inline uint32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord::value() const {
+  // @@protoc_insertion_point(field_get:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.DamageMitigationRecord.value)
+  return _internal_value();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord::_internal_set_value(uint32_t value) {
+  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_.value_ = value;
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord::set_value(uint32_t value) {
+  _internal_set_value(value);
+  // @@protoc_insertion_point(field_set:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.DamageMitigationRecord.value)
+}
+
+// optional uint32 type = 7;
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord::_internal_has_type() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
+  return value;
+}
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord::has_type() const {
+  return _internal_has_type();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord::clear_type() {
+  _impl_.type_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000010u;
+}
+inline uint32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord::_internal_type() const {
+  return _impl_.type_;
+}
+inline uint32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord::type() const {
+  // @@protoc_insertion_point(field_get:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.DamageMitigationRecord.type)
+  return _internal_type();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord::_internal_set_type(uint32_t value) {
+  _impl_._has_bits_[0] |= 0x00000010u;
+  _impl_.type_ = value;
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord::set_type(uint32_t value) {
+  _internal_set_type(value);
+  // @@protoc_insertion_point(field_set:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.DamageMitigationRecord.type)
+}
+
+// -------------------------------------------------------------------
+
+// CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord
+
+// optional int32 attacker_ability_id = 1 [default = -1];
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord::_internal_has_attacker_ability_id() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000020u) != 0;
+  return value;
+}
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord::has_attacker_ability_id() const {
+  return _internal_has_attacker_ability_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord::clear_attacker_ability_id() {
+  _impl_.attacker_ability_id_ = -1;
+  _impl_._has_bits_[0] &= ~0x00000020u;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord::_internal_attacker_ability_id() const {
+  return _impl_.attacker_ability_id_;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord::attacker_ability_id() const {
+  // @@protoc_insertion_point(field_get:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.HealingContributionRecord.attacker_ability_id)
+  return _internal_attacker_ability_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord::_internal_set_attacker_ability_id(int32_t value) {
+  _impl_._has_bits_[0] |= 0x00000020u;
+  _impl_.attacker_ability_id_ = value;
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord::set_attacker_ability_id(int32_t value) {
+  _internal_set_attacker_ability_id(value);
+  // @@protoc_insertion_point(field_set:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.HealingContributionRecord.attacker_ability_id)
+}
+
+// optional int32 attacker_hero_id = 2;
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord::_internal_has_attacker_hero_id() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord::has_attacker_hero_id() const {
+  return _internal_has_attacker_hero_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord::clear_attacker_hero_id() {
+  _impl_.attacker_hero_id_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord::_internal_attacker_hero_id() const {
+  return _impl_.attacker_hero_id_;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord::attacker_hero_id() const {
+  // @@protoc_insertion_point(field_get:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.HealingContributionRecord.attacker_hero_id)
+  return _internal_attacker_hero_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord::_internal_set_attacker_hero_id(int32_t value) {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.attacker_hero_id_ = value;
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord::set_attacker_hero_id(int32_t value) {
+  _internal_set_attacker_hero_id(value);
+  // @@protoc_insertion_point(field_set:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.HealingContributionRecord.attacker_hero_id)
+}
+
+// optional int32 target_hero_id = 3;
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord::_internal_has_target_hero_id() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord::has_target_hero_id() const {
+  return _internal_has_target_hero_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord::clear_target_hero_id() {
+  _impl_.target_hero_id_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord::_internal_target_hero_id() const {
+  return _impl_.target_hero_id_;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord::target_hero_id() const {
+  // @@protoc_insertion_point(field_get:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.HealingContributionRecord.target_hero_id)
+  return _internal_target_hero_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord::_internal_set_target_hero_id(int32_t value) {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.target_hero_id_ = value;
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord::set_target_hero_id(int32_t value) {
+  _internal_set_target_hero_id(value);
+  // @@protoc_insertion_point(field_set:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.HealingContributionRecord.target_hero_id)
+}
+
+// optional int32 contributor_ability_id = 4 [default = -1];
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord::_internal_has_contributor_ability_id() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000040u) != 0;
+  return value;
+}
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord::has_contributor_ability_id() const {
+  return _internal_has_contributor_ability_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord::clear_contributor_ability_id() {
+  _impl_.contributor_ability_id_ = -1;
+  _impl_._has_bits_[0] &= ~0x00000040u;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord::_internal_contributor_ability_id() const {
+  return _impl_.contributor_ability_id_;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord::contributor_ability_id() const {
+  // @@protoc_insertion_point(field_get:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.HealingContributionRecord.contributor_ability_id)
+  return _internal_contributor_ability_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord::_internal_set_contributor_ability_id(int32_t value) {
+  _impl_._has_bits_[0] |= 0x00000040u;
+  _impl_.contributor_ability_id_ = value;
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord::set_contributor_ability_id(int32_t value) {
+  _internal_set_contributor_ability_id(value);
+  // @@protoc_insertion_point(field_set:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.HealingContributionRecord.contributor_ability_id)
+}
+
+// optional int32 contributor_hero_id = 5;
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord::_internal_has_contributor_hero_id() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
+  return value;
+}
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord::has_contributor_hero_id() const {
+  return _internal_has_contributor_hero_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord::clear_contributor_hero_id() {
+  _impl_.contributor_hero_id_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000004u;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord::_internal_contributor_hero_id() const {
+  return _impl_.contributor_hero_id_;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord::contributor_hero_id() const {
+  // @@protoc_insertion_point(field_get:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.HealingContributionRecord.contributor_hero_id)
+  return _internal_contributor_hero_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord::_internal_set_contributor_hero_id(int32_t value) {
+  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_.contributor_hero_id_ = value;
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord::set_contributor_hero_id(int32_t value) {
+  _internal_set_contributor_hero_id(value);
+  // @@protoc_insertion_point(field_set:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.HealingContributionRecord.contributor_hero_id)
+}
+
+// optional uint32 value = 6;
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord::_internal_has_value() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
+  return value;
+}
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord::has_value() const {
+  return _internal_has_value();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord::clear_value() {
+  _impl_.value_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000008u;
+}
+inline uint32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord::_internal_value() const {
+  return _impl_.value_;
+}
+inline uint32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord::value() const {
+  // @@protoc_insertion_point(field_get:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.HealingContributionRecord.value)
+  return _internal_value();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord::_internal_set_value(uint32_t value) {
+  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_.value_ = value;
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord::set_value(uint32_t value) {
+  _internal_set_value(value);
+  // @@protoc_insertion_point(field_set:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.HealingContributionRecord.value)
+}
+
+// optional uint32 type = 7;
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord::_internal_has_type() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
+  return value;
+}
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord::has_type() const {
+  return _internal_has_type();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord::clear_type() {
+  _impl_.type_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000010u;
+}
+inline uint32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord::_internal_type() const {
+  return _impl_.type_;
+}
+inline uint32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord::type() const {
+  // @@protoc_insertion_point(field_get:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.HealingContributionRecord.type)
+  return _internal_type();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord::_internal_set_type(uint32_t value) {
+  _impl_._has_bits_[0] |= 0x00000010u;
+  _impl_.type_ = value;
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord::set_type(uint32_t value) {
+  _internal_set_type(value);
+  // @@protoc_insertion_point(field_set:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.HealingContributionRecord.type)
+}
+
+// -------------------------------------------------------------------
+
+// CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord
+
+// optional int32 attacker_ability_id = 1 [default = -1];
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord::_internal_has_attacker_ability_id() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000020u) != 0;
+  return value;
+}
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord::has_attacker_ability_id() const {
+  return _internal_has_attacker_ability_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord::clear_attacker_ability_id() {
+  _impl_.attacker_ability_id_ = -1;
+  _impl_._has_bits_[0] &= ~0x00000020u;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord::_internal_attacker_ability_id() const {
+  return _impl_.attacker_ability_id_;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord::attacker_ability_id() const {
+  // @@protoc_insertion_point(field_get:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.HealingReductionRecord.attacker_ability_id)
+  return _internal_attacker_ability_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord::_internal_set_attacker_ability_id(int32_t value) {
+  _impl_._has_bits_[0] |= 0x00000020u;
+  _impl_.attacker_ability_id_ = value;
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord::set_attacker_ability_id(int32_t value) {
+  _internal_set_attacker_ability_id(value);
+  // @@protoc_insertion_point(field_set:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.HealingReductionRecord.attacker_ability_id)
+}
+
+// optional int32 attacker_hero_id = 2;
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord::_internal_has_attacker_hero_id() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord::has_attacker_hero_id() const {
+  return _internal_has_attacker_hero_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord::clear_attacker_hero_id() {
+  _impl_.attacker_hero_id_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord::_internal_attacker_hero_id() const {
+  return _impl_.attacker_hero_id_;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord::attacker_hero_id() const {
+  // @@protoc_insertion_point(field_get:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.HealingReductionRecord.attacker_hero_id)
+  return _internal_attacker_hero_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord::_internal_set_attacker_hero_id(int32_t value) {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.attacker_hero_id_ = value;
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord::set_attacker_hero_id(int32_t value) {
+  _internal_set_attacker_hero_id(value);
+  // @@protoc_insertion_point(field_set:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.HealingReductionRecord.attacker_hero_id)
+}
+
+// optional int32 target_hero_id = 3;
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord::_internal_has_target_hero_id() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord::has_target_hero_id() const {
+  return _internal_has_target_hero_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord::clear_target_hero_id() {
+  _impl_.target_hero_id_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord::_internal_target_hero_id() const {
+  return _impl_.target_hero_id_;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord::target_hero_id() const {
+  // @@protoc_insertion_point(field_get:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.HealingReductionRecord.target_hero_id)
+  return _internal_target_hero_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord::_internal_set_target_hero_id(int32_t value) {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.target_hero_id_ = value;
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord::set_target_hero_id(int32_t value) {
+  _internal_set_target_hero_id(value);
+  // @@protoc_insertion_point(field_set:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.HealingReductionRecord.target_hero_id)
+}
+
+// optional int32 contributor_ability_id = 4 [default = -1];
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord::_internal_has_contributor_ability_id() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000040u) != 0;
+  return value;
+}
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord::has_contributor_ability_id() const {
+  return _internal_has_contributor_ability_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord::clear_contributor_ability_id() {
+  _impl_.contributor_ability_id_ = -1;
+  _impl_._has_bits_[0] &= ~0x00000040u;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord::_internal_contributor_ability_id() const {
+  return _impl_.contributor_ability_id_;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord::contributor_ability_id() const {
+  // @@protoc_insertion_point(field_get:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.HealingReductionRecord.contributor_ability_id)
+  return _internal_contributor_ability_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord::_internal_set_contributor_ability_id(int32_t value) {
+  _impl_._has_bits_[0] |= 0x00000040u;
+  _impl_.contributor_ability_id_ = value;
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord::set_contributor_ability_id(int32_t value) {
+  _internal_set_contributor_ability_id(value);
+  // @@protoc_insertion_point(field_set:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.HealingReductionRecord.contributor_ability_id)
+}
+
+// optional int32 contributor_hero_id = 5;
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord::_internal_has_contributor_hero_id() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
+  return value;
+}
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord::has_contributor_hero_id() const {
+  return _internal_has_contributor_hero_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord::clear_contributor_hero_id() {
+  _impl_.contributor_hero_id_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000004u;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord::_internal_contributor_hero_id() const {
+  return _impl_.contributor_hero_id_;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord::contributor_hero_id() const {
+  // @@protoc_insertion_point(field_get:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.HealingReductionRecord.contributor_hero_id)
+  return _internal_contributor_hero_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord::_internal_set_contributor_hero_id(int32_t value) {
+  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_.contributor_hero_id_ = value;
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord::set_contributor_hero_id(int32_t value) {
+  _internal_set_contributor_hero_id(value);
+  // @@protoc_insertion_point(field_set:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.HealingReductionRecord.contributor_hero_id)
+}
+
+// optional uint32 value = 6;
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord::_internal_has_value() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
+  return value;
+}
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord::has_value() const {
+  return _internal_has_value();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord::clear_value() {
+  _impl_.value_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000008u;
+}
+inline uint32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord::_internal_value() const {
+  return _impl_.value_;
+}
+inline uint32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord::value() const {
+  // @@protoc_insertion_point(field_get:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.HealingReductionRecord.value)
+  return _internal_value();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord::_internal_set_value(uint32_t value) {
+  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_.value_ = value;
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord::set_value(uint32_t value) {
+  _internal_set_value(value);
+  // @@protoc_insertion_point(field_set:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.HealingReductionRecord.value)
+}
+
+// optional uint32 type = 7;
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord::_internal_has_type() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
+  return value;
+}
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord::has_type() const {
+  return _internal_has_type();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord::clear_type() {
+  _impl_.type_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000010u;
+}
+inline uint32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord::_internal_type() const {
+  return _impl_.type_;
+}
+inline uint32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord::type() const {
+  // @@protoc_insertion_point(field_get:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.HealingReductionRecord.type)
+  return _internal_type();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord::_internal_set_type(uint32_t value) {
+  _impl_._has_bits_[0] |= 0x00000010u;
+  _impl_.type_ = value;
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord::set_type(uint32_t value) {
+  _internal_set_type(value);
+  // @@protoc_insertion_point(field_set:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.HealingReductionRecord.type)
+}
+
+// -------------------------------------------------------------------
+
+// CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow
+
+// optional int32 attacker_hero_id = 1;
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow::_internal_has_attacker_hero_id() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow::has_attacker_hero_id() const {
+  return _internal_has_attacker_hero_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow::clear_attacker_hero_id() {
+  _impl_.attacker_hero_id_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow::_internal_attacker_hero_id() const {
+  return _impl_.attacker_hero_id_;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow::attacker_hero_id() const {
+  // @@protoc_insertion_point(field_get:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.KillingBlow.attacker_hero_id)
+  return _internal_attacker_hero_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow::_internal_set_attacker_hero_id(int32_t value) {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.attacker_hero_id_ = value;
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow::set_attacker_hero_id(int32_t value) {
+  _internal_set_attacker_hero_id(value);
+  // @@protoc_insertion_point(field_set:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.KillingBlow.attacker_hero_id)
+}
+
+// optional int32 target_hero_id = 2;
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow::_internal_has_target_hero_id() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow::has_target_hero_id() const {
+  return _internal_has_target_hero_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow::clear_target_hero_id() {
+  _impl_.target_hero_id_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow::_internal_target_hero_id() const {
+  return _impl_.target_hero_id_;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow::target_hero_id() const {
+  // @@protoc_insertion_point(field_get:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.KillingBlow.target_hero_id)
+  return _internal_target_hero_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow::_internal_set_target_hero_id(int32_t value) {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.target_hero_id_ = value;
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow::set_target_hero_id(int32_t value) {
+  _internal_set_target_hero_id(value);
+  // @@protoc_insertion_point(field_set:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.KillingBlow.target_hero_id)
+}
+
+// optional int32 inflictor_ability_id = 3 [default = -1];
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow::_internal_has_inflictor_ability_id() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
+  return value;
+}
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow::has_inflictor_ability_id() const {
+  return _internal_has_inflictor_ability_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow::clear_inflictor_ability_id() {
+  _impl_.inflictor_ability_id_ = -1;
+  _impl_._has_bits_[0] &= ~0x00000004u;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow::_internal_inflictor_ability_id() const {
+  return _impl_.inflictor_ability_id_;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow::inflictor_ability_id() const {
+  // @@protoc_insertion_point(field_get:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.KillingBlow.inflictor_ability_id)
+  return _internal_inflictor_ability_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow::_internal_set_inflictor_ability_id(int32_t value) {
+  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_.inflictor_ability_id_ = value;
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow::set_inflictor_ability_id(int32_t value) {
+  _internal_set_inflictor_ability_id(value);
+  // @@protoc_insertion_point(field_set:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.KillingBlow.inflictor_ability_id)
+}
+
+// -------------------------------------------------------------------
+
+// CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel
+
+// optional int32 attacker_hero_id = 1;
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel::_internal_has_attacker_hero_id() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel::has_attacker_hero_id() const {
+  return _internal_has_attacker_hero_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel::clear_attacker_hero_id() {
+  _impl_.attacker_hero_id_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel::_internal_attacker_hero_id() const {
+  return _impl_.attacker_hero_id_;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel::attacker_hero_id() const {
+  // @@protoc_insertion_point(field_get:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.Dispel.attacker_hero_id)
+  return _internal_attacker_hero_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel::_internal_set_attacker_hero_id(int32_t value) {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.attacker_hero_id_ = value;
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel::set_attacker_hero_id(int32_t value) {
+  _internal_set_attacker_hero_id(value);
+  // @@protoc_insertion_point(field_set:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.Dispel.attacker_hero_id)
+}
+
+// optional int32 target_hero_id = 2;
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel::_internal_has_target_hero_id() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel::has_target_hero_id() const {
+  return _internal_has_target_hero_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel::clear_target_hero_id() {
+  _impl_.target_hero_id_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel::_internal_target_hero_id() const {
+  return _impl_.target_hero_id_;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel::target_hero_id() const {
+  // @@protoc_insertion_point(field_get:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.Dispel.target_hero_id)
+  return _internal_target_hero_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel::_internal_set_target_hero_id(int32_t value) {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.target_hero_id_ = value;
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel::set_target_hero_id(int32_t value) {
+  _internal_set_target_hero_id(value);
+  // @@protoc_insertion_point(field_set:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.Dispel.target_hero_id)
+}
+
+// optional int32 inflictor_ability_id = 3 [default = -1];
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel::_internal_has_inflictor_ability_id() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
+  return value;
+}
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel::has_inflictor_ability_id() const {
+  return _internal_has_inflictor_ability_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel::clear_inflictor_ability_id() {
+  _impl_.inflictor_ability_id_ = -1;
+  _impl_._has_bits_[0] &= ~0x00000008u;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel::_internal_inflictor_ability_id() const {
+  return _impl_.inflictor_ability_id_;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel::inflictor_ability_id() const {
+  // @@protoc_insertion_point(field_get:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.Dispel.inflictor_ability_id)
+  return _internal_inflictor_ability_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel::_internal_set_inflictor_ability_id(int32_t value) {
+  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_.inflictor_ability_id_ = value;
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel::set_inflictor_ability_id(int32_t value) {
+  _internal_set_inflictor_ability_id(value);
+  // @@protoc_insertion_point(field_set:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.Dispel.inflictor_ability_id)
+}
+
+// optional int32 modifier_ability_id = 4 [default = -1];
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel::_internal_has_modifier_ability_id() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
+  return value;
+}
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel::has_modifier_ability_id() const {
+  return _internal_has_modifier_ability_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel::clear_modifier_ability_id() {
+  _impl_.modifier_ability_id_ = -1;
+  _impl_._has_bits_[0] &= ~0x00000010u;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel::_internal_modifier_ability_id() const {
+  return _impl_.modifier_ability_id_;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel::modifier_ability_id() const {
+  // @@protoc_insertion_point(field_get:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.Dispel.modifier_ability_id)
+  return _internal_modifier_ability_id();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel::_internal_set_modifier_ability_id(int32_t value) {
+  _impl_._has_bits_[0] |= 0x00000010u;
+  _impl_.modifier_ability_id_ = value;
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel::set_modifier_ability_id(int32_t value) {
+  _internal_set_modifier_ability_id(value);
+  // @@protoc_insertion_point(field_set:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.Dispel.modifier_ability_id)
+}
+
+// optional float duration_reduced = 5;
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel::_internal_has_duration_reduced() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
+  return value;
+}
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel::has_duration_reduced() const {
+  return _internal_has_duration_reduced();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel::clear_duration_reduced() {
+  _impl_.duration_reduced_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000004u;
+}
+inline float CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel::_internal_duration_reduced() const {
+  return _impl_.duration_reduced_;
+}
+inline float CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel::duration_reduced() const {
+  // @@protoc_insertion_point(field_get:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.Dispel.duration_reduced)
+  return _internal_duration_reduced();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel::_internal_set_duration_reduced(float value) {
+  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_.duration_reduced_ = value;
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel::set_duration_reduced(float value) {
+  _internal_set_duration_reduced(value);
+  // @@protoc_insertion_point(field_set:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.Dispel.duration_reduced)
+}
+
+// -------------------------------------------------------------------
+
+// CDOTAMatchPrivateMetadata_ContributionsCombatSegment
+
+// optional int32 game_time = 1;
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment::_internal_has_game_time() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool CDOTAMatchPrivateMetadata_ContributionsCombatSegment::has_game_time() const {
+  return _internal_has_game_time();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment::clear_game_time() {
+  _impl_.game_time_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment::_internal_game_time() const {
+  return _impl_.game_time_;
+}
+inline int32_t CDOTAMatchPrivateMetadata_ContributionsCombatSegment::game_time() const {
+  // @@protoc_insertion_point(field_get:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.game_time)
+  return _internal_game_time();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment::_internal_set_game_time(int32_t value) {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.game_time_ = value;
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment::set_game_time(int32_t value) {
+  _internal_set_game_time(value);
+  // @@protoc_insertion_point(field_set:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.game_time)
+}
+
+// repeated .CDOTAMatchPrivateMetadata.ContributionsCombatSegment.DamageContributionRecord damage_contributions = 2;
+inline int CDOTAMatchPrivateMetadata_ContributionsCombatSegment::_internal_damage_contributions_size() const {
+  return _impl_.damage_contributions_.size();
+}
+inline int CDOTAMatchPrivateMetadata_ContributionsCombatSegment::damage_contributions_size() const {
+  return _internal_damage_contributions_size();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment::clear_damage_contributions() {
+  _impl_.damage_contributions_.Clear();
+}
+inline ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord* CDOTAMatchPrivateMetadata_ContributionsCombatSegment::mutable_damage_contributions(int index) {
+  // @@protoc_insertion_point(field_mutable:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.damage_contributions)
+  return _impl_.damage_contributions_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord >*
+CDOTAMatchPrivateMetadata_ContributionsCombatSegment::mutable_damage_contributions() {
+  // @@protoc_insertion_point(field_mutable_list:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.damage_contributions)
+  return &_impl_.damage_contributions_;
+}
+inline const ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord& CDOTAMatchPrivateMetadata_ContributionsCombatSegment::_internal_damage_contributions(int index) const {
+  return _impl_.damage_contributions_.Get(index);
+}
+inline const ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord& CDOTAMatchPrivateMetadata_ContributionsCombatSegment::damage_contributions(int index) const {
+  // @@protoc_insertion_point(field_get:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.damage_contributions)
+  return _internal_damage_contributions(index);
+}
+inline ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord* CDOTAMatchPrivateMetadata_ContributionsCombatSegment::_internal_add_damage_contributions() {
+  return _impl_.damage_contributions_.Add();
+}
+inline ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord* CDOTAMatchPrivateMetadata_ContributionsCombatSegment::add_damage_contributions() {
+  ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord* _add = _internal_add_damage_contributions();
+  // @@protoc_insertion_point(field_add:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.damage_contributions)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageContributionRecord >&
+CDOTAMatchPrivateMetadata_ContributionsCombatSegment::damage_contributions() const {
+  // @@protoc_insertion_point(field_list:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.damage_contributions)
+  return _impl_.damage_contributions_;
+}
+
+// repeated .CDOTAMatchPrivateMetadata.ContributionsCombatSegment.DamageMitigationRecord damage_mitigations = 3;
+inline int CDOTAMatchPrivateMetadata_ContributionsCombatSegment::_internal_damage_mitigations_size() const {
+  return _impl_.damage_mitigations_.size();
+}
+inline int CDOTAMatchPrivateMetadata_ContributionsCombatSegment::damage_mitigations_size() const {
+  return _internal_damage_mitigations_size();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment::clear_damage_mitigations() {
+  _impl_.damage_mitigations_.Clear();
+}
+inline ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord* CDOTAMatchPrivateMetadata_ContributionsCombatSegment::mutable_damage_mitigations(int index) {
+  // @@protoc_insertion_point(field_mutable:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.damage_mitigations)
+  return _impl_.damage_mitigations_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord >*
+CDOTAMatchPrivateMetadata_ContributionsCombatSegment::mutable_damage_mitigations() {
+  // @@protoc_insertion_point(field_mutable_list:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.damage_mitigations)
+  return &_impl_.damage_mitigations_;
+}
+inline const ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord& CDOTAMatchPrivateMetadata_ContributionsCombatSegment::_internal_damage_mitigations(int index) const {
+  return _impl_.damage_mitigations_.Get(index);
+}
+inline const ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord& CDOTAMatchPrivateMetadata_ContributionsCombatSegment::damage_mitigations(int index) const {
+  // @@protoc_insertion_point(field_get:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.damage_mitigations)
+  return _internal_damage_mitigations(index);
+}
+inline ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord* CDOTAMatchPrivateMetadata_ContributionsCombatSegment::_internal_add_damage_mitigations() {
+  return _impl_.damage_mitigations_.Add();
+}
+inline ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord* CDOTAMatchPrivateMetadata_ContributionsCombatSegment::add_damage_mitigations() {
+  ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord* _add = _internal_add_damage_mitigations();
+  // @@protoc_insertion_point(field_add:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.damage_mitigations)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_DamageMitigationRecord >&
+CDOTAMatchPrivateMetadata_ContributionsCombatSegment::damage_mitigations() const {
+  // @@protoc_insertion_point(field_list:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.damage_mitigations)
+  return _impl_.damage_mitigations_;
+}
+
+// repeated .CDOTAMatchPrivateMetadata.ContributionsCombatSegment.HealingContributionRecord healing_contributions = 4;
+inline int CDOTAMatchPrivateMetadata_ContributionsCombatSegment::_internal_healing_contributions_size() const {
+  return _impl_.healing_contributions_.size();
+}
+inline int CDOTAMatchPrivateMetadata_ContributionsCombatSegment::healing_contributions_size() const {
+  return _internal_healing_contributions_size();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment::clear_healing_contributions() {
+  _impl_.healing_contributions_.Clear();
+}
+inline ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord* CDOTAMatchPrivateMetadata_ContributionsCombatSegment::mutable_healing_contributions(int index) {
+  // @@protoc_insertion_point(field_mutable:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.healing_contributions)
+  return _impl_.healing_contributions_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord >*
+CDOTAMatchPrivateMetadata_ContributionsCombatSegment::mutable_healing_contributions() {
+  // @@protoc_insertion_point(field_mutable_list:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.healing_contributions)
+  return &_impl_.healing_contributions_;
+}
+inline const ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord& CDOTAMatchPrivateMetadata_ContributionsCombatSegment::_internal_healing_contributions(int index) const {
+  return _impl_.healing_contributions_.Get(index);
+}
+inline const ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord& CDOTAMatchPrivateMetadata_ContributionsCombatSegment::healing_contributions(int index) const {
+  // @@protoc_insertion_point(field_get:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.healing_contributions)
+  return _internal_healing_contributions(index);
+}
+inline ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord* CDOTAMatchPrivateMetadata_ContributionsCombatSegment::_internal_add_healing_contributions() {
+  return _impl_.healing_contributions_.Add();
+}
+inline ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord* CDOTAMatchPrivateMetadata_ContributionsCombatSegment::add_healing_contributions() {
+  ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord* _add = _internal_add_healing_contributions();
+  // @@protoc_insertion_point(field_add:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.healing_contributions)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingContributionRecord >&
+CDOTAMatchPrivateMetadata_ContributionsCombatSegment::healing_contributions() const {
+  // @@protoc_insertion_point(field_list:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.healing_contributions)
+  return _impl_.healing_contributions_;
+}
+
+// repeated .CDOTAMatchPrivateMetadata.ContributionsCombatSegment.HealingReductionRecord healing_reductions = 5;
+inline int CDOTAMatchPrivateMetadata_ContributionsCombatSegment::_internal_healing_reductions_size() const {
+  return _impl_.healing_reductions_.size();
+}
+inline int CDOTAMatchPrivateMetadata_ContributionsCombatSegment::healing_reductions_size() const {
+  return _internal_healing_reductions_size();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment::clear_healing_reductions() {
+  _impl_.healing_reductions_.Clear();
+}
+inline ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord* CDOTAMatchPrivateMetadata_ContributionsCombatSegment::mutable_healing_reductions(int index) {
+  // @@protoc_insertion_point(field_mutable:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.healing_reductions)
+  return _impl_.healing_reductions_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord >*
+CDOTAMatchPrivateMetadata_ContributionsCombatSegment::mutable_healing_reductions() {
+  // @@protoc_insertion_point(field_mutable_list:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.healing_reductions)
+  return &_impl_.healing_reductions_;
+}
+inline const ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord& CDOTAMatchPrivateMetadata_ContributionsCombatSegment::_internal_healing_reductions(int index) const {
+  return _impl_.healing_reductions_.Get(index);
+}
+inline const ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord& CDOTAMatchPrivateMetadata_ContributionsCombatSegment::healing_reductions(int index) const {
+  // @@protoc_insertion_point(field_get:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.healing_reductions)
+  return _internal_healing_reductions(index);
+}
+inline ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord* CDOTAMatchPrivateMetadata_ContributionsCombatSegment::_internal_add_healing_reductions() {
+  return _impl_.healing_reductions_.Add();
+}
+inline ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord* CDOTAMatchPrivateMetadata_ContributionsCombatSegment::add_healing_reductions() {
+  ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord* _add = _internal_add_healing_reductions();
+  // @@protoc_insertion_point(field_add:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.healing_reductions)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_HealingReductionRecord >&
+CDOTAMatchPrivateMetadata_ContributionsCombatSegment::healing_reductions() const {
+  // @@protoc_insertion_point(field_list:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.healing_reductions)
+  return _impl_.healing_reductions_;
+}
+
+// repeated .CDOTAMatchPrivateMetadata.ContributionsCombatSegment.KillingBlow killing_blows = 6;
+inline int CDOTAMatchPrivateMetadata_ContributionsCombatSegment::_internal_killing_blows_size() const {
+  return _impl_.killing_blows_.size();
+}
+inline int CDOTAMatchPrivateMetadata_ContributionsCombatSegment::killing_blows_size() const {
+  return _internal_killing_blows_size();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment::clear_killing_blows() {
+  _impl_.killing_blows_.Clear();
+}
+inline ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow* CDOTAMatchPrivateMetadata_ContributionsCombatSegment::mutable_killing_blows(int index) {
+  // @@protoc_insertion_point(field_mutable:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.killing_blows)
+  return _impl_.killing_blows_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow >*
+CDOTAMatchPrivateMetadata_ContributionsCombatSegment::mutable_killing_blows() {
+  // @@protoc_insertion_point(field_mutable_list:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.killing_blows)
+  return &_impl_.killing_blows_;
+}
+inline const ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow& CDOTAMatchPrivateMetadata_ContributionsCombatSegment::_internal_killing_blows(int index) const {
+  return _impl_.killing_blows_.Get(index);
+}
+inline const ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow& CDOTAMatchPrivateMetadata_ContributionsCombatSegment::killing_blows(int index) const {
+  // @@protoc_insertion_point(field_get:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.killing_blows)
+  return _internal_killing_blows(index);
+}
+inline ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow* CDOTAMatchPrivateMetadata_ContributionsCombatSegment::_internal_add_killing_blows() {
+  return _impl_.killing_blows_.Add();
+}
+inline ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow* CDOTAMatchPrivateMetadata_ContributionsCombatSegment::add_killing_blows() {
+  ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow* _add = _internal_add_killing_blows();
+  // @@protoc_insertion_point(field_add:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.killing_blows)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_KillingBlow >&
+CDOTAMatchPrivateMetadata_ContributionsCombatSegment::killing_blows() const {
+  // @@protoc_insertion_point(field_list:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.killing_blows)
+  return _impl_.killing_blows_;
+}
+
+// repeated .CDOTAMatchPrivateMetadata.ContributionsCombatSegment.Dispel dispels = 7;
+inline int CDOTAMatchPrivateMetadata_ContributionsCombatSegment::_internal_dispels_size() const {
+  return _impl_.dispels_.size();
+}
+inline int CDOTAMatchPrivateMetadata_ContributionsCombatSegment::dispels_size() const {
+  return _internal_dispels_size();
+}
+inline void CDOTAMatchPrivateMetadata_ContributionsCombatSegment::clear_dispels() {
+  _impl_.dispels_.Clear();
+}
+inline ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel* CDOTAMatchPrivateMetadata_ContributionsCombatSegment::mutable_dispels(int index) {
+  // @@protoc_insertion_point(field_mutable:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.dispels)
+  return _impl_.dispels_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel >*
+CDOTAMatchPrivateMetadata_ContributionsCombatSegment::mutable_dispels() {
+  // @@protoc_insertion_point(field_mutable_list:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.dispels)
+  return &_impl_.dispels_;
+}
+inline const ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel& CDOTAMatchPrivateMetadata_ContributionsCombatSegment::_internal_dispels(int index) const {
+  return _impl_.dispels_.Get(index);
+}
+inline const ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel& CDOTAMatchPrivateMetadata_ContributionsCombatSegment::dispels(int index) const {
+  // @@protoc_insertion_point(field_get:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.dispels)
+  return _internal_dispels(index);
+}
+inline ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel* CDOTAMatchPrivateMetadata_ContributionsCombatSegment::_internal_add_dispels() {
+  return _impl_.dispels_.Add();
+}
+inline ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel* CDOTAMatchPrivateMetadata_ContributionsCombatSegment::add_dispels() {
+  ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel* _add = _internal_add_dispels();
+  // @@protoc_insertion_point(field_add:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.dispels)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment_Dispel >&
+CDOTAMatchPrivateMetadata_ContributionsCombatSegment::dispels() const {
+  // @@protoc_insertion_point(field_list:CDOTAMatchPrivateMetadata.ContributionsCombatSegment.dispels)
+  return _impl_.dispels_;
+}
+
+// -------------------------------------------------------------------
+
 // CDOTAMatchPrivateMetadata
 
 // repeated .CDOTAMatchPrivateMetadata.Team teams = 1;
@@ -18833,9 +21880,63 @@ CDOTAMatchPrivateMetadata::string_names() const {
   return _impl_.string_names_;
 }
 
+// repeated .CDOTAMatchPrivateMetadata.ContributionsCombatSegment contributions = 4;
+inline int CDOTAMatchPrivateMetadata::_internal_contributions_size() const {
+  return _impl_.contributions_.size();
+}
+inline int CDOTAMatchPrivateMetadata::contributions_size() const {
+  return _internal_contributions_size();
+}
+inline void CDOTAMatchPrivateMetadata::clear_contributions() {
+  _impl_.contributions_.Clear();
+}
+inline ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment* CDOTAMatchPrivateMetadata::mutable_contributions(int index) {
+  // @@protoc_insertion_point(field_mutable:CDOTAMatchPrivateMetadata.contributions)
+  return _impl_.contributions_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment >*
+CDOTAMatchPrivateMetadata::mutable_contributions() {
+  // @@protoc_insertion_point(field_mutable_list:CDOTAMatchPrivateMetadata.contributions)
+  return &_impl_.contributions_;
+}
+inline const ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment& CDOTAMatchPrivateMetadata::_internal_contributions(int index) const {
+  return _impl_.contributions_.Get(index);
+}
+inline const ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment& CDOTAMatchPrivateMetadata::contributions(int index) const {
+  // @@protoc_insertion_point(field_get:CDOTAMatchPrivateMetadata.contributions)
+  return _internal_contributions(index);
+}
+inline ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment* CDOTAMatchPrivateMetadata::_internal_add_contributions() {
+  return _impl_.contributions_.Add();
+}
+inline ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment* CDOTAMatchPrivateMetadata::add_contributions() {
+  ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment* _add = _internal_add_contributions();
+  // @@protoc_insertion_point(field_add:CDOTAMatchPrivateMetadata.contributions)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CDOTAMatchPrivateMetadata_ContributionsCombatSegment >&
+CDOTAMatchPrivateMetadata::contributions() const {
+  // @@protoc_insertion_point(field_list:CDOTAMatchPrivateMetadata.contributions)
+  return _impl_.contributions_;
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

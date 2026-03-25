@@ -32,7 +32,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>$(MSBuildProjectDirectory)\Andromeda-Injector\Common\Include\;$(IncludePath)</IncludePath>
-    <TargetName>Andromeda-Dota2</TargetName>
+    <TargetName>Andromeda-Dota2-Base</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>

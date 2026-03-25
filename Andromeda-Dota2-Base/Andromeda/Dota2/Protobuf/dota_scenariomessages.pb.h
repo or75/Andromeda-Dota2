@@ -2927,6 +2927,7 @@ class CMsgDotaScenario_HeroAbility final :
   enum : int {
     kNameFieldNumber = 1,
     kLevelFieldNumber = 2,
+    kTomeUpgradedFieldNumber = 3,
   };
   // optional string name = 1;
   bool has_name() const;
@@ -2959,6 +2960,19 @@ class CMsgDotaScenario_HeroAbility final :
   void _internal_set_level(int32_t value);
   public:
 
+  // optional bool tome_upgraded = 3;
+  bool has_tome_upgraded() const;
+  private:
+  bool _internal_has_tome_upgraded() const;
+  public:
+  void clear_tome_upgraded();
+  bool tome_upgraded() const;
+  void set_tome_upgraded(bool value);
+  private:
+  bool _internal_tome_upgraded() const;
+  void _internal_set_tome_upgraded(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:CMsgDotaScenario.HeroAbility)
  private:
   class _Internal;
@@ -2971,6 +2985,7 @@ class CMsgDotaScenario_HeroAbility final :
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
     int32_t level_;
+    bool tome_upgraded_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_dota_5fscenariomessages_2eproto;
@@ -8283,6 +8298,34 @@ inline void CMsgDotaScenario_HeroAbility::_internal_set_level(int32_t value) {
 inline void CMsgDotaScenario_HeroAbility::set_level(int32_t value) {
   _internal_set_level(value);
   // @@protoc_insertion_point(field_set:CMsgDotaScenario.HeroAbility.level)
+}
+
+// optional bool tome_upgraded = 3;
+inline bool CMsgDotaScenario_HeroAbility::_internal_has_tome_upgraded() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
+  return value;
+}
+inline bool CMsgDotaScenario_HeroAbility::has_tome_upgraded() const {
+  return _internal_has_tome_upgraded();
+}
+inline void CMsgDotaScenario_HeroAbility::clear_tome_upgraded() {
+  _impl_.tome_upgraded_ = false;
+  _impl_._has_bits_[0] &= ~0x00000004u;
+}
+inline bool CMsgDotaScenario_HeroAbility::_internal_tome_upgraded() const {
+  return _impl_.tome_upgraded_;
+}
+inline bool CMsgDotaScenario_HeroAbility::tome_upgraded() const {
+  // @@protoc_insertion_point(field_get:CMsgDotaScenario.HeroAbility.tome_upgraded)
+  return _internal_tome_upgraded();
+}
+inline void CMsgDotaScenario_HeroAbility::_internal_set_tome_upgraded(bool value) {
+  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_.tome_upgraded_ = value;
+}
+inline void CMsgDotaScenario_HeroAbility::set_tome_upgraded(bool value) {
+  _internal_set_tome_upgraded(value);
+  // @@protoc_insertion_point(field_set:CMsgDotaScenario.HeroAbility.tome_upgraded)
 }
 
 // -------------------------------------------------------------------

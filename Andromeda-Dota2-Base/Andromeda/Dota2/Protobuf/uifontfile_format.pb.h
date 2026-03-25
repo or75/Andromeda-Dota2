@@ -562,7 +562,7 @@ class CUIFontFilePackagePB final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CUIFontFilePackagePB_CUIEncryptedFontFilePB >&
       encrypted_font_files() const;
 
-  // required uint32 package_version = 1;
+  // optional uint32 package_version = 1;
   bool has_package_version() const;
   private:
   bool _internal_has_package_version() const;
@@ -814,7 +814,7 @@ inline void CUIFontFilePackagePB_CUIEncryptedFontFilePB::set_allocated_encrypted
 
 // CUIFontFilePackagePB
 
-// required uint32 package_version = 1;
+// optional uint32 package_version = 1;
 inline bool CUIFontFilePackagePB::_internal_has_package_version() const {
   bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
   return value;

@@ -70,7 +70,7 @@ const char descriptor_table_protodef_econ_5fshared_5fenums_2eproto[] PROTOBUF_SE
   "ResponseInvalid\020\004\022\033\n\027k_EGCMsgResponseNoM"
   "atch\020\005\022 \n\034k_EGCMsgResponseUnknownError\020\006"
   "\022\037\n\033k_EGCMsgResponseNotLoggedOn\020\007\022\032\n\026k_E"
-  "GCMsgFailedToCreate\020\010*\305\005\n\025EGCMsgUseItemR"
+  "GCMsgFailedToCreate\020\010*\342\006\n\025EGCMsgUseItemR"
   "esponse\022$\n k_EGCMsgUseItemResponse_ItemU"
   "sed\020\000\022.\n*k_EGCMsgUseItemResponse_GiftNoO"
   "therPlayers\020\001\022\'\n#k_EGCMsgUseItemResponse"
@@ -88,11 +88,15 @@ const char descriptor_table_protodef_econ_5fshared_5fenums_2eproto[] PROTOBUF_SE
   "Response_EmoticonUnlock_NoNew\020\013\0223\n/k_EGC"
   "MsgUseItemResponse_EmoticonUnlock_Comple"
   "te\020\014\022/\n+k_EGCMsgUseItemResponse_ItemUsed"
-  "_Compendium\020\r"
+  "_Compendium\020\r\0224\n0k_EGCMsgUseItemResponse"
+  "_CannotUseWhileUntradable\020\016\0221\n-k_EGCMsgU"
+  "seItemResponse_CannotBeUsedByAccount\020\017\0222"
+  "\n.k_EGCMsgUseItemResponse_RecipientCanno"
+  "tRecieve\020\020"
   ;
 static ::_pbi::once_flag descriptor_table_econ_5fshared_5fenums_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_econ_5fshared_5fenums_2eproto = {
-    false, false, 1133, descriptor_table_protodef_econ_5fshared_5fenums_2eproto,
+    false, false, 1290, descriptor_table_protodef_econ_5fshared_5fenums_2eproto,
     "econ_shared_enums.proto",
     &descriptor_table_econ_5fshared_5fenums_2eproto_once, nullptr, 0, 1,
     schemas, file_default_instances, TableStruct_econ_5fshared_5fenums_2eproto::offsets,
@@ -159,6 +163,9 @@ bool EGCMsgUseItemResponse_IsValid(int value) {
     case 11:
     case 12:
     case 13:
+    case 14:
+    case 15:
+    case 16:
       return true;
     default:
       return false;

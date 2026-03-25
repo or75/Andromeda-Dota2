@@ -27,7 +27,7 @@ static constexpr ::_pbi::MigrationSchema* schemas = nullptr;
 static constexpr ::_pb::Message* const* file_default_instances = nullptr;
 
 const char descriptor_table_protodef_dota_5fgcmessages_5fmsgid_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\033dota_gcmessages_msgid.proto*\216\326\002\n\nEDOTA"
+  "\n\033dota_gcmessages_msgid.proto*\221\333\002\n\nEDOTA"
   "GCMsg\022\025\n\020k_EMsgGCDOTABase\020\3306\022\035\n\030k_EMsgGC"
   "GameMatchSignOut\020\3346\022%\n k_EMsgGCGameMatch"
   "SignOutResponse\020\3356\022\034\n\027k_EMsgGCJoinChatCh"
@@ -1111,22 +1111,38 @@ const char descriptor_table_protodef_dota_5fgcmessages_5fmsgid_2eproto[] PROTOBU
   "CMonsterHunterClaimCodexRewardResponse\020\330"
   "F\0220\n+k_EMsgClientToGCMonsterHunterClaimS"
   "etReward\020\331F\0228\n3k_EMsgClientToGCMonsterHu"
-  "nterClaimSetRewardResponse\020\332F\022$\n\037k_EMsgC"
-  "lientToGCGetEventRanking\020\223G\022,\n\'k_EMsgCli"
-  "entToGCGetEventRankingResponse\020\224G\022#\n\036k_E"
-  "MsgClientToGCGetEventCoupon\020\225G\022+\n&k_EMsg"
-  "ClientToGCGetEventCouponResponse\020\226G\022\'\n\"k"
-  "_EMsgClientToGCConvertEventPoints\020\227G\022/\n*"
-  "k_EMsgClientToGCConvertEventPointsRespon"
-  "se\020\230G\022.\n)k_EMsgServerToGCWarningLowServe"
-  "rFramerate\020\231G\0222\n-k_EMsgServerToGCWarning"
-  "InvalidBotAbilityUsage\020\232G\022%\n k_EMsgClien"
-  "tToGCInviteToDemoMode\020\233G\022%\n k_EMsgGCToCl"
-  "ientInviteToDemoMode\020\234G"
+  "nterClaimSetRewardResponse\020\332F\022+\n&k_EMsgC"
+  "lientToGCItemBattlerGetUserData\020\214G\0223\n.k_"
+  "EMsgClientToGCItemBattlerGetUserDataResp"
+  "onse\020\215G\022*\n%k_EMsgClientToGCItemBattlerGa"
+  "meAction\020\216G\0222\n-k_EMsgClientToGCItemBattl"
+  "erGameActionResponse\020\217G\022/\n*k_EMsgGCToCli"
+  "entItemBattlerUserDataUpdated\020\220G\022,\n\'k_EM"
+  "sgClientToGCItemBattlerDevGrantItem\020\221G\0224"
+  "\n/k_EMsgClientToGCItemBattlerDevGrantIte"
+  "mResponse\020\222G\022$\n\037k_EMsgClientToGCGetEvent"
+  "Ranking\020\223G\022,\n\'k_EMsgClientToGCGetEventRa"
+  "nkingResponse\020\224G\022#\n\036k_EMsgClientToGCGetE"
+  "ventCoupon\020\225G\022+\n&k_EMsgClientToGCGetEven"
+  "tCouponResponse\020\226G\022\'\n\"k_EMsgClientToGCCo"
+  "nvertEventPoints\020\227G\022/\n*k_EMsgClientToGCC"
+  "onvertEventPointsResponse\020\230G\022.\n)k_EMsgSe"
+  "rverToGCWarningLowServerFramerate\020\231G\0222\n-"
+  "k_EMsgServerToGCWarningInvalidBotAbility"
+  "Usage\020\232G\022%\n k_EMsgClientToGCInviteToDemo"
+  "Mode\020\233G\022%\n k_EMsgGCToClientInviteToDemoM"
+  "ode\020\234G\022+\n&k_EMsgClientToGCOverworldDevSe"
+  "tFortune\020\235G\0223\n.k_EMsgClientToGCOverworld"
+  "DevSetFortuneResponse\020\236G\022,\n\'k_EMsgClient"
+  "ToGCOverworldRequestFortune\020\237G\0224\n/k_EMsg"
+  "ClientToGCOverworldRequestFortuneRespons"
+  "e\020\240G\022-\n(k_EMsgClientToGCOverworldDevClea"
+  "rFortune\020\241G\0225\n0k_EMsgClientToGCOverworld"
+  "DevClearFortuneResponse\020\242G"
   ;
 static ::_pbi::once_flag descriptor_table_dota_5fgcmessages_5fmsgid_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_dota_5fgcmessages_5fmsgid_2eproto = {
-    false, false, 43823, descriptor_table_protodef_dota_5fgcmessages_5fmsgid_2eproto,
+    false, false, 44466, descriptor_table_protodef_dota_5fgcmessages_5fmsgid_2eproto,
     "dota_gcmessages_msgid.proto",
     &descriptor_table_dota_5fgcmessages_5fmsgid_2eproto_once, nullptr, 0, 0,
     schemas, file_default_instances, TableStruct_dota_5fgcmessages_5fmsgid_2eproto::offsets,
@@ -2134,6 +2150,13 @@ bool EDOTAGCMsg_IsValid(int value) {
     case 9048:
     case 9049:
     case 9050:
+    case 9100:
+    case 9101:
+    case 9102:
+    case 9103:
+    case 9104:
+    case 9105:
+    case 9106:
     case 9107:
     case 9108:
     case 9109:
@@ -2144,6 +2167,12 @@ bool EDOTAGCMsg_IsValid(int value) {
     case 9114:
     case 9115:
     case 9116:
+    case 9117:
+    case 9118:
+    case 9119:
+    case 9120:
+    case 9121:
+    case 9122:
       return true;
     default:
       return false;

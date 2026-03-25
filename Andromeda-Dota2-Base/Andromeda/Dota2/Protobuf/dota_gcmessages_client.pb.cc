@@ -2785,7 +2785,8 @@ PROTOBUF_CONSTEXPR CMsgDOTARedeemItem::CMsgDOTARedeemItem(
     /*decltype(_impl_._has_bits_)*/{}
   , /*decltype(_impl_._cached_size_)*/{}
   , /*decltype(_impl_.currency_id_)*/uint64_t{0u}
-  , /*decltype(_impl_.purchase_def_)*/0u} {}
+  , /*decltype(_impl_.purchase_def_)*/0u
+  , /*decltype(_impl_.claim_as_points_)*/false} {}
 struct CMsgDOTARedeemItemDefaultTypeInternal {
   PROTOBUF_CONSTEXPR CMsgDOTARedeemItemDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -7245,7 +7246,6 @@ PROTOBUF_CONSTEXPR CMsgClientToGCGetEventCoupon::CMsgClientToGCGetEventCoupon(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_._has_bits_)*/{}
   , /*decltype(_impl_._cached_size_)*/{}
-  , /*decltype(_impl_.coupon_ids_)*/{}
   , /*decltype(_impl_.event_id_)*/0} {}
 struct CMsgClientToGCGetEventCouponDefaultTypeInternal {
   PROTOBUF_CONSTEXPR CMsgClientToGCGetEventCouponDefaultTypeInternal()
@@ -9487,8 +9487,10 @@ const uint32_t TableStruct_dota_5fgcmessages_5fclient_2eproto::offsets[] PROTOBU
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::CMsgDOTARedeemItem, _impl_.currency_id_),
   PROTOBUF_FIELD_OFFSET(::CMsgDOTARedeemItem, _impl_.purchase_def_),
+  PROTOBUF_FIELD_OFFSET(::CMsgDOTARedeemItem, _impl_.claim_as_points_),
   0,
   1,
+  2,
   PROTOBUF_FIELD_OFFSET(::CMsgDOTARedeemItemResponse, _impl_._has_bits_),
   PROTOBUF_FIELD_OFFSET(::CMsgDOTARedeemItemResponse, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -12614,9 +12616,7 @@ const uint32_t TableStruct_dota_5fgcmessages_5fclient_2eproto::offsets[] PROTOBU
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::CMsgClientToGCGetEventCoupon, _impl_.event_id_),
-  PROTOBUF_FIELD_OFFSET(::CMsgClientToGCGetEventCoupon, _impl_.coupon_ids_),
   0,
-  ~0u,
   PROTOBUF_FIELD_OFFSET(::CMsgClientToGCGetEventCouponResponse_Coupon, _impl_._has_bits_),
   PROTOBUF_FIELD_OFFSET(::CMsgClientToGCGetEventCouponResponse_Coupon, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -12859,301 +12859,301 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 2085, 2093, -1, sizeof(::CMsgClientToGCRequestSlarkGameResultResponse)},
   { 2095, 2108, -1, sizeof(::CMsgGCToClientQuestProgressUpdated_Challenge)},
   { 2115, 2123, -1, sizeof(::CMsgGCToClientQuestProgressUpdated)},
-  { 2125, 2133, -1, sizeof(::CMsgDOTARedeemItem)},
-  { 2135, 2142, -1, sizeof(::CMsgDOTARedeemItemResponse)},
-  { 2143, 2151, -1, sizeof(::CMsgClientToGCSelectCompendiumInGamePrediction_Prediction)},
-  { 2153, 2162, -1, sizeof(::CMsgClientToGCSelectCompendiumInGamePrediction)},
-  { 2165, 2172, -1, sizeof(::CMsgClientToGCSelectCompendiumInGamePredictionResponse)},
-  { 2173, 2183, -1, sizeof(::CMsgClientToGCOpenPlayerCardPack)},
-  { 2187, 2195, -1, sizeof(::CMsgClientToGCOpenPlayerCardPackResponse)},
-  { 2197, 2205, -1, sizeof(::CMsgClientToGCRecyclePlayerCard)},
-  { 2207, 2215, -1, sizeof(::CMsgClientToGCRecyclePlayerCardResponse)},
-  { 2217, 2226, -1, sizeof(::CMsgClientToGCCreatePlayerCardPack)},
-  { 2229, 2236, -1, sizeof(::CMsgClientToGCCreatePlayerCardPackResponse)},
-  { 2237, 2247, -1, sizeof(::CMsgClientToGCCreateTeamPlayerCardPack)},
-  { 2251, 2258, -1, sizeof(::CMsgClientToGCCreateTeamPlayerCardPackResponse)},
-  { 2259, 2270, -1, sizeof(::CMsgGCToClientBattlePassRollup_International2016_Questlines)},
-  { 2275, 2286, -1, sizeof(::CMsgGCToClientBattlePassRollup_International2016_Wagering)},
-  { 2291, 2300, -1, sizeof(::CMsgGCToClientBattlePassRollup_International2016_Achievements)},
-  { 2303, 2311, -1, sizeof(::CMsgGCToClientBattlePassRollup_International2016_BattleCup)},
-  { 2313, 2322, -1, sizeof(::CMsgGCToClientBattlePassRollup_International2016_Predictions)},
-  { 2325, 2333, -1, sizeof(::CMsgGCToClientBattlePassRollup_International2016_Bracket)},
-  { 2335, 2343, -1, sizeof(::CMsgGCToClientBattlePassRollup_International2016_PlayerCard)},
-  { 2345, 2353, -1, sizeof(::CMsgGCToClientBattlePassRollup_International2016_FantasyChallenge)},
-  { 2355, 2370, -1, sizeof(::CMsgGCToClientBattlePassRollup_International2016)},
-  { 2379, 2390, -1, sizeof(::CMsgGCToClientBattlePassRollup_Fall2016_Questlines)},
-  { 2395, 2406, -1, sizeof(::CMsgGCToClientBattlePassRollup_Fall2016_Wagering)},
-  { 2411, 2420, -1, sizeof(::CMsgGCToClientBattlePassRollup_Fall2016_Achievements)},
-  { 2423, 2431, -1, sizeof(::CMsgGCToClientBattlePassRollup_Fall2016_BattleCup)},
-  { 2433, 2442, -1, sizeof(::CMsgGCToClientBattlePassRollup_Fall2016_Predictions)},
-  { 2445, 2453, -1, sizeof(::CMsgGCToClientBattlePassRollup_Fall2016_Bracket)},
-  { 2455, 2463, -1, sizeof(::CMsgGCToClientBattlePassRollup_Fall2016_PlayerCard)},
-  { 2465, 2473, -1, sizeof(::CMsgGCToClientBattlePassRollup_Fall2016_FantasyChallenge)},
-  { 2475, 2490, -1, sizeof(::CMsgGCToClientBattlePassRollup_Fall2016)},
-  { 2499, 2510, -1, sizeof(::CMsgGCToClientBattlePassRollup_Winter2017_Questlines)},
-  { 2515, 2526, -1, sizeof(::CMsgGCToClientBattlePassRollup_Winter2017_Wagering)},
-  { 2531, 2540, -1, sizeof(::CMsgGCToClientBattlePassRollup_Winter2017_Achievements)},
-  { 2543, 2551, -1, sizeof(::CMsgGCToClientBattlePassRollup_Winter2017_BattleCup)},
-  { 2553, 2562, -1, sizeof(::CMsgGCToClientBattlePassRollup_Winter2017_Predictions)},
-  { 2565, 2573, -1, sizeof(::CMsgGCToClientBattlePassRollup_Winter2017_Bracket)},
-  { 2575, 2583, -1, sizeof(::CMsgGCToClientBattlePassRollup_Winter2017_PlayerCard)},
-  { 2585, 2593, -1, sizeof(::CMsgGCToClientBattlePassRollup_Winter2017_FantasyChallenge)},
-  { 2595, 2610, -1, sizeof(::CMsgGCToClientBattlePassRollup_Winter2017)},
-  { 2619, 2630, -1, sizeof(::CMsgGCToClientBattlePassRollup_TI7_Questlines)},
-  { 2635, 2646, -1, sizeof(::CMsgGCToClientBattlePassRollup_TI7_Wagering)},
-  { 2651, 2660, -1, sizeof(::CMsgGCToClientBattlePassRollup_TI7_Achievements)},
-  { 2663, 2671, -1, sizeof(::CMsgGCToClientBattlePassRollup_TI7_BattleCup)},
-  { 2673, 2682, -1, sizeof(::CMsgGCToClientBattlePassRollup_TI7_Predictions)},
-  { 2685, 2693, -1, sizeof(::CMsgGCToClientBattlePassRollup_TI7_Bracket)},
-  { 2695, 2703, -1, sizeof(::CMsgGCToClientBattlePassRollup_TI7_PlayerCard)},
-  { 2705, 2713, -1, sizeof(::CMsgGCToClientBattlePassRollup_TI7_FantasyChallenge)},
-  { 2715, 2730, -1, sizeof(::CMsgGCToClientBattlePassRollup_TI7)},
-  { 2739, 2749, -1, sizeof(::CMsgGCToClientBattlePassRollup_TI8_CavernCrawl)},
-  { 2753, 2764, -1, sizeof(::CMsgGCToClientBattlePassRollup_TI8_Wagering)},
-  { 2769, 2778, -1, sizeof(::CMsgGCToClientBattlePassRollup_TI8_Achievements)},
-  { 2781, 2790, -1, sizeof(::CMsgGCToClientBattlePassRollup_TI8_Predictions)},
-  { 2793, 2801, -1, sizeof(::CMsgGCToClientBattlePassRollup_TI8_Bracket)},
-  { 2803, 2811, -1, sizeof(::CMsgGCToClientBattlePassRollup_TI8_PlayerCard)},
-  { 2813, 2821, -1, sizeof(::CMsgGCToClientBattlePassRollup_TI8_FantasyChallenge)},
-  { 2823, 2837, -1, sizeof(::CMsgGCToClientBattlePassRollup_TI8)},
-  { 2845, 2852, -1, sizeof(::CMsgGCToClientBattlePassRollup_TI9)},
-  { 2853, 2860, -1, sizeof(::CMsgGCToClientBattlePassRollup_TI10)},
-  { 2861, 2869, -1, sizeof(::CMsgGCToClientBattlePassRollupRequest)},
-  { 2871, 2884, -1, sizeof(::CMsgGCToClientBattlePassRollupResponse)},
-  { 2891, 2898, -1, sizeof(::CMsgGCToClientBattlePassRollupListRequest)},
-  { 2899, 2907, -1, sizeof(::CMsgGCToClientBattlePassRollupListResponse_EventInfo)},
-  { 2909, -1, -1, sizeof(::CMsgGCToClientBattlePassRollupListResponse)},
-  { 2916, 2923, -1, sizeof(::CMsgClientToGCTransferSeasonalMMRRequest)},
-  { 2924, 2931, -1, sizeof(::CMsgClientToGCTransferSeasonalMMRResponse)},
-  { 2932, 2939, -1, sizeof(::CMsgGCToClientPlaytestStatus)},
-  { 2940, 2947, -1, sizeof(::CMsgClientToGCJoinPlaytest)},
-  { 2948, 2955, -1, sizeof(::CMsgClientToGCJoinPlaytestResponse)},
-  { 2956, 2964, -1, sizeof(::CMsgDOTASetFavoriteTeam)},
-  { 2966, 2974, -1, sizeof(::CMsgDOTATriviaCurrentQuestions)},
-  { 2976, 2984, -1, sizeof(::CMsgDOTASubmitTriviaQuestionAnswer)},
-  { 2986, 2993, -1, sizeof(::CMsgDOTASubmitTriviaQuestionAnswerResponse)},
-  { 2994, -1, -1, sizeof(::CMsgDOTAStartTriviaSession)},
-  { 3000, 3008, -1, sizeof(::CMsgDOTAStartTriviaSessionResponse)},
-  { 3010, -1, -1, sizeof(::CMsgDOTAAnchorPhoneNumberRequest)},
-  { 3016, 3023, -1, sizeof(::CMsgDOTAAnchorPhoneNumberResponse)},
-  { 3024, -1, -1, sizeof(::CMsgDOTAUnanchorPhoneNumberRequest)},
-  { 3030, 3037, -1, sizeof(::CMsgDOTAUnanchorPhoneNumberResponse)},
-  { 3038, 3048, -1, sizeof(::CMsgGCToClientCommendNotification)},
-  { 3052, 3062, -1, sizeof(::CMsgDOTAClientToGCQuickStatsRequest)},
-  { 3066, 3076, -1, sizeof(::CMsgDOTAClientToGCQuickStatsResponse_SimpleStats)},
-  { 3080, 3093, -1, sizeof(::CMsgDOTAClientToGCQuickStatsResponse)},
-  { 3100, 3107, -1, sizeof(::CMsgDOTASelectionPriorityChoiceRequest)},
-  { 3108, 3115, -1, sizeof(::CMsgDOTASelectionPriorityChoiceResponse)},
-  { 3116, 3123, -1, sizeof(::CMsgDOTAGameAutographReward)},
-  { 3124, 3131, -1, sizeof(::CMsgDOTAGameAutographRewardResponse)},
-  { 3132, -1, -1, sizeof(::CMsgDOTADestroyLobbyRequest)},
-  { 3138, 3145, -1, sizeof(::CMsgDOTADestroyLobbyResponse)},
-  { 3146, -1, -1, sizeof(::CMsgDOTAGetRecentPlayTimeFriendsRequest)},
-  { 3152, -1, -1, sizeof(::CMsgDOTAGetRecentPlayTimeFriendsResponse)},
-  { 3159, 3169, -1, sizeof(::CMsgPurchaseItemWithEventPoints)},
-  { 3173, 3180, -1, sizeof(::CMsgPurchaseItemWithEventPointsResponse)},
-  { 3181, 3189, -1, sizeof(::CMsgPurchaseHeroRandomRelic)},
-  { 3191, 3199, -1, sizeof(::CMsgPurchaseHeroRandomRelicResponse)},
-  { 3201, 3209, -1, sizeof(::CMsgClientToGCRequestPlusWeeklyChallengeResult)},
-  { 3211, -1, -1, sizeof(::CMsgClientToGCRequestPlusWeeklyChallengeResultResponse)},
-  { 3217, 3224, -1, sizeof(::CMsgProfileRequest)},
-  { 3225, 3236, -1, sizeof(::CMsgProfileResponse_FeaturedHero)},
-  { 3241, 3252, -1, sizeof(::CMsgProfileResponse_MatchInfo)},
-  { 3257, 3270, -1, sizeof(::CMsgProfileResponse)},
-  { 3277, 3285, -1, sizeof(::CMsgProfileUpdate)},
-  { 3287, 3294, -1, sizeof(::CMsgProfileUpdateResponse)},
-  { 3295, 3305, -1, sizeof(::CMsgTalentWinRates)},
-  { 3309, 3324, -1, sizeof(::CMsgGlobalHeroAverages)},
-  { 3333, 3340, -1, sizeof(::CMsgHeroGlobalDataRequest)},
-  { 3341, 3351, -1, sizeof(::CMsgHeroGlobalDataResponse_GraphData)},
-  { 3355, 3365, -1, sizeof(::CMsgHeroGlobalDataResponse_WeekData)},
-  { 3369, 3380, -1, sizeof(::CMsgHeroGlobalDataResponse_HeroDataPerRankChunk)},
-  { 3385, 3393, -1, sizeof(::CMsgHeroGlobalDataResponse)},
-  { 3395, -1, -1, sizeof(::CMsgHeroGlobalDataAllHeroes)},
-  { 3402, 3413, -1, sizeof(::CMsgHeroGlobalDataHeroesAlliesAndEnemies_HeroData)},
-  { 3418, 3426, -1, sizeof(::CMsgHeroGlobalDataHeroesAlliesAndEnemies_RankedHeroData)},
-  { 3428, -1, -1, sizeof(::CMsgHeroGlobalDataHeroesAlliesAndEnemies)},
-  { 3435, 3442, -1, sizeof(::CMsgPrivateMetadataKeyRequest)},
-  { 3443, 3450, -1, sizeof(::CMsgPrivateMetadataKeyResponse)},
-  { 3451, 3458, -1, sizeof(::CMsgActivatePlusFreeTrialResponse)},
-  { 3459, 3468, -1, sizeof(::CMsgGCToClientCavernCrawlMapPathCompleted_CompletedPathInfo)},
-  { 3471, 3481, -1, sizeof(::CMsgGCToClientCavernCrawlMapPathCompleted)},
-  { 3485, 3492, -1, sizeof(::CMsgGCToClientCavernCrawlMapUpdated)},
-  { 3493, 3502, -1, sizeof(::CMsgClientToGCCavernCrawlClaimRoom)},
-  { 3505, 3512, -1, sizeof(::CMsgClientToGCCavernCrawlClaimRoomResponse)},
-  { 3513, 3523, -1, sizeof(::CMsgClientToGCCavernCrawlUseItemOnRoom)},
-  { 3527, 3534, -1, sizeof(::CMsgClientToGCCavernCrawlUseItemOnRoomResponse)},
-  { 3535, 3545, -1, sizeof(::CMsgClientToGCCavernCrawlUseItemOnPath)},
-  { 3549, 3556, -1, sizeof(::CMsgClientToGCCavernCrawlUseItemOnPathResponse)},
-  { 3557, 3564, -1, sizeof(::CMsgClientToGCCavernCrawlRequestMapState)},
-  { 3565, 3573, -1, sizeof(::CMsgClientToGCCavernCrawlRequestMapStateResponse_SwappedChallenge)},
-  { 3575, 3583, -1, sizeof(::CMsgClientToGCCavernCrawlRequestMapStateResponse_InventoryItem)},
-  { 3585, 3593, -1, sizeof(::CMsgClientToGCCavernCrawlRequestMapStateResponse_TreasureMap)},
-  { 3595, 3617, -1, sizeof(::CMsgClientToGCCavernCrawlRequestMapStateResponse_MapVariant)},
-  { 3633, 3643, -1, sizeof(::CMsgClientToGCCavernCrawlRequestMapStateResponse)},
-  { 3647, 3654, -1, sizeof(::CMsgClientToGCCavernCrawlGetClaimedRoomCount)},
-  { 3655, 3663, -1, sizeof(::CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse_MapVariant)},
-  { 3665, 3674, -1, sizeof(::CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse)},
-  { 3677, 3686, -1, sizeof(::CMsgDOTAMutationList_Mutation)},
-  { 3689, -1, -1, sizeof(::CMsgDOTAMutationList)},
-  { 3696, 3704, -1, sizeof(::CMsgEventTipsSummaryRequest)},
-  { 3706, 3714, -1, sizeof(::CMsgEventTipsSummaryResponse_Tipper)},
-  { 3716, 3724, -1, sizeof(::CMsgEventTipsSummaryResponse)},
-  { 3726, 3734, -1, sizeof(::CMsgSocialFeedRequest)},
-  { 3736, 3753, -1, sizeof(::CMsgSocialFeedResponse_FeedEvent)},
-  { 3764, 3772, -1, sizeof(::CMsgSocialFeedResponse)},
-  { 3774, 3781, -1, sizeof(::CMsgSocialFeedCommentsRequest)},
-  { 3782, 3791, -1, sizeof(::CMsgSocialFeedCommentsResponse_FeedComment)},
-  { 3794, 3802, -1, sizeof(::CMsgSocialFeedCommentsResponse)},
-  { 3804, 3813, -1, sizeof(::CMsgClientToGCPlayerCardSpecificPurchaseRequest)},
-  { 3816, 3824, -1, sizeof(::CMsgClientToGCPlayerCardSpecificPurchaseResponse)},
-  { 3826, 3833, -1, sizeof(::CMsgClientToGCRequestContestVotes)},
-  { 3834, 3842, -1, sizeof(::CMsgClientToGCRequestContestVotesResponse_ItemVote)},
-  { 3844, 3852, -1, sizeof(::CMsgClientToGCRequestContestVotesResponse)},
-  { 3854, 3863, -1, sizeof(::CMsgClientToGCRecordContestVote)},
-  { 3866, 3873, -1, sizeof(::CMsgGCToClientRecordContestVoteResponse)},
-  { 3874, 3883, -1, sizeof(::CMsgDevGrantEventPoints)},
-  { 3886, 3893, -1, sizeof(::CMsgDevGrantEventPointsResponse)},
-  { 3894, 3903, -1, sizeof(::CMsgDevGrantEventAction)},
-  { 3906, 3913, -1, sizeof(::CMsgDevGrantEventActionResponse)},
-  { 3914, 3924, -1, sizeof(::CMsgDevDeleteEventActions)},
-  { 3928, 3935, -1, sizeof(::CMsgDevDeleteEventActionsResponse)},
-  { 3936, 3944, -1, sizeof(::CMsgDevResetEventState)},
-  { 3946, 3953, -1, sizeof(::CMsgDevResetEventStateResponse)},
-  { 3954, -1, -1, sizeof(::CMsgDevReloadAllEvents)},
-  { 3960, 3967, -1, sizeof(::CMsgDevReloadAllEventsResponse)},
-  { 3968, 3975, -1, sizeof(::CMsgConsumeEventSupportGrantItem)},
-  { 3976, 3983, -1, sizeof(::CMsgConsumeEventSupportGrantItemResponse)},
-  { 3984, -1, -1, sizeof(::CMsgClientToGCGetFilteredPlayers)},
-  { 3990, 4000, -1, sizeof(::CMsgGCToClientGetFilteredPlayersResponse_CFilterEntry)},
-  { 4004, 4015, -1, sizeof(::CMsgGCToClientGetFilteredPlayersResponse)},
-  { 4020, 4027, -1, sizeof(::CMsgClientToGCRemoveFilteredPlayer)},
-  { 4028, 4035, -1, sizeof(::CMsgGCToClientRemoveFilteredPlayerResponse)},
-  { 4036, 4043, -1, sizeof(::CMsgClientToGCPurchaseFilteredPlayerSlot)},
-  { 4044, 4053, -1, sizeof(::CMsgGCToClientPurchaseFilteredPlayerSlotResponse)},
-  { 4056, 4064, -1, sizeof(::CMsgClientToGCUpdateFilteredPlayerNote)},
-  { 4066, 4073, -1, sizeof(::CMsgGCToClientUpdateFilteredPlayerNoteResponse)},
-  { 4074, 4083, -1, sizeof(::CMsgPartySearchPlayer)},
-  { 4086, -1, -1, sizeof(::CMsgGCToClientPlayerBeaconState)},
-  { 4093, 4102, -1, sizeof(::CMsgGCToClientPartyBeaconUpdate)},
-  { 4105, 4112, -1, sizeof(::CMsgClientToGCUpdatePartyBeacon)},
-  { 4113, -1, -1, sizeof(::CMsgClientToGCRequestActiveBeaconParties)},
-  { 4119, 4127, -1, sizeof(::CMsgGCToClientRequestActiveBeaconPartiesResponse)},
-  { 4129, 4138, -1, sizeof(::CMsgClientToGCJoinPartyFromBeacon)},
-  { 4141, 4148, -1, sizeof(::CMsgGCToClientJoinPartyFromBeaconResponse)},
-  { 4149, 4161, -1, sizeof(::CMsgClientToGCManageFavorites)},
-  { 4167, 4176, -1, sizeof(::CMsgGCToClientManageFavoritesResponse)},
-  { 4179, 4187, -1, sizeof(::CMsgClientToGCGetFavoritePlayers)},
-  { 4189, 4198, -1, sizeof(::CMsgGCToClientGetFavoritePlayersResponse)},
-  { 4201, 4208, -1, sizeof(::CMsgGCToClientPartySearchInvite)},
-  { 4209, -1, -1, sizeof(::CMsgClientToGCVerifyFavoritePlayers)},
-  { 4216, 4224, -1, sizeof(::CMsgGCToClientVerifyFavoritePlayersResponse_Result)},
-  { 4226, -1, -1, sizeof(::CMsgGCToClientVerifyFavoritePlayersResponse)},
-  { 4233, 4240, -1, sizeof(::CMsgClientToGCRequestPlayerRecentAccomplishments)},
-  { 4241, 4249, -1, sizeof(::CMsgClientToGCRequestPlayerRecentAccomplishmentsResponse)},
-  { 4251, 4259, -1, sizeof(::CMsgClientToGCRequestPlayerHeroRecentAccomplishments)},
-  { 4261, 4269, -1, sizeof(::CMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse)},
-  { 4271, 4280, -1, sizeof(::CMsgClientToGCSubmitPlayerMatchSurvey)},
-  { 4283, 4291, -1, sizeof(::CMsgClientToGCSubmitPlayerMatchSurveyResponse)},
-  { 4293, -1, -1, sizeof(::CMsgGCToClientVACReminder)},
-  { 4299, 4307, -1, sizeof(::CMsgClientToGCUnderDraftRequest)},
-  { 4309, 4319, -1, sizeof(::CMsgClientToGCUnderDraftResponse)},
-  { 4323, 4330, -1, sizeof(::CMsgClientToGCUnderDraftReroll)},
-  { 4331, 4340, -1, sizeof(::CMsgClientToGCUnderDraftRerollResponse)},
-  { 4343, 4351, -1, sizeof(::CMsgClientToGCUnderDraftBuy)},
-  { 4353, 4360, -1, sizeof(::CMsgGCToClientGuildUnderDraftGoldUpdated)},
-  { 4361, 4371, -1, sizeof(::CMsgClientToGCUnderDraftBuyResponse)},
-  { 4375, 4382, -1, sizeof(::CMsgClientToGCUnderDraftRollBackBench)},
-  { 4383, 4392, -1, sizeof(::CMsgClientToGCUnderDraftRollBackBenchResponse)},
-  { 4395, 4403, -1, sizeof(::CMsgClientToGCUnderDraftSell)},
-  { 4405, 4415, -1, sizeof(::CMsgClientToGCUnderDraftSellResponse)},
-  { 4419, 4427, -1, sizeof(::CMsgClientToGCUnderDraftRedeemReward)},
-  { 4429, 4436, -1, sizeof(::CMsgClientToGCUnderDraftRedeemRewardResponse)},
-  { 4437, 4446, -1, sizeof(::CMsgClientToGCSubmitDraftTriviaMatchAnswer)},
-  { 4449, 4456, -1, sizeof(::CMsgClientToGCSubmitDraftTriviaMatchAnswerResponse)},
-  { 4457, 4466, -1, sizeof(::CMsgDraftTriviaVoteCount)},
-  { 4469, -1, -1, sizeof(::CMsgClientToGCRequestReporterUpdates)},
-  { 4475, 4485, -1, sizeof(::CMsgClientToGCRequestReporterUpdatesResponse_ReporterUpdate)},
-  { 4489, 4499, -1, sizeof(::CMsgClientToGCRequestReporterUpdatesResponse)},
-  { 4503, -1, -1, sizeof(::CMsgClientToGCAcknowledgeReporterUpdates)},
-  { 4510, -1, -1, sizeof(::CMsgClientToGCRecalibrateMMR)},
-  { 4516, 4523, -1, sizeof(::CMsgClientToGCRecalibrateMMRResponse)},
-  { 4524, 4533, -1, sizeof(::CMsgDOTAPostGameItemAwardNotification)},
-  { 4536, -1, -1, sizeof(::CMsgClientToGCGetOWMatchDetails)},
-  { 4542, 4550, -1, sizeof(::CMsgClientToGCGetOWMatchDetailsResponse_Marker)},
-  { 4552, 4569, -1, sizeof(::CMsgClientToGCGetOWMatchDetailsResponse)},
-  { 4580, 4590, -1, sizeof(::CMsgClientToGCSubmitOWConviction)},
-  { 4594, 4602, -1, sizeof(::CMsgClientToGCSubmitOWConvictionResponse)},
-  { 4604, -1, -1, sizeof(::CMsgClientToGCChinaSSAURLRequest)},
-  { 4610, 4617, -1, sizeof(::CMsgClientToGCChinaSSAURLResponse)},
-  { 4618, -1, -1, sizeof(::CMsgClientToGCChinaSSAAcceptedRequest)},
-  { 4624, 4631, -1, sizeof(::CMsgClientToGCChinaSSAAcceptedResponse)},
-  { 4632, 4639, -1, sizeof(::CMsgGCToClientOverwatchCasesAvailable)},
-  { 4640, 4648, -1, sizeof(::CMsgClientToGCStartWatchingOverwatch)},
-  { 4650, 4658, -1, sizeof(::CMsgClientToGCStopWatchingOverwatch)},
-  { 4660, 4667, -1, sizeof(::CMsgClientToGCOverwatchReplayError)},
-  { 4668, -1, -1, sizeof(::CMsgClientToGCGetDPCFavorites)},
-  { 4674, 4682, -1, sizeof(::CMsgClientToGCGetDPCFavoritesResponse_Favorite)},
-  { 4684, 4692, -1, sizeof(::CMsgClientToGCGetDPCFavoritesResponse)},
-  { 4694, 4703, -1, sizeof(::CMsgClientToGCSetDPCFavoriteState)},
-  { 4706, 4713, -1, sizeof(::CMsgClientToGCSetDPCFavoriteStateResponse)},
-  { 4714, 4722, -1, sizeof(::CMsgClientToGCSetEventActiveSeasonID)},
-  { 4724, 4731, -1, sizeof(::CMsgClientToGCSetEventActiveSeasonIDResponse)},
-  { 4732, 4742, -1, sizeof(::CMsgClientToGCPurchaseLabyrinthBlessings)},
-  { 4746, 4753, -1, sizeof(::CMsgClientToGCPurchaseLabyrinthBlessingsResponse)},
-  { 4754, 4761, -1, sizeof(::CMsgClientToGCGetStickerbookRequest)},
-  { 4762, 4770, -1, sizeof(::CMsgClientToGCGetStickerbookResponse)},
-  { 4772, 4781, -1, sizeof(::CMsgClientToGCCreateStickerbookPageRequest)},
-  { 4784, 4792, -1, sizeof(::CMsgClientToGCCreateStickerbookPageResponse)},
-  { 4794, 4803, -1, sizeof(::CMsgClientToGCDeleteStickerbookPageRequest)},
-  { 4806, 4813, -1, sizeof(::CMsgClientToGCDeleteStickerbookPageResponse)},
-  { 4814, 4822, -1, sizeof(::CMsgClientToGCPlaceStickersRequest_StickerItem)},
-  { 4824, -1, -1, sizeof(::CMsgClientToGCPlaceStickersRequest)},
-  { 4831, 4838, -1, sizeof(::CMsgClientToGCPlaceStickersResponse)},
-  { 4839, 4850, -1, sizeof(::CMsgClientToGCPlaceCollectionStickersRequest_Slot)},
-  { 4855, -1, -1, sizeof(::CMsgClientToGCPlaceCollectionStickersRequest)},
-  { 4862, 4869, -1, sizeof(::CMsgClientToGCPlaceCollectionStickersResponse)},
-  { 4870, 4877, -1, sizeof(::CMsgClientToGCOrderStickerbookTeamPageRequest)},
-  { 4878, 4885, -1, sizeof(::CMsgClientToGCOrderStickerbookTeamPageResponse)},
-  { 4886, 4895, -1, sizeof(::CMsgClientToGCSetHeroSticker)},
-  { 4898, 4905, -1, sizeof(::CMsgClientToGCSetHeroStickerResponse)},
-  { 4906, -1, -1, sizeof(::CMsgClientToGCGetHeroStickers)},
-  { 4912, 4920, -1, sizeof(::CMsgClientToGCGetHeroStickersResponse)},
-  { 4922, 4930, -1, sizeof(::CMsgClientToGCSetFavoritePage)},
-  { 4932, 4939, -1, sizeof(::CMsgClientToGCSetFavoritePageResponse)},
-  { 4940, 4949, -1, sizeof(::CMsgClientToGCClaimSwag)},
-  { 4952, 4959, -1, sizeof(::CMsgClientToGCClaimSwagResponse)},
-  { 4960, 4967, -1, sizeof(::CMsgClientToGCCollectorsCacheAvailableDataRequest)},
-  { 4968, 4976, -1, sizeof(::CMsgGCToClientCollectorsCacheAvailableDataResponse_Vote)},
-  { 4978, -1, -1, sizeof(::CMsgGCToClientCollectorsCacheAvailableDataResponse)},
-  { 4985, 4992, -1, sizeof(::CMsgClientToGCUploadMatchClip)},
-  { 4993, 5000, -1, sizeof(::CMsgGCToClientUploadMatchClipResponse)},
-  { 5001, -1, -1, sizeof(::CMsgClientToGCMapStatsRequest)},
-  { 5007, 5016, -1, sizeof(::CMsgGCToClientMapStatsResponse)},
-  { 5019, 5030, -1, sizeof(::CMsgRoadToTIAssignedQuest)},
-  { 5035, -1, -1, sizeof(::CMsgRoadToTIUserData)},
-  { 5042, 5049, -1, sizeof(::CMsgClientToGCRoadToTIGetQuests)},
-  { 5050, 5058, -1, sizeof(::CMsgClientToGCRoadToTIGetQuestsResponse)},
-  { 5060, 5067, -1, sizeof(::CMsgClientToGCRoadToTIGetActiveQuest)},
-  { 5068, 5076, -1, sizeof(::CMsgClientToGCRoadToTIGetActiveQuestResponse)},
-  { 5078, 5086, -1, sizeof(::CMsgGCToClientRoadToTIQuestDataUpdated)},
-  { 5088, 5097, -1, sizeof(::CMsgClientToGCRoadToTIUseItem)},
-  { 5100, 5107, -1, sizeof(::CMsgClientToGCRoadToTIUseItemResponse)},
-  { 5108, 5117, -1, sizeof(::CMsgClientToGCRoadToTIDevForceQuest)},
-  { 5120, 5129, -1, sizeof(::CMsgLobbyRoadToTIMatchQuestData)},
-  { 5132, 5141, -1, sizeof(::CMsgClientToGCNewBloomGift)},
-  { 5144, 5152, -1, sizeof(::CMsgClientToGCNewBloomGiftResponse)},
-  { 5154, -1, -1, sizeof(::CMsgClientToGCSetBannedHeroes)},
-  { 5161, 5169, -1, sizeof(::CMsgClientToGCUpdateComicBookStats_SingleStat)},
-  { 5171, 5180, -1, sizeof(::CMsgClientToGCUpdateComicBookStats_LanguageStats)},
-  { 5183, 5192, -1, sizeof(::CMsgClientToGCUpdateComicBookStats)},
-  { 5195, 5202, -1, sizeof(::CMsgGCRankedPlayerInfoSubmit)},
-  { 5203, 5210, -1, sizeof(::CMsgGCRankedPlayerInfoSubmitResponse)},
-  { 5211, 5218, -1, sizeof(::CMsgDOTAClaimGatedEvent)},
-  { 5219, 5226, -1, sizeof(::CMsgDOTAClaimGatedEventResponse)},
-  { 5227, 5235, -1, sizeof(::CMsgClientToGCGetEventRanking)},
-  { 5237, 5248, -1, sizeof(::CMsgClientToGCGetEventRankingResponse)},
-  { 5253, 5261, -1, sizeof(::CMsgClientToGCGetEventCoupon)},
+  { 2125, 2134, -1, sizeof(::CMsgDOTARedeemItem)},
+  { 2137, 2144, -1, sizeof(::CMsgDOTARedeemItemResponse)},
+  { 2145, 2153, -1, sizeof(::CMsgClientToGCSelectCompendiumInGamePrediction_Prediction)},
+  { 2155, 2164, -1, sizeof(::CMsgClientToGCSelectCompendiumInGamePrediction)},
+  { 2167, 2174, -1, sizeof(::CMsgClientToGCSelectCompendiumInGamePredictionResponse)},
+  { 2175, 2185, -1, sizeof(::CMsgClientToGCOpenPlayerCardPack)},
+  { 2189, 2197, -1, sizeof(::CMsgClientToGCOpenPlayerCardPackResponse)},
+  { 2199, 2207, -1, sizeof(::CMsgClientToGCRecyclePlayerCard)},
+  { 2209, 2217, -1, sizeof(::CMsgClientToGCRecyclePlayerCardResponse)},
+  { 2219, 2228, -1, sizeof(::CMsgClientToGCCreatePlayerCardPack)},
+  { 2231, 2238, -1, sizeof(::CMsgClientToGCCreatePlayerCardPackResponse)},
+  { 2239, 2249, -1, sizeof(::CMsgClientToGCCreateTeamPlayerCardPack)},
+  { 2253, 2260, -1, sizeof(::CMsgClientToGCCreateTeamPlayerCardPackResponse)},
+  { 2261, 2272, -1, sizeof(::CMsgGCToClientBattlePassRollup_International2016_Questlines)},
+  { 2277, 2288, -1, sizeof(::CMsgGCToClientBattlePassRollup_International2016_Wagering)},
+  { 2293, 2302, -1, sizeof(::CMsgGCToClientBattlePassRollup_International2016_Achievements)},
+  { 2305, 2313, -1, sizeof(::CMsgGCToClientBattlePassRollup_International2016_BattleCup)},
+  { 2315, 2324, -1, sizeof(::CMsgGCToClientBattlePassRollup_International2016_Predictions)},
+  { 2327, 2335, -1, sizeof(::CMsgGCToClientBattlePassRollup_International2016_Bracket)},
+  { 2337, 2345, -1, sizeof(::CMsgGCToClientBattlePassRollup_International2016_PlayerCard)},
+  { 2347, 2355, -1, sizeof(::CMsgGCToClientBattlePassRollup_International2016_FantasyChallenge)},
+  { 2357, 2372, -1, sizeof(::CMsgGCToClientBattlePassRollup_International2016)},
+  { 2381, 2392, -1, sizeof(::CMsgGCToClientBattlePassRollup_Fall2016_Questlines)},
+  { 2397, 2408, -1, sizeof(::CMsgGCToClientBattlePassRollup_Fall2016_Wagering)},
+  { 2413, 2422, -1, sizeof(::CMsgGCToClientBattlePassRollup_Fall2016_Achievements)},
+  { 2425, 2433, -1, sizeof(::CMsgGCToClientBattlePassRollup_Fall2016_BattleCup)},
+  { 2435, 2444, -1, sizeof(::CMsgGCToClientBattlePassRollup_Fall2016_Predictions)},
+  { 2447, 2455, -1, sizeof(::CMsgGCToClientBattlePassRollup_Fall2016_Bracket)},
+  { 2457, 2465, -1, sizeof(::CMsgGCToClientBattlePassRollup_Fall2016_PlayerCard)},
+  { 2467, 2475, -1, sizeof(::CMsgGCToClientBattlePassRollup_Fall2016_FantasyChallenge)},
+  { 2477, 2492, -1, sizeof(::CMsgGCToClientBattlePassRollup_Fall2016)},
+  { 2501, 2512, -1, sizeof(::CMsgGCToClientBattlePassRollup_Winter2017_Questlines)},
+  { 2517, 2528, -1, sizeof(::CMsgGCToClientBattlePassRollup_Winter2017_Wagering)},
+  { 2533, 2542, -1, sizeof(::CMsgGCToClientBattlePassRollup_Winter2017_Achievements)},
+  { 2545, 2553, -1, sizeof(::CMsgGCToClientBattlePassRollup_Winter2017_BattleCup)},
+  { 2555, 2564, -1, sizeof(::CMsgGCToClientBattlePassRollup_Winter2017_Predictions)},
+  { 2567, 2575, -1, sizeof(::CMsgGCToClientBattlePassRollup_Winter2017_Bracket)},
+  { 2577, 2585, -1, sizeof(::CMsgGCToClientBattlePassRollup_Winter2017_PlayerCard)},
+  { 2587, 2595, -1, sizeof(::CMsgGCToClientBattlePassRollup_Winter2017_FantasyChallenge)},
+  { 2597, 2612, -1, sizeof(::CMsgGCToClientBattlePassRollup_Winter2017)},
+  { 2621, 2632, -1, sizeof(::CMsgGCToClientBattlePassRollup_TI7_Questlines)},
+  { 2637, 2648, -1, sizeof(::CMsgGCToClientBattlePassRollup_TI7_Wagering)},
+  { 2653, 2662, -1, sizeof(::CMsgGCToClientBattlePassRollup_TI7_Achievements)},
+  { 2665, 2673, -1, sizeof(::CMsgGCToClientBattlePassRollup_TI7_BattleCup)},
+  { 2675, 2684, -1, sizeof(::CMsgGCToClientBattlePassRollup_TI7_Predictions)},
+  { 2687, 2695, -1, sizeof(::CMsgGCToClientBattlePassRollup_TI7_Bracket)},
+  { 2697, 2705, -1, sizeof(::CMsgGCToClientBattlePassRollup_TI7_PlayerCard)},
+  { 2707, 2715, -1, sizeof(::CMsgGCToClientBattlePassRollup_TI7_FantasyChallenge)},
+  { 2717, 2732, -1, sizeof(::CMsgGCToClientBattlePassRollup_TI7)},
+  { 2741, 2751, -1, sizeof(::CMsgGCToClientBattlePassRollup_TI8_CavernCrawl)},
+  { 2755, 2766, -1, sizeof(::CMsgGCToClientBattlePassRollup_TI8_Wagering)},
+  { 2771, 2780, -1, sizeof(::CMsgGCToClientBattlePassRollup_TI8_Achievements)},
+  { 2783, 2792, -1, sizeof(::CMsgGCToClientBattlePassRollup_TI8_Predictions)},
+  { 2795, 2803, -1, sizeof(::CMsgGCToClientBattlePassRollup_TI8_Bracket)},
+  { 2805, 2813, -1, sizeof(::CMsgGCToClientBattlePassRollup_TI8_PlayerCard)},
+  { 2815, 2823, -1, sizeof(::CMsgGCToClientBattlePassRollup_TI8_FantasyChallenge)},
+  { 2825, 2839, -1, sizeof(::CMsgGCToClientBattlePassRollup_TI8)},
+  { 2847, 2854, -1, sizeof(::CMsgGCToClientBattlePassRollup_TI9)},
+  { 2855, 2862, -1, sizeof(::CMsgGCToClientBattlePassRollup_TI10)},
+  { 2863, 2871, -1, sizeof(::CMsgGCToClientBattlePassRollupRequest)},
+  { 2873, 2886, -1, sizeof(::CMsgGCToClientBattlePassRollupResponse)},
+  { 2893, 2900, -1, sizeof(::CMsgGCToClientBattlePassRollupListRequest)},
+  { 2901, 2909, -1, sizeof(::CMsgGCToClientBattlePassRollupListResponse_EventInfo)},
+  { 2911, -1, -1, sizeof(::CMsgGCToClientBattlePassRollupListResponse)},
+  { 2918, 2925, -1, sizeof(::CMsgClientToGCTransferSeasonalMMRRequest)},
+  { 2926, 2933, -1, sizeof(::CMsgClientToGCTransferSeasonalMMRResponse)},
+  { 2934, 2941, -1, sizeof(::CMsgGCToClientPlaytestStatus)},
+  { 2942, 2949, -1, sizeof(::CMsgClientToGCJoinPlaytest)},
+  { 2950, 2957, -1, sizeof(::CMsgClientToGCJoinPlaytestResponse)},
+  { 2958, 2966, -1, sizeof(::CMsgDOTASetFavoriteTeam)},
+  { 2968, 2976, -1, sizeof(::CMsgDOTATriviaCurrentQuestions)},
+  { 2978, 2986, -1, sizeof(::CMsgDOTASubmitTriviaQuestionAnswer)},
+  { 2988, 2995, -1, sizeof(::CMsgDOTASubmitTriviaQuestionAnswerResponse)},
+  { 2996, -1, -1, sizeof(::CMsgDOTAStartTriviaSession)},
+  { 3002, 3010, -1, sizeof(::CMsgDOTAStartTriviaSessionResponse)},
+  { 3012, -1, -1, sizeof(::CMsgDOTAAnchorPhoneNumberRequest)},
+  { 3018, 3025, -1, sizeof(::CMsgDOTAAnchorPhoneNumberResponse)},
+  { 3026, -1, -1, sizeof(::CMsgDOTAUnanchorPhoneNumberRequest)},
+  { 3032, 3039, -1, sizeof(::CMsgDOTAUnanchorPhoneNumberResponse)},
+  { 3040, 3050, -1, sizeof(::CMsgGCToClientCommendNotification)},
+  { 3054, 3064, -1, sizeof(::CMsgDOTAClientToGCQuickStatsRequest)},
+  { 3068, 3078, -1, sizeof(::CMsgDOTAClientToGCQuickStatsResponse_SimpleStats)},
+  { 3082, 3095, -1, sizeof(::CMsgDOTAClientToGCQuickStatsResponse)},
+  { 3102, 3109, -1, sizeof(::CMsgDOTASelectionPriorityChoiceRequest)},
+  { 3110, 3117, -1, sizeof(::CMsgDOTASelectionPriorityChoiceResponse)},
+  { 3118, 3125, -1, sizeof(::CMsgDOTAGameAutographReward)},
+  { 3126, 3133, -1, sizeof(::CMsgDOTAGameAutographRewardResponse)},
+  { 3134, -1, -1, sizeof(::CMsgDOTADestroyLobbyRequest)},
+  { 3140, 3147, -1, sizeof(::CMsgDOTADestroyLobbyResponse)},
+  { 3148, -1, -1, sizeof(::CMsgDOTAGetRecentPlayTimeFriendsRequest)},
+  { 3154, -1, -1, sizeof(::CMsgDOTAGetRecentPlayTimeFriendsResponse)},
+  { 3161, 3171, -1, sizeof(::CMsgPurchaseItemWithEventPoints)},
+  { 3175, 3182, -1, sizeof(::CMsgPurchaseItemWithEventPointsResponse)},
+  { 3183, 3191, -1, sizeof(::CMsgPurchaseHeroRandomRelic)},
+  { 3193, 3201, -1, sizeof(::CMsgPurchaseHeroRandomRelicResponse)},
+  { 3203, 3211, -1, sizeof(::CMsgClientToGCRequestPlusWeeklyChallengeResult)},
+  { 3213, -1, -1, sizeof(::CMsgClientToGCRequestPlusWeeklyChallengeResultResponse)},
+  { 3219, 3226, -1, sizeof(::CMsgProfileRequest)},
+  { 3227, 3238, -1, sizeof(::CMsgProfileResponse_FeaturedHero)},
+  { 3243, 3254, -1, sizeof(::CMsgProfileResponse_MatchInfo)},
+  { 3259, 3272, -1, sizeof(::CMsgProfileResponse)},
+  { 3279, 3287, -1, sizeof(::CMsgProfileUpdate)},
+  { 3289, 3296, -1, sizeof(::CMsgProfileUpdateResponse)},
+  { 3297, 3307, -1, sizeof(::CMsgTalentWinRates)},
+  { 3311, 3326, -1, sizeof(::CMsgGlobalHeroAverages)},
+  { 3335, 3342, -1, sizeof(::CMsgHeroGlobalDataRequest)},
+  { 3343, 3353, -1, sizeof(::CMsgHeroGlobalDataResponse_GraphData)},
+  { 3357, 3367, -1, sizeof(::CMsgHeroGlobalDataResponse_WeekData)},
+  { 3371, 3382, -1, sizeof(::CMsgHeroGlobalDataResponse_HeroDataPerRankChunk)},
+  { 3387, 3395, -1, sizeof(::CMsgHeroGlobalDataResponse)},
+  { 3397, -1, -1, sizeof(::CMsgHeroGlobalDataAllHeroes)},
+  { 3404, 3415, -1, sizeof(::CMsgHeroGlobalDataHeroesAlliesAndEnemies_HeroData)},
+  { 3420, 3428, -1, sizeof(::CMsgHeroGlobalDataHeroesAlliesAndEnemies_RankedHeroData)},
+  { 3430, -1, -1, sizeof(::CMsgHeroGlobalDataHeroesAlliesAndEnemies)},
+  { 3437, 3444, -1, sizeof(::CMsgPrivateMetadataKeyRequest)},
+  { 3445, 3452, -1, sizeof(::CMsgPrivateMetadataKeyResponse)},
+  { 3453, 3460, -1, sizeof(::CMsgActivatePlusFreeTrialResponse)},
+  { 3461, 3470, -1, sizeof(::CMsgGCToClientCavernCrawlMapPathCompleted_CompletedPathInfo)},
+  { 3473, 3483, -1, sizeof(::CMsgGCToClientCavernCrawlMapPathCompleted)},
+  { 3487, 3494, -1, sizeof(::CMsgGCToClientCavernCrawlMapUpdated)},
+  { 3495, 3504, -1, sizeof(::CMsgClientToGCCavernCrawlClaimRoom)},
+  { 3507, 3514, -1, sizeof(::CMsgClientToGCCavernCrawlClaimRoomResponse)},
+  { 3515, 3525, -1, sizeof(::CMsgClientToGCCavernCrawlUseItemOnRoom)},
+  { 3529, 3536, -1, sizeof(::CMsgClientToGCCavernCrawlUseItemOnRoomResponse)},
+  { 3537, 3547, -1, sizeof(::CMsgClientToGCCavernCrawlUseItemOnPath)},
+  { 3551, 3558, -1, sizeof(::CMsgClientToGCCavernCrawlUseItemOnPathResponse)},
+  { 3559, 3566, -1, sizeof(::CMsgClientToGCCavernCrawlRequestMapState)},
+  { 3567, 3575, -1, sizeof(::CMsgClientToGCCavernCrawlRequestMapStateResponse_SwappedChallenge)},
+  { 3577, 3585, -1, sizeof(::CMsgClientToGCCavernCrawlRequestMapStateResponse_InventoryItem)},
+  { 3587, 3595, -1, sizeof(::CMsgClientToGCCavernCrawlRequestMapStateResponse_TreasureMap)},
+  { 3597, 3619, -1, sizeof(::CMsgClientToGCCavernCrawlRequestMapStateResponse_MapVariant)},
+  { 3635, 3645, -1, sizeof(::CMsgClientToGCCavernCrawlRequestMapStateResponse)},
+  { 3649, 3656, -1, sizeof(::CMsgClientToGCCavernCrawlGetClaimedRoomCount)},
+  { 3657, 3665, -1, sizeof(::CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse_MapVariant)},
+  { 3667, 3676, -1, sizeof(::CMsgClientToGCCavernCrawlGetClaimedRoomCountResponse)},
+  { 3679, 3688, -1, sizeof(::CMsgDOTAMutationList_Mutation)},
+  { 3691, -1, -1, sizeof(::CMsgDOTAMutationList)},
+  { 3698, 3706, -1, sizeof(::CMsgEventTipsSummaryRequest)},
+  { 3708, 3716, -1, sizeof(::CMsgEventTipsSummaryResponse_Tipper)},
+  { 3718, 3726, -1, sizeof(::CMsgEventTipsSummaryResponse)},
+  { 3728, 3736, -1, sizeof(::CMsgSocialFeedRequest)},
+  { 3738, 3755, -1, sizeof(::CMsgSocialFeedResponse_FeedEvent)},
+  { 3766, 3774, -1, sizeof(::CMsgSocialFeedResponse)},
+  { 3776, 3783, -1, sizeof(::CMsgSocialFeedCommentsRequest)},
+  { 3784, 3793, -1, sizeof(::CMsgSocialFeedCommentsResponse_FeedComment)},
+  { 3796, 3804, -1, sizeof(::CMsgSocialFeedCommentsResponse)},
+  { 3806, 3815, -1, sizeof(::CMsgClientToGCPlayerCardSpecificPurchaseRequest)},
+  { 3818, 3826, -1, sizeof(::CMsgClientToGCPlayerCardSpecificPurchaseResponse)},
+  { 3828, 3835, -1, sizeof(::CMsgClientToGCRequestContestVotes)},
+  { 3836, 3844, -1, sizeof(::CMsgClientToGCRequestContestVotesResponse_ItemVote)},
+  { 3846, 3854, -1, sizeof(::CMsgClientToGCRequestContestVotesResponse)},
+  { 3856, 3865, -1, sizeof(::CMsgClientToGCRecordContestVote)},
+  { 3868, 3875, -1, sizeof(::CMsgGCToClientRecordContestVoteResponse)},
+  { 3876, 3885, -1, sizeof(::CMsgDevGrantEventPoints)},
+  { 3888, 3895, -1, sizeof(::CMsgDevGrantEventPointsResponse)},
+  { 3896, 3905, -1, sizeof(::CMsgDevGrantEventAction)},
+  { 3908, 3915, -1, sizeof(::CMsgDevGrantEventActionResponse)},
+  { 3916, 3926, -1, sizeof(::CMsgDevDeleteEventActions)},
+  { 3930, 3937, -1, sizeof(::CMsgDevDeleteEventActionsResponse)},
+  { 3938, 3946, -1, sizeof(::CMsgDevResetEventState)},
+  { 3948, 3955, -1, sizeof(::CMsgDevResetEventStateResponse)},
+  { 3956, -1, -1, sizeof(::CMsgDevReloadAllEvents)},
+  { 3962, 3969, -1, sizeof(::CMsgDevReloadAllEventsResponse)},
+  { 3970, 3977, -1, sizeof(::CMsgConsumeEventSupportGrantItem)},
+  { 3978, 3985, -1, sizeof(::CMsgConsumeEventSupportGrantItemResponse)},
+  { 3986, -1, -1, sizeof(::CMsgClientToGCGetFilteredPlayers)},
+  { 3992, 4002, -1, sizeof(::CMsgGCToClientGetFilteredPlayersResponse_CFilterEntry)},
+  { 4006, 4017, -1, sizeof(::CMsgGCToClientGetFilteredPlayersResponse)},
+  { 4022, 4029, -1, sizeof(::CMsgClientToGCRemoveFilteredPlayer)},
+  { 4030, 4037, -1, sizeof(::CMsgGCToClientRemoveFilteredPlayerResponse)},
+  { 4038, 4045, -1, sizeof(::CMsgClientToGCPurchaseFilteredPlayerSlot)},
+  { 4046, 4055, -1, sizeof(::CMsgGCToClientPurchaseFilteredPlayerSlotResponse)},
+  { 4058, 4066, -1, sizeof(::CMsgClientToGCUpdateFilteredPlayerNote)},
+  { 4068, 4075, -1, sizeof(::CMsgGCToClientUpdateFilteredPlayerNoteResponse)},
+  { 4076, 4085, -1, sizeof(::CMsgPartySearchPlayer)},
+  { 4088, -1, -1, sizeof(::CMsgGCToClientPlayerBeaconState)},
+  { 4095, 4104, -1, sizeof(::CMsgGCToClientPartyBeaconUpdate)},
+  { 4107, 4114, -1, sizeof(::CMsgClientToGCUpdatePartyBeacon)},
+  { 4115, -1, -1, sizeof(::CMsgClientToGCRequestActiveBeaconParties)},
+  { 4121, 4129, -1, sizeof(::CMsgGCToClientRequestActiveBeaconPartiesResponse)},
+  { 4131, 4140, -1, sizeof(::CMsgClientToGCJoinPartyFromBeacon)},
+  { 4143, 4150, -1, sizeof(::CMsgGCToClientJoinPartyFromBeaconResponse)},
+  { 4151, 4163, -1, sizeof(::CMsgClientToGCManageFavorites)},
+  { 4169, 4178, -1, sizeof(::CMsgGCToClientManageFavoritesResponse)},
+  { 4181, 4189, -1, sizeof(::CMsgClientToGCGetFavoritePlayers)},
+  { 4191, 4200, -1, sizeof(::CMsgGCToClientGetFavoritePlayersResponse)},
+  { 4203, 4210, -1, sizeof(::CMsgGCToClientPartySearchInvite)},
+  { 4211, -1, -1, sizeof(::CMsgClientToGCVerifyFavoritePlayers)},
+  { 4218, 4226, -1, sizeof(::CMsgGCToClientVerifyFavoritePlayersResponse_Result)},
+  { 4228, -1, -1, sizeof(::CMsgGCToClientVerifyFavoritePlayersResponse)},
+  { 4235, 4242, -1, sizeof(::CMsgClientToGCRequestPlayerRecentAccomplishments)},
+  { 4243, 4251, -1, sizeof(::CMsgClientToGCRequestPlayerRecentAccomplishmentsResponse)},
+  { 4253, 4261, -1, sizeof(::CMsgClientToGCRequestPlayerHeroRecentAccomplishments)},
+  { 4263, 4271, -1, sizeof(::CMsgClientToGCRequestPlayerHeroRecentAccomplishmentsResponse)},
+  { 4273, 4282, -1, sizeof(::CMsgClientToGCSubmitPlayerMatchSurvey)},
+  { 4285, 4293, -1, sizeof(::CMsgClientToGCSubmitPlayerMatchSurveyResponse)},
+  { 4295, -1, -1, sizeof(::CMsgGCToClientVACReminder)},
+  { 4301, 4309, -1, sizeof(::CMsgClientToGCUnderDraftRequest)},
+  { 4311, 4321, -1, sizeof(::CMsgClientToGCUnderDraftResponse)},
+  { 4325, 4332, -1, sizeof(::CMsgClientToGCUnderDraftReroll)},
+  { 4333, 4342, -1, sizeof(::CMsgClientToGCUnderDraftRerollResponse)},
+  { 4345, 4353, -1, sizeof(::CMsgClientToGCUnderDraftBuy)},
+  { 4355, 4362, -1, sizeof(::CMsgGCToClientGuildUnderDraftGoldUpdated)},
+  { 4363, 4373, -1, sizeof(::CMsgClientToGCUnderDraftBuyResponse)},
+  { 4377, 4384, -1, sizeof(::CMsgClientToGCUnderDraftRollBackBench)},
+  { 4385, 4394, -1, sizeof(::CMsgClientToGCUnderDraftRollBackBenchResponse)},
+  { 4397, 4405, -1, sizeof(::CMsgClientToGCUnderDraftSell)},
+  { 4407, 4417, -1, sizeof(::CMsgClientToGCUnderDraftSellResponse)},
+  { 4421, 4429, -1, sizeof(::CMsgClientToGCUnderDraftRedeemReward)},
+  { 4431, 4438, -1, sizeof(::CMsgClientToGCUnderDraftRedeemRewardResponse)},
+  { 4439, 4448, -1, sizeof(::CMsgClientToGCSubmitDraftTriviaMatchAnswer)},
+  { 4451, 4458, -1, sizeof(::CMsgClientToGCSubmitDraftTriviaMatchAnswerResponse)},
+  { 4459, 4468, -1, sizeof(::CMsgDraftTriviaVoteCount)},
+  { 4471, -1, -1, sizeof(::CMsgClientToGCRequestReporterUpdates)},
+  { 4477, 4487, -1, sizeof(::CMsgClientToGCRequestReporterUpdatesResponse_ReporterUpdate)},
+  { 4491, 4501, -1, sizeof(::CMsgClientToGCRequestReporterUpdatesResponse)},
+  { 4505, -1, -1, sizeof(::CMsgClientToGCAcknowledgeReporterUpdates)},
+  { 4512, -1, -1, sizeof(::CMsgClientToGCRecalibrateMMR)},
+  { 4518, 4525, -1, sizeof(::CMsgClientToGCRecalibrateMMRResponse)},
+  { 4526, 4535, -1, sizeof(::CMsgDOTAPostGameItemAwardNotification)},
+  { 4538, -1, -1, sizeof(::CMsgClientToGCGetOWMatchDetails)},
+  { 4544, 4552, -1, sizeof(::CMsgClientToGCGetOWMatchDetailsResponse_Marker)},
+  { 4554, 4571, -1, sizeof(::CMsgClientToGCGetOWMatchDetailsResponse)},
+  { 4582, 4592, -1, sizeof(::CMsgClientToGCSubmitOWConviction)},
+  { 4596, 4604, -1, sizeof(::CMsgClientToGCSubmitOWConvictionResponse)},
+  { 4606, -1, -1, sizeof(::CMsgClientToGCChinaSSAURLRequest)},
+  { 4612, 4619, -1, sizeof(::CMsgClientToGCChinaSSAURLResponse)},
+  { 4620, -1, -1, sizeof(::CMsgClientToGCChinaSSAAcceptedRequest)},
+  { 4626, 4633, -1, sizeof(::CMsgClientToGCChinaSSAAcceptedResponse)},
+  { 4634, 4641, -1, sizeof(::CMsgGCToClientOverwatchCasesAvailable)},
+  { 4642, 4650, -1, sizeof(::CMsgClientToGCStartWatchingOverwatch)},
+  { 4652, 4660, -1, sizeof(::CMsgClientToGCStopWatchingOverwatch)},
+  { 4662, 4669, -1, sizeof(::CMsgClientToGCOverwatchReplayError)},
+  { 4670, -1, -1, sizeof(::CMsgClientToGCGetDPCFavorites)},
+  { 4676, 4684, -1, sizeof(::CMsgClientToGCGetDPCFavoritesResponse_Favorite)},
+  { 4686, 4694, -1, sizeof(::CMsgClientToGCGetDPCFavoritesResponse)},
+  { 4696, 4705, -1, sizeof(::CMsgClientToGCSetDPCFavoriteState)},
+  { 4708, 4715, -1, sizeof(::CMsgClientToGCSetDPCFavoriteStateResponse)},
+  { 4716, 4724, -1, sizeof(::CMsgClientToGCSetEventActiveSeasonID)},
+  { 4726, 4733, -1, sizeof(::CMsgClientToGCSetEventActiveSeasonIDResponse)},
+  { 4734, 4744, -1, sizeof(::CMsgClientToGCPurchaseLabyrinthBlessings)},
+  { 4748, 4755, -1, sizeof(::CMsgClientToGCPurchaseLabyrinthBlessingsResponse)},
+  { 4756, 4763, -1, sizeof(::CMsgClientToGCGetStickerbookRequest)},
+  { 4764, 4772, -1, sizeof(::CMsgClientToGCGetStickerbookResponse)},
+  { 4774, 4783, -1, sizeof(::CMsgClientToGCCreateStickerbookPageRequest)},
+  { 4786, 4794, -1, sizeof(::CMsgClientToGCCreateStickerbookPageResponse)},
+  { 4796, 4805, -1, sizeof(::CMsgClientToGCDeleteStickerbookPageRequest)},
+  { 4808, 4815, -1, sizeof(::CMsgClientToGCDeleteStickerbookPageResponse)},
+  { 4816, 4824, -1, sizeof(::CMsgClientToGCPlaceStickersRequest_StickerItem)},
+  { 4826, -1, -1, sizeof(::CMsgClientToGCPlaceStickersRequest)},
+  { 4833, 4840, -1, sizeof(::CMsgClientToGCPlaceStickersResponse)},
+  { 4841, 4852, -1, sizeof(::CMsgClientToGCPlaceCollectionStickersRequest_Slot)},
+  { 4857, -1, -1, sizeof(::CMsgClientToGCPlaceCollectionStickersRequest)},
+  { 4864, 4871, -1, sizeof(::CMsgClientToGCPlaceCollectionStickersResponse)},
+  { 4872, 4879, -1, sizeof(::CMsgClientToGCOrderStickerbookTeamPageRequest)},
+  { 4880, 4887, -1, sizeof(::CMsgClientToGCOrderStickerbookTeamPageResponse)},
+  { 4888, 4897, -1, sizeof(::CMsgClientToGCSetHeroSticker)},
+  { 4900, 4907, -1, sizeof(::CMsgClientToGCSetHeroStickerResponse)},
+  { 4908, -1, -1, sizeof(::CMsgClientToGCGetHeroStickers)},
+  { 4914, 4922, -1, sizeof(::CMsgClientToGCGetHeroStickersResponse)},
+  { 4924, 4932, -1, sizeof(::CMsgClientToGCSetFavoritePage)},
+  { 4934, 4941, -1, sizeof(::CMsgClientToGCSetFavoritePageResponse)},
+  { 4942, 4951, -1, sizeof(::CMsgClientToGCClaimSwag)},
+  { 4954, 4961, -1, sizeof(::CMsgClientToGCClaimSwagResponse)},
+  { 4962, 4969, -1, sizeof(::CMsgClientToGCCollectorsCacheAvailableDataRequest)},
+  { 4970, 4978, -1, sizeof(::CMsgGCToClientCollectorsCacheAvailableDataResponse_Vote)},
+  { 4980, -1, -1, sizeof(::CMsgGCToClientCollectorsCacheAvailableDataResponse)},
+  { 4987, 4994, -1, sizeof(::CMsgClientToGCUploadMatchClip)},
+  { 4995, 5002, -1, sizeof(::CMsgGCToClientUploadMatchClipResponse)},
+  { 5003, -1, -1, sizeof(::CMsgClientToGCMapStatsRequest)},
+  { 5009, 5018, -1, sizeof(::CMsgGCToClientMapStatsResponse)},
+  { 5021, 5032, -1, sizeof(::CMsgRoadToTIAssignedQuest)},
+  { 5037, -1, -1, sizeof(::CMsgRoadToTIUserData)},
+  { 5044, 5051, -1, sizeof(::CMsgClientToGCRoadToTIGetQuests)},
+  { 5052, 5060, -1, sizeof(::CMsgClientToGCRoadToTIGetQuestsResponse)},
+  { 5062, 5069, -1, sizeof(::CMsgClientToGCRoadToTIGetActiveQuest)},
+  { 5070, 5078, -1, sizeof(::CMsgClientToGCRoadToTIGetActiveQuestResponse)},
+  { 5080, 5088, -1, sizeof(::CMsgGCToClientRoadToTIQuestDataUpdated)},
+  { 5090, 5099, -1, sizeof(::CMsgClientToGCRoadToTIUseItem)},
+  { 5102, 5109, -1, sizeof(::CMsgClientToGCRoadToTIUseItemResponse)},
+  { 5110, 5119, -1, sizeof(::CMsgClientToGCRoadToTIDevForceQuest)},
+  { 5122, 5131, -1, sizeof(::CMsgLobbyRoadToTIMatchQuestData)},
+  { 5134, 5143, -1, sizeof(::CMsgClientToGCNewBloomGift)},
+  { 5146, 5154, -1, sizeof(::CMsgClientToGCNewBloomGiftResponse)},
+  { 5156, -1, -1, sizeof(::CMsgClientToGCSetBannedHeroes)},
+  { 5163, 5171, -1, sizeof(::CMsgClientToGCUpdateComicBookStats_SingleStat)},
+  { 5173, 5182, -1, sizeof(::CMsgClientToGCUpdateComicBookStats_LanguageStats)},
+  { 5185, 5194, -1, sizeof(::CMsgClientToGCUpdateComicBookStats)},
+  { 5197, 5204, -1, sizeof(::CMsgGCRankedPlayerInfoSubmit)},
+  { 5205, 5212, -1, sizeof(::CMsgGCRankedPlayerInfoSubmitResponse)},
+  { 5213, 5220, -1, sizeof(::CMsgDOTAClaimGatedEvent)},
+  { 5221, 5228, -1, sizeof(::CMsgDOTAClaimGatedEventResponse)},
+  { 5229, 5237, -1, sizeof(::CMsgClientToGCGetEventRanking)},
+  { 5239, 5250, -1, sizeof(::CMsgClientToGCGetEventRankingResponse)},
+  { 5255, 5262, -1, sizeof(::CMsgClientToGCGetEventCoupon)},
   { 5263, 5271, -1, sizeof(::CMsgClientToGCGetEventCouponResponse_Coupon)},
   { 5273, 5282, -1, sizeof(::CMsgClientToGCGetEventCouponResponse)},
   { 5285, 5295, -1, sizeof(::CMsgClientToGCConvertEventPoints)},
@@ -14601,9 +14601,10 @@ const char descriptor_table_protodef_dota_5fgcmessages_5fclient_2eproto[] PROTOB
   '\001', '(', '\r', '\022', '\017', '\n', '\007', 'h', 'e', 'r', 'o', '_', 'i', 'd', '\030', '\004', ' ', '\001', '(', '\005', '\022', '\023', '\n', '\013', 't', 
   'e', 'm', 'p', 'l', 'a', 't', 'e', '_', 'i', 'd', '\030', '\005', ' ', '\001', '(', '\r', '\022', '\022', '\n', '\n', 'q', 'u', 'e', 's', 't', 
   '_', 'r', 'a', 'n', 'k', '\030', '\006', ' ', '\001', '(', '\r', '\022', '\026', '\n', '\016', 'm', 'a', 'x', '_', 'q', 'u', 'e', 's', 't', '_', 
-  'r', 'a', 'n', 'k', '\030', '\007', ' ', '\001', '(', '\r', '\"', '?', '\n', '\022', 'C', 'M', 's', 'g', 'D', 'O', 'T', 'A', 'R', 'e', 'd', 
+  'r', 'a', 'n', 'k', '\030', '\007', ' ', '\001', '(', '\r', '\"', 'X', '\n', '\022', 'C', 'M', 's', 'g', 'D', 'O', 'T', 'A', 'R', 'e', 'd', 
   'e', 'e', 'm', 'I', 't', 'e', 'm', '\022', '\023', '\n', '\013', 'c', 'u', 'r', 'r', 'e', 'n', 'c', 'y', '_', 'i', 'd', '\030', '\001', ' ', 
   '\001', '(', '\004', '\022', '\024', '\n', '\014', 'p', 'u', 'r', 'c', 'h', 'a', 's', 'e', '_', 'd', 'e', 'f', '\030', '\002', ' ', '\001', '(', '\r', 
+  '\022', '\027', '\n', '\017', 'c', 'l', 'a', 'i', 'm', '_', 'a', 's', '_', 'p', 'o', 'i', 'n', 't', 's', '\030', '\003', ' ', '\001', '(', '\010', 
   '\"', '\222', '\001', '\n', '\032', 'C', 'M', 's', 'g', 'D', 'O', 'T', 'A', 'R', 'e', 'd', 'e', 'e', 'm', 'I', 't', 'e', 'm', 'R', 'e', 
   's', 'p', 'o', 'n', 's', 'e', '\022', 'F', '\n', '\010', 'r', 'e', 's', 'p', 'o', 'n', 's', 'e', '\030', '\001', ' ', '\001', '(', '\016', '2', 
   '\'', '.', 'C', 'M', 's', 'g', 'D', 'O', 'T', 'A', 'R', 'e', 'd', 'e', 'e', 'm', 'I', 't', 'e', 'm', 'R', 'e', 's', 'p', 'o', 
@@ -16279,184 +16280,184 @@ const char descriptor_table_protodef_dota_5fgcmessages_5fclient_2eproto[] PROTOB
   '\022', '\022', '\n', '\n', 'a', 'c', 'c', 'o', 'u', 'n', 't', '_', 'i', 'd', '\030', '\002', ' ', '\001', '(', '\r', '\022', '\r', '\n', '\005', 's', 
   'c', 'o', 'r', 'e', '\030', '\003', ' ', '\001', '(', '\002', '\022', '\022', '\n', '\n', 'p', 'e', 'r', 'c', 'e', 'n', 't', 'i', 'l', 'e', '\030', 
   '\004', ' ', '\001', '(', '\002', '\022', '\031', '\n', '\021', 'f', 'i', 'n', 'a', 'l', '_', 'r', 'a', 'n', 'k', '_', 'b', 'u', 'c', 'k', 'e', 
-  't', '\030', '\005', ' ', '\001', '(', '\r', '\"', '\\', '\n', '\034', 'C', 'M', 's', 'g', 'C', 'l', 'i', 'e', 'n', 't', 'T', 'o', 'G', 'C', 
+  't', '\030', '\005', ' ', '\001', '(', '\r', '\"', 'H', '\n', '\034', 'C', 'M', 's', 'g', 'C', 'l', 'i', 'e', 'n', 't', 'T', 'o', 'G', 'C', 
   'G', 'e', 't', 'E', 'v', 'e', 'n', 't', 'C', 'o', 'u', 'p', 'o', 'n', '\022', '(', '\n', '\010', 'e', 'v', 'e', 'n', 't', '_', 'i', 
   'd', '\030', '\001', ' ', '\001', '(', '\016', '2', '\007', '.', 'E', 'E', 'v', 'e', 'n', 't', ':', '\r', 'E', 'V', 'E', 'N', 'T', '_', 'I', 
-  'D', '_', 'N', 'O', 'N', 'E', '\022', '\022', '\n', '\n', 'c', 'o', 'u', 'p', 'o', 'n', '_', 'i', 'd', 's', '\030', '\002', ' ', '\003', '(', 
-  '\r', '\"', '\225', '\003', '\n', '$', 'C', 'M', 's', 'g', 'C', 'l', 'i', 'e', 'n', 't', 'T', 'o', 'G', 'C', 'G', 'e', 't', 'E', 'v', 
-  'e', 'n', 't', 'C', 'o', 'u', 'p', 'o', 'n', 'R', 'e', 's', 'p', 'o', 'n', 's', 'e', '\022', 'I', '\n', '\006', 'r', 'e', 's', 'u', 
-  'l', 't', '\030', '\001', ' ', '\001', '(', '\016', '2', '0', '.', 'C', 'M', 's', 'g', 'C', 'l', 'i', 'e', 'n', 't', 'T', 'o', 'G', 'C', 
-  'G', 'e', 't', 'E', 'v', 'e', 'n', 't', 'C', 'o', 'u', 'p', 'o', 'n', 'R', 'e', 's', 'p', 'o', 'n', 's', 'e', '.', 'R', 'e', 
-  's', 'u', 'l', 't', 'C', 'o', 'd', 'e', ':', '\007', 'S', 'u', 'c', 'c', 'e', 's', 's', '\022', '(', '\n', '\010', 'e', 'v', 'e', 'n', 
-  't', '_', 'i', 'd', '\030', '\002', ' ', '\001', '(', '\016', '2', '\007', '.', 'E', 'E', 'v', 'e', 'n', 't', ':', '\r', 'E', 'V', 'E', 'N', 
-  'T', '_', 'I', 'D', '_', 'N', 'O', 'N', 'E', '\022', '=', '\n', '\007', 'c', 'o', 'u', 'p', 'o', 'n', 's', '\030', '\003', ' ', '\003', '(', 
-  '\013', '2', ',', '.', 'C', 'M', 's', 'g', 'C', 'l', 'i', 'e', 'n', 't', 'T', 'o', 'G', 'C', 'G', 'e', 't', 'E', 'v', 'e', 'n', 
-  't', 'C', 'o', 'u', 'p', 'o', 'n', 'R', 'e', 's', 'p', 'o', 'n', 's', 'e', '.', 'C', 'o', 'u', 'p', 'o', 'n', '\032', '0', '\n', 
-  '\006', 'C', 'o', 'u', 'p', 'o', 'n', '\022', '\021', '\n', '\t', 'c', 'o', 'u', 'p', 'o', 'n', '_', 'i', 'd', '\030', '\001', ' ', '\001', '(', 
-  '\r', '\022', '\023', '\n', '\013', 'c', 'o', 'u', 'p', 'o', 'n', '_', 'c', 'o', 'd', 'e', '\030', '\002', ' ', '\001', '(', '\t', '\"', '\206', '\001', 
-  '\n', '\n', 'R', 'e', 's', 'u', 'l', 't', 'C', 'o', 'd', 'e', '\022', '\013', '\n', '\007', 'S', 'u', 'c', 'c', 'e', 's', 's', '\020', '\000', 
-  '\022', '\020', '\n', '\014', 'I', 'n', 'v', 'a', 'l', 'i', 'd', 'E', 'v', 'e', 'n', 't', '\020', '\001', '\022', '\022', '\n', '\016', 'E', 'v', 'e', 
-  'n', 't', 'N', 'o', 't', 'A', 'c', 't', 'i', 'v', 'e', '\020', '\002', '\022', '\022', '\n', '\016', 'U', 's', 'e', 'r', 'I', 'n', 'e', 'l', 
-  'i', 'g', 'i', 'b', 'l', 'e', '\020', '\003', '\022', '\017', '\n', '\013', 'S', 'e', 'r', 'v', 'e', 'r', 'E', 'r', 'r', 'o', 'r', '\020', '\004', 
-  '\022', '\013', '\n', '\007', 'T', 'i', 'm', 'e', 'o', 'u', 't', '\020', '\005', '\022', '\023', '\n', '\017', 'M', 'u', 'l', 't', 'i', 'p', 'l', 'e', 
-  'C', 'o', 'u', 'p', 'o', 'n', 's', '\020', '\006', '\"', '\314', '\001', '\n', ' ', 'C', 'M', 's', 'g', 'C', 'l', 'i', 'e', 'n', 't', 'T', 
-  'o', 'G', 'C', 'C', 'o', 'n', 'v', 'e', 'r', 't', 'E', 'v', 'e', 'n', 't', 'P', 'o', 'i', 'n', 't', 's', '\022', '6', '\n', '\026', 
-  'e', 'v', 'e', 'n', 't', '_', 'i', 'd', '_', 'p', 'o', 'i', 'n', 't', 's', '_', 't', 'o', '_', 'b', 'u', 'y', '\030', '\001', ' ', 
-  '\001', '(', '\016', '2', '\007', '.', 'E', 'E', 'v', 'e', 'n', 't', ':', '\r', 'E', 'V', 'E', 'N', 'T', '_', 'I', 'D', '_', 'N', 'O', 
-  'N', 'E', '\022', '8', '\n', '\030', 'e', 'v', 'e', 'n', 't', '_', 'i', 'd', '_', 'p', 'o', 'i', 'n', 't', 's', '_', 't', 'o', '_', 
-  's', 'p', 'e', 'n', 'd', '\030', '\002', ' ', '\001', '(', '\016', '2', '\007', '.', 'E', 'E', 'v', 'e', 'n', 't', ':', '\r', 'E', 'V', 'E', 
-  'N', 'T', '_', 'I', 'D', '_', 'N', 'O', 'N', 'E', '\022', '\031', '\n', '\021', 'n', 'u', 'm', '_', 'p', 'o', 'i', 'n', 't', 's', '_', 
-  't', 'o', '_', 'b', 'u', 'y', '\030', '\003', ' ', '\001', '(', '\r', '\022', '\033', '\n', '\023', 'n', 'u', 'm', '_', 'p', 'o', 'i', 'n', 't', 
-  's', '_', 't', 'o', '_', 's', 'p', 'e', 'n', 'd', '\030', '\004', ' ', '\001', '(', '\r', '\"', '\354', '\001', '\n', '(', 'C', 'M', 's', 'g', 
-  'C', 'l', 'i', 'e', 'n', 't', 'T', 'o', 'G', 'C', 'C', 'o', 'n', 'v', 'e', 'r', 't', 'E', 'v', 'e', 'n', 't', 'P', 'o', 'i', 
-  'n', 't', 's', 'R', 'e', 's', 'p', 'o', 'n', 's', 'e', '\022', 'M', '\n', '\006', 'r', 'e', 's', 'u', 'l', 't', '\030', '\001', ' ', '\001', 
-  '(', '\016', '2', '4', '.', 'C', 'M', 's', 'g', 'C', 'l', 'i', 'e', 'n', 't', 'T', 'o', 'G', 'C', 'C', 'o', 'n', 'v', 'e', 'r', 
-  't', 'E', 'v', 'e', 'n', 't', 'P', 'o', 'i', 'n', 't', 's', 'R', 'e', 's', 'p', 'o', 'n', 's', 'e', '.', 'R', 'e', 's', 'u', 
-  'l', 't', 'C', 'o', 'd', 'e', ':', '\007', 'S', 'u', 'c', 'c', 'e', 's', 's', '\"', 'q', '\n', '\n', 'R', 'e', 's', 'u', 'l', 't', 
-  'C', 'o', 'd', 'e', '\022', '\013', '\n', '\007', 'S', 'u', 'c', 'c', 'e', 's', 's', '\020', '\000', '\022', '\020', '\n', '\014', 'I', 'n', 'v', 'a', 
-  'l', 'i', 'd', 'E', 'v', 'e', 'n', 't', '\020', '\001', '\022', '\022', '\n', '\016', 'E', 'v', 'e', 'n', 't', 'N', 'o', 't', 'A', 'c', 't', 
-  'i', 'v', 'e', '\020', '\002', '\022', '\022', '\n', '\016', 'U', 's', 'e', 'r', 'I', 'n', 'e', 'l', 'i', 'g', 'i', 'b', 'l', 'e', '\020', '\003', 
-  '\022', '\017', '\n', '\013', 'S', 'e', 'r', 'v', 'e', 'r', 'E', 'r', 'r', 'o', 'r', '\020', '\004', '\022', '\013', '\n', '\007', 'T', 'i', 'm', 'e', 
-  'o', 'u', 't', '\020', '\005', '\"', 'N', '\n', '\036', 'C', 'M', 's', 'g', 'C', 'l', 'i', 'e', 'n', 't', 'T', 'o', 'G', 'C', 'I', 'n', 
-  'v', 'i', 't', 'e', 'T', 'o', 'D', 'e', 'm', 'o', 'M', 'o', 'd', 'e', '\022', '\021', '\n', '\t', 's', 'e', 'r', 'v', 'e', 'r', '_', 
-  'i', 'd', '\030', '\001', ' ', '\001', '(', '\006', '\022', '\031', '\n', '\021', 'i', 'n', 'v', 'i', 't', 'e', 'd', '_', 'p', 'l', 'a', 'y', 'e', 
-  'r', '_', 'i', 'd', '\030', '\002', ' ', '\001', '(', '\006', '\"', '^', '\n', '\036', 'C', 'M', 's', 'g', 'G', 'C', 'T', 'o', 'C', 'l', 'i', 
-  'e', 'n', 't', 'I', 'n', 'v', 'i', 't', 'e', 'T', 'o', 'D', 'e', 'm', 'o', 'M', 'o', 'd', 'e', '\022', '\021', '\n', '\t', 's', 'e', 
-  'r', 'v', 'e', 'r', '_', 'i', 'd', '\030', '\001', ' ', '\001', '(', '\006', '\022', '\023', '\n', '\013', 'f', 'r', 'o', 'm', '_', 'p', 'l', 'a', 
-  'y', 'e', 'r', '\030', '\002', ' ', '\001', '(', '\006', '\022', '\024', '\n', '\014', 'p', 'a', 'r', 't', 'y', '_', 'i', 'n', 'v', 'i', 't', 'e', 
-  '\030', '\003', ' ', '\001', '(', '\010', '*', '\330', '\001', '\n', '!', 'C', 'M', 's', 'g', 'D', 'O', 'T', 'A', 'R', 'e', 'q', 'u', 'e', 's', 
-  't', 'M', 'a', 't', 'c', 'h', 'e', 's', '_', 'S', 'k', 'i', 'l', 'l', 'L', 'e', 'v', 'e', 'l', '\022', ')', '\n', '%', 'C', 'M', 
-  's', 'g', 'D', 'O', 'T', 'A', 'R', 'e', 'q', 'u', 'e', 's', 't', 'M', 'a', 't', 'c', 'h', 'e', 's', '_', 'S', 'k', 'i', 'l', 
-  'l', 'L', 'e', 'v', 'e', 'l', '_', 'A', 'n', 'y', '\020', '\000', '\022', ',', '\n', '(', 'C', 'M', 's', 'g', 'D', 'O', 'T', 'A', 'R', 
-  'e', 'q', 'u', 'e', 's', 't', 'M', 'a', 't', 'c', 'h', 'e', 's', '_', 'S', 'k', 'i', 'l', 'l', 'L', 'e', 'v', 'e', 'l', '_', 
-  'N', 'o', 'r', 'm', 'a', 'l', '\020', '\001', '\022', '*', '\n', '&', 'C', 'M', 's', 'g', 'D', 'O', 'T', 'A', 'R', 'e', 'q', 'u', 'e', 
-  's', 't', 'M', 'a', 't', 'c', 'h', 'e', 's', '_', 'S', 'k', 'i', 'l', 'l', 'L', 'e', 'v', 'e', 'l', '_', 'H', 'i', 'g', 'h', 
-  '\020', '\002', '\022', '.', '\n', '*', 'C', 'M', 's', 'g', 'D', 'O', 'T', 'A', 'R', 'e', 'q', 'u', 'e', 's', 't', 'M', 'a', 't', 'c', 
-  'h', 'e', 's', '_', 'S', 'k', 'i', 'l', 'l', 'L', 'e', 'v', 'e', 'l', '_', 'V', 'e', 'r', 'y', 'H', 'i', 'g', 'h', '\020', '\003', 
-  '*', 'V', '\n', '\024', 'D', 'O', 'T', 'A', '_', 'W', 'a', 't', 'c', 'h', 'R', 'e', 'p', 'l', 'a', 'y', 'T', 'y', 'p', 'e', '\022', 
-  '\034', '\n', '\030', 'D', 'O', 'T', 'A', '_', 'W', 'A', 'T', 'C', 'H', '_', 'R', 'E', 'P', 'L', 'A', 'Y', '_', 'N', 'O', 'R', 'M', 
-  'A', 'L', '\020', '\000', '\022', ' ', '\n', '\034', 'D', 'O', 'T', 'A', '_', 'W', 'A', 'T', 'C', 'H', '_', 'R', 'E', 'P', 'L', 'A', 'Y', 
-  '_', 'H', 'I', 'G', 'H', 'L', 'I', 'G', 'H', 'T', 'S', '\020', '\001', '*', '\321', '\001', '\n', '\034', 'E', 'I', 't', 'e', 'm', 'E', 'd', 
-  'i', 't', 'o', 'r', 'R', 'e', 's', 'e', 'r', 'v', 'a', 't', 'i', 'o', 'n', 'R', 'e', 's', 'u', 'l', 't', '\022', '%', '\n', '!', 
-  'k', '_', 'E', 'I', 't', 'e', 'm', 'E', 'd', 'i', 't', 'o', 'r', 'R', 'e', 's', 'e', 'r', 'v', 'a', 't', 'i', 'o', 'n', 'R', 
-  'e', 's', 'u', 'l', 't', '_', 'O', 'K', '\020', '\001', '\022', '0', '\n', ',', 'k', '_', 'E', 'I', 't', 'e', 'm', 'E', 'd', 'i', 't', 
-  'o', 'r', 'R', 'e', 's', 'e', 'r', 'v', 'a', 't', 'i', 'o', 'n', 'R', 'e', 's', 'u', 'l', 't', '_', 'A', 'l', 'r', 'e', 'a', 
-  'd', 'y', 'E', 'x', 'i', 's', 't', 's', '\020', '\002', '\022', '+', '\n', '\'', 'k', '_', 'E', 'I', 't', 'e', 'm', 'E', 'd', 'i', 't', 
-  'o', 'r', 'R', 'e', 's', 'e', 'r', 'v', 'a', 't', 'i', 'o', 'n', 'R', 'e', 's', 'u', 'l', 't', '_', 'R', 'e', 's', 'e', 'r', 
-  'v', 'e', 'd', '\020', '\003', '\022', '+', '\n', '\'', 'k', '_', 'E', 'I', 't', 'e', 'm', 'E', 'd', 'i', 't', 'o', 'r', 'R', 'e', 's', 
-  'e', 'r', 'v', 'a', 't', 'i', 'o', 'n', 'R', 'e', 's', 'u', 'l', 't', '_', 'T', 'i', 'm', 'e', 'd', 'O', 'u', 't', '\020', '\004', 
-  '*', '\350', '\001', '\n', ' ', 'E', 'W', 'e', 'e', 'k', 'e', 'n', 'd', 'T', 'o', 'u', 'r', 'n', 'e', 'y', 'R', 'i', 'c', 'h', 'P', 
-  'r', 'e', 's', 'e', 'n', 'c', 'e', 'E', 'v', 'e', 'n', 't', '\022', '+', '\n', '\'', 'k', '_', 'E', 'W', 'e', 'e', 'k', 'e', 'n', 
+  'D', '_', 'N', 'O', 'N', 'E', '\"', '\225', '\003', '\n', '$', 'C', 'M', 's', 'g', 'C', 'l', 'i', 'e', 'n', 't', 'T', 'o', 'G', 'C', 
+  'G', 'e', 't', 'E', 'v', 'e', 'n', 't', 'C', 'o', 'u', 'p', 'o', 'n', 'R', 'e', 's', 'p', 'o', 'n', 's', 'e', '\022', 'I', '\n', 
+  '\006', 'r', 'e', 's', 'u', 'l', 't', '\030', '\001', ' ', '\001', '(', '\016', '2', '0', '.', 'C', 'M', 's', 'g', 'C', 'l', 'i', 'e', 'n', 
+  't', 'T', 'o', 'G', 'C', 'G', 'e', 't', 'E', 'v', 'e', 'n', 't', 'C', 'o', 'u', 'p', 'o', 'n', 'R', 'e', 's', 'p', 'o', 'n', 
+  's', 'e', '.', 'R', 'e', 's', 'u', 'l', 't', 'C', 'o', 'd', 'e', ':', '\007', 'S', 'u', 'c', 'c', 'e', 's', 's', '\022', '(', '\n', 
+  '\010', 'e', 'v', 'e', 'n', 't', '_', 'i', 'd', '\030', '\002', ' ', '\001', '(', '\016', '2', '\007', '.', 'E', 'E', 'v', 'e', 'n', 't', ':', 
+  '\r', 'E', 'V', 'E', 'N', 'T', '_', 'I', 'D', '_', 'N', 'O', 'N', 'E', '\022', '=', '\n', '\007', 'c', 'o', 'u', 'p', 'o', 'n', 's', 
+  '\030', '\003', ' ', '\003', '(', '\013', '2', ',', '.', 'C', 'M', 's', 'g', 'C', 'l', 'i', 'e', 'n', 't', 'T', 'o', 'G', 'C', 'G', 'e', 
+  't', 'E', 'v', 'e', 'n', 't', 'C', 'o', 'u', 'p', 'o', 'n', 'R', 'e', 's', 'p', 'o', 'n', 's', 'e', '.', 'C', 'o', 'u', 'p', 
+  'o', 'n', '\032', '0', '\n', '\006', 'C', 'o', 'u', 'p', 'o', 'n', '\022', '\021', '\n', '\t', 'c', 'o', 'u', 'p', 'o', 'n', '_', 'i', 'd', 
+  '\030', '\001', ' ', '\001', '(', '\r', '\022', '\023', '\n', '\013', 'c', 'o', 'u', 'p', 'o', 'n', '_', 'c', 'o', 'd', 'e', '\030', '\002', ' ', '\001', 
+  '(', '\t', '\"', '\206', '\001', '\n', '\n', 'R', 'e', 's', 'u', 'l', 't', 'C', 'o', 'd', 'e', '\022', '\013', '\n', '\007', 'S', 'u', 'c', 'c', 
+  'e', 's', 's', '\020', '\000', '\022', '\020', '\n', '\014', 'I', 'n', 'v', 'a', 'l', 'i', 'd', 'E', 'v', 'e', 'n', 't', '\020', '\001', '\022', '\022', 
+  '\n', '\016', 'E', 'v', 'e', 'n', 't', 'N', 'o', 't', 'A', 'c', 't', 'i', 'v', 'e', '\020', '\002', '\022', '\022', '\n', '\016', 'U', 's', 'e', 
+  'r', 'I', 'n', 'e', 'l', 'i', 'g', 'i', 'b', 'l', 'e', '\020', '\003', '\022', '\017', '\n', '\013', 'S', 'e', 'r', 'v', 'e', 'r', 'E', 'r', 
+  'r', 'o', 'r', '\020', '\004', '\022', '\013', '\n', '\007', 'T', 'i', 'm', 'e', 'o', 'u', 't', '\020', '\005', '\022', '\023', '\n', '\017', 'M', 'u', 'l', 
+  't', 'i', 'p', 'l', 'e', 'C', 'o', 'u', 'p', 'o', 'n', 's', '\020', '\006', '\"', '\314', '\001', '\n', ' ', 'C', 'M', 's', 'g', 'C', 'l', 
+  'i', 'e', 'n', 't', 'T', 'o', 'G', 'C', 'C', 'o', 'n', 'v', 'e', 'r', 't', 'E', 'v', 'e', 'n', 't', 'P', 'o', 'i', 'n', 't', 
+  's', '\022', '6', '\n', '\026', 'e', 'v', 'e', 'n', 't', '_', 'i', 'd', '_', 'p', 'o', 'i', 'n', 't', 's', '_', 't', 'o', '_', 'b', 
+  'u', 'y', '\030', '\001', ' ', '\001', '(', '\016', '2', '\007', '.', 'E', 'E', 'v', 'e', 'n', 't', ':', '\r', 'E', 'V', 'E', 'N', 'T', '_', 
+  'I', 'D', '_', 'N', 'O', 'N', 'E', '\022', '8', '\n', '\030', 'e', 'v', 'e', 'n', 't', '_', 'i', 'd', '_', 'p', 'o', 'i', 'n', 't', 
+  's', '_', 't', 'o', '_', 's', 'p', 'e', 'n', 'd', '\030', '\002', ' ', '\001', '(', '\016', '2', '\007', '.', 'E', 'E', 'v', 'e', 'n', 't', 
+  ':', '\r', 'E', 'V', 'E', 'N', 'T', '_', 'I', 'D', '_', 'N', 'O', 'N', 'E', '\022', '\031', '\n', '\021', 'n', 'u', 'm', '_', 'p', 'o', 
+  'i', 'n', 't', 's', '_', 't', 'o', '_', 'b', 'u', 'y', '\030', '\003', ' ', '\001', '(', '\r', '\022', '\033', '\n', '\023', 'n', 'u', 'm', '_', 
+  'p', 'o', 'i', 'n', 't', 's', '_', 't', 'o', '_', 's', 'p', 'e', 'n', 'd', '\030', '\004', ' ', '\001', '(', '\r', '\"', '\354', '\001', '\n', 
+  '(', 'C', 'M', 's', 'g', 'C', 'l', 'i', 'e', 'n', 't', 'T', 'o', 'G', 'C', 'C', 'o', 'n', 'v', 'e', 'r', 't', 'E', 'v', 'e', 
+  'n', 't', 'P', 'o', 'i', 'n', 't', 's', 'R', 'e', 's', 'p', 'o', 'n', 's', 'e', '\022', 'M', '\n', '\006', 'r', 'e', 's', 'u', 'l', 
+  't', '\030', '\001', ' ', '\001', '(', '\016', '2', '4', '.', 'C', 'M', 's', 'g', 'C', 'l', 'i', 'e', 'n', 't', 'T', 'o', 'G', 'C', 'C', 
+  'o', 'n', 'v', 'e', 'r', 't', 'E', 'v', 'e', 'n', 't', 'P', 'o', 'i', 'n', 't', 's', 'R', 'e', 's', 'p', 'o', 'n', 's', 'e', 
+  '.', 'R', 'e', 's', 'u', 'l', 't', 'C', 'o', 'd', 'e', ':', '\007', 'S', 'u', 'c', 'c', 'e', 's', 's', '\"', 'q', '\n', '\n', 'R', 
+  'e', 's', 'u', 'l', 't', 'C', 'o', 'd', 'e', '\022', '\013', '\n', '\007', 'S', 'u', 'c', 'c', 'e', 's', 's', '\020', '\000', '\022', '\020', '\n', 
+  '\014', 'I', 'n', 'v', 'a', 'l', 'i', 'd', 'E', 'v', 'e', 'n', 't', '\020', '\001', '\022', '\022', '\n', '\016', 'E', 'v', 'e', 'n', 't', 'N', 
+  'o', 't', 'A', 'c', 't', 'i', 'v', 'e', '\020', '\002', '\022', '\022', '\n', '\016', 'U', 's', 'e', 'r', 'I', 'n', 'e', 'l', 'i', 'g', 'i', 
+  'b', 'l', 'e', '\020', '\003', '\022', '\017', '\n', '\013', 'S', 'e', 'r', 'v', 'e', 'r', 'E', 'r', 'r', 'o', 'r', '\020', '\004', '\022', '\013', '\n', 
+  '\007', 'T', 'i', 'm', 'e', 'o', 'u', 't', '\020', '\005', '\"', 'N', '\n', '\036', 'C', 'M', 's', 'g', 'C', 'l', 'i', 'e', 'n', 't', 'T', 
+  'o', 'G', 'C', 'I', 'n', 'v', 'i', 't', 'e', 'T', 'o', 'D', 'e', 'm', 'o', 'M', 'o', 'd', 'e', '\022', '\021', '\n', '\t', 's', 'e', 
+  'r', 'v', 'e', 'r', '_', 'i', 'd', '\030', '\001', ' ', '\001', '(', '\006', '\022', '\031', '\n', '\021', 'i', 'n', 'v', 'i', 't', 'e', 'd', '_', 
+  'p', 'l', 'a', 'y', 'e', 'r', '_', 'i', 'd', '\030', '\002', ' ', '\001', '(', '\006', '\"', '^', '\n', '\036', 'C', 'M', 's', 'g', 'G', 'C', 
+  'T', 'o', 'C', 'l', 'i', 'e', 'n', 't', 'I', 'n', 'v', 'i', 't', 'e', 'T', 'o', 'D', 'e', 'm', 'o', 'M', 'o', 'd', 'e', '\022', 
+  '\021', '\n', '\t', 's', 'e', 'r', 'v', 'e', 'r', '_', 'i', 'd', '\030', '\001', ' ', '\001', '(', '\006', '\022', '\023', '\n', '\013', 'f', 'r', 'o', 
+  'm', '_', 'p', 'l', 'a', 'y', 'e', 'r', '\030', '\002', ' ', '\001', '(', '\006', '\022', '\024', '\n', '\014', 'p', 'a', 'r', 't', 'y', '_', 'i', 
+  'n', 'v', 'i', 't', 'e', '\030', '\003', ' ', '\001', '(', '\010', '*', '\330', '\001', '\n', '!', 'C', 'M', 's', 'g', 'D', 'O', 'T', 'A', 'R', 
+  'e', 'q', 'u', 'e', 's', 't', 'M', 'a', 't', 'c', 'h', 'e', 's', '_', 'S', 'k', 'i', 'l', 'l', 'L', 'e', 'v', 'e', 'l', '\022', 
+  ')', '\n', '%', 'C', 'M', 's', 'g', 'D', 'O', 'T', 'A', 'R', 'e', 'q', 'u', 'e', 's', 't', 'M', 'a', 't', 'c', 'h', 'e', 's', 
+  '_', 'S', 'k', 'i', 'l', 'l', 'L', 'e', 'v', 'e', 'l', '_', 'A', 'n', 'y', '\020', '\000', '\022', ',', '\n', '(', 'C', 'M', 's', 'g', 
+  'D', 'O', 'T', 'A', 'R', 'e', 'q', 'u', 'e', 's', 't', 'M', 'a', 't', 'c', 'h', 'e', 's', '_', 'S', 'k', 'i', 'l', 'l', 'L', 
+  'e', 'v', 'e', 'l', '_', 'N', 'o', 'r', 'm', 'a', 'l', '\020', '\001', '\022', '*', '\n', '&', 'C', 'M', 's', 'g', 'D', 'O', 'T', 'A', 
+  'R', 'e', 'q', 'u', 'e', 's', 't', 'M', 'a', 't', 'c', 'h', 'e', 's', '_', 'S', 'k', 'i', 'l', 'l', 'L', 'e', 'v', 'e', 'l', 
+  '_', 'H', 'i', 'g', 'h', '\020', '\002', '\022', '.', '\n', '*', 'C', 'M', 's', 'g', 'D', 'O', 'T', 'A', 'R', 'e', 'q', 'u', 'e', 's', 
+  't', 'M', 'a', 't', 'c', 'h', 'e', 's', '_', 'S', 'k', 'i', 'l', 'l', 'L', 'e', 'v', 'e', 'l', '_', 'V', 'e', 'r', 'y', 'H', 
+  'i', 'g', 'h', '\020', '\003', '*', 'V', '\n', '\024', 'D', 'O', 'T', 'A', '_', 'W', 'a', 't', 'c', 'h', 'R', 'e', 'p', 'l', 'a', 'y', 
+  'T', 'y', 'p', 'e', '\022', '\034', '\n', '\030', 'D', 'O', 'T', 'A', '_', 'W', 'A', 'T', 'C', 'H', '_', 'R', 'E', 'P', 'L', 'A', 'Y', 
+  '_', 'N', 'O', 'R', 'M', 'A', 'L', '\020', '\000', '\022', ' ', '\n', '\034', 'D', 'O', 'T', 'A', '_', 'W', 'A', 'T', 'C', 'H', '_', 'R', 
+  'E', 'P', 'L', 'A', 'Y', '_', 'H', 'I', 'G', 'H', 'L', 'I', 'G', 'H', 'T', 'S', '\020', '\001', '*', '\321', '\001', '\n', '\034', 'E', 'I', 
+  't', 'e', 'm', 'E', 'd', 'i', 't', 'o', 'r', 'R', 'e', 's', 'e', 'r', 'v', 'a', 't', 'i', 'o', 'n', 'R', 'e', 's', 'u', 'l', 
+  't', '\022', '%', '\n', '!', 'k', '_', 'E', 'I', 't', 'e', 'm', 'E', 'd', 'i', 't', 'o', 'r', 'R', 'e', 's', 'e', 'r', 'v', 'a', 
+  't', 'i', 'o', 'n', 'R', 'e', 's', 'u', 'l', 't', '_', 'O', 'K', '\020', '\001', '\022', '0', '\n', ',', 'k', '_', 'E', 'I', 't', 'e', 
+  'm', 'E', 'd', 'i', 't', 'o', 'r', 'R', 'e', 's', 'e', 'r', 'v', 'a', 't', 'i', 'o', 'n', 'R', 'e', 's', 'u', 'l', 't', '_', 
+  'A', 'l', 'r', 'e', 'a', 'd', 'y', 'E', 'x', 'i', 's', 't', 's', '\020', '\002', '\022', '+', '\n', '\'', 'k', '_', 'E', 'I', 't', 'e', 
+  'm', 'E', 'd', 'i', 't', 'o', 'r', 'R', 'e', 's', 'e', 'r', 'v', 'a', 't', 'i', 'o', 'n', 'R', 'e', 's', 'u', 'l', 't', '_', 
+  'R', 'e', 's', 'e', 'r', 'v', 'e', 'd', '\020', '\003', '\022', '+', '\n', '\'', 'k', '_', 'E', 'I', 't', 'e', 'm', 'E', 'd', 'i', 't', 
+  'o', 'r', 'R', 'e', 's', 'e', 'r', 'v', 'a', 't', 'i', 'o', 'n', 'R', 'e', 's', 'u', 'l', 't', '_', 'T', 'i', 'm', 'e', 'd', 
+  'O', 'u', 't', '\020', '\004', '*', '\350', '\001', '\n', ' ', 'E', 'W', 'e', 'e', 'k', 'e', 'n', 'd', 'T', 'o', 'u', 'r', 'n', 'e', 'y', 
+  'R', 'i', 'c', 'h', 'P', 'r', 'e', 's', 'e', 'n', 'c', 'e', 'E', 'v', 'e', 'n', 't', '\022', '+', '\n', '\'', 'k', '_', 'E', 'W', 
+  'e', 'e', 'k', 'e', 'n', 'd', 'T', 'o', 'u', 'r', 'n', 'e', 'y', 'R', 'i', 'c', 'h', 'P', 'r', 'e', 's', 'e', 'n', 'c', 'e', 
+  'E', 'v', 'e', 'n', 't', '_', 'N', 'o', 'n', 'e', '\020', '\000', '\022', '3', '\n', '/', 'k', '_', 'E', 'W', 'e', 'e', 'k', 'e', 'n', 
   'd', 'T', 'o', 'u', 'r', 'n', 'e', 'y', 'R', 'i', 'c', 'h', 'P', 'r', 'e', 's', 'e', 'n', 'c', 'e', 'E', 'v', 'e', 'n', 't', 
-  '_', 'N', 'o', 'n', 'e', '\020', '\000', '\022', '3', '\n', '/', 'k', '_', 'E', 'W', 'e', 'e', 'k', 'e', 'n', 'd', 'T', 'o', 'u', 'r', 
-  'n', 'e', 'y', 'R', 'i', 'c', 'h', 'P', 'r', 'e', 's', 'e', 'n', 'c', 'e', 'E', 'v', 'e', 'n', 't', '_', 'S', 't', 'a', 'r', 
-  't', 'e', 'd', 'M', 'a', 't', 'c', 'h', '\020', '\001', '\022', '/', '\n', '+', 'k', '_', 'E', 'W', 'e', 'e', 'k', 'e', 'n', 'd', 'T', 
-  'o', 'u', 'r', 'n', 'e', 'y', 'R', 'i', 'c', 'h', 'P', 'r', 'e', 's', 'e', 'n', 'c', 'e', 'E', 'v', 'e', 'n', 't', '_', 'W', 
-  'o', 'n', 'M', 'a', 't', 'c', 'h', '\020', '\002', '\022', '1', '\n', '-', 'k', '_', 'E', 'W', 'e', 'e', 'k', 'e', 'n', 'd', 'T', 'o', 
-  'u', 'r', 'n', 'e', 'y', 'R', 'i', 'c', 'h', 'P', 'r', 'e', 's', 'e', 'n', 'c', 'e', 'E', 'v', 'e', 'n', 't', '_', 'E', 'l', 
-  'i', 'm', 'i', 'n', 'a', 't', 'e', 'd', '\020', '\003', '*', '\247', '\002', '\n', '\027', 'E', 'D', 'O', 'T', 'A', 'T', 'r', 'i', 'v', 'i', 
-  'a', 'A', 'n', 's', 'w', 'e', 'r', 'R', 'e', 's', 'u', 'l', 't', '\022', '%', '\n', '!', 'k', '_', 'E', 'D', 'O', 'T', 'A', 'T', 
-  'r', 'i', 'v', 'i', 'a', 'A', 'n', 's', 'w', 'e', 'r', 'R', 'e', 's', 'u', 'l', 't', '_', 'S', 'u', 'c', 'c', 'e', 's', 's', 
-  '\020', '\000', '\022', '-', '\n', ')', 'k', '_', 'E', 'D', 'O', 'T', 'A', 'T', 'r', 'i', 'v', 'i', 'a', 'A', 'n', 's', 'w', 'e', 'r', 
-  'R', 'e', 's', 'u', 'l', 't', '_', 'I', 'n', 'v', 'a', 'l', 'i', 'd', 'Q', 'u', 'e', 's', 't', 'i', 'o', 'n', '\020', '\001', '\022', 
-  '+', '\n', '\'', 'k', '_', 'E', 'D', 'O', 'T', 'A', 'T', 'r', 'i', 'v', 'i', 'a', 'A', 'n', 's', 'w', 'e', 'r', 'R', 'e', 's', 
-  'u', 'l', 't', '_', 'I', 'n', 'v', 'a', 'l', 'i', 'd', 'A', 'n', 's', 'w', 'e', 'r', '\020', '\002', '\022', ',', '\n', '(', 'k', '_', 
-  'E', 'D', 'O', 'T', 'A', 'T', 'r', 'i', 'v', 'i', 'a', 'A', 'n', 's', 'w', 'e', 'r', 'R', 'e', 's', 'u', 'l', 't', '_', 'Q', 
-  'u', 'e', 's', 't', 'i', 'o', 'n', 'L', 'o', 'c', 'k', 'e', 'd', '\020', '\003', '\022', '-', '\n', ')', 'k', '_', 'E', 'D', 'O', 'T', 
-  'A', 'T', 'r', 'i', 'v', 'i', 'a', 'A', 'n', 's', 'w', 'e', 'r', 'R', 'e', 's', 'u', 'l', 't', '_', 'A', 'l', 'r', 'e', 'a', 
-  'd', 'y', 'A', 'n', 's', 'w', 'e', 'r', 'e', 'd', '\020', '\004', '\022', ',', '\n', '(', 'k', '_', 'E', 'D', 'O', 'T', 'A', 'T', 'r', 
-  'i', 'v', 'i', 'a', 'A', 'n', 's', 'w', 'e', 'r', 'R', 'e', 's', 'u', 'l', 't', '_', 'T', 'r', 'i', 'v', 'i', 'a', 'D', 'i', 
-  's', 'a', 'b', 'l', 'e', 'd', '\020', '\005', '*', '\216', '\003', '\n', '\030', 'E', 'P', 'u', 'r', 'c', 'h', 'a', 's', 'e', 'H', 'e', 'r', 
-  'o', 'R', 'e', 'l', 'i', 'c', 'R', 'e', 's', 'u', 'l', 't', '\022', '&', '\n', '\"', 'k', '_', 'E', 'P', 'u', 'r', 'c', 'h', 'a', 
-  's', 'e', 'H', 'e', 'r', 'o', 'R', 'e', 'l', 'i', 'c', 'R', 'e', 's', 'u', 'l', 't', '_', 'S', 'u', 'c', 'c', 'e', 's', 's', 
-  '\020', '\000', '\022', '+', '\n', '\'', 'k', '_', 'E', 'P', 'u', 'r', 'c', 'h', 'a', 's', 'e', 'H', 'e', 'r', 'o', 'R', 'e', 'l', 'i', 
-  'c', 'R', 'e', 's', 'u', 'l', 't', '_', 'F', 'a', 'i', 'l', 'e', 'd', 'T', 'o', 'S', 'e', 'n', 'd', '\020', '\001', '\022', '.', '\n', 
-  '*', 'k', '_', 'E', 'P', 'u', 'r', 'c', 'h', 'a', 's', 'e', 'H', 'e', 'r', 'o', 'R', 'e', 'l', 'i', 'c', 'R', 'e', 's', 'u', 
-  'l', 't', '_', 'N', 'o', 't', 'E', 'n', 'o', 'u', 'g', 'h', 'P', 'o', 'i', 'n', 't', 's', '\020', '\002', '\022', '2', '\n', '.', 'k', 
-  '_', 'E', 'P', 'u', 'r', 'c', 'h', 'a', 's', 'e', 'H', 'e', 'r', 'o', 'R', 'e', 'l', 'i', 'c', 'R', 'e', 's', 'u', 'l', 't', 
-  '_', 'I', 'n', 't', 'e', 'r', 'n', 'a', 'l', 'S', 'e', 'r', 'v', 'e', 'r', 'E', 'r', 'r', 'o', 'r', '\020', '\003', '\022', '1', '\n', 
-  '-', 'k', '_', 'E', 'P', 'u', 'r', 'c', 'h', 'a', 's', 'e', 'H', 'e', 'r', 'o', 'R', 'e', 'l', 'i', 'c', 'R', 'e', 's', 'u', 
-  'l', 't', '_', 'P', 'u', 'r', 'c', 'h', 'a', 's', 'e', 'N', 'o', 't', 'A', 'l', 'l', 'o', 'w', 'e', 'd', '\020', '\004', '\022', '+', 
+  '_', 'S', 't', 'a', 'r', 't', 'e', 'd', 'M', 'a', 't', 'c', 'h', '\020', '\001', '\022', '/', '\n', '+', 'k', '_', 'E', 'W', 'e', 'e', 
+  'k', 'e', 'n', 'd', 'T', 'o', 'u', 'r', 'n', 'e', 'y', 'R', 'i', 'c', 'h', 'P', 'r', 'e', 's', 'e', 'n', 'c', 'e', 'E', 'v', 
+  'e', 'n', 't', '_', 'W', 'o', 'n', 'M', 'a', 't', 'c', 'h', '\020', '\002', '\022', '1', '\n', '-', 'k', '_', 'E', 'W', 'e', 'e', 'k', 
+  'e', 'n', 'd', 'T', 'o', 'u', 'r', 'n', 'e', 'y', 'R', 'i', 'c', 'h', 'P', 'r', 'e', 's', 'e', 'n', 'c', 'e', 'E', 'v', 'e', 
+  'n', 't', '_', 'E', 'l', 'i', 'm', 'i', 'n', 'a', 't', 'e', 'd', '\020', '\003', '*', '\247', '\002', '\n', '\027', 'E', 'D', 'O', 'T', 'A', 
+  'T', 'r', 'i', 'v', 'i', 'a', 'A', 'n', 's', 'w', 'e', 'r', 'R', 'e', 's', 'u', 'l', 't', '\022', '%', '\n', '!', 'k', '_', 'E', 
+  'D', 'O', 'T', 'A', 'T', 'r', 'i', 'v', 'i', 'a', 'A', 'n', 's', 'w', 'e', 'r', 'R', 'e', 's', 'u', 'l', 't', '_', 'S', 'u', 
+  'c', 'c', 'e', 's', 's', '\020', '\000', '\022', '-', '\n', ')', 'k', '_', 'E', 'D', 'O', 'T', 'A', 'T', 'r', 'i', 'v', 'i', 'a', 'A', 
+  'n', 's', 'w', 'e', 'r', 'R', 'e', 's', 'u', 'l', 't', '_', 'I', 'n', 'v', 'a', 'l', 'i', 'd', 'Q', 'u', 'e', 's', 't', 'i', 
+  'o', 'n', '\020', '\001', '\022', '+', '\n', '\'', 'k', '_', 'E', 'D', 'O', 'T', 'A', 'T', 'r', 'i', 'v', 'i', 'a', 'A', 'n', 's', 'w', 
+  'e', 'r', 'R', 'e', 's', 'u', 'l', 't', '_', 'I', 'n', 'v', 'a', 'l', 'i', 'd', 'A', 'n', 's', 'w', 'e', 'r', '\020', '\002', '\022', 
+  ',', '\n', '(', 'k', '_', 'E', 'D', 'O', 'T', 'A', 'T', 'r', 'i', 'v', 'i', 'a', 'A', 'n', 's', 'w', 'e', 'r', 'R', 'e', 's', 
+  'u', 'l', 't', '_', 'Q', 'u', 'e', 's', 't', 'i', 'o', 'n', 'L', 'o', 'c', 'k', 'e', 'd', '\020', '\003', '\022', '-', '\n', ')', 'k', 
+  '_', 'E', 'D', 'O', 'T', 'A', 'T', 'r', 'i', 'v', 'i', 'a', 'A', 'n', 's', 'w', 'e', 'r', 'R', 'e', 's', 'u', 'l', 't', '_', 
+  'A', 'l', 'r', 'e', 'a', 'd', 'y', 'A', 'n', 's', 'w', 'e', 'r', 'e', 'd', '\020', '\004', '\022', ',', '\n', '(', 'k', '_', 'E', 'D', 
+  'O', 'T', 'A', 'T', 'r', 'i', 'v', 'i', 'a', 'A', 'n', 's', 'w', 'e', 'r', 'R', 'e', 's', 'u', 'l', 't', '_', 'T', 'r', 'i', 
+  'v', 'i', 'a', 'D', 'i', 's', 'a', 'b', 'l', 'e', 'd', '\020', '\005', '*', '\216', '\003', '\n', '\030', 'E', 'P', 'u', 'r', 'c', 'h', 'a', 
+  's', 'e', 'H', 'e', 'r', 'o', 'R', 'e', 'l', 'i', 'c', 'R', 'e', 's', 'u', 'l', 't', '\022', '&', '\n', '\"', 'k', '_', 'E', 'P', 
+  'u', 'r', 'c', 'h', 'a', 's', 'e', 'H', 'e', 'r', 'o', 'R', 'e', 'l', 'i', 'c', 'R', 'e', 's', 'u', 'l', 't', '_', 'S', 'u', 
+  'c', 'c', 'e', 's', 's', '\020', '\000', '\022', '+', '\n', '\'', 'k', '_', 'E', 'P', 'u', 'r', 'c', 'h', 'a', 's', 'e', 'H', 'e', 'r', 
+  'o', 'R', 'e', 'l', 'i', 'c', 'R', 'e', 's', 'u', 'l', 't', '_', 'F', 'a', 'i', 'l', 'e', 'd', 'T', 'o', 'S', 'e', 'n', 'd', 
+  '\020', '\001', '\022', '.', '\n', '*', 'k', '_', 'E', 'P', 'u', 'r', 'c', 'h', 'a', 's', 'e', 'H', 'e', 'r', 'o', 'R', 'e', 'l', 'i', 
+  'c', 'R', 'e', 's', 'u', 'l', 't', '_', 'N', 'o', 't', 'E', 'n', 'o', 'u', 'g', 'h', 'P', 'o', 'i', 'n', 't', 's', '\020', '\002', 
+  '\022', '2', '\n', '.', 'k', '_', 'E', 'P', 'u', 'r', 'c', 'h', 'a', 's', 'e', 'H', 'e', 'r', 'o', 'R', 'e', 'l', 'i', 'c', 'R', 
+  'e', 's', 'u', 'l', 't', '_', 'I', 'n', 't', 'e', 'r', 'n', 'a', 'l', 'S', 'e', 'r', 'v', 'e', 'r', 'E', 'r', 'r', 'o', 'r', 
+  '\020', '\003', '\022', '1', '\n', '-', 'k', '_', 'E', 'P', 'u', 'r', 'c', 'h', 'a', 's', 'e', 'H', 'e', 'r', 'o', 'R', 'e', 'l', 'i', 
+  'c', 'R', 'e', 's', 'u', 'l', 't', '_', 'P', 'u', 'r', 'c', 'h', 'a', 's', 'e', 'N', 'o', 't', 'A', 'l', 'l', 'o', 'w', 'e', 
+  'd', '\020', '\004', '\022', '+', '\n', '\'', 'k', '_', 'E', 'P', 'u', 'r', 'c', 'h', 'a', 's', 'e', 'H', 'e', 'r', 'o', 'R', 'e', 'l', 
+  'i', 'c', 'R', 'e', 's', 'u', 'l', 't', '_', 'I', 'n', 'v', 'a', 'l', 'i', 'd', 'R', 'e', 'l', 'i', 'c', '\020', '\005', '\022', '+', 
   '\n', '\'', 'k', '_', 'E', 'P', 'u', 'r', 'c', 'h', 'a', 's', 'e', 'H', 'e', 'r', 'o', 'R', 'e', 'l', 'i', 'c', 'R', 'e', 's', 
-  'u', 'l', 't', '_', 'I', 'n', 'v', 'a', 'l', 'i', 'd', 'R', 'e', 'l', 'i', 'c', '\020', '\005', '\022', '+', '\n', '\'', 'k', '_', 'E', 
-  'P', 'u', 'r', 'c', 'h', 'a', 's', 'e', 'H', 'e', 'r', 'o', 'R', 'e', 'l', 'i', 'c', 'R', 'e', 's', 'u', 'l', 't', '_', 'A', 
-  'l', 'r', 'e', 'a', 'd', 'y', 'O', 'w', 'n', 'e', 'd', '\020', '\006', '\022', ',', '\n', '(', 'k', '_', 'E', 'P', 'u', 'r', 'c', 'h', 
-  'a', 's', 'e', 'H', 'e', 'r', 'o', 'R', 'e', 'l', 'i', 'c', 'R', 'e', 's', 'u', 'l', 't', '_', 'I', 'n', 'v', 'a', 'l', 'i', 
-  'd', 'R', 'a', 'r', 'i', 't', 'y', '\020', '\007', '*', '\270', '\002', '\n', '\026', 'E', 'D', 'e', 'v', 'E', 'v', 'e', 'n', 't', 'R', 'e', 
-  'q', 'u', 'e', 's', 't', 'R', 'e', 's', 'u', 'l', 't', '\022', '$', '\n', ' ', 'k', '_', 'E', 'D', 'e', 'v', 'E', 'v', 'e', 'n', 
-  't', 'R', 'e', 'q', 'u', 'e', 's', 't', 'R', 'e', 's', 'u', 'l', 't', '_', 'S', 'u', 'c', 'c', 'e', 's', 's', '\020', '\000', '\022', 
-  '\'', '\n', '#', 'k', '_', 'E', 'D', 'e', 'v', 'E', 'v', 'e', 'n', 't', 'R', 'e', 'q', 'u', 'e', 's', 't', 'R', 'e', 's', 'u', 
-  'l', 't', '_', 'N', 'o', 't', 'A', 'l', 'l', 'o', 'w', 'e', 'd', '\020', '\001', '\022', ')', '\n', '%', 'k', '_', 'E', 'D', 'e', 'v', 
-  'E', 'v', 'e', 'n', 't', 'R', 'e', 'q', 'u', 'e', 's', 't', 'R', 'e', 's', 'u', 'l', 't', '_', 'I', 'n', 'v', 'a', 'l', 'i', 
-  'd', 'E', 'v', 'e', 'n', 't', '\020', '\002', '\022', '\'', '\n', '#', 'k', '_', 'E', 'D', 'e', 'v', 'E', 'v', 'e', 'n', 't', 'R', 'e', 
-  'q', 'u', 'e', 's', 't', 'R', 'e', 's', 'u', 'l', 't', '_', 'S', 'q', 'l', 'F', 'a', 'i', 'l', 'u', 'r', 'e', '\020', '\003', '\022', 
-  '$', '\n', ' ', 'k', '_', 'E', 'D', 'e', 'v', 'E', 'v', 'e', 'n', 't', 'R', 'e', 'q', 'u', 'e', 's', 't', 'R', 'e', 's', 'u', 
-  'l', 't', '_', 'T', 'i', 'm', 'e', 'o', 'u', 't', '\020', '\004', '\022', '(', '\n', '$', 'k', '_', 'E', 'D', 'e', 'v', 'E', 'v', 'e', 
-  'n', 't', 'R', 'e', 'q', 'u', 'e', 's', 't', 'R', 'e', 's', 'u', 'l', 't', '_', 'L', 'o', 'c', 'k', 'F', 'a', 'i', 'l', 'u', 
-  'r', 'e', '\020', '\005', '\022', '+', '\n', '\'', 'k', '_', 'E', 'D', 'e', 'v', 'E', 'v', 'e', 'n', 't', 'R', 'e', 'q', 'u', 'e', 's', 
-  't', 'R', 'e', 's', 'u', 'l', 't', '_', 'S', 'D', 'O', 'L', 'o', 'a', 'd', 'F', 'a', 'i', 'l', 'u', 'r', 'e', '\020', '\006', '*', 
-  '\335', '\005', '\n', '\032', 'E', 'S', 'u', 'p', 'p', 'o', 'r', 't', 'E', 'v', 'e', 'n', 't', 'R', 'e', 'q', 'u', 'e', 's', 't', 'R', 
-  'e', 's', 'u', 'l', 't', '\022', '(', '\n', '$', 'k', '_', 'E', 'S', 'u', 'p', 'p', 'o', 'r', 't', 'E', 'v', 'e', 'n', 't', 'R', 
-  'e', 'q', 'u', 'e', 's', 't', 'R', 'e', 's', 'u', 'l', 't', '_', 'S', 'u', 'c', 'c', 'e', 's', 's', '\020', '\000', '\022', '(', '\n', 
-  '$', 'k', '_', 'E', 'S', 'u', 'p', 'p', 'o', 'r', 't', 'E', 'v', 'e', 'n', 't', 'R', 'e', 'q', 'u', 'e', 's', 't', 'R', 'e', 
-  's', 'u', 'l', 't', '_', 'T', 'i', 'm', 'e', 'o', 'u', 't', '\020', '\001', '\022', '0', '\n', ',', 'k', '_', 'E', 'S', 'u', 'p', 'p', 
-  'o', 'r', 't', 'E', 'v', 'e', 'n', 't', 'R', 'e', 'q', 'u', 'e', 's', 't', 'R', 'e', 's', 'u', 'l', 't', '_', 'C', 'a', 'n', 
-  't', 'L', 'o', 'c', 'k', 'S', 'O', 'C', 'a', 'c', 'h', 'e', '\020', '\002', '\022', '3', '\n', '/', 'k', '_', 'E', 'S', 'u', 'p', 'p', 
-  'o', 'r', 't', 'E', 'v', 'e', 'n', 't', 'R', 'e', 'q', 'u', 'e', 's', 't', 'R', 'e', 's', 'u', 'l', 't', '_', 'I', 't', 'e', 
-  'm', 'N', 'o', 't', 'I', 'n', 'I', 'n', 'v', 'e', 'n', 't', 'o', 'r', 'y', '\020', '\003', '\022', '/', '\n', '+', 'k', '_', 'E', 'S', 
-  'u', 'p', 'p', 'o', 'r', 't', 'E', 'v', 'e', 'n', 't', 'R', 'e', 'q', 'u', 'e', 's', 't', 'R', 'e', 's', 'u', 'l', 't', '_', 
-  'I', 'n', 'v', 'a', 'l', 'i', 'd', 'I', 't', 'e', 'm', 'D', 'e', 'f', '\020', '\004', '\022', '-', '\n', ')', 'k', '_', 'E', 'S', 'u', 
-  'p', 'p', 'o', 'r', 't', 'E', 'v', 'e', 'n', 't', 'R', 'e', 'q', 'u', 'e', 's', 't', 'R', 'e', 's', 'u', 'l', 't', '_', 'I', 
-  'n', 'v', 'a', 'l', 'i', 'd', 'E', 'v', 'e', 'n', 't', '\020', '\005', '\022', '-', '\n', ')', 'k', '_', 'E', 'S', 'u', 'p', 'p', 'o', 
-  'r', 't', 'E', 'v', 'e', 'n', 't', 'R', 'e', 'q', 'u', 'e', 's', 't', 'R', 'e', 's', 'u', 'l', 't', '_', 'E', 'v', 'e', 'n', 
-  't', 'E', 'x', 'p', 'i', 'r', 'e', 'd', '\020', '\006', '\022', '6', '\n', '2', 'k', '_', 'E', 'S', 'u', 'p', 'p', 'o', 'r', 't', 'E', 
+  'u', 'l', 't', '_', 'A', 'l', 'r', 'e', 'a', 'd', 'y', 'O', 'w', 'n', 'e', 'd', '\020', '\006', '\022', ',', '\n', '(', 'k', '_', 'E', 
+  'P', 'u', 'r', 'c', 'h', 'a', 's', 'e', 'H', 'e', 'r', 'o', 'R', 'e', 'l', 'i', 'c', 'R', 'e', 's', 'u', 'l', 't', '_', 'I', 
+  'n', 'v', 'a', 'l', 'i', 'd', 'R', 'a', 'r', 'i', 't', 'y', '\020', '\007', '*', '\270', '\002', '\n', '\026', 'E', 'D', 'e', 'v', 'E', 'v', 
+  'e', 'n', 't', 'R', 'e', 'q', 'u', 'e', 's', 't', 'R', 'e', 's', 'u', 'l', 't', '\022', '$', '\n', ' ', 'k', '_', 'E', 'D', 'e', 
+  'v', 'E', 'v', 'e', 'n', 't', 'R', 'e', 'q', 'u', 'e', 's', 't', 'R', 'e', 's', 'u', 'l', 't', '_', 'S', 'u', 'c', 'c', 'e', 
+  's', 's', '\020', '\000', '\022', '\'', '\n', '#', 'k', '_', 'E', 'D', 'e', 'v', 'E', 'v', 'e', 'n', 't', 'R', 'e', 'q', 'u', 'e', 's', 
+  't', 'R', 'e', 's', 'u', 'l', 't', '_', 'N', 'o', 't', 'A', 'l', 'l', 'o', 'w', 'e', 'd', '\020', '\001', '\022', ')', '\n', '%', 'k', 
+  '_', 'E', 'D', 'e', 'v', 'E', 'v', 'e', 'n', 't', 'R', 'e', 'q', 'u', 'e', 's', 't', 'R', 'e', 's', 'u', 'l', 't', '_', 'I', 
+  'n', 'v', 'a', 'l', 'i', 'd', 'E', 'v', 'e', 'n', 't', '\020', '\002', '\022', '\'', '\n', '#', 'k', '_', 'E', 'D', 'e', 'v', 'E', 'v', 
+  'e', 'n', 't', 'R', 'e', 'q', 'u', 'e', 's', 't', 'R', 'e', 's', 'u', 'l', 't', '_', 'S', 'q', 'l', 'F', 'a', 'i', 'l', 'u', 
+  'r', 'e', '\020', '\003', '\022', '$', '\n', ' ', 'k', '_', 'E', 'D', 'e', 'v', 'E', 'v', 'e', 'n', 't', 'R', 'e', 'q', 'u', 'e', 's', 
+  't', 'R', 'e', 's', 'u', 'l', 't', '_', 'T', 'i', 'm', 'e', 'o', 'u', 't', '\020', '\004', '\022', '(', '\n', '$', 'k', '_', 'E', 'D', 
+  'e', 'v', 'E', 'v', 'e', 'n', 't', 'R', 'e', 'q', 'u', 'e', 's', 't', 'R', 'e', 's', 'u', 'l', 't', '_', 'L', 'o', 'c', 'k', 
+  'F', 'a', 'i', 'l', 'u', 'r', 'e', '\020', '\005', '\022', '+', '\n', '\'', 'k', '_', 'E', 'D', 'e', 'v', 'E', 'v', 'e', 'n', 't', 'R', 
+  'e', 'q', 'u', 'e', 's', 't', 'R', 'e', 's', 'u', 'l', 't', '_', 'S', 'D', 'O', 'L', 'o', 'a', 'd', 'F', 'a', 'i', 'l', 'u', 
+  'r', 'e', '\020', '\006', '*', '\335', '\005', '\n', '\032', 'E', 'S', 'u', 'p', 'p', 'o', 'r', 't', 'E', 'v', 'e', 'n', 't', 'R', 'e', 'q', 
+  'u', 'e', 's', 't', 'R', 'e', 's', 'u', 'l', 't', '\022', '(', '\n', '$', 'k', '_', 'E', 'S', 'u', 'p', 'p', 'o', 'r', 't', 'E', 
+  'v', 'e', 'n', 't', 'R', 'e', 'q', 'u', 'e', 's', 't', 'R', 'e', 's', 'u', 'l', 't', '_', 'S', 'u', 'c', 'c', 'e', 's', 's', 
+  '\020', '\000', '\022', '(', '\n', '$', 'k', '_', 'E', 'S', 'u', 'p', 'p', 'o', 'r', 't', 'E', 'v', 'e', 'n', 't', 'R', 'e', 'q', 'u', 
+  'e', 's', 't', 'R', 'e', 's', 'u', 'l', 't', '_', 'T', 'i', 'm', 'e', 'o', 'u', 't', '\020', '\001', '\022', '0', '\n', ',', 'k', '_', 
+  'E', 'S', 'u', 'p', 'p', 'o', 'r', 't', 'E', 'v', 'e', 'n', 't', 'R', 'e', 'q', 'u', 'e', 's', 't', 'R', 'e', 's', 'u', 'l', 
+  't', '_', 'C', 'a', 'n', 't', 'L', 'o', 'c', 'k', 'S', 'O', 'C', 'a', 'c', 'h', 'e', '\020', '\002', '\022', '3', '\n', '/', 'k', '_', 
+  'E', 'S', 'u', 'p', 'p', 'o', 'r', 't', 'E', 'v', 'e', 'n', 't', 'R', 'e', 'q', 'u', 'e', 's', 't', 'R', 'e', 's', 'u', 'l', 
+  't', '_', 'I', 't', 'e', 'm', 'N', 'o', 't', 'I', 'n', 'I', 'n', 'v', 'e', 'n', 't', 'o', 'r', 'y', '\020', '\003', '\022', '/', '\n', 
+  '+', 'k', '_', 'E', 'S', 'u', 'p', 'p', 'o', 'r', 't', 'E', 'v', 'e', 'n', 't', 'R', 'e', 'q', 'u', 'e', 's', 't', 'R', 'e', 
+  's', 'u', 'l', 't', '_', 'I', 'n', 'v', 'a', 'l', 'i', 'd', 'I', 't', 'e', 'm', 'D', 'e', 'f', '\020', '\004', '\022', '-', '\n', ')', 
+  'k', '_', 'E', 'S', 'u', 'p', 'p', 'o', 'r', 't', 'E', 'v', 'e', 'n', 't', 'R', 'e', 'q', 'u', 'e', 's', 't', 'R', 'e', 's', 
+  'u', 'l', 't', '_', 'I', 'n', 'v', 'a', 'l', 'i', 'd', 'E', 'v', 'e', 'n', 't', '\020', '\005', '\022', '-', '\n', ')', 'k', '_', 'E', 
+  'S', 'u', 'p', 'p', 'o', 'r', 't', 'E', 'v', 'e', 'n', 't', 'R', 'e', 'q', 'u', 'e', 's', 't', 'R', 'e', 's', 'u', 'l', 't', 
+  '_', 'E', 'v', 'e', 'n', 't', 'E', 'x', 'p', 'i', 'r', 'e', 'd', '\020', '\006', '\022', '6', '\n', '2', 'k', '_', 'E', 'S', 'u', 'p', 
+  'p', 'o', 'r', 't', 'E', 'v', 'e', 'n', 't', 'R', 'e', 'q', 'u', 'e', 's', 't', 'R', 'e', 's', 'u', 'l', 't', '_', 'I', 'n', 
+  'v', 'a', 'l', 'i', 'd', 'S', 'u', 'p', 'p', 'o', 'r', 't', 'A', 'c', 'c', 'o', 'u', 'n', 't', '\020', '\007', '\022', '6', '\n', '2', 
+  'k', '_', 'E', 'S', 'u', 'p', 'p', 'o', 'r', 't', 'E', 'v', 'e', 'n', 't', 'R', 'e', 'q', 'u', 'e', 's', 't', 'R', 'e', 's', 
+  'u', 'l', 't', '_', 'I', 'n', 'v', 'a', 'l', 'i', 'd', 'S', 'u', 'p', 'p', 'o', 'r', 't', 'M', 'e', 's', 's', 'a', 'g', 'e', 
+  '\020', '\010', '\022', '3', '\n', '/', 'k', '_', 'E', 'S', 'u', 'p', 'p', 'o', 'r', 't', 'E', 'v', 'e', 'n', 't', 'R', 'e', 'q', 'u', 
+  'e', 's', 't', 'R', 'e', 's', 'u', 'l', 't', '_', 'I', 'n', 'v', 'a', 'l', 'i', 'd', 'E', 'v', 'e', 'n', 't', 'P', 'o', 'i', 
+  'n', 't', 's', '\020', '\t', '\022', '5', '\n', '1', 'k', '_', 'E', 'S', 'u', 'p', 'p', 'o', 'r', 't', 'E', 'v', 'e', 'n', 't', 'R', 
+  'e', 'q', 'u', 'e', 's', 't', 'R', 'e', 's', 'u', 'l', 't', '_', 'I', 'n', 'v', 'a', 'l', 'i', 'd', 'P', 'r', 'e', 'm', 'i', 
+  'u', 'm', 'P', 'o', 'i', 'n', 't', 's', '\020', '\n', '\022', '0', '\n', ',', 'k', '_', 'E', 'S', 'u', 'p', 'p', 'o', 'r', 't', 'E', 
   'v', 'e', 'n', 't', 'R', 'e', 'q', 'u', 'e', 's', 't', 'R', 'e', 's', 'u', 'l', 't', '_', 'I', 'n', 'v', 'a', 'l', 'i', 'd', 
-  'S', 'u', 'p', 'p', 'o', 'r', 't', 'A', 'c', 'c', 'o', 'u', 'n', 't', '\020', '\007', '\022', '6', '\n', '2', 'k', '_', 'E', 'S', 'u', 
-  'p', 'p', 'o', 'r', 't', 'E', 'v', 'e', 'n', 't', 'R', 'e', 'q', 'u', 'e', 's', 't', 'R', 'e', 's', 'u', 'l', 't', '_', 'I', 
-  'n', 'v', 'a', 'l', 'i', 'd', 'S', 'u', 'p', 'p', 'o', 'r', 't', 'M', 'e', 's', 's', 'a', 'g', 'e', '\020', '\010', '\022', '3', '\n', 
-  '/', 'k', '_', 'E', 'S', 'u', 'p', 'p', 'o', 'r', 't', 'E', 'v', 'e', 'n', 't', 'R', 'e', 'q', 'u', 'e', 's', 't', 'R', 'e', 
-  's', 'u', 'l', 't', '_', 'I', 'n', 'v', 'a', 'l', 'i', 'd', 'E', 'v', 'e', 'n', 't', 'P', 'o', 'i', 'n', 't', 's', '\020', '\t', 
-  '\022', '5', '\n', '1', 'k', '_', 'E', 'S', 'u', 'p', 'p', 'o', 'r', 't', 'E', 'v', 'e', 'n', 't', 'R', 'e', 'q', 'u', 'e', 's', 
-  't', 'R', 'e', 's', 'u', 'l', 't', '_', 'I', 'n', 'v', 'a', 'l', 'i', 'd', 'P', 'r', 'e', 'm', 'i', 'u', 'm', 'P', 'o', 'i', 
-  'n', 't', 's', '\020', '\n', '\022', '0', '\n', ',', 'k', '_', 'E', 'S', 'u', 'p', 'p', 'o', 'r', 't', 'E', 'v', 'e', 'n', 't', 'R', 
-  'e', 'q', 'u', 'e', 's', 't', 'R', 'e', 's', 'u', 'l', 't', '_', 'I', 'n', 'v', 'a', 'l', 'i', 'd', 'A', 'c', 't', 'i', 'o', 
-  'n', 'I', 'D', '\020', '\013', '\022', '3', '\n', '/', 'k', '_', 'E', 'S', 'u', 'p', 'p', 'o', 'r', 't', 'E', 'v', 'e', 'n', 't', 'R', 
-  'e', 'q', 'u', 'e', 's', 't', 'R', 'e', 's', 'u', 'l', 't', '_', 'I', 'n', 'v', 'a', 'l', 'i', 'd', 'A', 'c', 't', 'i', 'o', 
-  'n', 'S', 'c', 'o', 'r', 'e', '\020', '\014', '\022', '2', '\n', '.', 'k', '_', 'E', 'S', 'u', 'p', 'p', 'o', 'r', 't', 'E', 'v', 'e', 
-  'n', 't', 'R', 'e', 'q', 'u', 'e', 's', 't', 'R', 'e', 's', 'u', 'l', 't', '_', 'T', 'r', 'a', 'n', 's', 'a', 'c', 't', 'i', 
-  'o', 'n', 'F', 'a', 'i', 'l', 'e', 'd', '\020', '\r', '*', '\202', '\002', '\n', '\023', 'E', 'U', 'n', 'd', 'e', 'r', 'D', 'r', 'a', 'f', 
-  't', 'R', 'e', 's', 'p', 'o', 'n', 's', 'e', '\022', '\024', '\n', '\020', 'k', '_', 'e', 'I', 'n', 't', 'e', 'r', 'n', 'a', 'l', 'E', 
-  'r', 'r', 'o', 'r', '\020', '\000', '\022', '\016', '\n', '\n', 'k', '_', 'e', 'S', 'u', 'c', 'c', 'e', 's', 's', '\020', '\001', '\022', '\r', '\n', 
-  '\t', 'k', '_', 'e', 'N', 'o', 'G', 'o', 'l', 'd', '\020', '\002', '\022', '\022', '\n', '\016', 'k', '_', 'e', 'I', 'n', 'v', 'a', 'l', 'i', 
-  'd', 'S', 'l', 'o', 't', '\020', '\003', '\022', '\023', '\n', '\017', 'k', '_', 'e', 'N', 'o', 'B', 'e', 'n', 'c', 'h', 'S', 'p', 'a', 'c', 
-  'e', '\020', '\004', '\022', '\020', '\n', '\014', 'k', '_', 'e', 'N', 'o', 'T', 'i', 'c', 'k', 'e', 't', 's', '\020', '\005', '\022', '\024', '\n', '\020', 
-  'k', '_', 'e', 'E', 'v', 'e', 'n', 't', 'N', 'o', 't', 'O', 'w', 'n', 'e', 'd', '\020', '\006', '\022', '\024', '\n', '\020', 'k', '_', 'e', 
-  'I', 'n', 'v', 'a', 'l', 'i', 'd', 'R', 'e', 'w', 'a', 'r', 'd', '\020', '\007', '\022', '\023', '\n', '\017', 'k', '_', 'e', 'H', 'a', 's', 
-  'B', 'i', 'g', 'R', 'e', 'w', 'a', 'r', 'd', '\020', '\010', '\022', '\025', '\n', '\021', 'k', '_', 'e', 'N', 'o', 'G', 'C', 'C', 'o', 'n', 
-  'n', 'e', 'c', 't', 'i', 'o', 'n', '\020', '\t', '\022', '\016', '\n', '\n', 'k', '_', 'e', 'T', 'o', 'o', 'B', 'u', 's', 'y', '\020', '\n', 
-  '\022', '\023', '\n', '\017', 'k', '_', 'e', 'C', 'a', 'n', 't', 'R', 'o', 'l', 'l', 'B', 'a', 'c', 'k', '\020', '\013', '*', '\301', '\002', '\n', 
-  '\034', 'E', 'D', 'O', 'T', 'A', 'D', 'r', 'a', 'f', 't', 'T', 'r', 'i', 'v', 'i', 'a', 'A', 'n', 's', 'w', 'e', 'r', 'R', 'e', 
-  's', 'u', 'l', 't', '\022', '*', '\n', '&', 'k', '_', 'E', 'D', 'O', 'T', 'A', 'D', 'r', 'a', 'f', 't', 'T', 'r', 'i', 'v', 'i', 
-  'a', 'A', 'n', 's', 'w', 'e', 'r', 'R', 'e', 's', 'u', 'l', 't', '_', 'S', 'u', 'c', 'c', 'e', 's', 's', '\020', '\000', '\022', '1', 
-  '\n', '-', 'k', '_', 'E', 'D', 'O', 'T', 'A', 'D', 'r', 'a', 'f', 't', 'T', 'r', 'i', 'v', 'i', 'a', 'A', 'n', 's', 'w', 'e', 
-  'r', 'R', 'e', 's', 'u', 'l', 't', '_', 'I', 'n', 'v', 'a', 'l', 'i', 'd', 'M', 'a', 't', 'c', 'h', 'I', 'D', '\020', '\001', '\022', 
-  '2', '\n', '.', 'k', '_', 'E', 'D', 'O', 'T', 'A', 'D', 'r', 'a', 'f', 't', 'T', 'r', 'i', 'v', 'i', 'a', 'A', 'n', 's', 'w', 
-  'e', 'r', 'R', 'e', 's', 'u', 'l', 't', '_', 'A', 'l', 'r', 'e', 'a', 'd', 'y', 'A', 'n', 's', 'w', 'e', 'r', 'e', 'd', '\020', 
-  '\002', '\022', '0', '\n', ',', 'k', '_', 'E', 'D', 'O', 'T', 'A', 'D', 'r', 'a', 'f', 't', 'T', 'r', 'i', 'v', 'i', 'a', 'A', 'n', 
-  's', 'w', 'e', 'r', 'R', 'e', 's', 'u', 'l', 't', '_', 'I', 'n', 't', 'e', 'r', 'n', 'a', 'l', 'E', 'r', 'r', 'o', 'r', '\020', 
-  '\003', '\022', '1', '\n', '-', 'k', '_', 'E', 'D', 'O', 'T', 'A', 'D', 'r', 'a', 'f', 't', 'T', 'r', 'i', 'v', 'i', 'a', 'A', 'n', 
-  's', 'w', 'e', 'r', 'R', 'e', 's', 'u', 'l', 't', '_', 'T', 'r', 'i', 'v', 'i', 'a', 'D', 'i', 's', 'a', 'b', 'l', 'e', 'd', 
-  '\020', '\004', '\022', ')', '\n', '%', 'k', '_', 'E', 'D', 'O', 'T', 'A', 'D', 'r', 'a', 'f', 't', 'T', 'r', 'i', 'v', 'i', 'a', 'A', 
-  'n', 's', 'w', 'e', 'r', 'R', 'e', 's', 'u', 'l', 't', '_', 'G', 'C', 'D', 'o', 'w', 'n', '\020', '\005', '*', '\343', '\001', '\n', '&', 
-  'C', 'M', 's', 'g', 'C', 'l', 'i', 'e', 'n', 't', 'T', 'o', 'G', 'C', 'U', 'p', 'd', 'a', 't', 'e', 'C', 'o', 'm', 'i', 'c', 
-  'B', 'o', 'o', 'k', 'S', 't', 'a', 't', '_', 'T', 'y', 'p', 'e', '\022', ':', '\n', '6', 'C', 'M', 's', 'g', 'C', 'l', 'i', 'e', 
-  'n', 't', 'T', 'o', 'G', 'C', 'U', 'p', 'd', 'a', 't', 'e', 'C', 'o', 'm', 'i', 'c', 'B', 'o', 'o', 'k', 'S', 't', 'a', 't', 
-  '_', 'T', 'y', 'p', 'e', '_', 'H', 'i', 'g', 'h', 'e', 's', 't', 'P', 'a', 'g', 'e', 'R', 'e', 'a', 'd', '\020', '\001', '\022', '>', 
-  '\n', ':', 'C', 'M', 's', 'g', 'C', 'l', 'i', 'e', 'n', 't', 'T', 'o', 'G', 'C', 'U', 'p', 'd', 'a', 't', 'e', 'C', 'o', 'm', 
-  'i', 'c', 'B', 'o', 'o', 'k', 'S', 't', 'a', 't', '_', 'T', 'y', 'p', 'e', '_', 'S', 'e', 'c', 'o', 'n', 'd', 's', 'S', 'p', 
-  'e', 'n', 't', 'R', 'e', 'a', 'd', 'i', 'n', 'g', '\020', '\002', '\022', '=', '\n', '9', 'C', 'M', 's', 'g', 'C', 'l', 'i', 'e', 'n', 
-  't', 'T', 'o', 'G', 'C', 'U', 'p', 'd', 'a', 't', 'e', 'C', 'o', 'm', 'i', 'c', 'B', 'o', 'o', 'k', 'S', 't', 'a', 't', '_', 
-  'T', 'y', 'p', 'e', '_', 'H', 'i', 'g', 'h', 'e', 's', 't', 'P', 'e', 'r', 'c', 'e', 'n', 't', 'R', 'e', 'a', 'd', '\020', '\003', 
+  'A', 'c', 't', 'i', 'o', 'n', 'I', 'D', '\020', '\013', '\022', '3', '\n', '/', 'k', '_', 'E', 'S', 'u', 'p', 'p', 'o', 'r', 't', 'E', 
+  'v', 'e', 'n', 't', 'R', 'e', 'q', 'u', 'e', 's', 't', 'R', 'e', 's', 'u', 'l', 't', '_', 'I', 'n', 'v', 'a', 'l', 'i', 'd', 
+  'A', 'c', 't', 'i', 'o', 'n', 'S', 'c', 'o', 'r', 'e', '\020', '\014', '\022', '2', '\n', '.', 'k', '_', 'E', 'S', 'u', 'p', 'p', 'o', 
+  'r', 't', 'E', 'v', 'e', 'n', 't', 'R', 'e', 'q', 'u', 'e', 's', 't', 'R', 'e', 's', 'u', 'l', 't', '_', 'T', 'r', 'a', 'n', 
+  's', 'a', 'c', 't', 'i', 'o', 'n', 'F', 'a', 'i', 'l', 'e', 'd', '\020', '\r', '*', '\202', '\002', '\n', '\023', 'E', 'U', 'n', 'd', 'e', 
+  'r', 'D', 'r', 'a', 'f', 't', 'R', 'e', 's', 'p', 'o', 'n', 's', 'e', '\022', '\024', '\n', '\020', 'k', '_', 'e', 'I', 'n', 't', 'e', 
+  'r', 'n', 'a', 'l', 'E', 'r', 'r', 'o', 'r', '\020', '\000', '\022', '\016', '\n', '\n', 'k', '_', 'e', 'S', 'u', 'c', 'c', 'e', 's', 's', 
+  '\020', '\001', '\022', '\r', '\n', '\t', 'k', '_', 'e', 'N', 'o', 'G', 'o', 'l', 'd', '\020', '\002', '\022', '\022', '\n', '\016', 'k', '_', 'e', 'I', 
+  'n', 'v', 'a', 'l', 'i', 'd', 'S', 'l', 'o', 't', '\020', '\003', '\022', '\023', '\n', '\017', 'k', '_', 'e', 'N', 'o', 'B', 'e', 'n', 'c', 
+  'h', 'S', 'p', 'a', 'c', 'e', '\020', '\004', '\022', '\020', '\n', '\014', 'k', '_', 'e', 'N', 'o', 'T', 'i', 'c', 'k', 'e', 't', 's', '\020', 
+  '\005', '\022', '\024', '\n', '\020', 'k', '_', 'e', 'E', 'v', 'e', 'n', 't', 'N', 'o', 't', 'O', 'w', 'n', 'e', 'd', '\020', '\006', '\022', '\024', 
+  '\n', '\020', 'k', '_', 'e', 'I', 'n', 'v', 'a', 'l', 'i', 'd', 'R', 'e', 'w', 'a', 'r', 'd', '\020', '\007', '\022', '\023', '\n', '\017', 'k', 
+  '_', 'e', 'H', 'a', 's', 'B', 'i', 'g', 'R', 'e', 'w', 'a', 'r', 'd', '\020', '\010', '\022', '\025', '\n', '\021', 'k', '_', 'e', 'N', 'o', 
+  'G', 'C', 'C', 'o', 'n', 'n', 'e', 'c', 't', 'i', 'o', 'n', '\020', '\t', '\022', '\016', '\n', '\n', 'k', '_', 'e', 'T', 'o', 'o', 'B', 
+  'u', 's', 'y', '\020', '\n', '\022', '\023', '\n', '\017', 'k', '_', 'e', 'C', 'a', 'n', 't', 'R', 'o', 'l', 'l', 'B', 'a', 'c', 'k', '\020', 
+  '\013', '*', '\301', '\002', '\n', '\034', 'E', 'D', 'O', 'T', 'A', 'D', 'r', 'a', 'f', 't', 'T', 'r', 'i', 'v', 'i', 'a', 'A', 'n', 's', 
+  'w', 'e', 'r', 'R', 'e', 's', 'u', 'l', 't', '\022', '*', '\n', '&', 'k', '_', 'E', 'D', 'O', 'T', 'A', 'D', 'r', 'a', 'f', 't', 
+  'T', 'r', 'i', 'v', 'i', 'a', 'A', 'n', 's', 'w', 'e', 'r', 'R', 'e', 's', 'u', 'l', 't', '_', 'S', 'u', 'c', 'c', 'e', 's', 
+  's', '\020', '\000', '\022', '1', '\n', '-', 'k', '_', 'E', 'D', 'O', 'T', 'A', 'D', 'r', 'a', 'f', 't', 'T', 'r', 'i', 'v', 'i', 'a', 
+  'A', 'n', 's', 'w', 'e', 'r', 'R', 'e', 's', 'u', 'l', 't', '_', 'I', 'n', 'v', 'a', 'l', 'i', 'd', 'M', 'a', 't', 'c', 'h', 
+  'I', 'D', '\020', '\001', '\022', '2', '\n', '.', 'k', '_', 'E', 'D', 'O', 'T', 'A', 'D', 'r', 'a', 'f', 't', 'T', 'r', 'i', 'v', 'i', 
+  'a', 'A', 'n', 's', 'w', 'e', 'r', 'R', 'e', 's', 'u', 'l', 't', '_', 'A', 'l', 'r', 'e', 'a', 'd', 'y', 'A', 'n', 's', 'w', 
+  'e', 'r', 'e', 'd', '\020', '\002', '\022', '0', '\n', ',', 'k', '_', 'E', 'D', 'O', 'T', 'A', 'D', 'r', 'a', 'f', 't', 'T', 'r', 'i', 
+  'v', 'i', 'a', 'A', 'n', 's', 'w', 'e', 'r', 'R', 'e', 's', 'u', 'l', 't', '_', 'I', 'n', 't', 'e', 'r', 'n', 'a', 'l', 'E', 
+  'r', 'r', 'o', 'r', '\020', '\003', '\022', '1', '\n', '-', 'k', '_', 'E', 'D', 'O', 'T', 'A', 'D', 'r', 'a', 'f', 't', 'T', 'r', 'i', 
+  'v', 'i', 'a', 'A', 'n', 's', 'w', 'e', 'r', 'R', 'e', 's', 'u', 'l', 't', '_', 'T', 'r', 'i', 'v', 'i', 'a', 'D', 'i', 's', 
+  'a', 'b', 'l', 'e', 'd', '\020', '\004', '\022', ')', '\n', '%', 'k', '_', 'E', 'D', 'O', 'T', 'A', 'D', 'r', 'a', 'f', 't', 'T', 'r', 
+  'i', 'v', 'i', 'a', 'A', 'n', 's', 'w', 'e', 'r', 'R', 'e', 's', 'u', 'l', 't', '_', 'G', 'C', 'D', 'o', 'w', 'n', '\020', '\005', 
+  '*', '\343', '\001', '\n', '&', 'C', 'M', 's', 'g', 'C', 'l', 'i', 'e', 'n', 't', 'T', 'o', 'G', 'C', 'U', 'p', 'd', 'a', 't', 'e', 
+  'C', 'o', 'm', 'i', 'c', 'B', 'o', 'o', 'k', 'S', 't', 'a', 't', '_', 'T', 'y', 'p', 'e', '\022', ':', '\n', '6', 'C', 'M', 's', 
+  'g', 'C', 'l', 'i', 'e', 'n', 't', 'T', 'o', 'G', 'C', 'U', 'p', 'd', 'a', 't', 'e', 'C', 'o', 'm', 'i', 'c', 'B', 'o', 'o', 
+  'k', 'S', 't', 'a', 't', '_', 'T', 'y', 'p', 'e', '_', 'H', 'i', 'g', 'h', 'e', 's', 't', 'P', 'a', 'g', 'e', 'R', 'e', 'a', 
+  'd', '\020', '\001', '\022', '>', '\n', ':', 'C', 'M', 's', 'g', 'C', 'l', 'i', 'e', 'n', 't', 'T', 'o', 'G', 'C', 'U', 'p', 'd', 'a', 
+  't', 'e', 'C', 'o', 'm', 'i', 'c', 'B', 'o', 'o', 'k', 'S', 't', 'a', 't', '_', 'T', 'y', 'p', 'e', '_', 'S', 'e', 'c', 'o', 
+  'n', 'd', 's', 'S', 'p', 'e', 'n', 't', 'R', 'e', 'a', 'd', 'i', 'n', 'g', '\020', '\002', '\022', '=', '\n', '9', 'C', 'M', 's', 'g', 
+  'C', 'l', 'i', 'e', 'n', 't', 'T', 'o', 'G', 'C', 'U', 'p', 'd', 'a', 't', 'e', 'C', 'o', 'm', 'i', 'c', 'B', 'o', 'o', 'k', 
+  'S', 't', 'a', 't', '_', 'T', 'y', 'p', 'e', '_', 'H', 'i', 'g', 'h', 'e', 's', 't', 'P', 'e', 'r', 'c', 'e', 'n', 't', 'R', 
+  'e', 'a', 'd', '\020', '\003', 
   '\0' };
 static const ::_pbi::DescriptorTable* const descriptor_table_dota_5fgcmessages_5fclient_2eproto_deps[10] = {
   &::descriptor_table_base_5fgcmessages_2eproto,
@@ -16472,7 +16473,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_dota_5fgcmessages_5
 };
 static ::_pbi::once_flag descriptor_table_dota_5fgcmessages_5fclient_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_dota_5fgcmessages_5fclient_2eproto = {
-    false, false, 70400, descriptor_table_protodef_dota_5fgcmessages_5fclient_2eproto,
+    false, false, 70405, descriptor_table_protodef_dota_5fgcmessages_5fclient_2eproto,
     "dota_gcmessages_client.proto",
     &descriptor_table_dota_5fgcmessages_5fclient_2eproto_once, descriptor_table_dota_5fgcmessages_5fclient_2eproto_deps, 10, 475,
     schemas, file_default_instances, TableStruct_dota_5fgcmessages_5fclient_2eproto::offsets,
@@ -63790,6 +63791,9 @@ class CMsgDOTARedeemItem::_Internal {
   static void set_has_purchase_def(HasBits* has_bits) {
     (*has_bits)[0] |= 2u;
   }
+  static void set_has_claim_as_points(HasBits* has_bits) {
+    (*has_bits)[0] |= 4u;
+  }
 };
 
 CMsgDOTARedeemItem::CMsgDOTARedeemItem(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -63805,12 +63809,13 @@ CMsgDOTARedeemItem::CMsgDOTARedeemItem(const CMsgDOTARedeemItem& from)
       decltype(_impl_._has_bits_){from._impl_._has_bits_}
     , /*decltype(_impl_._cached_size_)*/{}
     , decltype(_impl_.currency_id_){}
-    , decltype(_impl_.purchase_def_){}};
+    , decltype(_impl_.purchase_def_){}
+    , decltype(_impl_.claim_as_points_){}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   ::memcpy(&_impl_.currency_id_, &from._impl_.currency_id_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.purchase_def_) -
-    reinterpret_cast<char*>(&_impl_.currency_id_)) + sizeof(_impl_.purchase_def_));
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.claim_as_points_) -
+    reinterpret_cast<char*>(&_impl_.currency_id_)) + sizeof(_impl_.claim_as_points_));
   // @@protoc_insertion_point(copy_constructor:CMsgDOTARedeemItem)
 }
 
@@ -63823,6 +63828,7 @@ inline void CMsgDOTARedeemItem::SharedCtor(
     , /*decltype(_impl_._cached_size_)*/{}
     , decltype(_impl_.currency_id_){uint64_t{0u}}
     , decltype(_impl_.purchase_def_){0u}
+    , decltype(_impl_.claim_as_points_){false}
   };
 }
 
@@ -63850,10 +63856,10 @@ void CMsgDOTARedeemItem::Clear() {
   (void) cached_has_bits;
 
   cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000003u) {
+  if (cached_has_bits & 0x00000007u) {
     ::memset(&_impl_.currency_id_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&_impl_.purchase_def_) -
-        reinterpret_cast<char*>(&_impl_.currency_id_)) + sizeof(_impl_.purchase_def_));
+        reinterpret_cast<char*>(&_impl_.claim_as_points_) -
+        reinterpret_cast<char*>(&_impl_.currency_id_)) + sizeof(_impl_.claim_as_points_));
   }
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
@@ -63880,6 +63886,15 @@ const char* CMsgDOTARedeemItem::_InternalParse(const char* ptr, ::_pbi::ParseCon
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           _Internal::set_has_purchase_def(&has_bits);
           _impl_.purchase_def_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional bool claim_as_points = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          _Internal::set_has_claim_as_points(&has_bits);
+          _impl_.claim_as_points_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -63927,6 +63942,12 @@ uint8_t* CMsgDOTARedeemItem::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_purchase_def(), target);
   }
 
+  // optional bool claim_as_points = 3;
+  if (cached_has_bits & 0x00000004u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(3, this->_internal_claim_as_points(), target);
+  }
+
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -63944,7 +63965,7 @@ size_t CMsgDOTARedeemItem::ByteSizeLong() const {
   (void) cached_has_bits;
 
   cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000003u) {
+  if (cached_has_bits & 0x00000007u) {
     // optional uint64 currency_id = 1;
     if (cached_has_bits & 0x00000001u) {
       total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_currency_id());
@@ -63953,6 +63974,11 @@ size_t CMsgDOTARedeemItem::ByteSizeLong() const {
     // optional uint32 purchase_def = 2;
     if (cached_has_bits & 0x00000002u) {
       total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_purchase_def());
+    }
+
+    // optional bool claim_as_points = 3;
+    if (cached_has_bits & 0x00000004u) {
+      total_size += 1 + 1;
     }
 
   }
@@ -63975,12 +64001,15 @@ void CMsgDOTARedeemItem::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, con
   (void) cached_has_bits;
 
   cached_has_bits = from._impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000003u) {
+  if (cached_has_bits & 0x00000007u) {
     if (cached_has_bits & 0x00000001u) {
       _this->_impl_.currency_id_ = from._impl_.currency_id_;
     }
     if (cached_has_bits & 0x00000002u) {
       _this->_impl_.purchase_def_ = from._impl_.purchase_def_;
+    }
+    if (cached_has_bits & 0x00000004u) {
+      _this->_impl_.claim_as_points_ = from._impl_.claim_as_points_;
     }
     _this->_impl_._has_bits_[0] |= cached_has_bits;
   }
@@ -64003,8 +64032,8 @@ void CMsgDOTARedeemItem::InternalSwap(CMsgDOTARedeemItem* other) {
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(CMsgDOTARedeemItem, _impl_.purchase_def_)
-      + sizeof(CMsgDOTARedeemItem::_impl_.purchase_def_)
+      PROTOBUF_FIELD_OFFSET(CMsgDOTARedeemItem, _impl_.claim_as_points_)
+      + sizeof(CMsgDOTARedeemItem::_impl_.claim_as_points_)
       - PROTOBUF_FIELD_OFFSET(CMsgDOTARedeemItem, _impl_.currency_id_)>(
           reinterpret_cast<char*>(&_impl_.currency_id_),
           reinterpret_cast<char*>(&other->_impl_.currency_id_));
@@ -134233,7 +134262,6 @@ CMsgClientToGCGetEventCoupon::CMsgClientToGCGetEventCoupon(const CMsgClientToGCG
   new (&_impl_) Impl_{
       decltype(_impl_._has_bits_){from._impl_._has_bits_}
     , /*decltype(_impl_._cached_size_)*/{}
-    , decltype(_impl_.coupon_ids_){from._impl_.coupon_ids_}
     , decltype(_impl_.event_id_){}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
@@ -134248,7 +134276,6 @@ inline void CMsgClientToGCGetEventCoupon::SharedCtor(
   new (&_impl_) Impl_{
       decltype(_impl_._has_bits_){}
     , /*decltype(_impl_._cached_size_)*/{}
-    , decltype(_impl_.coupon_ids_){arena}
     , decltype(_impl_.event_id_){0}
   };
 }
@@ -134264,7 +134291,6 @@ CMsgClientToGCGetEventCoupon::~CMsgClientToGCGetEventCoupon() {
 
 inline void CMsgClientToGCGetEventCoupon::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.coupon_ids_.~RepeatedField();
 }
 
 void CMsgClientToGCGetEventCoupon::SetCachedSize(int size) const {
@@ -134277,7 +134303,6 @@ void CMsgClientToGCGetEventCoupon::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.coupon_ids_.Clear();
   _impl_.event_id_ = 0;
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
@@ -134300,22 +134325,6 @@ const char* CMsgClientToGCGetEventCoupon::_InternalParse(const char* ptr, ::_pbi
           } else {
             ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(1, val, mutable_unknown_fields());
           }
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated uint32 coupon_ids = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          ptr -= 1;
-          do {
-            ptr += 1;
-            _internal_add_coupon_ids(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr));
-            CHK_(ptr);
-            if (!ctx->DataAvailable(ptr)) break;
-          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<16>(ptr));
-        } else if (static_cast<uint8_t>(tag) == 18) {
-          ptr = ::PROTOBUF_NAMESPACE_ID::internal::PackedUInt32Parser(_internal_mutable_coupon_ids(), ptr, ctx);
-          CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
@@ -134357,12 +134366,6 @@ uint8_t* CMsgClientToGCGetEventCoupon::_InternalSerialize(
       1, this->_internal_event_id(), target);
   }
 
-  // repeated uint32 coupon_ids = 2;
-  for (int i = 0, n = this->_internal_coupon_ids_size(); i < n; i++) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_coupon_ids(i), target);
-  }
-
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
@@ -134378,15 +134381,6 @@ size_t CMsgClientToGCGetEventCoupon::ByteSizeLong() const {
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
-
-  // repeated uint32 coupon_ids = 2;
-  {
-    size_t data_size = ::_pbi::WireFormatLite::
-      UInt32Size(this->_impl_.coupon_ids_);
-    total_size += 1 *
-                  ::_pbi::FromIntSize(this->_internal_coupon_ids_size());
-    total_size += data_size;
-  }
 
   // optional .EEvent event_id = 1 [default = EVENT_ID_NONE];
   cached_has_bits = _impl_._has_bits_[0];
@@ -134413,7 +134407,6 @@ void CMsgClientToGCGetEventCoupon::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& t
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  _this->_impl_.coupon_ids_.MergeFrom(from._impl_.coupon_ids_);
   if (from._internal_has_event_id()) {
     _this->_internal_set_event_id(from._internal_event_id());
   }
@@ -134435,7 +134428,6 @@ void CMsgClientToGCGetEventCoupon::InternalSwap(CMsgClientToGCGetEventCoupon* ot
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  _impl_.coupon_ids_.InternalSwap(&other->_impl_.coupon_ids_);
   swap(_impl_.event_id_, other->_impl_.event_id_);
 }
 

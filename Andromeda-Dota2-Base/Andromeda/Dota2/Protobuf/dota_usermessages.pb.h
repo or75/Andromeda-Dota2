@@ -217,6 +217,9 @@ extern CDOTAUserMsg_GamerulesStateChangedDefaultTypeInternal _CDOTAUserMsg_Gamer
 class CDOTAUserMsg_GiftPlayer;
 struct CDOTAUserMsg_GiftPlayerDefaultTypeInternal;
 extern CDOTAUserMsg_GiftPlayerDefaultTypeInternal _CDOTAUserMsg_GiftPlayer_default_instance_;
+class CDOTAUserMsg_GiveItem;
+struct CDOTAUserMsg_GiveItemDefaultTypeInternal;
+extern CDOTAUserMsg_GiveItemDefaultTypeInternal _CDOTAUserMsg_GiveItem_default_instance_;
 class CDOTAUserMsg_GlobalLightColor;
 struct CDOTAUserMsg_GlobalLightColorDefaultTypeInternal;
 extern CDOTAUserMsg_GlobalLightColorDefaultTypeInternal _CDOTAUserMsg_GlobalLightColor_default_instance_;
@@ -676,6 +679,7 @@ template<> ::CDOTAUserMsg_FlipCoinResult* Arena::CreateMaybeMessage<::CDOTAUserM
 template<> ::CDOTAUserMsg_FoundNeutralItem* Arena::CreateMaybeMessage<::CDOTAUserMsg_FoundNeutralItem>(Arena*);
 template<> ::CDOTAUserMsg_GamerulesStateChanged* Arena::CreateMaybeMessage<::CDOTAUserMsg_GamerulesStateChanged>(Arena*);
 template<> ::CDOTAUserMsg_GiftPlayer* Arena::CreateMaybeMessage<::CDOTAUserMsg_GiftPlayer>(Arena*);
+template<> ::CDOTAUserMsg_GiveItem* Arena::CreateMaybeMessage<::CDOTAUserMsg_GiveItem>(Arena*);
 template<> ::CDOTAUserMsg_GlobalLightColor* Arena::CreateMaybeMessage<::CDOTAUserMsg_GlobalLightColor>(Arena*);
 template<> ::CDOTAUserMsg_GlobalLightDirection* Arena::CreateMaybeMessage<::CDOTAUserMsg_GlobalLightDirection>(Arena*);
 template<> ::CDOTAUserMsg_GlyphAlert* Arena::CreateMaybeMessage<::CDOTAUserMsg_GlyphAlert>(Arena*);
@@ -937,6 +941,29 @@ inline bool CDOTAUserMsg_MonsterHunter_HuntAlert_EHuntStatusType_Parse(
   return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<CDOTAUserMsg_MonsterHunter_HuntAlert_EHuntStatusType>(
     CDOTAUserMsg_MonsterHunter_HuntAlert_EHuntStatusType_descriptor(), name, value);
 }
+enum CDOTAUserMsg_GiveItem_EGiveStatus : int {
+  CDOTAUserMsg_GiveItem_EGiveStatus_Start = 0,
+  CDOTAUserMsg_GiveItem_EGiveStatus_End = 1
+};
+bool CDOTAUserMsg_GiveItem_EGiveStatus_IsValid(int value);
+constexpr CDOTAUserMsg_GiveItem_EGiveStatus CDOTAUserMsg_GiveItem_EGiveStatus_EGiveStatus_MIN = CDOTAUserMsg_GiveItem_EGiveStatus_Start;
+constexpr CDOTAUserMsg_GiveItem_EGiveStatus CDOTAUserMsg_GiveItem_EGiveStatus_EGiveStatus_MAX = CDOTAUserMsg_GiveItem_EGiveStatus_End;
+constexpr int CDOTAUserMsg_GiveItem_EGiveStatus_EGiveStatus_ARRAYSIZE = CDOTAUserMsg_GiveItem_EGiveStatus_EGiveStatus_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* CDOTAUserMsg_GiveItem_EGiveStatus_descriptor();
+template<typename T>
+inline const std::string& CDOTAUserMsg_GiveItem_EGiveStatus_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, CDOTAUserMsg_GiveItem_EGiveStatus>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function CDOTAUserMsg_GiveItem_EGiveStatus_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    CDOTAUserMsg_GiveItem_EGiveStatus_descriptor(), enum_t_value);
+}
+inline bool CDOTAUserMsg_GiveItem_EGiveStatus_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, CDOTAUserMsg_GiveItem_EGiveStatus* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<CDOTAUserMsg_GiveItem_EGiveStatus>(
+    CDOTAUserMsg_GiveItem_EGiveStatus_descriptor(), name, value);
+}
 enum EDotaUserMessages : int {
   DOTA_UM_AddUnitToSelection = 464,
   DOTA_UM_AIDebugLine = 465,
@@ -1105,11 +1132,12 @@ enum EDotaUserMessages : int {
   DOTA_UM_MonsterHunter_InvestigationGameState = 632,
   DOTA_UM_MonsterHunter_HuntAlert = 633,
   DOTA_UM_TormentorTimer = 634,
-  DOTA_UM_KillEffect = 635
+  DOTA_UM_KillEffect = 635,
+  DOTA_UM_GiveItem = 636
 };
 bool EDotaUserMessages_IsValid(int value);
 constexpr EDotaUserMessages EDotaUserMessages_MIN = DOTA_UM_AddUnitToSelection;
-constexpr EDotaUserMessages EDotaUserMessages_MAX = DOTA_UM_KillEffect;
+constexpr EDotaUserMessages EDotaUserMessages_MAX = DOTA_UM_GiveItem;
 constexpr int EDotaUserMessages_ARRAYSIZE = EDotaUserMessages_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* EDotaUserMessages_descriptor();
@@ -1241,11 +1269,13 @@ enum DOTA_CHAT_MESSAGE : int {
   CHAT_MESSAGE_ALCHEMIST_GRANTED_SCEPTER = 120,
   CHAT_MESSAGE_PROTECTOR_SPAWNED = 121,
   CHAT_MESSAGE_CRAFTING_XP = 122,
-  CHAT_MESSAGE_ROSHAN_ROAR = 123
+  CHAT_MESSAGE_ROSHAN_ROAR = 123,
+  CHAT_MESSAGE_STONE_OF_RECALL_USED = 124,
+  CHAT_MESSAGE_DEITY_BLESSING = 125
 };
 bool DOTA_CHAT_MESSAGE_IsValid(int value);
 constexpr DOTA_CHAT_MESSAGE DOTA_CHAT_MESSAGE_MIN = CHAT_MESSAGE_INVALID;
-constexpr DOTA_CHAT_MESSAGE DOTA_CHAT_MESSAGE_MAX = CHAT_MESSAGE_ROSHAN_ROAR;
+constexpr DOTA_CHAT_MESSAGE DOTA_CHAT_MESSAGE_MAX = CHAT_MESSAGE_DEITY_BLESSING;
 constexpr int DOTA_CHAT_MESSAGE_ARRAYSIZE = DOTA_CHAT_MESSAGE_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* DOTA_CHAT_MESSAGE_descriptor();
@@ -1430,11 +1460,12 @@ enum DOTA_OVERHEAD_ALERT : int {
   OVERHEAD_ALERT_DEADLY_BLOW = 24,
   OVERHEAD_ALERT_FORCE_MISS = 25,
   OVERHEAD_ALERT_AEGIS = 26,
-  OVERHEAD_ALERT_DISPEL = 27
+  OVERHEAD_ALERT_DISPEL = 27,
+  OVERHEAD_ALERT_BONUS_PURE_DAMAGE = 28
 };
 bool DOTA_OVERHEAD_ALERT_IsValid(int value);
 constexpr DOTA_OVERHEAD_ALERT DOTA_OVERHEAD_ALERT_MIN = OVERHEAD_ALERT_GOLD;
-constexpr DOTA_OVERHEAD_ALERT DOTA_OVERHEAD_ALERT_MAX = OVERHEAD_ALERT_DISPEL;
+constexpr DOTA_OVERHEAD_ALERT DOTA_OVERHEAD_ALERT_MAX = OVERHEAD_ALERT_BONUS_PURE_DAMAGE;
 constexpr int DOTA_OVERHEAD_ALERT_ARRAYSIZE = DOTA_OVERHEAD_ALERT_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* DOTA_OVERHEAD_ALERT_descriptor();
@@ -2353,7 +2384,7 @@ class CDOTAUserMsg_ChatEvent final :
   void _internal_set_playerid_6(int32_t value);
   public:
 
-  // required .DOTA_CHAT_MESSAGE type = 1 [default = CHAT_MESSAGE_INVALID];
+  // optional .DOTA_CHAT_MESSAGE type = 1 [default = CHAT_MESSAGE_INVALID];
   bool has_type() const;
   private:
   bool _internal_has_type() const;
@@ -9297,7 +9328,7 @@ class CDOTAUserMsg_DodgeTrackingProjectiles final :
   void _internal_set_attacks_only(bool value);
   public:
 
-  // required int32 entindex = 1 [default = -1];
+  // optional int32 entindex = 1 [default = -1];
   bool has_entindex() const;
   private:
   bool _internal_has_entindex() const;
@@ -9486,7 +9517,7 @@ class CDOTAUserMsg_SpectatorPlayerClick final :
   void _internal_set_target_index(int32_t value);
   public:
 
-  // required int32 entindex = 1 [default = -1];
+  // optional int32 entindex = 1 [default = -1];
   bool has_entindex() const;
   private:
   bool _internal_has_entindex() const;
@@ -11337,7 +11368,7 @@ class CDOTAResponseQuerySerialized_Fact final :
   std::string* _internal_mutable_val_string();
   public:
 
-  // required int32 key = 1;
+  // optional int32 key = 1;
   bool has_key() const;
   private:
   bool _internal_has_key() const;
@@ -11389,7 +11420,7 @@ class CDOTAResponseQuerySerialized_Fact final :
   void _internal_set_val_int_numeric(int32_t value);
   public:
 
-  // required .CDOTAResponseQuerySerialized.Fact.ValueType valtype = 2 [default = NUMERIC];
+  // optional .CDOTAResponseQuerySerialized.Fact.ValueType valtype = 2 [default = NUMERIC];
   bool has_valtype() const;
   private:
   bool _internal_has_valtype() const;
@@ -11405,9 +11436,6 @@ class CDOTAResponseQuerySerialized_Fact final :
   // @@protoc_insertion_point(class_scope:CDOTAResponseQuerySerialized.Fact)
  private:
   class _Internal;
-
-  // helper for ByteSizeLong()
-  size_t RequiredFieldsByteSizeFallback() const;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
@@ -13415,7 +13443,7 @@ class CDOTAUserMsg_UnitEvent final :
       ::CDOTASpeechMatchOnClient* speech_match_on_client);
   ::CDOTASpeechMatchOnClient* unsafe_arena_release_speech_match_on_client();
 
-  // required .EDotaEntityMessages msg_type = 1 [default = DOTA_UNIT_SPEECH];
+  // optional .EDotaEntityMessages msg_type = 1 [default = DOTA_UNIT_SPEECH];
   bool has_msg_type() const;
   private:
   bool _internal_has_msg_type() const;
@@ -13428,7 +13456,7 @@ class CDOTAUserMsg_UnitEvent final :
   void _internal_set_msg_type(::EDotaEntityMessages value);
   public:
 
-  // required int32 entity_index = 2;
+  // optional int32 entity_index = 2;
   bool has_entity_index() const;
   private:
   bool _internal_has_entity_index() const;
@@ -13444,9 +13472,6 @@ class CDOTAUserMsg_UnitEvent final :
   // @@protoc_insertion_point(class_scope:CDOTAUserMsg_UnitEvent)
  private:
   class _Internal;
-
-  // helper for ByteSizeLong()
-  size_t RequiredFieldsByteSizeFallback() const;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
@@ -14158,7 +14183,7 @@ class CDOTAUserMsg_OverheadEvent final :
     kTargetPlayerEntindexFieldNumber = 3,
     kTargetEntindexFieldNumber = 4,
   };
-  // required .DOTA_OVERHEAD_ALERT message_type = 1 [default = OVERHEAD_ALERT_GOLD];
+  // optional .DOTA_OVERHEAD_ALERT message_type = 1 [default = OVERHEAD_ALERT_GOLD];
   bool has_message_type() const;
   private:
   bool _internal_has_message_type() const;
@@ -20326,7 +20351,7 @@ class CDOTAUserMsg_ShowGenericPopup final :
     kTintScreenFieldNumber = 5,
     kShowNoOtherDialogsFieldNumber = 6,
   };
-  // required string header = 1;
+  // optional string header = 1;
   bool has_header() const;
   private:
   bool _internal_has_header() const;
@@ -20344,7 +20369,7 @@ class CDOTAUserMsg_ShowGenericPopup final :
   std::string* _internal_mutable_header();
   public:
 
-  // required string body = 2;
+  // optional string body = 2;
   bool has_body() const;
   private:
   bool _internal_has_body() const;
@@ -20427,9 +20452,6 @@ class CDOTAUserMsg_ShowGenericPopup final :
   // @@protoc_insertion_point(class_scope:CDOTAUserMsg_ShowGenericPopup)
  private:
   class _Internal;
-
-  // helper for ByteSizeLong()
-  size_t RequiredFieldsByteSizeFallback() const;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
@@ -27612,7 +27634,7 @@ class CDOTAUserMsg_QuestStatus final :
   void _internal_set_fail_gametime(float value);
   public:
 
-  // required int32 player_id = 1 [default = -1];
+  // optional int32 player_id = 1 [default = -1];
   bool has_player_id() const;
   private:
   bool _internal_has_player_id() const;
@@ -27834,7 +27856,7 @@ class CDOTAUserMsg_SuggestHeroPick final :
   void _internal_set_facet_id(uint32_t value);
   public:
 
-  // required int32 player_id = 1 [default = -1];
+  // optional int32 player_id = 1 [default = -1];
   bool has_player_id() const;
   private:
   bool _internal_has_player_id() const;
@@ -28016,7 +28038,7 @@ class CDOTAUserMsg_SuggestHeroRole final :
   std::string* _internal_mutable_hero_role();
   public:
 
-  // required int32 player_id = 1 [default = -1];
+  // optional int32 player_id = 1 [default = -1];
   bool has_player_id() const;
   private:
   bool _internal_has_player_id() const;
@@ -28244,7 +28266,7 @@ class CDOTAUserMsg_KillcamDamageTaken final :
   void _internal_set_item_type(uint32_t value);
   public:
 
-  // required int32 player_id = 1 [default = -1];
+  // optional int32 player_id = 1 [default = -1];
   bool has_player_id() const;
   private:
   bool _internal_has_player_id() const;
@@ -28436,7 +28458,7 @@ class CDOTAUserMsg_SelectPenaltyGold final :
   void _internal_set_cost(int32_t value);
   public:
 
-  // required int32 player_id = 1 [default = -1];
+  // optional int32 player_id = 1 [default = -1];
   bool has_player_id() const;
   private:
   bool _internal_has_player_id() const;
@@ -30802,7 +30824,7 @@ class CDOTAUserMsg_ReplaceQueryUnit final :
   void _internal_set_target_entindex(int32_t value);
   public:
 
-  // required int32 player_id = 1 [default = -1];
+  // optional int32 player_id = 1 [default = -1];
   bool has_player_id() const;
   private:
   bool _internal_has_player_id() const;
@@ -32713,7 +32735,7 @@ class CDOTAUserMsg_DebugChallenge final :
     kChallengeVar1FieldNumber = 6,
     kChallengeMaxRankFieldNumber = 7,
   };
-  // required uint32 challenge_type = 1;
+  // optional uint32 challenge_type = 1;
   bool has_challenge_type() const;
   private:
   bool _internal_has_challenge_type() const;
@@ -32726,7 +32748,7 @@ class CDOTAUserMsg_DebugChallenge final :
   void _internal_set_challenge_type(uint32_t value);
   public:
 
-  // required uint32 challenge_query_id = 2;
+  // optional uint32 challenge_query_id = 2;
   bool has_challenge_query_id() const;
   private:
   bool _internal_has_challenge_query_id() const;
@@ -32739,7 +32761,7 @@ class CDOTAUserMsg_DebugChallenge final :
   void _internal_set_challenge_query_id(uint32_t value);
   public:
 
-  // required uint32 event_id = 3;
+  // optional uint32 event_id = 3;
   bool has_event_id() const;
   private:
   bool _internal_has_event_id() const;
@@ -32807,9 +32829,6 @@ class CDOTAUserMsg_DebugChallenge final :
   // @@protoc_insertion_point(class_scope:CDOTAUserMsg_DebugChallenge)
  private:
   class _Internal;
-
-  // helper for ByteSizeLong()
-  size_t RequiredFieldsByteSizeFallback() const;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
@@ -38169,7 +38188,7 @@ class CDOTAUserMsg_MuertaReleaseEvent_AssignedTargetKilled final :
     kPlayerIdKillerFieldNumber = 1,
     kPlayerIdTargetFieldNumber = 2,
   };
-  // required int32 points = 3;
+  // optional int32 points = 3;
   bool has_points() const;
   private:
   bool _internal_has_points() const;
@@ -38182,7 +38201,7 @@ class CDOTAUserMsg_MuertaReleaseEvent_AssignedTargetKilled final :
   void _internal_set_points(int32_t value);
   public:
 
-  // required int32 points_total = 4;
+  // optional int32 points_total = 4;
   bool has_points_total() const;
   private:
   bool _internal_has_points_total() const;
@@ -38195,7 +38214,7 @@ class CDOTAUserMsg_MuertaReleaseEvent_AssignedTargetKilled final :
   void _internal_set_points_total(int32_t value);
   public:
 
-  // required bool last_hit = 5;
+  // optional bool last_hit = 5;
   bool has_last_hit() const;
   private:
   bool _internal_has_last_hit() const;
@@ -38208,7 +38227,7 @@ class CDOTAUserMsg_MuertaReleaseEvent_AssignedTargetKilled final :
   void _internal_set_last_hit(bool value);
   public:
 
-  // required int32 player_id_killer = 1 [default = -1];
+  // optional int32 player_id_killer = 1 [default = -1];
   bool has_player_id_killer() const;
   private:
   bool _internal_has_player_id_killer() const;
@@ -38221,7 +38240,7 @@ class CDOTAUserMsg_MuertaReleaseEvent_AssignedTargetKilled final :
   void _internal_set_player_id_killer(int32_t value);
   public:
 
-  // required int32 player_id_target = 2 [default = -1];
+  // optional int32 player_id_target = 2 [default = -1];
   bool has_player_id_target() const;
   private:
   bool _internal_has_player_id_target() const;
@@ -38237,9 +38256,6 @@ class CDOTAUserMsg_MuertaReleaseEvent_AssignedTargetKilled final :
   // @@protoc_insertion_point(class_scope:CDOTAUserMsg_MuertaReleaseEvent_AssignedTargetKilled)
  private:
   class _Internal;
-
-  // helper for ByteSizeLong()
-  size_t RequiredFieldsByteSizeFallback() const;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
@@ -40379,6 +40395,241 @@ class CDOTAUserMsg_KillEffect final :
   union { Impl_ _impl_; };
   friend struct ::TableStruct_dota_5fusermessages_2eproto;
 };
+// -------------------------------------------------------------------
+
+class CDOTAUserMsg_GiveItem final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:CDOTAUserMsg_GiveItem) */ {
+ public:
+  inline CDOTAUserMsg_GiveItem() : CDOTAUserMsg_GiveItem(nullptr) {}
+  ~CDOTAUserMsg_GiveItem() override;
+  explicit PROTOBUF_CONSTEXPR CDOTAUserMsg_GiveItem(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CDOTAUserMsg_GiveItem(const CDOTAUserMsg_GiveItem& from);
+  CDOTAUserMsg_GiveItem(CDOTAUserMsg_GiveItem&& from) noexcept
+    : CDOTAUserMsg_GiveItem() {
+    *this = ::std::move(from);
+  }
+
+  inline CDOTAUserMsg_GiveItem& operator=(const CDOTAUserMsg_GiveItem& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CDOTAUserMsg_GiveItem& operator=(CDOTAUserMsg_GiveItem&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CDOTAUserMsg_GiveItem& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CDOTAUserMsg_GiveItem* internal_default_instance() {
+    return reinterpret_cast<const CDOTAUserMsg_GiveItem*>(
+               &_CDOTAUserMsg_GiveItem_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    190;
+
+  friend void swap(CDOTAUserMsg_GiveItem& a, CDOTAUserMsg_GiveItem& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CDOTAUserMsg_GiveItem* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CDOTAUserMsg_GiveItem* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  CDOTAUserMsg_GiveItem* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<CDOTAUserMsg_GiveItem>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const CDOTAUserMsg_GiveItem& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const CDOTAUserMsg_GiveItem& from) {
+    CDOTAUserMsg_GiveItem::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CDOTAUserMsg_GiveItem* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "CDOTAUserMsg_GiveItem";
+  }
+  protected:
+  explicit CDOTAUserMsg_GiveItem(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  typedef CDOTAUserMsg_GiveItem_EGiveStatus EGiveStatus;
+  static constexpr EGiveStatus Start =
+    CDOTAUserMsg_GiveItem_EGiveStatus_Start;
+  static constexpr EGiveStatus End =
+    CDOTAUserMsg_GiveItem_EGiveStatus_End;
+  static inline bool EGiveStatus_IsValid(int value) {
+    return CDOTAUserMsg_GiveItem_EGiveStatus_IsValid(value);
+  }
+  static constexpr EGiveStatus EGiveStatus_MIN =
+    CDOTAUserMsg_GiveItem_EGiveStatus_EGiveStatus_MIN;
+  static constexpr EGiveStatus EGiveStatus_MAX =
+    CDOTAUserMsg_GiveItem_EGiveStatus_EGiveStatus_MAX;
+  static constexpr int EGiveStatus_ARRAYSIZE =
+    CDOTAUserMsg_GiveItem_EGiveStatus_EGiveStatus_ARRAYSIZE;
+  static inline const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor*
+  EGiveStatus_descriptor() {
+    return CDOTAUserMsg_GiveItem_EGiveStatus_descriptor();
+  }
+  template<typename T>
+  static inline const std::string& EGiveStatus_Name(T enum_t_value) {
+    static_assert(::std::is_same<T, EGiveStatus>::value ||
+      ::std::is_integral<T>::value,
+      "Incorrect type passed to function EGiveStatus_Name.");
+    return CDOTAUserMsg_GiveItem_EGiveStatus_Name(enum_t_value);
+  }
+  static inline bool EGiveStatus_Parse(::PROTOBUF_NAMESPACE_ID::ConstStringParam name,
+      EGiveStatus* value) {
+    return CDOTAUserMsg_GiveItem_EGiveStatus_Parse(name, value);
+  }
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kGiveStatusFieldNumber = 4,
+    kItemEntIndexFieldNumber = 3,
+    kGiverEntIndexFieldNumber = 1,
+    kReceiverEntIndexFieldNumber = 2,
+  };
+  // optional .CDOTAUserMsg_GiveItem.EGiveStatus give_status = 4 [default = Start];
+  bool has_give_status() const;
+  private:
+  bool _internal_has_give_status() const;
+  public:
+  void clear_give_status();
+  ::CDOTAUserMsg_GiveItem_EGiveStatus give_status() const;
+  void set_give_status(::CDOTAUserMsg_GiveItem_EGiveStatus value);
+  private:
+  ::CDOTAUserMsg_GiveItem_EGiveStatus _internal_give_status() const;
+  void _internal_set_give_status(::CDOTAUserMsg_GiveItem_EGiveStatus value);
+  public:
+
+  // optional uint32 item_ent_index = 3 [default = 16777215];
+  bool has_item_ent_index() const;
+  private:
+  bool _internal_has_item_ent_index() const;
+  public:
+  void clear_item_ent_index();
+  uint32_t item_ent_index() const;
+  void set_item_ent_index(uint32_t value);
+  private:
+  uint32_t _internal_item_ent_index() const;
+  void _internal_set_item_ent_index(uint32_t value);
+  public:
+
+  // optional uint32 giver_ent_index = 1 [default = 16777215];
+  bool has_giver_ent_index() const;
+  private:
+  bool _internal_has_giver_ent_index() const;
+  public:
+  void clear_giver_ent_index();
+  uint32_t giver_ent_index() const;
+  void set_giver_ent_index(uint32_t value);
+  private:
+  uint32_t _internal_giver_ent_index() const;
+  void _internal_set_giver_ent_index(uint32_t value);
+  public:
+
+  // optional uint32 receiver_ent_index = 2 [default = 16777215];
+  bool has_receiver_ent_index() const;
+  private:
+  bool _internal_has_receiver_ent_index() const;
+  public:
+  void clear_receiver_ent_index();
+  uint32_t receiver_ent_index() const;
+  void set_receiver_ent_index(uint32_t value);
+  private:
+  uint32_t _internal_receiver_ent_index() const;
+  void _internal_set_receiver_ent_index(uint32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:CDOTAUserMsg_GiveItem)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    int give_status_;
+    uint32_t item_ent_index_;
+    uint32_t giver_ent_index_;
+    uint32_t receiver_ent_index_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_dota_5fusermessages_2eproto;
+};
 // ===================================================================
 
 
@@ -40554,7 +40805,7 @@ inline void CDOTAUserMsg_SwapVerify::set_player_id(int32_t value) {
 
 // CDOTAUserMsg_ChatEvent
 
-// required .DOTA_CHAT_MESSAGE type = 1 [default = CHAT_MESSAGE_INVALID];
+// optional .DOTA_CHAT_MESSAGE type = 1 [default = CHAT_MESSAGE_INVALID];
 inline bool CDOTAUserMsg_ChatEvent::_internal_has_type() const {
   bool value = (_impl_._has_bits_[0] & 0x00000020u) != 0;
   return value;
@@ -45284,7 +45535,7 @@ inline void CDOTAUserMsg_DestroyLinearProjectile::set_handle(int32_t value) {
 
 // CDOTAUserMsg_DodgeTrackingProjectiles
 
-// required int32 entindex = 1 [default = -1];
+// optional int32 entindex = 1 [default = -1];
 inline bool CDOTAUserMsg_DodgeTrackingProjectiles::_internal_has_entindex() const {
   bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
   return value;
@@ -45344,7 +45595,7 @@ inline void CDOTAUserMsg_DodgeTrackingProjectiles::set_attacks_only(bool value) 
 
 // CDOTAUserMsg_SpectatorPlayerClick
 
-// required int32 entindex = 1 [default = -1];
+// optional int32 entindex = 1 [default = -1];
 inline bool CDOTAUserMsg_SpectatorPlayerClick::_internal_has_entindex() const {
   bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
   return value;
@@ -46543,7 +46794,7 @@ inline void CDOTAUserMsg_CourierLeftFountainAlert::set_owning_player_id(int32_t 
 
 // CDOTAResponseQuerySerialized_Fact
 
-// required int32 key = 1;
+// optional int32 key = 1;
 inline bool CDOTAResponseQuerySerialized_Fact::_internal_has_key() const {
   bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
   return value;
@@ -46571,7 +46822,7 @@ inline void CDOTAResponseQuerySerialized_Fact::set_key(int32_t value) {
   // @@protoc_insertion_point(field_set:CDOTAResponseQuerySerialized.Fact.key)
 }
 
-// required .CDOTAResponseQuerySerialized.Fact.ValueType valtype = 2 [default = NUMERIC];
+// optional .CDOTAResponseQuerySerialized.Fact.ValueType valtype = 2 [default = NUMERIC];
 inline bool CDOTAResponseQuerySerialized_Fact::_internal_has_valtype() const {
   bool value = (_impl_._has_bits_[0] & 0x00000020u) != 0;
   return value;
@@ -47696,7 +47947,7 @@ inline void CDOTAUserMsg_UnitEvent_FadeGesture::set_activity(int32_t value) {
 
 // CDOTAUserMsg_UnitEvent
 
-// required .EDotaEntityMessages msg_type = 1 [default = DOTA_UNIT_SPEECH];
+// optional .EDotaEntityMessages msg_type = 1 [default = DOTA_UNIT_SPEECH];
 inline bool CDOTAUserMsg_UnitEvent::_internal_has_msg_type() const {
   bool value = (_impl_._has_bits_[0] & 0x00000080u) != 0;
   return value;
@@ -47725,7 +47976,7 @@ inline void CDOTAUserMsg_UnitEvent::set_msg_type(::EDotaEntityMessages value) {
   // @@protoc_insertion_point(field_set:CDOTAUserMsg_UnitEvent.msg_type)
 }
 
-// required int32 entity_index = 2;
+// optional int32 entity_index = 2;
 inline bool CDOTAUserMsg_UnitEvent::_internal_has_entity_index() const {
   bool value = (_impl_._has_bits_[0] & 0x00000100u) != 0;
   return value;
@@ -48623,7 +48874,7 @@ inline void CDOTAUserMsg_ItemFound::set_itemdef(uint32_t value) {
 
 // CDOTAUserMsg_OverheadEvent
 
-// required .DOTA_OVERHEAD_ALERT message_type = 1 [default = OVERHEAD_ALERT_GOLD];
+// optional .DOTA_OVERHEAD_ALERT message_type = 1 [default = OVERHEAD_ALERT_GOLD];
 inline bool CDOTAUserMsg_OverheadEvent::_internal_has_message_type() const {
   bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
   return value;
@@ -52977,7 +53228,7 @@ inline void CDOTAUserMsg_TE_UnitAnimationEnd::set_snap(bool value) {
 
 // CDOTAUserMsg_ShowGenericPopup
 
-// required string header = 1;
+// optional string header = 1;
 inline bool CDOTAUserMsg_ShowGenericPopup::_internal_has_header() const {
   bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
   return value;
@@ -53045,7 +53296,7 @@ inline void CDOTAUserMsg_ShowGenericPopup::set_allocated_header(std::string* hea
   // @@protoc_insertion_point(field_set_allocated:CDOTAUserMsg_ShowGenericPopup.header)
 }
 
-// required string body = 2;
+// optional string body = 2;
 inline bool CDOTAUserMsg_ShowGenericPopup::_internal_has_body() const {
   bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
   return value;
@@ -57930,7 +58181,7 @@ inline void CDOTAUserMsg_TalentTreeAlert::set_learned(bool value) {
 
 // CDOTAUserMsg_QuestStatus
 
-// required int32 player_id = 1 [default = -1];
+// optional int32 player_id = 1 [default = -1];
 inline bool CDOTAUserMsg_QuestStatus::_internal_has_player_id() const {
   bool value = (_impl_._has_bits_[0] & 0x00000040u) != 0;
   return value;
@@ -58158,7 +58409,7 @@ inline void CDOTAUserMsg_QuestStatus::set_item_ability_id(int32_t value) {
 
 // CDOTAUserMsg_SuggestHeroPick
 
-// required int32 player_id = 1 [default = -1];
+// optional int32 player_id = 1 [default = -1];
 inline bool CDOTAUserMsg_SuggestHeroPick::_internal_has_player_id() const {
   bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
   return value;
@@ -58274,7 +58525,7 @@ inline void CDOTAUserMsg_SuggestHeroPick::set_facet_id(uint32_t value) {
 
 // CDOTAUserMsg_SuggestHeroRole
 
-// required int32 player_id = 1 [default = -1];
+// optional int32 player_id = 1 [default = -1];
 inline bool CDOTAUserMsg_SuggestHeroRole::_internal_has_player_id() const {
   bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
   return value;
@@ -58374,7 +58625,7 @@ inline void CDOTAUserMsg_SuggestHeroRole::set_allocated_hero_role(std::string* h
 
 // CDOTAUserMsg_KillcamDamageTaken
 
-// required int32 player_id = 1 [default = -1];
+// optional int32 player_id = 1 [default = -1];
 inline bool CDOTAUserMsg_KillcamDamageTaken::_internal_has_player_id() const {
   bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
   return value;
@@ -58626,7 +58877,7 @@ inline void CDOTAUserMsg_KillcamDamageTaken::set_allocated_damage_color(std::str
 
 // CDOTAUserMsg_SelectPenaltyGold
 
-// required int32 player_id = 1 [default = -1];
+// optional int32 player_id = 1 [default = -1];
 inline bool CDOTAUserMsg_SelectPenaltyGold::_internal_has_player_id() const {
   bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
   return value;
@@ -59902,7 +60153,7 @@ inline void CDOTAUserMsg_TipAlert::set_allocated_tip_text(std::string* tip_text)
 
 // CDOTAUserMsg_ReplaceQueryUnit
 
-// required int32 player_id = 1 [default = -1];
+// optional int32 player_id = 1 [default = -1];
 inline bool CDOTAUserMsg_ReplaceQueryUnit::_internal_has_player_id() const {
   bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
   return value;
@@ -60853,7 +61104,7 @@ CDOTAUserMsg_QueuedOrderRemoved::mutable_unit_order_sequence() {
 
 // CDOTAUserMsg_DebugChallenge
 
-// required uint32 challenge_type = 1;
+// optional uint32 challenge_type = 1;
 inline bool CDOTAUserMsg_DebugChallenge::_internal_has_challenge_type() const {
   bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
   return value;
@@ -60881,7 +61132,7 @@ inline void CDOTAUserMsg_DebugChallenge::set_challenge_type(uint32_t value) {
   // @@protoc_insertion_point(field_set:CDOTAUserMsg_DebugChallenge.challenge_type)
 }
 
-// required uint32 challenge_query_id = 2;
+// optional uint32 challenge_query_id = 2;
 inline bool CDOTAUserMsg_DebugChallenge::_internal_has_challenge_query_id() const {
   bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
   return value;
@@ -60909,7 +61160,7 @@ inline void CDOTAUserMsg_DebugChallenge::set_challenge_query_id(uint32_t value) 
   // @@protoc_insertion_point(field_set:CDOTAUserMsg_DebugChallenge.challenge_query_id)
 }
 
-// required uint32 event_id = 3;
+// optional uint32 event_id = 3;
 inline bool CDOTAUserMsg_DebugChallenge::_internal_has_event_id() const {
   bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
   return value;
@@ -64463,7 +64714,7 @@ inline void CDOTAUserMsg_DuelRequested::set_player_id_requestor(int32_t value) {
 
 // CDOTAUserMsg_MuertaReleaseEvent_AssignedTargetKilled
 
-// required int32 player_id_killer = 1 [default = -1];
+// optional int32 player_id_killer = 1 [default = -1];
 inline bool CDOTAUserMsg_MuertaReleaseEvent_AssignedTargetKilled::_internal_has_player_id_killer() const {
   bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
   return value;
@@ -64491,7 +64742,7 @@ inline void CDOTAUserMsg_MuertaReleaseEvent_AssignedTargetKilled::set_player_id_
   // @@protoc_insertion_point(field_set:CDOTAUserMsg_MuertaReleaseEvent_AssignedTargetKilled.player_id_killer)
 }
 
-// required int32 player_id_target = 2 [default = -1];
+// optional int32 player_id_target = 2 [default = -1];
 inline bool CDOTAUserMsg_MuertaReleaseEvent_AssignedTargetKilled::_internal_has_player_id_target() const {
   bool value = (_impl_._has_bits_[0] & 0x00000010u) != 0;
   return value;
@@ -64519,7 +64770,7 @@ inline void CDOTAUserMsg_MuertaReleaseEvent_AssignedTargetKilled::set_player_id_
   // @@protoc_insertion_point(field_set:CDOTAUserMsg_MuertaReleaseEvent_AssignedTargetKilled.player_id_target)
 }
 
-// required int32 points = 3;
+// optional int32 points = 3;
 inline bool CDOTAUserMsg_MuertaReleaseEvent_AssignedTargetKilled::_internal_has_points() const {
   bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
   return value;
@@ -64547,7 +64798,7 @@ inline void CDOTAUserMsg_MuertaReleaseEvent_AssignedTargetKilled::set_points(int
   // @@protoc_insertion_point(field_set:CDOTAUserMsg_MuertaReleaseEvent_AssignedTargetKilled.points)
 }
 
-// required int32 points_total = 4;
+// optional int32 points_total = 4;
 inline bool CDOTAUserMsg_MuertaReleaseEvent_AssignedTargetKilled::_internal_has_points_total() const {
   bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
   return value;
@@ -64575,7 +64826,7 @@ inline void CDOTAUserMsg_MuertaReleaseEvent_AssignedTargetKilled::set_points_tot
   // @@protoc_insertion_point(field_set:CDOTAUserMsg_MuertaReleaseEvent_AssignedTargetKilled.points_total)
 }
 
-// required bool last_hit = 5;
+// optional bool last_hit = 5;
 inline bool CDOTAUserMsg_MuertaReleaseEvent_AssignedTargetKilled::_internal_has_last_hit() const {
   bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
   return value;
@@ -65531,9 +65782,128 @@ inline void CDOTAUserMsg_KillEffect::set_killer_player_id(int32_t value) {
   // @@protoc_insertion_point(field_set:CDOTAUserMsg_KillEffect.killer_player_id)
 }
 
+// -------------------------------------------------------------------
+
+// CDOTAUserMsg_GiveItem
+
+// optional uint32 giver_ent_index = 1 [default = 16777215];
+inline bool CDOTAUserMsg_GiveItem::_internal_has_giver_ent_index() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
+  return value;
+}
+inline bool CDOTAUserMsg_GiveItem::has_giver_ent_index() const {
+  return _internal_has_giver_ent_index();
+}
+inline void CDOTAUserMsg_GiveItem::clear_giver_ent_index() {
+  _impl_.giver_ent_index_ = 16777215u;
+  _impl_._has_bits_[0] &= ~0x00000004u;
+}
+inline uint32_t CDOTAUserMsg_GiveItem::_internal_giver_ent_index() const {
+  return _impl_.giver_ent_index_;
+}
+inline uint32_t CDOTAUserMsg_GiveItem::giver_ent_index() const {
+  // @@protoc_insertion_point(field_get:CDOTAUserMsg_GiveItem.giver_ent_index)
+  return _internal_giver_ent_index();
+}
+inline void CDOTAUserMsg_GiveItem::_internal_set_giver_ent_index(uint32_t value) {
+  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_.giver_ent_index_ = value;
+}
+inline void CDOTAUserMsg_GiveItem::set_giver_ent_index(uint32_t value) {
+  _internal_set_giver_ent_index(value);
+  // @@protoc_insertion_point(field_set:CDOTAUserMsg_GiveItem.giver_ent_index)
+}
+
+// optional uint32 receiver_ent_index = 2 [default = 16777215];
+inline bool CDOTAUserMsg_GiveItem::_internal_has_receiver_ent_index() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
+  return value;
+}
+inline bool CDOTAUserMsg_GiveItem::has_receiver_ent_index() const {
+  return _internal_has_receiver_ent_index();
+}
+inline void CDOTAUserMsg_GiveItem::clear_receiver_ent_index() {
+  _impl_.receiver_ent_index_ = 16777215u;
+  _impl_._has_bits_[0] &= ~0x00000008u;
+}
+inline uint32_t CDOTAUserMsg_GiveItem::_internal_receiver_ent_index() const {
+  return _impl_.receiver_ent_index_;
+}
+inline uint32_t CDOTAUserMsg_GiveItem::receiver_ent_index() const {
+  // @@protoc_insertion_point(field_get:CDOTAUserMsg_GiveItem.receiver_ent_index)
+  return _internal_receiver_ent_index();
+}
+inline void CDOTAUserMsg_GiveItem::_internal_set_receiver_ent_index(uint32_t value) {
+  _impl_._has_bits_[0] |= 0x00000008u;
+  _impl_.receiver_ent_index_ = value;
+}
+inline void CDOTAUserMsg_GiveItem::set_receiver_ent_index(uint32_t value) {
+  _internal_set_receiver_ent_index(value);
+  // @@protoc_insertion_point(field_set:CDOTAUserMsg_GiveItem.receiver_ent_index)
+}
+
+// optional uint32 item_ent_index = 3 [default = 16777215];
+inline bool CDOTAUserMsg_GiveItem::_internal_has_item_ent_index() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool CDOTAUserMsg_GiveItem::has_item_ent_index() const {
+  return _internal_has_item_ent_index();
+}
+inline void CDOTAUserMsg_GiveItem::clear_item_ent_index() {
+  _impl_.item_ent_index_ = 16777215u;
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline uint32_t CDOTAUserMsg_GiveItem::_internal_item_ent_index() const {
+  return _impl_.item_ent_index_;
+}
+inline uint32_t CDOTAUserMsg_GiveItem::item_ent_index() const {
+  // @@protoc_insertion_point(field_get:CDOTAUserMsg_GiveItem.item_ent_index)
+  return _internal_item_ent_index();
+}
+inline void CDOTAUserMsg_GiveItem::_internal_set_item_ent_index(uint32_t value) {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.item_ent_index_ = value;
+}
+inline void CDOTAUserMsg_GiveItem::set_item_ent_index(uint32_t value) {
+  _internal_set_item_ent_index(value);
+  // @@protoc_insertion_point(field_set:CDOTAUserMsg_GiveItem.item_ent_index)
+}
+
+// optional .CDOTAUserMsg_GiveItem.EGiveStatus give_status = 4 [default = Start];
+inline bool CDOTAUserMsg_GiveItem::_internal_has_give_status() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool CDOTAUserMsg_GiveItem::has_give_status() const {
+  return _internal_has_give_status();
+}
+inline void CDOTAUserMsg_GiveItem::clear_give_status() {
+  _impl_.give_status_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline ::CDOTAUserMsg_GiveItem_EGiveStatus CDOTAUserMsg_GiveItem::_internal_give_status() const {
+  return static_cast< ::CDOTAUserMsg_GiveItem_EGiveStatus >(_impl_.give_status_);
+}
+inline ::CDOTAUserMsg_GiveItem_EGiveStatus CDOTAUserMsg_GiveItem::give_status() const {
+  // @@protoc_insertion_point(field_get:CDOTAUserMsg_GiveItem.give_status)
+  return _internal_give_status();
+}
+inline void CDOTAUserMsg_GiveItem::_internal_set_give_status(::CDOTAUserMsg_GiveItem_EGiveStatus value) {
+  assert(::CDOTAUserMsg_GiveItem_EGiveStatus_IsValid(value));
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.give_status_ = value;
+}
+inline void CDOTAUserMsg_GiveItem::set_give_status(::CDOTAUserMsg_GiveItem_EGiveStatus value) {
+  _internal_set_give_status(value);
+  // @@protoc_insertion_point(field_set:CDOTAUserMsg_GiveItem.give_status)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
@@ -65942,6 +66312,11 @@ template <> struct is_proto_enum< ::CDOTAUserMsg_MonsterHunter_HuntAlert_EHuntSt
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::CDOTAUserMsg_MonsterHunter_HuntAlert_EHuntStatusType>() {
   return ::CDOTAUserMsg_MonsterHunter_HuntAlert_EHuntStatusType_descriptor();
+}
+template <> struct is_proto_enum< ::CDOTAUserMsg_GiveItem_EGiveStatus> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::CDOTAUserMsg_GiveItem_EGiveStatus>() {
+  return ::CDOTAUserMsg_GiveItem_EGiveStatus_descriptor();
 }
 template <> struct is_proto_enum< ::EDotaUserMessages> : ::std::true_type {};
 template <>

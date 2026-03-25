@@ -966,8 +966,8 @@ const char descriptor_table_protodef_dota_5fgcmessages_5fcommon_5fbattle_5frepor
   "l\n\020HighlightGeneral\022\027\n\017win_loss_window\030\001"
   " \001(\005\022\023\n\013win_percent\030\002 \001(\002\022\021\n\tmmr_delta\030\003"
   " \001(\005\022\027\n\017highlight_score\030\004 \001(\002\032\317\003\n\tHighli"
-  "ght\022\024\n\014highlight_id\030\001 \002(\r\022J\n\010category\030\002 "
-  "\002(\0162#.CMsgBattleReport_HighlightCategory"
+  "ght\022\024\n\014highlight_id\030\001 \001(\r\022J\n\010category\030\002 "
+  "\001(\0162#.CMsgBattleReport_HighlightCategory"
   ":\023k_eHighlightGeneral\022B\n\004tier\030\003 \001(\0162\037.CM"
   "sgBattleReport_HighlightTier:\023k_eHighlig"
   "htTierLow\022E\n\006rarity\030\004 \001(\0162!.CMsgBattleRe"
@@ -4129,9 +4129,6 @@ class CMsgBattleReport_Highlight::_Internal {
   static void set_has_context(HasBits* has_bits) {
     (*has_bits)[0] |= 128u;
   }
-  static bool MissingRequiredFields(const HasBits& has_bits) {
-    return ((has_bits[0] & 0x00000003) ^ 0x00000003) != 0;
-  }
 };
 
 CMsgBattleReport_Highlight::CMsgBattleReport_Highlight(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -4229,7 +4226,7 @@ const char* CMsgBattleReport_Highlight::_InternalParse(const char* ptr, ::_pbi::
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // required uint32 highlight_id = 1;
+      // optional uint32 highlight_id = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           _Internal::set_has_highlight_id(&has_bits);
@@ -4238,7 +4235,7 @@ const char* CMsgBattleReport_Highlight::_InternalParse(const char* ptr, ::_pbi::
         } else
           goto handle_unusual;
         continue;
-      // required .CMsgBattleReport_HighlightCategory category = 2 [default = k_eHighlightGeneral];
+      // optional .CMsgBattleReport_HighlightCategory category = 2 [default = k_eHighlightGeneral];
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -4370,13 +4367,13 @@ uint8_t* CMsgBattleReport_Highlight::_InternalSerialize(
   (void) cached_has_bits;
 
   cached_has_bits = _impl_._has_bits_[0];
-  // required uint32 highlight_id = 1;
+  // optional uint32 highlight_id = 1;
   if (cached_has_bits & 0x00000001u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_highlight_id(), target);
   }
 
-  // required .CMsgBattleReport_HighlightCategory category = 2 [default = k_eHighlightGeneral];
+  // optional .CMsgBattleReport_HighlightCategory category = 2 [default = k_eHighlightGeneral];
   if (cached_has_bits & 0x00000002u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
@@ -4443,44 +4440,27 @@ uint8_t* CMsgBattleReport_Highlight::_InternalSerialize(
   return target;
 }
 
-size_t CMsgBattleReport_Highlight::RequiredFieldsByteSizeFallback() const {
-// @@protoc_insertion_point(required_fields_byte_size_fallback_start:CMsgBattleReport.Highlight)
-  size_t total_size = 0;
-
-  if (_internal_has_highlight_id()) {
-    // required uint32 highlight_id = 1;
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_highlight_id());
-  }
-
-  if (_internal_has_category()) {
-    // required .CMsgBattleReport_HighlightCategory category = 2 [default = k_eHighlightGeneral];
-    total_size += 1 +
-      ::_pbi::WireFormatLite::EnumSize(this->_internal_category());
-  }
-
-  return total_size;
-}
 size_t CMsgBattleReport_Highlight::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:CMsgBattleReport.Highlight)
   size_t total_size = 0;
 
-  if (((_impl_._has_bits_[0] & 0x00000003) ^ 0x00000003) == 0) {  // All required fields are present.
-    // required uint32 highlight_id = 1;
-    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_highlight_id());
-
-    // required .CMsgBattleReport_HighlightCategory category = 2 [default = k_eHighlightGeneral];
-    total_size += 1 +
-      ::_pbi::WireFormatLite::EnumSize(this->_internal_category());
-
-  } else {
-    total_size += RequiredFieldsByteSizeFallback();
-  }
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x000000fcu) {
+  if (cached_has_bits & 0x000000ffu) {
+    // optional uint32 highlight_id = 1;
+    if (cached_has_bits & 0x00000001u) {
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_highlight_id());
+    }
+
+    // optional .CMsgBattleReport_HighlightCategory category = 2 [default = k_eHighlightGeneral];
+    if (cached_has_bits & 0x00000002u) {
+      total_size += 1 +
+        ::_pbi::WireFormatLite::EnumSize(this->_internal_category());
+    }
+
     // optional .CMsgBattleReport_HighlightRarity rarity = 4 [default = k_eHighlightCommon];
     if (cached_has_bits & 0x00000004u) {
       total_size += 1 +
@@ -4594,7 +4574,6 @@ void CMsgBattleReport_Highlight::CopyFrom(const CMsgBattleReport_Highlight& from
 }
 
 bool CMsgBattleReport_Highlight::IsInitialized() const {
-  if (_Internal::MissingRequiredFields(_impl_._has_bits_)) return false;
   return true;
 }
 
@@ -4842,9 +4821,6 @@ void CMsgBattleReport::CopyFrom(const CMsgBattleReport& from) {
 }
 
 bool CMsgBattleReport::IsInitialized() const {
-  if (_internal_has_highlights()) {
-    if (!_impl_.highlights_->IsInitialized()) return false;
-  }
   return true;
 }
 
@@ -5603,8 +5579,6 @@ void CMsgBattleReportHighlights::CopyFrom(const CMsgBattleReportHighlights& from
 }
 
 bool CMsgBattleReportHighlights::IsInitialized() const {
-  if (!::PROTOBUF_NAMESPACE_ID::internal::AllAreInitialized(_impl_.highlights_))
-    return false;
   return true;
 }
 
@@ -7889,9 +7863,6 @@ void CMsgClientToGCGetBattleReportResponse::CopyFrom(const CMsgClientToGCGetBatt
 }
 
 bool CMsgClientToGCGetBattleReportResponse::IsInitialized() const {
-  if (_internal_has_report()) {
-    if (!_impl_.report_->IsInitialized()) return false;
-  }
   return true;
 }
 

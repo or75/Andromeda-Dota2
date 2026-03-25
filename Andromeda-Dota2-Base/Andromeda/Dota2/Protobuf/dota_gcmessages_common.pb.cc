@@ -2770,6 +2770,7 @@ PROTOBUF_CONSTEXPR CMsgGameDataItemAbilityList_ItemAbilityInfo::CMsgGameDataItem
   , /*decltype(_impl_.is_pregame_suggested_)*/false
   , /*decltype(_impl_.is_earlygame_suggested_)*/false
   , /*decltype(_impl_.is_lategame_suggested_)*/false
+  , /*decltype(_impl_.is_innate_)*/false
   , /*decltype(_impl_.id_)*/-1} {}
 struct CMsgGameDataItemAbilityList_ItemAbilityInfoDefaultTypeInternal {
   PROTOBUF_CONSTEXPR CMsgGameDataItemAbilityList_ItemAbilityInfoDefaultTypeInternal()
@@ -3334,31 +3335,13 @@ struct CDotaMsgStructuredTooltipProperties_AttributeValueDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CDotaMsgStructuredTooltipProperties_AttributeValueDefaultTypeInternal _CDotaMsgStructuredTooltipProperties_AttributeValue_default_instance_;
-PROTOBUF_CONSTEXPR CDotaMsgStructuredTooltipProperties_FacetDisplayProperties::CDotaMsgStructuredTooltipProperties_FacetDisplayProperties(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_._has_bits_)*/{}
-  , /*decltype(_impl_._cached_size_)*/{}
-  , /*decltype(_impl_.facet_name_loc_token_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.facet_desc_loc_token_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.facet_icon_style_name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.facet_color_style_name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.facet_gradient_style_name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}} {}
-struct CDotaMsgStructuredTooltipProperties_FacetDisplayPropertiesDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR CDotaMsgStructuredTooltipProperties_FacetDisplayPropertiesDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~CDotaMsgStructuredTooltipProperties_FacetDisplayPropertiesDefaultTypeInternal() {}
-  union {
-    CDotaMsgStructuredTooltipProperties_FacetDisplayProperties _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CDotaMsgStructuredTooltipProperties_FacetDisplayPropertiesDefaultTypeInternal _CDotaMsgStructuredTooltipProperties_FacetDisplayProperties_default_instance_;
 PROTOBUF_CONSTEXPR CDotaMsgStructuredTooltipProperties_Attribute::CDotaMsgStructuredTooltipProperties_Attribute(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_._has_bits_)*/{}
   , /*decltype(_impl_._cached_size_)*/{}
-  , /*decltype(_impl_.name_loc_token_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.internal_name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.localized_name_text_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.value_)*/nullptr
-  , /*decltype(_impl_.facet_)*/nullptr
   , /*decltype(_impl_.type_)*/0} {}
 struct CDotaMsgStructuredTooltipProperties_AttributeDefaultTypeInternal {
   PROTOBUF_CONSTEXPR CDotaMsgStructuredTooltipProperties_AttributeDefaultTypeInternal()
@@ -3395,20 +3378,6 @@ struct CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_SpecificDefaultTyp
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_SpecificDefaultTypeInternal _CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Specific_default_instance_;
-PROTOBUF_CONSTEXPR CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Facet::CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Facet(
-    ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_._has_bits_)*/{}
-  , /*decltype(_impl_._cached_size_)*/{}
-  , /*decltype(_impl_.facet_)*/nullptr} {}
-struct CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_FacetDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_FacetDefaultTypeInternal()
-      : _instance(::_pbi::ConstantInitialized{}) {}
-  ~CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_FacetDefaultTypeInternal() {}
-  union {
-    CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Facet _instance;
-  };
-};
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_FacetDefaultTypeInternal _CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Facet_default_instance_;
 PROTOBUF_CONSTEXPR CDotaMsgStructuredTooltipProperties_AttributeGroupDescription::CDotaMsgStructuredTooltipProperties_AttributeGroupDescription(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.attr_group_desc_)*/{}
@@ -3465,37 +3434,40 @@ struct CDotaMsgStructuredTooltipProperties_TooltipContentChunkDefaultTypeInterna
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CDotaMsgStructuredTooltipProperties_TooltipContentChunkDefaultTypeInternal _CDotaMsgStructuredTooltipProperties_TooltipContentChunk_default_instance_;
-PROTOBUF_CONSTEXPR CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue::CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue(
+PROTOBUF_CONSTEXPR CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbeddedSubAbility::CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbeddedSubAbility(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_._has_bits_)*/{}
   , /*decltype(_impl_._cached_size_)*/{}
-  , /*decltype(_impl_.name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.value_)*/nullptr
-  , /*decltype(_impl_.type_)*/0} {}
-struct CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValueDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValueDefaultTypeInternal()
+  , /*decltype(_impl_.ability_name_loc_token_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.ability_desc_loc_token_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.ability_icon_url_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}} {}
+struct CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbeddedSubAbilityDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbeddedSubAbilityDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
-  ~CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValueDefaultTypeInternal() {}
+  ~CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbeddedSubAbilityDefaultTypeInternal() {}
   union {
-    CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue _instance;
+    CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbeddedSubAbility _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValueDefaultTypeInternal _CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbeddedSubAbilityDefaultTypeInternal _CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbeddedSubAbility_default_instance_;
 PROTOBUF_CONSTEXPR CDotaMsgStructuredTooltipProperties::CDotaMsgStructuredTooltipProperties(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_._has_bits_)*/{}
   , /*decltype(_impl_._cached_size_)*/{}
   , /*decltype(_impl_.summary_description_embed_values_)*/{}
+  , /*decltype(_impl_.summary_description_surfaced_lines_)*/{}
+  , /*decltype(_impl_.summary_description_embedded_sub_abilities_)*/{}
   , /*decltype(_impl_.chunks_)*/{}
   , /*decltype(_impl_.ability_name_loc_token_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.ability_category_loc_token_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.summary_description_loc_token_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.summary_description_level_up_loc_token_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.summary_description_facet_)*/nullptr
+  , /*decltype(_impl_.summary_description_aghs_scepter_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.summary_description_aghs_shard_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.preview_video_url_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.ability_level_)*/0
   , /*decltype(_impl_.current_mana_cost_)*/0
   , /*decltype(_impl_.current_health_cost_)*/0
-  , /*decltype(_impl_.current_cooldown_)*/0} {}
+  , /*decltype(_impl_.current_cooldown_)*/0
+  , /*decltype(_impl_.ability_category_)*/1} {}
 struct CDotaMsgStructuredTooltipPropertiesDefaultTypeInternal {
   PROTOBUF_CONSTEXPR CDotaMsgStructuredTooltipPropertiesDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -3505,8 +3477,8 @@ struct CDotaMsgStructuredTooltipPropertiesDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CDotaMsgStructuredTooltipPropertiesDefaultTypeInternal _CDotaMsgStructuredTooltipProperties_default_instance_;
-static ::_pb::Metadata file_level_metadata_dota_5fgcmessages_5fcommon_2eproto[187];
-static const ::_pb::EnumDescriptor* file_level_enum_descriptors_dota_5fgcmessages_5fcommon_2eproto[29];
+static ::_pb::Metadata file_level_metadata_dota_5fgcmessages_5fcommon_2eproto[185];
+static const ::_pb::EnumDescriptor* file_level_enum_descriptors_dota_5fgcmessages_5fcommon_2eproto[30];
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_dota_5fgcmessages_5fcommon_2eproto = nullptr;
 
 const uint32_t TableStruct_dota_5fgcmessages_5fcommon_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -6219,7 +6191,8 @@ const uint32_t TableStruct_dota_5fgcmessages_5fcommon_2eproto::offsets[] PROTOBU
   PROTOBUF_FIELD_OFFSET(::CMsgGameDataItemAbilityList_ItemAbilityInfo, _impl_.is_earlygame_suggested_),
   PROTOBUF_FIELD_OFFSET(::CMsgGameDataItemAbilityList_ItemAbilityInfo, _impl_.is_lategame_suggested_),
   PROTOBUF_FIELD_OFFSET(::CMsgGameDataItemAbilityList_ItemAbilityInfo, _impl_.recipes_),
-  7,
+  PROTOBUF_FIELD_OFFSET(::CMsgGameDataItemAbilityList_ItemAbilityInfo, _impl_.is_innate_),
+  8,
   0,
   1,
   2,
@@ -6228,6 +6201,7 @@ const uint32_t TableStruct_dota_5fgcmessages_5fcommon_2eproto::offsets[] PROTOBU
   5,
   6,
   ~0u,
+  7,
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::CMsgGameDataItemAbilityList, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -6645,35 +6619,19 @@ const uint32_t TableStruct_dota_5fgcmessages_5fcommon_2eproto::offsets[] PROTOBU
   ::_pbi::kInvalidFieldOffsetTag,
   ::_pbi::kInvalidFieldOffsetTag,
   PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties_AttributeValue, _impl_.attr_value_),
-  PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties_FacetDisplayProperties, _impl_._has_bits_),
-  PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties_FacetDisplayProperties, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties_FacetDisplayProperties, _impl_.facet_name_loc_token_),
-  PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties_FacetDisplayProperties, _impl_.facet_desc_loc_token_),
-  PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties_FacetDisplayProperties, _impl_.facet_icon_style_name_),
-  PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties_FacetDisplayProperties, _impl_.facet_color_style_name_),
-  PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties_FacetDisplayProperties, _impl_.facet_gradient_style_name_),
-  0,
-  1,
-  2,
-  3,
-  4,
   PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties_Attribute, _impl_._has_bits_),
   PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties_Attribute, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties_Attribute, _impl_.name_loc_token_),
+  PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties_Attribute, _impl_.internal_name_),
+  PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties_Attribute, _impl_.localized_name_text_),
   PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties_Attribute, _impl_.type_),
   PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties_Attribute, _impl_.value_),
-  PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties_Attribute, _impl_.facet_),
   0,
-  3,
   1,
+  3,
   2,
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Basic, _internal_metadata_),
@@ -6691,14 +6649,6 @@ const uint32_t TableStruct_dota_5fgcmessages_5fcommon_2eproto::offsets[] PROTOBU
   PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Specific, _impl_.desc_loc_token_),
   0,
   1,
-  PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Facet, _impl_._has_bits_),
-  PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Facet, _internal_metadata_),
-  ~0u,  // no _extensions_
-  ~0u,  // no _oneof_case_
-  ~0u,  // no _weak_field_map_
-  ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Facet, _impl_.facet_),
-  0,
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties_AttributeGroupDescription, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -6734,18 +6684,18 @@ const uint32_t TableStruct_dota_5fgcmessages_5fcommon_2eproto::offsets[] PROTOBU
   ~0u,  // no _inlined_string_donated_
   ::_pbi::kInvalidFieldOffsetTag,
   PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties_TooltipContentChunk, _impl_.content_chunk_),
-  PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue, _impl_._has_bits_),
-  PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbeddedSubAbility, _impl_._has_bits_),
+  PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbeddedSubAbility, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue, _impl_.name_),
-  PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue, _impl_.type_),
-  PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue, _impl_.value_),
+  PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbeddedSubAbility, _impl_.ability_name_loc_token_),
+  PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbeddedSubAbility, _impl_.ability_desc_loc_token_),
+  PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbeddedSubAbility, _impl_.ability_icon_url_),
   0,
-  2,
   1,
+  2,
   PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties, _impl_._has_bits_),
   PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -6753,25 +6703,31 @@ const uint32_t TableStruct_dota_5fgcmessages_5fcommon_2eproto::offsets[] PROTOBU
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties, _impl_.ability_name_loc_token_),
-  PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties, _impl_.ability_category_loc_token_),
+  PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties, _impl_.ability_category_),
   PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties, _impl_.ability_level_),
   PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties, _impl_.current_mana_cost_),
   PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties, _impl_.current_health_cost_),
   PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties, _impl_.current_cooldown_),
   PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties, _impl_.summary_description_loc_token_),
-  PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties, _impl_.summary_description_level_up_loc_token_),
   PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties, _impl_.summary_description_embed_values_),
-  PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties, _impl_.summary_description_facet_),
+  PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties, _impl_.summary_description_surfaced_lines_),
+  PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties, _impl_.summary_description_embedded_sub_abilities_),
+  PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties, _impl_.summary_description_aghs_scepter_),
+  PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties, _impl_.summary_description_aghs_shard_),
+  PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties, _impl_.preview_video_url_),
   PROTOBUF_FIELD_OFFSET(::CDotaMsgStructuredTooltipProperties, _impl_.chunks_),
   0,
-  1,
+  9,
   5,
   6,
   7,
   8,
+  1,
+  ~0u,
+  ~0u,
+  ~0u,
   2,
   3,
-  ~0u,
   4,
   ~0u,
 };
@@ -6916,53 +6872,51 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 2662, 2674, -1, sizeof(::CMsgGameDataHeroList_HeroInfo)},
   { 2680, -1, -1, sizeof(::CMsgGameDataHeroList)},
   { 2687, -1, -1, sizeof(::CMsgGameDataItemAbilityList_ItemAbilityInfo_Recipe)},
-  { 2694, 2709, -1, sizeof(::CMsgGameDataItemAbilityList_ItemAbilityInfo)},
-  { 2718, -1, -1, sizeof(::CMsgGameDataItemAbilityList)},
-  { 2725, 2732, -1, sizeof(::CMsgLobbyAbilityDraftData)},
-  { 2733, 2747, -1, sizeof(::CSOEconItemDropRateBonus)},
-  { 2755, 2769, -1, sizeof(::CSOEconItemTournamentPassport)},
-  { 2777, 2793, -1, sizeof(::CMsgStickerbookSticker)},
-  { 2803, 2814, -1, sizeof(::CMsgStickerbookPage)},
-  { 2819, -1, -1, sizeof(::CMsgStickerbookTeamPageOrderSequence)},
-  { 2826, 2835, -1, sizeof(::CMsgStickerbook)},
-  { 2838, 2848, -1, sizeof(::CMsgStickerHero)},
-  { 2852, -1, -1, sizeof(::CMsgStickerHeroes)},
-  { 2859, 2868, -1, sizeof(::CMsgHeroRoleStats)},
-  { 2871, 2879, -1, sizeof(::CMsgHeroRoleHeroStats)},
-  { 2881, 2889, -1, sizeof(::CMsgHeroRoleRankStats)},
-  { 2891, 2900, -1, sizeof(::CMsgHeroRoleAllRanksStats)},
-  { 2903, 2919, -1, sizeof(::CMsgMapStatsSnapshot)},
-  { 2929, 2938, -1, sizeof(::CMsgGlobalMapStats)},
-  { 2941, 2949, -1, sizeof(::CMsgTrackedStat)},
-  { 2951, 2959, -1, sizeof(::CMsgDOTAClaimEventActionResponse_MysteryItemRewardData)},
-  { 2961, -1, -1, sizeof(::CMsgDOTAClaimEventActionResponse_LootListRewardData)},
-  { 2968, 2976, -1, sizeof(::CMsgDOTAClaimEventActionResponse_ActionListRewardData)},
-  { 2978, 2986, -1, sizeof(::CMsgDOTAClaimEventActionResponse_OverworldTokenRewardData_TokenQuantity)},
-  { 2988, -1, -1, sizeof(::CMsgDOTAClaimEventActionResponse_OverworldTokenRewardData)},
-  { 2995, 3003, -1, sizeof(::CMsgDOTAClaimEventActionResponse_MonsterHunterMaterialRewardData_MaterialQuantity)},
-  { 3005, -1, -1, sizeof(::CMsgDOTAClaimEventActionResponse_MonsterHunterMaterialRewardData)},
-  { 3012, 3023, -1, sizeof(::CMsgDOTAClaimEventActionResponse_GrantedRewardData)},
-  { 3028, 3037, -1, sizeof(::CMsgDOTAClaimEventActionResponse)},
-  { 3040, 3049, -1, sizeof(::CMsgClientToGCDotaLabsFeedback)},
-  { 3052, 3059, -1, sizeof(::CMsgClientToGCDotaLabsFeedbackResponse)},
-  { 3060, 3071, -1, sizeof(::CDotaMsg_PredictionResult_Prediction)},
-  { 3076, 3086, -1, sizeof(::CDotaMsg_PredictionResult)},
-  { 3090, 3098, -1, sizeof(::CDotaMsgStructuredTooltipProperties_AttributeValueValue)},
-  { 3100, 3107, -1, sizeof(::CDotaMsgStructuredTooltipProperties_AttributeValue_Single)},
-  { 3108, -1, -1, sizeof(::CDotaMsgStructuredTooltipProperties_AttributeValue_Variable)},
-  { 3115, 3123, -1, sizeof(::CDotaMsgStructuredTooltipProperties_AttributeValue_Delta)},
-  { 3125, -1, -1, sizeof(::CDotaMsgStructuredTooltipProperties_AttributeValue)},
-  { 3135, 3146, -1, sizeof(::CDotaMsgStructuredTooltipProperties_FacetDisplayProperties)},
-  { 3151, 3161, -1, sizeof(::CDotaMsgStructuredTooltipProperties_Attribute)},
-  { 3165, -1, -1, sizeof(::CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Basic)},
-  { 3171, 3179, -1, sizeof(::CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Specific)},
-  { 3181, 3188, -1, sizeof(::CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Facet)},
-  { 3189, -1, -1, sizeof(::CDotaMsgStructuredTooltipProperties_AttributeGroupDescription)},
-  { 3199, 3207, -1, sizeof(::CDotaMsgStructuredTooltipProperties_AttributeGroup)},
-  { 3209, -1, -1, sizeof(::CDotaMsgStructuredTooltipProperties_ContentChunk_AttributeGroup)},
-  { 3216, -1, -1, sizeof(::CDotaMsgStructuredTooltipProperties_TooltipContentChunk)},
-  { 3224, 3233, -1, sizeof(::CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue)},
-  { 3236, 3253, -1, sizeof(::CDotaMsgStructuredTooltipProperties)},
+  { 2694, 2710, -1, sizeof(::CMsgGameDataItemAbilityList_ItemAbilityInfo)},
+  { 2720, -1, -1, sizeof(::CMsgGameDataItemAbilityList)},
+  { 2727, 2734, -1, sizeof(::CMsgLobbyAbilityDraftData)},
+  { 2735, 2749, -1, sizeof(::CSOEconItemDropRateBonus)},
+  { 2757, 2771, -1, sizeof(::CSOEconItemTournamentPassport)},
+  { 2779, 2795, -1, sizeof(::CMsgStickerbookSticker)},
+  { 2805, 2816, -1, sizeof(::CMsgStickerbookPage)},
+  { 2821, -1, -1, sizeof(::CMsgStickerbookTeamPageOrderSequence)},
+  { 2828, 2837, -1, sizeof(::CMsgStickerbook)},
+  { 2840, 2850, -1, sizeof(::CMsgStickerHero)},
+  { 2854, -1, -1, sizeof(::CMsgStickerHeroes)},
+  { 2861, 2870, -1, sizeof(::CMsgHeroRoleStats)},
+  { 2873, 2881, -1, sizeof(::CMsgHeroRoleHeroStats)},
+  { 2883, 2891, -1, sizeof(::CMsgHeroRoleRankStats)},
+  { 2893, 2902, -1, sizeof(::CMsgHeroRoleAllRanksStats)},
+  { 2905, 2921, -1, sizeof(::CMsgMapStatsSnapshot)},
+  { 2931, 2940, -1, sizeof(::CMsgGlobalMapStats)},
+  { 2943, 2951, -1, sizeof(::CMsgTrackedStat)},
+  { 2953, 2961, -1, sizeof(::CMsgDOTAClaimEventActionResponse_MysteryItemRewardData)},
+  { 2963, -1, -1, sizeof(::CMsgDOTAClaimEventActionResponse_LootListRewardData)},
+  { 2970, 2978, -1, sizeof(::CMsgDOTAClaimEventActionResponse_ActionListRewardData)},
+  { 2980, 2988, -1, sizeof(::CMsgDOTAClaimEventActionResponse_OverworldTokenRewardData_TokenQuantity)},
+  { 2990, -1, -1, sizeof(::CMsgDOTAClaimEventActionResponse_OverworldTokenRewardData)},
+  { 2997, 3005, -1, sizeof(::CMsgDOTAClaimEventActionResponse_MonsterHunterMaterialRewardData_MaterialQuantity)},
+  { 3007, -1, -1, sizeof(::CMsgDOTAClaimEventActionResponse_MonsterHunterMaterialRewardData)},
+  { 3014, 3025, -1, sizeof(::CMsgDOTAClaimEventActionResponse_GrantedRewardData)},
+  { 3030, 3039, -1, sizeof(::CMsgDOTAClaimEventActionResponse)},
+  { 3042, 3051, -1, sizeof(::CMsgClientToGCDotaLabsFeedback)},
+  { 3054, 3061, -1, sizeof(::CMsgClientToGCDotaLabsFeedbackResponse)},
+  { 3062, 3073, -1, sizeof(::CDotaMsg_PredictionResult_Prediction)},
+  { 3078, 3088, -1, sizeof(::CDotaMsg_PredictionResult)},
+  { 3092, 3100, -1, sizeof(::CDotaMsgStructuredTooltipProperties_AttributeValueValue)},
+  { 3102, 3109, -1, sizeof(::CDotaMsgStructuredTooltipProperties_AttributeValue_Single)},
+  { 3110, -1, -1, sizeof(::CDotaMsgStructuredTooltipProperties_AttributeValue_Variable)},
+  { 3117, 3125, -1, sizeof(::CDotaMsgStructuredTooltipProperties_AttributeValue_Delta)},
+  { 3127, -1, -1, sizeof(::CDotaMsgStructuredTooltipProperties_AttributeValue)},
+  { 3137, 3147, -1, sizeof(::CDotaMsgStructuredTooltipProperties_Attribute)},
+  { 3151, -1, -1, sizeof(::CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Basic)},
+  { 3157, 3165, -1, sizeof(::CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Specific)},
+  { 3167, -1, -1, sizeof(::CDotaMsgStructuredTooltipProperties_AttributeGroupDescription)},
+  { 3177, 3185, -1, sizeof(::CDotaMsgStructuredTooltipProperties_AttributeGroup)},
+  { 3187, -1, -1, sizeof(::CDotaMsgStructuredTooltipProperties_ContentChunk_AttributeGroup)},
+  { 3194, -1, -1, sizeof(::CDotaMsgStructuredTooltipProperties_TooltipContentChunk)},
+  { 3202, 3211, -1, sizeof(::CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbeddedSubAbility)},
+  { 3214, 3234, -1, sizeof(::CDotaMsgStructuredTooltipProperties)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -7142,16 +7096,14 @@ static const ::_pb::Message* const file_default_instances[] = {
   &::_CDotaMsgStructuredTooltipProperties_AttributeValue_Variable_default_instance_._instance,
   &::_CDotaMsgStructuredTooltipProperties_AttributeValue_Delta_default_instance_._instance,
   &::_CDotaMsgStructuredTooltipProperties_AttributeValue_default_instance_._instance,
-  &::_CDotaMsgStructuredTooltipProperties_FacetDisplayProperties_default_instance_._instance,
   &::_CDotaMsgStructuredTooltipProperties_Attribute_default_instance_._instance,
   &::_CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Basic_default_instance_._instance,
   &::_CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Specific_default_instance_._instance,
-  &::_CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Facet_default_instance_._instance,
   &::_CDotaMsgStructuredTooltipProperties_AttributeGroupDescription_default_instance_._instance,
   &::_CDotaMsgStructuredTooltipProperties_AttributeGroup_default_instance_._instance,
   &::_CDotaMsgStructuredTooltipProperties_ContentChunk_AttributeGroup_default_instance_._instance,
   &::_CDotaMsgStructuredTooltipProperties_TooltipContentChunk_default_instance_._instance,
-  &::_CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue_default_instance_._instance,
+  &::_CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbeddedSubAbility_default_instance_._instance,
   &::_CDotaMsgStructuredTooltipProperties_default_instance_._instance,
 };
 
@@ -7786,315 +7738,318 @@ const char descriptor_table_protodef_dota_5fgcmessages_5fcommon_2eproto[] PROTOB
   "o_accomplishments\030\002 \001(\0132$.CMsgPlayerHero"
   "RecentAccomplishments\"W\n0CMsgServerToGCR"
   "equestPlayerRecentAccomplishments\022\022\n\nacc"
-  "ount_id\030\001 \001(\r\022\017\n\007hero_id\030\002 \001(\005\"\261\002\n8CMsgS"
+  "ount_id\030\001 \001(\r\022\017\n\007hero_id\030\002 \001(\005\"\303\002\n8CMsgS"
   "erverToGCRequestPlayerRecentAccomplishme"
   "ntsResponse\022e\n\006result\030\001 \001(\0162C.CMsgServer"
   "ToGCRequestPlayerRecentAccomplishmentsRe"
   "sponse.EResponse:\020k_eInternalError\022:\n\026pl"
   "ayer_accomplishments\030\002 \001(\0132\032.CMsgRecentA"
-  "ccomplishments\"R\n\tEResponse\022\024\n\020k_eIntern"
+  "ccomplishments\"d\n\tEResponse\022\024\n\020k_eIntern"
   "alError\020\000\022\016\n\nk_eSuccess\020\001\022\016\n\nk_eTooBusy\020"
-  "\002\022\017\n\013k_eDisabled\020\003\"Q\n\030CMsgArcanaVoteMatc"
-  "hVotes\022\020\n\010match_id\030\001 \001(\r\022\017\n\007hero_id\030\002 \001("
-  "\005\022\022\n\nvote_count\030\003 \001(\r\"\235\001\n(CMsgGCtoGCAsso"
-  "ciatedExploiterAccountInfo\022\022\n\naccount_id"
-  "\030\001 \001(\r\022\035\n\025num_matches_to_search\030\002 \001(\r\022\036\n"
-  "\026min_shared_match_count\030\003 \001(\r\022\036\n\026num_add"
-  "itional_players\030\004 \001(\r\"\264\002\n0CMsgGCtoGCAsso"
-  "ciatedExploiterAccountInfoResponse\022K\n\010ac"
-  "counts\030\001 \003(\01329.CMsgGCtoGCAssociatedExplo"
-  "iterAccountInfoResponse.Account\032\262\001\n\007Acco"
-  "unt\022\022\n\naccount_id\030\001 \001(\r\022\032\n\022num_common_ma"
-  "tches\030\002 \001(\r\022\035\n\025earliest_common_match\030\003 \001"
-  "(\r\022\033\n\023latest_common_match\030\004 \001(\r\022\022\n\ngener"
-  "ation\030\005 \001(\r\022\017\n\007persona\030\006 \001(\t\022\026\n\016already_"
-  "banned\030\007 \001(\010\"\235\002\n\020CMsgPullTabsData\022%\n\005slo"
-  "ts\030\001 \003(\0132\026.CMsgPullTabsData.Slot\022+\n\010jack"
-  "pots\030\002 \003(\0132\031.CMsgPullTabsData.Jackpot\022\022\n"
-  "\nlast_board\030\003 \001(\r\032`\n\004Slot\022\020\n\010event_id\030\001 "
-  "\001(\r\022\020\n\010board_id\030\002 \001(\r\022\017\n\007hero_id\030\003 \001(\005\022\021"
-  "\n\taction_id\030\004 \001(\r\022\020\n\010redeemed\030\005 \001(\010\032\?\n\007J"
-  "ackpot\022\020\n\010board_id\030\001 \001(\r\022\021\n\taction_id\030\002 "
-  "\001(\r\022\017\n\007hero_id\030\003 \001(\005\"\273\002\n\022CMsgUnderDraftD"
-  "ata\0222\n\013bench_slots\030\001 \003(\0132\035.CMsgUnderDraf"
-  "tData.BenchSlot\0220\n\nshop_slots\030\002 \003(\0132\034.CM"
-  "sgUnderDraftData.ShopSlot\022\014\n\004gold\030\003 \001(\r\022"
-  "\022\n\ntotal_gold\030\004 \001(\r\022\026\n\016not_restorable\030\005 "
-  "\001(\010\032<\n\tBenchSlot\022\017\n\007slot_id\030\001 \001(\r\022\017\n\007her"
-  "o_id\030\002 \001(\005\022\r\n\005stars\030\003 \001(\r\032G\n\010ShopSlot\022\017\n"
-  "\007slot_id\030\001 \001(\r\022\017\n\007hero_id\030\002 \001(\005\022\031\n\021is_sp"
-  "ecial_reward\030\003 \001(\010\"F\n\023CMsgPlayerTitleDat"
-  "a\022\r\n\005title\030\001 \003(\r\022\020\n\010event_id\030\002 \003(\r\022\016\n\006ac"
-  "tive\030\003 \001(\r\"\350\001\n\026CMsgDOTATriviaQuestion\022\023\n"
-  "\013question_id\030\001 \001(\r\022Y\n\010category\030\002 \001(\0162\034.E"
-  "DOTATriviaQuestionCategory:)k_EDOTATrivi"
-  "aQuestionCategory_AbilityIcon\022\021\n\ttimesta"
-  "mp\030\003 \001(\r\022\026\n\016question_value\030\004 \001(\t\022\025\n\ransw"
-  "er_values\030\005 \003(\t\022\034\n\024correct_answer_index\030"
-  "\006 \001(\r\"W\n$CMsgDOTATriviaQuestionAnswersSu"
-  "mmary\022\031\n\021summary_available\030\001 \001(\010\022\024\n\014pick"
-  "ed_count\030\002 \003(\r\"O\n\035CMsgGameDataSpecialVal"
-  "ueBonus\022\014\n\004name\030\001 \001(\t\022\r\n\005value\030\002 \001(\002\022\021\n\t"
-  "operation\030\003 \001(\r\"\227\002\n\031CMsgGameDataSpecialV"
-  "alues\022\014\n\004name\030\001 \001(\t\022\024\n\014values_float\030\002 \003("
-  "\002\022\025\n\ris_percentage\030\004 \001(\010\022\023\n\013heading_loc\030"
-  "\005 \001(\t\022/\n\007bonuses\030\006 \003(\0132\036.CMsgGameDataSpe"
-  "cialValueBonus\022\024\n\014values_shard\030\007 \003(\002\022\026\n\016"
-  "values_scepter\030\010 \003(\002\0223\n\013facet_bonus\030\t \001("
-  "\0132\036.CMsgGameDataFacetAbilityBonus\022\026\n\016req"
-  "uired_facet\030\n \001(\t\"P\n\035CMsgGameDataFacetAb"
-  "ilityBonus\022\014\n\004name\030\001 \001(\t\022\016\n\006values\030\002 \003(\002"
-  "\022\021\n\toperation\030\003 \001(\r\"\216\007\n\031CMsgGameDataAbil"
-  "ityOrItem\022\016\n\002id\030\001 \001(\005:\002-1\022\014\n\004name\030\002 \001(\t\022"
-  "\020\n\010name_loc\030\005 \001(\t\022\020\n\010desc_loc\030\006 \001(\t\022\020\n\010l"
-  "ore_loc\030\007 \001(\t\022\021\n\tnotes_loc\030\010 \003(\t\022\021\n\tshar"
-  "d_loc\030\t \001(\t\022\023\n\013scepter_loc\030\n \001(\t\022\022\n\nface"
-  "ts_loc\030\013 \003(\t\022\014\n\004type\030\024 \001(\r\022\020\n\010behavior\030\025"
-  " \001(\004\022\023\n\013target_team\030\026 \001(\r\022\023\n\013target_type"
-  "\030\027 \001(\r\022\r\n\005flags\030\030 \001(\r\022\016\n\006damage\030\031 \001(\r\022\020\n"
-  "\010immunity\030\032 \001(\r\022\023\n\013dispellable\030\033 \001(\r\022\021\n\t"
-  "max_level\030\034 \001(\r\022\023\n\013cast_ranges\030\036 \003(\r\022\023\n\013"
-  "cast_points\030\037 \003(\002\022\025\n\rchannel_times\030  \003(\002"
-  "\022\021\n\tcooldowns\030! \003(\002\022\021\n\tdurations\030\" \003(\002\022\017"
-  "\n\007damages\030# \003(\r\022\022\n\nmana_costs\030$ \003(\r\022\022\n\ng"
-  "old_costs\030% \003(\r\022\024\n\014health_costs\030& \003(\r\0222\n"
-  "\016special_values\030( \003(\0132\032.CMsgGameDataSpec"
-  "ialValues\022\017\n\007is_item\0302 \001(\010\022\033\n\023ability_ha"
-  "s_scepter\030< \001(\010\022\031\n\021ability_has_shard\030= \001"
-  "(\010\022%\n\035ability_is_granted_by_scepter\030> \001("
-  "\010\022#\n\033ability_is_granted_by_shard\030\? \001(\010\022\031"
-  "\n\021ability_is_innate\030@ \001(\010\022\021\n\titem_cost\030F"
-  " \001(\r\022\034\n\024item_initial_charges\030G \001(\r\022\031\n\021it"
-  "em_neutral_tier\030H \001(\r\022\026\n\016item_stock_max\030"
-  "I \001(\r\022\027\n\017item_stock_time\030J \001(\002\022\024\n\014item_q"
-  "uality\030U \001(\r\"N\n\035CMsgGameDataAbilityOrIte"
-  "mList\022-\n\tabilities\030\001 \003(\0132\032.CMsgGameDataA"
-  "bilityOrItem\"\327\007\n\020CMsgGameDataHero\022\n\n\002id\030"
-  "\001 \001(\005\022\014\n\004name\030\002 \001(\t\022\020\n\010order_id\030\003 \001(\r\022\020\n"
-  "\010name_loc\030\005 \001(\t\022\017\n\007bio_loc\030\006 \001(\t\022\020\n\010hype"
-  "_loc\030\007 \001(\t\022\024\n\014npe_desc_loc\030\010 \001(\t\022\'\n\006face"
-  "ts\030+ \003(\0132\027.CMsgGameDataHero.Facet\022\020\n\010str"
-  "_base\030\n \001(\r\022\020\n\010str_gain\030\013 \001(\002\022\020\n\010agi_bas"
-  "e\030\014 \001(\r\022\020\n\010agi_gain\030\r \001(\002\022\020\n\010int_base\030\016 "
-  "\001(\r\022\020\n\010int_gain\030\017 \001(\002\022\024\n\014primary_attr\030\024 "
-  "\001(\r\022\022\n\ncomplexity\030\025 \001(\r\022\031\n\021attack_capabi"
-  "lity\030\026 \001(\r\022\023\n\013role_levels\030\027 \003(\r\022\022\n\ndamag"
-  "e_min\030\030 \001(\005\022\022\n\ndamage_max\030\031 \001(\005\022\023\n\013attac"
-  "k_rate\030\032 \001(\002\022\024\n\014attack_range\030\033 \001(\r\022\030\n\020pr"
-  "ojectile_speed\030\034 \001(\r\022\r\n\005armor\030\035 \001(\002\022\030\n\020m"
-  "agic_resistance\030\036 \001(\r\022\026\n\016movement_speed\030"
-  "\037 \001(\r\022\021\n\tturn_rate\030  \001(\002\022\027\n\017sight_range_"
-  "day\030! \001(\r\022\031\n\021sight_range_night\030\" \001(\r\022\022\n\n"
-  "max_health\030# \001(\r\022\024\n\014health_regen\030$ \001(\002\022\020"
-  "\n\010max_mana\030% \001(\r\022\022\n\nmana_regen\030& \001(\002\022-\n\t"
-  "abilities\030( \003(\0132\032.CMsgGameDataAbilityOrI"
-  "tem\022+\n\007talents\030) \003(\0132\032.CMsgGameDataAbili"
-  "tyOrItem\0227\n\017facet_abilities\030* \003(\0132\036.CMsg"
-  "GameDataAbilityOrItemList\032\202\001\n\005Facet\022\r\n\005c"
-  "olor\030\001 \001(\r\022\021\n\ttitle_loc\030\002 \001(\t\022\027\n\017descrip"
-  "tion_loc\030\003 \001(\t\022\014\n\004name\030\004 \001(\t\022\014\n\004icon\030\005 \001"
-  "(\t\022\023\n\013gradient_id\030\006 \001(\005\022\r\n\005index\030\007 \001(\r\"F"
-  "\n\025CMsgGameDataAbilities\022-\n\tabilities\030\001 \003"
-  "(\0132\032.CMsgGameDataAbilityOrItem\">\n\021CMsgGa"
-  "meDataItems\022)\n\005items\030\001 \003(\0132\032.CMsgGameDat"
-  "aAbilityOrItem\"7\n\022CMsgGameDataHeroes\022!\n\006"
-  "heroes\030\001 \003(\0132\021.CMsgGameDataHero\"\302\001\n\024CMsg"
-  "GameDataHeroList\022.\n\006heroes\030\001 \003(\0132\036.CMsgG"
-  "ameDataHeroList.HeroInfo\032z\n\010HeroInfo\022\n\n\002"
-  "id\030\001 \001(\005\022\014\n\004name\030\002 \001(\t\022\020\n\010name_loc\030\003 \001(\t"
-  "\022\030\n\020name_english_loc\030\004 \001(\t\022\024\n\014primary_at"
-  "tr\030\005 \001(\r\022\022\n\ncomplexity\030\006 \001(\r\"\227\003\n\033CMsgGam"
-  "eDataItemAbilityList\022C\n\ritemabilities\030\001 "
-  "\003(\0132,.CMsgGameDataItemAbilityList.ItemAb"
-  "ilityInfo\032\262\002\n\017ItemAbilityInfo\022\016\n\002id\030\001 \001("
-  "\005:\002-1\022\014\n\004name\030\002 \001(\t\022\020\n\010name_loc\030\003 \001(\t\022\030\n"
-  "\020name_english_loc\030\004 \001(\t\022\031\n\021neutral_item_"
-  "tier\030\005 \001(\005\022\034\n\024is_pregame_suggested\030\006 \001(\010"
-  "\022\036\n\026is_earlygame_suggested\030\007 \001(\010\022\035\n\025is_l"
-  "ategame_suggested\030\010 \001(\010\022D\n\007recipes\030\t \003(\013"
-  "23.CMsgGameDataItemAbilityList.ItemAbili"
-  "tyInfo.Recipe\032\027\n\006Recipe\022\r\n\005items\030\001 \003(\005\"8"
-  "\n\031CMsgLobbyAbilityDraftData\022\033\n\023shuffle_d"
-  "raft_order\030\001 \001(\010\"\315\001\n\030CSOEconItemDropRate"
-  "Bonus\022\030\n\naccount_id\030\001 \001(\rB\004\200\246\035\001\022\027\n\017expir"
-  "ation_date\030\002 \001(\007\022\023\n\005bonus\030\003 \001(\002B\004\200\246\035\001\022\023\n"
-  "\013bonus_count\030\004 \001(\r\022\017\n\007item_id\030\005 \001(\004\022\021\n\td"
-  "ef_index\030\006 \001(\r\022\024\n\014seconds_left\030\007 \001(\r\022\032\n\014"
-  "booster_type\030\010 \001(\rB\004\200\246\035\001\"\312\001\n\035CSOEconItem"
-  "TournamentPassport\022\022\n\naccount_id\030\001 \001(\r\022\021"
-  "\n\tleague_id\030\002 \001(\r\022\017\n\007item_id\030\003 \001(\004\022\035\n\025or"
-  "iginal_purchaser_id\030\004 \001(\r\022\030\n\020passports_b"
-  "ought\030\005 \001(\r\022\017\n\007version\030\006 \001(\r\022\021\n\tdef_inde"
-  "x\030\007 \001(\r\022\024\n\014reward_flags\030\010 \001(\r\"\334\001\n\026CMsgSt"
-  "ickerbookSticker\022\023\n\013item_def_id\030\001 \001(\r\022\023\n"
-  "\013sticker_num\030\002 \001(\r\022\017\n\007quality\030\003 \001(\r\022\022\n\np"
-  "osition_x\030\004 \001(\002\022\022\n\nposition_y\030\005 \001(\002\022\022\n\np"
-  "osition_z\030\010 \001(\002\022\020\n\010rotation\030\006 \001(\002\022\r\n\005sca"
-  "le\030\007 \001(\002\022\026\n\016source_item_id\030\t \001(\004\022\022\n\ndept"
-  "h_bias\030\n \001(\r\"\315\001\n\023CMsgStickerbookPage\022\020\n\010"
-  "page_num\030\001 \001(\r\022(\n\010event_id\030\002 \001(\0162\007.EEven"
-  "t:\rEVENT_ID_NONE\022\017\n\007team_id\030\003 \001(\r\022)\n\010sti"
-  "ckers\030\004 \003(\0132\027.CMsgStickerbookSticker\022>\n\t"
-  "page_type\030\005 \001(\0162\025.EStickerbookPageType:\024"
-  "STICKER_PAGE_GENERIC\"<\n$CMsgStickerbookT"
-  "eamPageOrderSequence\022\024\n\014page_numbers\030\001 \003"
-  "(\r\"\232\001\n\017CMsgStickerbook\022#\n\005pages\030\001 \003(\0132\024."
-  "CMsgStickerbookPage\022G\n\030team_page_order_s"
-  "equence\030\002 \001(\0132%.CMsgStickerbookTeamPageO"
-  "rderSequence\022\031\n\021favorite_page_num\030\003 \001(\r\""
-  "`\n\017CMsgStickerHero\022\017\n\007hero_id\030\001 \001(\005\022\023\n\013i"
-  "tem_def_id\030\002 \001(\r\022\017\n\007quality\030\003 \001(\r\022\026\n\016sou"
-  "rce_item_id\030\004 \001(\004\"5\n\021CMsgStickerHeroes\022 "
-  "\n\006heroes\030\001 \003(\0132\020.CMsgStickerHero\"Y\n\021CMsg"
-  "HeroRoleStats\022\034\n\024lane_selection_flags\030\001 "
-  "\001(\r\022\023\n\013match_count\030\002 \001(\r\022\021\n\twin_count\030\003 "
-  "\001(\r\"P\n\025CMsgHeroRoleHeroStats\022\017\n\007hero_id\030"
-  "\001 \001(\005\022&\n\nrole_stats\030\002 \003(\0132\022.CMsgHeroRole"
-  "Stats\"V\n\025CMsgHeroRoleRankStats\022\021\n\trank_t"
-  "ier\030\001 \001(\r\022*\n\nhero_stats\030\002 \003(\0132\026.CMsgHero"
-  "RoleHeroStats\"w\n\031CMsgHeroRoleAllRanksSta"
-  "ts\022\027\n\017start_timestamp\030\001 \001(\r\022\025\n\rend_times"
-  "tamp\030\002 \001(\r\022*\n\nrank_stats\030\003 \003(\0132\026.CMsgHer"
-  "oRoleRankStats\"\223\002\n\024CMsgMapStatsSnapshot\022"
-  "\021\n\ttimestamp\030\001 \001(\r\022\026\n\016lotuses_gained\030\002 \001"
-  "(\004\022\033\n\023wisdom_runes_gained\030\003 \001(\004\022\030\n\020rosha"
-  "n_kills_day\030\004 \001(\004\022\032\n\022roshan_kills_night\030"
-  "\005 \001(\004\022\024\n\014portals_used\030\006 \001(\004\022\026\n\016watchers_"
-  "taken\030\007 \001(\004\022\027\n\017tormentor_kills\030\010 \001(\004\022\031\n\021"
-  "outposts_captured\030\t \001(\004\022\033\n\023shield_runes_"
-  "gained\030\n \001(\004\"\224\001\n\022CMsgGlobalMapStats\022&\n\007c"
-  "urrent\030\001 \001(\0132\025.CMsgMapStatsSnapshot\022+\n\014w"
-  "indow_start\030\002 \001(\0132\025.CMsgMapStatsSnapshot"
-  "\022)\n\nwindow_end\030\003 \001(\0132\025.CMsgMapStatsSnaps"
-  "hot\"F\n\017CMsgTrackedStat\022\027\n\017tracked_stat_i"
-  "d\030\001 \001(\r\022\032\n\022tracked_stat_value\030\002 \001(\005\"\243\t\n "
-  "CMsgDOTAClaimEventActionResponse\022E\n\006resu"
-  "lt\030\001 \001(\0162,.CMsgDOTAClaimEventActionRespo"
-  "nse.ResultCode:\007Success\022K\n\016reward_result"
-  "s\030\002 \003(\01323.CMsgDOTAClaimEventActionRespon"
-  "se.GrantedRewardData\022\021\n\taction_id\030\003 \001(\r\032"
-  "@\n\025MysteryItemRewardData\022\020\n\010item_def\030\001 \001"
-  "(\r\022\025\n\ritem_category\030\002 \001(\r\032&\n\022LootListRew"
-  "ardData\022\020\n\010item_def\030\001 \003(\r\032E\n\024ActionListR"
-  "ewardData\022\021\n\taction_id\030\001 \001(\r\022\032\n\022result_r"
-  "eward_data\030\002 \001(\014\032\254\001\n\030OverworldTokenRewar"
-  "dData\022X\n\006tokens\030\001 \003(\0132H.CMsgDOTAClaimEve"
-  "ntActionResponse.OverworldTokenRewardDat"
-  "a.TokenQuantity\0326\n\rTokenQuantity\022\020\n\010toke"
-  "n_id\030\001 \001(\r\022\023\n\013token_count\030\002 \001(\r\032\311\001\n\037Mons"
-  "terHunterMaterialRewardData\022e\n\tmaterials"
-  "\030\001 \003(\0132R.CMsgDOTAClaimEventActionRespons"
-  "e.MonsterHunterMaterialRewardData.Materi"
-  "alQuantity\032\?\n\020MaterialQuantity\022\023\n\013materi"
-  "al_id\030\001 \001(\r\022\026\n\016material_count\030\002 \001(\r\032{\n\021G"
-  "rantedRewardData\022\023\n\013grant_index\030\001 \001(\r\022\023\n"
-  "\013score_index\030\002 \001(\r\022\024\n\014reward_index\030\003 \001(\r"
-  "\022\023\n\013reward_data\030\004 \001(\014\022\021\n\taction_id\030\005 \001(\r"
-  "\"\256\002\n\nResultCode\022\013\n\007Success\020\000\022\020\n\014InvalidE"
-  "vent\020\001\022\022\n\016EventNotActive\020\002\022\021\n\rInvalidAct"
-  "ion\020\003\022\017\n\013ServerError\020\004\022\026\n\022InsufficientPo"
-  "ints\020\005\022\024\n\020InsufficentLevel\020\006\022\022\n\016AlreadyC"
-  "laimed\020\007\022\022\n\016SDOLockFailure\020\010\022\022\n\016SDOLoadF"
-  "ailure\020\t\022\021\n\rEventNotOwned\020\n\022\013\n\007Timeout\020\013"
-  "\022\034\n\030RequiresPlusSubscription\020\014\022\017\n\013Invali"
-  "dItem\020\r\022\020\n\014AsyncRewards\020\016\"[\n\036CMsgClientT"
-  "oGCDotaLabsFeedback\022\020\n\010language\030\001 \001(\r\022\025\n"
-  "\rfeedback_item\030\002 \001(\r\022\020\n\010feedback\030\003 \001(\t\"\213"
-  "\002\n&CMsgClientToGCDotaLabsFeedbackRespons"
-  "e\022U\n\010response\030\001 \001(\01621.CMsgClientToGCDota"
-  "LabsFeedbackResponse.EResponse:\020k_eInter"
-  "nalError\"\211\001\n\tEResponse\022\024\n\020k_eInternalErr"
-  "or\020\000\022\016\n\nk_eSuccess\020\001\022\016\n\nk_eTooBusy\020\002\022\017\n\013"
-  "k_eDisabled\020\003\022\016\n\nk_eTimeout\020\004\022\021\n\rk_eNotA"
-  "llowed\020\005\022\022\n\016k_eInvalidItem\020\006\"\207\003\n\031CDotaMs"
-  "g_PredictionResult\022\022\n\naccount_id\030\001 \001(\r\022\020"
-  "\n\010match_id\030\002 \001(\004\022\017\n\007correct\030\003 \001(\010\022:\n\013pre"
-  "dictions\030\004 \003(\0132%.CDotaMsg_PredictionResu"
-  "lt.Prediction\032\366\001\n\nPrediction\022\020\n\010item_def"
-  "\030\001 \001(\r\022\023\n\013num_correct\030\002 \001(\r\022\021\n\tnum_fails"
-  "\030\003 \001(\r\022T\n\006result\030\004 \001(\0162-.CDotaMsg_Predic"
-  "tionResult.Prediction.EResult:\025k_eResult"
-  "_ItemGranted\022\031\n\021granted_item_defs\030\006 \003(\r\""
-  "=\n\007EResult\022\031\n\025k_eResult_ItemGranted\020\001\022\027\n"
-  "\023k_eResult_Destroyed\020\002\"\231\030\n#CDotaMsgStruc"
-  "turedTooltipProperties\022\036\n\026ability_name_l"
-  "oc_token\030\001 \001(\t\022\"\n\032ability_category_loc_t"
-  "oken\030\002 \001(\t\022\025\n\rability_level\030\003 \001(\005\022\031\n\021cur"
-  "rent_mana_cost\030\004 \001(\005\022\033\n\023current_health_c"
-  "ost\030\005 \001(\005\022\030\n\020current_cooldown\030\006 \001(\002\022%\n\035s"
-  "ummary_description_loc_token\030\007 \001(\t\022.\n&su"
-  "mmary_description_level_up_loc_token\030\010 \001"
-  "(\t\022k\n summary_description_embed_values\030\t"
-  " \003(\0132A.CDotaMsgStructuredTooltipProperti"
-  "es.SummaryDescriptionEmbedValue\022^\n\031summa"
-  "ry_description_facet\030\n \001(\0132;.CDotaMsgStr"
-  "ucturedTooltipProperties.FacetDisplayPro"
-  "perties\022H\n\006chunks\030\024 \003(\01328.CDotaMsgStruct"
-  "uredTooltipProperties.TooltipContentChun"
-  "k\032=\n\023AttributeValueValue\022\r\n\005value\030\001 \001(\002\022"
-  "\027\n\017is_active_value\030\002 \001(\010\032g\n\025AttributeVal"
-  "ue_Single\022N\n\014single_value\030\001 \001(\01328.CDotaM"
-  "sgStructuredTooltipProperties.AttributeV"
-  "alueValue\032c\n\027AttributeValue_Variable\022H\n\006"
-  "values\030\001 \003(\01328.CDotaMsgStructuredTooltip"
-  "Properties.AttributeValueValue\032\246\001\n\024Attri"
-  "buteValue_Delta\022F\n\004prev\030\001 \001(\01328.CDotaMsg"
-  "StructuredTooltipProperties.AttributeVal"
-  "ueValue\022F\n\004next\030\002 \001(\01328.CDotaMsgStructur"
-  "edTooltipProperties.AttributeValueValue\032"
-  "\212\002\n\016AttributeValue\022L\n\006single\030\001 \001(\0132:.CDo"
-  "taMsgStructuredTooltipProperties.Attribu"
-  "teValue_SingleH\000\022P\n\010variable\030\002 \001(\0132<.CDo"
-  "taMsgStructuredTooltipProperties.Attribu"
-  "teValue_VariableH\000\022J\n\005delta\030\003 \001(\01329.CDot"
-  "aMsgStructuredTooltipProperties.Attribut"
-  "eValue_DeltaH\000B\014\n\nattr_value\032\266\001\n\026FacetDi"
-  "splayProperties\022\034\n\024facet_name_loc_token\030"
-  "\001 \001(\t\022\034\n\024facet_desc_loc_token\030\002 \001(\t\022\035\n\025f"
-  "acet_icon_style_name\030\003 \001(\t\022\036\n\026facet_colo"
-  "r_style_name\030\004 \001(\t\022!\n\031facet_gradient_sty"
-  "le_name\030\005 \001(\t\032\200\002\n\tAttribute\022\026\n\016name_loc_"
-  "token\030\001 \001(\t\022K\n\004type\030\002 \001(\01623.CDotaMsgStru"
-  "cturedTooltipProperties.EAttributeType:\010"
-  "kUnknown\022B\n\005value\030\003 \001(\01323.CDotaMsgStruct"
-  "uredTooltipProperties.AttributeValue\022J\n\005"
-  "facet\030\004 \001(\0132;.CDotaMsgStructuredTooltipP"
-  "roperties.FacetDisplayProperties\032\032\n\030Attr"
-  "ibuteGroupDesc_Basic\032N\n\033AttributeGroupDe"
-  "sc_Specific\022\027\n\017title_loc_token\030\001 \001(\t\022\026\n\016"
-  "desc_loc_token\030\002 \001(\t\032f\n\030AttributeGroupDe"
-  "sc_Facet\022J\n\005facet\030\001 \001(\0132;.CDotaMsgStruct"
-  "uredTooltipProperties.FacetDisplayProper"
-  "ties\032\244\002\n\031AttributeGroupDescription\022N\n\005ba"
-  "sic\030\001 \001(\0132=.CDotaMsgStructuredTooltipPro"
-  "perties.AttributeGroupDesc_BasicH\000\022T\n\010sp"
-  "ecific\030\002 \001(\0132@.CDotaMsgStructuredTooltip"
-  "Properties.AttributeGroupDesc_SpecificH\000"
-  "\022N\n\005facet\030\003 \001(\0132=.CDotaMsgStructuredTool"
-  "tipProperties.AttributeGroupDesc_FacetH\000"
-  "B\021\n\017attr_group_desc\032\242\001\n\016AttributeGroup\022L"
-  "\n\004desc\030\001 \001(\0132>.CDotaMsgStructuredTooltip"
-  "Properties.AttributeGroupDescription\022B\n\n"
-  "attributes\030\002 \003(\0132..CDotaMsgStructuredToo"
-  "ltipProperties.Attribute\032b\n\033ContentChunk"
-  "_AttributeGroup\022C\n\006groups\030\001 \003(\01323.CDotaM"
-  "sgStructuredTooltipProperties.AttributeG"
-  "roup\032\203\001\n\023TooltipContentChunk\022[\n\017attribut"
-  "e_group\030\001 \001(\0132@.CDotaMsgStructuredToolti"
-  "pProperties.ContentChunk_AttributeGroupH"
-  "\000B\017\n\rcontent_chunk\032\275\001\n\034SummaryDescriptio"
-  "nEmbedValue\022\014\n\004name\030\001 \001(\t\022K\n\004type\030\002 \001(\0162"
-  "3.CDotaMsgStructuredTooltipProperties.EA"
-  "ttributeType:\010kUnknown\022B\n\005value\030\003 \001(\01323."
+  "\002\022\017\n\013k_eDisabled\020\003\022\020\n\014k_eForbidden\020\004\"Q\n\030"
+  "CMsgArcanaVoteMatchVotes\022\020\n\010match_id\030\001 \001"
+  "(\r\022\017\n\007hero_id\030\002 \001(\005\022\022\n\nvote_count\030\003 \001(\r\""
+  "\235\001\n(CMsgGCtoGCAssociatedExploiterAccount"
+  "Info\022\022\n\naccount_id\030\001 \001(\r\022\035\n\025num_matches_"
+  "to_search\030\002 \001(\r\022\036\n\026min_shared_match_coun"
+  "t\030\003 \001(\r\022\036\n\026num_additional_players\030\004 \001(\r\""
+  "\264\002\n0CMsgGCtoGCAssociatedExploiterAccount"
+  "InfoResponse\022K\n\010accounts\030\001 \003(\01329.CMsgGCt"
+  "oGCAssociatedExploiterAccountInfoRespons"
+  "e.Account\032\262\001\n\007Account\022\022\n\naccount_id\030\001 \001("
+  "\r\022\032\n\022num_common_matches\030\002 \001(\r\022\035\n\025earlies"
+  "t_common_match\030\003 \001(\r\022\033\n\023latest_common_ma"
+  "tch\030\004 \001(\r\022\022\n\ngeneration\030\005 \001(\r\022\017\n\007persona"
+  "\030\006 \001(\t\022\026\n\016already_banned\030\007 \001(\010\"\235\002\n\020CMsgP"
+  "ullTabsData\022%\n\005slots\030\001 \003(\0132\026.CMsgPullTab"
+  "sData.Slot\022+\n\010jackpots\030\002 \003(\0132\031.CMsgPullT"
+  "absData.Jackpot\022\022\n\nlast_board\030\003 \001(\r\032`\n\004S"
+  "lot\022\020\n\010event_id\030\001 \001(\r\022\020\n\010board_id\030\002 \001(\r\022"
+  "\017\n\007hero_id\030\003 \001(\005\022\021\n\taction_id\030\004 \001(\r\022\020\n\010r"
+  "edeemed\030\005 \001(\010\032\?\n\007Jackpot\022\020\n\010board_id\030\001 \001"
+  "(\r\022\021\n\taction_id\030\002 \001(\r\022\017\n\007hero_id\030\003 \001(\005\"\273"
+  "\002\n\022CMsgUnderDraftData\0222\n\013bench_slots\030\001 \003"
+  "(\0132\035.CMsgUnderDraftData.BenchSlot\0220\n\nsho"
+  "p_slots\030\002 \003(\0132\034.CMsgUnderDraftData.ShopS"
+  "lot\022\014\n\004gold\030\003 \001(\r\022\022\n\ntotal_gold\030\004 \001(\r\022\026\n"
+  "\016not_restorable\030\005 \001(\010\032<\n\tBenchSlot\022\017\n\007sl"
+  "ot_id\030\001 \001(\r\022\017\n\007hero_id\030\002 \001(\005\022\r\n\005stars\030\003 "
+  "\001(\r\032G\n\010ShopSlot\022\017\n\007slot_id\030\001 \001(\r\022\017\n\007hero"
+  "_id\030\002 \001(\005\022\031\n\021is_special_reward\030\003 \001(\010\"F\n\023"
+  "CMsgPlayerTitleData\022\r\n\005title\030\001 \003(\r\022\020\n\010ev"
+  "ent_id\030\002 \003(\r\022\016\n\006active\030\003 \001(\r\"\350\001\n\026CMsgDOT"
+  "ATriviaQuestion\022\023\n\013question_id\030\001 \001(\r\022Y\n\010"
+  "category\030\002 \001(\0162\034.EDOTATriviaQuestionCate"
+  "gory:)k_EDOTATriviaQuestionCategory_Abil"
+  "ityIcon\022\021\n\ttimestamp\030\003 \001(\r\022\026\n\016question_v"
+  "alue\030\004 \001(\t\022\025\n\ranswer_values\030\005 \003(\t\022\034\n\024cor"
+  "rect_answer_index\030\006 \001(\r\"W\n$CMsgDOTATrivi"
+  "aQuestionAnswersSummary\022\031\n\021summary_avail"
+  "able\030\001 \001(\010\022\024\n\014picked_count\030\002 \003(\r\"O\n\035CMsg"
+  "GameDataSpecialValueBonus\022\014\n\004name\030\001 \001(\t\022"
+  "\r\n\005value\030\002 \001(\002\022\021\n\toperation\030\003 \001(\r\"\227\002\n\031CM"
+  "sgGameDataSpecialValues\022\014\n\004name\030\001 \001(\t\022\024\n"
+  "\014values_float\030\002 \003(\002\022\025\n\ris_percentage\030\004 \001"
+  "(\010\022\023\n\013heading_loc\030\005 \001(\t\022/\n\007bonuses\030\006 \003(\013"
+  "2\036.CMsgGameDataSpecialValueBonus\022\024\n\014valu"
+  "es_shard\030\007 \003(\002\022\026\n\016values_scepter\030\010 \003(\002\0223"
+  "\n\013facet_bonus\030\t \001(\0132\036.CMsgGameDataFacetA"
+  "bilityBonus\022\026\n\016required_facet\030\n \001(\t\"P\n\035C"
+  "MsgGameDataFacetAbilityBonus\022\014\n\004name\030\001 \001"
+  "(\t\022\016\n\006values\030\002 \003(\002\022\021\n\toperation\030\003 \001(\r\"\216\007"
+  "\n\031CMsgGameDataAbilityOrItem\022\016\n\002id\030\001 \001(\005:"
+  "\002-1\022\014\n\004name\030\002 \001(\t\022\020\n\010name_loc\030\005 \001(\t\022\020\n\010d"
+  "esc_loc\030\006 \001(\t\022\020\n\010lore_loc\030\007 \001(\t\022\021\n\tnotes"
+  "_loc\030\010 \003(\t\022\021\n\tshard_loc\030\t \001(\t\022\023\n\013scepter"
+  "_loc\030\n \001(\t\022\022\n\nfacets_loc\030\013 \003(\t\022\014\n\004type\030\024"
+  " \001(\r\022\020\n\010behavior\030\025 \001(\004\022\023\n\013target_team\030\026 "
+  "\001(\r\022\023\n\013target_type\030\027 \001(\r\022\r\n\005flags\030\030 \001(\r\022"
+  "\016\n\006damage\030\031 \001(\r\022\020\n\010immunity\030\032 \001(\r\022\023\n\013dis"
+  "pellable\030\033 \001(\r\022\021\n\tmax_level\030\034 \001(\r\022\023\n\013cas"
+  "t_ranges\030\036 \003(\r\022\023\n\013cast_points\030\037 \003(\002\022\025\n\rc"
+  "hannel_times\030  \003(\002\022\021\n\tcooldowns\030! \003(\002\022\021\n"
+  "\tdurations\030\" \003(\002\022\017\n\007damages\030# \003(\r\022\022\n\nman"
+  "a_costs\030$ \003(\r\022\022\n\ngold_costs\030% \003(\r\022\024\n\014hea"
+  "lth_costs\030& \003(\r\0222\n\016special_values\030( \003(\0132"
+  "\032.CMsgGameDataSpecialValues\022\017\n\007is_item\0302"
+  " \001(\010\022\033\n\023ability_has_scepter\030< \001(\010\022\031\n\021abi"
+  "lity_has_shard\030= \001(\010\022%\n\035ability_is_grant"
+  "ed_by_scepter\030> \001(\010\022#\n\033ability_is_grante"
+  "d_by_shard\030\? \001(\010\022\031\n\021ability_is_innate\030@ "
+  "\001(\010\022\021\n\titem_cost\030F \001(\r\022\034\n\024item_initial_c"
+  "harges\030G \001(\r\022\031\n\021item_neutral_tier\030H \001(\r\022"
+  "\026\n\016item_stock_max\030I \001(\r\022\027\n\017item_stock_ti"
+  "me\030J \001(\002\022\024\n\014item_quality\030U \001(\r\"N\n\035CMsgGa"
+  "meDataAbilityOrItemList\022-\n\tabilities\030\001 \003"
+  "(\0132\032.CMsgGameDataAbilityOrItem\"\327\007\n\020CMsgG"
+  "ameDataHero\022\n\n\002id\030\001 \001(\005\022\014\n\004name\030\002 \001(\t\022\020\n"
+  "\010order_id\030\003 \001(\r\022\020\n\010name_loc\030\005 \001(\t\022\017\n\007bio"
+  "_loc\030\006 \001(\t\022\020\n\010hype_loc\030\007 \001(\t\022\024\n\014npe_desc"
+  "_loc\030\010 \001(\t\022\'\n\006facets\030+ \003(\0132\027.CMsgGameDat"
+  "aHero.Facet\022\020\n\010str_base\030\n \001(\r\022\020\n\010str_gai"
+  "n\030\013 \001(\002\022\020\n\010agi_base\030\014 \001(\r\022\020\n\010agi_gain\030\r "
+  "\001(\002\022\020\n\010int_base\030\016 \001(\r\022\020\n\010int_gain\030\017 \001(\002\022"
+  "\024\n\014primary_attr\030\024 \001(\r\022\022\n\ncomplexity\030\025 \001("
+  "\r\022\031\n\021attack_capability\030\026 \001(\r\022\023\n\013role_lev"
+  "els\030\027 \003(\r\022\022\n\ndamage_min\030\030 \001(\005\022\022\n\ndamage_"
+  "max\030\031 \001(\005\022\023\n\013attack_rate\030\032 \001(\002\022\024\n\014attack"
+  "_range\030\033 \001(\r\022\030\n\020projectile_speed\030\034 \001(\r\022\r"
+  "\n\005armor\030\035 \001(\002\022\030\n\020magic_resistance\030\036 \001(\r\022"
+  "\026\n\016movement_speed\030\037 \001(\r\022\021\n\tturn_rate\030  \001"
+  "(\002\022\027\n\017sight_range_day\030! \001(\r\022\031\n\021sight_ran"
+  "ge_night\030\" \001(\r\022\022\n\nmax_health\030# \001(\r\022\024\n\014he"
+  "alth_regen\030$ \001(\002\022\020\n\010max_mana\030% \001(\r\022\022\n\nma"
+  "na_regen\030& \001(\002\022-\n\tabilities\030( \003(\0132\032.CMsg"
+  "GameDataAbilityOrItem\022+\n\007talents\030) \003(\0132\032"
+  ".CMsgGameDataAbilityOrItem\0227\n\017facet_abil"
+  "ities\030* \003(\0132\036.CMsgGameDataAbilityOrItemL"
+  "ist\032\202\001\n\005Facet\022\r\n\005color\030\001 \001(\r\022\021\n\ttitle_lo"
+  "c\030\002 \001(\t\022\027\n\017description_loc\030\003 \001(\t\022\014\n\004name"
+  "\030\004 \001(\t\022\014\n\004icon\030\005 \001(\t\022\023\n\013gradient_id\030\006 \001("
+  "\005\022\r\n\005index\030\007 \001(\r\"F\n\025CMsgGameDataAbilitie"
+  "s\022-\n\tabilities\030\001 \003(\0132\032.CMsgGameDataAbili"
+  "tyOrItem\">\n\021CMsgGameDataItems\022)\n\005items\030\001"
+  " \003(\0132\032.CMsgGameDataAbilityOrItem\"7\n\022CMsg"
+  "GameDataHeroes\022!\n\006heroes\030\001 \003(\0132\021.CMsgGam"
+  "eDataHero\"\302\001\n\024CMsgGameDataHeroList\022.\n\006he"
+  "roes\030\001 \003(\0132\036.CMsgGameDataHeroList.HeroIn"
+  "fo\032z\n\010HeroInfo\022\n\n\002id\030\001 \001(\005\022\014\n\004name\030\002 \001(\t"
+  "\022\020\n\010name_loc\030\003 \001(\t\022\030\n\020name_english_loc\030\004"
+  " \001(\t\022\024\n\014primary_attr\030\005 \001(\r\022\022\n\ncomplexity"
+  "\030\006 \001(\r\"\252\003\n\033CMsgGameDataItemAbilityList\022C"
+  "\n\ritemabilities\030\001 \003(\0132,.CMsgGameDataItem"
+  "AbilityList.ItemAbilityInfo\032\305\002\n\017ItemAbil"
+  "ityInfo\022\016\n\002id\030\001 \001(\005:\002-1\022\014\n\004name\030\002 \001(\t\022\020\n"
+  "\010name_loc\030\003 \001(\t\022\030\n\020name_english_loc\030\004 \001("
+  "\t\022\031\n\021neutral_item_tier\030\005 \001(\005\022\034\n\024is_prega"
+  "me_suggested\030\006 \001(\010\022\036\n\026is_earlygame_sugge"
+  "sted\030\007 \001(\010\022\035\n\025is_lategame_suggested\030\010 \001("
+  "\010\022D\n\007recipes\030\t \003(\01323.CMsgGameDataItemAbi"
+  "lityList.ItemAbilityInfo.Recipe\022\021\n\tis_in"
+  "nate\030\n \001(\010\032\027\n\006Recipe\022\r\n\005items\030\001 \003(\005\"8\n\031C"
+  "MsgLobbyAbilityDraftData\022\033\n\023shuffle_draf"
+  "t_order\030\001 \001(\010\"\315\001\n\030CSOEconItemDropRateBon"
+  "us\022\030\n\naccount_id\030\001 \001(\rB\004\200\246\035\001\022\027\n\017expirati"
+  "on_date\030\002 \001(\007\022\023\n\005bonus\030\003 \001(\002B\004\200\246\035\001\022\023\n\013bo"
+  "nus_count\030\004 \001(\r\022\017\n\007item_id\030\005 \001(\004\022\021\n\tdef_"
+  "index\030\006 \001(\r\022\024\n\014seconds_left\030\007 \001(\r\022\032\n\014boo"
+  "ster_type\030\010 \001(\rB\004\200\246\035\001\"\312\001\n\035CSOEconItemTou"
+  "rnamentPassport\022\022\n\naccount_id\030\001 \001(\r\022\021\n\tl"
+  "eague_id\030\002 \001(\r\022\017\n\007item_id\030\003 \001(\004\022\035\n\025origi"
+  "nal_purchaser_id\030\004 \001(\r\022\030\n\020passports_boug"
+  "ht\030\005 \001(\r\022\017\n\007version\030\006 \001(\r\022\021\n\tdef_index\030\007"
+  " \001(\r\022\024\n\014reward_flags\030\010 \001(\r\"\334\001\n\026CMsgStick"
+  "erbookSticker\022\023\n\013item_def_id\030\001 \001(\r\022\023\n\013st"
+  "icker_num\030\002 \001(\r\022\017\n\007quality\030\003 \001(\r\022\022\n\nposi"
+  "tion_x\030\004 \001(\002\022\022\n\nposition_y\030\005 \001(\002\022\022\n\nposi"
+  "tion_z\030\010 \001(\002\022\020\n\010rotation\030\006 \001(\002\022\r\n\005scale\030"
+  "\007 \001(\002\022\026\n\016source_item_id\030\t \001(\004\022\022\n\ndepth_b"
+  "ias\030\n \001(\r\"\315\001\n\023CMsgStickerbookPage\022\020\n\010pag"
+  "e_num\030\001 \001(\r\022(\n\010event_id\030\002 \001(\0162\007.EEvent:\r"
+  "EVENT_ID_NONE\022\017\n\007team_id\030\003 \001(\r\022)\n\010sticke"
+  "rs\030\004 \003(\0132\027.CMsgStickerbookSticker\022>\n\tpag"
+  "e_type\030\005 \001(\0162\025.EStickerbookPageType:\024STI"
+  "CKER_PAGE_GENERIC\"<\n$CMsgStickerbookTeam"
+  "PageOrderSequence\022\024\n\014page_numbers\030\001 \003(\r\""
+  "\232\001\n\017CMsgStickerbook\022#\n\005pages\030\001 \003(\0132\024.CMs"
+  "gStickerbookPage\022G\n\030team_page_order_sequ"
+  "ence\030\002 \001(\0132%.CMsgStickerbookTeamPageOrde"
+  "rSequence\022\031\n\021favorite_page_num\030\003 \001(\r\"`\n\017"
+  "CMsgStickerHero\022\017\n\007hero_id\030\001 \001(\005\022\023\n\013item"
+  "_def_id\030\002 \001(\r\022\017\n\007quality\030\003 \001(\r\022\026\n\016source"
+  "_item_id\030\004 \001(\004\"5\n\021CMsgStickerHeroes\022 \n\006h"
+  "eroes\030\001 \003(\0132\020.CMsgStickerHero\"Y\n\021CMsgHer"
+  "oRoleStats\022\034\n\024lane_selection_flags\030\001 \001(\r"
+  "\022\023\n\013match_count\030\002 \001(\r\022\021\n\twin_count\030\003 \001(\r"
+  "\"P\n\025CMsgHeroRoleHeroStats\022\017\n\007hero_id\030\001 \001"
+  "(\005\022&\n\nrole_stats\030\002 \003(\0132\022.CMsgHeroRoleSta"
+  "ts\"V\n\025CMsgHeroRoleRankStats\022\021\n\trank_tier"
+  "\030\001 \001(\r\022*\n\nhero_stats\030\002 \003(\0132\026.CMsgHeroRol"
+  "eHeroStats\"w\n\031CMsgHeroRoleAllRanksStats\022"
+  "\027\n\017start_timestamp\030\001 \001(\r\022\025\n\rend_timestam"
+  "p\030\002 \001(\r\022*\n\nrank_stats\030\003 \003(\0132\026.CMsgHeroRo"
+  "leRankStats\"\223\002\n\024CMsgMapStatsSnapshot\022\021\n\t"
+  "timestamp\030\001 \001(\r\022\026\n\016lotuses_gained\030\002 \001(\004\022"
+  "\033\n\023wisdom_runes_gained\030\003 \001(\004\022\030\n\020roshan_k"
+  "ills_day\030\004 \001(\004\022\032\n\022roshan_kills_night\030\005 \001"
+  "(\004\022\024\n\014portals_used\030\006 \001(\004\022\026\n\016watchers_tak"
+  "en\030\007 \001(\004\022\027\n\017tormentor_kills\030\010 \001(\004\022\031\n\021out"
+  "posts_captured\030\t \001(\004\022\033\n\023shield_runes_gai"
+  "ned\030\n \001(\004\"\224\001\n\022CMsgGlobalMapStats\022&\n\007curr"
+  "ent\030\001 \001(\0132\025.CMsgMapStatsSnapshot\022+\n\014wind"
+  "ow_start\030\002 \001(\0132\025.CMsgMapStatsSnapshot\022)\n"
+  "\nwindow_end\030\003 \001(\0132\025.CMsgMapStatsSnapshot"
+  "\"F\n\017CMsgTrackedStat\022\027\n\017tracked_stat_id\030\001"
+  " \001(\r\022\032\n\022tracked_stat_value\030\002 \001(\005\"\243\t\n CMs"
+  "gDOTAClaimEventActionResponse\022E\n\006result\030"
+  "\001 \001(\0162,.CMsgDOTAClaimEventActionResponse"
+  ".ResultCode:\007Success\022K\n\016reward_results\030\002"
+  " \003(\01323.CMsgDOTAClaimEventActionResponse."
+  "GrantedRewardData\022\021\n\taction_id\030\003 \001(\r\032@\n\025"
+  "MysteryItemRewardData\022\020\n\010item_def\030\001 \001(\r\022"
+  "\025\n\ritem_category\030\002 \001(\r\032&\n\022LootListReward"
+  "Data\022\020\n\010item_def\030\001 \003(\r\032E\n\024ActionListRewa"
+  "rdData\022\021\n\taction_id\030\001 \001(\r\022\032\n\022result_rewa"
+  "rd_data\030\002 \001(\014\032\254\001\n\030OverworldTokenRewardDa"
+  "ta\022X\n\006tokens\030\001 \003(\0132H.CMsgDOTAClaimEventA"
+  "ctionResponse.OverworldTokenRewardData.T"
+  "okenQuantity\0326\n\rTokenQuantity\022\020\n\010token_i"
+  "d\030\001 \001(\r\022\023\n\013token_count\030\002 \001(\r\032\311\001\n\037Monster"
+  "HunterMaterialRewardData\022e\n\tmaterials\030\001 "
+  "\003(\0132R.CMsgDOTAClaimEventActionResponse.M"
+  "onsterHunterMaterialRewardData.MaterialQ"
+  "uantity\032\?\n\020MaterialQuantity\022\023\n\013material_"
+  "id\030\001 \001(\r\022\026\n\016material_count\030\002 \001(\r\032{\n\021Gran"
+  "tedRewardData\022\023\n\013grant_index\030\001 \001(\r\022\023\n\013sc"
+  "ore_index\030\002 \001(\r\022\024\n\014reward_index\030\003 \001(\r\022\023\n"
+  "\013reward_data\030\004 \001(\014\022\021\n\taction_id\030\005 \001(\r\"\256\002"
+  "\n\nResultCode\022\013\n\007Success\020\000\022\020\n\014InvalidEven"
+  "t\020\001\022\022\n\016EventNotActive\020\002\022\021\n\rInvalidAction"
+  "\020\003\022\017\n\013ServerError\020\004\022\026\n\022InsufficientPoint"
+  "s\020\005\022\024\n\020InsufficentLevel\020\006\022\022\n\016AlreadyClai"
+  "med\020\007\022\022\n\016SDOLockFailure\020\010\022\022\n\016SDOLoadFail"
+  "ure\020\t\022\021\n\rEventNotOwned\020\n\022\013\n\007Timeout\020\013\022\034\n"
+  "\030RequiresPlusSubscription\020\014\022\017\n\013InvalidIt"
+  "em\020\r\022\020\n\014AsyncRewards\020\016\"[\n\036CMsgClientToGC"
+  "DotaLabsFeedback\022\020\n\010language\030\001 \001(\r\022\025\n\rfe"
+  "edback_item\030\002 \001(\r\022\020\n\010feedback\030\003 \001(\t\"\213\002\n&"
+  "CMsgClientToGCDotaLabsFeedbackResponse\022U"
+  "\n\010response\030\001 \001(\01621.CMsgClientToGCDotaLab"
+  "sFeedbackResponse.EResponse:\020k_eInternal"
+  "Error\"\211\001\n\tEResponse\022\024\n\020k_eInternalError\020"
+  "\000\022\016\n\nk_eSuccess\020\001\022\016\n\nk_eTooBusy\020\002\022\017\n\013k_e"
+  "Disabled\020\003\022\016\n\nk_eTimeout\020\004\022\021\n\rk_eNotAllo"
+  "wed\020\005\022\022\n\016k_eInvalidItem\020\006\"\207\003\n\031CDotaMsg_P"
+  "redictionResult\022\022\n\naccount_id\030\001 \001(\r\022\020\n\010m"
+  "atch_id\030\002 \001(\004\022\017\n\007correct\030\003 \001(\010\022:\n\013predic"
+  "tions\030\004 \003(\0132%.CDotaMsg_PredictionResult."
+  "Prediction\032\366\001\n\nPrediction\022\020\n\010item_def\030\001 "
+  "\001(\r\022\023\n\013num_correct\030\002 \001(\r\022\021\n\tnum_fails\030\003 "
+  "\001(\r\022T\n\006result\030\004 \001(\0162-.CDotaMsg_Predictio"
+  "nResult.Prediction.EResult:\025k_eResult_It"
+  "emGranted\022\031\n\021granted_item_defs\030\006 \003(\r\"=\n\007"
+  "EResult\022\031\n\025k_eResult_ItemGranted\020\001\022\027\n\023k_"
+  "eResult_Destroyed\020\002\"\354\030\n#CDotaMsgStructur"
+  "edTooltipProperties\022\036\n\026ability_name_loc_"
+  "token\030\001 \001(\t\022`\n\020ability_category\030\002 \001(\0162<."
+  "CDotaMsgStructuredTooltipProperties.EAbi"
+  "lityTooltipCategory:\010kPassive\022\025\n\rability"
+  "_level\030\003 \001(\005\022\031\n\021current_mana_cost\030\004 \001(\005\022"
+  "\033\n\023current_health_cost\030\005 \001(\005\022\030\n\020current_"
+  "cooldown\030\006 \001(\002\022%\n\035summary_description_lo"
+  "c_token\030\007 \001(\t\022X\n summary_description_emb"
+  "ed_values\030\010 \003(\0132..CDotaMsgStructuredTool"
+  "tipProperties.Attribute\022*\n\"summary_descr"
+  "iption_surfaced_lines\030\t \003(\t\022}\n*summary_d"
+  "escription_embedded_sub_abilities\030\n \003(\0132"
+  "I.CDotaMsgStructuredTooltipProperties.Su"
+  "mmaryDescriptionEmbeddedSubAbility\022(\n su"
+  "mmary_description_aghs_scepter\030\013 \001(\t\022&\n\036"
+  "summary_description_aghs_shard\030\014 \001(\t\022\031\n\021"
+  "preview_video_url\030\r \001(\t\022H\n\006chunks\030\024 \003(\0132"
+  "8.CDotaMsgStructuredTooltipProperties.To"
+  "oltipContentChunk\032=\n\023AttributeValueValue"
+  "\022\r\n\005value\030\001 \001(\002\022\027\n\017is_active_value\030\002 \001(\010"
+  "\032g\n\025AttributeValue_Single\022N\n\014single_valu"
+  "e\030\001 \001(\01328.CDotaMsgStructuredTooltipPrope"
+  "rties.AttributeValueValue\032c\n\027AttributeVa"
+  "lue_Variable\022H\n\006values\030\001 \003(\01328.CDotaMsgS"
+  "tructuredTooltipProperties.AttributeValu"
+  "eValue\032\246\001\n\024AttributeValue_Delta\022F\n\004prev\030"
+  "\001 \001(\01328.CDotaMsgStructuredTooltipPropert"
+  "ies.AttributeValueValue\022F\n\004next\030\002 \001(\01328."
   "CDotaMsgStructuredTooltipProperties.Attr"
-  "ibuteValue\"\215\002\n\016EAttributeType\022\014\n\010kUnknow"
-  "n\020\000\022\r\n\tkDuration\020\001\022\r\n\tkManaCost\020\002\022\017\n\013kHe"
-  "althCost\020\003\022\016\n\nkCastRange\020\004\022\027\n\023kAreaOfEff"
-  "ectRadius\020\005\022\023\n\017kPhysicalDamage\020\006\022\022\n\016kMag"
-  "icalDamage\020\007\022\017\n\013kPureDamage\020\010\022\r\n\tkCooldo"
-  "wn\020\t\022\025\n\021kDebuffPercentage\020\n\022\020\n\014kDebuffVa"
-  "lue\020\013\022\023\n\017kBuffPercentage\020\014\022\016\n\nkBuffValue"
-  "\020\r*U\n\021ESpecialPingValue\022\037\n\032k_ESpecialPin"
+  "ibuteValueValue\032\212\002\n\016AttributeValue\022L\n\006si"
+  "ngle\030\001 \001(\0132:.CDotaMsgStructuredTooltipPr"
+  "operties.AttributeValue_SingleH\000\022P\n\010vari"
+  "able\030\002 \001(\0132<.CDotaMsgStructuredTooltipPr"
+  "operties.AttributeValue_VariableH\000\022J\n\005de"
+  "lta\030\003 \001(\01329.CDotaMsgStructuredTooltipPro"
+  "perties.AttributeValue_DeltaH\000B\014\n\nattr_v"
+  "alue\032\320\001\n\tAttribute\022\025\n\rinternal_name\030\001 \001("
+  "\t\022\033\n\023localized_name_text\030\002 \001(\t\022K\n\004type\030\003"
+  " \001(\01623.CDotaMsgStructuredTooltipProperti"
+  "es.EAttributeType:\010kUnknown\022B\n\005value\030\004 \001"
+  "(\01323.CDotaMsgStructuredTooltipProperties"
+  ".AttributeValue\032\032\n\030AttributeGroupDesc_Ba"
+  "sic\032N\n\033AttributeGroupDesc_Specific\022\027\n\017ti"
+  "tle_loc_token\030\001 \001(\t\022\026\n\016desc_loc_token\030\002 "
+  "\001(\t\032\256\002\n\031AttributeGroupDescription\022N\n\005bas"
+  "ic\030\001 \001(\0132=.CDotaMsgStructuredTooltipProp"
+  "erties.AttributeGroupDesc_BasicH\000\022X\n\017cha"
+  "racteristics\030\002 \001(\0132=.CDotaMsgStructuredT"
+  "ooltipProperties.AttributeGroupDesc_Basi"
+  "cH\000\022T\n\010specific\030\003 \001(\0132@.CDotaMsgStructur"
+  "edTooltipProperties.AttributeGroupDesc_S"
+  "pecificH\000B\021\n\017attr_group_desc\032\242\001\n\016Attribu"
+  "teGroup\022L\n\004desc\030\001 \001(\0132>.CDotaMsgStructur"
+  "edTooltipProperties.AttributeGroupDescri"
+  "ption\022B\n\nattributes\030\002 \003(\0132..CDotaMsgStru"
+  "cturedTooltipProperties.Attribute\032b\n\033Con"
+  "tentChunk_AttributeGroup\022C\n\006groups\030\001 \003(\013"
+  "23.CDotaMsgStructuredTooltipProperties.A"
+  "ttributeGroup\032\203\001\n\023TooltipContentChunk\022[\n"
+  "\017attribute_group\030\001 \001(\0132@.CDotaMsgStructu"
+  "redTooltipProperties.ContentChunk_Attrib"
+  "uteGroupH\000B\017\n\rcontent_chunk\032\200\001\n$SummaryD"
+  "escriptionEmbeddedSubAbility\022\036\n\026ability_"
+  "name_loc_token\030\001 \001(\t\022\036\n\026ability_desc_loc"
+  "_token\030\002 \001(\t\022\030\n\020ability_icon_url\030\003 \001(\t\"S"
+  "\n\027EAbilityTooltipCategory\022\014\n\010kPassive\020\001\022"
+  "\r\n\tkAutocast\020\002\022\013\n\007kToggle\020\003\022\016\n\nkChannele"
+  "d\020\004\"\334\003\n\016EAttributeType\022\014\n\010kUnknown\020\000\022\r\n\t"
+  "kDuration\020\001\022\r\n\tkManaCost\020\002\022\017\n\013kHealthCos"
+  "t\020\003\022\016\n\nkCastRange\020\004\022\027\n\023kAreaOfEffectRadi"
+  "us\020\005\022\023\n\017kPhysicalDamage\020\006\022\022\n\016kMagicalDam"
+  "age\020\007\022\017\n\013kPureDamage\020\010\022\r\n\tkCooldown\020\t\022\025\n"
+  "\021kDebuffPercentage\020\n\022\020\n\014kDebuffValue\020\013\022\023"
+  "\n\017kBuffPercentage\020\014\022\016\n\nkBuffValue\020\r\022\034\n\030k"
+  "MagicalDamagePercentage\020\016\022\025\n\021kHealthPerc"
+  "entage\020\017\022\023\n\017kManaPercentage\020\020\022\017\n\013kNumCha"
+  "rges\020\021\022\023\n\017kDebuffDuration\020\022\022\021\n\rkBuffDura"
+  "tion\020\023\022\031\n\025kAbilityDefinedDamage\020\024\022\023\n\017kDi"
+  "spellability\020\025\022\032\n\026kSpellImmunityPiercing"
+  "\020\026*U\n\021ESpecialPingValue\022\037\n\032k_ESpecialPin"
   "gValue_NoData\020\376\177\022\037\n\032k_ESpecialPingValue_"
   "Failed\020\377\177*\206\005\n\022EDOTAGCSessionNeed\022 \n\034k_ED"
   "OTAGCSessionNeed_Unknown\020\000\022,\n(k_EDOTAGCS"
@@ -8201,9 +8156,9 @@ static const ::_pbi::DescriptorTable* const descriptor_table_dota_5fgcmessages_5
 };
 static ::_pbi::once_flag descriptor_table_dota_5fgcmessages_5fcommon_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_dota_5fgcmessages_5fcommon_2eproto = {
-    false, false, 41426, descriptor_table_protodef_dota_5fgcmessages_5fcommon_2eproto,
+    false, false, 41546, descriptor_table_protodef_dota_5fgcmessages_5fcommon_2eproto,
     "dota_gcmessages_common.proto",
-    &descriptor_table_dota_5fgcmessages_5fcommon_2eproto_once, descriptor_table_dota_5fgcmessages_5fcommon_2eproto_deps, 4, 187,
+    &descriptor_table_dota_5fgcmessages_5fcommon_2eproto_once, descriptor_table_dota_5fgcmessages_5fcommon_2eproto_deps, 4, 185,
     schemas, file_default_instances, TableStruct_dota_5fgcmessages_5fcommon_2eproto::offsets,
     file_level_metadata_dota_5fgcmessages_5fcommon_2eproto, file_level_enum_descriptors_dota_5fgcmessages_5fcommon_2eproto,
     file_level_service_descriptors_dota_5fgcmessages_5fcommon_2eproto,
@@ -8558,6 +8513,7 @@ bool CMsgServerToGCRequestPlayerRecentAccomplishmentsResponse_EResponse_IsValid(
     case 1:
     case 2:
     case 3:
+    case 4:
       return true;
     default:
       return false;
@@ -8569,6 +8525,7 @@ constexpr CMsgServerToGCRequestPlayerRecentAccomplishmentsResponse_EResponse CMs
 constexpr CMsgServerToGCRequestPlayerRecentAccomplishmentsResponse_EResponse CMsgServerToGCRequestPlayerRecentAccomplishmentsResponse::k_eSuccess;
 constexpr CMsgServerToGCRequestPlayerRecentAccomplishmentsResponse_EResponse CMsgServerToGCRequestPlayerRecentAccomplishmentsResponse::k_eTooBusy;
 constexpr CMsgServerToGCRequestPlayerRecentAccomplishmentsResponse_EResponse CMsgServerToGCRequestPlayerRecentAccomplishmentsResponse::k_eDisabled;
+constexpr CMsgServerToGCRequestPlayerRecentAccomplishmentsResponse_EResponse CMsgServerToGCRequestPlayerRecentAccomplishmentsResponse::k_eForbidden;
 constexpr CMsgServerToGCRequestPlayerRecentAccomplishmentsResponse_EResponse CMsgServerToGCRequestPlayerRecentAccomplishmentsResponse::EResponse_MIN;
 constexpr CMsgServerToGCRequestPlayerRecentAccomplishmentsResponse_EResponse CMsgServerToGCRequestPlayerRecentAccomplishmentsResponse::EResponse_MAX;
 constexpr int CMsgServerToGCRequestPlayerRecentAccomplishmentsResponse::EResponse_ARRAYSIZE;
@@ -8672,9 +8629,34 @@ constexpr CDotaMsg_PredictionResult_Prediction_EResult CDotaMsg_PredictionResult
 constexpr CDotaMsg_PredictionResult_Prediction_EResult CDotaMsg_PredictionResult_Prediction::EResult_MAX;
 constexpr int CDotaMsg_PredictionResult_Prediction::EResult_ARRAYSIZE;
 #endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* CDotaMsgStructuredTooltipProperties_EAttributeType_descriptor() {
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* CDotaMsgStructuredTooltipProperties_EAbilityTooltipCategory_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_dota_5fgcmessages_5fcommon_2eproto);
   return file_level_enum_descriptors_dota_5fgcmessages_5fcommon_2eproto[16];
+}
+bool CDotaMsgStructuredTooltipProperties_EAbilityTooltipCategory_IsValid(int value) {
+  switch (value) {
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+      return true;
+    default:
+      return false;
+  }
+}
+
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+constexpr CDotaMsgStructuredTooltipProperties_EAbilityTooltipCategory CDotaMsgStructuredTooltipProperties::kPassive;
+constexpr CDotaMsgStructuredTooltipProperties_EAbilityTooltipCategory CDotaMsgStructuredTooltipProperties::kAutocast;
+constexpr CDotaMsgStructuredTooltipProperties_EAbilityTooltipCategory CDotaMsgStructuredTooltipProperties::kToggle;
+constexpr CDotaMsgStructuredTooltipProperties_EAbilityTooltipCategory CDotaMsgStructuredTooltipProperties::kChanneled;
+constexpr CDotaMsgStructuredTooltipProperties_EAbilityTooltipCategory CDotaMsgStructuredTooltipProperties::EAbilityTooltipCategory_MIN;
+constexpr CDotaMsgStructuredTooltipProperties_EAbilityTooltipCategory CDotaMsgStructuredTooltipProperties::EAbilityTooltipCategory_MAX;
+constexpr int CDotaMsgStructuredTooltipProperties::EAbilityTooltipCategory_ARRAYSIZE;
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* CDotaMsgStructuredTooltipProperties_EAttributeType_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_dota_5fgcmessages_5fcommon_2eproto);
+  return file_level_enum_descriptors_dota_5fgcmessages_5fcommon_2eproto[17];
 }
 bool CDotaMsgStructuredTooltipProperties_EAttributeType_IsValid(int value) {
   switch (value) {
@@ -8692,6 +8674,15 @@ bool CDotaMsgStructuredTooltipProperties_EAttributeType_IsValid(int value) {
     case 11:
     case 12:
     case 13:
+    case 14:
+    case 15:
+    case 16:
+    case 17:
+    case 18:
+    case 19:
+    case 20:
+    case 21:
+    case 22:
       return true;
     default:
       return false;
@@ -8713,13 +8704,22 @@ constexpr CDotaMsgStructuredTooltipProperties_EAttributeType CDotaMsgStructuredT
 constexpr CDotaMsgStructuredTooltipProperties_EAttributeType CDotaMsgStructuredTooltipProperties::kDebuffValue;
 constexpr CDotaMsgStructuredTooltipProperties_EAttributeType CDotaMsgStructuredTooltipProperties::kBuffPercentage;
 constexpr CDotaMsgStructuredTooltipProperties_EAttributeType CDotaMsgStructuredTooltipProperties::kBuffValue;
+constexpr CDotaMsgStructuredTooltipProperties_EAttributeType CDotaMsgStructuredTooltipProperties::kMagicalDamagePercentage;
+constexpr CDotaMsgStructuredTooltipProperties_EAttributeType CDotaMsgStructuredTooltipProperties::kHealthPercentage;
+constexpr CDotaMsgStructuredTooltipProperties_EAttributeType CDotaMsgStructuredTooltipProperties::kManaPercentage;
+constexpr CDotaMsgStructuredTooltipProperties_EAttributeType CDotaMsgStructuredTooltipProperties::kNumCharges;
+constexpr CDotaMsgStructuredTooltipProperties_EAttributeType CDotaMsgStructuredTooltipProperties::kDebuffDuration;
+constexpr CDotaMsgStructuredTooltipProperties_EAttributeType CDotaMsgStructuredTooltipProperties::kBuffDuration;
+constexpr CDotaMsgStructuredTooltipProperties_EAttributeType CDotaMsgStructuredTooltipProperties::kAbilityDefinedDamage;
+constexpr CDotaMsgStructuredTooltipProperties_EAttributeType CDotaMsgStructuredTooltipProperties::kDispellability;
+constexpr CDotaMsgStructuredTooltipProperties_EAttributeType CDotaMsgStructuredTooltipProperties::kSpellImmunityPiercing;
 constexpr CDotaMsgStructuredTooltipProperties_EAttributeType CDotaMsgStructuredTooltipProperties::EAttributeType_MIN;
 constexpr CDotaMsgStructuredTooltipProperties_EAttributeType CDotaMsgStructuredTooltipProperties::EAttributeType_MAX;
 constexpr int CDotaMsgStructuredTooltipProperties::EAttributeType_ARRAYSIZE;
 #endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* ESpecialPingValue_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_dota_5fgcmessages_5fcommon_2eproto);
-  return file_level_enum_descriptors_dota_5fgcmessages_5fcommon_2eproto[17];
+  return file_level_enum_descriptors_dota_5fgcmessages_5fcommon_2eproto[18];
 }
 bool ESpecialPingValue_IsValid(int value) {
   switch (value) {
@@ -8733,7 +8733,7 @@ bool ESpecialPingValue_IsValid(int value) {
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* EDOTAGCSessionNeed_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_dota_5fgcmessages_5fcommon_2eproto);
-  return file_level_enum_descriptors_dota_5fgcmessages_5fcommon_2eproto[18];
+  return file_level_enum_descriptors_dota_5fgcmessages_5fcommon_2eproto[19];
 }
 bool EDOTAGCSessionNeed_IsValid(int value) {
   switch (value) {
@@ -8759,7 +8759,7 @@ bool EDOTAGCSessionNeed_IsValid(int value) {
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* EDOTAMatchPlayerTimeCustomStat_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_dota_5fgcmessages_5fcommon_2eproto);
-  return file_level_enum_descriptors_dota_5fgcmessages_5fcommon_2eproto[19];
+  return file_level_enum_descriptors_dota_5fgcmessages_5fcommon_2eproto[20];
 }
 bool EDOTAMatchPlayerTimeCustomStat_IsValid(int value) {
   switch (value) {
@@ -8774,7 +8774,7 @@ bool EDOTAMatchPlayerTimeCustomStat_IsValid(int value) {
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* DOTA_TournamentEvents_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_dota_5fgcmessages_5fcommon_2eproto);
-  return file_level_enum_descriptors_dota_5fgcmessages_5fcommon_2eproto[20];
+  return file_level_enum_descriptors_dota_5fgcmessages_5fcommon_2eproto[21];
 }
 bool DOTA_TournamentEvents_IsValid(int value) {
   switch (value) {
@@ -8798,7 +8798,7 @@ bool DOTA_TournamentEvents_IsValid(int value) {
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* EBroadcastTimelineEvent_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_dota_5fgcmessages_5fcommon_2eproto);
-  return file_level_enum_descriptors_dota_5fgcmessages_5fcommon_2eproto[21];
+  return file_level_enum_descriptors_dota_5fgcmessages_5fcommon_2eproto[22];
 }
 bool EBroadcastTimelineEvent_IsValid(int value) {
   switch (value) {
@@ -8819,7 +8819,7 @@ bool EBroadcastTimelineEvent_IsValid(int value) {
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* ECustomGameWhitelistState_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_dota_5fgcmessages_5fcommon_2eproto);
-  return file_level_enum_descriptors_dota_5fgcmessages_5fcommon_2eproto[22];
+  return file_level_enum_descriptors_dota_5fgcmessages_5fcommon_2eproto[23];
 }
 bool ECustomGameWhitelistState_IsValid(int value) {
   switch (value) {
@@ -8834,7 +8834,7 @@ bool ECustomGameWhitelistState_IsValid(int value) {
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* EDOTATriviaQuestionCategory_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_dota_5fgcmessages_5fcommon_2eproto);
-  return file_level_enum_descriptors_dota_5fgcmessages_5fcommon_2eproto[23];
+  return file_level_enum_descriptors_dota_5fgcmessages_5fcommon_2eproto[24];
 }
 bool EDOTATriviaQuestionCategory_IsValid(int value) {
   switch (value) {
@@ -8864,7 +8864,7 @@ bool EDOTATriviaQuestionCategory_IsValid(int value) {
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* EOverwatchConviction_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_dota_5fgcmessages_5fcommon_2eproto);
-  return file_level_enum_descriptors_dota_5fgcmessages_5fcommon_2eproto[24];
+  return file_level_enum_descriptors_dota_5fgcmessages_5fcommon_2eproto[25];
 }
 bool EOverwatchConviction_IsValid(int value) {
   switch (value) {
@@ -8880,7 +8880,7 @@ bool EOverwatchConviction_IsValid(int value) {
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* EHeroRelicRarity_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_dota_5fgcmessages_5fcommon_2eproto);
-  return file_level_enum_descriptors_dota_5fgcmessages_5fcommon_2eproto[25];
+  return file_level_enum_descriptors_dota_5fgcmessages_5fcommon_2eproto[26];
 }
 bool EHeroRelicRarity_IsValid(int value) {
   switch (value) {
@@ -8895,7 +8895,7 @@ bool EHeroRelicRarity_IsValid(int value) {
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* EStickerbookAuditAction_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_dota_5fgcmessages_5fcommon_2eproto);
-  return file_level_enum_descriptors_dota_5fgcmessages_5fcommon_2eproto[26];
+  return file_level_enum_descriptors_dota_5fgcmessages_5fcommon_2eproto[27];
 }
 bool EStickerbookAuditAction_IsValid(int value) {
   switch (value) {
@@ -8912,7 +8912,7 @@ bool EStickerbookAuditAction_IsValid(int value) {
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* EStickerbookPageType_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_dota_5fgcmessages_5fcommon_2eproto);
-  return file_level_enum_descriptors_dota_5fgcmessages_5fcommon_2eproto[27];
+  return file_level_enum_descriptors_dota_5fgcmessages_5fcommon_2eproto[28];
 }
 bool EStickerbookPageType_IsValid(int value) {
   switch (value) {
@@ -8927,7 +8927,7 @@ bool EStickerbookPageType_IsValid(int value) {
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* ENewBloomGiftingResponse_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_dota_5fgcmessages_5fcommon_2eproto);
-  return file_level_enum_descriptors_dota_5fgcmessages_5fcommon_2eproto[28];
+  return file_level_enum_descriptors_dota_5fgcmessages_5fcommon_2eproto[29];
 }
 bool ENewBloomGiftingResponse_IsValid(int value) {
   switch (value) {
@@ -64124,7 +64124,7 @@ class CMsgGameDataItemAbilityList_ItemAbilityInfo::_Internal {
  public:
   using HasBits = decltype(std::declval<CMsgGameDataItemAbilityList_ItemAbilityInfo>()._impl_._has_bits_);
   static void set_has_id(HasBits* has_bits) {
-    (*has_bits)[0] |= 128u;
+    (*has_bits)[0] |= 256u;
   }
   static void set_has_name(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
@@ -64146,6 +64146,9 @@ class CMsgGameDataItemAbilityList_ItemAbilityInfo::_Internal {
   }
   static void set_has_is_lategame_suggested(HasBits* has_bits) {
     (*has_bits)[0] |= 64u;
+  }
+  static void set_has_is_innate(HasBits* has_bits) {
+    (*has_bits)[0] |= 128u;
   }
 };
 
@@ -64169,6 +64172,7 @@ CMsgGameDataItemAbilityList_ItemAbilityInfo::CMsgGameDataItemAbilityList_ItemAbi
     , decltype(_impl_.is_pregame_suggested_){}
     , decltype(_impl_.is_earlygame_suggested_){}
     , decltype(_impl_.is_lategame_suggested_){}
+    , decltype(_impl_.is_innate_){}
     , decltype(_impl_.id_){}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
@@ -64217,6 +64221,7 @@ inline void CMsgGameDataItemAbilityList_ItemAbilityInfo::SharedCtor(
     , decltype(_impl_.is_pregame_suggested_){false}
     , decltype(_impl_.is_earlygame_suggested_){false}
     , decltype(_impl_.is_lategame_suggested_){false}
+    , decltype(_impl_.is_innate_){false}
     , decltype(_impl_.id_){-1}
   };
   _impl_.name_.InitDefault();
@@ -64275,10 +64280,10 @@ void CMsgGameDataItemAbilityList_ItemAbilityInfo::Clear() {
   }
   if (cached_has_bits & 0x000000f8u) {
     ::memset(&_impl_.neutral_item_tier_, 0, static_cast<size_t>(
-        reinterpret_cast<char*>(&_impl_.is_lategame_suggested_) -
-        reinterpret_cast<char*>(&_impl_.neutral_item_tier_)) + sizeof(_impl_.is_lategame_suggested_));
-    _impl_.id_ = -1;
+        reinterpret_cast<char*>(&_impl_.is_innate_) -
+        reinterpret_cast<char*>(&_impl_.neutral_item_tier_)) + sizeof(_impl_.is_innate_));
   }
+  _impl_.id_ = -1;
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -64384,6 +64389,15 @@ const char* CMsgGameDataItemAbilityList_ItemAbilityInfo::_InternalParse(const ch
         } else
           goto handle_unusual;
         continue;
+      // optional bool is_innate = 10;
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 80)) {
+          _Internal::set_has_is_innate(&has_bits);
+          _impl_.is_innate_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
       default:
         goto handle_unusual;
     }  // switch
@@ -64416,7 +64430,7 @@ uint8_t* CMsgGameDataItemAbilityList_ItemAbilityInfo::_InternalSerialize(
 
   cached_has_bits = _impl_._has_bits_[0];
   // optional int32 id = 1 [default = -1];
-  if (cached_has_bits & 0x00000080u) {
+  if (cached_has_bits & 0x00000100u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_id(), target);
   }
@@ -64481,6 +64495,12 @@ uint8_t* CMsgGameDataItemAbilityList_ItemAbilityInfo::_InternalSerialize(
     const auto& repfield = this->_internal_recipes(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(9, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  // optional bool is_innate = 10;
+  if (cached_has_bits & 0x00000080u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteBoolToArray(10, this->_internal_is_innate(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -64549,12 +64569,17 @@ size_t CMsgGameDataItemAbilityList_ItemAbilityInfo::ByteSizeLong() const {
       total_size += 1 + 1;
     }
 
-    // optional int32 id = 1 [default = -1];
+    // optional bool is_innate = 10;
     if (cached_has_bits & 0x00000080u) {
-      total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_id());
+      total_size += 1 + 1;
     }
 
   }
+  // optional int32 id = 1 [default = -1];
+  if (cached_has_bits & 0x00000100u) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_id());
+  }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
@@ -64598,9 +64623,12 @@ void CMsgGameDataItemAbilityList_ItemAbilityInfo::MergeImpl(::PROTOBUF_NAMESPACE
       _this->_impl_.is_lategame_suggested_ = from._impl_.is_lategame_suggested_;
     }
     if (cached_has_bits & 0x00000080u) {
-      _this->_impl_.id_ = from._impl_.id_;
+      _this->_impl_.is_innate_ = from._impl_.is_innate_;
     }
     _this->_impl_._has_bits_[0] |= cached_has_bits;
+  }
+  if (cached_has_bits & 0x00000100u) {
+    _this->_internal_set_id(from._internal_id());
   }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -64636,8 +64664,8 @@ void CMsgGameDataItemAbilityList_ItemAbilityInfo::InternalSwap(CMsgGameDataItemA
       &other->_impl_.name_english_loc_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(CMsgGameDataItemAbilityList_ItemAbilityInfo, _impl_.is_lategame_suggested_)
-      + sizeof(CMsgGameDataItemAbilityList_ItemAbilityInfo::_impl_.is_lategame_suggested_)
+      PROTOBUF_FIELD_OFFSET(CMsgGameDataItemAbilityList_ItemAbilityInfo, _impl_.is_innate_)
+      + sizeof(CMsgGameDataItemAbilityList_ItemAbilityInfo::_impl_.is_innate_)
       - PROTOBUF_FIELD_OFFSET(CMsgGameDataItemAbilityList_ItemAbilityInfo, _impl_.neutral_item_tier_)>(
           reinterpret_cast<char*>(&_impl_.neutral_item_tier_),
           reinterpret_cast<char*>(&other->_impl_.neutral_item_tier_));
@@ -74119,476 +74147,20 @@ void CDotaMsgStructuredTooltipProperties_AttributeValue::InternalSwap(CDotaMsgSt
 
 // ===================================================================
 
-class CDotaMsgStructuredTooltipProperties_FacetDisplayProperties::_Internal {
- public:
-  using HasBits = decltype(std::declval<CDotaMsgStructuredTooltipProperties_FacetDisplayProperties>()._impl_._has_bits_);
-  static void set_has_facet_name_loc_token(HasBits* has_bits) {
-    (*has_bits)[0] |= 1u;
-  }
-  static void set_has_facet_desc_loc_token(HasBits* has_bits) {
-    (*has_bits)[0] |= 2u;
-  }
-  static void set_has_facet_icon_style_name(HasBits* has_bits) {
-    (*has_bits)[0] |= 4u;
-  }
-  static void set_has_facet_color_style_name(HasBits* has_bits) {
-    (*has_bits)[0] |= 8u;
-  }
-  static void set_has_facet_gradient_style_name(HasBits* has_bits) {
-    (*has_bits)[0] |= 16u;
-  }
-};
-
-CDotaMsgStructuredTooltipProperties_FacetDisplayProperties::CDotaMsgStructuredTooltipProperties_FacetDisplayProperties(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:CDotaMsgStructuredTooltipProperties.FacetDisplayProperties)
-}
-CDotaMsgStructuredTooltipProperties_FacetDisplayProperties::CDotaMsgStructuredTooltipProperties_FacetDisplayProperties(const CDotaMsgStructuredTooltipProperties_FacetDisplayProperties& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  CDotaMsgStructuredTooltipProperties_FacetDisplayProperties* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){from._impl_._has_bits_}
-    , /*decltype(_impl_._cached_size_)*/{}
-    , decltype(_impl_.facet_name_loc_token_){}
-    , decltype(_impl_.facet_desc_loc_token_){}
-    , decltype(_impl_.facet_icon_style_name_){}
-    , decltype(_impl_.facet_color_style_name_){}
-    , decltype(_impl_.facet_gradient_style_name_){}};
-
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.facet_name_loc_token_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.facet_name_loc_token_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (from._internal_has_facet_name_loc_token()) {
-    _this->_impl_.facet_name_loc_token_.Set(from._internal_facet_name_loc_token(), 
-      _this->GetArenaForAllocation());
-  }
-  _impl_.facet_desc_loc_token_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.facet_desc_loc_token_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (from._internal_has_facet_desc_loc_token()) {
-    _this->_impl_.facet_desc_loc_token_.Set(from._internal_facet_desc_loc_token(), 
-      _this->GetArenaForAllocation());
-  }
-  _impl_.facet_icon_style_name_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.facet_icon_style_name_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (from._internal_has_facet_icon_style_name()) {
-    _this->_impl_.facet_icon_style_name_.Set(from._internal_facet_icon_style_name(), 
-      _this->GetArenaForAllocation());
-  }
-  _impl_.facet_color_style_name_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.facet_color_style_name_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (from._internal_has_facet_color_style_name()) {
-    _this->_impl_.facet_color_style_name_.Set(from._internal_facet_color_style_name(), 
-      _this->GetArenaForAllocation());
-  }
-  _impl_.facet_gradient_style_name_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.facet_gradient_style_name_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (from._internal_has_facet_gradient_style_name()) {
-    _this->_impl_.facet_gradient_style_name_.Set(from._internal_facet_gradient_style_name(), 
-      _this->GetArenaForAllocation());
-  }
-  // @@protoc_insertion_point(copy_constructor:CDotaMsgStructuredTooltipProperties.FacetDisplayProperties)
-}
-
-inline void CDotaMsgStructuredTooltipProperties_FacetDisplayProperties::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){}
-    , /*decltype(_impl_._cached_size_)*/{}
-    , decltype(_impl_.facet_name_loc_token_){}
-    , decltype(_impl_.facet_desc_loc_token_){}
-    , decltype(_impl_.facet_icon_style_name_){}
-    , decltype(_impl_.facet_color_style_name_){}
-    , decltype(_impl_.facet_gradient_style_name_){}
-  };
-  _impl_.facet_name_loc_token_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.facet_name_loc_token_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.facet_desc_loc_token_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.facet_desc_loc_token_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.facet_icon_style_name_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.facet_icon_style_name_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.facet_color_style_name_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.facet_color_style_name_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.facet_gradient_style_name_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.facet_gradient_style_name_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-}
-
-CDotaMsgStructuredTooltipProperties_FacetDisplayProperties::~CDotaMsgStructuredTooltipProperties_FacetDisplayProperties() {
-  // @@protoc_insertion_point(destructor:CDotaMsgStructuredTooltipProperties.FacetDisplayProperties)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
-  SharedDtor();
-}
-
-inline void CDotaMsgStructuredTooltipProperties_FacetDisplayProperties::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.facet_name_loc_token_.Destroy();
-  _impl_.facet_desc_loc_token_.Destroy();
-  _impl_.facet_icon_style_name_.Destroy();
-  _impl_.facet_color_style_name_.Destroy();
-  _impl_.facet_gradient_style_name_.Destroy();
-}
-
-void CDotaMsgStructuredTooltipProperties_FacetDisplayProperties::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void CDotaMsgStructuredTooltipProperties_FacetDisplayProperties::Clear() {
-// @@protoc_insertion_point(message_clear_start:CDotaMsgStructuredTooltipProperties.FacetDisplayProperties)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x0000001fu) {
-    if (cached_has_bits & 0x00000001u) {
-      _impl_.facet_name_loc_token_.ClearNonDefaultToEmpty();
-    }
-    if (cached_has_bits & 0x00000002u) {
-      _impl_.facet_desc_loc_token_.ClearNonDefaultToEmpty();
-    }
-    if (cached_has_bits & 0x00000004u) {
-      _impl_.facet_icon_style_name_.ClearNonDefaultToEmpty();
-    }
-    if (cached_has_bits & 0x00000008u) {
-      _impl_.facet_color_style_name_.ClearNonDefaultToEmpty();
-    }
-    if (cached_has_bits & 0x00000010u) {
-      _impl_.facet_gradient_style_name_.ClearNonDefaultToEmpty();
-    }
-  }
-  _impl_._has_bits_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* CDotaMsgStructuredTooltipProperties_FacetDisplayProperties::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  _Internal::HasBits has_bits{};
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // optional string facet_name_loc_token = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_facet_name_loc_token();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          #ifndef NDEBUG
-          ::_pbi::VerifyUTF8(str, "CDotaMsgStructuredTooltipProperties.FacetDisplayProperties.facet_name_loc_token");
-          #endif  // !NDEBUG
-        } else
-          goto handle_unusual;
-        continue;
-      // optional string facet_desc_loc_token = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          auto str = _internal_mutable_facet_desc_loc_token();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          #ifndef NDEBUG
-          ::_pbi::VerifyUTF8(str, "CDotaMsgStructuredTooltipProperties.FacetDisplayProperties.facet_desc_loc_token");
-          #endif  // !NDEBUG
-        } else
-          goto handle_unusual;
-        continue;
-      // optional string facet_icon_style_name = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
-          auto str = _internal_mutable_facet_icon_style_name();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          #ifndef NDEBUG
-          ::_pbi::VerifyUTF8(str, "CDotaMsgStructuredTooltipProperties.FacetDisplayProperties.facet_icon_style_name");
-          #endif  // !NDEBUG
-        } else
-          goto handle_unusual;
-        continue;
-      // optional string facet_color_style_name = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
-          auto str = _internal_mutable_facet_color_style_name();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          #ifndef NDEBUG
-          ::_pbi::VerifyUTF8(str, "CDotaMsgStructuredTooltipProperties.FacetDisplayProperties.facet_color_style_name");
-          #endif  // !NDEBUG
-        } else
-          goto handle_unusual;
-        continue;
-      // optional string facet_gradient_style_name = 5;
-      case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
-          auto str = _internal_mutable_facet_gradient_style_name();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          #ifndef NDEBUG
-          ::_pbi::VerifyUTF8(str, "CDotaMsgStructuredTooltipProperties.FacetDisplayProperties.facet_gradient_style_name");
-          #endif  // !NDEBUG
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  _impl_._has_bits_.Or(has_bits);
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* CDotaMsgStructuredTooltipProperties_FacetDisplayProperties::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:CDotaMsgStructuredTooltipProperties.FacetDisplayProperties)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  cached_has_bits = _impl_._has_bits_[0];
-  // optional string facet_name_loc_token = 1;
-  if (cached_has_bits & 0x00000001u) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->_internal_facet_name_loc_token().data(), static_cast<int>(this->_internal_facet_name_loc_token().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SERIALIZE,
-      "CDotaMsgStructuredTooltipProperties.FacetDisplayProperties.facet_name_loc_token");
-    target = stream->WriteStringMaybeAliased(
-        1, this->_internal_facet_name_loc_token(), target);
-  }
-
-  // optional string facet_desc_loc_token = 2;
-  if (cached_has_bits & 0x00000002u) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->_internal_facet_desc_loc_token().data(), static_cast<int>(this->_internal_facet_desc_loc_token().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SERIALIZE,
-      "CDotaMsgStructuredTooltipProperties.FacetDisplayProperties.facet_desc_loc_token");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_facet_desc_loc_token(), target);
-  }
-
-  // optional string facet_icon_style_name = 3;
-  if (cached_has_bits & 0x00000004u) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->_internal_facet_icon_style_name().data(), static_cast<int>(this->_internal_facet_icon_style_name().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SERIALIZE,
-      "CDotaMsgStructuredTooltipProperties.FacetDisplayProperties.facet_icon_style_name");
-    target = stream->WriteStringMaybeAliased(
-        3, this->_internal_facet_icon_style_name(), target);
-  }
-
-  // optional string facet_color_style_name = 4;
-  if (cached_has_bits & 0x00000008u) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->_internal_facet_color_style_name().data(), static_cast<int>(this->_internal_facet_color_style_name().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SERIALIZE,
-      "CDotaMsgStructuredTooltipProperties.FacetDisplayProperties.facet_color_style_name");
-    target = stream->WriteStringMaybeAliased(
-        4, this->_internal_facet_color_style_name(), target);
-  }
-
-  // optional string facet_gradient_style_name = 5;
-  if (cached_has_bits & 0x00000010u) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->_internal_facet_gradient_style_name().data(), static_cast<int>(this->_internal_facet_gradient_style_name().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SERIALIZE,
-      "CDotaMsgStructuredTooltipProperties.FacetDisplayProperties.facet_gradient_style_name");
-    target = stream->WriteStringMaybeAliased(
-        5, this->_internal_facet_gradient_style_name(), target);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:CDotaMsgStructuredTooltipProperties.FacetDisplayProperties)
-  return target;
-}
-
-size_t CDotaMsgStructuredTooltipProperties_FacetDisplayProperties::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:CDotaMsgStructuredTooltipProperties.FacetDisplayProperties)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x0000001fu) {
-    // optional string facet_name_loc_token = 1;
-    if (cached_has_bits & 0x00000001u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-          this->_internal_facet_name_loc_token());
-    }
-
-    // optional string facet_desc_loc_token = 2;
-    if (cached_has_bits & 0x00000002u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-          this->_internal_facet_desc_loc_token());
-    }
-
-    // optional string facet_icon_style_name = 3;
-    if (cached_has_bits & 0x00000004u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-          this->_internal_facet_icon_style_name());
-    }
-
-    // optional string facet_color_style_name = 4;
-    if (cached_has_bits & 0x00000008u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-          this->_internal_facet_color_style_name());
-    }
-
-    // optional string facet_gradient_style_name = 5;
-    if (cached_has_bits & 0x00000010u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-          this->_internal_facet_gradient_style_name());
-    }
-
-  }
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData CDotaMsgStructuredTooltipProperties_FacetDisplayProperties::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    CDotaMsgStructuredTooltipProperties_FacetDisplayProperties::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CDotaMsgStructuredTooltipProperties_FacetDisplayProperties::GetClassData() const { return &_class_data_; }
-
-
-void CDotaMsgStructuredTooltipProperties_FacetDisplayProperties::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<CDotaMsgStructuredTooltipProperties_FacetDisplayProperties*>(&to_msg);
-  auto& from = static_cast<const CDotaMsgStructuredTooltipProperties_FacetDisplayProperties&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:CDotaMsgStructuredTooltipProperties.FacetDisplayProperties)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  cached_has_bits = from._impl_._has_bits_[0];
-  if (cached_has_bits & 0x0000001fu) {
-    if (cached_has_bits & 0x00000001u) {
-      _this->_internal_set_facet_name_loc_token(from._internal_facet_name_loc_token());
-    }
-    if (cached_has_bits & 0x00000002u) {
-      _this->_internal_set_facet_desc_loc_token(from._internal_facet_desc_loc_token());
-    }
-    if (cached_has_bits & 0x00000004u) {
-      _this->_internal_set_facet_icon_style_name(from._internal_facet_icon_style_name());
-    }
-    if (cached_has_bits & 0x00000008u) {
-      _this->_internal_set_facet_color_style_name(from._internal_facet_color_style_name());
-    }
-    if (cached_has_bits & 0x00000010u) {
-      _this->_internal_set_facet_gradient_style_name(from._internal_facet_gradient_style_name());
-    }
-  }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void CDotaMsgStructuredTooltipProperties_FacetDisplayProperties::CopyFrom(const CDotaMsgStructuredTooltipProperties_FacetDisplayProperties& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:CDotaMsgStructuredTooltipProperties.FacetDisplayProperties)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool CDotaMsgStructuredTooltipProperties_FacetDisplayProperties::IsInitialized() const {
-  return true;
-}
-
-void CDotaMsgStructuredTooltipProperties_FacetDisplayProperties::InternalSwap(CDotaMsgStructuredTooltipProperties_FacetDisplayProperties* other) {
-  using std::swap;
-  auto* lhs_arena = GetArenaForAllocation();
-  auto* rhs_arena = other->GetArenaForAllocation();
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.facet_name_loc_token_, lhs_arena,
-      &other->_impl_.facet_name_loc_token_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.facet_desc_loc_token_, lhs_arena,
-      &other->_impl_.facet_desc_loc_token_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.facet_icon_style_name_, lhs_arena,
-      &other->_impl_.facet_icon_style_name_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.facet_color_style_name_, lhs_arena,
-      &other->_impl_.facet_color_style_name_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.facet_gradient_style_name_, lhs_arena,
-      &other->_impl_.facet_gradient_style_name_, rhs_arena
-  );
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata CDotaMsgStructuredTooltipProperties_FacetDisplayProperties::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_dota_5fgcmessages_5fcommon_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_2eproto_once,
-      file_level_metadata_dota_5fgcmessages_5fcommon_2eproto[176]);
-}
-
-// ===================================================================
-
 class CDotaMsgStructuredTooltipProperties_Attribute::_Internal {
  public:
   using HasBits = decltype(std::declval<CDotaMsgStructuredTooltipProperties_Attribute>()._impl_._has_bits_);
-  static void set_has_name_loc_token(HasBits* has_bits) {
+  static void set_has_internal_name(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
+  }
+  static void set_has_localized_name_text(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
   }
   static void set_has_type(HasBits* has_bits) {
     (*has_bits)[0] |= 8u;
   }
   static const ::CDotaMsgStructuredTooltipProperties_AttributeValue& value(const CDotaMsgStructuredTooltipProperties_Attribute* msg);
   static void set_has_value(HasBits* has_bits) {
-    (*has_bits)[0] |= 2u;
-  }
-  static const ::CDotaMsgStructuredTooltipProperties_FacetDisplayProperties& facet(const CDotaMsgStructuredTooltipProperties_Attribute* msg);
-  static void set_has_facet(HasBits* has_bits) {
     (*has_bits)[0] |= 4u;
   }
 };
@@ -74596,10 +74168,6 @@ class CDotaMsgStructuredTooltipProperties_Attribute::_Internal {
 const ::CDotaMsgStructuredTooltipProperties_AttributeValue&
 CDotaMsgStructuredTooltipProperties_Attribute::_Internal::value(const CDotaMsgStructuredTooltipProperties_Attribute* msg) {
   return *msg->_impl_.value_;
-}
-const ::CDotaMsgStructuredTooltipProperties_FacetDisplayProperties&
-CDotaMsgStructuredTooltipProperties_Attribute::_Internal::facet(const CDotaMsgStructuredTooltipProperties_Attribute* msg) {
-  return *msg->_impl_.facet_;
 }
 CDotaMsgStructuredTooltipProperties_Attribute::CDotaMsgStructuredTooltipProperties_Attribute(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -74613,25 +74181,30 @@ CDotaMsgStructuredTooltipProperties_Attribute::CDotaMsgStructuredTooltipProperti
   new (&_impl_) Impl_{
       decltype(_impl_._has_bits_){from._impl_._has_bits_}
     , /*decltype(_impl_._cached_size_)*/{}
-    , decltype(_impl_.name_loc_token_){}
+    , decltype(_impl_.internal_name_){}
+    , decltype(_impl_.localized_name_text_){}
     , decltype(_impl_.value_){nullptr}
-    , decltype(_impl_.facet_){nullptr}
     , decltype(_impl_.type_){}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.name_loc_token_.InitDefault();
+  _impl_.internal_name_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.name_loc_token_.Set("", GetArenaForAllocation());
+    _impl_.internal_name_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (from._internal_has_name_loc_token()) {
-    _this->_impl_.name_loc_token_.Set(from._internal_name_loc_token(), 
+  if (from._internal_has_internal_name()) {
+    _this->_impl_.internal_name_.Set(from._internal_internal_name(), 
+      _this->GetArenaForAllocation());
+  }
+  _impl_.localized_name_text_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.localized_name_text_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (from._internal_has_localized_name_text()) {
+    _this->_impl_.localized_name_text_.Set(from._internal_localized_name_text(), 
       _this->GetArenaForAllocation());
   }
   if (from._internal_has_value()) {
     _this->_impl_.value_ = new ::CDotaMsgStructuredTooltipProperties_AttributeValue(*from._impl_.value_);
-  }
-  if (from._internal_has_facet()) {
-    _this->_impl_.facet_ = new ::CDotaMsgStructuredTooltipProperties_FacetDisplayProperties(*from._impl_.facet_);
   }
   _this->_impl_.type_ = from._impl_.type_;
   // @@protoc_insertion_point(copy_constructor:CDotaMsgStructuredTooltipProperties.Attribute)
@@ -74644,14 +74217,18 @@ inline void CDotaMsgStructuredTooltipProperties_Attribute::SharedCtor(
   new (&_impl_) Impl_{
       decltype(_impl_._has_bits_){}
     , /*decltype(_impl_._cached_size_)*/{}
-    , decltype(_impl_.name_loc_token_){}
+    , decltype(_impl_.internal_name_){}
+    , decltype(_impl_.localized_name_text_){}
     , decltype(_impl_.value_){nullptr}
-    , decltype(_impl_.facet_){nullptr}
     , decltype(_impl_.type_){0}
   };
-  _impl_.name_loc_token_.InitDefault();
+  _impl_.internal_name_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.name_loc_token_.Set("", GetArenaForAllocation());
+    _impl_.internal_name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.localized_name_text_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.localized_name_text_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
@@ -74666,9 +74243,9 @@ CDotaMsgStructuredTooltipProperties_Attribute::~CDotaMsgStructuredTooltipPropert
 
 inline void CDotaMsgStructuredTooltipProperties_Attribute::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.name_loc_token_.Destroy();
+  _impl_.internal_name_.Destroy();
+  _impl_.localized_name_text_.Destroy();
   if (this != internal_default_instance()) delete _impl_.value_;
-  if (this != internal_default_instance()) delete _impl_.facet_;
 }
 
 void CDotaMsgStructuredTooltipProperties_Attribute::SetCachedSize(int size) const {
@@ -74684,15 +74261,14 @@ void CDotaMsgStructuredTooltipProperties_Attribute::Clear() {
   cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x00000007u) {
     if (cached_has_bits & 0x00000001u) {
-      _impl_.name_loc_token_.ClearNonDefaultToEmpty();
+      _impl_.internal_name_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000002u) {
-      GOOGLE_DCHECK(_impl_.value_ != nullptr);
-      _impl_.value_->Clear();
+      _impl_.localized_name_text_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000004u) {
-      GOOGLE_DCHECK(_impl_.facet_ != nullptr);
-      _impl_.facet_->Clear();
+      GOOGLE_DCHECK(_impl_.value_ != nullptr);
+      _impl_.value_->Clear();
     }
   }
   _impl_.type_ = 0;
@@ -74707,43 +74283,47 @@ const char* CDotaMsgStructuredTooltipProperties_Attribute::_InternalParse(const 
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // optional string name_loc_token = 1;
+      // optional string internal_name = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_name_loc_token();
+          auto str = _internal_mutable_internal_name();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
           #ifndef NDEBUG
-          ::_pbi::VerifyUTF8(str, "CDotaMsgStructuredTooltipProperties.Attribute.name_loc_token");
+          ::_pbi::VerifyUTF8(str, "CDotaMsgStructuredTooltipProperties.Attribute.internal_name");
           #endif  // !NDEBUG
         } else
           goto handle_unusual;
         continue;
-      // optional .CDotaMsgStructuredTooltipProperties.EAttributeType type = 2 [default = kUnknown];
+      // optional string localized_name_text = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_localized_name_text();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          #ifndef NDEBUG
+          ::_pbi::VerifyUTF8(str, "CDotaMsgStructuredTooltipProperties.Attribute.localized_name_text");
+          #endif  // !NDEBUG
+        } else
+          goto handle_unusual;
+        continue;
+      // optional .CDotaMsgStructuredTooltipProperties.EAttributeType type = 3 [default = kUnknown];
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
           if (PROTOBUF_PREDICT_TRUE(::CDotaMsgStructuredTooltipProperties_EAttributeType_IsValid(val))) {
             _internal_set_type(static_cast<::CDotaMsgStructuredTooltipProperties_EAttributeType>(val));
           } else {
-            ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(2, val, mutable_unknown_fields());
+            ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(3, val, mutable_unknown_fields());
           }
         } else
           goto handle_unusual;
         continue;
-      // optional .CDotaMsgStructuredTooltipProperties.AttributeValue value = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
-          ptr = ctx->ParseMessage(_internal_mutable_value(), ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // optional .CDotaMsgStructuredTooltipProperties.FacetDisplayProperties facet = 4;
+      // optional .CDotaMsgStructuredTooltipProperties.AttributeValue value = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
-          ptr = ctx->ParseMessage(_internal_mutable_facet(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_value(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -74779,35 +74359,38 @@ uint8_t* CDotaMsgStructuredTooltipProperties_Attribute::_InternalSerialize(
   (void) cached_has_bits;
 
   cached_has_bits = _impl_._has_bits_[0];
-  // optional string name_loc_token = 1;
+  // optional string internal_name = 1;
   if (cached_has_bits & 0x00000001u) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->_internal_name_loc_token().data(), static_cast<int>(this->_internal_name_loc_token().length()),
+      this->_internal_internal_name().data(), static_cast<int>(this->_internal_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SERIALIZE,
-      "CDotaMsgStructuredTooltipProperties.Attribute.name_loc_token");
+      "CDotaMsgStructuredTooltipProperties.Attribute.internal_name");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_name_loc_token(), target);
+        1, this->_internal_internal_name(), target);
   }
 
-  // optional .CDotaMsgStructuredTooltipProperties.EAttributeType type = 2 [default = kUnknown];
+  // optional string localized_name_text = 2;
+  if (cached_has_bits & 0x00000002u) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->_internal_localized_name_text().data(), static_cast<int>(this->_internal_localized_name_text().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SERIALIZE,
+      "CDotaMsgStructuredTooltipProperties.Attribute.localized_name_text");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_localized_name_text(), target);
+  }
+
+  // optional .CDotaMsgStructuredTooltipProperties.EAttributeType type = 3 [default = kUnknown];
   if (cached_has_bits & 0x00000008u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
-      2, this->_internal_type(), target);
+      3, this->_internal_type(), target);
   }
 
-  // optional .CDotaMsgStructuredTooltipProperties.AttributeValue value = 3;
-  if (cached_has_bits & 0x00000002u) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(3, _Internal::value(this),
-        _Internal::value(this).GetCachedSize(), target, stream);
-  }
-
-  // optional .CDotaMsgStructuredTooltipProperties.FacetDisplayProperties facet = 4;
+  // optional .CDotaMsgStructuredTooltipProperties.AttributeValue value = 4;
   if (cached_has_bits & 0x00000004u) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(4, _Internal::facet(this),
-        _Internal::facet(this).GetCachedSize(), target, stream);
+      InternalWriteMessage(4, _Internal::value(this),
+        _Internal::value(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -74828,28 +74411,28 @@ size_t CDotaMsgStructuredTooltipProperties_Attribute::ByteSizeLong() const {
 
   cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x0000000fu) {
-    // optional string name_loc_token = 1;
+    // optional string internal_name = 1;
     if (cached_has_bits & 0x00000001u) {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-          this->_internal_name_loc_token());
+          this->_internal_internal_name());
     }
 
-    // optional .CDotaMsgStructuredTooltipProperties.AttributeValue value = 3;
+    // optional string localized_name_text = 2;
     if (cached_has_bits & 0x00000002u) {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+          this->_internal_localized_name_text());
+    }
+
+    // optional .CDotaMsgStructuredTooltipProperties.AttributeValue value = 4;
+    if (cached_has_bits & 0x00000004u) {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *_impl_.value_);
     }
 
-    // optional .CDotaMsgStructuredTooltipProperties.FacetDisplayProperties facet = 4;
-    if (cached_has_bits & 0x00000004u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *_impl_.facet_);
-    }
-
-    // optional .CDotaMsgStructuredTooltipProperties.EAttributeType type = 2 [default = kUnknown];
+    // optional .CDotaMsgStructuredTooltipProperties.EAttributeType type = 3 [default = kUnknown];
     if (cached_has_bits & 0x00000008u) {
       total_size += 1 +
         ::_pbi::WireFormatLite::EnumSize(this->_internal_type());
@@ -74877,15 +74460,14 @@ void CDotaMsgStructuredTooltipProperties_Attribute::MergeImpl(::PROTOBUF_NAMESPA
   cached_has_bits = from._impl_._has_bits_[0];
   if (cached_has_bits & 0x0000000fu) {
     if (cached_has_bits & 0x00000001u) {
-      _this->_internal_set_name_loc_token(from._internal_name_loc_token());
+      _this->_internal_set_internal_name(from._internal_internal_name());
     }
     if (cached_has_bits & 0x00000002u) {
-      _this->_internal_mutable_value()->::CDotaMsgStructuredTooltipProperties_AttributeValue::MergeFrom(
-          from._internal_value());
+      _this->_internal_set_localized_name_text(from._internal_localized_name_text());
     }
     if (cached_has_bits & 0x00000004u) {
-      _this->_internal_mutable_facet()->::CDotaMsgStructuredTooltipProperties_FacetDisplayProperties::MergeFrom(
-          from._internal_facet());
+      _this->_internal_mutable_value()->::CDotaMsgStructuredTooltipProperties_AttributeValue::MergeFrom(
+          from._internal_value());
     }
     if (cached_has_bits & 0x00000008u) {
       _this->_impl_.type_ = from._impl_.type_;
@@ -74913,8 +74495,12 @@ void CDotaMsgStructuredTooltipProperties_Attribute::InternalSwap(CDotaMsgStructu
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.name_loc_token_, lhs_arena,
-      &other->_impl_.name_loc_token_, rhs_arena
+      &_impl_.internal_name_, lhs_arena,
+      &other->_impl_.internal_name_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.localized_name_text_, lhs_arena,
+      &other->_impl_.localized_name_text_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(CDotaMsgStructuredTooltipProperties_Attribute, _impl_.type_)
@@ -74927,7 +74513,7 @@ void CDotaMsgStructuredTooltipProperties_Attribute::InternalSwap(CDotaMsgStructu
 ::PROTOBUF_NAMESPACE_ID::Metadata CDotaMsgStructuredTooltipProperties_Attribute::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fgcmessages_5fcommon_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_2eproto_once,
-      file_level_metadata_dota_5fgcmessages_5fcommon_2eproto[177]);
+      file_level_metadata_dota_5fgcmessages_5fcommon_2eproto[176]);
 }
 
 // ===================================================================
@@ -74967,7 +74553,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CDotaMsgStructuredTooltipPrope
 ::PROTOBUF_NAMESPACE_ID::Metadata CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Basic::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fgcmessages_5fcommon_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_2eproto_once,
-      file_level_metadata_dota_5fgcmessages_5fcommon_2eproto[178]);
+      file_level_metadata_dota_5fgcmessages_5fcommon_2eproto[177]);
 }
 
 // ===================================================================
@@ -75251,213 +74837,7 @@ void CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Specific::InternalSw
 ::PROTOBUF_NAMESPACE_ID::Metadata CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Specific::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fgcmessages_5fcommon_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_2eproto_once,
-      file_level_metadata_dota_5fgcmessages_5fcommon_2eproto[179]);
-}
-
-// ===================================================================
-
-class CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Facet::_Internal {
- public:
-  using HasBits = decltype(std::declval<CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Facet>()._impl_._has_bits_);
-  static const ::CDotaMsgStructuredTooltipProperties_FacetDisplayProperties& facet(const CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Facet* msg);
-  static void set_has_facet(HasBits* has_bits) {
-    (*has_bits)[0] |= 1u;
-  }
-};
-
-const ::CDotaMsgStructuredTooltipProperties_FacetDisplayProperties&
-CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Facet::_Internal::facet(const CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Facet* msg) {
-  return *msg->_impl_.facet_;
-}
-CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Facet::CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Facet(::PROTOBUF_NAMESPACE_ID::Arena* arena,
-                         bool is_message_owned)
-  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
-  SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:CDotaMsgStructuredTooltipProperties.AttributeGroupDesc_Facet)
-}
-CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Facet::CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Facet(const CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Facet& from)
-  : ::PROTOBUF_NAMESPACE_ID::Message() {
-  CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Facet* const _this = this; (void)_this;
-  new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){from._impl_._has_bits_}
-    , /*decltype(_impl_._cached_size_)*/{}
-    , decltype(_impl_.facet_){nullptr}};
-
-  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  if (from._internal_has_facet()) {
-    _this->_impl_.facet_ = new ::CDotaMsgStructuredTooltipProperties_FacetDisplayProperties(*from._impl_.facet_);
-  }
-  // @@protoc_insertion_point(copy_constructor:CDotaMsgStructuredTooltipProperties.AttributeGroupDesc_Facet)
-}
-
-inline void CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Facet::SharedCtor(
-    ::_pb::Arena* arena, bool is_message_owned) {
-  (void)arena;
-  (void)is_message_owned;
-  new (&_impl_) Impl_{
-      decltype(_impl_._has_bits_){}
-    , /*decltype(_impl_._cached_size_)*/{}
-    , decltype(_impl_.facet_){nullptr}
-  };
-}
-
-CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Facet::~CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Facet() {
-  // @@protoc_insertion_point(destructor:CDotaMsgStructuredTooltipProperties.AttributeGroupDesc_Facet)
-  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
-  (void)arena;
-    return;
-  }
-  SharedDtor();
-}
-
-inline void CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Facet::SharedDtor() {
-  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  if (this != internal_default_instance()) delete _impl_.facet_;
-}
-
-void CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Facet::SetCachedSize(int size) const {
-  _impl_._cached_size_.Set(size);
-}
-
-void CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Facet::Clear() {
-// @@protoc_insertion_point(message_clear_start:CDotaMsgStructuredTooltipProperties.AttributeGroupDesc_Facet)
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000001u) {
-    GOOGLE_DCHECK(_impl_.facet_ != nullptr);
-    _impl_.facet_->Clear();
-  }
-  _impl_._has_bits_.Clear();
-  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
-}
-
-const char* CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Facet::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
-#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
-  _Internal::HasBits has_bits{};
-  while (!ctx->Done(&ptr)) {
-    uint32_t tag;
-    ptr = ::_pbi::ReadTag(ptr, &tag);
-    switch (tag >> 3) {
-      // optional .CDotaMsgStructuredTooltipProperties.FacetDisplayProperties facet = 1;
-      case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          ptr = ctx->ParseMessage(_internal_mutable_facet(), ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      default:
-        goto handle_unusual;
-    }  // switch
-  handle_unusual:
-    if ((tag == 0) || ((tag & 7) == 4)) {
-      CHK_(ptr);
-      ctx->SetLastTag(tag);
-      goto message_done;
-    }
-    ptr = UnknownFieldParse(
-        tag,
-        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
-        ptr, ctx);
-    CHK_(ptr != nullptr);
-  }  // while
-message_done:
-  _impl_._has_bits_.Or(has_bits);
-  return ptr;
-failure:
-  ptr = nullptr;
-  goto message_done;
-#undef CHK_
-}
-
-uint8_t* CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Facet::_InternalSerialize(
-    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:CDotaMsgStructuredTooltipProperties.AttributeGroupDesc_Facet)
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  cached_has_bits = _impl_._has_bits_[0];
-  // optional .CDotaMsgStructuredTooltipProperties.FacetDisplayProperties facet = 1;
-  if (cached_has_bits & 0x00000001u) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(1, _Internal::facet(this),
-        _Internal::facet(this).GetCachedSize(), target, stream);
-  }
-
-  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
-    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
-        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
-  }
-  // @@protoc_insertion_point(serialize_to_array_end:CDotaMsgStructuredTooltipProperties.AttributeGroupDesc_Facet)
-  return target;
-}
-
-size_t CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Facet::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:CDotaMsgStructuredTooltipProperties.AttributeGroupDesc_Facet)
-  size_t total_size = 0;
-
-  uint32_t cached_has_bits = 0;
-  // Prevent compiler warnings about cached_has_bits being unused
-  (void) cached_has_bits;
-
-  // optional .CDotaMsgStructuredTooltipProperties.FacetDisplayProperties facet = 1;
-  cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000001u) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-        *_impl_.facet_);
-  }
-
-  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
-}
-
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Facet::_class_data_ = {
-    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Facet::MergeImpl
-};
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Facet::GetClassData() const { return &_class_data_; }
-
-
-void CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Facet::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Facet*>(&to_msg);
-  auto& from = static_cast<const CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Facet&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:CDotaMsgStructuredTooltipProperties.AttributeGroupDesc_Facet)
-  GOOGLE_DCHECK_NE(&from, _this);
-  uint32_t cached_has_bits = 0;
-  (void) cached_has_bits;
-
-  if (from._internal_has_facet()) {
-    _this->_internal_mutable_facet()->::CDotaMsgStructuredTooltipProperties_FacetDisplayProperties::MergeFrom(
-        from._internal_facet());
-  }
-  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-}
-
-void CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Facet::CopyFrom(const CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Facet& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:CDotaMsgStructuredTooltipProperties.AttributeGroupDesc_Facet)
-  if (&from == this) return;
-  Clear();
-  MergeFrom(from);
-}
-
-bool CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Facet::IsInitialized() const {
-  return true;
-}
-
-void CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Facet::InternalSwap(CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Facet* other) {
-  using std::swap;
-  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
-  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
-  swap(_impl_.facet_, other->_impl_.facet_);
-}
-
-::PROTOBUF_NAMESPACE_ID::Metadata CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Facet::GetMetadata() const {
-  return ::_pbi::AssignDescriptors(
-      &descriptor_table_dota_5fgcmessages_5fcommon_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_2eproto_once,
-      file_level_metadata_dota_5fgcmessages_5fcommon_2eproto[180]);
+      file_level_metadata_dota_5fgcmessages_5fcommon_2eproto[178]);
 }
 
 // ===================================================================
@@ -75465,21 +74845,21 @@ void CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Facet::InternalSwap(
 class CDotaMsgStructuredTooltipProperties_AttributeGroupDescription::_Internal {
  public:
   static const ::CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Basic& basic(const CDotaMsgStructuredTooltipProperties_AttributeGroupDescription* msg);
+  static const ::CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Basic& characteristics(const CDotaMsgStructuredTooltipProperties_AttributeGroupDescription* msg);
   static const ::CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Specific& specific(const CDotaMsgStructuredTooltipProperties_AttributeGroupDescription* msg);
-  static const ::CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Facet& facet(const CDotaMsgStructuredTooltipProperties_AttributeGroupDescription* msg);
 };
 
 const ::CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Basic&
 CDotaMsgStructuredTooltipProperties_AttributeGroupDescription::_Internal::basic(const CDotaMsgStructuredTooltipProperties_AttributeGroupDescription* msg) {
   return *msg->_impl_.attr_group_desc_.basic_;
 }
+const ::CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Basic&
+CDotaMsgStructuredTooltipProperties_AttributeGroupDescription::_Internal::characteristics(const CDotaMsgStructuredTooltipProperties_AttributeGroupDescription* msg) {
+  return *msg->_impl_.attr_group_desc_.characteristics_;
+}
 const ::CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Specific&
 CDotaMsgStructuredTooltipProperties_AttributeGroupDescription::_Internal::specific(const CDotaMsgStructuredTooltipProperties_AttributeGroupDescription* msg) {
   return *msg->_impl_.attr_group_desc_.specific_;
-}
-const ::CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Facet&
-CDotaMsgStructuredTooltipProperties_AttributeGroupDescription::_Internal::facet(const CDotaMsgStructuredTooltipProperties_AttributeGroupDescription* msg) {
-  return *msg->_impl_.attr_group_desc_.facet_;
 }
 void CDotaMsgStructuredTooltipProperties_AttributeGroupDescription::set_allocated_basic(::CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Basic* basic) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
@@ -75496,6 +74876,21 @@ void CDotaMsgStructuredTooltipProperties_AttributeGroupDescription::set_allocate
   }
   // @@protoc_insertion_point(field_set_allocated:CDotaMsgStructuredTooltipProperties.AttributeGroupDescription.basic)
 }
+void CDotaMsgStructuredTooltipProperties_AttributeGroupDescription::set_allocated_characteristics(::CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Basic* characteristics) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
+  clear_attr_group_desc();
+  if (characteristics) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
+      ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(characteristics);
+    if (message_arena != submessage_arena) {
+      characteristics = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, characteristics, submessage_arena);
+    }
+    set_has_characteristics();
+    _impl_.attr_group_desc_.characteristics_ = characteristics;
+  }
+  // @@protoc_insertion_point(field_set_allocated:CDotaMsgStructuredTooltipProperties.AttributeGroupDescription.characteristics)
+}
 void CDotaMsgStructuredTooltipProperties_AttributeGroupDescription::set_allocated_specific(::CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Specific* specific) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   clear_attr_group_desc();
@@ -75510,21 +74905,6 @@ void CDotaMsgStructuredTooltipProperties_AttributeGroupDescription::set_allocate
     _impl_.attr_group_desc_.specific_ = specific;
   }
   // @@protoc_insertion_point(field_set_allocated:CDotaMsgStructuredTooltipProperties.AttributeGroupDescription.specific)
-}
-void CDotaMsgStructuredTooltipProperties_AttributeGroupDescription::set_allocated_facet(::CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Facet* facet) {
-  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
-  clear_attr_group_desc();
-  if (facet) {
-    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-      ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(facet);
-    if (message_arena != submessage_arena) {
-      facet = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, facet, submessage_arena);
-    }
-    set_has_facet();
-    _impl_.attr_group_desc_.facet_ = facet;
-  }
-  // @@protoc_insertion_point(field_set_allocated:CDotaMsgStructuredTooltipProperties.AttributeGroupDescription.facet)
 }
 CDotaMsgStructuredTooltipProperties_AttributeGroupDescription::CDotaMsgStructuredTooltipProperties_AttributeGroupDescription(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -75548,14 +74928,14 @@ CDotaMsgStructuredTooltipProperties_AttributeGroupDescription::CDotaMsgStructure
           from._internal_basic());
       break;
     }
+    case kCharacteristics: {
+      _this->_internal_mutable_characteristics()->::CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Basic::MergeFrom(
+          from._internal_characteristics());
+      break;
+    }
     case kSpecific: {
       _this->_internal_mutable_specific()->::CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Specific::MergeFrom(
           from._internal_specific());
-      break;
-    }
-    case kFacet: {
-      _this->_internal_mutable_facet()->::CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Facet::MergeFrom(
-          from._internal_facet());
       break;
     }
     case ATTR_GROUP_DESC_NOT_SET: {
@@ -75606,15 +74986,15 @@ void CDotaMsgStructuredTooltipProperties_AttributeGroupDescription::clear_attr_g
       }
       break;
     }
-    case kSpecific: {
+    case kCharacteristics: {
       if (GetArenaForAllocation() == nullptr) {
-        delete _impl_.attr_group_desc_.specific_;
+        delete _impl_.attr_group_desc_.characteristics_;
       }
       break;
     }
-    case kFacet: {
+    case kSpecific: {
       if (GetArenaForAllocation() == nullptr) {
-        delete _impl_.attr_group_desc_.facet_;
+        delete _impl_.attr_group_desc_.specific_;
       }
       break;
     }
@@ -75650,18 +75030,18 @@ const char* CDotaMsgStructuredTooltipProperties_AttributeGroupDescription::_Inte
         } else
           goto handle_unusual;
         continue;
-      // .CDotaMsgStructuredTooltipProperties.AttributeGroupDesc_Specific specific = 2;
+      // .CDotaMsgStructuredTooltipProperties.AttributeGroupDesc_Basic characteristics = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          ptr = ctx->ParseMessage(_internal_mutable_specific(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_characteristics(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // .CDotaMsgStructuredTooltipProperties.AttributeGroupDesc_Facet facet = 3;
+      // .CDotaMsgStructuredTooltipProperties.AttributeGroupDesc_Specific specific = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
-          ptr = ctx->ParseMessage(_internal_mutable_facet(), ptr);
+          ptr = ctx->ParseMessage(_internal_mutable_specific(), ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -75702,16 +75082,16 @@ uint8_t* CDotaMsgStructuredTooltipProperties_AttributeGroupDescription::_Interna
           _Internal::basic(this).GetCachedSize(), target, stream);
       break;
     }
-    case kSpecific: {
+    case kCharacteristics: {
       target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-        InternalWriteMessage(2, _Internal::specific(this),
-          _Internal::specific(this).GetCachedSize(), target, stream);
+        InternalWriteMessage(2, _Internal::characteristics(this),
+          _Internal::characteristics(this).GetCachedSize(), target, stream);
       break;
     }
-    case kFacet: {
+    case kSpecific: {
       target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-        InternalWriteMessage(3, _Internal::facet(this),
-          _Internal::facet(this).GetCachedSize(), target, stream);
+        InternalWriteMessage(3, _Internal::specific(this),
+          _Internal::specific(this).GetCachedSize(), target, stream);
       break;
     }
     default: ;
@@ -75740,18 +75120,18 @@ size_t CDotaMsgStructuredTooltipProperties_AttributeGroupDescription::ByteSizeLo
           *_impl_.attr_group_desc_.basic_);
       break;
     }
-    // .CDotaMsgStructuredTooltipProperties.AttributeGroupDesc_Specific specific = 2;
+    // .CDotaMsgStructuredTooltipProperties.AttributeGroupDesc_Basic characteristics = 2;
+    case kCharacteristics: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *_impl_.attr_group_desc_.characteristics_);
+      break;
+    }
+    // .CDotaMsgStructuredTooltipProperties.AttributeGroupDesc_Specific specific = 3;
     case kSpecific: {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *_impl_.attr_group_desc_.specific_);
-      break;
-    }
-    // .CDotaMsgStructuredTooltipProperties.AttributeGroupDesc_Facet facet = 3;
-    case kFacet: {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *_impl_.attr_group_desc_.facet_);
       break;
     }
     case ATTR_GROUP_DESC_NOT_SET: {
@@ -75782,14 +75162,14 @@ void CDotaMsgStructuredTooltipProperties_AttributeGroupDescription::MergeImpl(::
           from._internal_basic());
       break;
     }
+    case kCharacteristics: {
+      _this->_internal_mutable_characteristics()->::CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Basic::MergeFrom(
+          from._internal_characteristics());
+      break;
+    }
     case kSpecific: {
       _this->_internal_mutable_specific()->::CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Specific::MergeFrom(
           from._internal_specific());
-      break;
-    }
-    case kFacet: {
-      _this->_internal_mutable_facet()->::CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Facet::MergeFrom(
-          from._internal_facet());
       break;
     }
     case ATTR_GROUP_DESC_NOT_SET: {
@@ -75820,7 +75200,7 @@ void CDotaMsgStructuredTooltipProperties_AttributeGroupDescription::InternalSwap
 ::PROTOBUF_NAMESPACE_ID::Metadata CDotaMsgStructuredTooltipProperties_AttributeGroupDescription::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fgcmessages_5fcommon_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_2eproto_once,
-      file_level_metadata_dota_5fgcmessages_5fcommon_2eproto[181]);
+      file_level_metadata_dota_5fgcmessages_5fcommon_2eproto[179]);
 }
 
 // ===================================================================
@@ -76060,7 +75440,7 @@ void CDotaMsgStructuredTooltipProperties_AttributeGroup::InternalSwap(CDotaMsgSt
 ::PROTOBUF_NAMESPACE_ID::Metadata CDotaMsgStructuredTooltipProperties_AttributeGroup::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fgcmessages_5fcommon_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_2eproto_once,
-      file_level_metadata_dota_5fgcmessages_5fcommon_2eproto[182]);
+      file_level_metadata_dota_5fgcmessages_5fcommon_2eproto[180]);
 }
 
 // ===================================================================
@@ -76245,7 +75625,7 @@ void CDotaMsgStructuredTooltipProperties_ContentChunk_AttributeGroup::InternalSw
 ::PROTOBUF_NAMESPACE_ID::Metadata CDotaMsgStructuredTooltipProperties_ContentChunk_AttributeGroup::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fgcmessages_5fcommon_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_2eproto_once,
-      file_level_metadata_dota_5fgcmessages_5fcommon_2eproto[183]);
+      file_level_metadata_dota_5fgcmessages_5fcommon_2eproto[181]);
 }
 
 // ===================================================================
@@ -76492,81 +75872,96 @@ void CDotaMsgStructuredTooltipProperties_TooltipContentChunk::InternalSwap(CDota
 ::PROTOBUF_NAMESPACE_ID::Metadata CDotaMsgStructuredTooltipProperties_TooltipContentChunk::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fgcmessages_5fcommon_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_2eproto_once,
-      file_level_metadata_dota_5fgcmessages_5fcommon_2eproto[184]);
+      file_level_metadata_dota_5fgcmessages_5fcommon_2eproto[182]);
 }
 
 // ===================================================================
 
-class CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue::_Internal {
+class CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbeddedSubAbility::_Internal {
  public:
-  using HasBits = decltype(std::declval<CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue>()._impl_._has_bits_);
-  static void set_has_name(HasBits* has_bits) {
+  using HasBits = decltype(std::declval<CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbeddedSubAbility>()._impl_._has_bits_);
+  static void set_has_ability_name_loc_token(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
   }
-  static void set_has_type(HasBits* has_bits) {
-    (*has_bits)[0] |= 4u;
-  }
-  static const ::CDotaMsgStructuredTooltipProperties_AttributeValue& value(const CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue* msg);
-  static void set_has_value(HasBits* has_bits) {
+  static void set_has_ability_desc_loc_token(HasBits* has_bits) {
     (*has_bits)[0] |= 2u;
+  }
+  static void set_has_ability_icon_url(HasBits* has_bits) {
+    (*has_bits)[0] |= 4u;
   }
 };
 
-const ::CDotaMsgStructuredTooltipProperties_AttributeValue&
-CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue::_Internal::value(const CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue* msg) {
-  return *msg->_impl_.value_;
-}
-CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue::CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbeddedSubAbility::CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbeddedSubAbility(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:CDotaMsgStructuredTooltipProperties.SummaryDescriptionEmbedValue)
+  // @@protoc_insertion_point(arena_constructor:CDotaMsgStructuredTooltipProperties.SummaryDescriptionEmbeddedSubAbility)
 }
-CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue::CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue(const CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue& from)
+CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbeddedSubAbility::CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbeddedSubAbility(const CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbeddedSubAbility& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue* const _this = this; (void)_this;
+  CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbeddedSubAbility* const _this = this; (void)_this;
   new (&_impl_) Impl_{
       decltype(_impl_._has_bits_){from._impl_._has_bits_}
     , /*decltype(_impl_._cached_size_)*/{}
-    , decltype(_impl_.name_){}
-    , decltype(_impl_.value_){nullptr}
-    , decltype(_impl_.type_){}};
+    , decltype(_impl_.ability_name_loc_token_){}
+    , decltype(_impl_.ability_desc_loc_token_){}
+    , decltype(_impl_.ability_icon_url_){}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.name_.InitDefault();
+  _impl_.ability_name_loc_token_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.name_.Set("", GetArenaForAllocation());
+    _impl_.ability_name_loc_token_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (from._internal_has_name()) {
-    _this->_impl_.name_.Set(from._internal_name(), 
+  if (from._internal_has_ability_name_loc_token()) {
+    _this->_impl_.ability_name_loc_token_.Set(from._internal_ability_name_loc_token(), 
       _this->GetArenaForAllocation());
   }
-  if (from._internal_has_value()) {
-    _this->_impl_.value_ = new ::CDotaMsgStructuredTooltipProperties_AttributeValue(*from._impl_.value_);
+  _impl_.ability_desc_loc_token_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.ability_desc_loc_token_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (from._internal_has_ability_desc_loc_token()) {
+    _this->_impl_.ability_desc_loc_token_.Set(from._internal_ability_desc_loc_token(), 
+      _this->GetArenaForAllocation());
   }
-  _this->_impl_.type_ = from._impl_.type_;
-  // @@protoc_insertion_point(copy_constructor:CDotaMsgStructuredTooltipProperties.SummaryDescriptionEmbedValue)
+  _impl_.ability_icon_url_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.ability_icon_url_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (from._internal_has_ability_icon_url()) {
+    _this->_impl_.ability_icon_url_.Set(from._internal_ability_icon_url(), 
+      _this->GetArenaForAllocation());
+  }
+  // @@protoc_insertion_point(copy_constructor:CDotaMsgStructuredTooltipProperties.SummaryDescriptionEmbeddedSubAbility)
 }
 
-inline void CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue::SharedCtor(
+inline void CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbeddedSubAbility::SharedCtor(
     ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
       decltype(_impl_._has_bits_){}
     , /*decltype(_impl_._cached_size_)*/{}
-    , decltype(_impl_.name_){}
-    , decltype(_impl_.value_){nullptr}
-    , decltype(_impl_.type_){0}
+    , decltype(_impl_.ability_name_loc_token_){}
+    , decltype(_impl_.ability_desc_loc_token_){}
+    , decltype(_impl_.ability_icon_url_){}
   };
-  _impl_.name_.InitDefault();
+  _impl_.ability_name_loc_token_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.name_.Set("", GetArenaForAllocation());
+    _impl_.ability_name_loc_token_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.ability_desc_loc_token_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.ability_desc_loc_token_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.ability_icon_url_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.ability_icon_url_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
-CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue::~CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue() {
-  // @@protoc_insertion_point(destructor:CDotaMsgStructuredTooltipProperties.SummaryDescriptionEmbedValue)
+CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbeddedSubAbility::~CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbeddedSubAbility() {
+  // @@protoc_insertion_point(destructor:CDotaMsgStructuredTooltipProperties.SummaryDescriptionEmbeddedSubAbility)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -76574,74 +75969,79 @@ CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue::~CDotaMsgStruc
   SharedDtor();
 }
 
-inline void CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue::SharedDtor() {
+inline void CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbeddedSubAbility::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.name_.Destroy();
-  if (this != internal_default_instance()) delete _impl_.value_;
+  _impl_.ability_name_loc_token_.Destroy();
+  _impl_.ability_desc_loc_token_.Destroy();
+  _impl_.ability_icon_url_.Destroy();
 }
 
-void CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue::SetCachedSize(int size) const {
+void CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbeddedSubAbility::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-void CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue::Clear() {
-// @@protoc_insertion_point(message_clear_start:CDotaMsgStructuredTooltipProperties.SummaryDescriptionEmbedValue)
+void CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbeddedSubAbility::Clear() {
+// @@protoc_insertion_point(message_clear_start:CDotaMsgStructuredTooltipProperties.SummaryDescriptionEmbeddedSubAbility)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000003u) {
+  if (cached_has_bits & 0x00000007u) {
     if (cached_has_bits & 0x00000001u) {
-      _impl_.name_.ClearNonDefaultToEmpty();
+      _impl_.ability_name_loc_token_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000002u) {
-      GOOGLE_DCHECK(_impl_.value_ != nullptr);
-      _impl_.value_->Clear();
+      _impl_.ability_desc_loc_token_.ClearNonDefaultToEmpty();
+    }
+    if (cached_has_bits & 0x00000004u) {
+      _impl_.ability_icon_url_.ClearNonDefaultToEmpty();
     }
   }
-  _impl_.type_ = 0;
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbeddedSubAbility::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // optional string name = 1;
+      // optional string ability_name_loc_token = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_name();
+          auto str = _internal_mutable_ability_name_loc_token();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
           #ifndef NDEBUG
-          ::_pbi::VerifyUTF8(str, "CDotaMsgStructuredTooltipProperties.SummaryDescriptionEmbedValue.name");
+          ::_pbi::VerifyUTF8(str, "CDotaMsgStructuredTooltipProperties.SummaryDescriptionEmbeddedSubAbility.ability_name_loc_token");
           #endif  // !NDEBUG
         } else
           goto handle_unusual;
         continue;
-      // optional .CDotaMsgStructuredTooltipProperties.EAttributeType type = 2 [default = kUnknown];
+      // optional string ability_desc_loc_token = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
-          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_ability_desc_loc_token();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          if (PROTOBUF_PREDICT_TRUE(::CDotaMsgStructuredTooltipProperties_EAttributeType_IsValid(val))) {
-            _internal_set_type(static_cast<::CDotaMsgStructuredTooltipProperties_EAttributeType>(val));
-          } else {
-            ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(2, val, mutable_unknown_fields());
-          }
+          #ifndef NDEBUG
+          ::_pbi::VerifyUTF8(str, "CDotaMsgStructuredTooltipProperties.SummaryDescriptionEmbeddedSubAbility.ability_desc_loc_token");
+          #endif  // !NDEBUG
         } else
           goto handle_unusual;
         continue;
-      // optional .CDotaMsgStructuredTooltipProperties.AttributeValue value = 3;
+      // optional string ability_icon_url = 3;
       case 3:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
-          ptr = ctx->ParseMessage(_internal_mutable_value(), ptr);
+          auto str = _internal_mutable_ability_icon_url();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          #ifndef NDEBUG
+          ::_pbi::VerifyUTF8(str, "CDotaMsgStructuredTooltipProperties.SummaryDescriptionEmbeddedSubAbility.ability_icon_url");
+          #endif  // !NDEBUG
         } else
           goto handle_unusual;
         continue;
@@ -76669,47 +76069,53 @@ failure:
 #undef CHK_
 }
 
-uint8_t* CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue::_InternalSerialize(
+uint8_t* CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbeddedSubAbility::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:CDotaMsgStructuredTooltipProperties.SummaryDescriptionEmbedValue)
+  // @@protoc_insertion_point(serialize_to_array_start:CDotaMsgStructuredTooltipProperties.SummaryDescriptionEmbeddedSubAbility)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   cached_has_bits = _impl_._has_bits_[0];
-  // optional string name = 1;
+  // optional string ability_name_loc_token = 1;
   if (cached_has_bits & 0x00000001u) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+      this->_internal_ability_name_loc_token().data(), static_cast<int>(this->_internal_ability_name_loc_token().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SERIALIZE,
-      "CDotaMsgStructuredTooltipProperties.SummaryDescriptionEmbedValue.name");
+      "CDotaMsgStructuredTooltipProperties.SummaryDescriptionEmbeddedSubAbility.ability_name_loc_token");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_name(), target);
+        1, this->_internal_ability_name_loc_token(), target);
   }
 
-  // optional .CDotaMsgStructuredTooltipProperties.EAttributeType type = 2 [default = kUnknown];
-  if (cached_has_bits & 0x00000004u) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteEnumToArray(
-      2, this->_internal_type(), target);
-  }
-
-  // optional .CDotaMsgStructuredTooltipProperties.AttributeValue value = 3;
+  // optional string ability_desc_loc_token = 2;
   if (cached_has_bits & 0x00000002u) {
-    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(3, _Internal::value(this),
-        _Internal::value(this).GetCachedSize(), target, stream);
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->_internal_ability_desc_loc_token().data(), static_cast<int>(this->_internal_ability_desc_loc_token().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SERIALIZE,
+      "CDotaMsgStructuredTooltipProperties.SummaryDescriptionEmbeddedSubAbility.ability_desc_loc_token");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_ability_desc_loc_token(), target);
+  }
+
+  // optional string ability_icon_url = 3;
+  if (cached_has_bits & 0x00000004u) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->_internal_ability_icon_url().data(), static_cast<int>(this->_internal_ability_icon_url().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SERIALIZE,
+      "CDotaMsgStructuredTooltipProperties.SummaryDescriptionEmbeddedSubAbility.ability_icon_url");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_ability_icon_url(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:CDotaMsgStructuredTooltipProperties.SummaryDescriptionEmbedValue)
+  // @@protoc_insertion_point(serialize_to_array_end:CDotaMsgStructuredTooltipProperties.SummaryDescriptionEmbeddedSubAbility)
   return target;
 }
 
-size_t CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:CDotaMsgStructuredTooltipProperties.SummaryDescriptionEmbedValue)
+size_t CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbeddedSubAbility::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:CDotaMsgStructuredTooltipProperties.SummaryDescriptionEmbeddedSubAbility)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
@@ -76718,41 +76124,42 @@ size_t CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue::ByteSiz
 
   cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x00000007u) {
-    // optional string name = 1;
+    // optional string ability_name_loc_token = 1;
     if (cached_has_bits & 0x00000001u) {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-          this->_internal_name());
+          this->_internal_ability_name_loc_token());
     }
 
-    // optional .CDotaMsgStructuredTooltipProperties.AttributeValue value = 3;
+    // optional string ability_desc_loc_token = 2;
     if (cached_has_bits & 0x00000002u) {
       total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *_impl_.value_);
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+          this->_internal_ability_desc_loc_token());
     }
 
-    // optional .CDotaMsgStructuredTooltipProperties.EAttributeType type = 2 [default = kUnknown];
+    // optional string ability_icon_url = 3;
     if (cached_has_bits & 0x00000004u) {
       total_size += 1 +
-        ::_pbi::WireFormatLite::EnumSize(this->_internal_type());
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+          this->_internal_ability_icon_url());
     }
 
   }
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue::_class_data_ = {
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbeddedSubAbility::_class_data_ = {
     ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue::MergeImpl
+    CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbeddedSubAbility::MergeImpl
 };
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbeddedSubAbility::GetClassData() const { return &_class_data_; }
 
 
-void CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue*>(&to_msg);
-  auto& from = static_cast<const CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:CDotaMsgStructuredTooltipProperties.SummaryDescriptionEmbedValue)
+void CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbeddedSubAbility::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbeddedSubAbility*>(&to_msg);
+  auto& from = static_cast<const CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbeddedSubAbility&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:CDotaMsgStructuredTooltipProperties.SummaryDescriptionEmbeddedSubAbility)
   GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -76760,53 +76167,53 @@ void CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue::MergeImpl
   cached_has_bits = from._impl_._has_bits_[0];
   if (cached_has_bits & 0x00000007u) {
     if (cached_has_bits & 0x00000001u) {
-      _this->_internal_set_name(from._internal_name());
+      _this->_internal_set_ability_name_loc_token(from._internal_ability_name_loc_token());
     }
     if (cached_has_bits & 0x00000002u) {
-      _this->_internal_mutable_value()->::CDotaMsgStructuredTooltipProperties_AttributeValue::MergeFrom(
-          from._internal_value());
+      _this->_internal_set_ability_desc_loc_token(from._internal_ability_desc_loc_token());
     }
     if (cached_has_bits & 0x00000004u) {
-      _this->_impl_.type_ = from._impl_.type_;
+      _this->_internal_set_ability_icon_url(from._internal_ability_icon_url());
     }
-    _this->_impl_._has_bits_[0] |= cached_has_bits;
   }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
-void CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue::CopyFrom(const CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:CDotaMsgStructuredTooltipProperties.SummaryDescriptionEmbedValue)
+void CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbeddedSubAbility::CopyFrom(const CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbeddedSubAbility& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:CDotaMsgStructuredTooltipProperties.SummaryDescriptionEmbeddedSubAbility)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue::IsInitialized() const {
+bool CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbeddedSubAbility::IsInitialized() const {
   return true;
 }
 
-void CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue::InternalSwap(CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue* other) {
+void CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbeddedSubAbility::InternalSwap(CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbeddedSubAbility* other) {
   using std::swap;
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.name_, lhs_arena,
-      &other->_impl_.name_, rhs_arena
+      &_impl_.ability_name_loc_token_, lhs_arena,
+      &other->_impl_.ability_name_loc_token_, rhs_arena
   );
-  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue, _impl_.type_)
-      + sizeof(CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue::_impl_.type_)
-      - PROTOBUF_FIELD_OFFSET(CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue, _impl_.value_)>(
-          reinterpret_cast<char*>(&_impl_.value_),
-          reinterpret_cast<char*>(&other->_impl_.value_));
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.ability_desc_loc_token_, lhs_arena,
+      &other->_impl_.ability_desc_loc_token_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.ability_icon_url_, lhs_arena,
+      &other->_impl_.ability_icon_url_, rhs_arena
+  );
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbeddedSubAbility::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fgcmessages_5fcommon_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_2eproto_once,
-      file_level_metadata_dota_5fgcmessages_5fcommon_2eproto[185]);
+      file_level_metadata_dota_5fgcmessages_5fcommon_2eproto[183]);
 }
 
 // ===================================================================
@@ -76817,8 +76224,8 @@ class CDotaMsgStructuredTooltipProperties::_Internal {
   static void set_has_ability_name_loc_token(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
   }
-  static void set_has_ability_category_loc_token(HasBits* has_bits) {
-    (*has_bits)[0] |= 2u;
+  static void set_has_ability_category(HasBits* has_bits) {
+    (*has_bits)[0] |= 512u;
   }
   static void set_has_ability_level(HasBits* has_bits) {
     (*has_bits)[0] |= 32u;
@@ -76833,21 +76240,19 @@ class CDotaMsgStructuredTooltipProperties::_Internal {
     (*has_bits)[0] |= 256u;
   }
   static void set_has_summary_description_loc_token(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
+  static void set_has_summary_description_aghs_scepter(HasBits* has_bits) {
     (*has_bits)[0] |= 4u;
   }
-  static void set_has_summary_description_level_up_loc_token(HasBits* has_bits) {
+  static void set_has_summary_description_aghs_shard(HasBits* has_bits) {
     (*has_bits)[0] |= 8u;
   }
-  static const ::CDotaMsgStructuredTooltipProperties_FacetDisplayProperties& summary_description_facet(const CDotaMsgStructuredTooltipProperties* msg);
-  static void set_has_summary_description_facet(HasBits* has_bits) {
+  static void set_has_preview_video_url(HasBits* has_bits) {
     (*has_bits)[0] |= 16u;
   }
 };
 
-const ::CDotaMsgStructuredTooltipProperties_FacetDisplayProperties&
-CDotaMsgStructuredTooltipProperties::_Internal::summary_description_facet(const CDotaMsgStructuredTooltipProperties* msg) {
-  return *msg->_impl_.summary_description_facet_;
-}
 CDotaMsgStructuredTooltipProperties::CDotaMsgStructuredTooltipProperties(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
@@ -76861,16 +76266,19 @@ CDotaMsgStructuredTooltipProperties::CDotaMsgStructuredTooltipProperties(const C
       decltype(_impl_._has_bits_){from._impl_._has_bits_}
     , /*decltype(_impl_._cached_size_)*/{}
     , decltype(_impl_.summary_description_embed_values_){from._impl_.summary_description_embed_values_}
+    , decltype(_impl_.summary_description_surfaced_lines_){from._impl_.summary_description_surfaced_lines_}
+    , decltype(_impl_.summary_description_embedded_sub_abilities_){from._impl_.summary_description_embedded_sub_abilities_}
     , decltype(_impl_.chunks_){from._impl_.chunks_}
     , decltype(_impl_.ability_name_loc_token_){}
-    , decltype(_impl_.ability_category_loc_token_){}
     , decltype(_impl_.summary_description_loc_token_){}
-    , decltype(_impl_.summary_description_level_up_loc_token_){}
-    , decltype(_impl_.summary_description_facet_){nullptr}
+    , decltype(_impl_.summary_description_aghs_scepter_){}
+    , decltype(_impl_.summary_description_aghs_shard_){}
+    , decltype(_impl_.preview_video_url_){}
     , decltype(_impl_.ability_level_){}
     , decltype(_impl_.current_mana_cost_){}
     , decltype(_impl_.current_health_cost_){}
-    , decltype(_impl_.current_cooldown_){}};
+    , decltype(_impl_.current_cooldown_){}
+    , decltype(_impl_.ability_category_){}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   _impl_.ability_name_loc_token_.InitDefault();
@@ -76881,14 +76289,6 @@ CDotaMsgStructuredTooltipProperties::CDotaMsgStructuredTooltipProperties(const C
     _this->_impl_.ability_name_loc_token_.Set(from._internal_ability_name_loc_token(), 
       _this->GetArenaForAllocation());
   }
-  _impl_.ability_category_loc_token_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.ability_category_loc_token_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (from._internal_has_ability_category_loc_token()) {
-    _this->_impl_.ability_category_loc_token_.Set(from._internal_ability_category_loc_token(), 
-      _this->GetArenaForAllocation());
-  }
   _impl_.summary_description_loc_token_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     _impl_.summary_description_loc_token_.Set("", GetArenaForAllocation());
@@ -76897,20 +76297,33 @@ CDotaMsgStructuredTooltipProperties::CDotaMsgStructuredTooltipProperties(const C
     _this->_impl_.summary_description_loc_token_.Set(from._internal_summary_description_loc_token(), 
       _this->GetArenaForAllocation());
   }
-  _impl_.summary_description_level_up_loc_token_.InitDefault();
+  _impl_.summary_description_aghs_scepter_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.summary_description_level_up_loc_token_.Set("", GetArenaForAllocation());
+    _impl_.summary_description_aghs_scepter_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (from._internal_has_summary_description_level_up_loc_token()) {
-    _this->_impl_.summary_description_level_up_loc_token_.Set(from._internal_summary_description_level_up_loc_token(), 
+  if (from._internal_has_summary_description_aghs_scepter()) {
+    _this->_impl_.summary_description_aghs_scepter_.Set(from._internal_summary_description_aghs_scepter(), 
       _this->GetArenaForAllocation());
   }
-  if (from._internal_has_summary_description_facet()) {
-    _this->_impl_.summary_description_facet_ = new ::CDotaMsgStructuredTooltipProperties_FacetDisplayProperties(*from._impl_.summary_description_facet_);
+  _impl_.summary_description_aghs_shard_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.summary_description_aghs_shard_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (from._internal_has_summary_description_aghs_shard()) {
+    _this->_impl_.summary_description_aghs_shard_.Set(from._internal_summary_description_aghs_shard(), 
+      _this->GetArenaForAllocation());
+  }
+  _impl_.preview_video_url_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.preview_video_url_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (from._internal_has_preview_video_url()) {
+    _this->_impl_.preview_video_url_.Set(from._internal_preview_video_url(), 
+      _this->GetArenaForAllocation());
   }
   ::memcpy(&_impl_.ability_level_, &from._impl_.ability_level_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.current_cooldown_) -
-    reinterpret_cast<char*>(&_impl_.ability_level_)) + sizeof(_impl_.current_cooldown_));
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.ability_category_) -
+    reinterpret_cast<char*>(&_impl_.ability_level_)) + sizeof(_impl_.ability_category_));
   // @@protoc_insertion_point(copy_constructor:CDotaMsgStructuredTooltipProperties)
 }
 
@@ -76922,32 +76335,39 @@ inline void CDotaMsgStructuredTooltipProperties::SharedCtor(
       decltype(_impl_._has_bits_){}
     , /*decltype(_impl_._cached_size_)*/{}
     , decltype(_impl_.summary_description_embed_values_){arena}
+    , decltype(_impl_.summary_description_surfaced_lines_){arena}
+    , decltype(_impl_.summary_description_embedded_sub_abilities_){arena}
     , decltype(_impl_.chunks_){arena}
     , decltype(_impl_.ability_name_loc_token_){}
-    , decltype(_impl_.ability_category_loc_token_){}
     , decltype(_impl_.summary_description_loc_token_){}
-    , decltype(_impl_.summary_description_level_up_loc_token_){}
-    , decltype(_impl_.summary_description_facet_){nullptr}
+    , decltype(_impl_.summary_description_aghs_scepter_){}
+    , decltype(_impl_.summary_description_aghs_shard_){}
+    , decltype(_impl_.preview_video_url_){}
     , decltype(_impl_.ability_level_){0}
     , decltype(_impl_.current_mana_cost_){0}
     , decltype(_impl_.current_health_cost_){0}
     , decltype(_impl_.current_cooldown_){0}
+    , decltype(_impl_.ability_category_){1}
   };
   _impl_.ability_name_loc_token_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     _impl_.ability_name_loc_token_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.ability_category_loc_token_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.ability_category_loc_token_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   _impl_.summary_description_loc_token_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     _impl_.summary_description_loc_token_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.summary_description_level_up_loc_token_.InitDefault();
+  _impl_.summary_description_aghs_scepter_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.summary_description_level_up_loc_token_.Set("", GetArenaForAllocation());
+    _impl_.summary_description_aghs_scepter_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.summary_description_aghs_shard_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.summary_description_aghs_shard_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.preview_video_url_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.preview_video_url_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
@@ -76963,12 +76383,14 @@ CDotaMsgStructuredTooltipProperties::~CDotaMsgStructuredTooltipProperties() {
 inline void CDotaMsgStructuredTooltipProperties::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.summary_description_embed_values_.~RepeatedPtrField();
+  _impl_.summary_description_surfaced_lines_.~RepeatedPtrField();
+  _impl_.summary_description_embedded_sub_abilities_.~RepeatedPtrField();
   _impl_.chunks_.~RepeatedPtrField();
   _impl_.ability_name_loc_token_.Destroy();
-  _impl_.ability_category_loc_token_.Destroy();
   _impl_.summary_description_loc_token_.Destroy();
-  _impl_.summary_description_level_up_loc_token_.Destroy();
-  if (this != internal_default_instance()) delete _impl_.summary_description_facet_;
+  _impl_.summary_description_aghs_scepter_.Destroy();
+  _impl_.summary_description_aghs_shard_.Destroy();
+  _impl_.preview_video_url_.Destroy();
 }
 
 void CDotaMsgStructuredTooltipProperties::SetCachedSize(int size) const {
@@ -76982,6 +76404,8 @@ void CDotaMsgStructuredTooltipProperties::Clear() {
   (void) cached_has_bits;
 
   _impl_.summary_description_embed_values_.Clear();
+  _impl_.summary_description_surfaced_lines_.Clear();
+  _impl_.summary_description_embedded_sub_abilities_.Clear();
   _impl_.chunks_.Clear();
   cached_has_bits = _impl_._has_bits_[0];
   if (cached_has_bits & 0x0000001fu) {
@@ -76989,17 +76413,16 @@ void CDotaMsgStructuredTooltipProperties::Clear() {
       _impl_.ability_name_loc_token_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000002u) {
-      _impl_.ability_category_loc_token_.ClearNonDefaultToEmpty();
-    }
-    if (cached_has_bits & 0x00000004u) {
       _impl_.summary_description_loc_token_.ClearNonDefaultToEmpty();
     }
+    if (cached_has_bits & 0x00000004u) {
+      _impl_.summary_description_aghs_scepter_.ClearNonDefaultToEmpty();
+    }
     if (cached_has_bits & 0x00000008u) {
-      _impl_.summary_description_level_up_loc_token_.ClearNonDefaultToEmpty();
+      _impl_.summary_description_aghs_shard_.ClearNonDefaultToEmpty();
     }
     if (cached_has_bits & 0x00000010u) {
-      GOOGLE_DCHECK(_impl_.summary_description_facet_ != nullptr);
-      _impl_.summary_description_facet_->Clear();
+      _impl_.preview_video_url_.ClearNonDefaultToEmpty();
     }
   }
   if (cached_has_bits & 0x000000e0u) {
@@ -77007,7 +76430,10 @@ void CDotaMsgStructuredTooltipProperties::Clear() {
         reinterpret_cast<char*>(&_impl_.current_health_cost_) -
         reinterpret_cast<char*>(&_impl_.ability_level_)) + sizeof(_impl_.current_health_cost_));
   }
-  _impl_.current_cooldown_ = 0;
+  if (cached_has_bits & 0x00000300u) {
+    _impl_.current_cooldown_ = 0;
+    _impl_.ability_category_ = 1;
+  }
   _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
@@ -77031,15 +76457,16 @@ const char* CDotaMsgStructuredTooltipProperties::_InternalParse(const char* ptr,
         } else
           goto handle_unusual;
         continue;
-      // optional string ability_category_loc_token = 2;
+      // optional .CDotaMsgStructuredTooltipProperties.EAbilityTooltipCategory ability_category = 2 [default = kPassive];
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          auto str = _internal_mutable_ability_category_loc_token();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-          #ifndef NDEBUG
-          ::_pbi::VerifyUTF8(str, "CDotaMsgStructuredTooltipProperties.ability_category_loc_token");
-          #endif  // !NDEBUG
+          if (PROTOBUF_PREDICT_TRUE(::CDotaMsgStructuredTooltipProperties_EAbilityTooltipCategory_IsValid(val))) {
+            _internal_set_ability_category(static_cast<::CDotaMsgStructuredTooltipProperties_EAbilityTooltipCategory>(val));
+          } else {
+            ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(2, val, mutable_unknown_fields());
+          }
         } else
           goto handle_unusual;
         continue;
@@ -77091,36 +76518,82 @@ const char* CDotaMsgStructuredTooltipProperties::_InternalParse(const char* ptr,
         } else
           goto handle_unusual;
         continue;
-      // optional string summary_description_level_up_loc_token = 8;
+      // repeated .CDotaMsgStructuredTooltipProperties.Attribute summary_description_embed_values = 8;
       case 8:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 66)) {
-          auto str = _internal_mutable_summary_description_level_up_loc_token();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          #ifndef NDEBUG
-          ::_pbi::VerifyUTF8(str, "CDotaMsgStructuredTooltipProperties.summary_description_level_up_loc_token");
-          #endif  // !NDEBUG
-        } else
-          goto handle_unusual;
-        continue;
-      // repeated .CDotaMsgStructuredTooltipProperties.SummaryDescriptionEmbedValue summary_description_embed_values = 9;
-      case 9:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 74)) {
           ptr -= 1;
           do {
             ptr += 1;
             ptr = ctx->ParseMessage(_internal_add_summary_description_embed_values(), ptr);
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<66>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated string summary_description_surfaced_lines = 9;
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 74)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            auto str = _internal_add_summary_description_surfaced_lines();
+            ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+            CHK_(ptr);
+            #ifndef NDEBUG
+            ::_pbi::VerifyUTF8(str, "CDotaMsgStructuredTooltipProperties.summary_description_surfaced_lines");
+            #endif  // !NDEBUG
+            if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<74>(ptr));
         } else
           goto handle_unusual;
         continue;
-      // optional .CDotaMsgStructuredTooltipProperties.FacetDisplayProperties summary_description_facet = 10;
+      // repeated .CDotaMsgStructuredTooltipProperties.SummaryDescriptionEmbeddedSubAbility summary_description_embedded_sub_abilities = 10;
       case 10:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 82)) {
-          ptr = ctx->ParseMessage(_internal_mutable_summary_description_facet(), ptr);
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_summary_description_embedded_sub_abilities(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<82>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // optional string summary_description_aghs_scepter = 11;
+      case 11:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 90)) {
+          auto str = _internal_mutable_summary_description_aghs_scepter();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
+          #ifndef NDEBUG
+          ::_pbi::VerifyUTF8(str, "CDotaMsgStructuredTooltipProperties.summary_description_aghs_scepter");
+          #endif  // !NDEBUG
+        } else
+          goto handle_unusual;
+        continue;
+      // optional string summary_description_aghs_shard = 12;
+      case 12:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 98)) {
+          auto str = _internal_mutable_summary_description_aghs_shard();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          #ifndef NDEBUG
+          ::_pbi::VerifyUTF8(str, "CDotaMsgStructuredTooltipProperties.summary_description_aghs_shard");
+          #endif  // !NDEBUG
+        } else
+          goto handle_unusual;
+        continue;
+      // optional string preview_video_url = 13;
+      case 13:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 106)) {
+          auto str = _internal_mutable_preview_video_url();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          #ifndef NDEBUG
+          ::_pbi::VerifyUTF8(str, "CDotaMsgStructuredTooltipProperties.preview_video_url");
+          #endif  // !NDEBUG
         } else
           goto handle_unusual;
         continue;
@@ -77178,14 +76651,11 @@ uint8_t* CDotaMsgStructuredTooltipProperties::_InternalSerialize(
         1, this->_internal_ability_name_loc_token(), target);
   }
 
-  // optional string ability_category_loc_token = 2;
-  if (cached_has_bits & 0x00000002u) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->_internal_ability_category_loc_token().data(), static_cast<int>(this->_internal_ability_category_loc_token().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SERIALIZE,
-      "CDotaMsgStructuredTooltipProperties.ability_category_loc_token");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_ability_category_loc_token(), target);
+  // optional .CDotaMsgStructuredTooltipProperties.EAbilityTooltipCategory ability_category = 2 [default = kPassive];
+  if (cached_has_bits & 0x00000200u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
+      2, this->_internal_ability_category(), target);
   }
 
   // optional int32 ability_level = 3;
@@ -77213,7 +76683,7 @@ uint8_t* CDotaMsgStructuredTooltipProperties::_InternalSerialize(
   }
 
   // optional string summary_description_loc_token = 7;
-  if (cached_has_bits & 0x00000004u) {
+  if (cached_has_bits & 0x00000002u) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::VerifyUTF8StringNamedField(
       this->_internal_summary_description_loc_token().data(), static_cast<int>(this->_internal_summary_description_loc_token().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SERIALIZE,
@@ -77222,29 +76692,60 @@ uint8_t* CDotaMsgStructuredTooltipProperties::_InternalSerialize(
         7, this->_internal_summary_description_loc_token(), target);
   }
 
-  // optional string summary_description_level_up_loc_token = 8;
-  if (cached_has_bits & 0x00000008u) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::VerifyUTF8StringNamedField(
-      this->_internal_summary_description_level_up_loc_token().data(), static_cast<int>(this->_internal_summary_description_level_up_loc_token().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SERIALIZE,
-      "CDotaMsgStructuredTooltipProperties.summary_description_level_up_loc_token");
-    target = stream->WriteStringMaybeAliased(
-        8, this->_internal_summary_description_level_up_loc_token(), target);
-  }
-
-  // repeated .CDotaMsgStructuredTooltipProperties.SummaryDescriptionEmbedValue summary_description_embed_values = 9;
+  // repeated .CDotaMsgStructuredTooltipProperties.Attribute summary_description_embed_values = 8;
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_summary_description_embed_values_size()); i < n; i++) {
     const auto& repfield = this->_internal_summary_description_embed_values(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-        InternalWriteMessage(9, repfield, repfield.GetCachedSize(), target, stream);
+        InternalWriteMessage(8, repfield, repfield.GetCachedSize(), target, stream);
   }
 
-  // optional .CDotaMsgStructuredTooltipProperties.FacetDisplayProperties summary_description_facet = 10;
-  if (cached_has_bits & 0x00000010u) {
+  // repeated string summary_description_surfaced_lines = 9;
+  for (int i = 0, n = this->_internal_summary_description_surfaced_lines_size(); i < n; i++) {
+    const auto& s = this->_internal_summary_description_surfaced_lines(i);
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::VerifyUTF8StringNamedField(
+      s.data(), static_cast<int>(s.length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SERIALIZE,
+      "CDotaMsgStructuredTooltipProperties.summary_description_surfaced_lines");
+    target = stream->WriteString(9, s, target);
+  }
+
+  // repeated .CDotaMsgStructuredTooltipProperties.SummaryDescriptionEmbeddedSubAbility summary_description_embedded_sub_abilities = 10;
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_summary_description_embedded_sub_abilities_size()); i < n; i++) {
+    const auto& repfield = this->_internal_summary_description_embedded_sub_abilities(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
-      InternalWriteMessage(10, _Internal::summary_description_facet(this),
-        _Internal::summary_description_facet(this).GetCachedSize(), target, stream);
+        InternalWriteMessage(10, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  // optional string summary_description_aghs_scepter = 11;
+  if (cached_has_bits & 0x00000004u) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->_internal_summary_description_aghs_scepter().data(), static_cast<int>(this->_internal_summary_description_aghs_scepter().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SERIALIZE,
+      "CDotaMsgStructuredTooltipProperties.summary_description_aghs_scepter");
+    target = stream->WriteStringMaybeAliased(
+        11, this->_internal_summary_description_aghs_scepter(), target);
+  }
+
+  // optional string summary_description_aghs_shard = 12;
+  if (cached_has_bits & 0x00000008u) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->_internal_summary_description_aghs_shard().data(), static_cast<int>(this->_internal_summary_description_aghs_shard().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SERIALIZE,
+      "CDotaMsgStructuredTooltipProperties.summary_description_aghs_shard");
+    target = stream->WriteStringMaybeAliased(
+        12, this->_internal_summary_description_aghs_shard(), target);
+  }
+
+  // optional string preview_video_url = 13;
+  if (cached_has_bits & 0x00000010u) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->_internal_preview_video_url().data(), static_cast<int>(this->_internal_preview_video_url().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SERIALIZE,
+      "CDotaMsgStructuredTooltipProperties.preview_video_url");
+    target = stream->WriteStringMaybeAliased(
+        13, this->_internal_preview_video_url(), target);
   }
 
   // repeated .CDotaMsgStructuredTooltipProperties.TooltipContentChunk chunks = 20;
@@ -77271,9 +76772,24 @@ size_t CDotaMsgStructuredTooltipProperties::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .CDotaMsgStructuredTooltipProperties.SummaryDescriptionEmbedValue summary_description_embed_values = 9;
+  // repeated .CDotaMsgStructuredTooltipProperties.Attribute summary_description_embed_values = 8;
   total_size += 1UL * this->_internal_summary_description_embed_values_size();
   for (const auto& msg : this->_impl_.summary_description_embed_values_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // repeated string summary_description_surfaced_lines = 9;
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(_impl_.summary_description_surfaced_lines_.size());
+  for (int i = 0, n = _impl_.summary_description_surfaced_lines_.size(); i < n; i++) {
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+      _impl_.summary_description_surfaced_lines_.Get(i));
+  }
+
+  // repeated .CDotaMsgStructuredTooltipProperties.SummaryDescriptionEmbeddedSubAbility summary_description_embedded_sub_abilities = 10;
+  total_size += 1UL * this->_internal_summary_description_embedded_sub_abilities_size();
+  for (const auto& msg : this->_impl_.summary_description_embedded_sub_abilities_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
@@ -77294,32 +76810,32 @@ size_t CDotaMsgStructuredTooltipProperties::ByteSizeLong() const {
           this->_internal_ability_name_loc_token());
     }
 
-    // optional string ability_category_loc_token = 2;
-    if (cached_has_bits & 0x00000002u) {
-      total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-          this->_internal_ability_category_loc_token());
-    }
-
     // optional string summary_description_loc_token = 7;
-    if (cached_has_bits & 0x00000004u) {
+    if (cached_has_bits & 0x00000002u) {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
           this->_internal_summary_description_loc_token());
     }
 
-    // optional string summary_description_level_up_loc_token = 8;
+    // optional string summary_description_aghs_scepter = 11;
+    if (cached_has_bits & 0x00000004u) {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+          this->_internal_summary_description_aghs_scepter());
+    }
+
+    // optional string summary_description_aghs_shard = 12;
     if (cached_has_bits & 0x00000008u) {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-          this->_internal_summary_description_level_up_loc_token());
+          this->_internal_summary_description_aghs_shard());
     }
 
-    // optional .CDotaMsgStructuredTooltipProperties.FacetDisplayProperties summary_description_facet = 10;
+    // optional string preview_video_url = 13;
     if (cached_has_bits & 0x00000010u) {
       total_size += 1 +
-        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
-          *_impl_.summary_description_facet_);
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+          this->_internal_preview_video_url());
     }
 
     // optional int32 ability_level = 3;
@@ -77338,11 +76854,19 @@ size_t CDotaMsgStructuredTooltipProperties::ByteSizeLong() const {
     }
 
   }
-  // optional float current_cooldown = 6;
-  if (cached_has_bits & 0x00000100u) {
-    total_size += 1 + 4;
-  }
+  if (cached_has_bits & 0x00000300u) {
+    // optional float current_cooldown = 6;
+    if (cached_has_bits & 0x00000100u) {
+      total_size += 1 + 4;
+    }
 
+    // optional .CDotaMsgStructuredTooltipProperties.EAbilityTooltipCategory ability_category = 2 [default = kPassive];
+    if (cached_has_bits & 0x00000200u) {
+      total_size += 1 +
+        ::_pbi::WireFormatLite::EnumSize(this->_internal_ability_category());
+    }
+
+  }
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
@@ -77362,6 +76886,8 @@ void CDotaMsgStructuredTooltipProperties::MergeImpl(::PROTOBUF_NAMESPACE_ID::Mes
   (void) cached_has_bits;
 
   _this->_impl_.summary_description_embed_values_.MergeFrom(from._impl_.summary_description_embed_values_);
+  _this->_impl_.summary_description_surfaced_lines_.MergeFrom(from._impl_.summary_description_surfaced_lines_);
+  _this->_impl_.summary_description_embedded_sub_abilities_.MergeFrom(from._impl_.summary_description_embedded_sub_abilities_);
   _this->_impl_.chunks_.MergeFrom(from._impl_.chunks_);
   cached_has_bits = from._impl_._has_bits_[0];
   if (cached_has_bits & 0x000000ffu) {
@@ -77369,17 +76895,16 @@ void CDotaMsgStructuredTooltipProperties::MergeImpl(::PROTOBUF_NAMESPACE_ID::Mes
       _this->_internal_set_ability_name_loc_token(from._internal_ability_name_loc_token());
     }
     if (cached_has_bits & 0x00000002u) {
-      _this->_internal_set_ability_category_loc_token(from._internal_ability_category_loc_token());
-    }
-    if (cached_has_bits & 0x00000004u) {
       _this->_internal_set_summary_description_loc_token(from._internal_summary_description_loc_token());
     }
+    if (cached_has_bits & 0x00000004u) {
+      _this->_internal_set_summary_description_aghs_scepter(from._internal_summary_description_aghs_scepter());
+    }
     if (cached_has_bits & 0x00000008u) {
-      _this->_internal_set_summary_description_level_up_loc_token(from._internal_summary_description_level_up_loc_token());
+      _this->_internal_set_summary_description_aghs_shard(from._internal_summary_description_aghs_shard());
     }
     if (cached_has_bits & 0x00000010u) {
-      _this->_internal_mutable_summary_description_facet()->::CDotaMsgStructuredTooltipProperties_FacetDisplayProperties::MergeFrom(
-          from._internal_summary_description_facet());
+      _this->_internal_set_preview_video_url(from._internal_preview_video_url());
     }
     if (cached_has_bits & 0x00000020u) {
       _this->_impl_.ability_level_ = from._impl_.ability_level_;
@@ -77392,8 +76917,14 @@ void CDotaMsgStructuredTooltipProperties::MergeImpl(::PROTOBUF_NAMESPACE_ID::Mes
     }
     _this->_impl_._has_bits_[0] |= cached_has_bits;
   }
-  if (cached_has_bits & 0x00000100u) {
-    _this->_internal_set_current_cooldown(from._internal_current_cooldown());
+  if (cached_has_bits & 0x00000300u) {
+    if (cached_has_bits & 0x00000100u) {
+      _this->_impl_.current_cooldown_ = from._impl_.current_cooldown_;
+    }
+    if (cached_has_bits & 0x00000200u) {
+      _this->_impl_.ability_category_ = from._impl_.ability_category_;
+    }
+    _this->_impl_._has_bits_[0] |= cached_has_bits;
   }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -77416,35 +76947,42 @@ void CDotaMsgStructuredTooltipProperties::InternalSwap(CDotaMsgStructuredTooltip
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   _impl_.summary_description_embed_values_.InternalSwap(&other->_impl_.summary_description_embed_values_);
+  _impl_.summary_description_surfaced_lines_.InternalSwap(&other->_impl_.summary_description_surfaced_lines_);
+  _impl_.summary_description_embedded_sub_abilities_.InternalSwap(&other->_impl_.summary_description_embedded_sub_abilities_);
   _impl_.chunks_.InternalSwap(&other->_impl_.chunks_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &_impl_.ability_name_loc_token_, lhs_arena,
       &other->_impl_.ability_name_loc_token_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.ability_category_loc_token_, lhs_arena,
-      &other->_impl_.ability_category_loc_token_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &_impl_.summary_description_loc_token_, lhs_arena,
       &other->_impl_.summary_description_loc_token_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.summary_description_level_up_loc_token_, lhs_arena,
-      &other->_impl_.summary_description_level_up_loc_token_, rhs_arena
+      &_impl_.summary_description_aghs_scepter_, lhs_arena,
+      &other->_impl_.summary_description_aghs_scepter_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.summary_description_aghs_shard_, lhs_arena,
+      &other->_impl_.summary_description_aghs_shard_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.preview_video_url_, lhs_arena,
+      &other->_impl_.preview_video_url_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(CDotaMsgStructuredTooltipProperties, _impl_.current_cooldown_)
       + sizeof(CDotaMsgStructuredTooltipProperties::_impl_.current_cooldown_)
-      - PROTOBUF_FIELD_OFFSET(CDotaMsgStructuredTooltipProperties, _impl_.summary_description_facet_)>(
-          reinterpret_cast<char*>(&_impl_.summary_description_facet_),
-          reinterpret_cast<char*>(&other->_impl_.summary_description_facet_));
+      - PROTOBUF_FIELD_OFFSET(CDotaMsgStructuredTooltipProperties, _impl_.ability_level_)>(
+          reinterpret_cast<char*>(&_impl_.ability_level_),
+          reinterpret_cast<char*>(&other->_impl_.ability_level_));
+  swap(_impl_.ability_category_, other->_impl_.ability_category_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata CDotaMsgStructuredTooltipProperties::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fgcmessages_5fcommon_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_2eproto_once,
-      file_level_metadata_dota_5fgcmessages_5fcommon_2eproto[186]);
+      file_level_metadata_dota_5fgcmessages_5fcommon_2eproto[184]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -78153,10 +77691,6 @@ template<> PROTOBUF_NOINLINE ::CDotaMsgStructuredTooltipProperties_AttributeValu
 Arena::CreateMaybeMessage< ::CDotaMsgStructuredTooltipProperties_AttributeValue >(Arena* arena) {
   return Arena::CreateMessageInternal< ::CDotaMsgStructuredTooltipProperties_AttributeValue >(arena);
 }
-template<> PROTOBUF_NOINLINE ::CDotaMsgStructuredTooltipProperties_FacetDisplayProperties*
-Arena::CreateMaybeMessage< ::CDotaMsgStructuredTooltipProperties_FacetDisplayProperties >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::CDotaMsgStructuredTooltipProperties_FacetDisplayProperties >(arena);
-}
 template<> PROTOBUF_NOINLINE ::CDotaMsgStructuredTooltipProperties_Attribute*
 Arena::CreateMaybeMessage< ::CDotaMsgStructuredTooltipProperties_Attribute >(Arena* arena) {
   return Arena::CreateMessageInternal< ::CDotaMsgStructuredTooltipProperties_Attribute >(arena);
@@ -78168,10 +77702,6 @@ Arena::CreateMaybeMessage< ::CDotaMsgStructuredTooltipProperties_AttributeGroupD
 template<> PROTOBUF_NOINLINE ::CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Specific*
 Arena::CreateMaybeMessage< ::CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Specific >(Arena* arena) {
   return Arena::CreateMessageInternal< ::CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Specific >(arena);
-}
-template<> PROTOBUF_NOINLINE ::CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Facet*
-Arena::CreateMaybeMessage< ::CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Facet >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::CDotaMsgStructuredTooltipProperties_AttributeGroupDesc_Facet >(arena);
 }
 template<> PROTOBUF_NOINLINE ::CDotaMsgStructuredTooltipProperties_AttributeGroupDescription*
 Arena::CreateMaybeMessage< ::CDotaMsgStructuredTooltipProperties_AttributeGroupDescription >(Arena* arena) {
@@ -78189,9 +77719,9 @@ template<> PROTOBUF_NOINLINE ::CDotaMsgStructuredTooltipProperties_TooltipConten
 Arena::CreateMaybeMessage< ::CDotaMsgStructuredTooltipProperties_TooltipContentChunk >(Arena* arena) {
   return Arena::CreateMessageInternal< ::CDotaMsgStructuredTooltipProperties_TooltipContentChunk >(arena);
 }
-template<> PROTOBUF_NOINLINE ::CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue*
-Arena::CreateMaybeMessage< ::CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbedValue >(arena);
+template<> PROTOBUF_NOINLINE ::CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbeddedSubAbility*
+Arena::CreateMaybeMessage< ::CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbeddedSubAbility >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::CDotaMsgStructuredTooltipProperties_SummaryDescriptionEmbeddedSubAbility >(arena);
 }
 template<> PROTOBUF_NOINLINE ::CDotaMsgStructuredTooltipProperties*
 Arena::CreateMaybeMessage< ::CDotaMsgStructuredTooltipProperties >(Arena* arena) {

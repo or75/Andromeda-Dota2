@@ -1298,7 +1298,85 @@ struct CWorkshop_GetSpecialPayments_ResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CWorkshop_GetSpecialPayments_ResponseDefaultTypeInternal _CWorkshop_GetSpecialPayments_Response_default_instance_;
-static ::_pb::Metadata file_level_metadata_steammessages_5fint_2eproto[82];
+PROTOBUF_CONSTEXPR CMsgGCReportMetrics_MetricEntry_Dimension::CMsgGCReportMetrics_MetricEntry_Dimension(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_._has_bits_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_.name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.value_)*/{}
+  , /*decltype(_impl_._oneof_case_)*/{}} {}
+struct CMsgGCReportMetrics_MetricEntry_DimensionDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR CMsgGCReportMetrics_MetricEntry_DimensionDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~CMsgGCReportMetrics_MetricEntry_DimensionDefaultTypeInternal() {}
+  union {
+    CMsgGCReportMetrics_MetricEntry_Dimension _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CMsgGCReportMetrics_MetricEntry_DimensionDefaultTypeInternal _CMsgGCReportMetrics_MetricEntry_Dimension_default_instance_;
+PROTOBUF_CONSTEXPR CMsgGCReportMetrics_MetricEntry_Measurement::CMsgGCReportMetrics_MetricEntry_Measurement(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_._has_bits_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_.name_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.value_)*/{}
+  , /*decltype(_impl_._oneof_case_)*/{}} {}
+struct CMsgGCReportMetrics_MetricEntry_MeasurementDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR CMsgGCReportMetrics_MetricEntry_MeasurementDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~CMsgGCReportMetrics_MetricEntry_MeasurementDefaultTypeInternal() {}
+  union {
+    CMsgGCReportMetrics_MetricEntry_Measurement _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CMsgGCReportMetrics_MetricEntry_MeasurementDefaultTypeInternal _CMsgGCReportMetrics_MetricEntry_Measurement_default_instance_;
+PROTOBUF_CONSTEXPR CMsgGCReportMetrics_MetricEntry::CMsgGCReportMetrics_MetricEntry(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_._has_bits_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_.dimensions_)*/{}
+  , /*decltype(_impl_.measurements_)*/{}
+  , /*decltype(_impl_.catalog_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.operation_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.timestamp_)*/0} {}
+struct CMsgGCReportMetrics_MetricEntryDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR CMsgGCReportMetrics_MetricEntryDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~CMsgGCReportMetrics_MetricEntryDefaultTypeInternal() {}
+  union {
+    CMsgGCReportMetrics_MetricEntry _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CMsgGCReportMetrics_MetricEntryDefaultTypeInternal _CMsgGCReportMetrics_MetricEntry_default_instance_;
+PROTOBUF_CONSTEXPR CMsgGCReportMetrics::CMsgGCReportMetrics(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.metric_data_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct CMsgGCReportMetricsDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR CMsgGCReportMetricsDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~CMsgGCReportMetricsDefaultTypeInternal() {}
+  union {
+    CMsgGCReportMetrics _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CMsgGCReportMetricsDefaultTypeInternal _CMsgGCReportMetrics_default_instance_;
+PROTOBUF_CONSTEXPR CMsgGCReportMetrics_Response::CMsgGCReportMetrics_Response(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_._has_bits_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_.failed_entry_count_)*/0u
+  , /*decltype(_impl_.eresult_)*/2} {}
+struct CMsgGCReportMetrics_ResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR CMsgGCReportMetrics_ResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~CMsgGCReportMetrics_ResponseDefaultTypeInternal() {}
+  union {
+    CMsgGCReportMetrics_Response _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CMsgGCReportMetrics_ResponseDefaultTypeInternal _CMsgGCReportMetrics_Response_default_instance_;
+static ::_pb::Metadata file_level_metadata_steammessages_5fint_2eproto[87];
 static const ::_pb::EnumDescriptor* file_level_enum_descriptors_steammessages_5fint_2eproto[3];
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_steammessages_5fint_2eproto = nullptr;
 
@@ -2240,6 +2318,67 @@ const uint32_t TableStruct_steammessages_5fint_2eproto::offsets[] PROTOBUF_SECTI
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::CWorkshop_GetSpecialPayments_Response, _impl_.special_payments_),
+  PROTOBUF_FIELD_OFFSET(::CMsgGCReportMetrics_MetricEntry_Dimension, _impl_._has_bits_),
+  PROTOBUF_FIELD_OFFSET(::CMsgGCReportMetrics_MetricEntry_Dimension, _internal_metadata_),
+  ~0u,  // no _extensions_
+  PROTOBUF_FIELD_OFFSET(::CMsgGCReportMetrics_MetricEntry_Dimension, _impl_._oneof_case_[0]),
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::CMsgGCReportMetrics_MetricEntry_Dimension, _impl_.name_),
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  PROTOBUF_FIELD_OFFSET(::CMsgGCReportMetrics_MetricEntry_Dimension, _impl_.value_),
+  0,
+  ~0u,
+  ~0u,
+  ~0u,
+  PROTOBUF_FIELD_OFFSET(::CMsgGCReportMetrics_MetricEntry_Measurement, _impl_._has_bits_),
+  PROTOBUF_FIELD_OFFSET(::CMsgGCReportMetrics_MetricEntry_Measurement, _internal_metadata_),
+  ~0u,  // no _extensions_
+  PROTOBUF_FIELD_OFFSET(::CMsgGCReportMetrics_MetricEntry_Measurement, _impl_._oneof_case_[0]),
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::CMsgGCReportMetrics_MetricEntry_Measurement, _impl_.name_),
+  ::_pbi::kInvalidFieldOffsetTag,
+  ::_pbi::kInvalidFieldOffsetTag,
+  PROTOBUF_FIELD_OFFSET(::CMsgGCReportMetrics_MetricEntry_Measurement, _impl_.value_),
+  0,
+  ~0u,
+  ~0u,
+  PROTOBUF_FIELD_OFFSET(::CMsgGCReportMetrics_MetricEntry, _impl_._has_bits_),
+  PROTOBUF_FIELD_OFFSET(::CMsgGCReportMetrics_MetricEntry, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::CMsgGCReportMetrics_MetricEntry, _impl_.catalog_),
+  PROTOBUF_FIELD_OFFSET(::CMsgGCReportMetrics_MetricEntry, _impl_.operation_),
+  PROTOBUF_FIELD_OFFSET(::CMsgGCReportMetrics_MetricEntry, _impl_.timestamp_),
+  PROTOBUF_FIELD_OFFSET(::CMsgGCReportMetrics_MetricEntry, _impl_.dimensions_),
+  PROTOBUF_FIELD_OFFSET(::CMsgGCReportMetrics_MetricEntry, _impl_.measurements_),
+  0,
+  1,
+  2,
+  ~0u,
+  ~0u,
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::CMsgGCReportMetrics, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::CMsgGCReportMetrics, _impl_.metric_data_),
+  PROTOBUF_FIELD_OFFSET(::CMsgGCReportMetrics_Response, _impl_._has_bits_),
+  PROTOBUF_FIELD_OFFSET(::CMsgGCReportMetrics_Response, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::CMsgGCReportMetrics_Response, _impl_.eresult_),
+  PROTOBUF_FIELD_OFFSET(::CMsgGCReportMetrics_Response, _impl_.failed_entry_count_),
+  1,
+  0,
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, 11, -1, sizeof(::CMsgWebAPIKey)},
@@ -2324,6 +2463,11 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 902, 911, -1, sizeof(::CWorkshop_GetSpecialPayments_Request)},
   { 914, 925, -1, sizeof(::CWorkshop_GetSpecialPayments_Response_SpecialPayment)},
   { 930, -1, -1, sizeof(::CWorkshop_GetSpecialPayments_Response)},
+  { 937, 948, -1, sizeof(::CMsgGCReportMetrics_MetricEntry_Dimension)},
+  { 952, 962, -1, sizeof(::CMsgGCReportMetrics_MetricEntry_Measurement)},
+  { 965, 976, -1, sizeof(::CMsgGCReportMetrics_MetricEntry)},
+  { 981, -1, -1, sizeof(::CMsgGCReportMetrics)},
+  { 988, 996, -1, sizeof(::CMsgGCReportMetrics_Response)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -2409,6 +2553,11 @@ static const ::_pb::Message* const file_default_instances[] = {
   &::_CWorkshop_GetSpecialPayments_Request_default_instance_._instance,
   &::_CWorkshop_GetSpecialPayments_Response_SpecialPayment_default_instance_._instance,
   &::_CWorkshop_GetSpecialPayments_Response_default_instance_._instance,
+  &::_CMsgGCReportMetrics_MetricEntry_Dimension_default_instance_._instance,
+  &::_CMsgGCReportMetrics_MetricEntry_Measurement_default_instance_._instance,
+  &::_CMsgGCReportMetrics_MetricEntry_default_instance_._instance,
+  &::_CMsgGCReportMetrics_default_instance_._instance,
+  &::_CMsgGCReportMetrics_Response_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_steammessages_5fint_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
@@ -2620,16 +2769,30 @@ const char descriptor_table_protodef_steammessages_5fint_2eproto[] PROTOBUF_SECT
   "\032z\n\016SpecialPayment\022\r\n\005appid\030\001 \001(\r\022\022\n\ngam"
   "eitemid\030\002 \001(\r\022\014\n\004date\030\003 \001(\t\022\032\n\022net_payme"
   "nt_us_usd\030\004 \001(\004\022\033\n\023net_payment_row_usd\030\005"
-  " \001(\004"
+  " \001(\004\"\333\003\n\023CMsgGCReportMetrics\0225\n\013metric_d"
+  "ata\030\001 \003(\0132 .CMsgGCReportMetrics.MetricEn"
+  "try\032\214\003\n\013MetricEntry\022\017\n\007catalog\030\001 \001(\t\022\021\n\t"
+  "operation\030\002 \001(\t\022\021\n\ttimestamp\030\003 \001(\001\022>\n\ndi"
+  "mensions\030\n \003(\0132*.CMsgGCReportMetrics.Met"
+  "ricEntry.Dimension\022B\n\014measurements\030\013 \003(\013"
+  "2,.CMsgGCReportMetrics.MetricEntry.Measu"
+  "rement\032l\n\tDimension\022\014\n\004name\030\001 \001(\t\022\026\n\014val"
+  "ue_string\030\002 \001(\tH\000\022\027\n\rvalue_integer\030\003 \001(\003"
+  "H\000\022\027\n\rvalue_boolean\030\004 \001(\010H\000B\007\n\005value\032T\n\013"
+  "Measurement\022\014\n\004name\030\001 \001(\t\022\027\n\rvalue_integ"
+  "er\030\002 \001(\003H\000\022\025\n\013value_float\030\003 \001(\001H\000B\007\n\005val"
+  "ue\"N\n\034CMsgGCReportMetrics_Response\022\022\n\007er"
+  "esult\030\001 \001(\005:\0012\022\032\n\022failed_entry_count\030\002 \001"
+  "(\r"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_steammessages_5fint_2eproto_deps[1] = {
   &::descriptor_table_steammessages_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_steammessages_5fint_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_steammessages_5fint_2eproto = {
-    false, false, 8324, descriptor_table_protodef_steammessages_5fint_2eproto,
+    false, false, 8882, descriptor_table_protodef_steammessages_5fint_2eproto,
     "steammessages_int.proto",
-    &descriptor_table_steammessages_5fint_2eproto_once, descriptor_table_steammessages_5fint_2eproto_deps, 1, 82,
+    &descriptor_table_steammessages_5fint_2eproto_once, descriptor_table_steammessages_5fint_2eproto_deps, 1, 87,
     schemas, file_default_instances, TableStruct_steammessages_5fint_2eproto::offsets,
     file_level_metadata_steammessages_5fint_2eproto, file_level_enum_descriptors_steammessages_5fint_2eproto,
     file_level_service_descriptors_steammessages_5fint_2eproto,
@@ -24384,6 +24547,1489 @@ void CWorkshop_GetSpecialPayments_Response::InternalSwap(CWorkshop_GetSpecialPay
       file_level_metadata_steammessages_5fint_2eproto[81]);
 }
 
+// ===================================================================
+
+class CMsgGCReportMetrics_MetricEntry_Dimension::_Internal {
+ public:
+  using HasBits = decltype(std::declval<CMsgGCReportMetrics_MetricEntry_Dimension>()._impl_._has_bits_);
+  static void set_has_name(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+};
+
+CMsgGCReportMetrics_MetricEntry_Dimension::CMsgGCReportMetrics_MetricEntry_Dimension(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:CMsgGCReportMetrics.MetricEntry.Dimension)
+}
+CMsgGCReportMetrics_MetricEntry_Dimension::CMsgGCReportMetrics_MetricEntry_Dimension(const CMsgGCReportMetrics_MetricEntry_Dimension& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  CMsgGCReportMetrics_MetricEntry_Dimension* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.name_){}
+    , decltype(_impl_.value_){}
+    , /*decltype(_impl_._oneof_case_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (from._internal_has_name()) {
+    _this->_impl_.name_.Set(from._internal_name(), 
+      _this->GetArenaForAllocation());
+  }
+  clear_has_value();
+  switch (from.value_case()) {
+    case kValueString: {
+      _this->_internal_set_value_string(from._internal_value_string());
+      break;
+    }
+    case kValueInteger: {
+      _this->_internal_set_value_integer(from._internal_value_integer());
+      break;
+    }
+    case kValueBoolean: {
+      _this->_internal_set_value_boolean(from._internal_value_boolean());
+      break;
+    }
+    case VALUE_NOT_SET: {
+      break;
+    }
+  }
+  // @@protoc_insertion_point(copy_constructor:CMsgGCReportMetrics.MetricEntry.Dimension)
+}
+
+inline void CMsgGCReportMetrics_MetricEntry_Dimension::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.name_){}
+    , decltype(_impl_.value_){}
+    , /*decltype(_impl_._oneof_case_)*/{}
+  };
+  _impl_.name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  clear_has_value();
+}
+
+CMsgGCReportMetrics_MetricEntry_Dimension::~CMsgGCReportMetrics_MetricEntry_Dimension() {
+  // @@protoc_insertion_point(destructor:CMsgGCReportMetrics.MetricEntry.Dimension)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void CMsgGCReportMetrics_MetricEntry_Dimension::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.name_.Destroy();
+  if (has_value()) {
+    clear_value();
+  }
+}
+
+void CMsgGCReportMetrics_MetricEntry_Dimension::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void CMsgGCReportMetrics_MetricEntry_Dimension::clear_value() {
+// @@protoc_insertion_point(one_of_clear_start:CMsgGCReportMetrics.MetricEntry.Dimension)
+  switch (value_case()) {
+    case kValueString: {
+      _impl_.value_.value_string_.Destroy();
+      break;
+    }
+    case kValueInteger: {
+      // No need to clear
+      break;
+    }
+    case kValueBoolean: {
+      // No need to clear
+      break;
+    }
+    case VALUE_NOT_SET: {
+      break;
+    }
+  }
+  _impl_._oneof_case_[0] = VALUE_NOT_SET;
+}
+
+
+void CMsgGCReportMetrics_MetricEntry_Dimension::Clear() {
+// @@protoc_insertion_point(message_clear_start:CMsgGCReportMetrics.MetricEntry.Dimension)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    _impl_.name_.ClearNonDefaultToEmpty();
+  }
+  clear_value();
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* CMsgGCReportMetrics_MetricEntry_Dimension::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // optional string name = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_name();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          #ifndef NDEBUG
+          ::_pbi::VerifyUTF8(str, "CMsgGCReportMetrics.MetricEntry.Dimension.name");
+          #endif  // !NDEBUG
+        } else
+          goto handle_unusual;
+        continue;
+      // string value_string = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_value_string();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          #ifndef NDEBUG
+          ::_pbi::VerifyUTF8(str, "CMsgGCReportMetrics.MetricEntry.Dimension.value_string");
+          #endif  // !NDEBUG
+        } else
+          goto handle_unusual;
+        continue;
+      // int64 value_integer = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          _internal_set_value_integer(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // bool value_boolean = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
+          _internal_set_value_boolean(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  _impl_._has_bits_.Or(has_bits);
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* CMsgGCReportMetrics_MetricEntry_Dimension::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:CMsgGCReportMetrics.MetricEntry.Dimension)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  // optional string name = 1;
+  if (cached_has_bits & 0x00000001u) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SERIALIZE,
+      "CMsgGCReportMetrics.MetricEntry.Dimension.name");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_name(), target);
+  }
+
+  switch (value_case()) {
+    case kValueString: {
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::VerifyUTF8StringNamedField(
+        this->_internal_value_string().data(), static_cast<int>(this->_internal_value_string().length()),
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SERIALIZE,
+        "CMsgGCReportMetrics.MetricEntry.Dimension.value_string");
+      target = stream->WriteStringMaybeAliased(
+          2, this->_internal_value_string(), target);
+      break;
+    }
+    case kValueInteger: {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteInt64ToArray(3, this->_internal_value_integer(), target);
+      break;
+    }
+    case kValueBoolean: {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteBoolToArray(4, this->_internal_value_boolean(), target);
+      break;
+    }
+    default: ;
+  }
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CMsgGCReportMetrics.MetricEntry.Dimension)
+  return target;
+}
+
+size_t CMsgGCReportMetrics_MetricEntry_Dimension::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:CMsgGCReportMetrics.MetricEntry.Dimension)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // optional string name = 1;
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name());
+  }
+
+  switch (value_case()) {
+    // string value_string = 2;
+    case kValueString: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+          this->_internal_value_string());
+      break;
+    }
+    // int64 value_integer = 3;
+    case kValueInteger: {
+      total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(this->_internal_value_integer());
+      break;
+    }
+    // bool value_boolean = 4;
+    case kValueBoolean: {
+      total_size += 1 + 1;
+      break;
+    }
+    case VALUE_NOT_SET: {
+      break;
+    }
+  }
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData CMsgGCReportMetrics_MetricEntry_Dimension::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    CMsgGCReportMetrics_MetricEntry_Dimension::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CMsgGCReportMetrics_MetricEntry_Dimension::GetClassData() const { return &_class_data_; }
+
+
+void CMsgGCReportMetrics_MetricEntry_Dimension::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<CMsgGCReportMetrics_MetricEntry_Dimension*>(&to_msg);
+  auto& from = static_cast<const CMsgGCReportMetrics_MetricEntry_Dimension&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:CMsgGCReportMetrics.MetricEntry.Dimension)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_has_name()) {
+    _this->_internal_set_name(from._internal_name());
+  }
+  switch (from.value_case()) {
+    case kValueString: {
+      _this->_internal_set_value_string(from._internal_value_string());
+      break;
+    }
+    case kValueInteger: {
+      _this->_internal_set_value_integer(from._internal_value_integer());
+      break;
+    }
+    case kValueBoolean: {
+      _this->_internal_set_value_boolean(from._internal_value_boolean());
+      break;
+    }
+    case VALUE_NOT_SET: {
+      break;
+    }
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void CMsgGCReportMetrics_MetricEntry_Dimension::CopyFrom(const CMsgGCReportMetrics_MetricEntry_Dimension& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:CMsgGCReportMetrics.MetricEntry.Dimension)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CMsgGCReportMetrics_MetricEntry_Dimension::IsInitialized() const {
+  return true;
+}
+
+void CMsgGCReportMetrics_MetricEntry_Dimension::InternalSwap(CMsgGCReportMetrics_MetricEntry_Dimension* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.name_, lhs_arena,
+      &other->_impl_.name_, rhs_arena
+  );
+  swap(_impl_.value_, other->_impl_.value_);
+  swap(_impl_._oneof_case_[0], other->_impl_._oneof_case_[0]);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata CMsgGCReportMetrics_MetricEntry_Dimension::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_steammessages_5fint_2eproto_getter, &descriptor_table_steammessages_5fint_2eproto_once,
+      file_level_metadata_steammessages_5fint_2eproto[82]);
+}
+
+// ===================================================================
+
+class CMsgGCReportMetrics_MetricEntry_Measurement::_Internal {
+ public:
+  using HasBits = decltype(std::declval<CMsgGCReportMetrics_MetricEntry_Measurement>()._impl_._has_bits_);
+  static void set_has_name(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+};
+
+CMsgGCReportMetrics_MetricEntry_Measurement::CMsgGCReportMetrics_MetricEntry_Measurement(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:CMsgGCReportMetrics.MetricEntry.Measurement)
+}
+CMsgGCReportMetrics_MetricEntry_Measurement::CMsgGCReportMetrics_MetricEntry_Measurement(const CMsgGCReportMetrics_MetricEntry_Measurement& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  CMsgGCReportMetrics_MetricEntry_Measurement* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.name_){}
+    , decltype(_impl_.value_){}
+    , /*decltype(_impl_._oneof_case_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (from._internal_has_name()) {
+    _this->_impl_.name_.Set(from._internal_name(), 
+      _this->GetArenaForAllocation());
+  }
+  clear_has_value();
+  switch (from.value_case()) {
+    case kValueInteger: {
+      _this->_internal_set_value_integer(from._internal_value_integer());
+      break;
+    }
+    case kValueFloat: {
+      _this->_internal_set_value_float(from._internal_value_float());
+      break;
+    }
+    case VALUE_NOT_SET: {
+      break;
+    }
+  }
+  // @@protoc_insertion_point(copy_constructor:CMsgGCReportMetrics.MetricEntry.Measurement)
+}
+
+inline void CMsgGCReportMetrics_MetricEntry_Measurement::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.name_){}
+    , decltype(_impl_.value_){}
+    , /*decltype(_impl_._oneof_case_)*/{}
+  };
+  _impl_.name_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.name_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  clear_has_value();
+}
+
+CMsgGCReportMetrics_MetricEntry_Measurement::~CMsgGCReportMetrics_MetricEntry_Measurement() {
+  // @@protoc_insertion_point(destructor:CMsgGCReportMetrics.MetricEntry.Measurement)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void CMsgGCReportMetrics_MetricEntry_Measurement::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.name_.Destroy();
+  if (has_value()) {
+    clear_value();
+  }
+}
+
+void CMsgGCReportMetrics_MetricEntry_Measurement::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void CMsgGCReportMetrics_MetricEntry_Measurement::clear_value() {
+// @@protoc_insertion_point(one_of_clear_start:CMsgGCReportMetrics.MetricEntry.Measurement)
+  switch (value_case()) {
+    case kValueInteger: {
+      // No need to clear
+      break;
+    }
+    case kValueFloat: {
+      // No need to clear
+      break;
+    }
+    case VALUE_NOT_SET: {
+      break;
+    }
+  }
+  _impl_._oneof_case_[0] = VALUE_NOT_SET;
+}
+
+
+void CMsgGCReportMetrics_MetricEntry_Measurement::Clear() {
+// @@protoc_insertion_point(message_clear_start:CMsgGCReportMetrics.MetricEntry.Measurement)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    _impl_.name_.ClearNonDefaultToEmpty();
+  }
+  clear_value();
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* CMsgGCReportMetrics_MetricEntry_Measurement::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // optional string name = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_name();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          #ifndef NDEBUG
+          ::_pbi::VerifyUTF8(str, "CMsgGCReportMetrics.MetricEntry.Measurement.name");
+          #endif  // !NDEBUG
+        } else
+          goto handle_unusual;
+        continue;
+      // int64 value_integer = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _internal_set_value_integer(::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr));
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // double value_float = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 25)) {
+          _internal_set_value_float(::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr));
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  _impl_._has_bits_.Or(has_bits);
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* CMsgGCReportMetrics_MetricEntry_Measurement::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:CMsgGCReportMetrics.MetricEntry.Measurement)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  // optional string name = 1;
+  if (cached_has_bits & 0x00000001u) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SERIALIZE,
+      "CMsgGCReportMetrics.MetricEntry.Measurement.name");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_name(), target);
+  }
+
+  switch (value_case()) {
+    case kValueInteger: {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteInt64ToArray(2, this->_internal_value_integer(), target);
+      break;
+    }
+    case kValueFloat: {
+      target = stream->EnsureSpace(target);
+      target = ::_pbi::WireFormatLite::WriteDoubleToArray(3, this->_internal_value_float(), target);
+      break;
+    }
+    default: ;
+  }
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CMsgGCReportMetrics.MetricEntry.Measurement)
+  return target;
+}
+
+size_t CMsgGCReportMetrics_MetricEntry_Measurement::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:CMsgGCReportMetrics.MetricEntry.Measurement)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // optional string name = 1;
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_name());
+  }
+
+  switch (value_case()) {
+    // int64 value_integer = 2;
+    case kValueInteger: {
+      total_size += ::_pbi::WireFormatLite::Int64SizePlusOne(this->_internal_value_integer());
+      break;
+    }
+    // double value_float = 3;
+    case kValueFloat: {
+      total_size += 1 + 8;
+      break;
+    }
+    case VALUE_NOT_SET: {
+      break;
+    }
+  }
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData CMsgGCReportMetrics_MetricEntry_Measurement::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    CMsgGCReportMetrics_MetricEntry_Measurement::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CMsgGCReportMetrics_MetricEntry_Measurement::GetClassData() const { return &_class_data_; }
+
+
+void CMsgGCReportMetrics_MetricEntry_Measurement::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<CMsgGCReportMetrics_MetricEntry_Measurement*>(&to_msg);
+  auto& from = static_cast<const CMsgGCReportMetrics_MetricEntry_Measurement&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:CMsgGCReportMetrics.MetricEntry.Measurement)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_has_name()) {
+    _this->_internal_set_name(from._internal_name());
+  }
+  switch (from.value_case()) {
+    case kValueInteger: {
+      _this->_internal_set_value_integer(from._internal_value_integer());
+      break;
+    }
+    case kValueFloat: {
+      _this->_internal_set_value_float(from._internal_value_float());
+      break;
+    }
+    case VALUE_NOT_SET: {
+      break;
+    }
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void CMsgGCReportMetrics_MetricEntry_Measurement::CopyFrom(const CMsgGCReportMetrics_MetricEntry_Measurement& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:CMsgGCReportMetrics.MetricEntry.Measurement)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CMsgGCReportMetrics_MetricEntry_Measurement::IsInitialized() const {
+  return true;
+}
+
+void CMsgGCReportMetrics_MetricEntry_Measurement::InternalSwap(CMsgGCReportMetrics_MetricEntry_Measurement* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.name_, lhs_arena,
+      &other->_impl_.name_, rhs_arena
+  );
+  swap(_impl_.value_, other->_impl_.value_);
+  swap(_impl_._oneof_case_[0], other->_impl_._oneof_case_[0]);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata CMsgGCReportMetrics_MetricEntry_Measurement::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_steammessages_5fint_2eproto_getter, &descriptor_table_steammessages_5fint_2eproto_once,
+      file_level_metadata_steammessages_5fint_2eproto[83]);
+}
+
+// ===================================================================
+
+class CMsgGCReportMetrics_MetricEntry::_Internal {
+ public:
+  using HasBits = decltype(std::declval<CMsgGCReportMetrics_MetricEntry>()._impl_._has_bits_);
+  static void set_has_catalog(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static void set_has_operation(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
+  static void set_has_timestamp(HasBits* has_bits) {
+    (*has_bits)[0] |= 4u;
+  }
+};
+
+CMsgGCReportMetrics_MetricEntry::CMsgGCReportMetrics_MetricEntry(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:CMsgGCReportMetrics.MetricEntry)
+}
+CMsgGCReportMetrics_MetricEntry::CMsgGCReportMetrics_MetricEntry(const CMsgGCReportMetrics_MetricEntry& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  CMsgGCReportMetrics_MetricEntry* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.dimensions_){from._impl_.dimensions_}
+    , decltype(_impl_.measurements_){from._impl_.measurements_}
+    , decltype(_impl_.catalog_){}
+    , decltype(_impl_.operation_){}
+    , decltype(_impl_.timestamp_){}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.catalog_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.catalog_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (from._internal_has_catalog()) {
+    _this->_impl_.catalog_.Set(from._internal_catalog(), 
+      _this->GetArenaForAllocation());
+  }
+  _impl_.operation_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.operation_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (from._internal_has_operation()) {
+    _this->_impl_.operation_.Set(from._internal_operation(), 
+      _this->GetArenaForAllocation());
+  }
+  _this->_impl_.timestamp_ = from._impl_.timestamp_;
+  // @@protoc_insertion_point(copy_constructor:CMsgGCReportMetrics.MetricEntry)
+}
+
+inline void CMsgGCReportMetrics_MetricEntry::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.dimensions_){arena}
+    , decltype(_impl_.measurements_){arena}
+    , decltype(_impl_.catalog_){}
+    , decltype(_impl_.operation_){}
+    , decltype(_impl_.timestamp_){0}
+  };
+  _impl_.catalog_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.catalog_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.operation_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.operation_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+CMsgGCReportMetrics_MetricEntry::~CMsgGCReportMetrics_MetricEntry() {
+  // @@protoc_insertion_point(destructor:CMsgGCReportMetrics.MetricEntry)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void CMsgGCReportMetrics_MetricEntry::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.dimensions_.~RepeatedPtrField();
+  _impl_.measurements_.~RepeatedPtrField();
+  _impl_.catalog_.Destroy();
+  _impl_.operation_.Destroy();
+}
+
+void CMsgGCReportMetrics_MetricEntry::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void CMsgGCReportMetrics_MetricEntry::Clear() {
+// @@protoc_insertion_point(message_clear_start:CMsgGCReportMetrics.MetricEntry)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.dimensions_.Clear();
+  _impl_.measurements_.Clear();
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    if (cached_has_bits & 0x00000001u) {
+      _impl_.catalog_.ClearNonDefaultToEmpty();
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _impl_.operation_.ClearNonDefaultToEmpty();
+    }
+  }
+  _impl_.timestamp_ = 0;
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* CMsgGCReportMetrics_MetricEntry::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // optional string catalog = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          auto str = _internal_mutable_catalog();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          #ifndef NDEBUG
+          ::_pbi::VerifyUTF8(str, "CMsgGCReportMetrics.MetricEntry.catalog");
+          #endif  // !NDEBUG
+        } else
+          goto handle_unusual;
+        continue;
+      // optional string operation = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_operation();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          #ifndef NDEBUG
+          ::_pbi::VerifyUTF8(str, "CMsgGCReportMetrics.MetricEntry.operation");
+          #endif  // !NDEBUG
+        } else
+          goto handle_unusual;
+        continue;
+      // optional double timestamp = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 25)) {
+          _Internal::set_has_timestamp(&has_bits);
+          _impl_.timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<double>(ptr);
+          ptr += sizeof(double);
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .CMsgGCReportMetrics.MetricEntry.Dimension dimensions = 10;
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 82)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_dimensions(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<82>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // repeated .CMsgGCReportMetrics.MetricEntry.Measurement measurements = 11;
+      case 11:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 90)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_measurements(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<90>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  _impl_._has_bits_.Or(has_bits);
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* CMsgGCReportMetrics_MetricEntry::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:CMsgGCReportMetrics.MetricEntry)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  // optional string catalog = 1;
+  if (cached_has_bits & 0x00000001u) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->_internal_catalog().data(), static_cast<int>(this->_internal_catalog().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SERIALIZE,
+      "CMsgGCReportMetrics.MetricEntry.catalog");
+    target = stream->WriteStringMaybeAliased(
+        1, this->_internal_catalog(), target);
+  }
+
+  // optional string operation = 2;
+  if (cached_has_bits & 0x00000002u) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::VerifyUTF8StringNamedField(
+      this->_internal_operation().data(), static_cast<int>(this->_internal_operation().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SERIALIZE,
+      "CMsgGCReportMetrics.MetricEntry.operation");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_operation(), target);
+  }
+
+  // optional double timestamp = 3;
+  if (cached_has_bits & 0x00000004u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteDoubleToArray(3, this->_internal_timestamp(), target);
+  }
+
+  // repeated .CMsgGCReportMetrics.MetricEntry.Dimension dimensions = 10;
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_dimensions_size()); i < n; i++) {
+    const auto& repfield = this->_internal_dimensions(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(10, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  // repeated .CMsgGCReportMetrics.MetricEntry.Measurement measurements = 11;
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_measurements_size()); i < n; i++) {
+    const auto& repfield = this->_internal_measurements(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(11, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CMsgGCReportMetrics.MetricEntry)
+  return target;
+}
+
+size_t CMsgGCReportMetrics_MetricEntry::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:CMsgGCReportMetrics.MetricEntry)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .CMsgGCReportMetrics.MetricEntry.Dimension dimensions = 10;
+  total_size += 1UL * this->_internal_dimensions_size();
+  for (const auto& msg : this->_impl_.dimensions_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  // repeated .CMsgGCReportMetrics.MetricEntry.Measurement measurements = 11;
+  total_size += 1UL * this->_internal_measurements_size();
+  for (const auto& msg : this->_impl_.measurements_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000007u) {
+    // optional string catalog = 1;
+    if (cached_has_bits & 0x00000001u) {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+          this->_internal_catalog());
+    }
+
+    // optional string operation = 2;
+    if (cached_has_bits & 0x00000002u) {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+          this->_internal_operation());
+    }
+
+    // optional double timestamp = 3;
+    if (cached_has_bits & 0x00000004u) {
+      total_size += 1 + 8;
+    }
+
+  }
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData CMsgGCReportMetrics_MetricEntry::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    CMsgGCReportMetrics_MetricEntry::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CMsgGCReportMetrics_MetricEntry::GetClassData() const { return &_class_data_; }
+
+
+void CMsgGCReportMetrics_MetricEntry::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<CMsgGCReportMetrics_MetricEntry*>(&to_msg);
+  auto& from = static_cast<const CMsgGCReportMetrics_MetricEntry&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:CMsgGCReportMetrics.MetricEntry)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_impl_.dimensions_.MergeFrom(from._impl_.dimensions_);
+  _this->_impl_.measurements_.MergeFrom(from._impl_.measurements_);
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000007u) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_internal_set_catalog(from._internal_catalog());
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_internal_set_operation(from._internal_operation());
+    }
+    if (cached_has_bits & 0x00000004u) {
+      _this->_impl_.timestamp_ = from._impl_.timestamp_;
+    }
+    _this->_impl_._has_bits_[0] |= cached_has_bits;
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void CMsgGCReportMetrics_MetricEntry::CopyFrom(const CMsgGCReportMetrics_MetricEntry& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:CMsgGCReportMetrics.MetricEntry)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CMsgGCReportMetrics_MetricEntry::IsInitialized() const {
+  return true;
+}
+
+void CMsgGCReportMetrics_MetricEntry::InternalSwap(CMsgGCReportMetrics_MetricEntry* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  _impl_.dimensions_.InternalSwap(&other->_impl_.dimensions_);
+  _impl_.measurements_.InternalSwap(&other->_impl_.measurements_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.catalog_, lhs_arena,
+      &other->_impl_.catalog_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.operation_, lhs_arena,
+      &other->_impl_.operation_, rhs_arena
+  );
+  swap(_impl_.timestamp_, other->_impl_.timestamp_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata CMsgGCReportMetrics_MetricEntry::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_steammessages_5fint_2eproto_getter, &descriptor_table_steammessages_5fint_2eproto_once,
+      file_level_metadata_steammessages_5fint_2eproto[84]);
+}
+
+// ===================================================================
+
+class CMsgGCReportMetrics::_Internal {
+ public:
+};
+
+CMsgGCReportMetrics::CMsgGCReportMetrics(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:CMsgGCReportMetrics)
+}
+CMsgGCReportMetrics::CMsgGCReportMetrics(const CMsgGCReportMetrics& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  CMsgGCReportMetrics* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.metric_data_){from._impl_.metric_data_}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  // @@protoc_insertion_point(copy_constructor:CMsgGCReportMetrics)
+}
+
+inline void CMsgGCReportMetrics::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.metric_data_){arena}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+CMsgGCReportMetrics::~CMsgGCReportMetrics() {
+  // @@protoc_insertion_point(destructor:CMsgGCReportMetrics)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void CMsgGCReportMetrics::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.metric_data_.~RepeatedPtrField();
+}
+
+void CMsgGCReportMetrics::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void CMsgGCReportMetrics::Clear() {
+// @@protoc_insertion_point(message_clear_start:CMsgGCReportMetrics)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.metric_data_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* CMsgGCReportMetrics::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // repeated .CMsgGCReportMetrics.MetricEntry metric_data = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(_internal_add_metric_data(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* CMsgGCReportMetrics::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:CMsgGCReportMetrics)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // repeated .CMsgGCReportMetrics.MetricEntry metric_data = 1;
+  for (unsigned i = 0,
+      n = static_cast<unsigned>(this->_internal_metric_data_size()); i < n; i++) {
+    const auto& repfield = this->_internal_metric_data(i);
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CMsgGCReportMetrics)
+  return target;
+}
+
+size_t CMsgGCReportMetrics::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:CMsgGCReportMetrics)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // repeated .CMsgGCReportMetrics.MetricEntry metric_data = 1;
+  total_size += 1UL * this->_internal_metric_data_size();
+  for (const auto& msg : this->_impl_.metric_data_) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData CMsgGCReportMetrics::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    CMsgGCReportMetrics::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CMsgGCReportMetrics::GetClassData() const { return &_class_data_; }
+
+
+void CMsgGCReportMetrics::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<CMsgGCReportMetrics*>(&to_msg);
+  auto& from = static_cast<const CMsgGCReportMetrics&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:CMsgGCReportMetrics)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  _this->_impl_.metric_data_.MergeFrom(from._impl_.metric_data_);
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void CMsgGCReportMetrics::CopyFrom(const CMsgGCReportMetrics& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:CMsgGCReportMetrics)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CMsgGCReportMetrics::IsInitialized() const {
+  return true;
+}
+
+void CMsgGCReportMetrics::InternalSwap(CMsgGCReportMetrics* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  _impl_.metric_data_.InternalSwap(&other->_impl_.metric_data_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata CMsgGCReportMetrics::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_steammessages_5fint_2eproto_getter, &descriptor_table_steammessages_5fint_2eproto_once,
+      file_level_metadata_steammessages_5fint_2eproto[85]);
+}
+
+// ===================================================================
+
+class CMsgGCReportMetrics_Response::_Internal {
+ public:
+  using HasBits = decltype(std::declval<CMsgGCReportMetrics_Response>()._impl_._has_bits_);
+  static void set_has_eresult(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
+  static void set_has_failed_entry_count(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+};
+
+CMsgGCReportMetrics_Response::CMsgGCReportMetrics_Response(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:CMsgGCReportMetrics_Response)
+}
+CMsgGCReportMetrics_Response::CMsgGCReportMetrics_Response(const CMsgGCReportMetrics_Response& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  CMsgGCReportMetrics_Response* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.failed_entry_count_){}
+    , decltype(_impl_.eresult_){}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.failed_entry_count_, &from._impl_.failed_entry_count_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.eresult_) -
+    reinterpret_cast<char*>(&_impl_.failed_entry_count_)) + sizeof(_impl_.eresult_));
+  // @@protoc_insertion_point(copy_constructor:CMsgGCReportMetrics_Response)
+}
+
+inline void CMsgGCReportMetrics_Response::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.failed_entry_count_){0u}
+    , decltype(_impl_.eresult_){2}
+  };
+}
+
+CMsgGCReportMetrics_Response::~CMsgGCReportMetrics_Response() {
+  // @@protoc_insertion_point(destructor:CMsgGCReportMetrics_Response)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void CMsgGCReportMetrics_Response::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void CMsgGCReportMetrics_Response::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void CMsgGCReportMetrics_Response::Clear() {
+// @@protoc_insertion_point(message_clear_start:CMsgGCReportMetrics_Response)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    _impl_.failed_entry_count_ = 0u;
+    _impl_.eresult_ = 2;
+  }
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* CMsgGCReportMetrics_Response::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // optional int32 eresult = 1 [default = 2];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _Internal::set_has_eresult(&has_bits);
+          _impl_.eresult_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional uint32 failed_entry_count = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _Internal::set_has_failed_entry_count(&has_bits);
+          _impl_.failed_entry_count_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  _impl_._has_bits_.Or(has_bits);
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* CMsgGCReportMetrics_Response::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:CMsgGCReportMetrics_Response)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  // optional int32 eresult = 1 [default = 2];
+  if (cached_has_bits & 0x00000002u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_eresult(), target);
+  }
+
+  // optional uint32 failed_entry_count = 2;
+  if (cached_has_bits & 0x00000001u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_failed_entry_count(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CMsgGCReportMetrics_Response)
+  return target;
+}
+
+size_t CMsgGCReportMetrics_Response::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:CMsgGCReportMetrics_Response)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    // optional uint32 failed_entry_count = 2;
+    if (cached_has_bits & 0x00000001u) {
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_failed_entry_count());
+    }
+
+    // optional int32 eresult = 1 [default = 2];
+    if (cached_has_bits & 0x00000002u) {
+      total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_eresult());
+    }
+
+  }
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData CMsgGCReportMetrics_Response::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    CMsgGCReportMetrics_Response::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CMsgGCReportMetrics_Response::GetClassData() const { return &_class_data_; }
+
+
+void CMsgGCReportMetrics_Response::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<CMsgGCReportMetrics_Response*>(&to_msg);
+  auto& from = static_cast<const CMsgGCReportMetrics_Response&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:CMsgGCReportMetrics_Response)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_impl_.failed_entry_count_ = from._impl_.failed_entry_count_;
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_impl_.eresult_ = from._impl_.eresult_;
+    }
+    _this->_impl_._has_bits_[0] |= cached_has_bits;
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void CMsgGCReportMetrics_Response::CopyFrom(const CMsgGCReportMetrics_Response& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:CMsgGCReportMetrics_Response)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CMsgGCReportMetrics_Response::IsInitialized() const {
+  return true;
+}
+
+void CMsgGCReportMetrics_Response::InternalSwap(CMsgGCReportMetrics_Response* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  swap(_impl_.failed_entry_count_, other->_impl_.failed_entry_count_);
+  swap(_impl_.eresult_, other->_impl_.eresult_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata CMsgGCReportMetrics_Response::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_steammessages_5fint_2eproto_getter, &descriptor_table_steammessages_5fint_2eproto_once,
+      file_level_metadata_steammessages_5fint_2eproto[86]);
+}
+
 // @@protoc_insertion_point(namespace_scope)
 PROTOBUF_NAMESPACE_OPEN
 template<> PROTOBUF_NOINLINE ::CMsgWebAPIKey*
@@ -24713,6 +26359,26 @@ Arena::CreateMaybeMessage< ::CWorkshop_GetSpecialPayments_Response_SpecialPaymen
 template<> PROTOBUF_NOINLINE ::CWorkshop_GetSpecialPayments_Response*
 Arena::CreateMaybeMessage< ::CWorkshop_GetSpecialPayments_Response >(Arena* arena) {
   return Arena::CreateMessageInternal< ::CWorkshop_GetSpecialPayments_Response >(arena);
+}
+template<> PROTOBUF_NOINLINE ::CMsgGCReportMetrics_MetricEntry_Dimension*
+Arena::CreateMaybeMessage< ::CMsgGCReportMetrics_MetricEntry_Dimension >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::CMsgGCReportMetrics_MetricEntry_Dimension >(arena);
+}
+template<> PROTOBUF_NOINLINE ::CMsgGCReportMetrics_MetricEntry_Measurement*
+Arena::CreateMaybeMessage< ::CMsgGCReportMetrics_MetricEntry_Measurement >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::CMsgGCReportMetrics_MetricEntry_Measurement >(arena);
+}
+template<> PROTOBUF_NOINLINE ::CMsgGCReportMetrics_MetricEntry*
+Arena::CreateMaybeMessage< ::CMsgGCReportMetrics_MetricEntry >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::CMsgGCReportMetrics_MetricEntry >(arena);
+}
+template<> PROTOBUF_NOINLINE ::CMsgGCReportMetrics*
+Arena::CreateMaybeMessage< ::CMsgGCReportMetrics >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::CMsgGCReportMetrics >(arena);
+}
+template<> PROTOBUF_NOINLINE ::CMsgGCReportMetrics_Response*
+Arena::CreateMaybeMessage< ::CMsgGCReportMetrics_Response >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::CMsgGCReportMetrics_Response >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

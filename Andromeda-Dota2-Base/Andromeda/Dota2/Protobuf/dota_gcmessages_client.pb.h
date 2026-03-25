@@ -38570,6 +38570,7 @@ class CMsgDOTARedeemItem final :
   enum : int {
     kCurrencyIdFieldNumber = 1,
     kPurchaseDefFieldNumber = 2,
+    kClaimAsPointsFieldNumber = 3,
   };
   // optional uint64 currency_id = 1;
   bool has_currency_id() const;
@@ -38597,6 +38598,19 @@ class CMsgDOTARedeemItem final :
   void _internal_set_purchase_def(uint32_t value);
   public:
 
+  // optional bool claim_as_points = 3;
+  bool has_claim_as_points() const;
+  private:
+  bool _internal_has_claim_as_points() const;
+  public:
+  void clear_claim_as_points();
+  bool claim_as_points() const;
+  void set_claim_as_points(bool value);
+  private:
+  bool _internal_claim_as_points() const;
+  void _internal_set_claim_as_points(bool value);
+  public:
+
   // @@protoc_insertion_point(class_scope:CMsgDOTARedeemItem)
  private:
   class _Internal;
@@ -38609,6 +38623,7 @@ class CMsgDOTARedeemItem final :
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
     uint64_t currency_id_;
     uint32_t purchase_def_;
+    bool claim_as_points_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_dota_5fgcmessages_5fclient_2eproto;
@@ -94356,31 +94371,8 @@ class CMsgClientToGCGetEventCoupon final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kCouponIdsFieldNumber = 2,
     kEventIdFieldNumber = 1,
   };
-  // repeated uint32 coupon_ids = 2;
-  int coupon_ids_size() const;
-  private:
-  int _internal_coupon_ids_size() const;
-  public:
-  void clear_coupon_ids();
-  private:
-  uint32_t _internal_coupon_ids(int index) const;
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint32_t >&
-      _internal_coupon_ids() const;
-  void _internal_add_coupon_ids(uint32_t value);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint32_t >*
-      _internal_mutable_coupon_ids();
-  public:
-  uint32_t coupon_ids(int index) const;
-  void set_coupon_ids(int index, uint32_t value);
-  void add_coupon_ids(uint32_t value);
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint32_t >&
-      coupon_ids() const;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint32_t >*
-      mutable_coupon_ids();
-
   // optional .EEvent event_id = 1 [default = EVENT_ID_NONE];
   bool has_event_id() const;
   private:
@@ -94404,7 +94396,6 @@ class CMsgClientToGCGetEventCoupon final :
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
-    ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint32_t > coupon_ids_;
     int event_id_;
   };
   union { Impl_ _impl_; };
@@ -115222,6 +115213,34 @@ inline void CMsgDOTARedeemItem::_internal_set_purchase_def(uint32_t value) {
 inline void CMsgDOTARedeemItem::set_purchase_def(uint32_t value) {
   _internal_set_purchase_def(value);
   // @@protoc_insertion_point(field_set:CMsgDOTARedeemItem.purchase_def)
+}
+
+// optional bool claim_as_points = 3;
+inline bool CMsgDOTARedeemItem::_internal_has_claim_as_points() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
+  return value;
+}
+inline bool CMsgDOTARedeemItem::has_claim_as_points() const {
+  return _internal_has_claim_as_points();
+}
+inline void CMsgDOTARedeemItem::clear_claim_as_points() {
+  _impl_.claim_as_points_ = false;
+  _impl_._has_bits_[0] &= ~0x00000004u;
+}
+inline bool CMsgDOTARedeemItem::_internal_claim_as_points() const {
+  return _impl_.claim_as_points_;
+}
+inline bool CMsgDOTARedeemItem::claim_as_points() const {
+  // @@protoc_insertion_point(field_get:CMsgDOTARedeemItem.claim_as_points)
+  return _internal_claim_as_points();
+}
+inline void CMsgDOTARedeemItem::_internal_set_claim_as_points(bool value) {
+  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_.claim_as_points_ = value;
+}
+inline void CMsgDOTARedeemItem::set_claim_as_points(bool value) {
+  _internal_set_claim_as_points(value);
+  // @@protoc_insertion_point(field_set:CMsgDOTARedeemItem.claim_as_points)
 }
 
 // -------------------------------------------------------------------
@@ -141538,53 +141557,6 @@ inline void CMsgClientToGCGetEventCoupon::_internal_set_event_id(::EEvent value)
 inline void CMsgClientToGCGetEventCoupon::set_event_id(::EEvent value) {
   _internal_set_event_id(value);
   // @@protoc_insertion_point(field_set:CMsgClientToGCGetEventCoupon.event_id)
-}
-
-// repeated uint32 coupon_ids = 2;
-inline int CMsgClientToGCGetEventCoupon::_internal_coupon_ids_size() const {
-  return _impl_.coupon_ids_.size();
-}
-inline int CMsgClientToGCGetEventCoupon::coupon_ids_size() const {
-  return _internal_coupon_ids_size();
-}
-inline void CMsgClientToGCGetEventCoupon::clear_coupon_ids() {
-  _impl_.coupon_ids_.Clear();
-}
-inline uint32_t CMsgClientToGCGetEventCoupon::_internal_coupon_ids(int index) const {
-  return _impl_.coupon_ids_.Get(index);
-}
-inline uint32_t CMsgClientToGCGetEventCoupon::coupon_ids(int index) const {
-  // @@protoc_insertion_point(field_get:CMsgClientToGCGetEventCoupon.coupon_ids)
-  return _internal_coupon_ids(index);
-}
-inline void CMsgClientToGCGetEventCoupon::set_coupon_ids(int index, uint32_t value) {
-  _impl_.coupon_ids_.Set(index, value);
-  // @@protoc_insertion_point(field_set:CMsgClientToGCGetEventCoupon.coupon_ids)
-}
-inline void CMsgClientToGCGetEventCoupon::_internal_add_coupon_ids(uint32_t value) {
-  _impl_.coupon_ids_.Add(value);
-}
-inline void CMsgClientToGCGetEventCoupon::add_coupon_ids(uint32_t value) {
-  _internal_add_coupon_ids(value);
-  // @@protoc_insertion_point(field_add:CMsgClientToGCGetEventCoupon.coupon_ids)
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint32_t >&
-CMsgClientToGCGetEventCoupon::_internal_coupon_ids() const {
-  return _impl_.coupon_ids_;
-}
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint32_t >&
-CMsgClientToGCGetEventCoupon::coupon_ids() const {
-  // @@protoc_insertion_point(field_list:CMsgClientToGCGetEventCoupon.coupon_ids)
-  return _internal_coupon_ids();
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint32_t >*
-CMsgClientToGCGetEventCoupon::_internal_mutable_coupon_ids() {
-  return &_impl_.coupon_ids_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< uint32_t >*
-CMsgClientToGCGetEventCoupon::mutable_coupon_ids() {
-  // @@protoc_insertion_point(field_mutable_list:CMsgClientToGCGetEventCoupon.coupon_ids)
-  return _internal_mutable_coupon_ids();
 }
 
 // -------------------------------------------------------------------

@@ -3,6 +3,7 @@
 
 #include <Dota2/SDK/SDK.hpp>
 #include <Dota2/SDK/Interface/CGameEntitySystem.hpp>
+#include <Dota2/SDK/Interface/IVEngineClient2.hpp>
 
 #include <AndromedaClient/Fonts/CFontManager.hpp>
 #include <AndromedaClient/GUI/CAndromedaMenu.hpp>
@@ -12,6 +13,15 @@ static CAndromedaClient g_CAndromedaClient{};
 
 auto CAndromedaClient::OnInit() -> void
 {
+	auto LocalPLayer = -1;
+	auto Width = 0;
+	auto Height = 0;
+
+	SDK::Interfaces::EngineToClient()->GetLocalPlayer( LocalPLayer );
+	SDK::Interfaces::EngineToClient()->GetScreenSize( Width , Height );
+
+	DEV_LOG( "%i , %i , %i\n" , LocalPLayer , Width , Height );
+
 	if ( dota_camera_distance.Search() )
 		DEV_LOG( "[dota_camera_distance] Found !\n" );
 

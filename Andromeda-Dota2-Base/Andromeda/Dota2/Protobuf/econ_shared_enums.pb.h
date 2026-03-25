@@ -118,11 +118,14 @@ enum EGCMsgUseItemResponse : int {
   k_EGCMsgUseItemResponse_MissingRequirement = 10,
   k_EGCMsgUseItemResponse_EmoticonUnlock_NoNew = 11,
   k_EGCMsgUseItemResponse_EmoticonUnlock_Complete = 12,
-  k_EGCMsgUseItemResponse_ItemUsed_Compendium = 13
+  k_EGCMsgUseItemResponse_ItemUsed_Compendium = 13,
+  k_EGCMsgUseItemResponse_CannotUseWhileUntradable = 14,
+  k_EGCMsgUseItemResponse_CannotBeUsedByAccount = 15,
+  k_EGCMsgUseItemResponse_RecipientCannotRecieve = 16
 };
 bool EGCMsgUseItemResponse_IsValid(int value);
 constexpr EGCMsgUseItemResponse EGCMsgUseItemResponse_MIN = k_EGCMsgUseItemResponse_ItemUsed;
-constexpr EGCMsgUseItemResponse EGCMsgUseItemResponse_MAX = k_EGCMsgUseItemResponse_ItemUsed_Compendium;
+constexpr EGCMsgUseItemResponse EGCMsgUseItemResponse_MAX = k_EGCMsgUseItemResponse_RecipientCannotRecieve;
 constexpr int EGCMsgUseItemResponse_ARRAYSIZE = EGCMsgUseItemResponse_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* EGCMsgUseItemResponse_descriptor();

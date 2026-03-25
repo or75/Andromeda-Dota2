@@ -1149,7 +1149,7 @@ const char descriptor_table_protodef_dota_5fgcmessages_5fcommon_5fmonster_5fhunt
   "ackResponse.EResponse:\020k_eInternalError\""
   "u\n\tEResponse\022\024\n\020k_eInternalError\020\000\022\016\n\nk_"
   "eSuccess\020\001\022\016\n\nk_eTooBusy\020\002\022\017\n\013k_eDisable"
-  "d\020\003\022\016\n\nk_eTimeout\020\004\022\021\n\rk_eNotAllowed\020\005*\221"
+  "d\020\003\022\016\n\nk_eTimeout\020\004\022\021\n\rk_eNotAllowed\020\005*\274"
   "\006\n\031EMonsterHunterAuditAction\022\'\n#k_eMonst"
   "erHunterAuditAction_Invalid\020\000\0222\n.k_eMons"
   "terHunterAuditAction_DevModifyMaterials\020"
@@ -1169,19 +1169,20 @@ const char descriptor_table_protodef_dota_5fgcmessages_5fcommon_5fmonster_5fhunt
   "nterAuditAction_DevClaimInvestigationRew"
   "ards\020\014\022/\n+k_eMonsterHunterAuditAction_He"
   "roCodexUpdate\020\r\0221\n-k_eMonsterHunterAudit"
-  "Action_EventActionReward\020\016*\344\003\n\027EHeroCode"
-  "xEntryStatType\022$\n k_eHeroCodexEntryStatT"
-  "ype_Killed\020\000\022/\n+k_eHeroCodexEntryStatTyp"
-  "e_WinsPlayingAsHero\020\001\022&\n\"k_eHeroCodexEnt"
-  "ryStatType_WinsWith\020\002\0221\n-k_eHeroCodexEnt"
-  "ryStatType_LossesPlayingAsHero\020\003\022(\n$k_eH"
-  "eroCodexEntryStatType_LossesWith\020\004\0224\n0k_"
-  "eHeroCodexEntryStatType_TurboWinsPlaying"
-  "AsHero\020\005\022+\n\'k_eHeroCodexEntryStatType_Tu"
-  "rboWinsWith\020\006\0226\n2k_eHeroCodexEntryStatTy"
-  "pe_TurboLossesPlayingAsHero\020\007\022-\n)k_eHero"
-  "CodexEntryStatType_TurboLossesWith\020\010\022#\n\037"
-  "k_eHeroCodexEntryStatType_Count\020\t"
+  "Action_EventActionReward\020\016\022)\n%k_eMonster"
+  "HunterAuditAction_AutoCraft\020\017*\344\003\n\027EHeroC"
+  "odexEntryStatType\022$\n k_eHeroCodexEntrySt"
+  "atType_Killed\020\000\022/\n+k_eHeroCodexEntryStat"
+  "Type_WinsPlayingAsHero\020\001\022&\n\"k_eHeroCodex"
+  "EntryStatType_WinsWith\020\002\0221\n-k_eHeroCodex"
+  "EntryStatType_LossesPlayingAsHero\020\003\022(\n$k"
+  "_eHeroCodexEntryStatType_LossesWith\020\004\0224\n"
+  "0k_eHeroCodexEntryStatType_TurboWinsPlay"
+  "ingAsHero\020\005\022+\n\'k_eHeroCodexEntryStatType"
+  "_TurboWinsWith\020\006\0226\n2k_eHeroCodexEntrySta"
+  "tType_TurboLossesPlayingAsHero\020\007\022-\n)k_eH"
+  "eroCodexEntryStatType_TurboLossesWith\020\010\022"
+  "#\n\037k_eHeroCodexEntryStatType_Count\020\t"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_dota_5fgcmessages_5fcommon_5fmonster_5fhunter_2eproto_deps[4] = {
   &::descriptor_table_dota_5fgcmessages_5fcommon_2eproto,
@@ -1191,7 +1192,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_dota_5fgcmessages_5
 };
 static ::_pbi::once_flag descriptor_table_dota_5fgcmessages_5fcommon_5fmonster_5fhunter_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_dota_5fgcmessages_5fcommon_5fmonster_5fhunter_2eproto = {
-    false, false, 8513, descriptor_table_protodef_dota_5fgcmessages_5fcommon_5fmonster_5fhunter_2eproto,
+    false, false, 8556, descriptor_table_protodef_dota_5fgcmessages_5fcommon_5fmonster_5fhunter_2eproto,
     "dota_gcmessages_common_monster_hunter.proto",
     &descriptor_table_dota_5fgcmessages_5fcommon_5fmonster_5fhunter_2eproto_once, descriptor_table_dota_5fgcmessages_5fcommon_5fmonster_5fhunter_2eproto_deps, 4, 36,
     schemas, file_default_instances, TableStruct_dota_5fgcmessages_5fcommon_5fmonster_5fhunter_2eproto::offsets,
@@ -1655,6 +1656,7 @@ bool EMonsterHunterAuditAction_IsValid(int value) {
     case 12:
     case 13:
     case 14:
+    case 15:
       return true;
     default:
       return false;

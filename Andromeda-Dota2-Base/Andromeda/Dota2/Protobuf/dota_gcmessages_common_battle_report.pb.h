@@ -2155,7 +2155,7 @@ class CMsgBattleReport_Highlight final :
     kTierFieldNumber = 3,
     kRoleFieldNumber = 8,
   };
-  // required uint32 highlight_id = 1;
+  // optional uint32 highlight_id = 1;
   bool has_highlight_id() const;
   private:
   bool _internal_has_highlight_id() const;
@@ -2168,7 +2168,7 @@ class CMsgBattleReport_Highlight final :
   void _internal_set_highlight_id(uint32_t value);
   public:
 
-  // required .CMsgBattleReport_HighlightCategory category = 2 [default = k_eHighlightGeneral];
+  // optional .CMsgBattleReport_HighlightCategory category = 2 [default = k_eHighlightGeneral];
   bool has_category() const;
   private:
   bool _internal_has_category() const;
@@ -2288,9 +2288,6 @@ class CMsgBattleReport_Highlight final :
   // @@protoc_insertion_point(class_scope:CMsgBattleReport.Highlight)
  private:
   class _Internal;
-
-  // helper for ByteSizeLong()
-  size_t RequiredFieldsByteSizeFallback() const;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
@@ -8038,7 +8035,7 @@ inline void CMsgBattleReport_HighlightGeneral::set_highlight_score(float value) 
 
 // CMsgBattleReport_Highlight
 
-// required uint32 highlight_id = 1;
+// optional uint32 highlight_id = 1;
 inline bool CMsgBattleReport_Highlight::_internal_has_highlight_id() const {
   bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
   return value;
@@ -8066,7 +8063,7 @@ inline void CMsgBattleReport_Highlight::set_highlight_id(uint32_t value) {
   // @@protoc_insertion_point(field_set:CMsgBattleReport.Highlight.highlight_id)
 }
 
-// required .CMsgBattleReport_HighlightCategory category = 2 [default = k_eHighlightGeneral];
+// optional .CMsgBattleReport_HighlightCategory category = 2 [default = k_eHighlightGeneral];
 inline bool CMsgBattleReport_Highlight::_internal_has_category() const {
   bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
   return value;

@@ -1119,7 +1119,7 @@ const char descriptor_table_protodef_dota_5fgcmessages_5fcommon_5fmatch_5fmanage
   "E\020\000\022\034\n\030k_ELaneSelection_OFFLANE\020\001\022\034\n\030k_E"
   "LaneSelection_MIDLANE\020\002\022\034\n\030k_ELaneSelect"
   "ion_SUPPORT\020\003\022 \n\034k_ELaneSelection_HARDSU"
-  "PPORT\020\004*\333\002\n\023ELaneSelectionFlags\022\"\n\036k_ELa"
+  "PPORT\020\004*\205\003\n\023ELaneSelectionFlags\022\"\n\036k_ELa"
   "neSelectionFlags_SAFELANE\020\001\022!\n\035k_ELaneSe"
   "lectionFlags_OFFLANE\020\002\022!\n\035k_ELaneSelecti"
   "onFlags_MIDLANE\020\004\022!\n\035k_ELaneSelectionFla"
@@ -1127,33 +1127,34 @@ const char descriptor_table_protodef_dota_5fgcmessages_5fcommon_5fmatch_5fmanage
   "RDSUPPORT\020\020\022\"\n\036k_ELaneSelectionFlagGroup"
   "_None\020\000\022\"\n\036k_ELaneSelectionFlagGroup_COR"
   "E\020\007\022%\n!k_ELaneSelectionFlagGroup_SUPPORT"
-  "\020\030\022!\n\035k_ELaneSelectionFlagGroup_ALL\020\037*i\n"
-  "\026EPartyMatchmakingFlags\022!\n\035k_EPartyMatch"
-  "makingFlags_None\020\000\022,\n(k_EPartyMatchmakin"
-  "gFlags_LargeRankSpread\020\001*\334\002\n\024EHighPriori"
-  "tyMMState\022\035\n\031k_EHighPriorityMM_Unknown\020\000"
-  "\022#\n\037k_EHighPriorityMM_MissingMMData\020\001\022%\n"
-  "!k_EHighPriorityMM_ResourceMissing\020\002\022&\n\""
-  "k_EHighPriorityMM_ManuallyDisabled\020\003\022!\n\035"
-  "k_EHighPriorityMM_Min_Enabled\020@\022&\n\"k_EHi"
-  "ghPriorityMM_AllRolesSelected\020A\022#\n\037k_EHi"
-  "ghPriorityMM_UsingResource\020B\022\037\n\033k_EHighP"
-  "riorityMM_FiveStack\020C\022 \n\034k_EHighPriority"
-  "MM_HighDemand\020D*u\n\021EReadyCheckStatus\022\037\n\033"
-  "k_EReadyCheckStatus_Unknown\020\000\022 \n\034k_ERead"
-  "yCheckStatus_NotReady\020\001\022\035\n\031k_EReadyCheck"
-  "Status_Ready\020\002*\366\001\n\030EReadyCheckRequestRes"
-  "ult\022&\n\"k_EReadyCheckRequestResult_Succes"
-  "s\020\000\0220\n,k_EReadyCheckRequestResult_Alread"
-  "yInProgress\020\001\022)\n%k_EReadyCheckRequestRes"
-  "ult_NotInParty\020\002\022(\n$k_EReadyCheckRequest"
-  "Result_SendError\020\003\022+\n\'k_EReadyCheckReque"
-  "stResult_UnknownError\020\004*\301\001\n\033EMatchBehavi"
-  "orScoreVariance\022)\n%k_EMatchBehaviorScore"
-  "Variance_Invalid\020\000\022%\n!k_EMatchBehaviorSc"
-  "oreVariance_Low\020\001\022(\n$k_EMatchBehaviorSco"
-  "reVariance_Medium\020\002\022&\n\"k_EMatchBehaviorS"
-  "coreVariance_High\020\003"
+  "\020\030\022!\n\035k_ELaneSelectionFlagGroup_ALL\020\037\022(\n"
+  "$k_ELaneSelectionFlagGroup_HIGHDEMAND\020\022*"
+  "i\n\026EPartyMatchmakingFlags\022!\n\035k_EPartyMat"
+  "chmakingFlags_None\020\000\022,\n(k_EPartyMatchmak"
+  "ingFlags_LargeRankSpread\020\001*\334\002\n\024EHighPrio"
+  "rityMMState\022\035\n\031k_EHighPriorityMM_Unknown"
+  "\020\000\022#\n\037k_EHighPriorityMM_MissingMMData\020\001\022"
+  "%\n!k_EHighPriorityMM_ResourceMissing\020\002\022&"
+  "\n\"k_EHighPriorityMM_ManuallyDisabled\020\003\022!"
+  "\n\035k_EHighPriorityMM_Min_Enabled\020@\022&\n\"k_E"
+  "HighPriorityMM_AllRolesSelected\020A\022#\n\037k_E"
+  "HighPriorityMM_UsingResource\020B\022\037\n\033k_EHig"
+  "hPriorityMM_FiveStack\020C\022 \n\034k_EHighPriori"
+  "tyMM_HighDemand\020D*u\n\021EReadyCheckStatus\022\037"
+  "\n\033k_EReadyCheckStatus_Unknown\020\000\022 \n\034k_ERe"
+  "adyCheckStatus_NotReady\020\001\022\035\n\031k_EReadyChe"
+  "ckStatus_Ready\020\002*\366\001\n\030EReadyCheckRequestR"
+  "esult\022&\n\"k_EReadyCheckRequestResult_Succ"
+  "ess\020\000\0220\n,k_EReadyCheckRequestResult_Alre"
+  "adyInProgress\020\001\022)\n%k_EReadyCheckRequestR"
+  "esult_NotInParty\020\002\022(\n$k_EReadyCheckReque"
+  "stResult_SendError\020\003\022+\n\'k_EReadyCheckReq"
+  "uestResult_UnknownError\020\004*\301\001\n\033EMatchBeha"
+  "viorScoreVariance\022)\n%k_EMatchBehaviorSco"
+  "reVariance_Invalid\020\000\022%\n!k_EMatchBehavior"
+  "ScoreVariance_Low\020\001\022(\n$k_EMatchBehaviorS"
+  "coreVariance_Medium\020\002\022&\n\"k_EMatchBehavio"
+  "rScoreVariance_High\020\003"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_dota_5fgcmessages_5fcommon_5fmatch_5fmanagement_2eproto_deps[3] = {
   &::descriptor_table_dota_5fshared_5fenums_2eproto,
@@ -1162,7 +1163,7 @@ static const ::_pbi::DescriptorTable* const descriptor_table_dota_5fgcmessages_5
 };
 static ::_pbi::once_flag descriptor_table_dota_5fgcmessages_5fcommon_5fmatch_5fmanagement_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_dota_5fgcmessages_5fcommon_5fmatch_5fmanagement_2eproto = {
-    false, false, 19619, descriptor_table_protodef_dota_5fgcmessages_5fcommon_5fmatch_5fmanagement_2eproto,
+    false, false, 19661, descriptor_table_protodef_dota_5fgcmessages_5fcommon_5fmatch_5fmanagement_2eproto,
     "dota_gcmessages_common_match_management.proto",
     &descriptor_table_dota_5fgcmessages_5fcommon_5fmatch_5fmanagement_2eproto_once, descriptor_table_dota_5fgcmessages_5fcommon_5fmatch_5fmanagement_2eproto_deps, 3, 15,
     schemas, file_default_instances, TableStruct_dota_5fgcmessages_5fcommon_5fmatch_5fmanagement_2eproto::offsets,
@@ -1811,6 +1812,7 @@ bool ELaneSelectionFlags_IsValid(int value) {
     case 7:
     case 8:
     case 16:
+    case 18:
     case 24:
     case 31:
       return true;

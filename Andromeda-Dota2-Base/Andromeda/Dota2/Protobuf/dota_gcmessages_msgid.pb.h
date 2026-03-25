@@ -1036,6 +1036,13 @@ enum EDOTAGCMsg : int {
   k_EMsgClientToGCMonsterHunterClaimCodexRewardResponse = 9048,
   k_EMsgClientToGCMonsterHunterClaimSetReward = 9049,
   k_EMsgClientToGCMonsterHunterClaimSetRewardResponse = 9050,
+  k_EMsgClientToGCItemBattlerGetUserData = 9100,
+  k_EMsgClientToGCItemBattlerGetUserDataResponse = 9101,
+  k_EMsgClientToGCItemBattlerGameAction = 9102,
+  k_EMsgClientToGCItemBattlerGameActionResponse = 9103,
+  k_EMsgGCToClientItemBattlerUserDataUpdated = 9104,
+  k_EMsgClientToGCItemBattlerDevGrantItem = 9105,
+  k_EMsgClientToGCItemBattlerDevGrantItemResponse = 9106,
   k_EMsgClientToGCGetEventRanking = 9107,
   k_EMsgClientToGCGetEventRankingResponse = 9108,
   k_EMsgClientToGCGetEventCoupon = 9109,
@@ -1045,11 +1052,17 @@ enum EDOTAGCMsg : int {
   k_EMsgServerToGCWarningLowServerFramerate = 9113,
   k_EMsgServerToGCWarningInvalidBotAbilityUsage = 9114,
   k_EMsgClientToGCInviteToDemoMode = 9115,
-  k_EMsgGCToClientInviteToDemoMode = 9116
+  k_EMsgGCToClientInviteToDemoMode = 9116,
+  k_EMsgClientToGCOverworldDevSetFortune = 9117,
+  k_EMsgClientToGCOverworldDevSetFortuneResponse = 9118,
+  k_EMsgClientToGCOverworldRequestFortune = 9119,
+  k_EMsgClientToGCOverworldRequestFortuneResponse = 9120,
+  k_EMsgClientToGCOverworldDevClearFortune = 9121,
+  k_EMsgClientToGCOverworldDevClearFortuneResponse = 9122
 };
 bool EDOTAGCMsg_IsValid(int value);
 constexpr EDOTAGCMsg EDOTAGCMsg_MIN = k_EMsgGCDOTABase;
-constexpr EDOTAGCMsg EDOTAGCMsg_MAX = k_EMsgGCToClientInviteToDemoMode;
+constexpr EDOTAGCMsg EDOTAGCMsg_MAX = k_EMsgClientToGCOverworldDevClearFortuneResponse;
 constexpr int EDOTAGCMsg_ARRAYSIZE = EDOTAGCMsg_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* EDOTAGCMsg_descriptor();

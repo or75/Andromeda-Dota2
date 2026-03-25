@@ -602,11 +602,12 @@ enum EMonsterHunterAuditAction : int {
   k_eMonsterHunterAuditAction_MaterialGiftSent = 11,
   k_eMonsterHunterAuditAction_DevClaimInvestigationRewards = 12,
   k_eMonsterHunterAuditAction_HeroCodexUpdate = 13,
-  k_eMonsterHunterAuditAction_EventActionReward = 14
+  k_eMonsterHunterAuditAction_EventActionReward = 14,
+  k_eMonsterHunterAuditAction_AutoCraft = 15
 };
 bool EMonsterHunterAuditAction_IsValid(int value);
 constexpr EMonsterHunterAuditAction EMonsterHunterAuditAction_MIN = k_eMonsterHunterAuditAction_Invalid;
-constexpr EMonsterHunterAuditAction EMonsterHunterAuditAction_MAX = k_eMonsterHunterAuditAction_EventActionReward;
+constexpr EMonsterHunterAuditAction EMonsterHunterAuditAction_MAX = k_eMonsterHunterAuditAction_AutoCraft;
 constexpr int EMonsterHunterAuditAction_ARRAYSIZE = EMonsterHunterAuditAction_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* EMonsterHunterAuditAction_descriptor();

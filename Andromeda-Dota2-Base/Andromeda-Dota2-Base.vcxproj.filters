@@ -426,6 +426,12 @@
     <ClCompile Include="Andromeda\Dota2\SDK\Types\CEntityData.cpp">
       <Filter>Andromeda\Dota2\SDK\Types</Filter>
     </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\dota_gcmessages_common_item_battler.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
+    <ClCompile Include="Andromeda\Dota2\Protobuf\source2_steam_stats.pb.cc">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Andromeda\DllLauncher.hpp">
@@ -865,6 +871,12 @@
     </ClInclude>
     <ClInclude Include="Andromeda\Dota2\SDK\Types\CEntityData.hpp">
       <Filter>Andromeda\Dota2\SDK\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\dota_gcmessages_common_item_battler.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
+    </ClInclude>
+    <ClInclude Include="Andromeda\Dota2\Protobuf\source2_steam_stats.pb.h">
+      <Filter>Andromeda\Dota2\Protobuf</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

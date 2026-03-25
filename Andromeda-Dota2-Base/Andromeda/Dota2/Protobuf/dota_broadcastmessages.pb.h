@@ -239,7 +239,7 @@ class CDOTABroadcastMsg final :
   std::string* _internal_mutable_msg();
   public:
 
-  // required .EDotaBroadcastMessages type = 1 [default = DOTA_BM_LANLobbyRequest];
+  // optional .EDotaBroadcastMessages type = 1 [default = DOTA_BM_LANLobbyRequest];
   bool has_type() const;
   private:
   bool _internal_has_type() const;
@@ -876,7 +876,7 @@ class CDOTABroadcastMsg_LANLobbyReply final :
 #endif  // __GNUC__
 // CDOTABroadcastMsg
 
-// required .EDotaBroadcastMessages type = 1 [default = DOTA_BM_LANLobbyRequest];
+// optional .EDotaBroadcastMessages type = 1 [default = DOTA_BM_LANLobbyRequest];
 inline bool CDOTABroadcastMsg::_internal_has_type() const {
   bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
   return value;

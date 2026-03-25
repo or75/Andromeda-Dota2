@@ -1097,11 +1097,14 @@ enum DOTA_BOT_MODE : int {
   DOTA_BOT_MODE_TUTORIAL_BOSS = 24,
   DOTA_BOT_MODE_MINION = 25,
   DOTA_BOT_MODE_OUTPOST = 26,
-  DOTA_BOT_MODE_BOT_CHALLENGE_ENDGAME = 27
+  DOTA_BOT_MODE_BOT_CHALLENGE_ENDGAME = 27,
+  DOTA_BOT_MODE_WATCHER = 28,
+  DOTA_BOT_MODE_WISDOM_SHRINE = 29,
+  DOTA_BOT_MODE_LOTUS_POOL = 30
 };
 bool DOTA_BOT_MODE_IsValid(int value);
 constexpr DOTA_BOT_MODE DOTA_BOT_MODE_MIN = DOTA_BOT_MODE_NONE;
-constexpr DOTA_BOT_MODE DOTA_BOT_MODE_MAX = DOTA_BOT_MODE_BOT_CHALLENGE_ENDGAME;
+constexpr DOTA_BOT_MODE DOTA_BOT_MODE_MAX = DOTA_BOT_MODE_LOTUS_POOL;
 constexpr int DOTA_BOT_MODE_ARRAYSIZE = DOTA_BOT_MODE_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* DOTA_BOT_MODE_descriptor();
@@ -3118,6 +3121,7 @@ class CMsgDOTACombatLogEntry final :
     kWillReincarnateFieldNumber = 78,
     kUsesChargesFieldNumber = 79,
     kTrackedStatIdFieldNumber = 80,
+    kModifierPurgedDurationFieldNumber = 81,
     kTypeFieldNumber = 1,
   };
   // repeated int32 assist_players = 40;
@@ -4156,6 +4160,19 @@ class CMsgDOTACombatLogEntry final :
   void _internal_set_tracked_stat_id(uint32_t value);
   public:
 
+  // optional float modifier_purged_duration = 81;
+  bool has_modifier_purged_duration() const;
+  private:
+  bool _internal_has_modifier_purged_duration() const;
+  public:
+  void clear_modifier_purged_duration();
+  float modifier_purged_duration() const;
+  void set_modifier_purged_duration(float value);
+  private:
+  float _internal_modifier_purged_duration() const;
+  void _internal_set_modifier_purged_duration(float value);
+  public:
+
   // optional .DOTA_COMBATLOG_TYPES type = 1 [default = DOTA_COMBATLOG_INVALID];
   bool has_type() const;
   private:
@@ -4258,6 +4275,7 @@ class CMsgDOTACombatLogEntry final :
     bool will_reincarnate_;
     bool uses_charges_;
     uint32_t tracked_stat_id_;
+    float modifier_purged_duration_;
     int type_;
   };
   union { Impl_ _impl_; };
@@ -6656,7 +6674,7 @@ CDOTASaveGame::save_instances() const {
 
 // optional .DOTA_COMBATLOG_TYPES type = 1 [default = DOTA_COMBATLOG_INVALID];
 inline bool CMsgDOTACombatLogEntry::_internal_has_type() const {
-  bool value = (_impl_._has_bits_[2] & 0x00004000u) != 0;
+  bool value = (_impl_._has_bits_[2] & 0x00008000u) != 0;
   return value;
 }
 inline bool CMsgDOTACombatLogEntry::has_type() const {
@@ -6664,7 +6682,7 @@ inline bool CMsgDOTACombatLogEntry::has_type() const {
 }
 inline void CMsgDOTACombatLogEntry::clear_type() {
   _impl_.type_ = -1;
-  _impl_._has_bits_[2] &= ~0x00004000u;
+  _impl_._has_bits_[2] &= ~0x00008000u;
 }
 inline ::DOTA_COMBATLOG_TYPES CMsgDOTACombatLogEntry::_internal_type() const {
   return static_cast< ::DOTA_COMBATLOG_TYPES >(_impl_.type_);
@@ -6675,7 +6693,7 @@ inline ::DOTA_COMBATLOG_TYPES CMsgDOTACombatLogEntry::type() const {
 }
 inline void CMsgDOTACombatLogEntry::_internal_set_type(::DOTA_COMBATLOG_TYPES value) {
   assert(::DOTA_COMBATLOG_TYPES_IsValid(value));
-  _impl_._has_bits_[2] |= 0x00004000u;
+  _impl_._has_bits_[2] |= 0x00008000u;
   _impl_.type_ = value;
 }
 inline void CMsgDOTACombatLogEntry::set_type(::DOTA_COMBATLOG_TYPES value) {
@@ -8912,6 +8930,34 @@ inline void CMsgDOTACombatLogEntry::_internal_set_tracked_stat_id(uint32_t value
 inline void CMsgDOTACombatLogEntry::set_tracked_stat_id(uint32_t value) {
   _internal_set_tracked_stat_id(value);
   // @@protoc_insertion_point(field_set:CMsgDOTACombatLogEntry.tracked_stat_id)
+}
+
+// optional float modifier_purged_duration = 81;
+inline bool CMsgDOTACombatLogEntry::_internal_has_modifier_purged_duration() const {
+  bool value = (_impl_._has_bits_[2] & 0x00004000u) != 0;
+  return value;
+}
+inline bool CMsgDOTACombatLogEntry::has_modifier_purged_duration() const {
+  return _internal_has_modifier_purged_duration();
+}
+inline void CMsgDOTACombatLogEntry::clear_modifier_purged_duration() {
+  _impl_.modifier_purged_duration_ = 0;
+  _impl_._has_bits_[2] &= ~0x00004000u;
+}
+inline float CMsgDOTACombatLogEntry::_internal_modifier_purged_duration() const {
+  return _impl_.modifier_purged_duration_;
+}
+inline float CMsgDOTACombatLogEntry::modifier_purged_duration() const {
+  // @@protoc_insertion_point(field_get:CMsgDOTACombatLogEntry.modifier_purged_duration)
+  return _internal_modifier_purged_duration();
+}
+inline void CMsgDOTACombatLogEntry::_internal_set_modifier_purged_duration(float value) {
+  _impl_._has_bits_[2] |= 0x00004000u;
+  _impl_.modifier_purged_duration_ = value;
+}
+inline void CMsgDOTACombatLogEntry::set_modifier_purged_duration(float value) {
+  _internal_set_modifier_purged_duration(value);
+  // @@protoc_insertion_point(field_set:CMsgDOTACombatLogEntry.modifier_purged_duration)
 }
 
 // -------------------------------------------------------------------

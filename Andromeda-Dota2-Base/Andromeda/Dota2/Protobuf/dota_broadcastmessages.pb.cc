@@ -155,7 +155,7 @@ static const ::_pb::Message* const file_default_instances[] = {
 
 const char descriptor_table_protodef_dota_5fbroadcastmessages_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\034dota_broadcastmessages.proto\"`\n\021CDOTAB"
-  "roadcastMsg\022>\n\004type\030\001 \002(\0162\027.EDotaBroadca"
+  "roadcastMsg\022>\n\004type\030\001 \001(\0162\027.EDotaBroadca"
   "stMessages:\027DOTA_BM_LANLobbyRequest\022\013\n\003m"
   "sg\030\002 \001(\014\"#\n!CDOTABroadcastMsg_LANLobbyRe"
   "quest\"\301\002\n\037CDOTABroadcastMsg_LANLobbyRepl"
@@ -210,9 +210,6 @@ class CDOTABroadcastMsg::_Internal {
   }
   static void set_has_msg(HasBits* has_bits) {
     (*has_bits)[0] |= 1u;
-  }
-  static bool MissingRequiredFields(const HasBits& has_bits) {
-    return ((has_bits[0] & 0x00000002) ^ 0x00000002) != 0;
   }
 };
 
@@ -302,7 +299,7 @@ const char* CDOTABroadcastMsg::_InternalParse(const char* ptr, ::_pbi::ParseCont
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // required .EDotaBroadcastMessages type = 1 [default = DOTA_BM_LANLobbyRequest];
+      // optional .EDotaBroadcastMessages type = 1 [default = DOTA_BM_LANLobbyRequest];
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
@@ -355,7 +352,7 @@ uint8_t* CDOTABroadcastMsg::_InternalSerialize(
   (void) cached_has_bits;
 
   cached_has_bits = _impl_._has_bits_[0];
-  // required .EDotaBroadcastMessages type = 1 [default = DOTA_BM_LANLobbyRequest];
+  // optional .EDotaBroadcastMessages type = 1 [default = DOTA_BM_LANLobbyRequest];
   if (cached_has_bits & 0x00000002u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
@@ -380,23 +377,26 @@ size_t CDOTABroadcastMsg::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:CDOTABroadcastMsg)
   size_t total_size = 0;
 
-  // required .EDotaBroadcastMessages type = 1 [default = DOTA_BM_LANLobbyRequest];
-  if (_internal_has_type()) {
-    total_size += 1 +
-      ::_pbi::WireFormatLite::EnumSize(this->_internal_type());
-  }
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // optional bytes msg = 2;
   cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000001u) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
-        this->_internal_msg());
-  }
+  if (cached_has_bits & 0x00000003u) {
+    // optional bytes msg = 2;
+    if (cached_has_bits & 0x00000001u) {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::BytesSize(
+          this->_internal_msg());
+    }
 
+    // optional .EDotaBroadcastMessages type = 1 [default = DOTA_BM_LANLobbyRequest];
+    if (cached_has_bits & 0x00000002u) {
+      total_size += 1 +
+        ::_pbi::WireFormatLite::EnumSize(this->_internal_type());
+    }
+
+  }
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
@@ -436,7 +436,6 @@ void CDOTABroadcastMsg::CopyFrom(const CDOTABroadcastMsg& from) {
 }
 
 bool CDOTABroadcastMsg::IsInitialized() const {
-  if (_Internal::MissingRequiredFields(_impl_._has_bits_)) return false;
   return true;
 }
 

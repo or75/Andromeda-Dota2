@@ -475,7 +475,8 @@ enum ELaneSelectionFlags : int {
   k_ELaneSelectionFlagGroup_None = 0,
   k_ELaneSelectionFlagGroup_CORE = 7,
   k_ELaneSelectionFlagGroup_SUPPORT = 24,
-  k_ELaneSelectionFlagGroup_ALL = 31
+  k_ELaneSelectionFlagGroup_ALL = 31,
+  k_ELaneSelectionFlagGroup_HIGHDEMAND = 18
 };
 bool ELaneSelectionFlags_IsValid(int value);
 constexpr ELaneSelectionFlags ELaneSelectionFlags_MIN = k_ELaneSelectionFlagGroup_None;

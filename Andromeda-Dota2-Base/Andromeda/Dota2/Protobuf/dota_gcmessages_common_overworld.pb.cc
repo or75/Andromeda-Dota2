@@ -226,6 +226,23 @@ struct CMsgOverworldMinigameUserDataDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CMsgOverworldMinigameUserDataDefaultTypeInternal _CMsgOverworldMinigameUserData_default_instance_;
+PROTOBUF_CONSTEXPR CMsgOverworldFortune::CMsgOverworldFortune(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_._has_bits_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_.fortune1_)*/0u
+  , /*decltype(_impl_.fortune2_)*/0u
+  , /*decltype(_impl_.fortune3_)*/0u
+  , /*decltype(_impl_.timestamp_)*/0u} {}
+struct CMsgOverworldFortuneDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR CMsgOverworldFortuneDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~CMsgOverworldFortuneDefaultTypeInternal() {}
+  union {
+    CMsgOverworldFortune _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CMsgOverworldFortuneDefaultTypeInternal _CMsgOverworldFortune_default_instance_;
 PROTOBUF_CONSTEXPR CMsgOverworldUserData_MinigameDataEntry::CMsgOverworldUserData_MinigameDataEntry(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_._has_bits_)*/{}
@@ -249,6 +266,7 @@ PROTOBUF_CONSTEXPR CMsgOverworldUserData::CMsgOverworldUserData(
   , /*decltype(_impl_.overworld_paths_)*/{}
   , /*decltype(_impl_.minigame_data_)*/{}
   , /*decltype(_impl_.token_inventory_)*/nullptr
+  , /*decltype(_impl_.current_fortune_)*/nullptr
   , /*decltype(_impl_.current_node_id_)*/0u} {}
 struct CMsgOverworldUserDataDefaultTypeInternal {
   PROTOBUF_CONSTEXPR CMsgOverworldUserDataDefaultTypeInternal()
@@ -680,6 +698,92 @@ struct CMsgClientToGCOverworldDevClearInventoryResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CMsgClientToGCOverworldDevClearInventoryResponseDefaultTypeInternal _CMsgClientToGCOverworldDevClearInventoryResponse_default_instance_;
+PROTOBUF_CONSTEXPR CMsgClientToGCOverworldDevSetFortune::CMsgClientToGCOverworldDevSetFortune(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_._has_bits_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_.overworld_id_)*/0u
+  , /*decltype(_impl_.fortune_id_)*/0u} {}
+struct CMsgClientToGCOverworldDevSetFortuneDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR CMsgClientToGCOverworldDevSetFortuneDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~CMsgClientToGCOverworldDevSetFortuneDefaultTypeInternal() {}
+  union {
+    CMsgClientToGCOverworldDevSetFortune _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CMsgClientToGCOverworldDevSetFortuneDefaultTypeInternal _CMsgClientToGCOverworldDevSetFortune_default_instance_;
+PROTOBUF_CONSTEXPR CMsgClientToGCOverworldDevSetFortuneResponse::CMsgClientToGCOverworldDevSetFortuneResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_._has_bits_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_.response_)*/0} {}
+struct CMsgClientToGCOverworldDevSetFortuneResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR CMsgClientToGCOverworldDevSetFortuneResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~CMsgClientToGCOverworldDevSetFortuneResponseDefaultTypeInternal() {}
+  union {
+    CMsgClientToGCOverworldDevSetFortuneResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CMsgClientToGCOverworldDevSetFortuneResponseDefaultTypeInternal _CMsgClientToGCOverworldDevSetFortuneResponse_default_instance_;
+PROTOBUF_CONSTEXPR CMsgClientToGCOverworldDevClearFortune::CMsgClientToGCOverworldDevClearFortune(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_._has_bits_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_.overworld_id_)*/0u
+  , /*decltype(_impl_.fortune_id_)*/0u} {}
+struct CMsgClientToGCOverworldDevClearFortuneDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR CMsgClientToGCOverworldDevClearFortuneDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~CMsgClientToGCOverworldDevClearFortuneDefaultTypeInternal() {}
+  union {
+    CMsgClientToGCOverworldDevClearFortune _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CMsgClientToGCOverworldDevClearFortuneDefaultTypeInternal _CMsgClientToGCOverworldDevClearFortune_default_instance_;
+PROTOBUF_CONSTEXPR CMsgClientToGCOverworldDevClearFortuneResponse::CMsgClientToGCOverworldDevClearFortuneResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_._has_bits_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_.response_)*/0} {}
+struct CMsgClientToGCOverworldDevClearFortuneResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR CMsgClientToGCOverworldDevClearFortuneResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~CMsgClientToGCOverworldDevClearFortuneResponseDefaultTypeInternal() {}
+  union {
+    CMsgClientToGCOverworldDevClearFortuneResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CMsgClientToGCOverworldDevClearFortuneResponseDefaultTypeInternal _CMsgClientToGCOverworldDevClearFortuneResponse_default_instance_;
+PROTOBUF_CONSTEXPR CMsgClientToGCOverworldRequestFortune::CMsgClientToGCOverworldRequestFortune(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_._has_bits_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_.overworld_id_)*/0u} {}
+struct CMsgClientToGCOverworldRequestFortuneDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR CMsgClientToGCOverworldRequestFortuneDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~CMsgClientToGCOverworldRequestFortuneDefaultTypeInternal() {}
+  union {
+    CMsgClientToGCOverworldRequestFortune _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CMsgClientToGCOverworldRequestFortuneDefaultTypeInternal _CMsgClientToGCOverworldRequestFortune_default_instance_;
+PROTOBUF_CONSTEXPR CMsgClientToGCOverworldRequestFortuneResponse::CMsgClientToGCOverworldRequestFortuneResponse(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_._has_bits_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_.response_)*/0} {}
+struct CMsgClientToGCOverworldRequestFortuneResponseDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR CMsgClientToGCOverworldRequestFortuneResponseDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~CMsgClientToGCOverworldRequestFortuneResponseDefaultTypeInternal() {}
+  union {
+    CMsgClientToGCOverworldRequestFortuneResponse _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CMsgClientToGCOverworldRequestFortuneResponseDefaultTypeInternal _CMsgClientToGCOverworldRequestFortuneResponse_default_instance_;
 PROTOBUF_CONSTEXPR CMsgClientToGCOverworldFeedback::CMsgClientToGCOverworldFeedback(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_._has_bits_)*/{}
@@ -791,8 +895,8 @@ struct CMsgClientToGCOverworldMinigameActionResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CMsgClientToGCOverworldMinigameActionResponseDefaultTypeInternal _CMsgClientToGCOverworldMinigameActionResponse_default_instance_;
-static ::_pb::Metadata file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[51];
-static const ::_pb::EnumDescriptor* file_level_enum_descriptors_dota_5fgcmessages_5fcommon_5foverworld_2eproto[19];
+static ::_pb::Metadata file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[58];
+static const ::_pb::EnumDescriptor* file_level_enum_descriptors_dota_5fgcmessages_5fcommon_5foverworld_2eproto[22];
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_dota_5fgcmessages_5fcommon_5foverworld_2eproto = nullptr;
 
 const uint32_t TableStruct_dota_5fgcmessages_5fcommon_5foverworld_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
@@ -933,6 +1037,20 @@ const uint32_t TableStruct_dota_5fgcmessages_5fcommon_5foverworld_2eproto::offse
   1,
   2,
   0,
+  PROTOBUF_FIELD_OFFSET(::CMsgOverworldFortune, _impl_._has_bits_),
+  PROTOBUF_FIELD_OFFSET(::CMsgOverworldFortune, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::CMsgOverworldFortune, _impl_.fortune1_),
+  PROTOBUF_FIELD_OFFSET(::CMsgOverworldFortune, _impl_.fortune2_),
+  PROTOBUF_FIELD_OFFSET(::CMsgOverworldFortune, _impl_.fortune3_),
+  PROTOBUF_FIELD_OFFSET(::CMsgOverworldFortune, _impl_.timestamp_),
+  0,
+  1,
+  2,
+  3,
   PROTOBUF_FIELD_OFFSET(::CMsgOverworldUserData_MinigameDataEntry, _impl_._has_bits_),
   PROTOBUF_FIELD_OFFSET(::CMsgOverworldUserData_MinigameDataEntry, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -954,11 +1072,13 @@ const uint32_t TableStruct_dota_5fgcmessages_5fcommon_5foverworld_2eproto::offse
   PROTOBUF_FIELD_OFFSET(::CMsgOverworldUserData, _impl_.overworld_paths_),
   PROTOBUF_FIELD_OFFSET(::CMsgOverworldUserData, _impl_.current_node_id_),
   PROTOBUF_FIELD_OFFSET(::CMsgOverworldUserData, _impl_.minigame_data_),
+  PROTOBUF_FIELD_OFFSET(::CMsgOverworldUserData, _impl_.current_fortune_),
   0,
   ~0u,
   ~0u,
-  1,
+  2,
   ~0u,
+  1,
   PROTOBUF_FIELD_OFFSET(::CMsgOverworldMatchRewards_Player, _impl_._has_bits_),
   PROTOBUF_FIELD_OFFSET(::CMsgOverworldMatchRewards_Player, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1242,6 +1362,58 @@ const uint32_t TableStruct_dota_5fgcmessages_5fcommon_5foverworld_2eproto::offse
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::CMsgClientToGCOverworldDevClearInventoryResponse, _impl_.response_),
   0,
+  PROTOBUF_FIELD_OFFSET(::CMsgClientToGCOverworldDevSetFortune, _impl_._has_bits_),
+  PROTOBUF_FIELD_OFFSET(::CMsgClientToGCOverworldDevSetFortune, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::CMsgClientToGCOverworldDevSetFortune, _impl_.overworld_id_),
+  PROTOBUF_FIELD_OFFSET(::CMsgClientToGCOverworldDevSetFortune, _impl_.fortune_id_),
+  0,
+  1,
+  PROTOBUF_FIELD_OFFSET(::CMsgClientToGCOverworldDevSetFortuneResponse, _impl_._has_bits_),
+  PROTOBUF_FIELD_OFFSET(::CMsgClientToGCOverworldDevSetFortuneResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::CMsgClientToGCOverworldDevSetFortuneResponse, _impl_.response_),
+  0,
+  PROTOBUF_FIELD_OFFSET(::CMsgClientToGCOverworldDevClearFortune, _impl_._has_bits_),
+  PROTOBUF_FIELD_OFFSET(::CMsgClientToGCOverworldDevClearFortune, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::CMsgClientToGCOverworldDevClearFortune, _impl_.overworld_id_),
+  PROTOBUF_FIELD_OFFSET(::CMsgClientToGCOverworldDevClearFortune, _impl_.fortune_id_),
+  0,
+  1,
+  PROTOBUF_FIELD_OFFSET(::CMsgClientToGCOverworldDevClearFortuneResponse, _impl_._has_bits_),
+  PROTOBUF_FIELD_OFFSET(::CMsgClientToGCOverworldDevClearFortuneResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::CMsgClientToGCOverworldDevClearFortuneResponse, _impl_.response_),
+  0,
+  PROTOBUF_FIELD_OFFSET(::CMsgClientToGCOverworldRequestFortune, _impl_._has_bits_),
+  PROTOBUF_FIELD_OFFSET(::CMsgClientToGCOverworldRequestFortune, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::CMsgClientToGCOverworldRequestFortune, _impl_.overworld_id_),
+  0,
+  PROTOBUF_FIELD_OFFSET(::CMsgClientToGCOverworldRequestFortuneResponse, _impl_._has_bits_),
+  PROTOBUF_FIELD_OFFSET(::CMsgClientToGCOverworldRequestFortuneResponse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::CMsgClientToGCOverworldRequestFortuneResponse, _impl_.response_),
+  0,
   PROTOBUF_FIELD_OFFSET(::CMsgClientToGCOverworldFeedback, _impl_._has_bits_),
   PROTOBUF_FIELD_OFFSET(::CMsgClientToGCOverworldFeedback, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1340,43 +1512,50 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 105, 114, -1, sizeof(::CMsgOverworldPath)},
   { 117, -1, -1, sizeof(::CMsgOverworldMinigameCustomData)},
   { 125, 134, -1, sizeof(::CMsgOverworldMinigameUserData)},
-  { 137, 145, -1, sizeof(::CMsgOverworldUserData_MinigameDataEntry)},
-  { 147, 158, -1, sizeof(::CMsgOverworldUserData)},
-  { 163, 172, -1, sizeof(::CMsgOverworldMatchRewards_Player)},
-  { 175, -1, -1, sizeof(::CMsgOverworldMatchRewards)},
-  { 182, 189, -1, sizeof(::CMsgClientToGCOverworldGetUserData)},
-  { 190, 198, -1, sizeof(::CMsgClientToGCOverworldGetUserDataResponse)},
-  { 200, 208, -1, sizeof(::CMsgGCToClientOverworldUserDataUpdated)},
-  { 210, 218, -1, sizeof(::CMsgClientToGCOverworldCompletePath)},
-  { 220, 228, -1, sizeof(::CMsgClientToGCOverworldCompletePathResponse)},
-  { 230, 238, -1, sizeof(::CMsgOverworldEncounterPitFighterRewardData)},
-  { 240, 254, -1, sizeof(::CMsgClientToGCOverworldClaimEncounterReward)},
-  { 262, 271, -1, sizeof(::CMsgClientToGCOverworldClaimEncounterRewardResponse)},
-  { 274, 282, -1, sizeof(::CMsgClientToGCOverworldVisitEncounter)},
-  { 284, 291, -1, sizeof(::CMsgClientToGCOverworldVisitEncounterResponse)},
-  { 292, 300, -1, sizeof(::CMsgClientToGCOverworldMoveToNode)},
-  { 302, 309, -1, sizeof(::CMsgClientToGCOverworldMoveToNodeResponse)},
-  { 310, 321, -1, sizeof(::CMsgClientToGCOverworldTradeTokens)},
-  { 326, 334, -1, sizeof(::CMsgClientToGCOverworldTradeTokensResponse)},
-  { 336, 346, -1, sizeof(::CMsgClientToGCOverworldGiftTokens)},
-  { 350, 357, -1, sizeof(::CMsgClientToGCOverworldGiftTokensResponse)},
-  { 358, 366, -1, sizeof(::CMsgClientToGCOverworldRequestTokensNeededByFriend)},
-  { 368, 376, -1, sizeof(::CMsgClientToGCOverworldRequestTokensNeededByFriendResponse)},
-  { 378, 385, -1, sizeof(::CMsgClientToGCOverworldDevResetAll)},
-  { 386, 393, -1, sizeof(::CMsgClientToGCOverworldDevResetAllResponse)},
-  { 394, 402, -1, sizeof(::CMsgClientToGCOverworldDevResetNode)},
-  { 404, 411, -1, sizeof(::CMsgClientToGCOverworldDevResetNodeResponse)},
-  { 412, 420, -1, sizeof(::CMsgClientToGCOverworldDevGrantTokens)},
-  { 422, 429, -1, sizeof(::CMsgClientToGCOverworldDevGrantTokensResponse)},
-  { 430, 437, -1, sizeof(::CMsgClientToGCOverworldDevClearInventory)},
-  { 438, 445, -1, sizeof(::CMsgClientToGCOverworldDevClearInventoryResponse)},
-  { 446, 455, -1, sizeof(::CMsgClientToGCOverworldFeedback)},
-  { 458, 465, -1, sizeof(::CMsgClientToGCOverworldFeedbackResponse)},
-  { 466, 475, -1, sizeof(::CMsgClientToGCOverworldGetDynamicImage)},
-  { 478, 488, -1, sizeof(::CMsgClientToGCOverworldGetDynamicImageResponse_Image)},
-  { 492, 500, -1, sizeof(::CMsgClientToGCOverworldGetDynamicImageResponse)},
-  { 502, 514, -1, sizeof(::CMsgClientToGCOverworldMinigameAction)},
-  { 520, 527, -1, sizeof(::CMsgClientToGCOverworldMinigameActionResponse)},
+  { 137, 147, -1, sizeof(::CMsgOverworldFortune)},
+  { 151, 159, -1, sizeof(::CMsgOverworldUserData_MinigameDataEntry)},
+  { 161, 173, -1, sizeof(::CMsgOverworldUserData)},
+  { 179, 188, -1, sizeof(::CMsgOverworldMatchRewards_Player)},
+  { 191, -1, -1, sizeof(::CMsgOverworldMatchRewards)},
+  { 198, 205, -1, sizeof(::CMsgClientToGCOverworldGetUserData)},
+  { 206, 214, -1, sizeof(::CMsgClientToGCOverworldGetUserDataResponse)},
+  { 216, 224, -1, sizeof(::CMsgGCToClientOverworldUserDataUpdated)},
+  { 226, 234, -1, sizeof(::CMsgClientToGCOverworldCompletePath)},
+  { 236, 244, -1, sizeof(::CMsgClientToGCOverworldCompletePathResponse)},
+  { 246, 254, -1, sizeof(::CMsgOverworldEncounterPitFighterRewardData)},
+  { 256, 270, -1, sizeof(::CMsgClientToGCOverworldClaimEncounterReward)},
+  { 278, 287, -1, sizeof(::CMsgClientToGCOverworldClaimEncounterRewardResponse)},
+  { 290, 298, -1, sizeof(::CMsgClientToGCOverworldVisitEncounter)},
+  { 300, 307, -1, sizeof(::CMsgClientToGCOverworldVisitEncounterResponse)},
+  { 308, 316, -1, sizeof(::CMsgClientToGCOverworldMoveToNode)},
+  { 318, 325, -1, sizeof(::CMsgClientToGCOverworldMoveToNodeResponse)},
+  { 326, 337, -1, sizeof(::CMsgClientToGCOverworldTradeTokens)},
+  { 342, 350, -1, sizeof(::CMsgClientToGCOverworldTradeTokensResponse)},
+  { 352, 362, -1, sizeof(::CMsgClientToGCOverworldGiftTokens)},
+  { 366, 373, -1, sizeof(::CMsgClientToGCOverworldGiftTokensResponse)},
+  { 374, 382, -1, sizeof(::CMsgClientToGCOverworldRequestTokensNeededByFriend)},
+  { 384, 392, -1, sizeof(::CMsgClientToGCOverworldRequestTokensNeededByFriendResponse)},
+  { 394, 401, -1, sizeof(::CMsgClientToGCOverworldDevResetAll)},
+  { 402, 409, -1, sizeof(::CMsgClientToGCOverworldDevResetAllResponse)},
+  { 410, 418, -1, sizeof(::CMsgClientToGCOverworldDevResetNode)},
+  { 420, 427, -1, sizeof(::CMsgClientToGCOverworldDevResetNodeResponse)},
+  { 428, 436, -1, sizeof(::CMsgClientToGCOverworldDevGrantTokens)},
+  { 438, 445, -1, sizeof(::CMsgClientToGCOverworldDevGrantTokensResponse)},
+  { 446, 453, -1, sizeof(::CMsgClientToGCOverworldDevClearInventory)},
+  { 454, 461, -1, sizeof(::CMsgClientToGCOverworldDevClearInventoryResponse)},
+  { 462, 470, -1, sizeof(::CMsgClientToGCOverworldDevSetFortune)},
+  { 472, 479, -1, sizeof(::CMsgClientToGCOverworldDevSetFortuneResponse)},
+  { 480, 488, -1, sizeof(::CMsgClientToGCOverworldDevClearFortune)},
+  { 490, 497, -1, sizeof(::CMsgClientToGCOverworldDevClearFortuneResponse)},
+  { 498, 505, -1, sizeof(::CMsgClientToGCOverworldRequestFortune)},
+  { 506, 513, -1, sizeof(::CMsgClientToGCOverworldRequestFortuneResponse)},
+  { 514, 523, -1, sizeof(::CMsgClientToGCOverworldFeedback)},
+  { 526, 533, -1, sizeof(::CMsgClientToGCOverworldFeedbackResponse)},
+  { 534, 543, -1, sizeof(::CMsgClientToGCOverworldGetDynamicImage)},
+  { 546, 556, -1, sizeof(::CMsgClientToGCOverworldGetDynamicImageResponse_Image)},
+  { 560, 568, -1, sizeof(::CMsgClientToGCOverworldGetDynamicImageResponse)},
+  { 570, 582, -1, sizeof(::CMsgClientToGCOverworldMinigameAction)},
+  { 588, 595, -1, sizeof(::CMsgClientToGCOverworldMinigameActionResponse)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -1394,6 +1573,7 @@ static const ::_pb::Message* const file_default_instances[] = {
   &::_CMsgOverworldPath_default_instance_._instance,
   &::_CMsgOverworldMinigameCustomData_default_instance_._instance,
   &::_CMsgOverworldMinigameUserData_default_instance_._instance,
+  &::_CMsgOverworldFortune_default_instance_._instance,
   &::_CMsgOverworldUserData_MinigameDataEntry_default_instance_._instance,
   &::_CMsgOverworldUserData_default_instance_._instance,
   &::_CMsgOverworldMatchRewards_Player_default_instance_._instance,
@@ -1424,6 +1604,12 @@ static const ::_pb::Message* const file_default_instances[] = {
   &::_CMsgClientToGCOverworldDevGrantTokensResponse_default_instance_._instance,
   &::_CMsgClientToGCOverworldDevClearInventory_default_instance_._instance,
   &::_CMsgClientToGCOverworldDevClearInventoryResponse_default_instance_._instance,
+  &::_CMsgClientToGCOverworldDevSetFortune_default_instance_._instance,
+  &::_CMsgClientToGCOverworldDevSetFortuneResponse_default_instance_._instance,
+  &::_CMsgClientToGCOverworldDevClearFortune_default_instance_._instance,
+  &::_CMsgClientToGCOverworldDevClearFortuneResponse_default_instance_._instance,
+  &::_CMsgClientToGCOverworldRequestFortune_default_instance_._instance,
+  &::_CMsgClientToGCOverworldRequestFortuneResponse_default_instance_._instance,
   &::_CMsgClientToGCOverworldFeedback_default_instance_._instance,
   &::_CMsgClientToGCOverworldFeedbackResponse_default_instance_._instance,
   &::_CMsgClientToGCOverworldGetDynamicImage_default_instance_._instance,
@@ -1476,246 +1662,280 @@ const char descriptor_table_protodef_dota_5fgcmessages_5fcommon_5foverworld_2epr
   "ataH\000B\017\n\rminigame_type\"\200\001\n\035CMsgOverworld"
   "MinigameUserData\022\017\n\007node_id\030\001 \001(\r\022\027\n\017cur"
   "rency_amount\030\002 \001(\r\0225\n\013custom_data\030\003 \001(\0132"
-  " .CMsgOverworldMinigameCustomData\"\322\002\n\025CM"
-  "sgOverworldUserData\0224\n\017token_inventory\030\001"
-  " \001(\0132\033.CMsgOverworldTokenQuantity\022+\n\017ove"
-  "rworld_nodes\030\002 \003(\0132\022.CMsgOverworldNode\022+"
-  "\n\017overworld_paths\030\003 \003(\0132\022.CMsgOverworldP"
-  "ath\022\027\n\017current_node_id\030\004 \001(\r\022\?\n\rminigame"
-  "_data\030\005 \003(\0132(.CMsgOverworldUserData.Mini"
-  "gameDataEntry\032O\n\021MinigameDataEntry\022\013\n\003ke"
-  "y\030\001 \001(\r\022-\n\005value\030\002 \001(\0132\036.CMsgOverworldMi"
-  "nigameUserData\"\261\001\n\031CMsgOverworldMatchRew"
-  "ards\0222\n\007players\030\001 \003(\0132!.CMsgOverworldMat"
-  "chRewards.Player\032`\n\006Player\022\023\n\013player_slo"
-  "t\030\001 \001(\r\022+\n\006tokens\030\002 \001(\0132\033.CMsgOverworldT"
-  "okenQuantity\022\024\n\014overworld_id\030\003 \001(\r\":\n\"CM"
-  "sgClientToGCOverworldGetUserData\022\024\n\014over"
-  "world_id\030\001 \001(\r\"\257\002\n*CMsgClientToGCOverwor"
-  "ldGetUserDataResponse\022Y\n\010response\030\001 \001(\0162"
-  "5.CMsgClientToGCOverworldGetUserDataResp"
-  "onse.EResponse:\020k_eInternalError\022)\n\tuser"
-  "_data\030\002 \001(\0132\026.CMsgOverworldUserData\"{\n\tE"
+  " .CMsgOverworldMinigameCustomData\"_\n\024CMs"
+  "gOverworldFortune\022\020\n\010fortune1\030\001 \001(\r\022\020\n\010f"
+  "ortune2\030\002 \001(\r\022\020\n\010fortune3\030\003 \001(\r\022\021\n\ttimes"
+  "tamp\030\004 \001(\r\"\202\003\n\025CMsgOverworldUserData\0224\n\017"
+  "token_inventory\030\001 \001(\0132\033.CMsgOverworldTok"
+  "enQuantity\022+\n\017overworld_nodes\030\002 \003(\0132\022.CM"
+  "sgOverworldNode\022+\n\017overworld_paths\030\003 \003(\013"
+  "2\022.CMsgOverworldPath\022\027\n\017current_node_id\030"
+  "\004 \001(\r\022\?\n\rminigame_data\030\005 \003(\0132(.CMsgOverw"
+  "orldUserData.MinigameDataEntry\022.\n\017curren"
+  "t_fortune\030\006 \001(\0132\025.CMsgOverworldFortune\032O"
+  "\n\021MinigameDataEntry\022\013\n\003key\030\001 \001(\r\022-\n\005valu"
+  "e\030\002 \001(\0132\036.CMsgOverworldMinigameUserData\""
+  "\261\001\n\031CMsgOverworldMatchRewards\0222\n\007players"
+  "\030\001 \003(\0132!.CMsgOverworldMatchRewards.Playe"
+  "r\032`\n\006Player\022\023\n\013player_slot\030\001 \001(\r\022+\n\006toke"
+  "ns\030\002 \001(\0132\033.CMsgOverworldTokenQuantity\022\024\n"
+  "\014overworld_id\030\003 \001(\r\":\n\"CMsgClientToGCOve"
+  "rworldGetUserData\022\024\n\014overworld_id\030\001 \001(\r\""
+  "\257\002\n*CMsgClientToGCOverworldGetUserDataRe"
+  "sponse\022Y\n\010response\030\001 \001(\01625.CMsgClientToG"
+  "COverworldGetUserDataResponse.EResponse:"
+  "\020k_eInternalError\022)\n\tuser_data\030\002 \001(\0132\026.C"
+  "MsgOverworldUserData\"{\n\tEResponse\022\024\n\020k_e"
+  "InternalError\020\000\022\016\n\nk_eSuccess\020\001\022\016\n\nk_eTo"
+  "oBusy\020\002\022\017\n\013k_eDisabled\020\003\022\016\n\nk_eTimeout\020\004"
+  "\022\027\n\023k_eInvalidOverworld\020\005\"i\n&CMsgGCToCli"
+  "entOverworldUserDataUpdated\022\024\n\014overworld"
+  "_id\030\001 \001(\r\022)\n\tuser_data\030\002 \001(\0132\026.CMsgOverw"
+  "orldUserData\"L\n#CMsgClientToGCOverworldC"
+  "ompletePath\022\024\n\014overworld_id\030\001 \001(\r\022\017\n\007pat"
+  "h_id\030\002 \001(\r\"\264\003\n+CMsgClientToGCOverworldCo"
+  "mpletePathResponse\022Z\n\010response\030\001 \001(\01626.C"
+  "MsgClientToGCOverworldCompletePathRespon"
+  "se.EResponse:\020k_eInternalError\0229\n\016claim_"
+  "response\030\002 \001(\0132!.CMsgDOTAClaimEventActio"
+  "nResponse\"\355\001\n\tEResponse\022\024\n\020k_eInternalEr"
+  "ror\020\000\022\016\n\nk_eSuccess\020\001\022\016\n\nk_eTooBusy\020\002\022\017\n"
+  "\013k_eDisabled\020\003\022\016\n\nk_eTimeout\020\004\022\027\n\023k_eInv"
+  "alidOverworld\020\005\022\022\n\016k_eInvalidPath\020\006\022\026\n\022k"
+  "_eNotEnoughTokens\020\007\022\023\n\017k_ePathIsLocked\020\010"
+  "\022\032\n\026k_ePathAlreadyUnlocked\020\t\022\023\n\017k_eEvent"
+  "Expired\020\n\"N\n*CMsgOverworldEncounterPitFi"
+  "ghterRewardData\022\020\n\010token_id\030\001 \001(\r\022\016\n\006cho"
+  "ice\030\002 \001(\r\"\221\002\n+CMsgClientToGCOverworldCla"
+  "imEncounterReward\022\024\n\014overworld_id\030\001 \001(\r\022"
+  "\017\n\007node_id\030\002 \001(\r\022\023\n\013reward_data\030\003 \001(\r\022\034\n"
+  "\024periodic_resource_id\030\004 \001(\r\0226\n\021extra_rew"
+  "ard_data\030\005 \001(\0132\033.CMsgOverworldEncounterD"
+  "ata\022\030\n\020leaderboard_data\030\006 \001(\r\022\031\n\021leaderb"
+  "oard_index\030\007 \001(\r\022\033\n\023should_claim_reward\030"
+  "\010 \001(\010\"\271\005\n3CMsgClientToGCOverworldClaimEn"
+  "counterRewardResponse\022b\n\010response\030\001 \001(\0162"
+  ">.CMsgClientToGCOverworldClaimEncounterR"
+  "ewardResponse.EResponse:\020k_eInternalErro"
+  "r\0229\n\016claim_response\030\002 \001(\0132!.CMsgDOTAClai"
+  "mEventActionResponse\0224\n\017tokens_received\030"
+  "\003 \001(\0132\033.CMsgOverworldTokenQuantity\"\254\003\n\tE"
   "Response\022\024\n\020k_eInternalError\020\000\022\016\n\nk_eSuc"
   "cess\020\001\022\016\n\nk_eTooBusy\020\002\022\017\n\013k_eDisabled\020\003\022"
   "\016\n\nk_eTimeout\020\004\022\027\n\023k_eInvalidOverworld\020\005"
-  "\"i\n&CMsgGCToClientOverworldUserDataUpdat"
-  "ed\022\024\n\014overworld_id\030\001 \001(\r\022)\n\tuser_data\030\002 "
-  "\001(\0132\026.CMsgOverworldUserData\"L\n#CMsgClien"
-  "tToGCOverworldCompletePath\022\024\n\014overworld_"
-  "id\030\001 \001(\r\022\017\n\007path_id\030\002 \001(\r\"\264\003\n+CMsgClient"
-  "ToGCOverworldCompletePathResponse\022Z\n\010res"
-  "ponse\030\001 \001(\01626.CMsgClientToGCOverworldCom"
-  "pletePathResponse.EResponse:\020k_eInternal"
-  "Error\0229\n\016claim_response\030\002 \001(\0132!.CMsgDOTA"
-  "ClaimEventActionResponse\"\355\001\n\tEResponse\022\024"
-  "\n\020k_eInternalError\020\000\022\016\n\nk_eSuccess\020\001\022\016\n\n"
-  "k_eTooBusy\020\002\022\017\n\013k_eDisabled\020\003\022\016\n\nk_eTime"
-  "out\020\004\022\027\n\023k_eInvalidOverworld\020\005\022\022\n\016k_eInv"
-  "alidPath\020\006\022\026\n\022k_eNotEnoughTokens\020\007\022\023\n\017k_"
-  "ePathIsLocked\020\010\022\032\n\026k_ePathAlreadyUnlocke"
-  "d\020\t\022\023\n\017k_eEventExpired\020\n\"N\n*CMsgOverworl"
-  "dEncounterPitFighterRewardData\022\020\n\010token_"
-  "id\030\001 \001(\r\022\016\n\006choice\030\002 \001(\r\"\221\002\n+CMsgClientT"
-  "oGCOverworldClaimEncounterReward\022\024\n\014over"
-  "world_id\030\001 \001(\r\022\017\n\007node_id\030\002 \001(\r\022\023\n\013rewar"
-  "d_data\030\003 \001(\r\022\034\n\024periodic_resource_id\030\004 \001"
-  "(\r\0226\n\021extra_reward_data\030\005 \001(\0132\033.CMsgOver"
-  "worldEncounterData\022\030\n\020leaderboard_data\030\006"
-  " \001(\r\022\031\n\021leaderboard_index\030\007 \001(\r\022\033\n\023shoul"
-  "d_claim_reward\030\010 \001(\010\"\271\005\n3CMsgClientToGCO"
-  "verworldClaimEncounterRewardResponse\022b\n\010"
-  "response\030\001 \001(\0162>.CMsgClientToGCOverworld"
-  "ClaimEncounterRewardResponse.EResponse:\020"
-  "k_eInternalError\0229\n\016claim_response\030\002 \001(\013"
-  "2!.CMsgDOTAClaimEventActionResponse\0224\n\017t"
-  "okens_received\030\003 \001(\0132\033.CMsgOverworldToke"
-  "nQuantity\"\254\003\n\tEResponse\022\024\n\020k_eInternalEr"
+  "\022\022\n\016k_eInvalidNode\020\006\022\021\n\rk_eNodeLocked\020\007\022"
+  "\033\n\027k_eRewardAlreadyClaimed\020\010\022\027\n\023k_eNodeN"
+  "otEncounter\020\t\022\036\n\032k_eEncounterMissingRewa"
+  "rds\020\n\022\"\n\036k_eInvalidEncounterRewardStyle\020"
+  "\013\022\033\n\027k_eInvalidEncounterData\020\014\022\037\n\033k_eNot"
+  "EnoughTokensForReward\020\r\022!\n\035k_eNotEnoughR"
+  "esourceForReward\020\016\022\030\n\024k_eInvalidRewardDa"
+  "ta\020\017\022\023\n\017k_eEventExpired\020\020\"N\n%CMsgClientT"
+  "oGCOverworldVisitEncounter\022\024\n\014overworld_"
+  "id\030\001 \001(\r\022\017\n\007node_id\030\002 \001(\r\"\342\002\n-CMsgClient"
+  "ToGCOverworldVisitEncounterResponse\022\\\n\010r"
+  "esponse\030\001 \001(\01628.CMsgClientToGCOverworldV"
+  "isitEncounterResponse.EResponse:\020k_eInte"
+  "rnalError\"\322\001\n\tEResponse\022\024\n\020k_eInternalEr"
   "ror\020\000\022\016\n\nk_eSuccess\020\001\022\016\n\nk_eTooBusy\020\002\022\017\n"
   "\013k_eDisabled\020\003\022\016\n\nk_eTimeout\020\004\022\027\n\023k_eInv"
   "alidOverworld\020\005\022\022\n\016k_eInvalidNode\020\006\022\021\n\rk"
-  "_eNodeLocked\020\007\022\033\n\027k_eRewardAlreadyClaime"
-  "d\020\010\022\027\n\023k_eNodeNotEncounter\020\t\022\036\n\032k_eEncou"
-  "nterMissingRewards\020\n\022\"\n\036k_eInvalidEncoun"
-  "terRewardStyle\020\013\022\033\n\027k_eInvalidEncounterD"
-  "ata\020\014\022\037\n\033k_eNotEnoughTokensForReward\020\r\022!"
-  "\n\035k_eNotEnoughResourceForReward\020\016\022\030\n\024k_e"
-  "InvalidRewardData\020\017\022\023\n\017k_eEventExpired\020\020"
-  "\"N\n%CMsgClientToGCOverworldVisitEncounte"
-  "r\022\024\n\014overworld_id\030\001 \001(\r\022\017\n\007node_id\030\002 \001(\r"
-  "\"\342\002\n-CMsgClientToGCOverworldVisitEncount"
-  "erResponse\022\\\n\010response\030\001 \001(\01628.CMsgClien"
-  "tToGCOverworldVisitEncounterResponse.ERe"
-  "sponse:\020k_eInternalError\"\322\001\n\tEResponse\022\024"
-  "\n\020k_eInternalError\020\000\022\016\n\nk_eSuccess\020\001\022\016\n\n"
-  "k_eTooBusy\020\002\022\017\n\013k_eDisabled\020\003\022\016\n\nk_eTime"
-  "out\020\004\022\027\n\023k_eInvalidOverworld\020\005\022\022\n\016k_eInv"
-  "alidNode\020\006\022\021\n\rk_eNodeLocked\020\007\022\027\n\023k_eNode"
-  "NotEncounter\020\010\022\025\n\021k_eAlreadyVisited\020\t\"J\n"
-  "!CMsgClientToGCOverworldMoveToNode\022\024\n\014ov"
-  "erworld_id\030\001 \001(\r\022\017\n\007node_id\030\002 \001(\r\"\252\002\n)CM"
-  "sgClientToGCOverworldMoveToNodeResponse\022"
-  "X\n\010response\030\001 \001(\01624.CMsgClientToGCOverwo"
-  "rldMoveToNodeResponse.EResponse:\020k_eInte"
-  "rnalError\"\242\001\n\tEResponse\022\024\n\020k_eInternalEr"
-  "ror\020\000\022\016\n\nk_eSuccess\020\001\022\016\n\nk_eTooBusy\020\002\022\017\n"
-  "\013k_eDisabled\020\003\022\016\n\nk_eTimeout\020\004\022\027\n\023k_eInv"
-  "alidOverworld\020\005\022\022\n\016k_eInvalidNode\020\006\022\021\n\rk"
-  "_eNodeLocked\020\007\"\306\001\n\"CMsgClientToGCOverwor"
-  "ldTradeTokens\022\024\n\014overworld_id\030\001 \001(\r\0220\n\013t"
-  "oken_offer\030\002 \001(\0132\033.CMsgOverworldTokenQua"
-  "ntity\0222\n\rtoken_request\030\003 \001(\0132\033.CMsgOverw"
-  "orldTokenQuantity\022\016\n\006recipe\030\004 \001(\r\022\024\n\014enc"
-  "ounter_id\030\005 \001(\r\"\334\003\n*CMsgClientToGCOverwo"
-  "rldTradeTokensResponse\022Y\n\010response\030\001 \001(\016"
-  "25.CMsgClientToGCOverworldTradeTokensRes"
-  "ponse.EResponse:\020k_eInternalError\0224\n\017tok"
-  "ens_received\030\002 \001(\0132\033.CMsgOverworldTokenQ"
-  "uantity\"\234\002\n\tEResponse\022\024\n\020k_eInternalErro"
-  "r\020\000\022\016\n\nk_eSuccess\020\001\022\016\n\nk_eTooBusy\020\002\022\017\n\013k"
-  "_eDisabled\020\003\022\016\n\nk_eTimeout\020\004\022\021\n\rk_eNotAl"
-  "lowed\020\005\022\021\n\rk_eNodeLocked\020\006\022\027\n\023k_eInvalid"
-  "Overworld\020\007\022\023\n\017k_eInvalidOffer\020\010\022\026\n\022k_eN"
-  "otEnoughTokens\020\t\022\022\n\016k_eInvalidNode\020\n\022\027\n\023"
-  "k_eInvalidEncounter\020\013\022\037\n\033k_eRewardDoesNo"
-  "tMatchRecipe\020\014\"\243\001\n!CMsgClientToGCOverwor"
-  "ldGiftTokens\022\024\n\014overworld_id\030\001 \001(\r\022,\n\nto"
-  "ken_gift\030\002 \001(\0132\030.CMsgOverworldTokenCount"
-  "\022\034\n\024recipient_account_id\030\003 \001(\r\022\034\n\024period"
-  "ic_resource_id\030\004 \001(\r\"\220\003\n)CMsgClientToGCO"
-  "verworldGiftTokensResponse\022X\n\010response\030\001"
-  " \001(\01624.CMsgClientToGCOverworldGiftTokens"
-  "Response.EResponse:\020k_eInternalError\"\210\002\n"
-  "\tEResponse\022\024\n\020k_eInternalError\020\000\022\016\n\nk_eS"
-  "uccess\020\001\022\016\n\nk_eTooBusy\020\002\022\017\n\013k_eDisabled\020"
-  "\003\022\016\n\nk_eTimeout\020\004\022\021\n\rk_eNotAllowed\020\005\022\021\n\r"
-  "k_eNodeLocked\020\006\022\027\n\023k_eInvalidOverworld\020\007"
-  "\022\022\n\016k_eInvalidGift\020\010\022\026\n\022k_eNotEnoughToke"
-  "ns\020\t\022\027\n\023k_eInvalidRecipient\020\n\022 \n\034k_eNotE"
-  "noughPeriodicResource\020\013\"e\n2CMsgClientToG"
-  "COverworldRequestTokensNeededByFriend\022\031\n"
-  "\021friend_account_id\030\001 \001(\r\022\024\n\014overworld_id"
-  "\030\002 \001(\r\"\256\003\n:CMsgClientToGCOverworldReques"
-  "tTokensNeededByFriendResponse\022i\n\010respons"
-  "e\030\001 \001(\0162E.CMsgClientToGCOverworldRequest"
-  "TokensNeededByFriendResponse.EResponse:\020"
-  "k_eInternalError\0223\n\016token_quantity\030\002 \001(\013"
-  "2\033.CMsgOverworldTokenQuantity\"\317\001\n\tERespo"
-  "nse\022\024\n\020k_eInternalError\020\000\022\016\n\nk_eSuccess\020"
-  "\001\022\016\n\nk_eTooBusy\020\002\022\017\n\013k_eDisabled\020\003\022\016\n\nk_"
-  "eTimeout\020\004\022\021\n\rk_eNotAllowed\020\005\022\021\n\rk_eNode"
-  "Locked\020\006\022\027\n\023k_eInvalidOverworld\020\007\022\024\n\020k_e"
-  "InvalidFriend\020\010\022\026\n\022k_eTooManyRequests\020\t\""
-  ":\n\"CMsgClientToGCOverworldDevResetAll\022\024\n"
-  "\014overworld_id\030\001 \001(\r\"\230\002\n*CMsgClientToGCOv"
-  "erworldDevResetAllResponse\022Y\n\010response\030\001"
-  " \001(\01625.CMsgClientToGCOverworldDevResetAl"
-  "lResponse.EResponse:\020k_eInternalError\"\216\001"
-  "\n\tEResponse\022\024\n\020k_eInternalError\020\000\022\016\n\nk_e"
-  "Success\020\001\022\016\n\nk_eTooBusy\020\002\022\017\n\013k_eDisabled"
-  "\020\003\022\016\n\nk_eTimeout\020\004\022\021\n\rk_eNotAllowed\020\005\022\027\n"
-  "\023k_eInvalidOverworld\020\006\"L\n#CMsgClientToGC"
-  "OverworldDevResetNode\022\024\n\014overworld_id\030\001 "
-  "\001(\r\022\017\n\007node_id\030\002 \001(\r\"\256\002\n+CMsgClientToGCO"
-  "verworldDevResetNodeResponse\022Z\n\010response"
-  "\030\001 \001(\01626.CMsgClientToGCOverworldDevReset"
-  "NodeResponse.EResponse:\020k_eInternalError"
-  "\"\242\001\n\tEResponse\022\024\n\020k_eInternalError\020\000\022\016\n\n"
-  "k_eSuccess\020\001\022\016\n\nk_eTooBusy\020\002\022\017\n\013k_eDisab"
-  "led\020\003\022\016\n\nk_eTimeout\020\004\022\021\n\rk_eNotAllowed\020\005"
-  "\022\027\n\023k_eInvalidOverworld\020\006\022\022\n\016k_eInvalidN"
-  "ode\020\007\"r\n%CMsgClientToGCOverworldDevGrant"
-  "Tokens\022\024\n\014overworld_id\030\001 \001(\r\0223\n\016token_qu"
-  "antity\030\002 \001(\0132\033.CMsgOverworldTokenQuantit"
-  "y\"\236\002\n-CMsgClientToGCOverworldDevGrantTok"
-  "ensResponse\022\\\n\010response\030\001 \001(\01628.CMsgClie"
-  "ntToGCOverworldDevGrantTokensResponse.ER"
-  "esponse:\020k_eInternalError\"\216\001\n\tEResponse\022"
+  "_eNodeLocked\020\007\022\027\n\023k_eNodeNotEncounter\020\010\022"
+  "\025\n\021k_eAlreadyVisited\020\t\"J\n!CMsgClientToGC"
+  "OverworldMoveToNode\022\024\n\014overworld_id\030\001 \001("
+  "\r\022\017\n\007node_id\030\002 \001(\r\"\252\002\n)CMsgClientToGCOve"
+  "rworldMoveToNodeResponse\022X\n\010response\030\001 \001"
+  "(\01624.CMsgClientToGCOverworldMoveToNodeRe"
+  "sponse.EResponse:\020k_eInternalError\"\242\001\n\tE"
+  "Response\022\024\n\020k_eInternalError\020\000\022\016\n\nk_eSuc"
+  "cess\020\001\022\016\n\nk_eTooBusy\020\002\022\017\n\013k_eDisabled\020\003\022"
+  "\016\n\nk_eTimeout\020\004\022\027\n\023k_eInvalidOverworld\020\005"
+  "\022\022\n\016k_eInvalidNode\020\006\022\021\n\rk_eNodeLocked\020\007\""
+  "\306\001\n\"CMsgClientToGCOverworldTradeTokens\022\024"
+  "\n\014overworld_id\030\001 \001(\r\0220\n\013token_offer\030\002 \001("
+  "\0132\033.CMsgOverworldTokenQuantity\0222\n\rtoken_"
+  "request\030\003 \001(\0132\033.CMsgOverworldTokenQuanti"
+  "ty\022\016\n\006recipe\030\004 \001(\r\022\024\n\014encounter_id\030\005 \001(\r"
+  "\"\334\003\n*CMsgClientToGCOverworldTradeTokensR"
+  "esponse\022Y\n\010response\030\001 \001(\01625.CMsgClientTo"
+  "GCOverworldTradeTokensResponse.EResponse"
+  ":\020k_eInternalError\0224\n\017tokens_received\030\002 "
+  "\001(\0132\033.CMsgOverworldTokenQuantity\"\234\002\n\tERe"
+  "sponse\022\024\n\020k_eInternalError\020\000\022\016\n\nk_eSucce"
+  "ss\020\001\022\016\n\nk_eTooBusy\020\002\022\017\n\013k_eDisabled\020\003\022\016\n"
+  "\nk_eTimeout\020\004\022\021\n\rk_eNotAllowed\020\005\022\021\n\rk_eN"
+  "odeLocked\020\006\022\027\n\023k_eInvalidOverworld\020\007\022\023\n\017"
+  "k_eInvalidOffer\020\010\022\026\n\022k_eNotEnoughTokens\020"
+  "\t\022\022\n\016k_eInvalidNode\020\n\022\027\n\023k_eInvalidEncou"
+  "nter\020\013\022\037\n\033k_eRewardDoesNotMatchRecipe\020\014\""
+  "\243\001\n!CMsgClientToGCOverworldGiftTokens\022\024\n"
+  "\014overworld_id\030\001 \001(\r\022,\n\ntoken_gift\030\002 \001(\0132"
+  "\030.CMsgOverworldTokenCount\022\034\n\024recipient_a"
+  "ccount_id\030\003 \001(\r\022\034\n\024periodic_resource_id\030"
+  "\004 \001(\r\"\220\003\n)CMsgClientToGCOverworldGiftTok"
+  "ensResponse\022X\n\010response\030\001 \001(\01624.CMsgClie"
+  "ntToGCOverworldGiftTokensResponse.ERespo"
+  "nse:\020k_eInternalError\"\210\002\n\tEResponse\022\024\n\020k"
+  "_eInternalError\020\000\022\016\n\nk_eSuccess\020\001\022\016\n\nk_e"
+  "TooBusy\020\002\022\017\n\013k_eDisabled\020\003\022\016\n\nk_eTimeout"
+  "\020\004\022\021\n\rk_eNotAllowed\020\005\022\021\n\rk_eNodeLocked\020\006"
+  "\022\027\n\023k_eInvalidOverworld\020\007\022\022\n\016k_eInvalidG"
+  "ift\020\010\022\026\n\022k_eNotEnoughTokens\020\t\022\027\n\023k_eInva"
+  "lidRecipient\020\n\022 \n\034k_eNotEnoughPeriodicRe"
+  "source\020\013\"e\n2CMsgClientToGCOverworldReque"
+  "stTokensNeededByFriend\022\031\n\021friend_account"
+  "_id\030\001 \001(\r\022\024\n\014overworld_id\030\002 \001(\r\"\256\003\n:CMsg"
+  "ClientToGCOverworldRequestTokensNeededBy"
+  "FriendResponse\022i\n\010response\030\001 \001(\0162E.CMsgC"
+  "lientToGCOverworldRequestTokensNeededByF"
+  "riendResponse.EResponse:\020k_eInternalErro"
+  "r\0223\n\016token_quantity\030\002 \001(\0132\033.CMsgOverworl"
+  "dTokenQuantity\"\317\001\n\tEResponse\022\024\n\020k_eInter"
+  "nalError\020\000\022\016\n\nk_eSuccess\020\001\022\016\n\nk_eTooBusy"
+  "\020\002\022\017\n\013k_eDisabled\020\003\022\016\n\nk_eTimeout\020\004\022\021\n\rk"
+  "_eNotAllowed\020\005\022\021\n\rk_eNodeLocked\020\006\022\027\n\023k_e"
+  "InvalidOverworld\020\007\022\024\n\020k_eInvalidFriend\020\010"
+  "\022\026\n\022k_eTooManyRequests\020\t\":\n\"CMsgClientTo"
+  "GCOverworldDevResetAll\022\024\n\014overworld_id\030\001"
+  " \001(\r\"\230\002\n*CMsgClientToGCOverworldDevReset"
+  "AllResponse\022Y\n\010response\030\001 \001(\01625.CMsgClie"
+  "ntToGCOverworldDevResetAllResponse.EResp"
+  "onse:\020k_eInternalError\"\216\001\n\tEResponse\022\024\n\020"
+  "k_eInternalError\020\000\022\016\n\nk_eSuccess\020\001\022\016\n\nk_"
+  "eTooBusy\020\002\022\017\n\013k_eDisabled\020\003\022\016\n\nk_eTimeou"
+  "t\020\004\022\021\n\rk_eNotAllowed\020\005\022\027\n\023k_eInvalidOver"
+  "world\020\006\"L\n#CMsgClientToGCOverworldDevRes"
+  "etNode\022\024\n\014overworld_id\030\001 \001(\r\022\017\n\007node_id\030"
+  "\002 \001(\r\"\256\002\n+CMsgClientToGCOverworldDevRese"
+  "tNodeResponse\022Z\n\010response\030\001 \001(\01626.CMsgCl"
+  "ientToGCOverworldDevResetNodeResponse.ER"
+  "esponse:\020k_eInternalError\"\242\001\n\tEResponse\022"
   "\024\n\020k_eInternalError\020\000\022\016\n\nk_eSuccess\020\001\022\016\n"
   "\nk_eTooBusy\020\002\022\017\n\013k_eDisabled\020\003\022\016\n\nk_eTim"
   "eout\020\004\022\021\n\rk_eNotAllowed\020\005\022\027\n\023k_eInvalidO"
-  "verworld\020\006\"@\n(CMsgClientToGCOverworldDev"
-  "ClearInventory\022\024\n\014overworld_id\030\001 \001(\r\"\244\002\n"
-  "0CMsgClientToGCOverworldDevClearInventor"
-  "yResponse\022_\n\010response\030\001 \001(\0162;.CMsgClient"
-  "ToGCOverworldDevClearInventoryResponse.E"
-  "Response:\020k_eInternalError\"\216\001\n\tEResponse"
-  "\022\024\n\020k_eInternalError\020\000\022\016\n\nk_eSuccess\020\001\022\016"
-  "\n\nk_eTooBusy\020\002\022\017\n\013k_eDisabled\020\003\022\016\n\nk_eTi"
-  "meout\020\004\022\021\n\rk_eNotAllowed\020\005\022\027\n\023k_eInvalid"
-  "Overworld\020\006\"[\n\037CMsgClientToGCOverworldFe"
-  "edback\022\020\n\010language\030\001 \001(\r\022\024\n\014overworld_id"
-  "\030\002 \001(\r\022\020\n\010feedback\030\003 \001(\t\"\222\002\n\'CMsgClientT"
-  "oGCOverworldFeedbackResponse\022V\n\010response"
-  "\030\001 \001(\01622.CMsgClientToGCOverworldFeedback"
-  "Response.EResponse:\020k_eInternalError\"\216\001\n"
-  "\tEResponse\022\024\n\020k_eInternalError\020\000\022\016\n\nk_eS"
-  "uccess\020\001\022\016\n\nk_eTooBusy\020\002\022\017\n\013k_eDisabled\020"
-  "\003\022\016\n\nk_eTimeout\020\004\022\021\n\rk_eNotAllowed\020\005\022\027\n\023"
-  "k_eInvalidOverworld\020\006\"[\n&CMsgClientToGCO"
-  "verworldGetDynamicImage\022\r\n\005magic\030\001 \001(\r\022\020"
-  "\n\010image_id\030\002 \001(\r\022\020\n\010language\030\003 \001(\r\"\350\002\n.C"
-  "MsgClientToGCOverworldGetDynamicImageRes"
-  "ponse\022\020\n\010image_id\030\001 \001(\r\022E\n\006images\030\002 \003(\0132"
-  "5.CMsgClientToGCOverworldGetDynamicImage"
-  "Response.Image\032\234\001\n\005Image\022\r\n\005width\030\001 \001(\r\022"
-  "\016\n\006height\030\002 \001(\r\022_\n\006format\030\003 \001(\0162C.CMsgCl"
-  "ientToGCOverworldGetDynamicImageResponse"
-  ".EDynamicImageFormat:\nk_eUnknown\022\023\n\013imag"
-  "e_bytes\030\004 \001(\014\">\n\023EDynamicImageFormat\022\016\n\n"
-  "k_eUnknown\020\000\022\n\n\006k_ePNG\020\001\022\013\n\007k_eData\020\002\"\337\001"
-  "\n%CMsgClientToGCOverworldMinigameAction\022"
-  "\024\n\014overworld_id\030\001 \001(\r\022\017\n\007node_id\030\002 \001(\r\022M"
-  "\n\006action\030\003 \001(\0162\031.EOverworldMinigameActio"
-  "n:\"k_eOverworldMinigameAction_Invalid\022\021\n"
-  "\tselection\030\004 \001(\r\022\024\n\014option_value\030\005 \001(\r\022\027"
-  "\n\017currency_amount\030\006 \001(\r\"\230\003\n-CMsgClientTo"
-  "GCOverworldMinigameActionResponse\022\\\n\010res"
-  "ponse\030\001 \001(\01628.CMsgClientToGCOverworldMin"
-  "igameActionResponse.EResponse:\020k_eIntern"
-  "alError\"\210\002\n\tEResponse\022\024\n\020k_eInternalErro"
-  "r\020\000\022\016\n\nk_eSuccess\020\001\022\016\n\nk_eTooBusy\020\002\022\017\n\013k"
-  "_eDisabled\020\003\022\016\n\nk_eTimeout\020\004\022\027\n\023k_eInval"
-  "idOverworld\020\005\022\022\n\016k_eInvalidNode\020\006\022\021\n\rk_e"
-  "NodeLocked\020\007\022\027\n\023k_eInvalidSelection\020\010\022\026\n"
-  "\022k_eNotEnoughTokens\020\t\022 \n\034k_eNotEnoughMin"
-  "igameCurrency\020\n\022\021\n\rk_eNotAllowed\020\013*~\n\023EO"
-  "verworldNodeState\022!\n\035k_eOverworldNodeSta"
-  "te_Invalid\020\000\022 \n\034k_eOverworldNodeState_Lo"
-  "cked\020\001\022\"\n\036k_eOverworldNodeState_Unlocked"
-  "\020\002*\202\001\n\023EOverworldPathState\022!\n\035k_eOverwor"
-  "ldPathState_Invalid\020\000\022$\n k_eOverworldPat"
-  "hState_Incomplete\020\001\022\"\n\036k_eOverworldPathS"
-  "tate_Complete\020\002*\250\006\n\025EOverworldAuditActio"
-  "n\022#\n\037k_eOverworldAuditAction_Invalid\020\000\022+"
-  "\n\'k_eOverworldAuditAction_DevModifyToken"
-  "s\020\001\022-\n)k_eOverworldAuditAction_DevClearI"
-  "nventory\020\002\022*\n&k_eOverworldAuditAction_De"
-  "vGrantTokens\020\003\022(\n$k_eOverworldAuditActio"
-  "n_CompletePath\020\004\0220\n,k_eOverworldAuditAct"
-  "ion_ClaimEncounterReward\020\005\022(\n$k_eOverwor"
-  "ldAuditAction_DevResetNode\020\006\022(\n$k_eOverw"
-  "orldAuditAction_DevResetPath\020\007\022,\n(k_eOve"
-  "rworldAuditAction_MatchRewardsFull\020\010\022,\n("
-  "k_eOverworldAuditAction_MatchRewardsHalf"
-  "\020\t\0221\n-k_eOverworldAuditAction_EventActio"
-  "nTokenGrant\020\n\022+\n\'k_eOverworldAuditAction"
-  "_TokenTraderLost\020\013\022-\n)k_eOverworldAuditA"
-  "ction_TokenTraderGained\020\014\0224\n0k_eOverworl"
-  "dAuditAction_EncounterRewardTokenCost\020\r\022"
-  "6\n2k_eOverworldAuditAction_EncounterRewa"
-  "rdTokenReward\020\016\022.\n*k_eOverworldAuditActi"
-  "on_SupportGrantTokens\020\020\022)\n%k_eOverworldA"
-  "uditAction_TokenGiftSent\020\021*\324\002\n\030EOverworl"
-  "dMinigameAction\022&\n\"k_eOverworldMinigameA"
-  "ction_Invalid\020\000\022\'\n#k_eOverworldMinigameA"
-  "ction_DevReset\020\001\022.\n*k_eOverworldMinigame"
-  "Action_DevGiveCurrency\020\002\022\'\n#k_eOverworld"
-  "MinigameAction_Purchase\020\003\022(\n$k_eOverworl"
-  "dMinigameAction_SetOption\020\004\0223\n/k_eOverwo"
-  "rldMinigameAction_ReportCurrencyGained\020\005"
-  "\022/\n+k_eOverworldMinigameAction_UnlockDif"
-  "ficulty\020\006"
+  "verworld\020\006\022\022\n\016k_eInvalidNode\020\007\"r\n%CMsgCl"
+  "ientToGCOverworldDevGrantTokens\022\024\n\014overw"
+  "orld_id\030\001 \001(\r\0223\n\016token_quantity\030\002 \001(\0132\033."
+  "CMsgOverworldTokenQuantity\"\236\002\n-CMsgClien"
+  "tToGCOverworldDevGrantTokensResponse\022\\\n\010"
+  "response\030\001 \001(\01628.CMsgClientToGCOverworld"
+  "DevGrantTokensResponse.EResponse:\020k_eInt"
+  "ernalError\"\216\001\n\tEResponse\022\024\n\020k_eInternalE"
+  "rror\020\000\022\016\n\nk_eSuccess\020\001\022\016\n\nk_eTooBusy\020\002\022\017"
+  "\n\013k_eDisabled\020\003\022\016\n\nk_eTimeout\020\004\022\021\n\rk_eNo"
+  "tAllowed\020\005\022\027\n\023k_eInvalidOverworld\020\006\"@\n(C"
+  "MsgClientToGCOverworldDevClearInventory\022"
+  "\024\n\014overworld_id\030\001 \001(\r\"\244\002\n0CMsgClientToGC"
+  "OverworldDevClearInventoryResponse\022_\n\010re"
+  "sponse\030\001 \001(\0162;.CMsgClientToGCOverworldDe"
+  "vClearInventoryResponse.EResponse:\020k_eIn"
+  "ternalError\"\216\001\n\tEResponse\022\024\n\020k_eInternal"
+  "Error\020\000\022\016\n\nk_eSuccess\020\001\022\016\n\nk_eTooBusy\020\002\022"
+  "\017\n\013k_eDisabled\020\003\022\016\n\nk_eTimeout\020\004\022\021\n\rk_eN"
+  "otAllowed\020\005\022\027\n\023k_eInvalidOverworld\020\006\"P\n$"
+  "CMsgClientToGCOverworldDevSetFortune\022\024\n\014"
+  "overworld_id\030\001 \001(\r\022\022\n\nfortune_id\030\002 \001(\r\"\234"
+  "\002\n,CMsgClientToGCOverworldDevSetFortuneR"
+  "esponse\022[\n\010response\030\001 \001(\01627.CMsgClientTo"
+  "GCOverworldDevSetFortuneResponse.ERespon"
+  "se:\020k_eInternalError\"\216\001\n\tEResponse\022\024\n\020k_"
+  "eInternalError\020\000\022\016\n\nk_eSuccess\020\001\022\016\n\nk_eT"
+  "ooBusy\020\002\022\017\n\013k_eDisabled\020\003\022\016\n\nk_eTimeout\020"
+  "\004\022\021\n\rk_eNotAllowed\020\005\022\027\n\023k_eInvalidOverwo"
+  "rld\020\006\"R\n&CMsgClientToGCOverworldDevClear"
+  "Fortune\022\024\n\014overworld_id\030\001 \001(\r\022\022\n\nfortune"
+  "_id\030\002 \001(\r\"\240\002\n.CMsgClientToGCOverworldDev"
+  "ClearFortuneResponse\022]\n\010response\030\001 \001(\01629"
+  ".CMsgClientToGCOverworldDevClearFortuneR"
+  "esponse.EResponse:\020k_eInternalError\"\216\001\n\t"
+  "EResponse\022\024\n\020k_eInternalError\020\000\022\016\n\nk_eSu"
+  "ccess\020\001\022\016\n\nk_eTooBusy\020\002\022\017\n\013k_eDisabled\020\003"
+  "\022\016\n\nk_eTimeout\020\004\022\021\n\rk_eNotAllowed\020\005\022\027\n\023k"
+  "_eInvalidOverworld\020\006\"=\n%CMsgClientToGCOv"
+  "erworldRequestFortune\022\024\n\014overworld_id\030\001 "
+  "\001(\r\"\236\002\n-CMsgClientToGCOverworldRequestFo"
+  "rtuneResponse\022\\\n\010response\030\001 \001(\01628.CMsgCl"
+  "ientToGCOverworldRequestFortuneResponse."
+  "EResponse:\020k_eInternalError\"\216\001\n\tERespons"
+  "e\022\024\n\020k_eInternalError\020\000\022\016\n\nk_eSuccess\020\001\022"
+  "\016\n\nk_eTooBusy\020\002\022\017\n\013k_eDisabled\020\003\022\016\n\nk_eT"
+  "imeout\020\004\022\021\n\rk_eNotAllowed\020\005\022\027\n\023k_eInvali"
+  "dOverworld\020\006\"[\n\037CMsgClientToGCOverworldF"
+  "eedback\022\020\n\010language\030\001 \001(\r\022\024\n\014overworld_i"
+  "d\030\002 \001(\r\022\020\n\010feedback\030\003 \001(\t\"\222\002\n\'CMsgClient"
+  "ToGCOverworldFeedbackResponse\022V\n\010respons"
+  "e\030\001 \001(\01622.CMsgClientToGCOverworldFeedbac"
+  "kResponse.EResponse:\020k_eInternalError\"\216\001"
+  "\n\tEResponse\022\024\n\020k_eInternalError\020\000\022\016\n\nk_e"
+  "Success\020\001\022\016\n\nk_eTooBusy\020\002\022\017\n\013k_eDisabled"
+  "\020\003\022\016\n\nk_eTimeout\020\004\022\021\n\rk_eNotAllowed\020\005\022\027\n"
+  "\023k_eInvalidOverworld\020\006\"[\n&CMsgClientToGC"
+  "OverworldGetDynamicImage\022\r\n\005magic\030\001 \001(\r\022"
+  "\020\n\010image_id\030\002 \001(\r\022\020\n\010language\030\003 \001(\r\"\350\002\n."
+  "CMsgClientToGCOverworldGetDynamicImageRe"
+  "sponse\022\020\n\010image_id\030\001 \001(\r\022E\n\006images\030\002 \003(\013"
+  "25.CMsgClientToGCOverworldGetDynamicImag"
+  "eResponse.Image\032\234\001\n\005Image\022\r\n\005width\030\001 \001(\r"
+  "\022\016\n\006height\030\002 \001(\r\022_\n\006format\030\003 \001(\0162C.CMsgC"
+  "lientToGCOverworldGetDynamicImageRespons"
+  "e.EDynamicImageFormat:\nk_eUnknown\022\023\n\013ima"
+  "ge_bytes\030\004 \001(\014\">\n\023EDynamicImageFormat\022\016\n"
+  "\nk_eUnknown\020\000\022\n\n\006k_ePNG\020\001\022\013\n\007k_eData\020\002\"\337"
+  "\001\n%CMsgClientToGCOverworldMinigameAction"
+  "\022\024\n\014overworld_id\030\001 \001(\r\022\017\n\007node_id\030\002 \001(\r\022"
+  "M\n\006action\030\003 \001(\0162\031.EOverworldMinigameActi"
+  "on:\"k_eOverworldMinigameAction_Invalid\022\021"
+  "\n\tselection\030\004 \001(\r\022\024\n\014option_value\030\005 \001(\r\022"
+  "\027\n\017currency_amount\030\006 \001(\r\"\230\003\n-CMsgClientT"
+  "oGCOverworldMinigameActionResponse\022\\\n\010re"
+  "sponse\030\001 \001(\01628.CMsgClientToGCOverworldMi"
+  "nigameActionResponse.EResponse:\020k_eInter"
+  "nalError\"\210\002\n\tEResponse\022\024\n\020k_eInternalErr"
+  "or\020\000\022\016\n\nk_eSuccess\020\001\022\016\n\nk_eTooBusy\020\002\022\017\n\013"
+  "k_eDisabled\020\003\022\016\n\nk_eTimeout\020\004\022\027\n\023k_eInva"
+  "lidOverworld\020\005\022\022\n\016k_eInvalidNode\020\006\022\021\n\rk_"
+  "eNodeLocked\020\007\022\027\n\023k_eInvalidSelection\020\010\022\026"
+  "\n\022k_eNotEnoughTokens\020\t\022 \n\034k_eNotEnoughMi"
+  "nigameCurrency\020\n\022\021\n\rk_eNotAllowed\020\013*~\n\023E"
+  "OverworldNodeState\022!\n\035k_eOverworldNodeSt"
+  "ate_Invalid\020\000\022 \n\034k_eOverworldNodeState_L"
+  "ocked\020\001\022\"\n\036k_eOverworldNodeState_Unlocke"
+  "d\020\002*\202\001\n\023EOverworldPathState\022!\n\035k_eOverwo"
+  "rldPathState_Invalid\020\000\022$\n k_eOverworldPa"
+  "thState_Incomplete\020\001\022\"\n\036k_eOverworldPath"
+  "State_Complete\020\002*\254\007\n\025EOverworldAuditActi"
+  "on\022#\n\037k_eOverworldAuditAction_Invalid\020\000\022"
+  "+\n\'k_eOverworldAuditAction_DevModifyToke"
+  "ns\020\001\022-\n)k_eOverworldAuditAction_DevClear"
+  "Inventory\020\002\022*\n&k_eOverworldAuditAction_D"
+  "evGrantTokens\020\003\022(\n$k_eOverworldAuditActi"
+  "on_CompletePath\020\004\0220\n,k_eOverworldAuditAc"
+  "tion_ClaimEncounterReward\020\005\022(\n$k_eOverwo"
+  "rldAuditAction_DevResetNode\020\006\022(\n$k_eOver"
+  "worldAuditAction_DevResetPath\020\007\022,\n(k_eOv"
+  "erworldAuditAction_MatchRewardsFull\020\010\022,\n"
+  "(k_eOverworldAuditAction_MatchRewardsHal"
+  "f\020\t\0221\n-k_eOverworldAuditAction_EventActi"
+  "onTokenGrant\020\n\022+\n\'k_eOverworldAuditActio"
+  "n_TokenTraderLost\020\013\022-\n)k_eOverworldAudit"
+  "Action_TokenTraderGained\020\014\0224\n0k_eOverwor"
+  "ldAuditAction_EncounterRewardTokenCost\020\r"
+  "\0226\n2k_eOverworldAuditAction_EncounterRew"
+  "ardTokenReward\020\016\022.\n*k_eOverworldAuditAct"
+  "ion_SupportGrantTokens\020\020\022)\n%k_eOverworld"
+  "AuditAction_TokenGiftSent\020\021\022)\n%k_eOverwo"
+  "rldAuditAction_DevSetFortune\020\022\022+\n\'k_eOve"
+  "rworldAuditAction_DevClearFortune\020\023\022*\n&k"
+  "_eOverworldAuditAction_RequestFortune\020\024*"
+  "\324\002\n\030EOverworldMinigameAction\022&\n\"k_eOverw"
+  "orldMinigameAction_Invalid\020\000\022\'\n#k_eOverw"
+  "orldMinigameAction_DevReset\020\001\022.\n*k_eOver"
+  "worldMinigameAction_DevGiveCurrency\020\002\022\'\n"
+  "#k_eOverworldMinigameAction_Purchase\020\003\022("
+  "\n$k_eOverworldMinigameAction_SetOption\020\004"
+  "\0223\n/k_eOverworldMinigameAction_ReportCur"
+  "rencyGained\020\005\022/\n+k_eOverworldMinigameAct"
+  "ion_UnlockDifficulty\020\006"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_deps[5] = {
   &::descriptor_table_dota_5fgcmessages_5fcommon_2eproto,
@@ -1726,9 +1946,9 @@ static const ::_pbi::DescriptorTable* const descriptor_table_dota_5fgcmessages_5
 };
 static ::_pbi::once_flag descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto = {
-    false, false, 11249, descriptor_table_protodef_dota_5fgcmessages_5fcommon_5foverworld_2eproto,
+    false, false, 12622, descriptor_table_protodef_dota_5fgcmessages_5fcommon_5foverworld_2eproto,
     "dota_gcmessages_common_overworld.proto",
-    &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_once, descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_deps, 5, 51,
+    &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_once, descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_deps, 5, 58,
     schemas, file_default_instances, TableStruct_dota_5fgcmessages_5fcommon_5foverworld_2eproto::offsets,
     file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto, file_level_enum_descriptors_dota_5fgcmessages_5fcommon_5foverworld_2eproto,
     file_level_service_descriptors_dota_5fgcmessages_5fcommon_5foverworld_2eproto,
@@ -2175,9 +2395,102 @@ constexpr CMsgClientToGCOverworldDevClearInventoryResponse_EResponse CMsgClientT
 constexpr CMsgClientToGCOverworldDevClearInventoryResponse_EResponse CMsgClientToGCOverworldDevClearInventoryResponse::EResponse_MAX;
 constexpr int CMsgClientToGCOverworldDevClearInventoryResponse::EResponse_ARRAYSIZE;
 #endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
-const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* CMsgClientToGCOverworldFeedbackResponse_EResponse_descriptor() {
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* CMsgClientToGCOverworldDevSetFortuneResponse_EResponse_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto);
   return file_level_enum_descriptors_dota_5fgcmessages_5fcommon_5foverworld_2eproto[12];
+}
+bool CMsgClientToGCOverworldDevSetFortuneResponse_EResponse_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+    case 6:
+      return true;
+    default:
+      return false;
+  }
+}
+
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+constexpr CMsgClientToGCOverworldDevSetFortuneResponse_EResponse CMsgClientToGCOverworldDevSetFortuneResponse::k_eInternalError;
+constexpr CMsgClientToGCOverworldDevSetFortuneResponse_EResponse CMsgClientToGCOverworldDevSetFortuneResponse::k_eSuccess;
+constexpr CMsgClientToGCOverworldDevSetFortuneResponse_EResponse CMsgClientToGCOverworldDevSetFortuneResponse::k_eTooBusy;
+constexpr CMsgClientToGCOverworldDevSetFortuneResponse_EResponse CMsgClientToGCOverworldDevSetFortuneResponse::k_eDisabled;
+constexpr CMsgClientToGCOverworldDevSetFortuneResponse_EResponse CMsgClientToGCOverworldDevSetFortuneResponse::k_eTimeout;
+constexpr CMsgClientToGCOverworldDevSetFortuneResponse_EResponse CMsgClientToGCOverworldDevSetFortuneResponse::k_eNotAllowed;
+constexpr CMsgClientToGCOverworldDevSetFortuneResponse_EResponse CMsgClientToGCOverworldDevSetFortuneResponse::k_eInvalidOverworld;
+constexpr CMsgClientToGCOverworldDevSetFortuneResponse_EResponse CMsgClientToGCOverworldDevSetFortuneResponse::EResponse_MIN;
+constexpr CMsgClientToGCOverworldDevSetFortuneResponse_EResponse CMsgClientToGCOverworldDevSetFortuneResponse::EResponse_MAX;
+constexpr int CMsgClientToGCOverworldDevSetFortuneResponse::EResponse_ARRAYSIZE;
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* CMsgClientToGCOverworldDevClearFortuneResponse_EResponse_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto);
+  return file_level_enum_descriptors_dota_5fgcmessages_5fcommon_5foverworld_2eproto[13];
+}
+bool CMsgClientToGCOverworldDevClearFortuneResponse_EResponse_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+    case 6:
+      return true;
+    default:
+      return false;
+  }
+}
+
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+constexpr CMsgClientToGCOverworldDevClearFortuneResponse_EResponse CMsgClientToGCOverworldDevClearFortuneResponse::k_eInternalError;
+constexpr CMsgClientToGCOverworldDevClearFortuneResponse_EResponse CMsgClientToGCOverworldDevClearFortuneResponse::k_eSuccess;
+constexpr CMsgClientToGCOverworldDevClearFortuneResponse_EResponse CMsgClientToGCOverworldDevClearFortuneResponse::k_eTooBusy;
+constexpr CMsgClientToGCOverworldDevClearFortuneResponse_EResponse CMsgClientToGCOverworldDevClearFortuneResponse::k_eDisabled;
+constexpr CMsgClientToGCOverworldDevClearFortuneResponse_EResponse CMsgClientToGCOverworldDevClearFortuneResponse::k_eTimeout;
+constexpr CMsgClientToGCOverworldDevClearFortuneResponse_EResponse CMsgClientToGCOverworldDevClearFortuneResponse::k_eNotAllowed;
+constexpr CMsgClientToGCOverworldDevClearFortuneResponse_EResponse CMsgClientToGCOverworldDevClearFortuneResponse::k_eInvalidOverworld;
+constexpr CMsgClientToGCOverworldDevClearFortuneResponse_EResponse CMsgClientToGCOverworldDevClearFortuneResponse::EResponse_MIN;
+constexpr CMsgClientToGCOverworldDevClearFortuneResponse_EResponse CMsgClientToGCOverworldDevClearFortuneResponse::EResponse_MAX;
+constexpr int CMsgClientToGCOverworldDevClearFortuneResponse::EResponse_ARRAYSIZE;
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* CMsgClientToGCOverworldRequestFortuneResponse_EResponse_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto);
+  return file_level_enum_descriptors_dota_5fgcmessages_5fcommon_5foverworld_2eproto[14];
+}
+bool CMsgClientToGCOverworldRequestFortuneResponse_EResponse_IsValid(int value) {
+  switch (value) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+    case 6:
+      return true;
+    default:
+      return false;
+  }
+}
+
+#if (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+constexpr CMsgClientToGCOverworldRequestFortuneResponse_EResponse CMsgClientToGCOverworldRequestFortuneResponse::k_eInternalError;
+constexpr CMsgClientToGCOverworldRequestFortuneResponse_EResponse CMsgClientToGCOverworldRequestFortuneResponse::k_eSuccess;
+constexpr CMsgClientToGCOverworldRequestFortuneResponse_EResponse CMsgClientToGCOverworldRequestFortuneResponse::k_eTooBusy;
+constexpr CMsgClientToGCOverworldRequestFortuneResponse_EResponse CMsgClientToGCOverworldRequestFortuneResponse::k_eDisabled;
+constexpr CMsgClientToGCOverworldRequestFortuneResponse_EResponse CMsgClientToGCOverworldRequestFortuneResponse::k_eTimeout;
+constexpr CMsgClientToGCOverworldRequestFortuneResponse_EResponse CMsgClientToGCOverworldRequestFortuneResponse::k_eNotAllowed;
+constexpr CMsgClientToGCOverworldRequestFortuneResponse_EResponse CMsgClientToGCOverworldRequestFortuneResponse::k_eInvalidOverworld;
+constexpr CMsgClientToGCOverworldRequestFortuneResponse_EResponse CMsgClientToGCOverworldRequestFortuneResponse::EResponse_MIN;
+constexpr CMsgClientToGCOverworldRequestFortuneResponse_EResponse CMsgClientToGCOverworldRequestFortuneResponse::EResponse_MAX;
+constexpr int CMsgClientToGCOverworldRequestFortuneResponse::EResponse_ARRAYSIZE;
+#endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* CMsgClientToGCOverworldFeedbackResponse_EResponse_descriptor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto);
+  return file_level_enum_descriptors_dota_5fgcmessages_5fcommon_5foverworld_2eproto[15];
 }
 bool CMsgClientToGCOverworldFeedbackResponse_EResponse_IsValid(int value) {
   switch (value) {
@@ -2208,7 +2521,7 @@ constexpr int CMsgClientToGCOverworldFeedbackResponse::EResponse_ARRAYSIZE;
 #endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* CMsgClientToGCOverworldGetDynamicImageResponse_EDynamicImageFormat_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto);
-  return file_level_enum_descriptors_dota_5fgcmessages_5fcommon_5foverworld_2eproto[13];
+  return file_level_enum_descriptors_dota_5fgcmessages_5fcommon_5foverworld_2eproto[16];
 }
 bool CMsgClientToGCOverworldGetDynamicImageResponse_EDynamicImageFormat_IsValid(int value) {
   switch (value) {
@@ -2231,7 +2544,7 @@ constexpr int CMsgClientToGCOverworldGetDynamicImageResponse::EDynamicImageForma
 #endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* CMsgClientToGCOverworldMinigameActionResponse_EResponse_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto);
-  return file_level_enum_descriptors_dota_5fgcmessages_5fcommon_5foverworld_2eproto[14];
+  return file_level_enum_descriptors_dota_5fgcmessages_5fcommon_5foverworld_2eproto[17];
 }
 bool CMsgClientToGCOverworldMinigameActionResponse_EResponse_IsValid(int value) {
   switch (value) {
@@ -2272,7 +2585,7 @@ constexpr int CMsgClientToGCOverworldMinigameActionResponse::EResponse_ARRAYSIZE
 #endif  // (__cplusplus < 201703) && (!defined(_MSC_VER) || (_MSC_VER >= 1900 && _MSC_VER < 1912))
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* EOverworldNodeState_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto);
-  return file_level_enum_descriptors_dota_5fgcmessages_5fcommon_5foverworld_2eproto[15];
+  return file_level_enum_descriptors_dota_5fgcmessages_5fcommon_5foverworld_2eproto[18];
 }
 bool EOverworldNodeState_IsValid(int value) {
   switch (value) {
@@ -2287,7 +2600,7 @@ bool EOverworldNodeState_IsValid(int value) {
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* EOverworldPathState_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto);
-  return file_level_enum_descriptors_dota_5fgcmessages_5fcommon_5foverworld_2eproto[16];
+  return file_level_enum_descriptors_dota_5fgcmessages_5fcommon_5foverworld_2eproto[19];
 }
 bool EOverworldPathState_IsValid(int value) {
   switch (value) {
@@ -2302,7 +2615,7 @@ bool EOverworldPathState_IsValid(int value) {
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* EOverworldAuditAction_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto);
-  return file_level_enum_descriptors_dota_5fgcmessages_5fcommon_5foverworld_2eproto[17];
+  return file_level_enum_descriptors_dota_5fgcmessages_5fcommon_5foverworld_2eproto[20];
 }
 bool EOverworldAuditAction_IsValid(int value) {
   switch (value) {
@@ -2323,6 +2636,9 @@ bool EOverworldAuditAction_IsValid(int value) {
     case 14:
     case 16:
     case 17:
+    case 18:
+    case 19:
+    case 20:
       return true;
     default:
       return false;
@@ -2331,7 +2647,7 @@ bool EOverworldAuditAction_IsValid(int value) {
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* EOverworldMinigameAction_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto);
-  return file_level_enum_descriptors_dota_5fgcmessages_5fcommon_5foverworld_2eproto[18];
+  return file_level_enum_descriptors_dota_5fgcmessages_5fcommon_5foverworld_2eproto[21];
 }
 bool EOverworldMinigameAction_IsValid(int value) {
   switch (value) {
@@ -5756,6 +6072,299 @@ void CMsgOverworldMinigameUserData::InternalSwap(CMsgOverworldMinigameUserData* 
 
 // ===================================================================
 
+class CMsgOverworldFortune::_Internal {
+ public:
+  using HasBits = decltype(std::declval<CMsgOverworldFortune>()._impl_._has_bits_);
+  static void set_has_fortune1(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static void set_has_fortune2(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
+  static void set_has_fortune3(HasBits* has_bits) {
+    (*has_bits)[0] |= 4u;
+  }
+  static void set_has_timestamp(HasBits* has_bits) {
+    (*has_bits)[0] |= 8u;
+  }
+};
+
+CMsgOverworldFortune::CMsgOverworldFortune(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:CMsgOverworldFortune)
+}
+CMsgOverworldFortune::CMsgOverworldFortune(const CMsgOverworldFortune& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  CMsgOverworldFortune* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.fortune1_){}
+    , decltype(_impl_.fortune2_){}
+    , decltype(_impl_.fortune3_){}
+    , decltype(_impl_.timestamp_){}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.fortune1_, &from._impl_.fortune1_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.timestamp_) -
+    reinterpret_cast<char*>(&_impl_.fortune1_)) + sizeof(_impl_.timestamp_));
+  // @@protoc_insertion_point(copy_constructor:CMsgOverworldFortune)
+}
+
+inline void CMsgOverworldFortune::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.fortune1_){0u}
+    , decltype(_impl_.fortune2_){0u}
+    , decltype(_impl_.fortune3_){0u}
+    , decltype(_impl_.timestamp_){0u}
+  };
+}
+
+CMsgOverworldFortune::~CMsgOverworldFortune() {
+  // @@protoc_insertion_point(destructor:CMsgOverworldFortune)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void CMsgOverworldFortune::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void CMsgOverworldFortune::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void CMsgOverworldFortune::Clear() {
+// @@protoc_insertion_point(message_clear_start:CMsgOverworldFortune)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x0000000fu) {
+    ::memset(&_impl_.fortune1_, 0, static_cast<size_t>(
+        reinterpret_cast<char*>(&_impl_.timestamp_) -
+        reinterpret_cast<char*>(&_impl_.fortune1_)) + sizeof(_impl_.timestamp_));
+  }
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* CMsgOverworldFortune::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // optional uint32 fortune1 = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _Internal::set_has_fortune1(&has_bits);
+          _impl_.fortune1_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional uint32 fortune2 = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _Internal::set_has_fortune2(&has_bits);
+          _impl_.fortune2_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional uint32 fortune3 = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          _Internal::set_has_fortune3(&has_bits);
+          _impl_.fortune3_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional uint32 timestamp = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
+          _Internal::set_has_timestamp(&has_bits);
+          _impl_.timestamp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  _impl_._has_bits_.Or(has_bits);
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* CMsgOverworldFortune::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:CMsgOverworldFortune)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  // optional uint32 fortune1 = 1;
+  if (cached_has_bits & 0x00000001u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_fortune1(), target);
+  }
+
+  // optional uint32 fortune2 = 2;
+  if (cached_has_bits & 0x00000002u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_fortune2(), target);
+  }
+
+  // optional uint32 fortune3 = 3;
+  if (cached_has_bits & 0x00000004u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(3, this->_internal_fortune3(), target);
+  }
+
+  // optional uint32 timestamp = 4;
+  if (cached_has_bits & 0x00000008u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(4, this->_internal_timestamp(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CMsgOverworldFortune)
+  return target;
+}
+
+size_t CMsgOverworldFortune::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:CMsgOverworldFortune)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x0000000fu) {
+    // optional uint32 fortune1 = 1;
+    if (cached_has_bits & 0x00000001u) {
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_fortune1());
+    }
+
+    // optional uint32 fortune2 = 2;
+    if (cached_has_bits & 0x00000002u) {
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_fortune2());
+    }
+
+    // optional uint32 fortune3 = 3;
+    if (cached_has_bits & 0x00000004u) {
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_fortune3());
+    }
+
+    // optional uint32 timestamp = 4;
+    if (cached_has_bits & 0x00000008u) {
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_timestamp());
+    }
+
+  }
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData CMsgOverworldFortune::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    CMsgOverworldFortune::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CMsgOverworldFortune::GetClassData() const { return &_class_data_; }
+
+
+void CMsgOverworldFortune::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<CMsgOverworldFortune*>(&to_msg);
+  auto& from = static_cast<const CMsgOverworldFortune&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:CMsgOverworldFortune)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x0000000fu) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_impl_.fortune1_ = from._impl_.fortune1_;
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_impl_.fortune2_ = from._impl_.fortune2_;
+    }
+    if (cached_has_bits & 0x00000004u) {
+      _this->_impl_.fortune3_ = from._impl_.fortune3_;
+    }
+    if (cached_has_bits & 0x00000008u) {
+      _this->_impl_.timestamp_ = from._impl_.timestamp_;
+    }
+    _this->_impl_._has_bits_[0] |= cached_has_bits;
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void CMsgOverworldFortune::CopyFrom(const CMsgOverworldFortune& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:CMsgOverworldFortune)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CMsgOverworldFortune::IsInitialized() const {
+  return true;
+}
+
+void CMsgOverworldFortune::InternalSwap(CMsgOverworldFortune* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(CMsgOverworldFortune, _impl_.timestamp_)
+      + sizeof(CMsgOverworldFortune::_impl_.timestamp_)
+      - PROTOBUF_FIELD_OFFSET(CMsgOverworldFortune, _impl_.fortune1_)>(
+          reinterpret_cast<char*>(&_impl_.fortune1_),
+          reinterpret_cast<char*>(&other->_impl_.fortune1_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata CMsgOverworldFortune::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_once,
+      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[14]);
+}
+
+// ===================================================================
+
 class CMsgOverworldUserData_MinigameDataEntry::_Internal {
  public:
   using HasBits = decltype(std::declval<CMsgOverworldUserData_MinigameDataEntry>()._impl_._has_bits_);
@@ -5998,7 +6607,7 @@ void CMsgOverworldUserData_MinigameDataEntry::InternalSwap(CMsgOverworldUserData
 ::PROTOBUF_NAMESPACE_ID::Metadata CMsgOverworldUserData_MinigameDataEntry::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_once,
-      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[14]);
+      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[15]);
 }
 
 // ===================================================================
@@ -6011,6 +6620,10 @@ class CMsgOverworldUserData::_Internal {
     (*has_bits)[0] |= 1u;
   }
   static void set_has_current_node_id(HasBits* has_bits) {
+    (*has_bits)[0] |= 4u;
+  }
+  static const ::CMsgOverworldFortune& current_fortune(const CMsgOverworldUserData* msg);
+  static void set_has_current_fortune(HasBits* has_bits) {
     (*has_bits)[0] |= 2u;
   }
 };
@@ -6018,6 +6631,10 @@ class CMsgOverworldUserData::_Internal {
 const ::CMsgOverworldTokenQuantity&
 CMsgOverworldUserData::_Internal::token_inventory(const CMsgOverworldUserData* msg) {
   return *msg->_impl_.token_inventory_;
+}
+const ::CMsgOverworldFortune&
+CMsgOverworldUserData::_Internal::current_fortune(const CMsgOverworldUserData* msg) {
+  return *msg->_impl_.current_fortune_;
 }
 CMsgOverworldUserData::CMsgOverworldUserData(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
@@ -6035,11 +6652,15 @@ CMsgOverworldUserData::CMsgOverworldUserData(const CMsgOverworldUserData& from)
     , decltype(_impl_.overworld_paths_){from._impl_.overworld_paths_}
     , decltype(_impl_.minigame_data_){from._impl_.minigame_data_}
     , decltype(_impl_.token_inventory_){nullptr}
+    , decltype(_impl_.current_fortune_){nullptr}
     , decltype(_impl_.current_node_id_){}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_token_inventory()) {
     _this->_impl_.token_inventory_ = new ::CMsgOverworldTokenQuantity(*from._impl_.token_inventory_);
+  }
+  if (from._internal_has_current_fortune()) {
+    _this->_impl_.current_fortune_ = new ::CMsgOverworldFortune(*from._impl_.current_fortune_);
   }
   _this->_impl_.current_node_id_ = from._impl_.current_node_id_;
   // @@protoc_insertion_point(copy_constructor:CMsgOverworldUserData)
@@ -6056,6 +6677,7 @@ inline void CMsgOverworldUserData::SharedCtor(
     , decltype(_impl_.overworld_paths_){arena}
     , decltype(_impl_.minigame_data_){arena}
     , decltype(_impl_.token_inventory_){nullptr}
+    , decltype(_impl_.current_fortune_){nullptr}
     , decltype(_impl_.current_node_id_){0u}
   };
 }
@@ -6075,6 +6697,7 @@ inline void CMsgOverworldUserData::SharedDtor() {
   _impl_.overworld_paths_.~RepeatedPtrField();
   _impl_.minigame_data_.~RepeatedPtrField();
   if (this != internal_default_instance()) delete _impl_.token_inventory_;
+  if (this != internal_default_instance()) delete _impl_.current_fortune_;
 }
 
 void CMsgOverworldUserData::SetCachedSize(int size) const {
@@ -6091,9 +6714,15 @@ void CMsgOverworldUserData::Clear() {
   _impl_.overworld_paths_.Clear();
   _impl_.minigame_data_.Clear();
   cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000001u) {
-    GOOGLE_DCHECK(_impl_.token_inventory_ != nullptr);
-    _impl_.token_inventory_->Clear();
+  if (cached_has_bits & 0x00000003u) {
+    if (cached_has_bits & 0x00000001u) {
+      GOOGLE_DCHECK(_impl_.token_inventory_ != nullptr);
+      _impl_.token_inventory_->Clear();
+    }
+    if (cached_has_bits & 0x00000002u) {
+      GOOGLE_DCHECK(_impl_.current_fortune_ != nullptr);
+      _impl_.current_fortune_->Clear();
+    }
   }
   _impl_.current_node_id_ = 0u;
   _impl_._has_bits_.Clear();
@@ -6163,6 +6792,14 @@ const char* CMsgOverworldUserData::_InternalParse(const char* ptr, ::_pbi::Parse
         } else
           goto handle_unusual;
         continue;
+      // optional .CMsgOverworldFortune current_fortune = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 50)) {
+          ptr = ctx->ParseMessage(_internal_mutable_current_fortune(), ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
       default:
         goto handle_unusual;
     }  // switch
@@ -6218,7 +6855,7 @@ uint8_t* CMsgOverworldUserData::_InternalSerialize(
   }
 
   // optional uint32 current_node_id = 4;
-  if (cached_has_bits & 0x00000002u) {
+  if (cached_has_bits & 0x00000004u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(4, this->_internal_current_node_id(), target);
   }
@@ -6229,6 +6866,13 @@ uint8_t* CMsgOverworldUserData::_InternalSerialize(
     const auto& repfield = this->_internal_minigame_data(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(5, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  // optional .CMsgOverworldFortune current_fortune = 6;
+  if (cached_has_bits & 0x00000002u) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessage(6, _Internal::current_fortune(this),
+        _Internal::current_fortune(this).GetCachedSize(), target, stream);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -6269,7 +6913,7 @@ size_t CMsgOverworldUserData::ByteSizeLong() const {
   }
 
   cached_has_bits = _impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000003u) {
+  if (cached_has_bits & 0x00000007u) {
     // optional .CMsgOverworldTokenQuantity token_inventory = 1;
     if (cached_has_bits & 0x00000001u) {
       total_size += 1 +
@@ -6277,8 +6921,15 @@ size_t CMsgOverworldUserData::ByteSizeLong() const {
           *_impl_.token_inventory_);
     }
 
-    // optional uint32 current_node_id = 4;
+    // optional .CMsgOverworldFortune current_fortune = 6;
     if (cached_has_bits & 0x00000002u) {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *_impl_.current_fortune_);
+    }
+
+    // optional uint32 current_node_id = 4;
+    if (cached_has_bits & 0x00000004u) {
       total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_current_node_id());
     }
 
@@ -6305,12 +6956,16 @@ void CMsgOverworldUserData::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, 
   _this->_impl_.overworld_paths_.MergeFrom(from._impl_.overworld_paths_);
   _this->_impl_.minigame_data_.MergeFrom(from._impl_.minigame_data_);
   cached_has_bits = from._impl_._has_bits_[0];
-  if (cached_has_bits & 0x00000003u) {
+  if (cached_has_bits & 0x00000007u) {
     if (cached_has_bits & 0x00000001u) {
       _this->_internal_mutable_token_inventory()->::CMsgOverworldTokenQuantity::MergeFrom(
           from._internal_token_inventory());
     }
     if (cached_has_bits & 0x00000002u) {
+      _this->_internal_mutable_current_fortune()->::CMsgOverworldFortune::MergeFrom(
+          from._internal_current_fortune());
+    }
+    if (cached_has_bits & 0x00000004u) {
       _this->_impl_.current_node_id_ = from._impl_.current_node_id_;
     }
     _this->_impl_._has_bits_[0] |= cached_has_bits;
@@ -6347,7 +7002,7 @@ void CMsgOverworldUserData::InternalSwap(CMsgOverworldUserData* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata CMsgOverworldUserData::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_once,
-      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[15]);
+      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[16]);
 }
 
 // ===================================================================
@@ -6628,7 +7283,7 @@ void CMsgOverworldMatchRewards_Player::InternalSwap(CMsgOverworldMatchRewards_Pl
 ::PROTOBUF_NAMESPACE_ID::Metadata CMsgOverworldMatchRewards_Player::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_once,
-      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[16]);
+      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[17]);
 }
 
 // ===================================================================
@@ -6813,7 +7468,7 @@ void CMsgOverworldMatchRewards::InternalSwap(CMsgOverworldMatchRewards* other) {
 ::PROTOBUF_NAMESPACE_ID::Metadata CMsgOverworldMatchRewards::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_once,
-      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[17]);
+      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[18]);
 }
 
 // ===================================================================
@@ -7004,7 +7659,7 @@ void CMsgClientToGCOverworldGetUserData::InternalSwap(CMsgClientToGCOverworldGet
 ::PROTOBUF_NAMESPACE_ID::Metadata CMsgClientToGCOverworldGetUserData::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_once,
-      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[18]);
+      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[19]);
 }
 
 // ===================================================================
@@ -7257,7 +7912,7 @@ void CMsgClientToGCOverworldGetUserDataResponse::InternalSwap(CMsgClientToGCOver
 ::PROTOBUF_NAMESPACE_ID::Metadata CMsgClientToGCOverworldGetUserDataResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_once,
-      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[19]);
+      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[20]);
 }
 
 // ===================================================================
@@ -7504,7 +8159,7 @@ void CMsgGCToClientOverworldUserDataUpdated::InternalSwap(CMsgGCToClientOverworl
 ::PROTOBUF_NAMESPACE_ID::Metadata CMsgGCToClientOverworldUserDataUpdated::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_once,
-      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[20]);
+      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[21]);
 }
 
 // ===================================================================
@@ -7741,7 +8396,7 @@ void CMsgClientToGCOverworldCompletePath::InternalSwap(CMsgClientToGCOverworldCo
 ::PROTOBUF_NAMESPACE_ID::Metadata CMsgClientToGCOverworldCompletePath::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_once,
-      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[21]);
+      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[22]);
 }
 
 // ===================================================================
@@ -7998,7 +8653,7 @@ void CMsgClientToGCOverworldCompletePathResponse::InternalSwap(CMsgClientToGCOve
 ::PROTOBUF_NAMESPACE_ID::Metadata CMsgClientToGCOverworldCompletePathResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_once,
-      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[22]);
+      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[23]);
 }
 
 // ===================================================================
@@ -8235,7 +8890,7 @@ void CMsgOverworldEncounterPitFighterRewardData::InternalSwap(CMsgOverworldEncou
 ::PROTOBUF_NAMESPACE_ID::Metadata CMsgOverworldEncounterPitFighterRewardData::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_once,
-      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[23]);
+      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[24]);
 }
 
 // ===================================================================
@@ -8656,7 +9311,7 @@ void CMsgClientToGCOverworldClaimEncounterReward::InternalSwap(CMsgClientToGCOve
 ::PROTOBUF_NAMESPACE_ID::Metadata CMsgClientToGCOverworldClaimEncounterReward::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_once,
-      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[24]);
+      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[25]);
 }
 
 // ===================================================================
@@ -8959,7 +9614,7 @@ void CMsgClientToGCOverworldClaimEncounterRewardResponse::InternalSwap(CMsgClien
 ::PROTOBUF_NAMESPACE_ID::Metadata CMsgClientToGCOverworldClaimEncounterRewardResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_once,
-      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[25]);
+      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[26]);
 }
 
 // ===================================================================
@@ -9196,7 +9851,7 @@ void CMsgClientToGCOverworldVisitEncounter::InternalSwap(CMsgClientToGCOverworld
 ::PROTOBUF_NAMESPACE_ID::Metadata CMsgClientToGCOverworldVisitEncounter::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_once,
-      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[26]);
+      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[27]);
 }
 
 // ===================================================================
@@ -9393,7 +10048,7 @@ void CMsgClientToGCOverworldVisitEncounterResponse::InternalSwap(CMsgClientToGCO
 ::PROTOBUF_NAMESPACE_ID::Metadata CMsgClientToGCOverworldVisitEncounterResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_once,
-      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[27]);
+      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[28]);
 }
 
 // ===================================================================
@@ -9630,7 +10285,7 @@ void CMsgClientToGCOverworldMoveToNode::InternalSwap(CMsgClientToGCOverworldMove
 ::PROTOBUF_NAMESPACE_ID::Metadata CMsgClientToGCOverworldMoveToNode::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_once,
-      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[28]);
+      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[29]);
 }
 
 // ===================================================================
@@ -9827,7 +10482,7 @@ void CMsgClientToGCOverworldMoveToNodeResponse::InternalSwap(CMsgClientToGCOverw
 ::PROTOBUF_NAMESPACE_ID::Metadata CMsgClientToGCOverworldMoveToNodeResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_once,
-      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[29]);
+      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[30]);
 }
 
 // ===================================================================
@@ -10182,7 +10837,7 @@ void CMsgClientToGCOverworldTradeTokens::InternalSwap(CMsgClientToGCOverworldTra
 ::PROTOBUF_NAMESPACE_ID::Metadata CMsgClientToGCOverworldTradeTokens::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_once,
-      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[30]);
+      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[31]);
 }
 
 // ===================================================================
@@ -10435,7 +11090,7 @@ void CMsgClientToGCOverworldTradeTokensResponse::InternalSwap(CMsgClientToGCOver
 ::PROTOBUF_NAMESPACE_ID::Metadata CMsgClientToGCOverworldTradeTokensResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_once,
-      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[31]);
+      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[32]);
 }
 
 // ===================================================================
@@ -10744,7 +11399,7 @@ void CMsgClientToGCOverworldGiftTokens::InternalSwap(CMsgClientToGCOverworldGift
 ::PROTOBUF_NAMESPACE_ID::Metadata CMsgClientToGCOverworldGiftTokens::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_once,
-      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[32]);
+      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[33]);
 }
 
 // ===================================================================
@@ -10941,7 +11596,7 @@ void CMsgClientToGCOverworldGiftTokensResponse::InternalSwap(CMsgClientToGCOverw
 ::PROTOBUF_NAMESPACE_ID::Metadata CMsgClientToGCOverworldGiftTokensResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_once,
-      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[33]);
+      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[34]);
 }
 
 // ===================================================================
@@ -11178,7 +11833,7 @@ void CMsgClientToGCOverworldRequestTokensNeededByFriend::InternalSwap(CMsgClient
 ::PROTOBUF_NAMESPACE_ID::Metadata CMsgClientToGCOverworldRequestTokensNeededByFriend::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_once,
-      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[34]);
+      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[35]);
 }
 
 // ===================================================================
@@ -11431,7 +12086,7 @@ void CMsgClientToGCOverworldRequestTokensNeededByFriendResponse::InternalSwap(CM
 ::PROTOBUF_NAMESPACE_ID::Metadata CMsgClientToGCOverworldRequestTokensNeededByFriendResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_once,
-      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[35]);
+      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[36]);
 }
 
 // ===================================================================
@@ -11622,7 +12277,7 @@ void CMsgClientToGCOverworldDevResetAll::InternalSwap(CMsgClientToGCOverworldDev
 ::PROTOBUF_NAMESPACE_ID::Metadata CMsgClientToGCOverworldDevResetAll::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_once,
-      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[36]);
+      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[37]);
 }
 
 // ===================================================================
@@ -11819,7 +12474,7 @@ void CMsgClientToGCOverworldDevResetAllResponse::InternalSwap(CMsgClientToGCOver
 ::PROTOBUF_NAMESPACE_ID::Metadata CMsgClientToGCOverworldDevResetAllResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_once,
-      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[37]);
+      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[38]);
 }
 
 // ===================================================================
@@ -12056,7 +12711,7 @@ void CMsgClientToGCOverworldDevResetNode::InternalSwap(CMsgClientToGCOverworldDe
 ::PROTOBUF_NAMESPACE_ID::Metadata CMsgClientToGCOverworldDevResetNode::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_once,
-      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[38]);
+      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[39]);
 }
 
 // ===================================================================
@@ -12253,7 +12908,7 @@ void CMsgClientToGCOverworldDevResetNodeResponse::InternalSwap(CMsgClientToGCOve
 ::PROTOBUF_NAMESPACE_ID::Metadata CMsgClientToGCOverworldDevResetNodeResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_once,
-      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[39]);
+      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[40]);
 }
 
 // ===================================================================
@@ -12500,7 +13155,7 @@ void CMsgClientToGCOverworldDevGrantTokens::InternalSwap(CMsgClientToGCOverworld
 ::PROTOBUF_NAMESPACE_ID::Metadata CMsgClientToGCOverworldDevGrantTokens::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_once,
-      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[40]);
+      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[41]);
 }
 
 // ===================================================================
@@ -12697,7 +13352,7 @@ void CMsgClientToGCOverworldDevGrantTokensResponse::InternalSwap(CMsgClientToGCO
 ::PROTOBUF_NAMESPACE_ID::Metadata CMsgClientToGCOverworldDevGrantTokensResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_once,
-      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[41]);
+      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[42]);
 }
 
 // ===================================================================
@@ -12888,7 +13543,7 @@ void CMsgClientToGCOverworldDevClearInventory::InternalSwap(CMsgClientToGCOverwo
 ::PROTOBUF_NAMESPACE_ID::Metadata CMsgClientToGCOverworldDevClearInventory::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_once,
-      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[42]);
+      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[43]);
 }
 
 // ===================================================================
@@ -13085,7 +13740,1263 @@ void CMsgClientToGCOverworldDevClearInventoryResponse::InternalSwap(CMsgClientTo
 ::PROTOBUF_NAMESPACE_ID::Metadata CMsgClientToGCOverworldDevClearInventoryResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_once,
-      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[43]);
+      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[44]);
+}
+
+// ===================================================================
+
+class CMsgClientToGCOverworldDevSetFortune::_Internal {
+ public:
+  using HasBits = decltype(std::declval<CMsgClientToGCOverworldDevSetFortune>()._impl_._has_bits_);
+  static void set_has_overworld_id(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static void set_has_fortune_id(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
+};
+
+CMsgClientToGCOverworldDevSetFortune::CMsgClientToGCOverworldDevSetFortune(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:CMsgClientToGCOverworldDevSetFortune)
+}
+CMsgClientToGCOverworldDevSetFortune::CMsgClientToGCOverworldDevSetFortune(const CMsgClientToGCOverworldDevSetFortune& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  CMsgClientToGCOverworldDevSetFortune* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.overworld_id_){}
+    , decltype(_impl_.fortune_id_){}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.overworld_id_, &from._impl_.overworld_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.fortune_id_) -
+    reinterpret_cast<char*>(&_impl_.overworld_id_)) + sizeof(_impl_.fortune_id_));
+  // @@protoc_insertion_point(copy_constructor:CMsgClientToGCOverworldDevSetFortune)
+}
+
+inline void CMsgClientToGCOverworldDevSetFortune::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.overworld_id_){0u}
+    , decltype(_impl_.fortune_id_){0u}
+  };
+}
+
+CMsgClientToGCOverworldDevSetFortune::~CMsgClientToGCOverworldDevSetFortune() {
+  // @@protoc_insertion_point(destructor:CMsgClientToGCOverworldDevSetFortune)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void CMsgClientToGCOverworldDevSetFortune::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void CMsgClientToGCOverworldDevSetFortune::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void CMsgClientToGCOverworldDevSetFortune::Clear() {
+// @@protoc_insertion_point(message_clear_start:CMsgClientToGCOverworldDevSetFortune)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    ::memset(&_impl_.overworld_id_, 0, static_cast<size_t>(
+        reinterpret_cast<char*>(&_impl_.fortune_id_) -
+        reinterpret_cast<char*>(&_impl_.overworld_id_)) + sizeof(_impl_.fortune_id_));
+  }
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* CMsgClientToGCOverworldDevSetFortune::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // optional uint32 overworld_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _Internal::set_has_overworld_id(&has_bits);
+          _impl_.overworld_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional uint32 fortune_id = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _Internal::set_has_fortune_id(&has_bits);
+          _impl_.fortune_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  _impl_._has_bits_.Or(has_bits);
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* CMsgClientToGCOverworldDevSetFortune::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:CMsgClientToGCOverworldDevSetFortune)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  // optional uint32 overworld_id = 1;
+  if (cached_has_bits & 0x00000001u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_overworld_id(), target);
+  }
+
+  // optional uint32 fortune_id = 2;
+  if (cached_has_bits & 0x00000002u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_fortune_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CMsgClientToGCOverworldDevSetFortune)
+  return target;
+}
+
+size_t CMsgClientToGCOverworldDevSetFortune::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:CMsgClientToGCOverworldDevSetFortune)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    // optional uint32 overworld_id = 1;
+    if (cached_has_bits & 0x00000001u) {
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_overworld_id());
+    }
+
+    // optional uint32 fortune_id = 2;
+    if (cached_has_bits & 0x00000002u) {
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_fortune_id());
+    }
+
+  }
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData CMsgClientToGCOverworldDevSetFortune::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    CMsgClientToGCOverworldDevSetFortune::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CMsgClientToGCOverworldDevSetFortune::GetClassData() const { return &_class_data_; }
+
+
+void CMsgClientToGCOverworldDevSetFortune::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<CMsgClientToGCOverworldDevSetFortune*>(&to_msg);
+  auto& from = static_cast<const CMsgClientToGCOverworldDevSetFortune&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:CMsgClientToGCOverworldDevSetFortune)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_impl_.overworld_id_ = from._impl_.overworld_id_;
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_impl_.fortune_id_ = from._impl_.fortune_id_;
+    }
+    _this->_impl_._has_bits_[0] |= cached_has_bits;
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void CMsgClientToGCOverworldDevSetFortune::CopyFrom(const CMsgClientToGCOverworldDevSetFortune& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:CMsgClientToGCOverworldDevSetFortune)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CMsgClientToGCOverworldDevSetFortune::IsInitialized() const {
+  return true;
+}
+
+void CMsgClientToGCOverworldDevSetFortune::InternalSwap(CMsgClientToGCOverworldDevSetFortune* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(CMsgClientToGCOverworldDevSetFortune, _impl_.fortune_id_)
+      + sizeof(CMsgClientToGCOverworldDevSetFortune::_impl_.fortune_id_)
+      - PROTOBUF_FIELD_OFFSET(CMsgClientToGCOverworldDevSetFortune, _impl_.overworld_id_)>(
+          reinterpret_cast<char*>(&_impl_.overworld_id_),
+          reinterpret_cast<char*>(&other->_impl_.overworld_id_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata CMsgClientToGCOverworldDevSetFortune::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_once,
+      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[45]);
+}
+
+// ===================================================================
+
+class CMsgClientToGCOverworldDevSetFortuneResponse::_Internal {
+ public:
+  using HasBits = decltype(std::declval<CMsgClientToGCOverworldDevSetFortuneResponse>()._impl_._has_bits_);
+  static void set_has_response(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+};
+
+CMsgClientToGCOverworldDevSetFortuneResponse::CMsgClientToGCOverworldDevSetFortuneResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:CMsgClientToGCOverworldDevSetFortuneResponse)
+}
+CMsgClientToGCOverworldDevSetFortuneResponse::CMsgClientToGCOverworldDevSetFortuneResponse(const CMsgClientToGCOverworldDevSetFortuneResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  CMsgClientToGCOverworldDevSetFortuneResponse* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.response_){}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.response_ = from._impl_.response_;
+  // @@protoc_insertion_point(copy_constructor:CMsgClientToGCOverworldDevSetFortuneResponse)
+}
+
+inline void CMsgClientToGCOverworldDevSetFortuneResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.response_){0}
+  };
+}
+
+CMsgClientToGCOverworldDevSetFortuneResponse::~CMsgClientToGCOverworldDevSetFortuneResponse() {
+  // @@protoc_insertion_point(destructor:CMsgClientToGCOverworldDevSetFortuneResponse)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void CMsgClientToGCOverworldDevSetFortuneResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void CMsgClientToGCOverworldDevSetFortuneResponse::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void CMsgClientToGCOverworldDevSetFortuneResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:CMsgClientToGCOverworldDevSetFortuneResponse)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.response_ = 0;
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* CMsgClientToGCOverworldDevSetFortuneResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // optional .CMsgClientToGCOverworldDevSetFortuneResponse.EResponse response = 1 [default = k_eInternalError];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          if (PROTOBUF_PREDICT_TRUE(::CMsgClientToGCOverworldDevSetFortuneResponse_EResponse_IsValid(val))) {
+            _internal_set_response(static_cast<::CMsgClientToGCOverworldDevSetFortuneResponse_EResponse>(val));
+          } else {
+            ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(1, val, mutable_unknown_fields());
+          }
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  _impl_._has_bits_.Or(has_bits);
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* CMsgClientToGCOverworldDevSetFortuneResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:CMsgClientToGCOverworldDevSetFortuneResponse)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  // optional .CMsgClientToGCOverworldDevSetFortuneResponse.EResponse response = 1 [default = k_eInternalError];
+  if (cached_has_bits & 0x00000001u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
+      1, this->_internal_response(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CMsgClientToGCOverworldDevSetFortuneResponse)
+  return target;
+}
+
+size_t CMsgClientToGCOverworldDevSetFortuneResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:CMsgClientToGCOverworldDevSetFortuneResponse)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // optional .CMsgClientToGCOverworldDevSetFortuneResponse.EResponse response = 1 [default = k_eInternalError];
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    total_size += 1 +
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_response());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData CMsgClientToGCOverworldDevSetFortuneResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    CMsgClientToGCOverworldDevSetFortuneResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CMsgClientToGCOverworldDevSetFortuneResponse::GetClassData() const { return &_class_data_; }
+
+
+void CMsgClientToGCOverworldDevSetFortuneResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<CMsgClientToGCOverworldDevSetFortuneResponse*>(&to_msg);
+  auto& from = static_cast<const CMsgClientToGCOverworldDevSetFortuneResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:CMsgClientToGCOverworldDevSetFortuneResponse)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_has_response()) {
+    _this->_internal_set_response(from._internal_response());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void CMsgClientToGCOverworldDevSetFortuneResponse::CopyFrom(const CMsgClientToGCOverworldDevSetFortuneResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:CMsgClientToGCOverworldDevSetFortuneResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CMsgClientToGCOverworldDevSetFortuneResponse::IsInitialized() const {
+  return true;
+}
+
+void CMsgClientToGCOverworldDevSetFortuneResponse::InternalSwap(CMsgClientToGCOverworldDevSetFortuneResponse* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  swap(_impl_.response_, other->_impl_.response_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata CMsgClientToGCOverworldDevSetFortuneResponse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_once,
+      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[46]);
+}
+
+// ===================================================================
+
+class CMsgClientToGCOverworldDevClearFortune::_Internal {
+ public:
+  using HasBits = decltype(std::declval<CMsgClientToGCOverworldDevClearFortune>()._impl_._has_bits_);
+  static void set_has_overworld_id(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+  static void set_has_fortune_id(HasBits* has_bits) {
+    (*has_bits)[0] |= 2u;
+  }
+};
+
+CMsgClientToGCOverworldDevClearFortune::CMsgClientToGCOverworldDevClearFortune(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:CMsgClientToGCOverworldDevClearFortune)
+}
+CMsgClientToGCOverworldDevClearFortune::CMsgClientToGCOverworldDevClearFortune(const CMsgClientToGCOverworldDevClearFortune& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  CMsgClientToGCOverworldDevClearFortune* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.overworld_id_){}
+    , decltype(_impl_.fortune_id_){}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.overworld_id_, &from._impl_.overworld_id_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.fortune_id_) -
+    reinterpret_cast<char*>(&_impl_.overworld_id_)) + sizeof(_impl_.fortune_id_));
+  // @@protoc_insertion_point(copy_constructor:CMsgClientToGCOverworldDevClearFortune)
+}
+
+inline void CMsgClientToGCOverworldDevClearFortune::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.overworld_id_){0u}
+    , decltype(_impl_.fortune_id_){0u}
+  };
+}
+
+CMsgClientToGCOverworldDevClearFortune::~CMsgClientToGCOverworldDevClearFortune() {
+  // @@protoc_insertion_point(destructor:CMsgClientToGCOverworldDevClearFortune)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void CMsgClientToGCOverworldDevClearFortune::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void CMsgClientToGCOverworldDevClearFortune::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void CMsgClientToGCOverworldDevClearFortune::Clear() {
+// @@protoc_insertion_point(message_clear_start:CMsgClientToGCOverworldDevClearFortune)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    ::memset(&_impl_.overworld_id_, 0, static_cast<size_t>(
+        reinterpret_cast<char*>(&_impl_.fortune_id_) -
+        reinterpret_cast<char*>(&_impl_.overworld_id_)) + sizeof(_impl_.fortune_id_));
+  }
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* CMsgClientToGCOverworldDevClearFortune::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // optional uint32 overworld_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _Internal::set_has_overworld_id(&has_bits);
+          _impl_.overworld_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // optional uint32 fortune_id = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _Internal::set_has_fortune_id(&has_bits);
+          _impl_.fortune_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  _impl_._has_bits_.Or(has_bits);
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* CMsgClientToGCOverworldDevClearFortune::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:CMsgClientToGCOverworldDevClearFortune)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  // optional uint32 overworld_id = 1;
+  if (cached_has_bits & 0x00000001u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_overworld_id(), target);
+  }
+
+  // optional uint32 fortune_id = 2;
+  if (cached_has_bits & 0x00000002u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_fortune_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CMsgClientToGCOverworldDevClearFortune)
+  return target;
+}
+
+size_t CMsgClientToGCOverworldDevClearFortune::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:CMsgClientToGCOverworldDevClearFortune)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    // optional uint32 overworld_id = 1;
+    if (cached_has_bits & 0x00000001u) {
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_overworld_id());
+    }
+
+    // optional uint32 fortune_id = 2;
+    if (cached_has_bits & 0x00000002u) {
+      total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_fortune_id());
+    }
+
+  }
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData CMsgClientToGCOverworldDevClearFortune::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    CMsgClientToGCOverworldDevClearFortune::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CMsgClientToGCOverworldDevClearFortune::GetClassData() const { return &_class_data_; }
+
+
+void CMsgClientToGCOverworldDevClearFortune::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<CMsgClientToGCOverworldDevClearFortune*>(&to_msg);
+  auto& from = static_cast<const CMsgClientToGCOverworldDevClearFortune&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:CMsgClientToGCOverworldDevClearFortune)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = from._impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    if (cached_has_bits & 0x00000001u) {
+      _this->_impl_.overworld_id_ = from._impl_.overworld_id_;
+    }
+    if (cached_has_bits & 0x00000002u) {
+      _this->_impl_.fortune_id_ = from._impl_.fortune_id_;
+    }
+    _this->_impl_._has_bits_[0] |= cached_has_bits;
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void CMsgClientToGCOverworldDevClearFortune::CopyFrom(const CMsgClientToGCOverworldDevClearFortune& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:CMsgClientToGCOverworldDevClearFortune)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CMsgClientToGCOverworldDevClearFortune::IsInitialized() const {
+  return true;
+}
+
+void CMsgClientToGCOverworldDevClearFortune::InternalSwap(CMsgClientToGCOverworldDevClearFortune* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(CMsgClientToGCOverworldDevClearFortune, _impl_.fortune_id_)
+      + sizeof(CMsgClientToGCOverworldDevClearFortune::_impl_.fortune_id_)
+      - PROTOBUF_FIELD_OFFSET(CMsgClientToGCOverworldDevClearFortune, _impl_.overworld_id_)>(
+          reinterpret_cast<char*>(&_impl_.overworld_id_),
+          reinterpret_cast<char*>(&other->_impl_.overworld_id_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata CMsgClientToGCOverworldDevClearFortune::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_once,
+      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[47]);
+}
+
+// ===================================================================
+
+class CMsgClientToGCOverworldDevClearFortuneResponse::_Internal {
+ public:
+  using HasBits = decltype(std::declval<CMsgClientToGCOverworldDevClearFortuneResponse>()._impl_._has_bits_);
+  static void set_has_response(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+};
+
+CMsgClientToGCOverworldDevClearFortuneResponse::CMsgClientToGCOverworldDevClearFortuneResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:CMsgClientToGCOverworldDevClearFortuneResponse)
+}
+CMsgClientToGCOverworldDevClearFortuneResponse::CMsgClientToGCOverworldDevClearFortuneResponse(const CMsgClientToGCOverworldDevClearFortuneResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  CMsgClientToGCOverworldDevClearFortuneResponse* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.response_){}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.response_ = from._impl_.response_;
+  // @@protoc_insertion_point(copy_constructor:CMsgClientToGCOverworldDevClearFortuneResponse)
+}
+
+inline void CMsgClientToGCOverworldDevClearFortuneResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.response_){0}
+  };
+}
+
+CMsgClientToGCOverworldDevClearFortuneResponse::~CMsgClientToGCOverworldDevClearFortuneResponse() {
+  // @@protoc_insertion_point(destructor:CMsgClientToGCOverworldDevClearFortuneResponse)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void CMsgClientToGCOverworldDevClearFortuneResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void CMsgClientToGCOverworldDevClearFortuneResponse::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void CMsgClientToGCOverworldDevClearFortuneResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:CMsgClientToGCOverworldDevClearFortuneResponse)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.response_ = 0;
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* CMsgClientToGCOverworldDevClearFortuneResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // optional .CMsgClientToGCOverworldDevClearFortuneResponse.EResponse response = 1 [default = k_eInternalError];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          if (PROTOBUF_PREDICT_TRUE(::CMsgClientToGCOverworldDevClearFortuneResponse_EResponse_IsValid(val))) {
+            _internal_set_response(static_cast<::CMsgClientToGCOverworldDevClearFortuneResponse_EResponse>(val));
+          } else {
+            ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(1, val, mutable_unknown_fields());
+          }
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  _impl_._has_bits_.Or(has_bits);
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* CMsgClientToGCOverworldDevClearFortuneResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:CMsgClientToGCOverworldDevClearFortuneResponse)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  // optional .CMsgClientToGCOverworldDevClearFortuneResponse.EResponse response = 1 [default = k_eInternalError];
+  if (cached_has_bits & 0x00000001u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
+      1, this->_internal_response(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CMsgClientToGCOverworldDevClearFortuneResponse)
+  return target;
+}
+
+size_t CMsgClientToGCOverworldDevClearFortuneResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:CMsgClientToGCOverworldDevClearFortuneResponse)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // optional .CMsgClientToGCOverworldDevClearFortuneResponse.EResponse response = 1 [default = k_eInternalError];
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    total_size += 1 +
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_response());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData CMsgClientToGCOverworldDevClearFortuneResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    CMsgClientToGCOverworldDevClearFortuneResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CMsgClientToGCOverworldDevClearFortuneResponse::GetClassData() const { return &_class_data_; }
+
+
+void CMsgClientToGCOverworldDevClearFortuneResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<CMsgClientToGCOverworldDevClearFortuneResponse*>(&to_msg);
+  auto& from = static_cast<const CMsgClientToGCOverworldDevClearFortuneResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:CMsgClientToGCOverworldDevClearFortuneResponse)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_has_response()) {
+    _this->_internal_set_response(from._internal_response());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void CMsgClientToGCOverworldDevClearFortuneResponse::CopyFrom(const CMsgClientToGCOverworldDevClearFortuneResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:CMsgClientToGCOverworldDevClearFortuneResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CMsgClientToGCOverworldDevClearFortuneResponse::IsInitialized() const {
+  return true;
+}
+
+void CMsgClientToGCOverworldDevClearFortuneResponse::InternalSwap(CMsgClientToGCOverworldDevClearFortuneResponse* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  swap(_impl_.response_, other->_impl_.response_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata CMsgClientToGCOverworldDevClearFortuneResponse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_once,
+      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[48]);
+}
+
+// ===================================================================
+
+class CMsgClientToGCOverworldRequestFortune::_Internal {
+ public:
+  using HasBits = decltype(std::declval<CMsgClientToGCOverworldRequestFortune>()._impl_._has_bits_);
+  static void set_has_overworld_id(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+};
+
+CMsgClientToGCOverworldRequestFortune::CMsgClientToGCOverworldRequestFortune(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:CMsgClientToGCOverworldRequestFortune)
+}
+CMsgClientToGCOverworldRequestFortune::CMsgClientToGCOverworldRequestFortune(const CMsgClientToGCOverworldRequestFortune& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  CMsgClientToGCOverworldRequestFortune* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.overworld_id_){}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.overworld_id_ = from._impl_.overworld_id_;
+  // @@protoc_insertion_point(copy_constructor:CMsgClientToGCOverworldRequestFortune)
+}
+
+inline void CMsgClientToGCOverworldRequestFortune::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.overworld_id_){0u}
+  };
+}
+
+CMsgClientToGCOverworldRequestFortune::~CMsgClientToGCOverworldRequestFortune() {
+  // @@protoc_insertion_point(destructor:CMsgClientToGCOverworldRequestFortune)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void CMsgClientToGCOverworldRequestFortune::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void CMsgClientToGCOverworldRequestFortune::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void CMsgClientToGCOverworldRequestFortune::Clear() {
+// @@protoc_insertion_point(message_clear_start:CMsgClientToGCOverworldRequestFortune)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.overworld_id_ = 0u;
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* CMsgClientToGCOverworldRequestFortune::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // optional uint32 overworld_id = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _Internal::set_has_overworld_id(&has_bits);
+          _impl_.overworld_id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  _impl_._has_bits_.Or(has_bits);
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* CMsgClientToGCOverworldRequestFortune::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:CMsgClientToGCOverworldRequestFortune)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  // optional uint32 overworld_id = 1;
+  if (cached_has_bits & 0x00000001u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(1, this->_internal_overworld_id(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CMsgClientToGCOverworldRequestFortune)
+  return target;
+}
+
+size_t CMsgClientToGCOverworldRequestFortune::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:CMsgClientToGCOverworldRequestFortune)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // optional uint32 overworld_id = 1;
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_overworld_id());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData CMsgClientToGCOverworldRequestFortune::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    CMsgClientToGCOverworldRequestFortune::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CMsgClientToGCOverworldRequestFortune::GetClassData() const { return &_class_data_; }
+
+
+void CMsgClientToGCOverworldRequestFortune::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<CMsgClientToGCOverworldRequestFortune*>(&to_msg);
+  auto& from = static_cast<const CMsgClientToGCOverworldRequestFortune&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:CMsgClientToGCOverworldRequestFortune)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_has_overworld_id()) {
+    _this->_internal_set_overworld_id(from._internal_overworld_id());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void CMsgClientToGCOverworldRequestFortune::CopyFrom(const CMsgClientToGCOverworldRequestFortune& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:CMsgClientToGCOverworldRequestFortune)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CMsgClientToGCOverworldRequestFortune::IsInitialized() const {
+  return true;
+}
+
+void CMsgClientToGCOverworldRequestFortune::InternalSwap(CMsgClientToGCOverworldRequestFortune* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  swap(_impl_.overworld_id_, other->_impl_.overworld_id_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata CMsgClientToGCOverworldRequestFortune::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_once,
+      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[49]);
+}
+
+// ===================================================================
+
+class CMsgClientToGCOverworldRequestFortuneResponse::_Internal {
+ public:
+  using HasBits = decltype(std::declval<CMsgClientToGCOverworldRequestFortuneResponse>()._impl_._has_bits_);
+  static void set_has_response(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
+};
+
+CMsgClientToGCOverworldRequestFortuneResponse::CMsgClientToGCOverworldRequestFortuneResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:CMsgClientToGCOverworldRequestFortuneResponse)
+}
+CMsgClientToGCOverworldRequestFortuneResponse::CMsgClientToGCOverworldRequestFortuneResponse(const CMsgClientToGCOverworldRequestFortuneResponse& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  CMsgClientToGCOverworldRequestFortuneResponse* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){from._impl_._has_bits_}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.response_){}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.response_ = from._impl_.response_;
+  // @@protoc_insertion_point(copy_constructor:CMsgClientToGCOverworldRequestFortuneResponse)
+}
+
+inline void CMsgClientToGCOverworldRequestFortuneResponse::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_._has_bits_){}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.response_){0}
+  };
+}
+
+CMsgClientToGCOverworldRequestFortuneResponse::~CMsgClientToGCOverworldRequestFortuneResponse() {
+  // @@protoc_insertion_point(destructor:CMsgClientToGCOverworldRequestFortuneResponse)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void CMsgClientToGCOverworldRequestFortuneResponse::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void CMsgClientToGCOverworldRequestFortuneResponse::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void CMsgClientToGCOverworldRequestFortuneResponse::Clear() {
+// @@protoc_insertion_point(message_clear_start:CMsgClientToGCOverworldRequestFortuneResponse)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.response_ = 0;
+  _impl_._has_bits_.Clear();
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* CMsgClientToGCOverworldRequestFortuneResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // optional .CMsgClientToGCOverworldRequestFortuneResponse.EResponse response = 1 [default = k_eInternalError];
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
+          CHK_(ptr);
+          if (PROTOBUF_PREDICT_TRUE(::CMsgClientToGCOverworldRequestFortuneResponse_EResponse_IsValid(val))) {
+            _internal_set_response(static_cast<::CMsgClientToGCOverworldRequestFortuneResponse_EResponse>(val));
+          } else {
+            ::PROTOBUF_NAMESPACE_ID::internal::WriteVarint(1, val, mutable_unknown_fields());
+          }
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  _impl_._has_bits_.Or(has_bits);
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* CMsgClientToGCOverworldRequestFortuneResponse::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:CMsgClientToGCOverworldRequestFortuneResponse)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  cached_has_bits = _impl_._has_bits_[0];
+  // optional .CMsgClientToGCOverworldRequestFortuneResponse.EResponse response = 1 [default = k_eInternalError];
+  if (cached_has_bits & 0x00000001u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteEnumToArray(
+      1, this->_internal_response(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:CMsgClientToGCOverworldRequestFortuneResponse)
+  return target;
+}
+
+size_t CMsgClientToGCOverworldRequestFortuneResponse::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:CMsgClientToGCOverworldRequestFortuneResponse)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // optional .CMsgClientToGCOverworldRequestFortuneResponse.EResponse response = 1 [default = k_eInternalError];
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    total_size += 1 +
+      ::_pbi::WireFormatLite::EnumSize(this->_internal_response());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData CMsgClientToGCOverworldRequestFortuneResponse::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    CMsgClientToGCOverworldRequestFortuneResponse::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*CMsgClientToGCOverworldRequestFortuneResponse::GetClassData() const { return &_class_data_; }
+
+
+void CMsgClientToGCOverworldRequestFortuneResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<CMsgClientToGCOverworldRequestFortuneResponse*>(&to_msg);
+  auto& from = static_cast<const CMsgClientToGCOverworldRequestFortuneResponse&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:CMsgClientToGCOverworldRequestFortuneResponse)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_has_response()) {
+    _this->_internal_set_response(from._internal_response());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void CMsgClientToGCOverworldRequestFortuneResponse::CopyFrom(const CMsgClientToGCOverworldRequestFortuneResponse& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:CMsgClientToGCOverworldRequestFortuneResponse)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool CMsgClientToGCOverworldRequestFortuneResponse::IsInitialized() const {
+  return true;
+}
+
+void CMsgClientToGCOverworldRequestFortuneResponse::InternalSwap(CMsgClientToGCOverworldRequestFortuneResponse* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
+  swap(_impl_.response_, other->_impl_.response_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata CMsgClientToGCOverworldRequestFortuneResponse::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_once,
+      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[50]);
 }
 
 // ===================================================================
@@ -13381,7 +15292,7 @@ void CMsgClientToGCOverworldFeedback::InternalSwap(CMsgClientToGCOverworldFeedba
 ::PROTOBUF_NAMESPACE_ID::Metadata CMsgClientToGCOverworldFeedback::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_once,
-      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[44]);
+      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[51]);
 }
 
 // ===================================================================
@@ -13578,7 +15489,7 @@ void CMsgClientToGCOverworldFeedbackResponse::InternalSwap(CMsgClientToGCOverwor
 ::PROTOBUF_NAMESPACE_ID::Metadata CMsgClientToGCOverworldFeedbackResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_once,
-      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[45]);
+      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[52]);
 }
 
 // ===================================================================
@@ -13843,7 +15754,7 @@ void CMsgClientToGCOverworldGetDynamicImage::InternalSwap(CMsgClientToGCOverworl
 ::PROTOBUF_NAMESPACE_ID::Metadata CMsgClientToGCOverworldGetDynamicImage::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_once,
-      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[46]);
+      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[53]);
 }
 
 // ===================================================================
@@ -14166,7 +16077,7 @@ void CMsgClientToGCOverworldGetDynamicImageResponse_Image::InternalSwap(CMsgClie
 ::PROTOBUF_NAMESPACE_ID::Metadata CMsgClientToGCOverworldGetDynamicImageResponse_Image::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_once,
-      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[47]);
+      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[54]);
 }
 
 // ===================================================================
@@ -14391,7 +16302,7 @@ void CMsgClientToGCOverworldGetDynamicImageResponse::InternalSwap(CMsgClientToGC
 ::PROTOBUF_NAMESPACE_ID::Metadata CMsgClientToGCOverworldGetDynamicImageResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_once,
-      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[48]);
+      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[55]);
 }
 
 // ===================================================================
@@ -14746,7 +16657,7 @@ void CMsgClientToGCOverworldMinigameAction::InternalSwap(CMsgClientToGCOverworld
 ::PROTOBUF_NAMESPACE_ID::Metadata CMsgClientToGCOverworldMinigameAction::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_once,
-      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[49]);
+      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[56]);
 }
 
 // ===================================================================
@@ -14943,7 +16854,7 @@ void CMsgClientToGCOverworldMinigameActionResponse::InternalSwap(CMsgClientToGCO
 ::PROTOBUF_NAMESPACE_ID::Metadata CMsgClientToGCOverworldMinigameActionResponse::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_getter, &descriptor_table_dota_5fgcmessages_5fcommon_5foverworld_2eproto_once,
-      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[50]);
+      file_level_metadata_dota_5fgcmessages_5fcommon_5foverworld_2eproto[57]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
@@ -15003,6 +16914,10 @@ Arena::CreateMaybeMessage< ::CMsgOverworldMinigameCustomData >(Arena* arena) {
 template<> PROTOBUF_NOINLINE ::CMsgOverworldMinigameUserData*
 Arena::CreateMaybeMessage< ::CMsgOverworldMinigameUserData >(Arena* arena) {
   return Arena::CreateMessageInternal< ::CMsgOverworldMinigameUserData >(arena);
+}
+template<> PROTOBUF_NOINLINE ::CMsgOverworldFortune*
+Arena::CreateMaybeMessage< ::CMsgOverworldFortune >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::CMsgOverworldFortune >(arena);
 }
 template<> PROTOBUF_NOINLINE ::CMsgOverworldUserData_MinigameDataEntry*
 Arena::CreateMaybeMessage< ::CMsgOverworldUserData_MinigameDataEntry >(Arena* arena) {
@@ -15123,6 +17038,30 @@ Arena::CreateMaybeMessage< ::CMsgClientToGCOverworldDevClearInventory >(Arena* a
 template<> PROTOBUF_NOINLINE ::CMsgClientToGCOverworldDevClearInventoryResponse*
 Arena::CreateMaybeMessage< ::CMsgClientToGCOverworldDevClearInventoryResponse >(Arena* arena) {
   return Arena::CreateMessageInternal< ::CMsgClientToGCOverworldDevClearInventoryResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::CMsgClientToGCOverworldDevSetFortune*
+Arena::CreateMaybeMessage< ::CMsgClientToGCOverworldDevSetFortune >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::CMsgClientToGCOverworldDevSetFortune >(arena);
+}
+template<> PROTOBUF_NOINLINE ::CMsgClientToGCOverworldDevSetFortuneResponse*
+Arena::CreateMaybeMessage< ::CMsgClientToGCOverworldDevSetFortuneResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::CMsgClientToGCOverworldDevSetFortuneResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::CMsgClientToGCOverworldDevClearFortune*
+Arena::CreateMaybeMessage< ::CMsgClientToGCOverworldDevClearFortune >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::CMsgClientToGCOverworldDevClearFortune >(arena);
+}
+template<> PROTOBUF_NOINLINE ::CMsgClientToGCOverworldDevClearFortuneResponse*
+Arena::CreateMaybeMessage< ::CMsgClientToGCOverworldDevClearFortuneResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::CMsgClientToGCOverworldDevClearFortuneResponse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::CMsgClientToGCOverworldRequestFortune*
+Arena::CreateMaybeMessage< ::CMsgClientToGCOverworldRequestFortune >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::CMsgClientToGCOverworldRequestFortune >(arena);
+}
+template<> PROTOBUF_NOINLINE ::CMsgClientToGCOverworldRequestFortuneResponse*
+Arena::CreateMaybeMessage< ::CMsgClientToGCOverworldRequestFortuneResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::CMsgClientToGCOverworldRequestFortuneResponse >(arena);
 }
 template<> PROTOBUF_NOINLINE ::CMsgClientToGCOverworldFeedback*
 Arena::CreateMaybeMessage< ::CMsgClientToGCOverworldFeedback >(Arena* arena) {

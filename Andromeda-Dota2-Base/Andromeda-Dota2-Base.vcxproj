@@ -195,6 +195,7 @@
     <ClCompile Include="Andromeda\Dota2\Protobuf\dota_gcmessages_common_bot_script.pb.cc" />
     <ClCompile Include="Andromeda\Dota2\Protobuf\dota_gcmessages_common_craftworks.pb.cc" />
     <ClCompile Include="Andromeda\Dota2\Protobuf\dota_gcmessages_common_fighting_game.pb.cc" />
+    <ClCompile Include="Andromeda\Dota2\Protobuf\dota_gcmessages_common_item_battler.pb.cc" />
     <ClCompile Include="Andromeda\Dota2\Protobuf\dota_gcmessages_common_league.pb.cc" />
     <ClCompile Include="Andromeda\Dota2\Protobuf\dota_gcmessages_common_lobby.pb.cc" />
     <ClCompile Include="Andromeda\Dota2\Protobuf\dota_gcmessages_common_match_management.pb.cc" />
@@ -223,6 +224,7 @@
     <ClCompile Include="Andromeda\Dota2\Protobuf\networksystem_protomessages.pb.cc" />
     <ClCompile Include="Andromeda\Dota2\Protobuf\network_connection.pb.cc" />
     <ClCompile Include="Andromeda\Dota2\Protobuf\prediction_events.pb.cc" />
+    <ClCompile Include="Andromeda\Dota2\Protobuf\source2_steam_stats.pb.cc" />
     <ClCompile Include="Andromeda\Dota2\Protobuf\steamdatagram_messages_auth.pb.cc" />
     <ClCompile Include="Andromeda\Dota2\Protobuf\steamdatagram_messages_sdr.pb.cc" />
     <ClCompile Include="Andromeda\Dota2\Protobuf\steammessages.pb.cc" />
@@ -323,6 +325,7 @@
     <ClInclude Include="Andromeda\Dota2\Protobuf\dota_gcmessages_common_bot_script.pb.h" />
     <ClInclude Include="Andromeda\Dota2\Protobuf\dota_gcmessages_common_craftworks.pb.h" />
     <ClInclude Include="Andromeda\Dota2\Protobuf\dota_gcmessages_common_fighting_game.pb.h" />
+    <ClInclude Include="Andromeda\Dota2\Protobuf\dota_gcmessages_common_item_battler.pb.h" />
     <ClInclude Include="Andromeda\Dota2\Protobuf\dota_gcmessages_common_league.pb.h" />
     <ClInclude Include="Andromeda\Dota2\Protobuf\dota_gcmessages_common_lobby.pb.h" />
     <ClInclude Include="Andromeda\Dota2\Protobuf\dota_gcmessages_common_match_management.pb.h" />
@@ -351,6 +354,7 @@
     <ClInclude Include="Andromeda\Dota2\Protobuf\networksystem_protomessages.pb.h" />
     <ClInclude Include="Andromeda\Dota2\Protobuf\network_connection.pb.h" />
     <ClInclude Include="Andromeda\Dota2\Protobuf\prediction_events.pb.h" />
+    <ClInclude Include="Andromeda\Dota2\Protobuf\source2_steam_stats.pb.h" />
     <ClInclude Include="Andromeda\Dota2\Protobuf\steamdatagram_messages_auth.pb.h" />
     <ClInclude Include="Andromeda\Dota2\Protobuf\steamdatagram_messages_sdr.pb.h" />
     <ClInclude Include="Andromeda\Dota2\Protobuf\steammessages.pb.h" />

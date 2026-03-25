@@ -5,11 +5,11 @@ namespace SDK::VMT_Index
 	enum CSchemaSystem : int
 	{
 		GlobalTypeScope = 11 ,
-		SchemaClassInfo = 44 ,
+		SchemaClassInfo = 46 ,
 	};
 	enum IVEngineClient2 : int
 	{
-		GetLocalPlayer = 21 ,
-		GetScreenSize = 59,
+		GetLocalPlayer = 22 ,
+		GetScreenSize = 60,
 	};
 }

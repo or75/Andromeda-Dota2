@@ -17,7 +17,7 @@
 
 namespace GeneratorOffset
 {
-	constexpr auto GetNumSchema = 0x74;
+	constexpr auto GetNumSchema = 0x50;
 	constexpr auto GetClassContainer = 0x5C0; // 49 8D 9F ? ? ? ? 48 8B CB E8 ? ? ? ? 48 8B 43 ? 48 8B CB 48 89 43 ? E8 ? ? ? ? 48 83 C3 ? 48 83 EF
 	constexpr auto GetEnumContainer = 0x1E30;
 }
@@ -64,12 +64,12 @@ public:
 
 	CUSTOM_OFFSET_FIELD( const char* , m_bindingName , 0x8 );
 	CUSTOM_OFFSET_FIELD( const char* , m_dllName , 0x10 );
-	CUSTOM_OFFSET_FIELD( int , m_SizeOf , 0x18 );
-	CUSTOM_OFFSET_FIELD( int16_t , m_DataArraySize , 0x1C );
-	CUSTOM_OFFSET_FIELD( SchemaClassFieldDataArray_t* , m_DataArray , 0x28 );
-	CUSTOM_OFFSET_FIELD( CBaseClass_t* , m_baseClass , 0x30 );
-	CUSTOM_OFFSET_FIELD( CSchemaSystemTypeScope* , m_TypeScope , 0x48 );
-	CUSTOM_OFFSET_FIELD( CSchemaType* , m_Type , 0x50 );
+	CUSTOM_OFFSET_FIELD( int , m_SizeOf , 0x20 );
+	CUSTOM_OFFSET_FIELD( int16_t , m_DataArraySize , 0x24 );
+	CUSTOM_OFFSET_FIELD( SchemaClassFieldDataArray_t* , m_DataArray , 0x30 );
+	CUSTOM_OFFSET_FIELD( CBaseClass_t* , m_baseClass , 0x38 );
+	CUSTOM_OFFSET_FIELD( CSchemaSystemTypeScope* , m_TypeScope , 0x50 );
+	CUSTOM_OFFSET_FIELD( CSchemaType* , m_Type , 0x58 );
 };
 
 class CSchemaEnumBinding

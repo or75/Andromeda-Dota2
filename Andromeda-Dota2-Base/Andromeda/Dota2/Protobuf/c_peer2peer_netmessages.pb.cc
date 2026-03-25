@@ -247,7 +247,7 @@ const char descriptor_table_protodef_c_5fpeer2peer_5fnetmessages_2eproto[] PROTO
   "P_Voice\022\036\n\005audio\030\001 \001(\0132\017.CMsgVoiceAudio\022"
   "\027\n\017broadcast_group\030\002 \001(\r\"!\n\rHandler_Flag"
   "s\022\020\n\014Played_Audio\020\001\"0\n\tCP2P_Ping\022\021\n\tsend"
-  "_time\030\001 \002(\004\022\020\n\010is_reply\030\002 \002(\010\"\313\001\n\025CP2P_V"
+  "_time\030\001 \001(\004\022\020\n\010is_reply\030\002 \001(\010\"\313\001\n\025CP2P_V"
   "RAvatarPosition\0227\n\nbody_parts\030\001 \003(\0132#.CP"
   "2P_VRAvatarPosition.COrientation\022\016\n\006hat_"
   "id\030\002 \001(\005\022\020\n\010scene_id\030\003 \001(\005\022\023\n\013world_scal"
@@ -1012,9 +1012,6 @@ class CP2P_Ping::_Internal {
   static void set_has_is_reply(HasBits* has_bits) {
     (*has_bits)[0] |= 2u;
   }
-  static bool MissingRequiredFields(const HasBits& has_bits) {
-    return ((has_bits[0] & 0x00000003) ^ 0x00000003) != 0;
-  }
 };
 
 CP2P_Ping::CP2P_Ping(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -1091,7 +1088,7 @@ const char* CP2P_Ping::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // required uint64 send_time = 1;
+      // optional uint64 send_time = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
           _Internal::set_has_send_time(&has_bits);
@@ -1100,7 +1097,7 @@ const char* CP2P_Ping::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx
         } else
           goto handle_unusual;
         continue;
-      // required bool is_reply = 2;
+      // optional bool is_reply = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           _Internal::set_has_is_reply(&has_bits);
@@ -1140,13 +1137,13 @@ uint8_t* CP2P_Ping::_InternalSerialize(
   (void) cached_has_bits;
 
   cached_has_bits = _impl_._has_bits_[0];
-  // required uint64 send_time = 1;
+  // optional uint64 send_time = 1;
   if (cached_has_bits & 0x00000001u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteUInt64ToArray(1, this->_internal_send_time(), target);
   }
 
-  // required bool is_reply = 2;
+  // optional bool is_reply = 2;
   if (cached_has_bits & 0x00000002u) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteBoolToArray(2, this->_internal_is_reply(), target);
@@ -1160,40 +1157,27 @@ uint8_t* CP2P_Ping::_InternalSerialize(
   return target;
 }
 
-size_t CP2P_Ping::RequiredFieldsByteSizeFallback() const {
-// @@protoc_insertion_point(required_fields_byte_size_fallback_start:CP2P_Ping)
-  size_t total_size = 0;
-
-  if (_internal_has_send_time()) {
-    // required uint64 send_time = 1;
-    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_send_time());
-  }
-
-  if (_internal_has_is_reply()) {
-    // required bool is_reply = 2;
-    total_size += 1 + 1;
-  }
-
-  return total_size;
-}
 size_t CP2P_Ping::ByteSizeLong() const {
 // @@protoc_insertion_point(message_byte_size_start:CP2P_Ping)
   size_t total_size = 0;
 
-  if (((_impl_._has_bits_[0] & 0x00000003) ^ 0x00000003) == 0) {  // All required fields are present.
-    // required uint64 send_time = 1;
-    total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_send_time());
-
-    // required bool is_reply = 2;
-    total_size += 1 + 1;
-
-  } else {
-    total_size += RequiredFieldsByteSizeFallback();
-  }
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000003u) {
+    // optional uint64 send_time = 1;
+    if (cached_has_bits & 0x00000001u) {
+      total_size += ::_pbi::WireFormatLite::UInt64SizePlusOne(this->_internal_send_time());
+    }
+
+    // optional bool is_reply = 2;
+    if (cached_has_bits & 0x00000002u) {
+      total_size += 1 + 1;
+    }
+
+  }
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
@@ -1233,7 +1217,6 @@ void CP2P_Ping::CopyFrom(const CP2P_Ping& from) {
 }
 
 bool CP2P_Ping::IsInitialized() const {
-  if (_Internal::MissingRequiredFields(_impl_._has_bits_)) return false;
   return true;
 }
 

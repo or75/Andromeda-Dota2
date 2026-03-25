@@ -94,6 +94,9 @@ extern CDemoSendTablesDefaultTypeInternal _CDemoSendTables_default_instance_;
 class CDemoSpawnGroups;
 struct CDemoSpawnGroupsDefaultTypeInternal;
 extern CDemoSpawnGroupsDefaultTypeInternal _CDemoSpawnGroups_default_instance_;
+class CDemoSpawnGroupsHLTVBroadcast;
+struct CDemoSpawnGroupsHLTVBroadcastDefaultTypeInternal;
+extern CDemoSpawnGroupsHLTVBroadcastDefaultTypeInternal _CDemoSpawnGroupsHLTVBroadcast_default_instance_;
 class CDemoStop;
 struct CDemoStopDefaultTypeInternal;
 extern CDemoStopDefaultTypeInternal _CDemoStop_default_instance_;
@@ -144,6 +147,7 @@ template<> ::CDemoRecovery_DemoInitialSpawnGroupEntry* Arena::CreateMaybeMessage
 template<> ::CDemoSaveGame* Arena::CreateMaybeMessage<::CDemoSaveGame>(Arena*);
 template<> ::CDemoSendTables* Arena::CreateMaybeMessage<::CDemoSendTables>(Arena*);
 template<> ::CDemoSpawnGroups* Arena::CreateMaybeMessage<::CDemoSpawnGroups>(Arena*);
+template<> ::CDemoSpawnGroupsHLTVBroadcast* Arena::CreateMaybeMessage<::CDemoSpawnGroupsHLTVBroadcast>(Arena*);
 template<> ::CDemoStop* Arena::CreateMaybeMessage<::CDemoStop>(Arena*);
 template<> ::CDemoStringTables* Arena::CreateMaybeMessage<::CDemoStringTables>(Arena*);
 template<> ::CDemoStringTables_items_t* Arena::CreateMaybeMessage<::CDemoStringTables_items_t>(Arena*);
@@ -5134,6 +5138,171 @@ class CDemoSpawnGroups final :
 };
 // -------------------------------------------------------------------
 
+class CDemoSpawnGroupsHLTVBroadcast final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:CDemoSpawnGroupsHLTVBroadcast) */ {
+ public:
+  inline CDemoSpawnGroupsHLTVBroadcast() : CDemoSpawnGroupsHLTVBroadcast(nullptr) {}
+  ~CDemoSpawnGroupsHLTVBroadcast() override;
+  explicit PROTOBUF_CONSTEXPR CDemoSpawnGroupsHLTVBroadcast(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CDemoSpawnGroupsHLTVBroadcast(const CDemoSpawnGroupsHLTVBroadcast& from);
+  CDemoSpawnGroupsHLTVBroadcast(CDemoSpawnGroupsHLTVBroadcast&& from) noexcept
+    : CDemoSpawnGroupsHLTVBroadcast() {
+    *this = ::std::move(from);
+  }
+
+  inline CDemoSpawnGroupsHLTVBroadcast& operator=(const CDemoSpawnGroupsHLTVBroadcast& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CDemoSpawnGroupsHLTVBroadcast& operator=(CDemoSpawnGroupsHLTVBroadcast&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CDemoSpawnGroupsHLTVBroadcast& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CDemoSpawnGroupsHLTVBroadcast* internal_default_instance() {
+    return reinterpret_cast<const CDemoSpawnGroupsHLTVBroadcast*>(
+               &_CDemoSpawnGroupsHLTVBroadcast_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    25;
+
+  friend void swap(CDemoSpawnGroupsHLTVBroadcast& a, CDemoSpawnGroupsHLTVBroadcast& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CDemoSpawnGroupsHLTVBroadcast* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CDemoSpawnGroupsHLTVBroadcast* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  CDemoSpawnGroupsHLTVBroadcast* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<CDemoSpawnGroupsHLTVBroadcast>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const CDemoSpawnGroupsHLTVBroadcast& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const CDemoSpawnGroupsHLTVBroadcast& from) {
+    CDemoSpawnGroupsHLTVBroadcast::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CDemoSpawnGroupsHLTVBroadcast* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "CDemoSpawnGroupsHLTVBroadcast";
+  }
+  protected:
+  explicit CDemoSpawnGroupsHLTVBroadcast(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kDataFieldNumber = 1,
+  };
+  // optional bytes data = 1;
+  bool has_data() const;
+  private:
+  bool _internal_has_data() const;
+  public:
+  void clear_data();
+  const std::string& data() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_data(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_data();
+  PROTOBUF_NODISCARD std::string* release_data();
+  void set_allocated_data(std::string* data);
+  private:
+  const std::string& _internal_data() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_data(const std::string& value);
+  std::string* _internal_mutable_data();
+  public:
+
+  // @@protoc_insertion_point(class_scope:CDemoSpawnGroupsHLTVBroadcast)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr data_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_demo_2eproto;
+};
+// -------------------------------------------------------------------
+
 class CDemoRecovery_DemoInitialSpawnGroupEntry final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:CDemoRecovery.DemoInitialSpawnGroupEntry) */ {
  public:
@@ -5189,7 +5358,7 @@ class CDemoRecovery_DemoInitialSpawnGroupEntry final :
                &_CDemoRecovery_DemoInitialSpawnGroupEntry_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    26;
 
   friend void swap(CDemoRecovery_DemoInitialSpawnGroupEntry& a, CDemoRecovery_DemoInitialSpawnGroupEntry& b) {
     a.Swap(&b);
@@ -5364,7 +5533,7 @@ class CDemoRecovery final :
                &_CDemoRecovery_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    27;
 
   friend void swap(CDemoRecovery& a, CDemoRecovery& b) {
     a.Swap(&b);
@@ -9238,6 +9407,78 @@ CDemoSpawnGroups::mutable_msgs() {
 
 // -------------------------------------------------------------------
 
+// CDemoSpawnGroupsHLTVBroadcast
+
+// optional bytes data = 1;
+inline bool CDemoSpawnGroupsHLTVBroadcast::_internal_has_data() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool CDemoSpawnGroupsHLTVBroadcast::has_data() const {
+  return _internal_has_data();
+}
+inline void CDemoSpawnGroupsHLTVBroadcast::clear_data() {
+  _impl_.data_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline const std::string& CDemoSpawnGroupsHLTVBroadcast::data() const {
+  // @@protoc_insertion_point(field_get:CDemoSpawnGroupsHLTVBroadcast.data)
+  return _internal_data();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CDemoSpawnGroupsHLTVBroadcast::set_data(ArgT0&& arg0, ArgT... args) {
+ _impl_._has_bits_[0] |= 0x00000001u;
+ _impl_.data_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:CDemoSpawnGroupsHLTVBroadcast.data)
+}
+inline std::string* CDemoSpawnGroupsHLTVBroadcast::mutable_data() {
+  std::string* _s = _internal_mutable_data();
+  // @@protoc_insertion_point(field_mutable:CDemoSpawnGroupsHLTVBroadcast.data)
+  return _s;
+}
+inline const std::string& CDemoSpawnGroupsHLTVBroadcast::_internal_data() const {
+  return _impl_.data_.Get();
+}
+inline void CDemoSpawnGroupsHLTVBroadcast::_internal_set_data(const std::string& value) {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.data_.Set(value, GetArenaForAllocation());
+}
+inline std::string* CDemoSpawnGroupsHLTVBroadcast::_internal_mutable_data() {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  return _impl_.data_.Mutable(GetArenaForAllocation());
+}
+inline std::string* CDemoSpawnGroupsHLTVBroadcast::release_data() {
+  // @@protoc_insertion_point(field_release:CDemoSpawnGroupsHLTVBroadcast.data)
+  if (!_internal_has_data()) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  auto* p = _impl_.data_.Release();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.data_.IsDefault()) {
+    _impl_.data_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  return p;
+}
+inline void CDemoSpawnGroupsHLTVBroadcast::set_allocated_data(std::string* data) {
+  if (data != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+  _impl_.data_.SetAllocated(data, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.data_.IsDefault()) {
+    _impl_.data_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:CDemoSpawnGroupsHLTVBroadcast.data)
+}
+
+// -------------------------------------------------------------------
+
 // CDemoRecovery_DemoInitialSpawnGroupEntry
 
 // optional uint32 spawngrouphandle = 1;
@@ -9461,6 +9702,8 @@ inline void CDemoRecovery::set_allocated_spawn_group_message(std::string* spawn_
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

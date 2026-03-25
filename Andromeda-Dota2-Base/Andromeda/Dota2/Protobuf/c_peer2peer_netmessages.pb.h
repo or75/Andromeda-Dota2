@@ -799,7 +799,7 @@ class CP2P_Ping final :
     kSendTimeFieldNumber = 1,
     kIsReplyFieldNumber = 2,
   };
-  // required uint64 send_time = 1;
+  // optional uint64 send_time = 1;
   bool has_send_time() const;
   private:
   bool _internal_has_send_time() const;
@@ -812,7 +812,7 @@ class CP2P_Ping final :
   void _internal_set_send_time(uint64_t value);
   public:
 
-  // required bool is_reply = 2;
+  // optional bool is_reply = 2;
   bool has_is_reply() const;
   private:
   bool _internal_has_is_reply() const;
@@ -828,9 +828,6 @@ class CP2P_Ping final :
   // @@protoc_insertion_point(class_scope:CP2P_Ping)
  private:
   class _Internal;
-
-  // helper for ByteSizeLong()
-  size_t RequiredFieldsByteSizeFallback() const;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
@@ -1780,7 +1777,7 @@ inline void CP2P_Voice::set_broadcast_group(uint32_t value) {
 
 // CP2P_Ping
 
-// required uint64 send_time = 1;
+// optional uint64 send_time = 1;
 inline bool CP2P_Ping::_internal_has_send_time() const {
   bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
   return value;
@@ -1808,7 +1805,7 @@ inline void CP2P_Ping::set_send_time(uint64_t value) {
   // @@protoc_insertion_point(field_set:CP2P_Ping.send_time)
 }
 
-// required bool is_reply = 2;
+// optional bool is_reply = 2;
 inline bool CP2P_Ping::_internal_has_is_reply() const {
   bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
   return value;
