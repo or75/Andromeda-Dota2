@@ -47,7 +47,6 @@ auto CAndromedaGUI::OnInit( IDXGISwapChain* pSwapChain ) -> void
 	ImGui::GetIO().IniFilename = m_GuiFile.c_str();
 	ImGui::GetIO().LogFilename = "";
 
-	ImGui::GetIO().ConfigFlags |= ImGuiConfigFlags_NoMouseCursorChange;
 	ImGui::GetIO().BackendFlags |= ImGuiBackendFlags_HasSetMousePos;
 
 	ImGui_ImplWin32_Init( m_hCS2Window );
@@ -155,8 +154,9 @@ void CAndromedaGUI::OnRender( IDXGISwapChain* pSwapChain )
 		ImGui_ImplWin32_NewFrame();
 
 		ImGui::NewFrame();
-
 		GetAndromedaClient()->OnRender();
+
+		ImGui::GetIO().MouseDrawCursor = false;
 
 		ImGui::EndFrame();
 		ImGui::Render();
@@ -171,8 +171,6 @@ auto CAndromedaGUI::OnReopenGUI() -> void
 {
 	m_bVisible = !m_bVisible;
 
-	ImGui::GetIO().MouseDrawCursor = m_bVisible;
-	ShowCursor( !m_bVisible );
 
 	if ( m_bVisible )
 	{
@@ -200,8 +198,24 @@ LRESULT WINAPI CAndromedaGUI::GUI_WndProc( HWND hwnd , UINT uMsg , WPARAM wParam
 		if ( uMsg == WM_KEYUP && wParam == VK_INSERT )
 			GetAndromedaGUI()->OnReopenGUI();
 
-		if ( GetAndromedaGUI()->IsVisible() && ImGui_ImplWin32_WndProcHandler( hwnd , uMsg , wParam , lParam ) == 0 )
-			return true;
+		if ( GetAndromedaGUI()->IsVisible() )
+		{
+			ImGui_ImplWin32_WndProcHandler( hwnd , uMsg , wParam , lParam );
+
+			if ( ImGui::GetIO().WantCaptureMouse )
+			{
+				switch ( uMsg )
+				{
+				case WM_MOUSEMOVE:
+				case WM_LBUTTONDOWN: case WM_LBUTTONUP: case WM_LBUTTONDBLCLK:
+				case WM_RBUTTONDOWN: case WM_RBUTTONUP: case WM_RBUTTONDBLCLK:
+				case WM_MBUTTONDOWN: case WM_MBUTTONUP: case WM_MBUTTONDBLCLK:
+				case WM_MOUSEWHEEL: case WM_MOUSEHWHEEL:
+				case WM_SETCURSOR:
+					return true;
+				}
+			}
+		}
 	}
 
 	return CallWindowProcA( GetAndromedaGUI()->m_WndProc_o , hwnd , uMsg , wParam , lParam );
