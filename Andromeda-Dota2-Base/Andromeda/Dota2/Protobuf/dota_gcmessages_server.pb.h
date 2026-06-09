@@ -579,6 +579,9 @@ extern CMsgSteamLearnMatchStateV5_TeamStateDefaultTypeInternal _CMsgSteamLearnMa
 class CMsgSteamLearnNeutralItemPurchaseV4;
 struct CMsgSteamLearnNeutralItemPurchaseV4DefaultTypeInternal;
 extern CMsgSteamLearnNeutralItemPurchaseV4DefaultTypeInternal _CMsgSteamLearnNeutralItemPurchaseV4_default_instance_;
+class CMsgSteamLearnNeutralItemPurchaseV6;
+struct CMsgSteamLearnNeutralItemPurchaseV6DefaultTypeInternal;
+extern CMsgSteamLearnNeutralItemPurchaseV6DefaultTypeInternal _CMsgSteamLearnNeutralItemPurchaseV6_default_instance_;
 class CMsgSteamLearnPlayerMatchState;
 struct CMsgSteamLearnPlayerMatchStateDefaultTypeInternal;
 extern CMsgSteamLearnPlayerMatchStateDefaultTypeInternal _CMsgSteamLearnPlayerMatchState_default_instance_;
@@ -792,6 +795,7 @@ template<> ::CMsgSteamLearnMatchStateV5* Arena::CreateMaybeMessage<::CMsgSteamLe
 template<> ::CMsgSteamLearnMatchStateV5_PlayerState* Arena::CreateMaybeMessage<::CMsgSteamLearnMatchStateV5_PlayerState>(Arena*);
 template<> ::CMsgSteamLearnMatchStateV5_TeamState* Arena::CreateMaybeMessage<::CMsgSteamLearnMatchStateV5_TeamState>(Arena*);
 template<> ::CMsgSteamLearnNeutralItemPurchaseV4* Arena::CreateMaybeMessage<::CMsgSteamLearnNeutralItemPurchaseV4>(Arena*);
+template<> ::CMsgSteamLearnNeutralItemPurchaseV6* Arena::CreateMaybeMessage<::CMsgSteamLearnNeutralItemPurchaseV6>(Arena*);
 template<> ::CMsgSteamLearnPlayerMatchState* Arena::CreateMaybeMessage<::CMsgSteamLearnPlayerMatchState>(Arena*);
 template<> ::CMsgSteamLearnPlayerTimedStats* Arena::CreateMaybeMessage<::CMsgSteamLearnPlayerTimedStats>(Arena*);
 template<> ::CMsgSteamLearnPlayerTimedStats_StatBucket* Arena::CreateMaybeMessage<::CMsgSteamLearnPlayerTimedStats_StatBucket>(Arena*);
@@ -40495,6 +40499,244 @@ class CMsgSteamLearnNeutralItemPurchaseV4 final :
 };
 // -------------------------------------------------------------------
 
+class CMsgSteamLearnNeutralItemPurchaseV6 final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:CMsgSteamLearnNeutralItemPurchaseV6) */ {
+ public:
+  inline CMsgSteamLearnNeutralItemPurchaseV6() : CMsgSteamLearnNeutralItemPurchaseV6(nullptr) {}
+  ~CMsgSteamLearnNeutralItemPurchaseV6() override;
+  explicit PROTOBUF_CONSTEXPR CMsgSteamLearnNeutralItemPurchaseV6(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CMsgSteamLearnNeutralItemPurchaseV6(const CMsgSteamLearnNeutralItemPurchaseV6& from);
+  CMsgSteamLearnNeutralItemPurchaseV6(CMsgSteamLearnNeutralItemPurchaseV6&& from) noexcept
+    : CMsgSteamLearnNeutralItemPurchaseV6() {
+    *this = ::std::move(from);
+  }
+
+  inline CMsgSteamLearnNeutralItemPurchaseV6& operator=(const CMsgSteamLearnNeutralItemPurchaseV6& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CMsgSteamLearnNeutralItemPurchaseV6& operator=(CMsgSteamLearnNeutralItemPurchaseV6&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CMsgSteamLearnNeutralItemPurchaseV6& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CMsgSteamLearnNeutralItemPurchaseV6* internal_default_instance() {
+    return reinterpret_cast<const CMsgSteamLearnNeutralItemPurchaseV6*>(
+               &_CMsgSteamLearnNeutralItemPurchaseV6_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    169;
+
+  friend void swap(CMsgSteamLearnNeutralItemPurchaseV6& a, CMsgSteamLearnNeutralItemPurchaseV6& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CMsgSteamLearnNeutralItemPurchaseV6* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CMsgSteamLearnNeutralItemPurchaseV6* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  CMsgSteamLearnNeutralItemPurchaseV6* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<CMsgSteamLearnNeutralItemPurchaseV6>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const CMsgSteamLearnNeutralItemPurchaseV6& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const CMsgSteamLearnNeutralItemPurchaseV6& from) {
+    CMsgSteamLearnNeutralItemPurchaseV6::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CMsgSteamLearnNeutralItemPurchaseV6* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "CMsgSteamLearnNeutralItemPurchaseV6";
+  }
+  protected:
+  explicit CMsgSteamLearnNeutralItemPurchaseV6(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kTrinketOptionsFieldNumber = 2,
+    kEnhancementOptionsFieldNumber = 3,
+    kTierFieldNumber = 1,
+    kTrinketIdFieldNumber = 4,
+    kEnhancementIdFieldNumber = 5,
+  };
+  // repeated int32 trinket_options = 2 [(.steamlearn_count) = 5];
+  int trinket_options_size() const;
+  private:
+  int _internal_trinket_options_size() const;
+  public:
+  void clear_trinket_options();
+  private:
+  int32_t _internal_trinket_options(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+      _internal_trinket_options() const;
+  void _internal_add_trinket_options(int32_t value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+      _internal_mutable_trinket_options();
+  public:
+  int32_t trinket_options(int index) const;
+  void set_trinket_options(int index, int32_t value);
+  void add_trinket_options(int32_t value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+      trinket_options() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+      mutable_trinket_options();
+
+  // repeated int32 enhancement_options = 3 [(.steamlearn_count) = 5];
+  int enhancement_options_size() const;
+  private:
+  int _internal_enhancement_options_size() const;
+  public:
+  void clear_enhancement_options();
+  private:
+  int32_t _internal_enhancement_options(int index) const;
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+      _internal_enhancement_options() const;
+  void _internal_add_enhancement_options(int32_t value);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+      _internal_mutable_enhancement_options();
+  public:
+  int32_t enhancement_options(int index) const;
+  void set_enhancement_options(int index, int32_t value);
+  void add_enhancement_options(int32_t value);
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+      enhancement_options() const;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+      mutable_enhancement_options();
+
+  // optional uint32 tier = 1;
+  bool has_tier() const;
+  private:
+  bool _internal_has_tier() const;
+  public:
+  void clear_tier();
+  uint32_t tier() const;
+  void set_tier(uint32_t value);
+  private:
+  uint32_t _internal_tier() const;
+  void _internal_set_tier(uint32_t value);
+  public:
+
+  // optional int32 trinket_id = 4 [default = -1];
+  bool has_trinket_id() const;
+  private:
+  bool _internal_has_trinket_id() const;
+  public:
+  void clear_trinket_id();
+  int32_t trinket_id() const;
+  void set_trinket_id(int32_t value);
+  private:
+  int32_t _internal_trinket_id() const;
+  void _internal_set_trinket_id(int32_t value);
+  public:
+
+  // optional int32 enhancement_id = 5 [default = -1];
+  bool has_enhancement_id() const;
+  private:
+  bool _internal_has_enhancement_id() const;
+  public:
+  void clear_enhancement_id();
+  int32_t enhancement_id() const;
+  void set_enhancement_id(int32_t value);
+  private:
+  int32_t _internal_enhancement_id() const;
+  void _internal_set_enhancement_id(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:CMsgSteamLearnNeutralItemPurchaseV6)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t > trinket_options_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t > enhancement_options_;
+    uint32_t tier_;
+    int32_t trinket_id_;
+    int32_t enhancement_id_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_dota_5fgcmessages_5fserver_2eproto;
+};
+// -------------------------------------------------------------------
+
 class CMsgSteamLearnAbilitySkill final :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:CMsgSteamLearnAbilitySkill) */ {
  public:
@@ -40550,7 +40792,7 @@ class CMsgSteamLearnAbilitySkill final :
                &_CMsgSteamLearnAbilitySkill_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    169;
+    170;
 
   friend void swap(CMsgSteamLearnAbilitySkill& a, CMsgSteamLearnAbilitySkill& b) {
     a.Swap(&b);
@@ -40764,7 +41006,7 @@ class CMsgSteamLearnWardPlacement_Location final :
                &_CMsgSteamLearnWardPlacement_Location_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    170;
+    171;
 
   friend void swap(CMsgSteamLearnWardPlacement_Location& a, CMsgSteamLearnWardPlacement_Location& b) {
     a.Swap(&b);
@@ -40939,7 +41181,7 @@ class CMsgSteamLearnWardPlacement final :
                &_CMsgSteamLearnWardPlacement_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    171;
+    172;
 
   friend void swap(CMsgSteamLearnWardPlacement& a, CMsgSteamLearnWardPlacement& b) {
     a.Swap(&b);
@@ -41141,7 +41383,7 @@ class CMsgSteamLearnPlayerMatchState final :
                &_CMsgSteamLearnPlayerMatchState_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    172;
+    173;
 
   friend void swap(CMsgSteamLearnPlayerMatchState& a, CMsgSteamLearnPlayerMatchState& b) {
     a.Swap(&b);
@@ -41466,7 +41708,7 @@ class CMsgSignOutMuertaMinigame final :
                &_CMsgSignOutMuertaMinigame_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    173;
+    174;
 
   friend void swap(CMsgSignOutMuertaMinigame& a, CMsgSignOutMuertaMinigame& b) {
     a.Swap(&b);
@@ -41631,7 +41873,7 @@ class CMsgSignOutMapStats_Player final :
                &_CMsgSignOutMapStats_Player_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    174;
+    175;
 
   friend void swap(CMsgSignOutMapStats_Player& a, CMsgSignOutMapStats_Player& b) {
     a.Swap(&b);
@@ -41811,7 +42053,7 @@ class CMsgSignOutMapStats final :
                &_CMsgSignOutMapStats_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    175;
+    176;
 
   friend void swap(CMsgSignOutMapStats& a, CMsgSignOutMapStats& b) {
     a.Swap(&b);
@@ -41998,7 +42240,7 @@ class CMsgServerToGCNewBloomGift final :
                &_CMsgServerToGCNewBloomGift_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    176;
+    177;
 
   friend void swap(CMsgServerToGCNewBloomGift& a, CMsgServerToGCNewBloomGift& b) {
     a.Swap(&b);
@@ -42197,7 +42439,7 @@ class CMsgServerToGCNewBloomGiftResponse final :
                &_CMsgServerToGCNewBloomGiftResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    177;
+    178;
 
   friend void swap(CMsgServerToGCNewBloomGiftResponse& a, CMsgServerToGCNewBloomGiftResponse& b) {
     a.Swap(&b);
@@ -42381,7 +42623,7 @@ class CMsgSignOutOverworld_Player final :
                &_CMsgSignOutOverworld_Player_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    178;
+    179;
 
   friend void swap(CMsgSignOutOverworld_Player& a, CMsgSignOutOverworld_Player& b) {
     a.Swap(&b);
@@ -42580,7 +42822,7 @@ class CMsgSignOutOverworld final :
                &_CMsgSignOutOverworld_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    179;
+    180;
 
   friend void swap(CMsgSignOutOverworld& a, CMsgSignOutOverworld& b) {
     a.Swap(&b);
@@ -42762,7 +43004,7 @@ class CMsgSignOutCraftworks_Player final :
                &_CMsgSignOutCraftworks_Player_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    180;
+    181;
 
   friend void swap(CMsgSignOutCraftworks_Player& a, CMsgSignOutCraftworks_Player& b) {
     a.Swap(&b);
@@ -42942,7 +43184,7 @@ class CMsgSignOutCraftworks final :
                &_CMsgSignOutCraftworks_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    181;
+    182;
 
   friend void swap(CMsgSignOutCraftworks& a, CMsgSignOutCraftworks& b) {
     a.Swap(&b);
@@ -43124,7 +43366,7 @@ class CMsgSignOutMonsterHunter_Player final :
                &_CMsgSignOutMonsterHunter_Player_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    182;
+    183;
 
   friend void swap(CMsgSignOutMonsterHunter_Player& a, CMsgSignOutMonsterHunter_Player& b) {
     a.Swap(&b);
@@ -43324,7 +43566,7 @@ class CMsgSignOutMonsterHunter final :
                &_CMsgSignOutMonsterHunter_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    183;
+    184;
 
   friend void swap(CMsgSignOutMonsterHunter& a, CMsgSignOutMonsterHunter& b) {
     a.Swap(&b);
@@ -43506,7 +43748,7 @@ class CMsgServerToGCWarningLowServerFramerate final :
                &_CMsgServerToGCWarningLowServerFramerate_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    184;
+    185;
 
   friend void swap(CMsgServerToGCWarningLowServerFramerate& a, CMsgServerToGCWarningLowServerFramerate& b) {
     a.Swap(&b);
@@ -43726,7 +43968,7 @@ class CMsgServerToGCWarningInvalidBotAbilityUsage final :
                &_CMsgServerToGCWarningInvalidBotAbilityUsage_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    185;
+    186;
 
   friend void swap(CMsgServerToGCWarningInvalidBotAbilityUsage& a, CMsgServerToGCWarningInvalidBotAbilityUsage& b) {
     a.Swap(&b);
@@ -74466,6 +74708,188 @@ inline void CMsgSteamLearnNeutralItemPurchaseV4::set_enhancement_id(int32_t valu
 
 // -------------------------------------------------------------------
 
+// CMsgSteamLearnNeutralItemPurchaseV6
+
+// optional uint32 tier = 1;
+inline bool CMsgSteamLearnNeutralItemPurchaseV6::_internal_has_tier() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool CMsgSteamLearnNeutralItemPurchaseV6::has_tier() const {
+  return _internal_has_tier();
+}
+inline void CMsgSteamLearnNeutralItemPurchaseV6::clear_tier() {
+  _impl_.tier_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline uint32_t CMsgSteamLearnNeutralItemPurchaseV6::_internal_tier() const {
+  return _impl_.tier_;
+}
+inline uint32_t CMsgSteamLearnNeutralItemPurchaseV6::tier() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamLearnNeutralItemPurchaseV6.tier)
+  return _internal_tier();
+}
+inline void CMsgSteamLearnNeutralItemPurchaseV6::_internal_set_tier(uint32_t value) {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.tier_ = value;
+}
+inline void CMsgSteamLearnNeutralItemPurchaseV6::set_tier(uint32_t value) {
+  _internal_set_tier(value);
+  // @@protoc_insertion_point(field_set:CMsgSteamLearnNeutralItemPurchaseV6.tier)
+}
+
+// repeated int32 trinket_options = 2 [(.steamlearn_count) = 5];
+inline int CMsgSteamLearnNeutralItemPurchaseV6::_internal_trinket_options_size() const {
+  return _impl_.trinket_options_.size();
+}
+inline int CMsgSteamLearnNeutralItemPurchaseV6::trinket_options_size() const {
+  return _internal_trinket_options_size();
+}
+inline void CMsgSteamLearnNeutralItemPurchaseV6::clear_trinket_options() {
+  _impl_.trinket_options_.Clear();
+}
+inline int32_t CMsgSteamLearnNeutralItemPurchaseV6::_internal_trinket_options(int index) const {
+  return _impl_.trinket_options_.Get(index);
+}
+inline int32_t CMsgSteamLearnNeutralItemPurchaseV6::trinket_options(int index) const {
+  // @@protoc_insertion_point(field_get:CMsgSteamLearnNeutralItemPurchaseV6.trinket_options)
+  return _internal_trinket_options(index);
+}
+inline void CMsgSteamLearnNeutralItemPurchaseV6::set_trinket_options(int index, int32_t value) {
+  _impl_.trinket_options_.Set(index, value);
+  // @@protoc_insertion_point(field_set:CMsgSteamLearnNeutralItemPurchaseV6.trinket_options)
+}
+inline void CMsgSteamLearnNeutralItemPurchaseV6::_internal_add_trinket_options(int32_t value) {
+  _impl_.trinket_options_.Add(value);
+}
+inline void CMsgSteamLearnNeutralItemPurchaseV6::add_trinket_options(int32_t value) {
+  _internal_add_trinket_options(value);
+  // @@protoc_insertion_point(field_add:CMsgSteamLearnNeutralItemPurchaseV6.trinket_options)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+CMsgSteamLearnNeutralItemPurchaseV6::_internal_trinket_options() const {
+  return _impl_.trinket_options_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+CMsgSteamLearnNeutralItemPurchaseV6::trinket_options() const {
+  // @@protoc_insertion_point(field_list:CMsgSteamLearnNeutralItemPurchaseV6.trinket_options)
+  return _internal_trinket_options();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+CMsgSteamLearnNeutralItemPurchaseV6::_internal_mutable_trinket_options() {
+  return &_impl_.trinket_options_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+CMsgSteamLearnNeutralItemPurchaseV6::mutable_trinket_options() {
+  // @@protoc_insertion_point(field_mutable_list:CMsgSteamLearnNeutralItemPurchaseV6.trinket_options)
+  return _internal_mutable_trinket_options();
+}
+
+// repeated int32 enhancement_options = 3 [(.steamlearn_count) = 5];
+inline int CMsgSteamLearnNeutralItemPurchaseV6::_internal_enhancement_options_size() const {
+  return _impl_.enhancement_options_.size();
+}
+inline int CMsgSteamLearnNeutralItemPurchaseV6::enhancement_options_size() const {
+  return _internal_enhancement_options_size();
+}
+inline void CMsgSteamLearnNeutralItemPurchaseV6::clear_enhancement_options() {
+  _impl_.enhancement_options_.Clear();
+}
+inline int32_t CMsgSteamLearnNeutralItemPurchaseV6::_internal_enhancement_options(int index) const {
+  return _impl_.enhancement_options_.Get(index);
+}
+inline int32_t CMsgSteamLearnNeutralItemPurchaseV6::enhancement_options(int index) const {
+  // @@protoc_insertion_point(field_get:CMsgSteamLearnNeutralItemPurchaseV6.enhancement_options)
+  return _internal_enhancement_options(index);
+}
+inline void CMsgSteamLearnNeutralItemPurchaseV6::set_enhancement_options(int index, int32_t value) {
+  _impl_.enhancement_options_.Set(index, value);
+  // @@protoc_insertion_point(field_set:CMsgSteamLearnNeutralItemPurchaseV6.enhancement_options)
+}
+inline void CMsgSteamLearnNeutralItemPurchaseV6::_internal_add_enhancement_options(int32_t value) {
+  _impl_.enhancement_options_.Add(value);
+}
+inline void CMsgSteamLearnNeutralItemPurchaseV6::add_enhancement_options(int32_t value) {
+  _internal_add_enhancement_options(value);
+  // @@protoc_insertion_point(field_add:CMsgSteamLearnNeutralItemPurchaseV6.enhancement_options)
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+CMsgSteamLearnNeutralItemPurchaseV6::_internal_enhancement_options() const {
+  return _impl_.enhancement_options_;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >&
+CMsgSteamLearnNeutralItemPurchaseV6::enhancement_options() const {
+  // @@protoc_insertion_point(field_list:CMsgSteamLearnNeutralItemPurchaseV6.enhancement_options)
+  return _internal_enhancement_options();
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+CMsgSteamLearnNeutralItemPurchaseV6::_internal_mutable_enhancement_options() {
+  return &_impl_.enhancement_options_;
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedField< int32_t >*
+CMsgSteamLearnNeutralItemPurchaseV6::mutable_enhancement_options() {
+  // @@protoc_insertion_point(field_mutable_list:CMsgSteamLearnNeutralItemPurchaseV6.enhancement_options)
+  return _internal_mutable_enhancement_options();
+}
+
+// optional int32 trinket_id = 4 [default = -1];
+inline bool CMsgSteamLearnNeutralItemPurchaseV6::_internal_has_trinket_id() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool CMsgSteamLearnNeutralItemPurchaseV6::has_trinket_id() const {
+  return _internal_has_trinket_id();
+}
+inline void CMsgSteamLearnNeutralItemPurchaseV6::clear_trinket_id() {
+  _impl_.trinket_id_ = -1;
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline int32_t CMsgSteamLearnNeutralItemPurchaseV6::_internal_trinket_id() const {
+  return _impl_.trinket_id_;
+}
+inline int32_t CMsgSteamLearnNeutralItemPurchaseV6::trinket_id() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamLearnNeutralItemPurchaseV6.trinket_id)
+  return _internal_trinket_id();
+}
+inline void CMsgSteamLearnNeutralItemPurchaseV6::_internal_set_trinket_id(int32_t value) {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.trinket_id_ = value;
+}
+inline void CMsgSteamLearnNeutralItemPurchaseV6::set_trinket_id(int32_t value) {
+  _internal_set_trinket_id(value);
+  // @@protoc_insertion_point(field_set:CMsgSteamLearnNeutralItemPurchaseV6.trinket_id)
+}
+
+// optional int32 enhancement_id = 5 [default = -1];
+inline bool CMsgSteamLearnNeutralItemPurchaseV6::_internal_has_enhancement_id() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
+  return value;
+}
+inline bool CMsgSteamLearnNeutralItemPurchaseV6::has_enhancement_id() const {
+  return _internal_has_enhancement_id();
+}
+inline void CMsgSteamLearnNeutralItemPurchaseV6::clear_enhancement_id() {
+  _impl_.enhancement_id_ = -1;
+  _impl_._has_bits_[0] &= ~0x00000004u;
+}
+inline int32_t CMsgSteamLearnNeutralItemPurchaseV6::_internal_enhancement_id() const {
+  return _impl_.enhancement_id_;
+}
+inline int32_t CMsgSteamLearnNeutralItemPurchaseV6::enhancement_id() const {
+  // @@protoc_insertion_point(field_get:CMsgSteamLearnNeutralItemPurchaseV6.enhancement_id)
+  return _internal_enhancement_id();
+}
+inline void CMsgSteamLearnNeutralItemPurchaseV6::_internal_set_enhancement_id(int32_t value) {
+  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_.enhancement_id_ = value;
+}
+inline void CMsgSteamLearnNeutralItemPurchaseV6::set_enhancement_id(int32_t value) {
+  _internal_set_enhancement_id(value);
+  // @@protoc_insertion_point(field_set:CMsgSteamLearnNeutralItemPurchaseV6.enhancement_id)
+}
+
+// -------------------------------------------------------------------
+
 // CMsgSteamLearnAbilitySkill
 
 // optional int32 ability_id = 1 [default = -1];
@@ -76676,6 +77100,8 @@ inline void CMsgServerToGCWarningInvalidBotAbilityUsage::set_allocated_ability_n
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

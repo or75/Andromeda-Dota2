@@ -281,11 +281,12 @@ enum EEvent : int {
   EVENT_ID_SPRING_2026 = 56,
   EVENT_ID_SUMMER_2026 = 57,
   EVENT_ID_FALL_2026 = 58,
-  EVENT_ID_WINTER_2026 = 59
+  EVENT_ID_WINTER_2026 = 59,
+  EVENT_ID_INTERNATIONAL_2026 = 60
 };
 bool EEvent_IsValid(int value);
 constexpr EEvent EEvent_MIN = EVENT_ID_NONE;
-constexpr EEvent EEvent_MAX = EVENT_ID_WINTER_2026;
+constexpr EEvent EEvent_MAX = EVENT_ID_INTERNATIONAL_2026;
 constexpr int EEvent_ARRAYSIZE = EEvent_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* EEvent_descriptor();
@@ -1100,11 +1101,12 @@ enum DOTA_BOT_MODE : int {
   DOTA_BOT_MODE_BOT_CHALLENGE_ENDGAME = 27,
   DOTA_BOT_MODE_WATCHER = 28,
   DOTA_BOT_MODE_WISDOM_SHRINE = 29,
-  DOTA_BOT_MODE_LOTUS_POOL = 30
+  DOTA_BOT_MODE_LOTUS_POOL = 30,
+  DOTA_BOT_MODE_DEWARD = 31
 };
 bool DOTA_BOT_MODE_IsValid(int value);
 constexpr DOTA_BOT_MODE DOTA_BOT_MODE_MIN = DOTA_BOT_MODE_NONE;
-constexpr DOTA_BOT_MODE DOTA_BOT_MODE_MAX = DOTA_BOT_MODE_LOTUS_POOL;
+constexpr DOTA_BOT_MODE DOTA_BOT_MODE_MAX = DOTA_BOT_MODE_DEWARD;
 constexpr int DOTA_BOT_MODE_ARRAYSIZE = DOTA_BOT_MODE_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* DOTA_BOT_MODE_descriptor();
@@ -3120,6 +3122,7 @@ class CMsgDOTACombatLogEntry final :
     kAttackerHasScepterFieldNumber = 75,
     kWillReincarnateFieldNumber = 78,
     kUsesChargesFieldNumber = 79,
+    kHealFromRegenFieldNumber = 82,
     kTrackedStatIdFieldNumber = 80,
     kModifierPurgedDurationFieldNumber = 81,
     kTypeFieldNumber = 1,
@@ -4147,6 +4150,19 @@ class CMsgDOTACombatLogEntry final :
   void _internal_set_uses_charges(bool value);
   public:
 
+  // optional bool heal_from_regen = 82;
+  bool has_heal_from_regen() const;
+  private:
+  bool _internal_has_heal_from_regen() const;
+  public:
+  void clear_heal_from_regen();
+  bool heal_from_regen() const;
+  void set_heal_from_regen(bool value);
+  private:
+  bool _internal_heal_from_regen() const;
+  void _internal_set_heal_from_regen(bool value);
+  public:
+
   // optional uint32 tracked_stat_id = 80;
   bool has_tracked_stat_id() const;
   private:
@@ -4274,6 +4290,7 @@ class CMsgDOTACombatLogEntry final :
     bool attacker_has_scepter_;
     bool will_reincarnate_;
     bool uses_charges_;
+    bool heal_from_regen_;
     uint32_t tracked_stat_id_;
     float modifier_purged_duration_;
     int type_;
@@ -6674,7 +6691,7 @@ CDOTASaveGame::save_instances() const {
 
 // optional .DOTA_COMBATLOG_TYPES type = 1 [default = DOTA_COMBATLOG_INVALID];
 inline bool CMsgDOTACombatLogEntry::_internal_has_type() const {
-  bool value = (_impl_._has_bits_[2] & 0x00008000u) != 0;
+  bool value = (_impl_._has_bits_[2] & 0x00010000u) != 0;
   return value;
 }
 inline bool CMsgDOTACombatLogEntry::has_type() const {
@@ -6682,7 +6699,7 @@ inline bool CMsgDOTACombatLogEntry::has_type() const {
 }
 inline void CMsgDOTACombatLogEntry::clear_type() {
   _impl_.type_ = -1;
-  _impl_._has_bits_[2] &= ~0x00008000u;
+  _impl_._has_bits_[2] &= ~0x00010000u;
 }
 inline ::DOTA_COMBATLOG_TYPES CMsgDOTACombatLogEntry::_internal_type() const {
   return static_cast< ::DOTA_COMBATLOG_TYPES >(_impl_.type_);
@@ -6693,7 +6710,7 @@ inline ::DOTA_COMBATLOG_TYPES CMsgDOTACombatLogEntry::type() const {
 }
 inline void CMsgDOTACombatLogEntry::_internal_set_type(::DOTA_COMBATLOG_TYPES value) {
   assert(::DOTA_COMBATLOG_TYPES_IsValid(value));
-  _impl_._has_bits_[2] |= 0x00008000u;
+  _impl_._has_bits_[2] |= 0x00010000u;
   _impl_.type_ = value;
 }
 inline void CMsgDOTACombatLogEntry::set_type(::DOTA_COMBATLOG_TYPES value) {
@@ -8906,7 +8923,7 @@ inline void CMsgDOTACombatLogEntry::set_uses_charges(bool value) {
 
 // optional uint32 tracked_stat_id = 80;
 inline bool CMsgDOTACombatLogEntry::_internal_has_tracked_stat_id() const {
-  bool value = (_impl_._has_bits_[2] & 0x00002000u) != 0;
+  bool value = (_impl_._has_bits_[2] & 0x00004000u) != 0;
   return value;
 }
 inline bool CMsgDOTACombatLogEntry::has_tracked_stat_id() const {
@@ -8914,7 +8931,7 @@ inline bool CMsgDOTACombatLogEntry::has_tracked_stat_id() const {
 }
 inline void CMsgDOTACombatLogEntry::clear_tracked_stat_id() {
   _impl_.tracked_stat_id_ = 0u;
-  _impl_._has_bits_[2] &= ~0x00002000u;
+  _impl_._has_bits_[2] &= ~0x00004000u;
 }
 inline uint32_t CMsgDOTACombatLogEntry::_internal_tracked_stat_id() const {
   return _impl_.tracked_stat_id_;
@@ -8924,7 +8941,7 @@ inline uint32_t CMsgDOTACombatLogEntry::tracked_stat_id() const {
   return _internal_tracked_stat_id();
 }
 inline void CMsgDOTACombatLogEntry::_internal_set_tracked_stat_id(uint32_t value) {
-  _impl_._has_bits_[2] |= 0x00002000u;
+  _impl_._has_bits_[2] |= 0x00004000u;
   _impl_.tracked_stat_id_ = value;
 }
 inline void CMsgDOTACombatLogEntry::set_tracked_stat_id(uint32_t value) {
@@ -8934,7 +8951,7 @@ inline void CMsgDOTACombatLogEntry::set_tracked_stat_id(uint32_t value) {
 
 // optional float modifier_purged_duration = 81;
 inline bool CMsgDOTACombatLogEntry::_internal_has_modifier_purged_duration() const {
-  bool value = (_impl_._has_bits_[2] & 0x00004000u) != 0;
+  bool value = (_impl_._has_bits_[2] & 0x00008000u) != 0;
   return value;
 }
 inline bool CMsgDOTACombatLogEntry::has_modifier_purged_duration() const {
@@ -8942,7 +8959,7 @@ inline bool CMsgDOTACombatLogEntry::has_modifier_purged_duration() const {
 }
 inline void CMsgDOTACombatLogEntry::clear_modifier_purged_duration() {
   _impl_.modifier_purged_duration_ = 0;
-  _impl_._has_bits_[2] &= ~0x00004000u;
+  _impl_._has_bits_[2] &= ~0x00008000u;
 }
 inline float CMsgDOTACombatLogEntry::_internal_modifier_purged_duration() const {
   return _impl_.modifier_purged_duration_;
@@ -8952,12 +8969,40 @@ inline float CMsgDOTACombatLogEntry::modifier_purged_duration() const {
   return _internal_modifier_purged_duration();
 }
 inline void CMsgDOTACombatLogEntry::_internal_set_modifier_purged_duration(float value) {
-  _impl_._has_bits_[2] |= 0x00004000u;
+  _impl_._has_bits_[2] |= 0x00008000u;
   _impl_.modifier_purged_duration_ = value;
 }
 inline void CMsgDOTACombatLogEntry::set_modifier_purged_duration(float value) {
   _internal_set_modifier_purged_duration(value);
   // @@protoc_insertion_point(field_set:CMsgDOTACombatLogEntry.modifier_purged_duration)
+}
+
+// optional bool heal_from_regen = 82;
+inline bool CMsgDOTACombatLogEntry::_internal_has_heal_from_regen() const {
+  bool value = (_impl_._has_bits_[2] & 0x00002000u) != 0;
+  return value;
+}
+inline bool CMsgDOTACombatLogEntry::has_heal_from_regen() const {
+  return _internal_has_heal_from_regen();
+}
+inline void CMsgDOTACombatLogEntry::clear_heal_from_regen() {
+  _impl_.heal_from_regen_ = false;
+  _impl_._has_bits_[2] &= ~0x00002000u;
+}
+inline bool CMsgDOTACombatLogEntry::_internal_heal_from_regen() const {
+  return _impl_.heal_from_regen_;
+}
+inline bool CMsgDOTACombatLogEntry::heal_from_regen() const {
+  // @@protoc_insertion_point(field_get:CMsgDOTACombatLogEntry.heal_from_regen)
+  return _internal_heal_from_regen();
+}
+inline void CMsgDOTACombatLogEntry::_internal_set_heal_from_regen(bool value) {
+  _impl_._has_bits_[2] |= 0x00002000u;
+  _impl_.heal_from_regen_ = value;
+}
+inline void CMsgDOTACombatLogEntry::set_heal_from_regen(bool value) {
+  _internal_set_heal_from_regen(value);
+  // @@protoc_insertion_point(field_set:CMsgDOTACombatLogEntry.heal_from_regen)
 }
 
 // -------------------------------------------------------------------

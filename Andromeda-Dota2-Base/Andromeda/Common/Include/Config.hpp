@@ -6,7 +6,7 @@
 #define GUI_FILE					"gui.ini"
 
 #define CHEAT_NAME					"Andromeda [Dota2 Plus + Camera Distance Changer]"
-#define CHEAT_VERSION				"1.0.3"
+#define CHEAT_VERSION				"1.0.4"
 
 // Project Buid Config:
 

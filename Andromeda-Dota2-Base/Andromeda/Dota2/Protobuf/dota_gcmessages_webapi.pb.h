@@ -140,6 +140,9 @@ extern CMsgTalentContentAssetStatusDefaultTypeInternal _CMsgTalentContentAssetSt
 class CMsgTalentContentStatus;
 struct CMsgTalentContentStatusDefaultTypeInternal;
 extern CMsgTalentContentStatusDefaultTypeInternal _CMsgTalentContentStatus_default_instance_;
+class CMsgTalentContentStatus_SubmitRevision;
+struct CMsgTalentContentStatus_SubmitRevisionDefaultTypeInternal;
+extern CMsgTalentContentStatus_SubmitRevisionDefaultTypeInternal _CMsgTalentContentStatus_SubmitRevision_default_instance_;
 class CMsgTalentContentStatus_TalentDetails;
 struct CMsgTalentContentStatus_TalentDetailsDefaultTypeInternal;
 extern CMsgTalentContentStatus_TalentDetailsDefaultTypeInternal _CMsgTalentContentStatus_TalentDetails_default_instance_;
@@ -195,6 +198,7 @@ template<> ::CMsgGetTeamAuditInformation_Action* Arena::CreateMaybeMessage<::CMs
 template<> ::CMsgSetTalentContentResponse* Arena::CreateMaybeMessage<::CMsgSetTalentContentResponse>(Arena*);
 template<> ::CMsgTalentContentAssetStatus* Arena::CreateMaybeMessage<::CMsgTalentContentAssetStatus>(Arena*);
 template<> ::CMsgTalentContentStatus* Arena::CreateMaybeMessage<::CMsgTalentContentStatus>(Arena*);
+template<> ::CMsgTalentContentStatus_SubmitRevision* Arena::CreateMaybeMessage<::CMsgTalentContentStatus_SubmitRevision>(Arena*);
 template<> ::CMsgTalentContentStatus_TalentDetails* Arena::CreateMaybeMessage<::CMsgTalentContentStatus_TalentDetails>(Arena*);
 template<> ::CMsgTeamFanContentAssetStatus* Arena::CreateMaybeMessage<::CMsgTeamFanContentAssetStatus>(Arena*);
 template<> ::CMsgTeamFanContentAssetStatusResponse* Arena::CreateMaybeMessage<::CMsgTeamFanContentAssetStatusResponse>(Arena*);
@@ -286,6 +290,33 @@ inline bool CMsgTeamFanContentAssetStatusResponse_EResult_Parse(
     ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, CMsgTeamFanContentAssetStatusResponse_EResult* value) {
   return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<CMsgTeamFanContentAssetStatusResponse_EResult>(
     CMsgTeamFanContentAssetStatusResponse_EResult_descriptor(), name, value);
+}
+enum CMsgTalentContentStatus_EWorkshopItemStatus : int {
+  CMsgTalentContentStatus_EWorkshopItemStatus_k_eSuccess = 0,
+  CMsgTalentContentStatus_EWorkshopItemStatus_k_eInvalidWorkshopId = 1,
+  CMsgTalentContentStatus_EWorkshopItemStatus_k_eWrongAppId = 2,
+  CMsgTalentContentStatus_EWorkshopItemStatus_k_eRevenueSharingNotFinalized = 3,
+  CMsgTalentContentStatus_EWorkshopItemStatus_k_eWorkshopItemNotFound = 4,
+  CMsgTalentContentStatus_EWorkshopItemStatus_k_eUnknown = 5
+};
+bool CMsgTalentContentStatus_EWorkshopItemStatus_IsValid(int value);
+constexpr CMsgTalentContentStatus_EWorkshopItemStatus CMsgTalentContentStatus_EWorkshopItemStatus_EWorkshopItemStatus_MIN = CMsgTalentContentStatus_EWorkshopItemStatus_k_eSuccess;
+constexpr CMsgTalentContentStatus_EWorkshopItemStatus CMsgTalentContentStatus_EWorkshopItemStatus_EWorkshopItemStatus_MAX = CMsgTalentContentStatus_EWorkshopItemStatus_k_eUnknown;
+constexpr int CMsgTalentContentStatus_EWorkshopItemStatus_EWorkshopItemStatus_ARRAYSIZE = CMsgTalentContentStatus_EWorkshopItemStatus_EWorkshopItemStatus_MAX + 1;
+
+const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* CMsgTalentContentStatus_EWorkshopItemStatus_descriptor();
+template<typename T>
+inline const std::string& CMsgTalentContentStatus_EWorkshopItemStatus_Name(T enum_t_value) {
+  static_assert(::std::is_same<T, CMsgTalentContentStatus_EWorkshopItemStatus>::value ||
+    ::std::is_integral<T>::value,
+    "Incorrect type passed to function CMsgTalentContentStatus_EWorkshopItemStatus_Name.");
+  return ::PROTOBUF_NAMESPACE_ID::internal::NameOfEnum(
+    CMsgTalentContentStatus_EWorkshopItemStatus_descriptor(), enum_t_value);
+}
+inline bool CMsgTalentContentStatus_EWorkshopItemStatus_Parse(
+    ::PROTOBUF_NAMESPACE_ID::ConstStringParam name, CMsgTalentContentStatus_EWorkshopItemStatus* value) {
+  return ::PROTOBUF_NAMESPACE_ID::internal::ParseNamedEnum<CMsgTalentContentStatus_EWorkshopItemStatus>(
+    CMsgTalentContentStatus_EWorkshopItemStatus_descriptor(), name, value);
 }
 enum CMsgSetTalentContentResponse_EResult : int {
   CMsgSetTalentContentResponse_EResult_k_eSuccess = 0,
@@ -4543,6 +4574,7 @@ class CMsgTalentContentAssetStatus final :
   enum : int {
     kAssetIndexFieldNumber = 2,
     kAssetStatusFieldNumber = 3,
+    kRevisionFieldNumber = 4,
     kAssetTypeFieldNumber = 1,
   };
   // optional uint32 asset_index = 2;
@@ -4571,6 +4603,19 @@ class CMsgTalentContentAssetStatus final :
   void _internal_set_asset_status(::ETalentContentAssetStatus value);
   public:
 
+  // optional uint32 revision = 4;
+  bool has_revision() const;
+  private:
+  bool _internal_has_revision() const;
+  public:
+  void clear_revision();
+  uint32_t revision() const;
+  void set_revision(uint32_t value);
+  private:
+  uint32_t _internal_revision() const;
+  void _internal_set_revision(uint32_t value);
+  public:
+
   // optional .ETalentContentAssetType asset_type = 1 [default = k_eTalentContentAssetType_Photo];
   bool has_asset_type() const;
   private:
@@ -4596,7 +4641,203 @@ class CMsgTalentContentAssetStatus final :
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
     uint32_t asset_index_;
     int asset_status_;
+    uint32_t revision_;
     int asset_type_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_dota_5fgcmessages_5fwebapi_2eproto;
+};
+// -------------------------------------------------------------------
+
+class CMsgTalentContentStatus_SubmitRevision final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:CMsgTalentContentStatus.SubmitRevision) */ {
+ public:
+  inline CMsgTalentContentStatus_SubmitRevision() : CMsgTalentContentStatus_SubmitRevision(nullptr) {}
+  ~CMsgTalentContentStatus_SubmitRevision() override;
+  explicit PROTOBUF_CONSTEXPR CMsgTalentContentStatus_SubmitRevision(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  CMsgTalentContentStatus_SubmitRevision(const CMsgTalentContentStatus_SubmitRevision& from);
+  CMsgTalentContentStatus_SubmitRevision(CMsgTalentContentStatus_SubmitRevision&& from) noexcept
+    : CMsgTalentContentStatus_SubmitRevision() {
+    *this = ::std::move(from);
+  }
+
+  inline CMsgTalentContentStatus_SubmitRevision& operator=(const CMsgTalentContentStatus_SubmitRevision& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline CMsgTalentContentStatus_SubmitRevision& operator=(CMsgTalentContentStatus_SubmitRevision&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  inline const ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet& unknown_fields() const {
+    return _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance);
+  }
+  inline ::PROTOBUF_NAMESPACE_ID::UnknownFieldSet* mutable_unknown_fields() {
+    return _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const CMsgTalentContentStatus_SubmitRevision& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const CMsgTalentContentStatus_SubmitRevision* internal_default_instance() {
+    return reinterpret_cast<const CMsgTalentContentStatus_SubmitRevision*>(
+               &_CMsgTalentContentStatus_SubmitRevision_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    17;
+
+  friend void swap(CMsgTalentContentStatus_SubmitRevision& a, CMsgTalentContentStatus_SubmitRevision& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(CMsgTalentContentStatus_SubmitRevision* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(CMsgTalentContentStatus_SubmitRevision* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  CMsgTalentContentStatus_SubmitRevision* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<CMsgTalentContentStatus_SubmitRevision>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const CMsgTalentContentStatus_SubmitRevision& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const CMsgTalentContentStatus_SubmitRevision& from) {
+    CMsgTalentContentStatus_SubmitRevision::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(CMsgTalentContentStatus_SubmitRevision* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "CMsgTalentContentStatus.SubmitRevision";
+  }
+  protected:
+  explicit CMsgTalentContentStatus_SubmitRevision(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kZipFileFieldNumber = 1,
+    kTimestampFieldNumber = 2,
+    kRevisionNumberFieldNumber = 3,
+  };
+  // optional string zip_file = 1;
+  bool has_zip_file() const;
+  private:
+  bool _internal_has_zip_file() const;
+  public:
+  void clear_zip_file();
+  const std::string& zip_file() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_zip_file(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_zip_file();
+  PROTOBUF_NODISCARD std::string* release_zip_file();
+  void set_allocated_zip_file(std::string* zip_file);
+  private:
+  const std::string& _internal_zip_file() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_zip_file(const std::string& value);
+  std::string* _internal_mutable_zip_file();
+  public:
+
+  // optional uint32 timestamp = 2;
+  bool has_timestamp() const;
+  private:
+  bool _internal_has_timestamp() const;
+  public:
+  void clear_timestamp();
+  uint32_t timestamp() const;
+  void set_timestamp(uint32_t value);
+  private:
+  uint32_t _internal_timestamp() const;
+  void _internal_set_timestamp(uint32_t value);
+  public:
+
+  // optional uint32 revision_number = 3;
+  bool has_revision_number() const;
+  private:
+  bool _internal_has_revision_number() const;
+  public:
+  void clear_revision_number();
+  uint32_t revision_number() const;
+  void set_revision_number(uint32_t value);
+  private:
+  uint32_t _internal_revision_number() const;
+  void _internal_set_revision_number(uint32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:CMsgTalentContentStatus.SubmitRevision)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr zip_file_;
+    uint32_t timestamp_;
+    uint32_t revision_number_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_dota_5fgcmessages_5fwebapi_2eproto;
@@ -4658,7 +4899,7 @@ class CMsgTalentContentStatus_TalentDetails final :
                &_CMsgTalentContentStatus_TalentDetails_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    17;
+    18;
 
   friend void swap(CMsgTalentContentStatus_TalentDetails& a, CMsgTalentContentStatus_TalentDetails& b) {
     a.Swap(&b);
@@ -4731,17 +4972,19 @@ class CMsgTalentContentStatus_TalentDetails final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kAssetStatusFieldNumber = 7,
+    kAssetStatusFieldNumber = 8,
+    kRevisionFieldNumber = 10,
     kFullNameFieldNumber = 2,
     kNicknameFieldNumber = 3,
-    kZipFileFieldNumber = 5,
+    kWorkshopItemDetailsFieldNumber = 13,
     kAccountIdFieldNumber = 1,
     kWorkshopItemIdFieldNumber = 4,
-    kStatusFieldNumber = 6,
-    kBroadcastLanguageFieldNumber = 8,
-    kSubmissionTimestampFieldNumber = 9,
+    kStatusFieldNumber = 5,
+    kBroadcastLanguageFieldNumber = 9,
+    kRevisionCountFieldNumber = 11,
+    kWorkshopItemStatusFieldNumber = 12,
   };
-  // repeated .CMsgTalentContentAssetStatus asset_status = 7;
+  // repeated .CMsgTalentContentAssetStatus asset_status = 8;
   int asset_status_size() const;
   private:
   int _internal_asset_status_size() const;
@@ -4758,6 +5001,24 @@ class CMsgTalentContentStatus_TalentDetails final :
   ::CMsgTalentContentAssetStatus* add_asset_status();
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CMsgTalentContentAssetStatus >&
       asset_status() const;
+
+  // repeated .CMsgTalentContentStatus.SubmitRevision revision = 10;
+  int revision_size() const;
+  private:
+  int _internal_revision_size() const;
+  public:
+  void clear_revision();
+  ::CMsgTalentContentStatus_SubmitRevision* mutable_revision(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CMsgTalentContentStatus_SubmitRevision >*
+      mutable_revision();
+  private:
+  const ::CMsgTalentContentStatus_SubmitRevision& _internal_revision(int index) const;
+  ::CMsgTalentContentStatus_SubmitRevision* _internal_add_revision();
+  public:
+  const ::CMsgTalentContentStatus_SubmitRevision& revision(int index) const;
+  ::CMsgTalentContentStatus_SubmitRevision* add_revision();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CMsgTalentContentStatus_SubmitRevision >&
+      revision() const;
 
   // optional string full_name = 2;
   bool has_full_name() const;
@@ -4795,22 +5056,22 @@ class CMsgTalentContentStatus_TalentDetails final :
   std::string* _internal_mutable_nickname();
   public:
 
-  // optional string zip_file = 5;
-  bool has_zip_file() const;
+  // optional string workshop_item_details = 13;
+  bool has_workshop_item_details() const;
   private:
-  bool _internal_has_zip_file() const;
+  bool _internal_has_workshop_item_details() const;
   public:
-  void clear_zip_file();
-  const std::string& zip_file() const;
+  void clear_workshop_item_details();
+  const std::string& workshop_item_details() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_zip_file(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_zip_file();
-  PROTOBUF_NODISCARD std::string* release_zip_file();
-  void set_allocated_zip_file(std::string* zip_file);
+  void set_workshop_item_details(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_workshop_item_details();
+  PROTOBUF_NODISCARD std::string* release_workshop_item_details();
+  void set_allocated_workshop_item_details(std::string* workshop_item_details);
   private:
-  const std::string& _internal_zip_file() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_zip_file(const std::string& value);
-  std::string* _internal_mutable_zip_file();
+  const std::string& _internal_workshop_item_details() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_workshop_item_details(const std::string& value);
+  std::string* _internal_mutable_workshop_item_details();
   public:
 
   // optional uint32 account_id = 1;
@@ -4839,7 +5100,7 @@ class CMsgTalentContentStatus_TalentDetails final :
   void _internal_set_workshop_item_id(uint32_t value);
   public:
 
-  // optional .ETalentContentStatus status = 6 [default = TALENT_CONTENT_STATUS_INVALID];
+  // optional .ETalentContentStatus status = 5 [default = TALENT_CONTENT_STATUS_INVALID];
   bool has_status() const;
   private:
   bool _internal_has_status() const;
@@ -4852,7 +5113,7 @@ class CMsgTalentContentStatus_TalentDetails final :
   void _internal_set_status(::ETalentContentStatus value);
   public:
 
-  // optional uint32 broadcast_language = 8;
+  // optional uint32 broadcast_language = 9;
   bool has_broadcast_language() const;
   private:
   bool _internal_has_broadcast_language() const;
@@ -4865,17 +5126,30 @@ class CMsgTalentContentStatus_TalentDetails final :
   void _internal_set_broadcast_language(uint32_t value);
   public:
 
-  // optional uint32 submission_timestamp = 9;
-  bool has_submission_timestamp() const;
+  // optional uint32 revision_count = 11;
+  bool has_revision_count() const;
   private:
-  bool _internal_has_submission_timestamp() const;
+  bool _internal_has_revision_count() const;
   public:
-  void clear_submission_timestamp();
-  uint32_t submission_timestamp() const;
-  void set_submission_timestamp(uint32_t value);
+  void clear_revision_count();
+  uint32_t revision_count() const;
+  void set_revision_count(uint32_t value);
   private:
-  uint32_t _internal_submission_timestamp() const;
-  void _internal_set_submission_timestamp(uint32_t value);
+  uint32_t _internal_revision_count() const;
+  void _internal_set_revision_count(uint32_t value);
+  public:
+
+  // optional .CMsgTalentContentStatus.EWorkshopItemStatus workshop_item_status = 12 [default = k_eSuccess];
+  bool has_workshop_item_status() const;
+  private:
+  bool _internal_has_workshop_item_status() const;
+  public:
+  void clear_workshop_item_status();
+  ::CMsgTalentContentStatus_EWorkshopItemStatus workshop_item_status() const;
+  void set_workshop_item_status(::CMsgTalentContentStatus_EWorkshopItemStatus value);
+  private:
+  ::CMsgTalentContentStatus_EWorkshopItemStatus _internal_workshop_item_status() const;
+  void _internal_set_workshop_item_status(::CMsgTalentContentStatus_EWorkshopItemStatus value);
   public:
 
   // @@protoc_insertion_point(class_scope:CMsgTalentContentStatus.TalentDetails)
@@ -4889,14 +5163,16 @@ class CMsgTalentContentStatus_TalentDetails final :
     ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
     ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CMsgTalentContentAssetStatus > asset_status_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CMsgTalentContentStatus_SubmitRevision > revision_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr full_name_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr nickname_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr zip_file_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr workshop_item_details_;
     uint32_t account_id_;
     uint32_t workshop_item_id_;
     int status_;
     uint32_t broadcast_language_;
-    uint32_t submission_timestamp_;
+    uint32_t revision_count_;
+    int workshop_item_status_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_dota_5fgcmessages_5fwebapi_2eproto;
@@ -4958,7 +5234,7 @@ class CMsgTalentContentStatus final :
                &_CMsgTalentContentStatus_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    18;
+    19;
 
   friend void swap(CMsgTalentContentStatus& a, CMsgTalentContentStatus& b) {
     a.Swap(&b);
@@ -5028,7 +5304,46 @@ class CMsgTalentContentStatus final :
 
   // nested types ----------------------------------------------------
 
+  typedef CMsgTalentContentStatus_SubmitRevision SubmitRevision;
   typedef CMsgTalentContentStatus_TalentDetails TalentDetails;
+
+  typedef CMsgTalentContentStatus_EWorkshopItemStatus EWorkshopItemStatus;
+  static constexpr EWorkshopItemStatus k_eSuccess =
+    CMsgTalentContentStatus_EWorkshopItemStatus_k_eSuccess;
+  static constexpr EWorkshopItemStatus k_eInvalidWorkshopId =
+    CMsgTalentContentStatus_EWorkshopItemStatus_k_eInvalidWorkshopId;
+  static constexpr EWorkshopItemStatus k_eWrongAppId =
+    CMsgTalentContentStatus_EWorkshopItemStatus_k_eWrongAppId;
+  static constexpr EWorkshopItemStatus k_eRevenueSharingNotFinalized =
+    CMsgTalentContentStatus_EWorkshopItemStatus_k_eRevenueSharingNotFinalized;
+  static constexpr EWorkshopItemStatus k_eWorkshopItemNotFound =
+    CMsgTalentContentStatus_EWorkshopItemStatus_k_eWorkshopItemNotFound;
+  static constexpr EWorkshopItemStatus k_eUnknown =
+    CMsgTalentContentStatus_EWorkshopItemStatus_k_eUnknown;
+  static inline bool EWorkshopItemStatus_IsValid(int value) {
+    return CMsgTalentContentStatus_EWorkshopItemStatus_IsValid(value);
+  }
+  static constexpr EWorkshopItemStatus EWorkshopItemStatus_MIN =
+    CMsgTalentContentStatus_EWorkshopItemStatus_EWorkshopItemStatus_MIN;
+  static constexpr EWorkshopItemStatus EWorkshopItemStatus_MAX =
+    CMsgTalentContentStatus_EWorkshopItemStatus_EWorkshopItemStatus_MAX;
+  static constexpr int EWorkshopItemStatus_ARRAYSIZE =
+    CMsgTalentContentStatus_EWorkshopItemStatus_EWorkshopItemStatus_ARRAYSIZE;
+  static inline const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor*
+  EWorkshopItemStatus_descriptor() {
+    return CMsgTalentContentStatus_EWorkshopItemStatus_descriptor();
+  }
+  template<typename T>
+  static inline const std::string& EWorkshopItemStatus_Name(T enum_t_value) {
+    static_assert(::std::is_same<T, EWorkshopItemStatus>::value ||
+      ::std::is_integral<T>::value,
+      "Incorrect type passed to function EWorkshopItemStatus_Name.");
+    return CMsgTalentContentStatus_EWorkshopItemStatus_Name(enum_t_value);
+  }
+  static inline bool EWorkshopItemStatus_Parse(::PROTOBUF_NAMESPACE_ID::ConstStringParam name,
+      EWorkshopItemStatus* value) {
+    return CMsgTalentContentStatus_EWorkshopItemStatus_Parse(name, value);
+  }
 
   // accessors -------------------------------------------------------
 
@@ -5124,7 +5439,7 @@ class CMsgSetTalentContentResponse final :
                &_CMsgSetTalentContentResponse_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    19;
+    20;
 
   friend void swap(CMsgSetTalentContentResponse& a, CMsgSetTalentContentResponse& b) {
     a.Swap(&b);
@@ -5316,7 +5631,7 @@ class CMsgDPCEvent_PhaseInfo final :
                &_CMsgDPCEvent_PhaseInfo_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    20;
+    21;
 
   friend void swap(CMsgDPCEvent_PhaseInfo& a, CMsgDPCEvent_PhaseInfo& b) {
     a.Swap(&b);
@@ -5491,7 +5806,7 @@ class CMsgDPCEvent_League final :
                &_CMsgDPCEvent_League_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    21;
+    22;
 
   friend void swap(CMsgDPCEvent_League& a, CMsgDPCEvent_League& b) {
     a.Swap(&b);
@@ -5701,7 +6016,7 @@ class CMsgDPCEvent final :
                &_CMsgDPCEvent_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    22;
+    23;
 
   friend void swap(CMsgDPCEvent& a, CMsgDPCEvent& b) {
     a.Swap(&b);
@@ -6291,7 +6606,7 @@ class CMsgDPCEventList final :
                &_CMsgDPCEventList_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    23;
+    24;
 
   friend void swap(CMsgDPCEventList& a, CMsgDPCEventList& b) {
     a.Swap(&b);
@@ -6455,7 +6770,7 @@ class CMsgDOTAFantasyCardLineup_CardBonus final :
                &_CMsgDOTAFantasyCardLineup_CardBonus_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    24;
+    25;
 
   friend void swap(CMsgDOTAFantasyCardLineup_CardBonus& a, CMsgDOTAFantasyCardLineup_CardBonus& b) {
     a.Swap(&b);
@@ -6630,7 +6945,7 @@ class CMsgDOTAFantasyCardLineup_Card final :
                &_CMsgDOTAFantasyCardLineup_Card_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    25;
+    26;
 
   friend void swap(CMsgDOTAFantasyCardLineup_Card& a, CMsgDOTAFantasyCardLineup_Card& b) {
     a.Swap(&b);
@@ -6925,7 +7240,7 @@ class CMsgDOTAFantasyCardLineup_League final :
                &_CMsgDOTAFantasyCardLineup_League_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    26;
+    27;
 
   friend void swap(CMsgDOTAFantasyCardLineup_League& a, CMsgDOTAFantasyCardLineup_League& b) {
     a.Swap(&b);
@@ -7120,7 +7435,7 @@ class CMsgDOTAFantasyCardLineup_Period final :
                &_CMsgDOTAFantasyCardLineup_Period_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    27;
+    28;
 
   friend void swap(CMsgDOTAFantasyCardLineup_Period& a, CMsgDOTAFantasyCardLineup_Period& b) {
     a.Swap(&b);
@@ -7330,7 +7645,7 @@ class CMsgDOTAFantasyCardLineup final :
                &_CMsgDOTAFantasyCardLineup_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    28;
+    29;
 
   friend void swap(CMsgDOTAFantasyCardLineup& a, CMsgDOTAFantasyCardLineup& b) {
     a.Swap(&b);
@@ -7499,7 +7814,7 @@ class CMsgDOTAFantasyCardList_CardBonus final :
                &_CMsgDOTAFantasyCardList_CardBonus_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    29;
+    30;
 
   friend void swap(CMsgDOTAFantasyCardList_CardBonus& a, CMsgDOTAFantasyCardList_CardBonus& b) {
     a.Swap(&b);
@@ -7674,7 +7989,7 @@ class CMsgDOTAFantasyCardList_Card final :
                &_CMsgDOTAFantasyCardList_Card_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    30;
+    31;
 
   friend void swap(CMsgDOTAFantasyCardList_Card& a, CMsgDOTAFantasyCardList_Card& b) {
     a.Swap(&b);
@@ -7939,7 +8254,7 @@ class CMsgDOTAFantasyCardList final :
                &_CMsgDOTAFantasyCardList_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    31;
+    32;
 
   friend void swap(CMsgDOTAFantasyCardList& a, CMsgDOTAFantasyCardList& b) {
     a.Swap(&b);
@@ -8106,7 +8421,7 @@ class CMsgChatToxicityToxicPlayerMatchesReport_IndividualRow final :
                &_CMsgChatToxicityToxicPlayerMatchesReport_IndividualRow_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    32;
+    33;
 
   friend void swap(CMsgChatToxicityToxicPlayerMatchesReport_IndividualRow& a, CMsgChatToxicityToxicPlayerMatchesReport_IndividualRow& b) {
     a.Swap(&b);
@@ -8341,7 +8656,7 @@ class CMsgChatToxicityToxicPlayerMatchesReport final :
                &_CMsgChatToxicityToxicPlayerMatchesReport_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    33;
+    34;
 
   friend void swap(CMsgChatToxicityToxicPlayerMatchesReport& a, CMsgChatToxicityToxicPlayerMatchesReport& b) {
     a.Swap(&b);
@@ -8507,7 +8822,7 @@ class CMsgChatToxicityReport final :
                &_CMsgChatToxicityReport_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    34;
+    35;
 
   friend void swap(CMsgChatToxicityReport& a, CMsgChatToxicityReport& b) {
     a.Swap(&b);
@@ -8752,7 +9067,7 @@ class CMsgGetTeamAuditInformation_Action final :
                &_CMsgGetTeamAuditInformation_Action_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    35;
+    36;
 
   friend void swap(CMsgGetTeamAuditInformation_Action& a, CMsgGetTeamAuditInformation_Action& b) {
     a.Swap(&b);
@@ -8997,7 +9312,7 @@ class CMsgGetTeamAuditInformation final :
                &_CMsgGetTeamAuditInformation_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    36;
+    37;
 
   friend void swap(CMsgGetTeamAuditInformation& a, CMsgGetTeamAuditInformation& b) {
     a.Swap(&b);
@@ -9214,7 +9529,7 @@ class CMsgDOTADPCMatch final :
                &_CMsgDOTADPCMatch_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    37;
+    38;
 
   friend void swap(CMsgDOTADPCMatch& a, CMsgDOTADPCMatch& b) {
     a.Swap(&b);
@@ -12406,7 +12721,7 @@ CMsgTeamFanContentAutographStatus::team_autographs() const {
 
 // optional .ETalentContentAssetType asset_type = 1 [default = k_eTalentContentAssetType_Photo];
 inline bool CMsgTalentContentAssetStatus::_internal_has_asset_type() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
+  bool value = (_impl_._has_bits_[0] & 0x00000008u) != 0;
   return value;
 }
 inline bool CMsgTalentContentAssetStatus::has_asset_type() const {
@@ -12414,7 +12729,7 @@ inline bool CMsgTalentContentAssetStatus::has_asset_type() const {
 }
 inline void CMsgTalentContentAssetStatus::clear_asset_type() {
   _impl_.asset_type_ = 1;
-  _impl_._has_bits_[0] &= ~0x00000004u;
+  _impl_._has_bits_[0] &= ~0x00000008u;
 }
 inline ::ETalentContentAssetType CMsgTalentContentAssetStatus::_internal_asset_type() const {
   return static_cast< ::ETalentContentAssetType >(_impl_.asset_type_);
@@ -12425,7 +12740,7 @@ inline ::ETalentContentAssetType CMsgTalentContentAssetStatus::asset_type() cons
 }
 inline void CMsgTalentContentAssetStatus::_internal_set_asset_type(::ETalentContentAssetType value) {
   assert(::ETalentContentAssetType_IsValid(value));
-  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_._has_bits_[0] |= 0x00000008u;
   _impl_.asset_type_ = value;
 }
 inline void CMsgTalentContentAssetStatus::set_asset_type(::ETalentContentAssetType value) {
@@ -12488,6 +12803,162 @@ inline void CMsgTalentContentAssetStatus::_internal_set_asset_status(::ETalentCo
 inline void CMsgTalentContentAssetStatus::set_asset_status(::ETalentContentAssetStatus value) {
   _internal_set_asset_status(value);
   // @@protoc_insertion_point(field_set:CMsgTalentContentAssetStatus.asset_status)
+}
+
+// optional uint32 revision = 4;
+inline bool CMsgTalentContentAssetStatus::_internal_has_revision() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
+  return value;
+}
+inline bool CMsgTalentContentAssetStatus::has_revision() const {
+  return _internal_has_revision();
+}
+inline void CMsgTalentContentAssetStatus::clear_revision() {
+  _impl_.revision_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000004u;
+}
+inline uint32_t CMsgTalentContentAssetStatus::_internal_revision() const {
+  return _impl_.revision_;
+}
+inline uint32_t CMsgTalentContentAssetStatus::revision() const {
+  // @@protoc_insertion_point(field_get:CMsgTalentContentAssetStatus.revision)
+  return _internal_revision();
+}
+inline void CMsgTalentContentAssetStatus::_internal_set_revision(uint32_t value) {
+  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_.revision_ = value;
+}
+inline void CMsgTalentContentAssetStatus::set_revision(uint32_t value) {
+  _internal_set_revision(value);
+  // @@protoc_insertion_point(field_set:CMsgTalentContentAssetStatus.revision)
+}
+
+// -------------------------------------------------------------------
+
+// CMsgTalentContentStatus_SubmitRevision
+
+// optional string zip_file = 1;
+inline bool CMsgTalentContentStatus_SubmitRevision::_internal_has_zip_file() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool CMsgTalentContentStatus_SubmitRevision::has_zip_file() const {
+  return _internal_has_zip_file();
+}
+inline void CMsgTalentContentStatus_SubmitRevision::clear_zip_file() {
+  _impl_.zip_file_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline const std::string& CMsgTalentContentStatus_SubmitRevision::zip_file() const {
+  // @@protoc_insertion_point(field_get:CMsgTalentContentStatus.SubmitRevision.zip_file)
+  return _internal_zip_file();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CMsgTalentContentStatus_SubmitRevision::set_zip_file(ArgT0&& arg0, ArgT... args) {
+ _impl_._has_bits_[0] |= 0x00000001u;
+ _impl_.zip_file_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:CMsgTalentContentStatus.SubmitRevision.zip_file)
+}
+inline std::string* CMsgTalentContentStatus_SubmitRevision::mutable_zip_file() {
+  std::string* _s = _internal_mutable_zip_file();
+  // @@protoc_insertion_point(field_mutable:CMsgTalentContentStatus.SubmitRevision.zip_file)
+  return _s;
+}
+inline const std::string& CMsgTalentContentStatus_SubmitRevision::_internal_zip_file() const {
+  return _impl_.zip_file_.Get();
+}
+inline void CMsgTalentContentStatus_SubmitRevision::_internal_set_zip_file(const std::string& value) {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.zip_file_.Set(value, GetArenaForAllocation());
+}
+inline std::string* CMsgTalentContentStatus_SubmitRevision::_internal_mutable_zip_file() {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  return _impl_.zip_file_.Mutable(GetArenaForAllocation());
+}
+inline std::string* CMsgTalentContentStatus_SubmitRevision::release_zip_file() {
+  // @@protoc_insertion_point(field_release:CMsgTalentContentStatus.SubmitRevision.zip_file)
+  if (!_internal_has_zip_file()) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000001u;
+  auto* p = _impl_.zip_file_.Release();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.zip_file_.IsDefault()) {
+    _impl_.zip_file_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  return p;
+}
+inline void CMsgTalentContentStatus_SubmitRevision::set_allocated_zip_file(std::string* zip_file) {
+  if (zip_file != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000001u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000001u;
+  }
+  _impl_.zip_file_.SetAllocated(zip_file, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.zip_file_.IsDefault()) {
+    _impl_.zip_file_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:CMsgTalentContentStatus.SubmitRevision.zip_file)
+}
+
+// optional uint32 timestamp = 2;
+inline bool CMsgTalentContentStatus_SubmitRevision::_internal_has_timestamp() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000002u) != 0;
+  return value;
+}
+inline bool CMsgTalentContentStatus_SubmitRevision::has_timestamp() const {
+  return _internal_has_timestamp();
+}
+inline void CMsgTalentContentStatus_SubmitRevision::clear_timestamp() {
+  _impl_.timestamp_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000002u;
+}
+inline uint32_t CMsgTalentContentStatus_SubmitRevision::_internal_timestamp() const {
+  return _impl_.timestamp_;
+}
+inline uint32_t CMsgTalentContentStatus_SubmitRevision::timestamp() const {
+  // @@protoc_insertion_point(field_get:CMsgTalentContentStatus.SubmitRevision.timestamp)
+  return _internal_timestamp();
+}
+inline void CMsgTalentContentStatus_SubmitRevision::_internal_set_timestamp(uint32_t value) {
+  _impl_._has_bits_[0] |= 0x00000002u;
+  _impl_.timestamp_ = value;
+}
+inline void CMsgTalentContentStatus_SubmitRevision::set_timestamp(uint32_t value) {
+  _internal_set_timestamp(value);
+  // @@protoc_insertion_point(field_set:CMsgTalentContentStatus.SubmitRevision.timestamp)
+}
+
+// optional uint32 revision_number = 3;
+inline bool CMsgTalentContentStatus_SubmitRevision::_internal_has_revision_number() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
+  return value;
+}
+inline bool CMsgTalentContentStatus_SubmitRevision::has_revision_number() const {
+  return _internal_has_revision_number();
+}
+inline void CMsgTalentContentStatus_SubmitRevision::clear_revision_number() {
+  _impl_.revision_number_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000004u;
+}
+inline uint32_t CMsgTalentContentStatus_SubmitRevision::_internal_revision_number() const {
+  return _impl_.revision_number_;
+}
+inline uint32_t CMsgTalentContentStatus_SubmitRevision::revision_number() const {
+  // @@protoc_insertion_point(field_get:CMsgTalentContentStatus.SubmitRevision.revision_number)
+  return _internal_revision_number();
+}
+inline void CMsgTalentContentStatus_SubmitRevision::_internal_set_revision_number(uint32_t value) {
+  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_.revision_number_ = value;
+}
+inline void CMsgTalentContentStatus_SubmitRevision::set_revision_number(uint32_t value) {
+  _internal_set_revision_number(value);
+  // @@protoc_insertion_point(field_set:CMsgTalentContentStatus.SubmitRevision.revision_number)
 }
 
 // -------------------------------------------------------------------
@@ -12686,75 +13157,7 @@ inline void CMsgTalentContentStatus_TalentDetails::set_workshop_item_id(uint32_t
   // @@protoc_insertion_point(field_set:CMsgTalentContentStatus.TalentDetails.workshop_item_id)
 }
 
-// optional string zip_file = 5;
-inline bool CMsgTalentContentStatus_TalentDetails::_internal_has_zip_file() const {
-  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
-  return value;
-}
-inline bool CMsgTalentContentStatus_TalentDetails::has_zip_file() const {
-  return _internal_has_zip_file();
-}
-inline void CMsgTalentContentStatus_TalentDetails::clear_zip_file() {
-  _impl_.zip_file_.ClearToEmpty();
-  _impl_._has_bits_[0] &= ~0x00000004u;
-}
-inline const std::string& CMsgTalentContentStatus_TalentDetails::zip_file() const {
-  // @@protoc_insertion_point(field_get:CMsgTalentContentStatus.TalentDetails.zip_file)
-  return _internal_zip_file();
-}
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void CMsgTalentContentStatus_TalentDetails::set_zip_file(ArgT0&& arg0, ArgT... args) {
- _impl_._has_bits_[0] |= 0x00000004u;
- _impl_.zip_file_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:CMsgTalentContentStatus.TalentDetails.zip_file)
-}
-inline std::string* CMsgTalentContentStatus_TalentDetails::mutable_zip_file() {
-  std::string* _s = _internal_mutable_zip_file();
-  // @@protoc_insertion_point(field_mutable:CMsgTalentContentStatus.TalentDetails.zip_file)
-  return _s;
-}
-inline const std::string& CMsgTalentContentStatus_TalentDetails::_internal_zip_file() const {
-  return _impl_.zip_file_.Get();
-}
-inline void CMsgTalentContentStatus_TalentDetails::_internal_set_zip_file(const std::string& value) {
-  _impl_._has_bits_[0] |= 0x00000004u;
-  _impl_.zip_file_.Set(value, GetArenaForAllocation());
-}
-inline std::string* CMsgTalentContentStatus_TalentDetails::_internal_mutable_zip_file() {
-  _impl_._has_bits_[0] |= 0x00000004u;
-  return _impl_.zip_file_.Mutable(GetArenaForAllocation());
-}
-inline std::string* CMsgTalentContentStatus_TalentDetails::release_zip_file() {
-  // @@protoc_insertion_point(field_release:CMsgTalentContentStatus.TalentDetails.zip_file)
-  if (!_internal_has_zip_file()) {
-    return nullptr;
-  }
-  _impl_._has_bits_[0] &= ~0x00000004u;
-  auto* p = _impl_.zip_file_.Release();
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.zip_file_.IsDefault()) {
-    _impl_.zip_file_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  return p;
-}
-inline void CMsgTalentContentStatus_TalentDetails::set_allocated_zip_file(std::string* zip_file) {
-  if (zip_file != nullptr) {
-    _impl_._has_bits_[0] |= 0x00000004u;
-  } else {
-    _impl_._has_bits_[0] &= ~0x00000004u;
-  }
-  _impl_.zip_file_.SetAllocated(zip_file, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.zip_file_.IsDefault()) {
-    _impl_.zip_file_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:CMsgTalentContentStatus.TalentDetails.zip_file)
-}
-
-// optional .ETalentContentStatus status = 6 [default = TALENT_CONTENT_STATUS_INVALID];
+// optional .ETalentContentStatus status = 5 [default = TALENT_CONTENT_STATUS_INVALID];
 inline bool CMsgTalentContentStatus_TalentDetails::_internal_has_status() const {
   bool value = (_impl_._has_bits_[0] & 0x00000020u) != 0;
   return value;
@@ -12783,7 +13186,7 @@ inline void CMsgTalentContentStatus_TalentDetails::set_status(::ETalentContentSt
   // @@protoc_insertion_point(field_set:CMsgTalentContentStatus.TalentDetails.status)
 }
 
-// repeated .CMsgTalentContentAssetStatus asset_status = 7;
+// repeated .CMsgTalentContentAssetStatus asset_status = 8;
 inline int CMsgTalentContentStatus_TalentDetails::_internal_asset_status_size() const {
   return _impl_.asset_status_.size();
 }
@@ -12823,7 +13226,7 @@ CMsgTalentContentStatus_TalentDetails::asset_status() const {
   return _impl_.asset_status_;
 }
 
-// optional uint32 broadcast_language = 8;
+// optional uint32 broadcast_language = 9;
 inline bool CMsgTalentContentStatus_TalentDetails::_internal_has_broadcast_language() const {
   bool value = (_impl_._has_bits_[0] & 0x00000040u) != 0;
   return value;
@@ -12851,32 +13254,169 @@ inline void CMsgTalentContentStatus_TalentDetails::set_broadcast_language(uint32
   // @@protoc_insertion_point(field_set:CMsgTalentContentStatus.TalentDetails.broadcast_language)
 }
 
-// optional uint32 submission_timestamp = 9;
-inline bool CMsgTalentContentStatus_TalentDetails::_internal_has_submission_timestamp() const {
+// repeated .CMsgTalentContentStatus.SubmitRevision revision = 10;
+inline int CMsgTalentContentStatus_TalentDetails::_internal_revision_size() const {
+  return _impl_.revision_.size();
+}
+inline int CMsgTalentContentStatus_TalentDetails::revision_size() const {
+  return _internal_revision_size();
+}
+inline void CMsgTalentContentStatus_TalentDetails::clear_revision() {
+  _impl_.revision_.Clear();
+}
+inline ::CMsgTalentContentStatus_SubmitRevision* CMsgTalentContentStatus_TalentDetails::mutable_revision(int index) {
+  // @@protoc_insertion_point(field_mutable:CMsgTalentContentStatus.TalentDetails.revision)
+  return _impl_.revision_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CMsgTalentContentStatus_SubmitRevision >*
+CMsgTalentContentStatus_TalentDetails::mutable_revision() {
+  // @@protoc_insertion_point(field_mutable_list:CMsgTalentContentStatus.TalentDetails.revision)
+  return &_impl_.revision_;
+}
+inline const ::CMsgTalentContentStatus_SubmitRevision& CMsgTalentContentStatus_TalentDetails::_internal_revision(int index) const {
+  return _impl_.revision_.Get(index);
+}
+inline const ::CMsgTalentContentStatus_SubmitRevision& CMsgTalentContentStatus_TalentDetails::revision(int index) const {
+  // @@protoc_insertion_point(field_get:CMsgTalentContentStatus.TalentDetails.revision)
+  return _internal_revision(index);
+}
+inline ::CMsgTalentContentStatus_SubmitRevision* CMsgTalentContentStatus_TalentDetails::_internal_add_revision() {
+  return _impl_.revision_.Add();
+}
+inline ::CMsgTalentContentStatus_SubmitRevision* CMsgTalentContentStatus_TalentDetails::add_revision() {
+  ::CMsgTalentContentStatus_SubmitRevision* _add = _internal_add_revision();
+  // @@protoc_insertion_point(field_add:CMsgTalentContentStatus.TalentDetails.revision)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CMsgTalentContentStatus_SubmitRevision >&
+CMsgTalentContentStatus_TalentDetails::revision() const {
+  // @@protoc_insertion_point(field_list:CMsgTalentContentStatus.TalentDetails.revision)
+  return _impl_.revision_;
+}
+
+// optional uint32 revision_count = 11;
+inline bool CMsgTalentContentStatus_TalentDetails::_internal_has_revision_count() const {
   bool value = (_impl_._has_bits_[0] & 0x00000080u) != 0;
   return value;
 }
-inline bool CMsgTalentContentStatus_TalentDetails::has_submission_timestamp() const {
-  return _internal_has_submission_timestamp();
+inline bool CMsgTalentContentStatus_TalentDetails::has_revision_count() const {
+  return _internal_has_revision_count();
 }
-inline void CMsgTalentContentStatus_TalentDetails::clear_submission_timestamp() {
-  _impl_.submission_timestamp_ = 0u;
+inline void CMsgTalentContentStatus_TalentDetails::clear_revision_count() {
+  _impl_.revision_count_ = 0u;
   _impl_._has_bits_[0] &= ~0x00000080u;
 }
-inline uint32_t CMsgTalentContentStatus_TalentDetails::_internal_submission_timestamp() const {
-  return _impl_.submission_timestamp_;
+inline uint32_t CMsgTalentContentStatus_TalentDetails::_internal_revision_count() const {
+  return _impl_.revision_count_;
 }
-inline uint32_t CMsgTalentContentStatus_TalentDetails::submission_timestamp() const {
-  // @@protoc_insertion_point(field_get:CMsgTalentContentStatus.TalentDetails.submission_timestamp)
-  return _internal_submission_timestamp();
+inline uint32_t CMsgTalentContentStatus_TalentDetails::revision_count() const {
+  // @@protoc_insertion_point(field_get:CMsgTalentContentStatus.TalentDetails.revision_count)
+  return _internal_revision_count();
 }
-inline void CMsgTalentContentStatus_TalentDetails::_internal_set_submission_timestamp(uint32_t value) {
+inline void CMsgTalentContentStatus_TalentDetails::_internal_set_revision_count(uint32_t value) {
   _impl_._has_bits_[0] |= 0x00000080u;
-  _impl_.submission_timestamp_ = value;
+  _impl_.revision_count_ = value;
 }
-inline void CMsgTalentContentStatus_TalentDetails::set_submission_timestamp(uint32_t value) {
-  _internal_set_submission_timestamp(value);
-  // @@protoc_insertion_point(field_set:CMsgTalentContentStatus.TalentDetails.submission_timestamp)
+inline void CMsgTalentContentStatus_TalentDetails::set_revision_count(uint32_t value) {
+  _internal_set_revision_count(value);
+  // @@protoc_insertion_point(field_set:CMsgTalentContentStatus.TalentDetails.revision_count)
+}
+
+// optional .CMsgTalentContentStatus.EWorkshopItemStatus workshop_item_status = 12 [default = k_eSuccess];
+inline bool CMsgTalentContentStatus_TalentDetails::_internal_has_workshop_item_status() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000100u) != 0;
+  return value;
+}
+inline bool CMsgTalentContentStatus_TalentDetails::has_workshop_item_status() const {
+  return _internal_has_workshop_item_status();
+}
+inline void CMsgTalentContentStatus_TalentDetails::clear_workshop_item_status() {
+  _impl_.workshop_item_status_ = 0;
+  _impl_._has_bits_[0] &= ~0x00000100u;
+}
+inline ::CMsgTalentContentStatus_EWorkshopItemStatus CMsgTalentContentStatus_TalentDetails::_internal_workshop_item_status() const {
+  return static_cast< ::CMsgTalentContentStatus_EWorkshopItemStatus >(_impl_.workshop_item_status_);
+}
+inline ::CMsgTalentContentStatus_EWorkshopItemStatus CMsgTalentContentStatus_TalentDetails::workshop_item_status() const {
+  // @@protoc_insertion_point(field_get:CMsgTalentContentStatus.TalentDetails.workshop_item_status)
+  return _internal_workshop_item_status();
+}
+inline void CMsgTalentContentStatus_TalentDetails::_internal_set_workshop_item_status(::CMsgTalentContentStatus_EWorkshopItemStatus value) {
+  assert(::CMsgTalentContentStatus_EWorkshopItemStatus_IsValid(value));
+  _impl_._has_bits_[0] |= 0x00000100u;
+  _impl_.workshop_item_status_ = value;
+}
+inline void CMsgTalentContentStatus_TalentDetails::set_workshop_item_status(::CMsgTalentContentStatus_EWorkshopItemStatus value) {
+  _internal_set_workshop_item_status(value);
+  // @@protoc_insertion_point(field_set:CMsgTalentContentStatus.TalentDetails.workshop_item_status)
+}
+
+// optional string workshop_item_details = 13;
+inline bool CMsgTalentContentStatus_TalentDetails::_internal_has_workshop_item_details() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000004u) != 0;
+  return value;
+}
+inline bool CMsgTalentContentStatus_TalentDetails::has_workshop_item_details() const {
+  return _internal_has_workshop_item_details();
+}
+inline void CMsgTalentContentStatus_TalentDetails::clear_workshop_item_details() {
+  _impl_.workshop_item_details_.ClearToEmpty();
+  _impl_._has_bits_[0] &= ~0x00000004u;
+}
+inline const std::string& CMsgTalentContentStatus_TalentDetails::workshop_item_details() const {
+  // @@protoc_insertion_point(field_get:CMsgTalentContentStatus.TalentDetails.workshop_item_details)
+  return _internal_workshop_item_details();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void CMsgTalentContentStatus_TalentDetails::set_workshop_item_details(ArgT0&& arg0, ArgT... args) {
+ _impl_._has_bits_[0] |= 0x00000004u;
+ _impl_.workshop_item_details_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:CMsgTalentContentStatus.TalentDetails.workshop_item_details)
+}
+inline std::string* CMsgTalentContentStatus_TalentDetails::mutable_workshop_item_details() {
+  std::string* _s = _internal_mutable_workshop_item_details();
+  // @@protoc_insertion_point(field_mutable:CMsgTalentContentStatus.TalentDetails.workshop_item_details)
+  return _s;
+}
+inline const std::string& CMsgTalentContentStatus_TalentDetails::_internal_workshop_item_details() const {
+  return _impl_.workshop_item_details_.Get();
+}
+inline void CMsgTalentContentStatus_TalentDetails::_internal_set_workshop_item_details(const std::string& value) {
+  _impl_._has_bits_[0] |= 0x00000004u;
+  _impl_.workshop_item_details_.Set(value, GetArenaForAllocation());
+}
+inline std::string* CMsgTalentContentStatus_TalentDetails::_internal_mutable_workshop_item_details() {
+  _impl_._has_bits_[0] |= 0x00000004u;
+  return _impl_.workshop_item_details_.Mutable(GetArenaForAllocation());
+}
+inline std::string* CMsgTalentContentStatus_TalentDetails::release_workshop_item_details() {
+  // @@protoc_insertion_point(field_release:CMsgTalentContentStatus.TalentDetails.workshop_item_details)
+  if (!_internal_has_workshop_item_details()) {
+    return nullptr;
+  }
+  _impl_._has_bits_[0] &= ~0x00000004u;
+  auto* p = _impl_.workshop_item_details_.Release();
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.workshop_item_details_.IsDefault()) {
+    _impl_.workshop_item_details_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  return p;
+}
+inline void CMsgTalentContentStatus_TalentDetails::set_allocated_workshop_item_details(std::string* workshop_item_details) {
+  if (workshop_item_details != nullptr) {
+    _impl_._has_bits_[0] |= 0x00000004u;
+  } else {
+    _impl_._has_bits_[0] &= ~0x00000004u;
+  }
+  _impl_.workshop_item_details_.SetAllocated(workshop_item_details, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.workshop_item_details_.IsDefault()) {
+    _impl_.workshop_item_details_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:CMsgTalentContentStatus.TalentDetails.workshop_item_details)
 }
 
 // -------------------------------------------------------------------
@@ -15908,6 +16448,8 @@ inline void CMsgDOTADPCMatch::set_allocated_metadata(::CDOTAMatchMetadata* metad
 
 // -------------------------------------------------------------------
 
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
 
@@ -15928,6 +16470,11 @@ template <> struct is_proto_enum< ::CMsgTeamFanContentAssetStatusResponse_EResul
 template <>
 inline const EnumDescriptor* GetEnumDescriptor< ::CMsgTeamFanContentAssetStatusResponse_EResult>() {
   return ::CMsgTeamFanContentAssetStatusResponse_EResult_descriptor();
+}
+template <> struct is_proto_enum< ::CMsgTalentContentStatus_EWorkshopItemStatus> : ::std::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::CMsgTalentContentStatus_EWorkshopItemStatus>() {
+  return ::CMsgTalentContentStatus_EWorkshopItemStatus_descriptor();
 }
 template <> struct is_proto_enum< ::CMsgSetTalentContentResponse_EResult> : ::std::true_type {};
 template <>

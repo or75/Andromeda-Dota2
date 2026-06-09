@@ -1918,6 +1918,7 @@ class CMsgDOTAPlayerInfoList final :
 
   enum : int {
     kPlayerInfosFieldNumber = 1,
+    kRetryTimeFieldNumber = 2,
   };
   // repeated .CMsgDOTAPlayerInfo player_infos = 1;
   int player_infos_size() const;
@@ -1937,6 +1938,19 @@ class CMsgDOTAPlayerInfoList final :
   const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CMsgDOTAPlayerInfo >&
       player_infos() const;
 
+  // optional uint32 retry_time = 2;
+  bool has_retry_time() const;
+  private:
+  bool _internal_has_retry_time() const;
+  public:
+  void clear_retry_time();
+  uint32_t retry_time() const;
+  void set_retry_time(uint32_t value);
+  private:
+  uint32_t _internal_retry_time() const;
+  void _internal_set_retry_time(uint32_t value);
+  public:
+
   // @@protoc_insertion_point(class_scope:CMsgDOTAPlayerInfoList)
  private:
   class _Internal;
@@ -1945,8 +1959,10 @@ class CMsgDOTAPlayerInfoList final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CMsgDOTAPlayerInfo > player_infos_;
+    ::PROTOBUF_NAMESPACE_ID::internal::HasBits<1> _has_bits_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CMsgDOTAPlayerInfo > player_infos_;
+    uint32_t retry_time_;
   };
   union { Impl_ _impl_; };
   friend struct ::TableStruct_dota_5fgcmessages_5fclient_5ffantasy_2eproto;
@@ -14188,6 +14204,34 @@ inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::CMsgDOTAPlayerInfo >&
 CMsgDOTAPlayerInfoList::player_infos() const {
   // @@protoc_insertion_point(field_list:CMsgDOTAPlayerInfoList.player_infos)
   return _impl_.player_infos_;
+}
+
+// optional uint32 retry_time = 2;
+inline bool CMsgDOTAPlayerInfoList::_internal_has_retry_time() const {
+  bool value = (_impl_._has_bits_[0] & 0x00000001u) != 0;
+  return value;
+}
+inline bool CMsgDOTAPlayerInfoList::has_retry_time() const {
+  return _internal_has_retry_time();
+}
+inline void CMsgDOTAPlayerInfoList::clear_retry_time() {
+  _impl_.retry_time_ = 0u;
+  _impl_._has_bits_[0] &= ~0x00000001u;
+}
+inline uint32_t CMsgDOTAPlayerInfoList::_internal_retry_time() const {
+  return _impl_.retry_time_;
+}
+inline uint32_t CMsgDOTAPlayerInfoList::retry_time() const {
+  // @@protoc_insertion_point(field_get:CMsgDOTAPlayerInfoList.retry_time)
+  return _internal_retry_time();
+}
+inline void CMsgDOTAPlayerInfoList::_internal_set_retry_time(uint32_t value) {
+  _impl_._has_bits_[0] |= 0x00000001u;
+  _impl_.retry_time_ = value;
+}
+inline void CMsgDOTAPlayerInfoList::set_retry_time(uint32_t value) {
+  _internal_set_retry_time(value);
+  // @@protoc_insertion_point(field_set:CMsgDOTAPlayerInfoList.retry_time)
 }
 
 // -------------------------------------------------------------------

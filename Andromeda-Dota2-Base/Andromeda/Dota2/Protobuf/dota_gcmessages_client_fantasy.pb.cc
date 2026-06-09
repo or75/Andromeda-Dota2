@@ -101,8 +101,10 @@ struct CMsgDOTAPlayerInfoDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 CMsgDOTAPlayerInfoDefaultTypeInternal _CMsgDOTAPlayerInfo_default_instance_;
 PROTOBUF_CONSTEXPR CMsgDOTAPlayerInfoList::CMsgDOTAPlayerInfoList(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.player_infos_)*/{}
-  , /*decltype(_impl_._cached_size_)*/{}} {}
+    /*decltype(_impl_._has_bits_)*/{}
+  , /*decltype(_impl_._cached_size_)*/{}
+  , /*decltype(_impl_.player_infos_)*/{}
+  , /*decltype(_impl_.retry_time_)*/0u} {}
 struct CMsgDOTAPlayerInfoListDefaultTypeInternal {
   PROTOBUF_CONSTEXPR CMsgDOTAPlayerInfoListDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
@@ -1041,13 +1043,16 @@ const uint32_t TableStruct_dota_5fgcmessages_5fclient_5ffantasy_2eproto::offsets
   7,
   ~0u,
   12,
-  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::CMsgDOTAPlayerInfoList, _impl_._has_bits_),
   PROTOBUF_FIELD_OFFSET(::CMsgDOTAPlayerInfoList, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::CMsgDOTAPlayerInfoList, _impl_.player_infos_),
+  PROTOBUF_FIELD_OFFSET(::CMsgDOTAPlayerInfoList, _impl_.retry_time_),
+  ~0u,
+  0,
   PROTOBUF_FIELD_OFFSET(::CMsgDOTATeamRoster, _impl_._has_bits_),
   PROTOBUF_FIELD_OFFSET(::CMsgDOTATeamRoster, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -1669,61 +1674,61 @@ static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protode
   { 12, 24, -1, sizeof(::CMsgDOTAPlayerInfo_AuditEntry)},
   { 30, 38, -1, sizeof(::CMsgDOTAPlayerInfo_ProRegistration)},
   { 40, 62, -1, sizeof(::CMsgDOTAPlayerInfo)},
-  { 78, -1, -1, sizeof(::CMsgDOTAPlayerInfoList)},
-  { 85, 95, -1, sizeof(::CMsgDOTATeamRoster)},
-  { 99, 107, -1, sizeof(::CMsgDOTADPCProfileInfo_PredictionInfo)},
-  { 109, 119, -1, sizeof(::CMsgDOTADPCProfileInfo_FantasyInfo)},
-  { 123, 133, -1, sizeof(::CMsgDOTADPCProfileInfo)},
-  { 137, 145, -1, sizeof(::CMsgDOTALeaderboards_RegionLeaderboard)},
-  { 147, -1, -1, sizeof(::CMsgDOTALeaderboards)},
-  { 154, 163, -1, sizeof(::CMsgDOTAPassportVoteTeamGuess)},
-  { 166, 174, -1, sizeof(::CMsgDOTAPassportVoteGenericSelection)},
-  { 176, 184, -1, sizeof(::CMsgDOTAPassportStampedPlayer)},
-  { 186, 193, -1, sizeof(::CMsgDOTAPassportPlayerCardChallenge)},
-  { 194, -1, -1, sizeof(::CMsgDOTAPassportVote)},
-  { 204, 212, -1, sizeof(::CMsgClientToGCGetPlayerCardRosterRequest)},
-  { 214, 225, -1, sizeof(::CMsgClientToGCGetPlayerCardRosterResponse)},
-  { 230, 238, -1, sizeof(::CMsgClientToGCBatchGetPlayerCardRosterRequest_LeagueTimestamp)},
-  { 240, -1, -1, sizeof(::CMsgClientToGCBatchGetPlayerCardRosterRequest)},
-  { 247, 261, -1, sizeof(::CMsgClientToGCBatchGetPlayerCardRosterResponse_RosterResponse)},
-  { 269, -1, -1, sizeof(::CMsgClientToGCBatchGetPlayerCardRosterResponse)},
-  { 276, 288, -1, sizeof(::CMsgClientToGCSetPlayerCardRosterRequest)},
-  { 294, 301, -1, sizeof(::CMsgClientToGCSetPlayerCardRosterResponse)},
-  { 302, 314, -1, sizeof(::CMsgDOTAFantasyDPCLeagueStatus_LeagueInfo)},
-  { 320, -1, -1, sizeof(::CMsgDOTAFantasyDPCLeagueStatus)},
-  { 327, 336, -1, sizeof(::CMsgDOTADPCSearchResults_Player)},
-  { 339, 348, -1, sizeof(::CMsgDOTADPCSearchResults_Team)},
-  { 351, 359, -1, sizeof(::CMsgDOTADPCSearchResults_League)},
-  { 361, -1, -1, sizeof(::CMsgDOTADPCSearchResults)},
-  { 370, 378, -1, sizeof(::CMsgDOTADPCTeamFavoriteRankings_Team)},
-  { 380, -1, -1, sizeof(::CMsgDOTADPCTeamFavoriteRankings)},
-  { 387, 398, -1, sizeof(::CMsgDotaFantasyCraftingTabletPeriodData_Gem)},
-  { 403, 418, -1, sizeof(::CMsgDotaFantasyCraftingTabletPeriodData_Tablet)},
-  { 427, 435, -1, sizeof(::CMsgDotaFantasyCraftingTabletPeriodData)},
-  { 437, 445, -1, sizeof(::CMsgDotaFantasyCraftingTabletData_TabletPeriodDataEntry)},
-  { 447, -1, -1, sizeof(::CMsgDotaFantasyCraftingTabletData)},
-  { 454, 462, -1, sizeof(::CMsgDotaFantasyCraftingUserData_PeriodScore)},
-  { 464, 472, -1, sizeof(::CMsgDotaFantasyCraftingUserData_PeriodRollTokensEntry)},
-  { 474, 482, -1, sizeof(::CMsgDotaFantasyCraftingUserData_PeriodScoresEntry)},
-  { 484, -1, -1, sizeof(::CMsgDotaFantasyCraftingUserData)},
-  { 493, 502, -1, sizeof(::CMsgDotaFantasyCraftingDataCache_CacheEntry)},
-  { 505, -1, -1, sizeof(::CMsgDotaFantasyCraftingDataCache)},
-  { 512, 520, -1, sizeof(::CMsgClientToGCFantasyCraftingGetData)},
-  { 522, 531, -1, sizeof(::CMsgClientToGCFantasyCraftingGetDataResponse)},
-  { 534, 544, -1, sizeof(::CMsgClientToGCFantasyCraftingPerformOperation)},
-  { 548, 556, -1, sizeof(::CMsgClientToGCFantasyCraftingPerformOperationResponse_TitleChoice)},
-  { 558, 573, -1, sizeof(::CMsgClientToGCFantasyCraftingPerformOperationResponse)},
-  { 582, 591, -1, sizeof(::CMsgGCToClientFantasyCraftingDataUpdated)},
-  { 594, 605, -1, sizeof(::CMsgClientToGCFantasyCraftingDevModifyTablet)},
-  { 610, 619, -1, sizeof(::CMsgClientToGCFantasyCraftingDevModifyTabletResponse)},
-  { 622, 630, -1, sizeof(::CMsgClientToGCFantasyCraftingSelectPlayer)},
-  { 632, 640, -1, sizeof(::CMsgClientToGCFantasyCraftingSelectPlayerResponse)},
-  { 642, 650, -1, sizeof(::CMsgClientToGCFantasyCraftingGenerateTablets)},
-  { 652, 661, -1, sizeof(::CMsgClientToGCFantasyCraftingGenerateTabletsResponse)},
-  { 664, 671, -1, sizeof(::CMsgClientToGcFantasyCraftingUpgradeTablets)},
-  { 672, 680, -1, sizeof(::CMsgClientToGcFantasyCraftingUpgradeTabletsResponse)},
-  { 682, 689, -1, sizeof(::CMsgClientToGCFantasyCraftingRerollOptions)},
-  { 690, 698, -1, sizeof(::CMsgClientToGCFantasyCraftingRerollOptionsResponse)},
+  { 78, 86, -1, sizeof(::CMsgDOTAPlayerInfoList)},
+  { 88, 98, -1, sizeof(::CMsgDOTATeamRoster)},
+  { 102, 110, -1, sizeof(::CMsgDOTADPCProfileInfo_PredictionInfo)},
+  { 112, 122, -1, sizeof(::CMsgDOTADPCProfileInfo_FantasyInfo)},
+  { 126, 136, -1, sizeof(::CMsgDOTADPCProfileInfo)},
+  { 140, 148, -1, sizeof(::CMsgDOTALeaderboards_RegionLeaderboard)},
+  { 150, -1, -1, sizeof(::CMsgDOTALeaderboards)},
+  { 157, 166, -1, sizeof(::CMsgDOTAPassportVoteTeamGuess)},
+  { 169, 177, -1, sizeof(::CMsgDOTAPassportVoteGenericSelection)},
+  { 179, 187, -1, sizeof(::CMsgDOTAPassportStampedPlayer)},
+  { 189, 196, -1, sizeof(::CMsgDOTAPassportPlayerCardChallenge)},
+  { 197, -1, -1, sizeof(::CMsgDOTAPassportVote)},
+  { 207, 215, -1, sizeof(::CMsgClientToGCGetPlayerCardRosterRequest)},
+  { 217, 228, -1, sizeof(::CMsgClientToGCGetPlayerCardRosterResponse)},
+  { 233, 241, -1, sizeof(::CMsgClientToGCBatchGetPlayerCardRosterRequest_LeagueTimestamp)},
+  { 243, -1, -1, sizeof(::CMsgClientToGCBatchGetPlayerCardRosterRequest)},
+  { 250, 264, -1, sizeof(::CMsgClientToGCBatchGetPlayerCardRosterResponse_RosterResponse)},
+  { 272, -1, -1, sizeof(::CMsgClientToGCBatchGetPlayerCardRosterResponse)},
+  { 279, 291, -1, sizeof(::CMsgClientToGCSetPlayerCardRosterRequest)},
+  { 297, 304, -1, sizeof(::CMsgClientToGCSetPlayerCardRosterResponse)},
+  { 305, 317, -1, sizeof(::CMsgDOTAFantasyDPCLeagueStatus_LeagueInfo)},
+  { 323, -1, -1, sizeof(::CMsgDOTAFantasyDPCLeagueStatus)},
+  { 330, 339, -1, sizeof(::CMsgDOTADPCSearchResults_Player)},
+  { 342, 351, -1, sizeof(::CMsgDOTADPCSearchResults_Team)},
+  { 354, 362, -1, sizeof(::CMsgDOTADPCSearchResults_League)},
+  { 364, -1, -1, sizeof(::CMsgDOTADPCSearchResults)},
+  { 373, 381, -1, sizeof(::CMsgDOTADPCTeamFavoriteRankings_Team)},
+  { 383, -1, -1, sizeof(::CMsgDOTADPCTeamFavoriteRankings)},
+  { 390, 401, -1, sizeof(::CMsgDotaFantasyCraftingTabletPeriodData_Gem)},
+  { 406, 421, -1, sizeof(::CMsgDotaFantasyCraftingTabletPeriodData_Tablet)},
+  { 430, 438, -1, sizeof(::CMsgDotaFantasyCraftingTabletPeriodData)},
+  { 440, 448, -1, sizeof(::CMsgDotaFantasyCraftingTabletData_TabletPeriodDataEntry)},
+  { 450, -1, -1, sizeof(::CMsgDotaFantasyCraftingTabletData)},
+  { 457, 465, -1, sizeof(::CMsgDotaFantasyCraftingUserData_PeriodScore)},
+  { 467, 475, -1, sizeof(::CMsgDotaFantasyCraftingUserData_PeriodRollTokensEntry)},
+  { 477, 485, -1, sizeof(::CMsgDotaFantasyCraftingUserData_PeriodScoresEntry)},
+  { 487, -1, -1, sizeof(::CMsgDotaFantasyCraftingUserData)},
+  { 496, 505, -1, sizeof(::CMsgDotaFantasyCraftingDataCache_CacheEntry)},
+  { 508, -1, -1, sizeof(::CMsgDotaFantasyCraftingDataCache)},
+  { 515, 523, -1, sizeof(::CMsgClientToGCFantasyCraftingGetData)},
+  { 525, 534, -1, sizeof(::CMsgClientToGCFantasyCraftingGetDataResponse)},
+  { 537, 547, -1, sizeof(::CMsgClientToGCFantasyCraftingPerformOperation)},
+  { 551, 559, -1, sizeof(::CMsgClientToGCFantasyCraftingPerformOperationResponse_TitleChoice)},
+  { 561, 576, -1, sizeof(::CMsgClientToGCFantasyCraftingPerformOperationResponse)},
+  { 585, 594, -1, sizeof(::CMsgGCToClientFantasyCraftingDataUpdated)},
+  { 597, 608, -1, sizeof(::CMsgClientToGCFantasyCraftingDevModifyTablet)},
+  { 613, 622, -1, sizeof(::CMsgClientToGCFantasyCraftingDevModifyTabletResponse)},
+  { 625, 633, -1, sizeof(::CMsgClientToGCFantasyCraftingSelectPlayer)},
+  { 635, 643, -1, sizeof(::CMsgClientToGCFantasyCraftingSelectPlayerResponse)},
+  { 645, 653, -1, sizeof(::CMsgClientToGCFantasyCraftingGenerateTablets)},
+  { 655, 664, -1, sizeof(::CMsgClientToGCFantasyCraftingGenerateTabletsResponse)},
+  { 667, 674, -1, sizeof(::CMsgClientToGcFantasyCraftingUpgradeTablets)},
+  { 675, 683, -1, sizeof(::CMsgClientToGcFantasyCraftingUpgradeTabletsResponse)},
+  { 685, 692, -1, sizeof(::CMsgClientToGCFantasyCraftingRerollOptions)},
+  { 693, 701, -1, sizeof(::CMsgClientToGCFantasyCraftingRerollOptionsResponse)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -1810,316 +1815,316 @@ const char descriptor_table_protodef_dota_5fgcmessages_5fclient_5ffantasy_2eprot
   "team_name\030\004 \001(\t\022\020\n\010team_tag\030\005 \001(\t\022\025\n\rtea"
   "m_url_logo\030\006 \001(\t\032A\n\017ProRegistration\022\033\n\023r"
   "egistration_period\030\001 \001(\r\022\021\n\ttimestamp\030\002 "
-  "\001(\r\"C\n\026CMsgDOTAPlayerInfoList\022)\n\014player_"
-  "infos\030\001 \003(\0132\023.CMsgDOTAPlayerInfo\"n\n\022CMsg"
-  "DOTATeamRoster\022\021\n\ttimestamp\030\001 \001(\r\022\017\n\007tea"
-  "m_id\030\002 \001(\r\022\032\n\022member_account_ids\030\003 \003(\r\022\030"
-  "\n\020coach_account_id\030\004 \001(\r\"\213\003\n\026CMsgDOTADPC"
-  "ProfileInfo\022(\n\013player_info\030\001 \001(\0132\023.CMsgD"
-  "OTAPlayerInfo\022\?\n\017prediction_info\030\002 \001(\0132&"
-  ".CMsgDOTADPCProfileInfo.PredictionInfo\0229"
-  "\n\014fantasy_info\030\003 \001(\0132#.CMsgDOTADPCProfil"
-  "eInfo.FantasyInfo\022\036\n\026disabled_notificati"
-  "ons\030\004 \003(\r\0329\n\016PredictionInfo\022\017\n\007percent\030\001"
-  " \001(\r\022\026\n\016shard_winnings\030\002 \001(\005\032p\n\013FantasyI"
-  "nfo\022\027\n\017top_90_finishes\030\001 \001(\r\022\027\n\017top_75_f"
-  "inishes\030\002 \001(\r\022\027\n\017top_50_finishes\030\003 \001(\r\022\026"
-  "\n\016shard_winnings\030\004 \001(\r\"\221\001\n\024CMsgDOTALeade"
-  "rboards\022=\n\014leaderboards\030\002 \003(\0132\'.CMsgDOTA"
-  "Leaderboards.RegionLeaderboard\032:\n\021Region"
-  "Leaderboard\022\020\n\010division\030\001 \001(\r\022\023\n\013account"
-  "_ids\030\002 \003(\r\"Z\n\035CMsgDOTAPassportVoteTeamGu"
-  "ess\022\021\n\tleague_id\030\001 \001(\r\022\021\n\twinner_id\030\002 \001("
-  "\r\022\023\n\013runnerup_id\030\003 \001(\r\"\221\001\n$CMsgDOTAPassp"
-  "ortVoteGenericSelection\022V\n\017selection_ind"
-  "ex\030\001 \001(\0162\".DOTA_2013PassportSelectionInd"
-  "ices:\031PP13_SEL_ALLSTAR_PLAYER_0\022\021\n\tselec"
-  "tion\030\002 \001(\r\"F\n\035CMsgDOTAPassportStampedPla"
-  "yer\022\020\n\010steam_id\030\001 \001(\004\022\023\n\013stamp_level\030\002 \001"
-  "(\r\";\n#CMsgDOTAPassportPlayerCardChalleng"
-  "e\022\024\n\014challenge_id\030\001 \001(\r\"\214\002\n\024CMsgDOTAPass"
-  "portVote\0222\n\nteam_votes\030\001 \003(\0132\036.CMsgDOTAP"
-  "assportVoteTeamGuess\022A\n\022generic_selectio"
-  "ns\030\002 \003(\0132%.CMsgDOTAPassportVoteGenericSe"
-  "lection\0227\n\017stamped_players\030\003 \003(\0132\036.CMsgD"
-  "OTAPassportStampedPlayer\022D\n\026player_card_"
-  "challenges\030\004 \003(\0132$.CMsgDOTAPassportPlaye"
-  "rCardChallenge\"a\n(CMsgClientToGCGetPlaye"
-  "rCardRosterRequest\022\021\n\tleague_id\030\001 \001(\r\022\"\n"
-  "\016fantasy_period\030\003 \001(\r:\n4294967295\"\262\002\n)CM"
-  "sgClientToGCGetPlayerCardRosterResponse\022"
-  "J\n\006result\030\001 \001(\01621.CMsgClientToGCGetPlaye"
-  "rCardRosterResponse.Result:\007SUCCESS\022\033\n\023p"
-  "layer_card_item_id\030\002 \003(\004\022\r\n\005score\030\003 \001(\002\022"
-  "\021\n\tfinalized\030\004 \001(\010\022\022\n\npercentile\030\005 \001(\002\"f"
-  "\n\006Result\022\013\n\007SUCCESS\020\000\022\025\n\021ERROR_UNSPECIFI"
-  "ED\020\001\022\033\n\027ERROR_INVALID_LEAGUE_ID\020\002\022\033\n\027ERR"
-  "OR_INVALID_TIMESTAMP\020\003\"\324\001\n-CMsgClientToG"
-  "CBatchGetPlayerCardRosterRequest\022Y\n\021leag"
-  "ue_timestamps\030\001 \003(\0132>.CMsgClientToGCBatc"
-  "hGetPlayerCardRosterRequest.LeagueTimest"
-  "amp\032H\n\017LeagueTimestamp\022\021\n\tleague_id\030\001 \001("
-  "\r\022\"\n\016fantasy_period\030\003 \001(\r:\n4294967295\"\367\003"
-  "\n.CMsgClientToGCBatchGetPlayerCardRoster"
-  "Response\022Q\n\tresponses\030\001 \003(\0132>.CMsgClient"
-  "ToGCBatchGetPlayerCardRosterResponse.Ros"
-  "terResponse\032\211\002\n\016RosterResponse\022\021\n\tleague"
-  "_id\030\001 \001(\r\022\034\n\024deprecated_timestamp\030\002 \001(\r\022"
-  "O\n\006result\030\003 \001(\01626.CMsgClientToGCBatchGet"
-  "PlayerCardRosterResponse.Result:\007SUCCESS"
-  "\022\033\n\023player_card_item_id\030\004 \003(\004\022\r\n\005score\030\005"
-  " \001(\002\022\021\n\tfinalized\030\006 \001(\010\022\022\n\npercentile\030\007 "
-  "\001(\002\022\"\n\016fantasy_period\030\010 \001(\r:\n4294967295\""
-  "f\n\006Result\022\013\n\007SUCCESS\020\000\022\025\n\021ERROR_UNSPECIF"
-  "IED\020\001\022\033\n\027ERROR_INVALID_LEAGUE_ID\020\002\022\033\n\027ER"
-  "ROR_INVALID_TIMESTAMP\020\003\"\274\001\n(CMsgClientTo"
-  "GCSetPlayerCardRosterRequest\022\021\n\tleague_i"
-  "d\030\001 \001(\r\022\034\n\024deprecated_timestamp\030\002 \001(\r\022\014\n"
-  "\004slot\030\003 \001(\r\022\033\n\023player_card_item_id\030\004 \001(\004"
-  "\022\020\n\010event_id\030\005 \001(\r\022\"\n\016fantasy_period\030\006 \001"
-  "(\r:\n4294967295\"\254\003\n)CMsgClientToGCSetPlay"
-  "erCardRosterResponse\022J\n\006result\030\001 \001(\01621.C"
+  "\001(\r\"W\n\026CMsgDOTAPlayerInfoList\022)\n\014player_"
+  "infos\030\001 \003(\0132\023.CMsgDOTAPlayerInfo\022\022\n\nretr"
+  "y_time\030\002 \001(\r\"n\n\022CMsgDOTATeamRoster\022\021\n\tti"
+  "mestamp\030\001 \001(\r\022\017\n\007team_id\030\002 \001(\r\022\032\n\022member"
+  "_account_ids\030\003 \003(\r\022\030\n\020coach_account_id\030\004"
+  " \001(\r\"\213\003\n\026CMsgDOTADPCProfileInfo\022(\n\013playe"
+  "r_info\030\001 \001(\0132\023.CMsgDOTAPlayerInfo\022\?\n\017pre"
+  "diction_info\030\002 \001(\0132&.CMsgDOTADPCProfileI"
+  "nfo.PredictionInfo\0229\n\014fantasy_info\030\003 \001(\013"
+  "2#.CMsgDOTADPCProfileInfo.FantasyInfo\022\036\n"
+  "\026disabled_notifications\030\004 \003(\r\0329\n\016Predict"
+  "ionInfo\022\017\n\007percent\030\001 \001(\r\022\026\n\016shard_winnin"
+  "gs\030\002 \001(\005\032p\n\013FantasyInfo\022\027\n\017top_90_finish"
+  "es\030\001 \001(\r\022\027\n\017top_75_finishes\030\002 \001(\r\022\027\n\017top"
+  "_50_finishes\030\003 \001(\r\022\026\n\016shard_winnings\030\004 \001"
+  "(\r\"\221\001\n\024CMsgDOTALeaderboards\022=\n\014leaderboa"
+  "rds\030\002 \003(\0132\'.CMsgDOTALeaderboards.RegionL"
+  "eaderboard\032:\n\021RegionLeaderboard\022\020\n\010divis"
+  "ion\030\001 \001(\r\022\023\n\013account_ids\030\002 \003(\r\"Z\n\035CMsgDO"
+  "TAPassportVoteTeamGuess\022\021\n\tleague_id\030\001 \001"
+  "(\r\022\021\n\twinner_id\030\002 \001(\r\022\023\n\013runnerup_id\030\003 \001"
+  "(\r\"\221\001\n$CMsgDOTAPassportVoteGenericSelect"
+  "ion\022V\n\017selection_index\030\001 \001(\0162\".DOTA_2013"
+  "PassportSelectionIndices:\031PP13_SEL_ALLST"
+  "AR_PLAYER_0\022\021\n\tselection\030\002 \001(\r\"F\n\035CMsgDO"
+  "TAPassportStampedPlayer\022\020\n\010steam_id\030\001 \001("
+  "\004\022\023\n\013stamp_level\030\002 \001(\r\";\n#CMsgDOTAPasspo"
+  "rtPlayerCardChallenge\022\024\n\014challenge_id\030\001 "
+  "\001(\r\"\214\002\n\024CMsgDOTAPassportVote\0222\n\nteam_vot"
+  "es\030\001 \003(\0132\036.CMsgDOTAPassportVoteTeamGuess"
+  "\022A\n\022generic_selections\030\002 \003(\0132%.CMsgDOTAP"
+  "assportVoteGenericSelection\0227\n\017stamped_p"
+  "layers\030\003 \003(\0132\036.CMsgDOTAPassportStampedPl"
+  "ayer\022D\n\026player_card_challenges\030\004 \003(\0132$.C"
+  "MsgDOTAPassportPlayerCardChallenge\"a\n(CM"
+  "sgClientToGCGetPlayerCardRosterRequest\022\021"
+  "\n\tleague_id\030\001 \001(\r\022\"\n\016fantasy_period\030\003 \001("
+  "\r:\n4294967295\"\262\002\n)CMsgClientToGCGetPlaye"
+  "rCardRosterResponse\022J\n\006result\030\001 \001(\01621.CM"
+  "sgClientToGCGetPlayerCardRosterResponse."
+  "Result:\007SUCCESS\022\033\n\023player_card_item_id\030\002"
+  " \003(\004\022\r\n\005score\030\003 \001(\002\022\021\n\tfinalized\030\004 \001(\010\022\022"
+  "\n\npercentile\030\005 \001(\002\"f\n\006Result\022\013\n\007SUCCESS\020"
+  "\000\022\025\n\021ERROR_UNSPECIFIED\020\001\022\033\n\027ERROR_INVALI"
+  "D_LEAGUE_ID\020\002\022\033\n\027ERROR_INVALID_TIMESTAMP"
+  "\020\003\"\324\001\n-CMsgClientToGCBatchGetPlayerCardR"
+  "osterRequest\022Y\n\021league_timestamps\030\001 \003(\0132"
+  ">.CMsgClientToGCBatchGetPlayerCardRoster"
+  "Request.LeagueTimestamp\032H\n\017LeagueTimesta"
+  "mp\022\021\n\tleague_id\030\001 \001(\r\022\"\n\016fantasy_period\030"
+  "\003 \001(\r:\n4294967295\"\367\003\n.CMsgClientToGCBatc"
+  "hGetPlayerCardRosterResponse\022Q\n\tresponse"
+  "s\030\001 \003(\0132>.CMsgClientToGCBatchGetPlayerCa"
+  "rdRosterResponse.RosterResponse\032\211\002\n\016Rost"
+  "erResponse\022\021\n\tleague_id\030\001 \001(\r\022\034\n\024depreca"
+  "ted_timestamp\030\002 \001(\r\022O\n\006result\030\003 \001(\01626.CM"
+  "sgClientToGCBatchGetPlayerCardRosterResp"
+  "onse.Result:\007SUCCESS\022\033\n\023player_card_item"
+  "_id\030\004 \003(\004\022\r\n\005score\030\005 \001(\002\022\021\n\tfinalized\030\006 "
+  "\001(\010\022\022\n\npercentile\030\007 \001(\002\022\"\n\016fantasy_perio"
+  "d\030\010 \001(\r:\n4294967295\"f\n\006Result\022\013\n\007SUCCESS"
+  "\020\000\022\025\n\021ERROR_UNSPECIFIED\020\001\022\033\n\027ERROR_INVAL"
+  "ID_LEAGUE_ID\020\002\022\033\n\027ERROR_INVALID_TIMESTAM"
+  "P\020\003\"\274\001\n(CMsgClientToGCSetPlayerCardRoste"
+  "rRequest\022\021\n\tleague_id\030\001 \001(\r\022\034\n\024deprecate"
+  "d_timestamp\030\002 \001(\r\022\014\n\004slot\030\003 \001(\r\022\033\n\023playe"
+  "r_card_item_id\030\004 \001(\004\022\020\n\010event_id\030\005 \001(\r\022\""
+  "\n\016fantasy_period\030\006 \001(\r:\n4294967295\"\254\003\n)C"
   "MsgClientToGCSetPlayerCardRosterResponse"
-  ".Result:\007SUCCESS\"\262\002\n\006Result\022\013\n\007SUCCESS\020\000"
-  "\022\025\n\021ERROR_UNSPECIFIED\020\001\022\033\n\027ERROR_INVALID"
-  "_LEAGUE_ID\020\002\022\033\n\027ERROR_INVALID_TIMESTAMP\020"
-  "\003\022\037\n\033ERROR_PLAYER_CARD_NOT_OWNED\020\004\022\026\n\022ER"
-  "ROR_INVALID_SLOT\020\005\022\032\n\026ERROR_FAILED_CARD_"
-  "INFO\020\006\022\033\n\027ERROR_ACCOUNT_DUPLICATE\020\007\022\032\n\026E"
-  "RROR_LOCKED_TIMESTAMP\020\010\022#\n\037ERROR_INVALID"
-  "_LEAGUE_FOR_PERIOD\020\t\022\027\n\023ERROR_INVALID_EV"
-  "ENT\020\n\"\351\002\n\036CMsgDOTAFantasyDPCLeagueStatus"
-  "\022@\n\014league_infos\030\001 \003(\0132*.CMsgDOTAFantasy"
-  "DPCLeagueStatus.LeagueInfo\032\302\001\n\nLeagueInf"
-  "o\022\021\n\tleague_id\030\001 \001(\r\022\023\n\013league_name\030\002 \001("
-  "\t\022\027\n\017start_timestamp\030\003 \001(\r\022\025\n\rend_timest"
-  "amp\030\004 \001(\r\022\026\n\016day_timestamps\030\005 \003(\r\022D\n\006sta"
-  "tus\030\010 \001(\0162-.CMsgDOTAFantasyDPCLeagueStat"
-  "us.ERosterStatus:\005UNSET\"@\n\rERosterStatus"
-  "\022\t\n\005UNSET\020\000\022\013\n\007PARTIAL\020\001\022\010\n\004FULL\020\002\022\r\n\tCO"
-  "NCLUDED\020\003\"\341\003\n\030CMsgDOTADPCSearchResults\0221"
-  "\n\007players\030\001 \003(\0132 .CMsgDOTADPCSearchResul"
-  "ts.Player\022-\n\005teams\030\002 \003(\0132\036.CMsgDOTADPCSe"
-  "archResults.Team\0221\n\007leagues\030\003 \003(\0132 .CMsg"
-  "DOTADPCSearchResults.League\0325\n\006Player\022\n\n"
-  "\002id\030\001 \001(\r\022\014\n\004name\030\002 \001(\t\022\021\n\treal_name\030\003 \001"
-  "(\t\032-\n\004Team\022\n\n\002id\030\001 \001(\r\022\014\n\004name\030\002 \001(\t\022\013\n\003"
-  "url\030\003 \001(\t\032\"\n\006League\022\n\n\002id\030\001 \001(\r\022\014\n\004name\030"
-  "\002 \001(\t\"\245\001\n\025ESearchResultsDesired\022#\n\037k_ESe"
-  "archResultsDesired_Players\020\001\022!\n\035k_ESearc"
-  "hResultsDesired_Teams\020\002\022#\n\037k_ESearchResu"
-  "ltsDesired_Leagues\020\004\022\037\n\033k_ESearchResults"
-  "Desired_All\020\007\"\203\001\n\037CMsgDOTADPCTeamFavorit"
-  "eRankings\0224\n\005teams\030\001 \003(\0132%.CMsgDOTADPCTe"
-  "amFavoriteRankings.Team\032*\n\004Team\022\017\n\007team_"
-  "id\030\001 \001(\r\022\021\n\tfavorites\030\002 \001(\r\"\272\004\n\'CMsgDota"
-  "FantasyCraftingTabletPeriodData\022\"\n\016fanta"
-  "sy_period\030\001 \001(\r:\n4294967295\022@\n\007tablets\030\002"
-  " \003(\0132/.CMsgDotaFantasyCraftingTabletPeri"
-  "odData.Tablet\032\242\001\n\003Gem\0226\n\004type\030\001 \001(\0162\021.Fa"
-  "ntasy_Gem_Type:\025FANTASY_GEM_TYPE_RUBY\022\014\n"
-  "\004slot\030\002 \001(\r\022\r\n\005shape\030\003 \001(\r\022\017\n\007quality\030\004 "
-  "\001(\r\0225\n\004stat\030\005 \001(\0162\020.Fantasy_Scoring:\025FAN"
-  "TASY_SCORING_KILLS\032\203\002\n\006Tablet\022\021\n\ttablet_"
-  "id\030\001 \001(\r\022\024\n\014tablet_level\030\002 \001(\r\022<\n\014fantas"
-  "y_role\030\003 \001(\0162\016.Fantasy_Roles:\026FANTASY_RO"
-  "LE_UNDEFINED\022\022\n\naccount_id\030\004 \001(\r\022\016\n\006pref"
-  "ix\030\005 \001(\r\022\016\n\006suffix\030\006 \001(\r\022:\n\004gems\030\007 \003(\0132,"
-  ".CMsgDotaFantasyCraftingTabletPeriodData"
-  ".Gem\022\r\n\005score\030\010 \001(\002\022\023\n\013best_series\030\t \001(\r"
-  "\"\330\001\n!CMsgDotaFantasyCraftingTabletData\022T"
-  "\n\022tablet_period_data\030\001 \003(\01328.CMsgDotaFan"
-  "tasyCraftingTabletData.TabletPeriodDataE"
-  "ntry\032]\n\025TabletPeriodDataEntry\022\013\n\003key\030\001 \001"
-  "(\r\0227\n\005value\030\002 \001(\0132(.CMsgDotaFantasyCraft"
-  "ingTabletPeriodData\"\245\003\n\037CMsgDotaFantasyC"
-  "raftingUserData\022\027\n\017available_rolls\030\001 \003(\r"
-  "\022R\n\022period_roll_tokens\030\002 \003(\01326.CMsgDotaF"
-  "antasyCraftingUserData.PeriodRollTokensE"
-  "ntry\022I\n\rperiod_scores\030\003 \003(\01322.CMsgDotaFa"
-  "ntasyCraftingUserData.PeriodScoresEntry\032"
-  "6\n\013PeriodScore\022\023\n\013total_score\030\001 \001(\002\022\022\n\np"
-  "ercentile\030\002 \001(\002\0323\n\025PeriodRollTokensEntry"
-  "\022\013\n\003key\030\001 \001(\r\022\r\n\005value\030\002 \001(\r\032]\n\021PeriodSc"
-  "oresEntry\022\013\n\003key\030\001 \001(\r\022;\n\005value\030\002 \001(\0132,."
-  "CMsgDotaFantasyCraftingUserData.PeriodSc"
-  "ore\"\340\001\n CMsgDotaFantasyCraftingDataCache"
-  "\022C\n\rcache_entries\030\001 \003(\0132,.CMsgDotaFantas"
-  "yCraftingDataCache.CacheEntry\032w\n\nCacheEn"
-  "try\022\022\n\naccount_id\030\001 \001(\r\022\026\n\016fantasy_leagu"
-  "e\030\002 \001(\r\022=\n\ncache_data\030\003 \001(\0132).CMsgGCToCl"
-  "ientFantasyCraftingDataUpdated\"R\n$CMsgCl"
-  "ientToGCFantasyCraftingGetData\022\026\n\016fantas"
-  "y_league\030\001 \001(\r\022\022\n\naccount_id\030\002 \001(\r\"\363\002\n,C"
-  "MsgClientToGCFantasyCraftingGetDataRespo"
-  "nse\022[\n\010response\030\001 \001(\01627.CMsgClientToGCFa"
-  "ntasyCraftingGetDataResponse.EResponse:\020"
-  "k_eInternalError\0223\n\tuser_data\030\002 \001(\0132 .CM"
-  "sgDotaFantasyCraftingUserData\0227\n\013tablet_"
-  "data\030\004 \001(\0132\".CMsgDotaFantasyCraftingTabl"
-  "etData\"x\n\tEResponse\022\024\n\020k_eInternalError\020"
-  "\000\022\016\n\nk_eSuccess\020\001\022\016\n\nk_eTooBusy\020\002\022\017\n\013k_e"
-  "Disabled\020\003\022\016\n\nk_eTimeout\020\004\022\024\n\020k_eInvalid"
-  "League\020\005\"\204\001\n-CMsgClientToGCFantasyCrafti"
-  "ngPerformOperation\022\026\n\016fantasy_league\030\001 \001"
-  "(\r\022\021\n\ttablet_id\030\002 \001(\r\022\024\n\014operation_id\030\003 "
-  "\001(\r\022\022\n\nextra_data\030\004 \001(\004\"\261\005\n5CMsgClientTo"
-  "GCFantasyCraftingPerformOperationRespons"
-  "e\022d\n\010response\030\001 \001(\0162@.CMsgClientToGCFant"
-  "asyCraftingPerformOperationResponse.ERes"
-  "ponse:\020k_eInternalError\022\024\n\014operation_id\030"
-  "\002 \001(\r\022\021\n\ttablet_id\030\007 \001(\r\0223\n\tuser_data\030\010 "
-  "\001(\0132 .CMsgDotaFantasyCraftingUserData\0227\n"
-  "\013tablet_data\030\t \001(\0132\".CMsgDotaFantasyCraf"
-  "tingTabletData\022\026\n\016player_choices\030\003 \003(\r\022\026"
-  "\n\016prefix_choices\030\004 \003(\r\022\026\n\016suffix_choices"
-  "\030\005 \003(\r\022Y\n\rtitle_choices\030\006 \003(\0132B.CMsgClie"
-  "ntToGCFantasyCraftingPerformOperationRes"
-  "ponse.TitleChoice\032;\n\013TitleChoice\022\025\n\rpref"
-  "ix_choice\030\001 \001(\r\022\025\n\rsuffix_choice\030\002 \001(\r\"\232"
-  "\001\n\tEResponse\022\024\n\020k_eInternalError\020\000\022\016\n\nk_"
-  "eSuccess\020\001\022\016\n\nk_eTooBusy\020\002\022\017\n\013k_eDisable"
-  "d\020\003\022\016\n\nk_eTimeout\020\004\022\024\n\020k_eInvalidLeague\020"
-  "\005\022\017\n\013k_eNoTokens\020\006\022\017\n\013k_eMoreInfo\020\007\"\260\001\n("
-  "CMsgGCToClientFantasyCraftingDataUpdated"
-  "\022\026\n\016fantasy_league\030\001 \001(\r\0223\n\tuser_data\030\002 "
-  "\001(\0132 .CMsgDotaFantasyCraftingUserData\0227\n"
-  "\013tablet_data\030\004 \001(\0132\".CMsgDotaFantasyCraf"
-  "tingTabletData\"\260\001\n,CMsgClientToGCFantasy"
-  "CraftingDevModifyTablet\022\026\n\016fantasy_leagu"
-  "e\030\001 \001(\r\022\024\n\014reset_tablet\030\002 \001(\010\022\025\n\rmodify_"
-  "tokens\030\003 \001(\r\022\027\n\017upgrade_tablets\030\006 \001(\010\022\"\n"
-  "\016fantasy_period\030\005 \001(\r:\n4294967295\"\203\003\n4CM"
-  "sgClientToGCFantasyCraftingDevModifyTabl"
-  "etResponse\022c\n\010response\030\001 \001(\0162\?.CMsgClien"
-  "tToGCFantasyCraftingDevModifyTabletRespo"
-  "nse.EResponse:\020k_eInternalError\0223\n\tuser_"
-  "data\030\002 \001(\0132 .CMsgDotaFantasyCraftingUser"
-  "Data\0227\n\013tablet_data\030\003 \001(\0132\".CMsgDotaFant"
-  "asyCraftingTabletData\"x\n\tEResponse\022\024\n\020k_"
-  "eInternalError\020\000\022\016\n\nk_eSuccess\020\001\022\016\n\nk_eT"
-  "ooBusy\020\002\022\017\n\013k_eDisabled\020\003\022\016\n\nk_eTimeout\020"
-  "\004\022\024\n\020k_eInvalidLeague\020\005\"W\n)CMsgClientToG"
-  "CFantasyCraftingSelectPlayer\022\026\n\016fantasy_"
-  "league\030\001 \001(\r\022\022\n\naccount_id\030\002 \001(\r\"\337\002\n1CMs"
-  "gClientToGCFantasyCraftingSelectPlayerRe"
-  "sponse\022`\n\010response\030\001 \001(\0162<.CMsgClientToG"
-  "CFantasyCraftingSelectPlayerResponse.ERe"
-  "sponse:\020k_eInternalError\0227\n\013tablet_data\030"
-  "\002 \001(\0132\".CMsgDotaFantasyCraftingTabletDat"
-  "a\"\216\001\n\tEResponse\022\024\n\020k_eInternalError\020\000\022\016\n"
-  "\nk_eSuccess\020\001\022\016\n\nk_eTooBusy\020\002\022\017\n\013k_eDisa"
-  "bled\020\003\022\016\n\nk_eTimeout\020\004\022\024\n\020k_eInvalidLeag"
-  "ue\020\005\022\024\n\020k_eInvalidPlayer\020\006\"[\n,CMsgClient"
-  "ToGCFantasyCraftingGenerateTablets\022\026\n\016fa"
-  "ntasy_league\030\001 \001(\r\022\023\n\013account_ids\030\002 \003(\r\""
-  "\232\003\n4CMsgClientToGCFantasyCraftingGenerat"
-  "eTabletsResponse\022c\n\010response\030\001 \001(\0162\?.CMs"
-  "gClientToGCFantasyCraftingGenerateTablet"
-  "sResponse.EResponse:\020k_eInternalError\0223\n"
-  "\tuser_data\030\002 \001(\0132 .CMsgDotaFantasyCrafti"
-  "ngUserData\0227\n\013tablet_data\030\003 \001(\0132\".CMsgDo"
-  "taFantasyCraftingTabletData\"\216\001\n\tERespons"
-  "e\022\024\n\020k_eInternalError\020\000\022\016\n\nk_eSuccess\020\001\022"
-  "\016\n\nk_eTooBusy\020\002\022\017\n\013k_eDisabled\020\003\022\016\n\nk_eT"
-  "imeout\020\004\022\024\n\020k_eInvalidLeague\020\005\022\024\n\020k_eInv"
-  "alidPlayer\020\006\"E\n+CMsgClientToGcFantasyCra"
-  "ftingUpgradeTablets\022\026\n\016fantasy_league\030\001 "
-  "\001(\r\"\314\002\n3CMsgClientToGcFantasyCraftingUpg"
-  "radeTabletsResponse\022b\n\010response\030\001 \001(\0162>."
-  "CMsgClientToGcFantasyCraftingUpgradeTabl"
-  "etsResponse.EResponse:\020k_eInternalError\022"
-  "7\n\013tablet_data\030\003 \001(\0132\".CMsgDotaFantasyCr"
-  "aftingTabletData\"x\n\tEResponse\022\024\n\020k_eInte"
-  "rnalError\020\000\022\016\n\nk_eSuccess\020\001\022\016\n\nk_eTooBus"
-  "y\020\002\022\017\n\013k_eDisabled\020\003\022\016\n\nk_eTimeout\020\004\022\024\n\020"
-  "k_eInvalidLeague\020\005\"D\n*CMsgClientToGCFant"
-  "asyCraftingRerollOptions\022\026\n\016fantasy_leag"
-  "ue\030\001 \001(\r\"\342\002\n2CMsgClientToGCFantasyCrafti"
-  "ngRerollOptionsResponse\022a\n\010response\030\001 \001("
-  "\0162=.CMsgClientToGCFantasyCraftingRerollO"
-  "ptionsResponse.EResponse:\020k_eInternalErr"
-  "or\0223\n\tuser_data\030\002 \001(\0132 .CMsgDotaFantasyC"
-  "raftingUserData\"\223\001\n\tEResponse\022\024\n\020k_eInte"
-  "rnalError\020\000\022\016\n\nk_eSuccess\020\001\022\016\n\nk_eTooBus"
-  "y\020\002\022\017\n\013k_eDisabled\020\003\022\016\n\nk_eTimeout\020\004\022\024\n\020"
-  "k_eInvalidLeague\020\005\022\031\n\025k_eInsufficientTok"
-  "ens\020\006*\243\025\n!DOTA_2013PassportSelectionIndi"
-  "ces\022\035\n\031PP13_SEL_ALLSTAR_PLAYER_0\020\000\022\035\n\031PP"
-  "13_SEL_ALLSTAR_PLAYER_1\020\001\022\035\n\031PP13_SEL_AL"
-  "LSTAR_PLAYER_2\020\002\022\035\n\031PP13_SEL_ALLSTAR_PLA"
-  "YER_3\020\003\022\035\n\031PP13_SEL_ALLSTAR_PLAYER_4\020\004\022\035"
-  "\n\031PP13_SEL_ALLSTAR_PLAYER_5\020\005\022\035\n\031PP13_SE"
-  "L_ALLSTAR_PLAYER_6\020\006\022\035\n\031PP13_SEL_ALLSTAR"
-  "_PLAYER_7\020\007\022\035\n\031PP13_SEL_ALLSTAR_PLAYER_8"
-  "\020\010\022\035\n\031PP13_SEL_ALLSTAR_PLAYER_9\020\t\022\034\n\030PP1"
-  "3_SEL_QUALPRED_WEST_0\020\n\022\034\n\030PP13_SEL_QUAL"
-  "PRED_WEST_1\020\013\022\034\n\030PP13_SEL_QUALPRED_WEST_"
-  "2\020\014\022\034\n\030PP13_SEL_QUALPRED_WEST_3\020\r\022\034\n\030PP1"
-  "3_SEL_QUALPRED_WEST_4\020\016\022\034\n\030PP13_SEL_QUAL"
-  "PRED_WEST_5\020\017\022\034\n\030PP13_SEL_QUALPRED_WEST_"
-  "6\020\020\022\034\n\030PP13_SEL_QUALPRED_WEST_7\020\021\022\034\n\030PP1"
-  "3_SEL_QUALPRED_WEST_8\020\022\022\034\n\030PP13_SEL_QUAL"
-  "PRED_WEST_9\020\023\022\035\n\031PP13_SEL_QUALPRED_WEST_"
-  "10\020\024\022\035\n\031PP13_SEL_QUALPRED_WEST_11\020\025\022\035\n\031P"
-  "P13_SEL_QUALPRED_WEST_12\020\026\022\035\n\031PP13_SEL_Q"
-  "UALPRED_WEST_13\020\027\022\035\n\031PP13_SEL_QUALPRED_W"
-  "EST_14\020\030\022\034\n\030PP13_SEL_QUALPRED_EAST_0\020\031\022\034"
-  "\n\030PP13_SEL_QUALPRED_EAST_1\020\032\022\034\n\030PP13_SEL"
-  "_QUALPRED_EAST_2\020\033\022\034\n\030PP13_SEL_QUALPRED_"
-  "EAST_3\020\034\022\034\n\030PP13_SEL_QUALPRED_EAST_4\020\035\022\034"
-  "\n\030PP13_SEL_QUALPRED_EAST_5\020\036\022\034\n\030PP13_SEL"
-  "_QUALPRED_EAST_6\020\037\022\034\n\030PP13_SEL_QUALPRED_"
-  "EAST_7\020 \022\034\n\030PP13_SEL_QUALPRED_EAST_8\020!\022\034"
-  "\n\030PP13_SEL_QUALPRED_EAST_9\020\"\022\035\n\031PP13_SEL"
-  "_QUALPRED_EAST_10\020#\022\035\n\031PP13_SEL_QUALPRED"
-  "_EAST_11\020$\022\035\n\031PP13_SEL_QUALPRED_EAST_12\020"
-  "%\022\035\n\031PP13_SEL_QUALPRED_EAST_13\020&\022\035\n\031PP13"
-  "_SEL_QUALPRED_EAST_14\020\'\022\031\n\025PP13_SEL_TEAM"
-  "CUP_TEAM\020(\022\033\n\027PP13_SEL_TEAMCUP_PLAYER\020)\022"
-  "\036\n\032PP13_SEL_TEAMCUP_TEAM_LOCK\020*\022 \n\034PP13_"
-  "SEL_TEAMCUP_PLAYER_LOCK\020+\022\030\n\024PP13_SEL_EV"
-  "ENTPRED_0\020,\022\030\n\024PP13_SEL_EVENTPRED_1\020-\022\030\n"
-  "\024PP13_SEL_EVENTPRED_2\020.\022\030\n\024PP13_SEL_EVEN"
-  "TPRED_3\020/\022\030\n\024PP13_SEL_EVENTPRED_4\0200\022\030\n\024P"
-  "P13_SEL_EVENTPRED_5\0201\022\030\n\024PP13_SEL_EVENTP"
-  "RED_6\0202\022\030\n\024PP13_SEL_EVENTPRED_7\0203\022\030\n\024PP1"
-  "3_SEL_EVENTPRED_8\0204\022\030\n\024PP13_SEL_EVENTPRE"
-  "D_9\0205\022\031\n\025PP13_SEL_EVENTPRED_10\0206\022\031\n\025PP13"
-  "_SEL_EVENTPRED_11\0207\022\031\n\025PP13_SEL_EVENTPRE"
-  "D_12\0208\022\031\n\025PP13_SEL_EVENTPRED_13\0209\022\031\n\025PP1"
-  "3_SEL_EVENTPRED_14\020:\022\031\n\025PP13_SEL_EVENTPR"
-  "ED_15\020;\022\031\n\025PP13_SEL_EVENTPRED_16\020<\022\031\n\025PP"
-  "13_SEL_EVENTPRED_17\020=\022\031\n\025PP13_SEL_EVENTP"
-  "RED_18\020>\022\031\n\025PP13_SEL_EVENTPRED_19\020\?\022\031\n\025P"
-  "P13_SEL_EVENTPRED_20\020@\022\031\n\025PP13_SEL_EVENT"
-  "PRED_21\020A\022\031\n\025PP13_SEL_EVENTPRED_22\020B\022\031\n\025"
-  "PP13_SEL_EVENTPRED_23\020C\022\031\n\025PP13_SEL_EVEN"
-  "TPRED_24\020D\022\031\n\025PP13_SEL_EVENTPRED_25\020E\022\031\n"
-  "\025PP13_SEL_EVENTPRED_26\020F\022\031\n\025PP13_SEL_EVE"
-  "NTPRED_27\020G\022\031\n\025PP13_SEL_EVENTPRED_28\020H\022\031"
-  "\n\025PP13_SEL_EVENTPRED_29\020I\022\031\n\025PP13_SEL_EV"
-  "ENTPRED_30\020J\022\031\n\025PP13_SEL_EVENTPRED_31\020K\022"
-  "\031\n\025PP13_SEL_EVENTPRED_32\020L\022\031\n\025PP13_SEL_E"
-  "VENTPRED_33\020M\022\031\n\025PP13_SEL_EVENTPRED_34\020N"
-  "\022\031\n\025PP13_SEL_EVENTPRED_35\020O\022\031\n\025PP13_SEL_"
-  "EVENTPRED_36\020P\022\031\n\025PP13_SEL_EVENTPRED_37\020"
-  "Q\022\031\n\025PP13_SEL_EVENTPRED_38\020R\022\031\n\025PP13_SEL"
-  "_EVENTPRED_39\020S\022\031\n\025PP13_SEL_EVENTPRED_40"
-  "\020T\022\031\n\025PP13_SEL_EVENTPRED_41\020U\022\031\n\025PP13_SE"
-  "L_EVENTPRED_42\020V\022\031\n\025PP13_SEL_EVENTPRED_4"
-  "3\020W\022\023\n\017PP13_SEL_SOLO_0\020X\022\023\n\017PP13_SEL_SOL"
-  "O_1\020Y\022\023\n\017PP13_SEL_SOLO_2\020Z\022\023\n\017PP13_SEL_S"
-  "OLO_3\020[\022\023\n\017PP13_SEL_SOLO_4\020\\\022\023\n\017PP13_SEL"
-  "_SOLO_5\020]\022\023\n\017PP13_SEL_SOLO_6\020^\022\023\n\017PP13_S"
-  "EL_SOLO_7\020_"
+  "\022J\n\006result\030\001 \001(\01621.CMsgClientToGCSetPlay"
+  "erCardRosterResponse.Result:\007SUCCESS\"\262\002\n"
+  "\006Result\022\013\n\007SUCCESS\020\000\022\025\n\021ERROR_UNSPECIFIE"
+  "D\020\001\022\033\n\027ERROR_INVALID_LEAGUE_ID\020\002\022\033\n\027ERRO"
+  "R_INVALID_TIMESTAMP\020\003\022\037\n\033ERROR_PLAYER_CA"
+  "RD_NOT_OWNED\020\004\022\026\n\022ERROR_INVALID_SLOT\020\005\022\032"
+  "\n\026ERROR_FAILED_CARD_INFO\020\006\022\033\n\027ERROR_ACCO"
+  "UNT_DUPLICATE\020\007\022\032\n\026ERROR_LOCKED_TIMESTAM"
+  "P\020\010\022#\n\037ERROR_INVALID_LEAGUE_FOR_PERIOD\020\t"
+  "\022\027\n\023ERROR_INVALID_EVENT\020\n\"\351\002\n\036CMsgDOTAFa"
+  "ntasyDPCLeagueStatus\022@\n\014league_infos\030\001 \003"
+  "(\0132*.CMsgDOTAFantasyDPCLeagueStatus.Leag"
+  "ueInfo\032\302\001\n\nLeagueInfo\022\021\n\tleague_id\030\001 \001(\r"
+  "\022\023\n\013league_name\030\002 \001(\t\022\027\n\017start_timestamp"
+  "\030\003 \001(\r\022\025\n\rend_timestamp\030\004 \001(\r\022\026\n\016day_tim"
+  "estamps\030\005 \003(\r\022D\n\006status\030\010 \001(\0162-.CMsgDOTA"
+  "FantasyDPCLeagueStatus.ERosterStatus:\005UN"
+  "SET\"@\n\rERosterStatus\022\t\n\005UNSET\020\000\022\013\n\007PARTI"
+  "AL\020\001\022\010\n\004FULL\020\002\022\r\n\tCONCLUDED\020\003\"\341\003\n\030CMsgDO"
+  "TADPCSearchResults\0221\n\007players\030\001 \003(\0132 .CM"
+  "sgDOTADPCSearchResults.Player\022-\n\005teams\030\002"
+  " \003(\0132\036.CMsgDOTADPCSearchResults.Team\0221\n\007"
+  "leagues\030\003 \003(\0132 .CMsgDOTADPCSearchResults"
+  ".League\0325\n\006Player\022\n\n\002id\030\001 \001(\r\022\014\n\004name\030\002 "
+  "\001(\t\022\021\n\treal_name\030\003 \001(\t\032-\n\004Team\022\n\n\002id\030\001 \001"
+  "(\r\022\014\n\004name\030\002 \001(\t\022\013\n\003url\030\003 \001(\t\032\"\n\006League\022"
+  "\n\n\002id\030\001 \001(\r\022\014\n\004name\030\002 \001(\t\"\245\001\n\025ESearchRes"
+  "ultsDesired\022#\n\037k_ESearchResultsDesired_P"
+  "layers\020\001\022!\n\035k_ESearchResultsDesired_Team"
+  "s\020\002\022#\n\037k_ESearchResultsDesired_Leagues\020\004"
+  "\022\037\n\033k_ESearchResultsDesired_All\020\007\"\203\001\n\037CM"
+  "sgDOTADPCTeamFavoriteRankings\0224\n\005teams\030\001"
+  " \003(\0132%.CMsgDOTADPCTeamFavoriteRankings.T"
+  "eam\032*\n\004Team\022\017\n\007team_id\030\001 \001(\r\022\021\n\tfavorite"
+  "s\030\002 \001(\r\"\272\004\n\'CMsgDotaFantasyCraftingTable"
+  "tPeriodData\022\"\n\016fantasy_period\030\001 \001(\r:\n429"
+  "4967295\022@\n\007tablets\030\002 \003(\0132/.CMsgDotaFanta"
+  "syCraftingTabletPeriodData.Tablet\032\242\001\n\003Ge"
+  "m\0226\n\004type\030\001 \001(\0162\021.Fantasy_Gem_Type:\025FANT"
+  "ASY_GEM_TYPE_RUBY\022\014\n\004slot\030\002 \001(\r\022\r\n\005shape"
+  "\030\003 \001(\r\022\017\n\007quality\030\004 \001(\r\0225\n\004stat\030\005 \001(\0162\020."
+  "Fantasy_Scoring:\025FANTASY_SCORING_KILLS\032\203"
+  "\002\n\006Tablet\022\021\n\ttablet_id\030\001 \001(\r\022\024\n\014tablet_l"
+  "evel\030\002 \001(\r\022<\n\014fantasy_role\030\003 \001(\0162\016.Fanta"
+  "sy_Roles:\026FANTASY_ROLE_UNDEFINED\022\022\n\nacco"
+  "unt_id\030\004 \001(\r\022\016\n\006prefix\030\005 \001(\r\022\016\n\006suffix\030\006"
+  " \001(\r\022:\n\004gems\030\007 \003(\0132,.CMsgDotaFantasyCraf"
+  "tingTabletPeriodData.Gem\022\r\n\005score\030\010 \001(\002\022"
+  "\023\n\013best_series\030\t \001(\r\"\330\001\n!CMsgDotaFantasy"
+  "CraftingTabletData\022T\n\022tablet_period_data"
+  "\030\001 \003(\01328.CMsgDotaFantasyCraftingTabletDa"
+  "ta.TabletPeriodDataEntry\032]\n\025TabletPeriod"
+  "DataEntry\022\013\n\003key\030\001 \001(\r\0227\n\005value\030\002 \001(\0132(."
+  "CMsgDotaFantasyCraftingTabletPeriodData\""
+  "\245\003\n\037CMsgDotaFantasyCraftingUserData\022\027\n\017a"
+  "vailable_rolls\030\001 \003(\r\022R\n\022period_roll_toke"
+  "ns\030\002 \003(\01326.CMsgDotaFantasyCraftingUserDa"
+  "ta.PeriodRollTokensEntry\022I\n\rperiod_score"
+  "s\030\003 \003(\01322.CMsgDotaFantasyCraftingUserDat"
+  "a.PeriodScoresEntry\0326\n\013PeriodScore\022\023\n\013to"
+  "tal_score\030\001 \001(\002\022\022\n\npercentile\030\002 \001(\002\0323\n\025P"
+  "eriodRollTokensEntry\022\013\n\003key\030\001 \001(\r\022\r\n\005val"
+  "ue\030\002 \001(\r\032]\n\021PeriodScoresEntry\022\013\n\003key\030\001 \001"
+  "(\r\022;\n\005value\030\002 \001(\0132,.CMsgDotaFantasyCraft"
+  "ingUserData.PeriodScore\"\340\001\n CMsgDotaFant"
+  "asyCraftingDataCache\022C\n\rcache_entries\030\001 "
+  "\003(\0132,.CMsgDotaFantasyCraftingDataCache.C"
+  "acheEntry\032w\n\nCacheEntry\022\022\n\naccount_id\030\001 "
+  "\001(\r\022\026\n\016fantasy_league\030\002 \001(\r\022=\n\ncache_dat"
+  "a\030\003 \001(\0132).CMsgGCToClientFantasyCraftingD"
+  "ataUpdated\"R\n$CMsgClientToGCFantasyCraft"
+  "ingGetData\022\026\n\016fantasy_league\030\001 \001(\r\022\022\n\nac"
+  "count_id\030\002 \001(\r\"\363\002\n,CMsgClientToGCFantasy"
+  "CraftingGetDataResponse\022[\n\010response\030\001 \001("
+  "\01627.CMsgClientToGCFantasyCraftingGetData"
+  "Response.EResponse:\020k_eInternalError\0223\n\t"
+  "user_data\030\002 \001(\0132 .CMsgDotaFantasyCraftin"
+  "gUserData\0227\n\013tablet_data\030\004 \001(\0132\".CMsgDot"
+  "aFantasyCraftingTabletData\"x\n\tEResponse\022"
+  "\024\n\020k_eInternalError\020\000\022\016\n\nk_eSuccess\020\001\022\016\n"
+  "\nk_eTooBusy\020\002\022\017\n\013k_eDisabled\020\003\022\016\n\nk_eTim"
+  "eout\020\004\022\024\n\020k_eInvalidLeague\020\005\"\204\001\n-CMsgCli"
+  "entToGCFantasyCraftingPerformOperation\022\026"
+  "\n\016fantasy_league\030\001 \001(\r\022\021\n\ttablet_id\030\002 \001("
+  "\r\022\024\n\014operation_id\030\003 \001(\r\022\022\n\nextra_data\030\004 "
+  "\001(\004\"\261\005\n5CMsgClientToGCFantasyCraftingPer"
+  "formOperationResponse\022d\n\010response\030\001 \001(\0162"
+  "@.CMsgClientToGCFantasyCraftingPerformOp"
+  "erationResponse.EResponse:\020k_eInternalEr"
+  "ror\022\024\n\014operation_id\030\002 \001(\r\022\021\n\ttablet_id\030\007"
+  " \001(\r\0223\n\tuser_data\030\010 \001(\0132 .CMsgDotaFantas"
+  "yCraftingUserData\0227\n\013tablet_data\030\t \001(\0132\""
+  ".CMsgDotaFantasyCraftingTabletData\022\026\n\016pl"
+  "ayer_choices\030\003 \003(\r\022\026\n\016prefix_choices\030\004 \003"
+  "(\r\022\026\n\016suffix_choices\030\005 \003(\r\022Y\n\rtitle_choi"
+  "ces\030\006 \003(\0132B.CMsgClientToGCFantasyCraftin"
+  "gPerformOperationResponse.TitleChoice\032;\n"
+  "\013TitleChoice\022\025\n\rprefix_choice\030\001 \001(\r\022\025\n\rs"
+  "uffix_choice\030\002 \001(\r\"\232\001\n\tEResponse\022\024\n\020k_eI"
+  "nternalError\020\000\022\016\n\nk_eSuccess\020\001\022\016\n\nk_eToo"
+  "Busy\020\002\022\017\n\013k_eDisabled\020\003\022\016\n\nk_eTimeout\020\004\022"
+  "\024\n\020k_eInvalidLeague\020\005\022\017\n\013k_eNoTokens\020\006\022\017"
+  "\n\013k_eMoreInfo\020\007\"\260\001\n(CMsgGCToClientFantas"
+  "yCraftingDataUpdated\022\026\n\016fantasy_league\030\001"
+  " \001(\r\0223\n\tuser_data\030\002 \001(\0132 .CMsgDotaFantas"
+  "yCraftingUserData\0227\n\013tablet_data\030\004 \001(\0132\""
+  ".CMsgDotaFantasyCraftingTabletData\"\260\001\n,C"
+  "MsgClientToGCFantasyCraftingDevModifyTab"
+  "let\022\026\n\016fantasy_league\030\001 \001(\r\022\024\n\014reset_tab"
+  "let\030\002 \001(\010\022\025\n\rmodify_tokens\030\003 \001(\r\022\027\n\017upgr"
+  "ade_tablets\030\006 \001(\010\022\"\n\016fantasy_period\030\005 \001("
+  "\r:\n4294967295\"\203\003\n4CMsgClientToGCFantasyC"
+  "raftingDevModifyTabletResponse\022c\n\010respon"
+  "se\030\001 \001(\0162\?.CMsgClientToGCFantasyCrafting"
+  "DevModifyTabletResponse.EResponse:\020k_eIn"
+  "ternalError\0223\n\tuser_data\030\002 \001(\0132 .CMsgDot"
+  "aFantasyCraftingUserData\0227\n\013tablet_data\030"
+  "\003 \001(\0132\".CMsgDotaFantasyCraftingTabletDat"
+  "a\"x\n\tEResponse\022\024\n\020k_eInternalError\020\000\022\016\n\n"
+  "k_eSuccess\020\001\022\016\n\nk_eTooBusy\020\002\022\017\n\013k_eDisab"
+  "led\020\003\022\016\n\nk_eTimeout\020\004\022\024\n\020k_eInvalidLeagu"
+  "e\020\005\"W\n)CMsgClientToGCFantasyCraftingSele"
+  "ctPlayer\022\026\n\016fantasy_league\030\001 \001(\r\022\022\n\nacco"
+  "unt_id\030\002 \001(\r\"\337\002\n1CMsgClientToGCFantasyCr"
+  "aftingSelectPlayerResponse\022`\n\010response\030\001"
+  " \001(\0162<.CMsgClientToGCFantasyCraftingSele"
+  "ctPlayerResponse.EResponse:\020k_eInternalE"
+  "rror\0227\n\013tablet_data\030\002 \001(\0132\".CMsgDotaFant"
+  "asyCraftingTabletData\"\216\001\n\tEResponse\022\024\n\020k"
+  "_eInternalError\020\000\022\016\n\nk_eSuccess\020\001\022\016\n\nk_e"
+  "TooBusy\020\002\022\017\n\013k_eDisabled\020\003\022\016\n\nk_eTimeout"
+  "\020\004\022\024\n\020k_eInvalidLeague\020\005\022\024\n\020k_eInvalidPl"
+  "ayer\020\006\"[\n,CMsgClientToGCFantasyCraftingG"
+  "enerateTablets\022\026\n\016fantasy_league\030\001 \001(\r\022\023"
+  "\n\013account_ids\030\002 \003(\r\"\232\003\n4CMsgClientToGCFa"
+  "ntasyCraftingGenerateTabletsResponse\022c\n\010"
+  "response\030\001 \001(\0162\?.CMsgClientToGCFantasyCr"
+  "aftingGenerateTabletsResponse.EResponse:"
+  "\020k_eInternalError\0223\n\tuser_data\030\002 \001(\0132 .C"
+  "MsgDotaFantasyCraftingUserData\0227\n\013tablet"
+  "_data\030\003 \001(\0132\".CMsgDotaFantasyCraftingTab"
+  "letData\"\216\001\n\tEResponse\022\024\n\020k_eInternalErro"
+  "r\020\000\022\016\n\nk_eSuccess\020\001\022\016\n\nk_eTooBusy\020\002\022\017\n\013k"
+  "_eDisabled\020\003\022\016\n\nk_eTimeout\020\004\022\024\n\020k_eInval"
+  "idLeague\020\005\022\024\n\020k_eInvalidPlayer\020\006\"E\n+CMsg"
+  "ClientToGcFantasyCraftingUpgradeTablets\022"
+  "\026\n\016fantasy_league\030\001 \001(\r\"\314\002\n3CMsgClientTo"
+  "GcFantasyCraftingUpgradeTabletsResponse\022"
+  "b\n\010response\030\001 \001(\0162>.CMsgClientToGcFantas"
+  "yCraftingUpgradeTabletsResponse.ERespons"
+  "e:\020k_eInternalError\0227\n\013tablet_data\030\003 \001(\013"
+  "2\".CMsgDotaFantasyCraftingTabletData\"x\n\t"
+  "EResponse\022\024\n\020k_eInternalError\020\000\022\016\n\nk_eSu"
+  "ccess\020\001\022\016\n\nk_eTooBusy\020\002\022\017\n\013k_eDisabled\020\003"
+  "\022\016\n\nk_eTimeout\020\004\022\024\n\020k_eInvalidLeague\020\005\"D"
+  "\n*CMsgClientToGCFantasyCraftingRerollOpt"
+  "ions\022\026\n\016fantasy_league\030\001 \001(\r\"\342\002\n2CMsgCli"
+  "entToGCFantasyCraftingRerollOptionsRespo"
+  "nse\022a\n\010response\030\001 \001(\0162=.CMsgClientToGCFa"
+  "ntasyCraftingRerollOptionsResponse.EResp"
+  "onse:\020k_eInternalError\0223\n\tuser_data\030\002 \001("
+  "\0132 .CMsgDotaFantasyCraftingUserData\"\223\001\n\t"
+  "EResponse\022\024\n\020k_eInternalError\020\000\022\016\n\nk_eSu"
+  "ccess\020\001\022\016\n\nk_eTooBusy\020\002\022\017\n\013k_eDisabled\020\003"
+  "\022\016\n\nk_eTimeout\020\004\022\024\n\020k_eInvalidLeague\020\005\022\031"
+  "\n\025k_eInsufficientTokens\020\006*\243\025\n!DOTA_2013P"
+  "assportSelectionIndices\022\035\n\031PP13_SEL_ALLS"
+  "TAR_PLAYER_0\020\000\022\035\n\031PP13_SEL_ALLSTAR_PLAYE"
+  "R_1\020\001\022\035\n\031PP13_SEL_ALLSTAR_PLAYER_2\020\002\022\035\n\031"
+  "PP13_SEL_ALLSTAR_PLAYER_3\020\003\022\035\n\031PP13_SEL_"
+  "ALLSTAR_PLAYER_4\020\004\022\035\n\031PP13_SEL_ALLSTAR_P"
+  "LAYER_5\020\005\022\035\n\031PP13_SEL_ALLSTAR_PLAYER_6\020\006"
+  "\022\035\n\031PP13_SEL_ALLSTAR_PLAYER_7\020\007\022\035\n\031PP13_"
+  "SEL_ALLSTAR_PLAYER_8\020\010\022\035\n\031PP13_SEL_ALLST"
+  "AR_PLAYER_9\020\t\022\034\n\030PP13_SEL_QUALPRED_WEST_"
+  "0\020\n\022\034\n\030PP13_SEL_QUALPRED_WEST_1\020\013\022\034\n\030PP1"
+  "3_SEL_QUALPRED_WEST_2\020\014\022\034\n\030PP13_SEL_QUAL"
+  "PRED_WEST_3\020\r\022\034\n\030PP13_SEL_QUALPRED_WEST_"
+  "4\020\016\022\034\n\030PP13_SEL_QUALPRED_WEST_5\020\017\022\034\n\030PP1"
+  "3_SEL_QUALPRED_WEST_6\020\020\022\034\n\030PP13_SEL_QUAL"
+  "PRED_WEST_7\020\021\022\034\n\030PP13_SEL_QUALPRED_WEST_"
+  "8\020\022\022\034\n\030PP13_SEL_QUALPRED_WEST_9\020\023\022\035\n\031PP1"
+  "3_SEL_QUALPRED_WEST_10\020\024\022\035\n\031PP13_SEL_QUA"
+  "LPRED_WEST_11\020\025\022\035\n\031PP13_SEL_QUALPRED_WES"
+  "T_12\020\026\022\035\n\031PP13_SEL_QUALPRED_WEST_13\020\027\022\035\n"
+  "\031PP13_SEL_QUALPRED_WEST_14\020\030\022\034\n\030PP13_SEL"
+  "_QUALPRED_EAST_0\020\031\022\034\n\030PP13_SEL_QUALPRED_"
+  "EAST_1\020\032\022\034\n\030PP13_SEL_QUALPRED_EAST_2\020\033\022\034"
+  "\n\030PP13_SEL_QUALPRED_EAST_3\020\034\022\034\n\030PP13_SEL"
+  "_QUALPRED_EAST_4\020\035\022\034\n\030PP13_SEL_QUALPRED_"
+  "EAST_5\020\036\022\034\n\030PP13_SEL_QUALPRED_EAST_6\020\037\022\034"
+  "\n\030PP13_SEL_QUALPRED_EAST_7\020 \022\034\n\030PP13_SEL"
+  "_QUALPRED_EAST_8\020!\022\034\n\030PP13_SEL_QUALPRED_"
+  "EAST_9\020\"\022\035\n\031PP13_SEL_QUALPRED_EAST_10\020#\022"
+  "\035\n\031PP13_SEL_QUALPRED_EAST_11\020$\022\035\n\031PP13_S"
+  "EL_QUALPRED_EAST_12\020%\022\035\n\031PP13_SEL_QUALPR"
+  "ED_EAST_13\020&\022\035\n\031PP13_SEL_QUALPRED_EAST_1"
+  "4\020\'\022\031\n\025PP13_SEL_TEAMCUP_TEAM\020(\022\033\n\027PP13_S"
+  "EL_TEAMCUP_PLAYER\020)\022\036\n\032PP13_SEL_TEAMCUP_"
+  "TEAM_LOCK\020*\022 \n\034PP13_SEL_TEAMCUP_PLAYER_L"
+  "OCK\020+\022\030\n\024PP13_SEL_EVENTPRED_0\020,\022\030\n\024PP13_"
+  "SEL_EVENTPRED_1\020-\022\030\n\024PP13_SEL_EVENTPRED_"
+  "2\020.\022\030\n\024PP13_SEL_EVENTPRED_3\020/\022\030\n\024PP13_SE"
+  "L_EVENTPRED_4\0200\022\030\n\024PP13_SEL_EVENTPRED_5\020"
+  "1\022\030\n\024PP13_SEL_EVENTPRED_6\0202\022\030\n\024PP13_SEL_"
+  "EVENTPRED_7\0203\022\030\n\024PP13_SEL_EVENTPRED_8\0204\022"
+  "\030\n\024PP13_SEL_EVENTPRED_9\0205\022\031\n\025PP13_SEL_EV"
+  "ENTPRED_10\0206\022\031\n\025PP13_SEL_EVENTPRED_11\0207\022"
+  "\031\n\025PP13_SEL_EVENTPRED_12\0208\022\031\n\025PP13_SEL_E"
+  "VENTPRED_13\0209\022\031\n\025PP13_SEL_EVENTPRED_14\020:"
+  "\022\031\n\025PP13_SEL_EVENTPRED_15\020;\022\031\n\025PP13_SEL_"
+  "EVENTPRED_16\020<\022\031\n\025PP13_SEL_EVENTPRED_17\020"
+  "=\022\031\n\025PP13_SEL_EVENTPRED_18\020>\022\031\n\025PP13_SEL"
+  "_EVENTPRED_19\020\?\022\031\n\025PP13_SEL_EVENTPRED_20"
+  "\020@\022\031\n\025PP13_SEL_EVENTPRED_21\020A\022\031\n\025PP13_SE"
+  "L_EVENTPRED_22\020B\022\031\n\025PP13_SEL_EVENTPRED_2"
+  "3\020C\022\031\n\025PP13_SEL_EVENTPRED_24\020D\022\031\n\025PP13_S"
+  "EL_EVENTPRED_25\020E\022\031\n\025PP13_SEL_EVENTPRED_"
+  "26\020F\022\031\n\025PP13_SEL_EVENTPRED_27\020G\022\031\n\025PP13_"
+  "SEL_EVENTPRED_28\020H\022\031\n\025PP13_SEL_EVENTPRED"
+  "_29\020I\022\031\n\025PP13_SEL_EVENTPRED_30\020J\022\031\n\025PP13"
+  "_SEL_EVENTPRED_31\020K\022\031\n\025PP13_SEL_EVENTPRE"
+  "D_32\020L\022\031\n\025PP13_SEL_EVENTPRED_33\020M\022\031\n\025PP1"
+  "3_SEL_EVENTPRED_34\020N\022\031\n\025PP13_SEL_EVENTPR"
+  "ED_35\020O\022\031\n\025PP13_SEL_EVENTPRED_36\020P\022\031\n\025PP"
+  "13_SEL_EVENTPRED_37\020Q\022\031\n\025PP13_SEL_EVENTP"
+  "RED_38\020R\022\031\n\025PP13_SEL_EVENTPRED_39\020S\022\031\n\025P"
+  "P13_SEL_EVENTPRED_40\020T\022\031\n\025PP13_SEL_EVENT"
+  "PRED_41\020U\022\031\n\025PP13_SEL_EVENTPRED_42\020V\022\031\n\025"
+  "PP13_SEL_EVENTPRED_43\020W\022\023\n\017PP13_SEL_SOLO"
+  "_0\020X\022\023\n\017PP13_SEL_SOLO_1\020Y\022\023\n\017PP13_SEL_SO"
+  "LO_2\020Z\022\023\n\017PP13_SEL_SOLO_3\020[\022\023\n\017PP13_SEL_"
+  "SOLO_4\020\\\022\023\n\017PP13_SEL_SOLO_5\020]\022\023\n\017PP13_SE"
+  "L_SOLO_6\020^\022\023\n\017PP13_SEL_SOLO_7\020_"
   ;
 static const ::_pbi::DescriptorTable* const descriptor_table_dota_5fgcmessages_5fclient_5ffantasy_2eproto_deps[1] = {
   &::descriptor_table_dota_5fshared_5fenums_2eproto,
 };
 static ::_pbi::once_flag descriptor_table_dota_5fgcmessages_5fclient_5ffantasy_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_dota_5fgcmessages_5fclient_5ffantasy_2eproto = {
-    false, false, 12931, descriptor_table_protodef_dota_5fgcmessages_5fclient_5ffantasy_2eproto,
+    false, false, 12951, descriptor_table_protodef_dota_5fgcmessages_5fclient_5ffantasy_2eproto,
     "dota_gcmessages_client_fantasy.proto",
     &descriptor_table_dota_5fgcmessages_5fclient_5ffantasy_2eproto_once, descriptor_table_dota_5fgcmessages_5fclient_5ffantasy_2eproto_deps, 1, 59,
     schemas, file_default_instances, TableStruct_dota_5fgcmessages_5fclient_5ffantasy_2eproto::offsets,
@@ -4432,6 +4437,10 @@ void CMsgDOTAPlayerInfo::InternalSwap(CMsgDOTAPlayerInfo* other) {
 
 class CMsgDOTAPlayerInfoList::_Internal {
  public:
+  using HasBits = decltype(std::declval<CMsgDOTAPlayerInfoList>()._impl_._has_bits_);
+  static void set_has_retry_time(HasBits* has_bits) {
+    (*has_bits)[0] |= 1u;
+  }
 };
 
 CMsgDOTAPlayerInfoList::CMsgDOTAPlayerInfoList(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -4444,10 +4453,13 @@ CMsgDOTAPlayerInfoList::CMsgDOTAPlayerInfoList(const CMsgDOTAPlayerInfoList& fro
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   CMsgDOTAPlayerInfoList* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.player_infos_){from._impl_.player_infos_}
-    , /*decltype(_impl_._cached_size_)*/{}};
+      decltype(_impl_._has_bits_){from._impl_._has_bits_}
+    , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.player_infos_){from._impl_.player_infos_}
+    , decltype(_impl_.retry_time_){}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _this->_impl_.retry_time_ = from._impl_.retry_time_;
   // @@protoc_insertion_point(copy_constructor:CMsgDOTAPlayerInfoList)
 }
 
@@ -4456,8 +4468,10 @@ inline void CMsgDOTAPlayerInfoList::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.player_infos_){arena}
+      decltype(_impl_._has_bits_){}
     , /*decltype(_impl_._cached_size_)*/{}
+    , decltype(_impl_.player_infos_){arena}
+    , decltype(_impl_.retry_time_){0u}
   };
 }
 
@@ -4486,11 +4500,14 @@ void CMsgDOTAPlayerInfoList::Clear() {
   (void) cached_has_bits;
 
   _impl_.player_infos_.Clear();
+  _impl_.retry_time_ = 0u;
+  _impl_._has_bits_.Clear();
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
 const char* CMsgDOTAPlayerInfoList::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  _Internal::HasBits has_bits{};
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
@@ -4505,6 +4522,15 @@ const char* CMsgDOTAPlayerInfoList::_InternalParse(const char* ptr, ::_pbi::Pars
             CHK_(ptr);
             if (!ctx->DataAvailable(ptr)) break;
           } while (::PROTOBUF_NAMESPACE_ID::internal::ExpectTag<10>(ptr));
+        } else
+          goto handle_unusual;
+        continue;
+      // optional uint32 retry_time = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _Internal::set_has_retry_time(&has_bits);
+          _impl_.retry_time_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
@@ -4524,6 +4550,7 @@ const char* CMsgDOTAPlayerInfoList::_InternalParse(const char* ptr, ::_pbi::Pars
     CHK_(ptr != nullptr);
   }  // while
 message_done:
+  _impl_._has_bits_.Or(has_bits);
   return ptr;
 failure:
   ptr = nullptr;
@@ -4543,6 +4570,13 @@ uint8_t* CMsgDOTAPlayerInfoList::_InternalSerialize(
     const auto& repfield = this->_internal_player_infos(i);
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
         InternalWriteMessage(1, repfield, repfield.GetCachedSize(), target, stream);
+  }
+
+  cached_has_bits = _impl_._has_bits_[0];
+  // optional uint32 retry_time = 2;
+  if (cached_has_bits & 0x00000001u) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteUInt32ToArray(2, this->_internal_retry_time(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -4568,6 +4602,12 @@ size_t CMsgDOTAPlayerInfoList::ByteSizeLong() const {
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
+  // optional uint32 retry_time = 2;
+  cached_has_bits = _impl_._has_bits_[0];
+  if (cached_has_bits & 0x00000001u) {
+    total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_retry_time());
+  }
+
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
@@ -4587,6 +4627,9 @@ void CMsgDOTAPlayerInfoList::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg,
   (void) cached_has_bits;
 
   _this->_impl_.player_infos_.MergeFrom(from._impl_.player_infos_);
+  if (from._internal_has_retry_time()) {
+    _this->_internal_set_retry_time(from._internal_retry_time());
+  }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
@@ -4604,7 +4647,9 @@ bool CMsgDOTAPlayerInfoList::IsInitialized() const {
 void CMsgDOTAPlayerInfoList::InternalSwap(CMsgDOTAPlayerInfoList* other) {
   using std::swap;
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  swap(_impl_._has_bits_[0], other->_impl_._has_bits_[0]);
   _impl_.player_infos_.InternalSwap(&other->_impl_.player_infos_);
+  swap(_impl_.retry_time_, other->_impl_.retry_time_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata CMsgDOTAPlayerInfoList::GetMetadata() const {
